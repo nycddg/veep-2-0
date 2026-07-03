@@ -51,6 +51,8 @@ function Index() {
 
       <LogoWall />
 
+      <RolesBand />
+
       <Section><AudienceTabs /></Section>
 
       <Marquee />
