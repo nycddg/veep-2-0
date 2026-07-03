@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeroVisual } from "@/components/site/HeroVisual";
 import { LogoWall } from "@/components/site/LogoWall";
+import { RolesBand } from "@/components/site/RolesBand";
 import { Marquee } from "@/components/site/Marquee";
 import { AudienceTabs } from "@/components/site/AudienceTabs";
 import { StatsBand } from "@/components/site/StatsBand";
