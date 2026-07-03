@@ -3,19 +3,19 @@ import { Eyebrow } from "./primitives";
 const groups = [
   {
     title: "Growth",
-    triggers: ["Raising capital", "Hiring executives", "Revenue plateau", "GTM redesign"],
+    triggers: ["Raising capital", "Revenue plateau", "GTM redesign", "New geography"],
   },
   {
     title: "Operational",
-    triggers: ["COO or CFO need", "ERP implementation", "Pricing redesign", "Org redesign"],
+    triggers: ["ERP or systems rebuild", "Pricing redesign", "Org redesign", "Margin reset"],
   },
   {
     title: "Leadership",
-    triggers: ["Executive departure", "Founder overwhelmed", "PE transition", "New CEO"],
+    triggers: ["C-suite departure", "Founder overwhelmed", "PE transition", "New CEO"],
   },
   {
     title: "Strategic",
-    triggers: ["M&A activity", "New product launch", "New geography", "Turnaround"],
+    triggers: ["M&A activity", "New product launch", "Turnaround", "Transaction prep"],
   },
 ];
 
