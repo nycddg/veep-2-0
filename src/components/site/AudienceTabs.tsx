@@ -89,7 +89,7 @@ const portfoliosPillars: Pillar[] = [
     title: "Executive Capacity Audit for the portfolio.",
     bullets: [
       "Portfolio-wide leadership risk map",
-      "CFO / COO / GTM coverage assessment",
+      "CFO / CCO / CTO / CMO / COO coverage assessment",
       "Upcoming capital and event triggers",
       "Recommended bench structure per company",
     ],
