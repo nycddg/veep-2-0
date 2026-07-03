@@ -71,7 +71,7 @@ const portfoliosPillars: Pillar[] = [
     eyebrow: "Bench",
     title: "An executive bench across the portfolio.",
     bullets: [
-      "Priority access to vetted CFO, COO, and GTM operators",
+      "Priority access to vetted CFO, CCO, CTO, CMO, and COO operators",
       "Emergency coverage path for interim vacancies",
       "Quarterly executive capacity planning",
       "Preferred commercial terms on engagements",
