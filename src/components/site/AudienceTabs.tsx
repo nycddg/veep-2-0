@@ -15,15 +15,15 @@ type Pillar = {
 const companiesPillars: Pillar[] = [
   {
     eyebrow: "Fractional",
-    title: "CFO capacity for the moment that matters.",
+    title: "A C-suite operator, running the function.",
     bullets: [
-      "Capital raise, lender readiness, and diligence prep",
-      "Board and investor reporting cadence",
-      "13-week cash and forecasting rebuild",
-      "Finance-function scoping before a full-time hire",
+      "CFO, CCO, CTO, CMO, or COO capacity on an ongoing cadence",
+      "Owns the function, the team, and the board narrative",
+      "Board and investor reporting, GTM cadence, or product roadmap",
+      "Scoped before you commit to a full-time hire",
     ],
     href: "/services/fractional-cfo",
-    panelTitle: "Fractional CFO",
+    panelTitle: "Fractional C-suite",
     panelRows: [
       { k: "Onboarded", v: "< 10 days" },
       { k: "Cadence", v: "Weekly + on-call" },
@@ -34,13 +34,13 @@ const companiesPillars: Pillar[] = [
     eyebrow: "Interim",
     title: "Own the seat while the search runs.",
     bullets: [
-      "Full ownership of a function during transition",
+      "Full ownership of a C-level seat during transition",
       "Preserves the permanent search",
-      "Clarifies what the full-time hire should own",
+      "Clarifies what the full-time hire should actually own",
       "Stabilizes the team and the board narrative",
     ],
     href: "/services/interim",
-    panelTitle: "Interim CFO / COO",
+    panelTitle: "Interim CFO / CCO / CTO / CMO / COO",
     panelRows: [
       { k: "Coverage", v: "Full seat" },
       { k: "Term", v: "3–9 months" },
@@ -52,8 +52,8 @@ const companiesPillars: Pillar[] = [
     title: "Ship one critical initiative with a clear endpoint.",
     bullets: [
       "GTM redesign, pricing reset, org redesign",
-      "M&A integration or transaction prep",
-      "ERP or reporting rebuild",
+      "Capital raise, M&A integration, or transaction prep",
+      "Product, platform, or ERP rebuild",
       "One senior operator, one outcome, one deadline",
     ],
     href: "/services/ai-operators",
