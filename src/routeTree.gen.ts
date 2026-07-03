@@ -9,38 +9,260 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as OperatorsRouteImport } from './routes/operators'
+import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as ForPortfoliosRouteImport } from './routes/for-portfolios'
+import { Route as ForCompaniesRouteImport } from './routes/for-companies'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesInterimRouteImport } from './routes/services.interim'
+import { Route as ServicesFractionalCfoRouteImport } from './routes/services.fractional-cfo'
+import { Route as ServicesExecutiveBenchRouteImport } from './routes/services.executive-bench'
+import { Route as ServicesAiOperatorsRouteImport } from './routes/services.ai-operators'
 
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OperatorsRoute = OperatorsRouteImport.update({
+  id: '/operators',
+  path: '/operators',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForPortfoliosRoute = ForPortfoliosRouteImport.update({
+  id: '/for-portfolios',
+  path: '/for-portfolios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForCompaniesRoute = ForCompaniesRouteImport.update({
+  id: '/for-companies',
+  path: '/for-companies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesInterimRoute = ServicesInterimRouteImport.update({
+  id: '/interim',
+  path: '/interim',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesFractionalCfoRoute = ServicesFractionalCfoRouteImport.update({
+  id: '/fractional-cfo',
+  path: '/fractional-cfo',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesExecutiveBenchRoute = ServicesExecutiveBenchRouteImport.update({
+  id: '/executive-bench',
+  path: '/executive-bench',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesAiOperatorsRoute = ServicesAiOperatorsRouteImport.update({
+  id: '/ai-operators',
+  path: '/ai-operators',
+  getParentRoute: () => ServicesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/for-companies': typeof ForCompaniesRoute
+  '/for-portfolios': typeof ForPortfoliosRoute
+  '/insights': typeof InsightsRoute
+  '/operators': typeof OperatorsRoute
+  '/partners': typeof PartnersRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/services/ai-operators': typeof ServicesAiOperatorsRoute
+  '/services/executive-bench': typeof ServicesExecutiveBenchRoute
+  '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
+  '/services/interim': typeof ServicesInterimRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/for-companies': typeof ForCompaniesRoute
+  '/for-portfolios': typeof ForPortfoliosRoute
+  '/insights': typeof InsightsRoute
+  '/operators': typeof OperatorsRoute
+  '/partners': typeof PartnersRoute
+  '/services/ai-operators': typeof ServicesAiOperatorsRoute
+  '/services/executive-bench': typeof ServicesExecutiveBenchRoute
+  '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
+  '/services/interim': typeof ServicesInterimRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/for-companies': typeof ForCompaniesRoute
+  '/for-portfolios': typeof ForPortfoliosRoute
+  '/insights': typeof InsightsRoute
+  '/operators': typeof OperatorsRoute
+  '/partners': typeof PartnersRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/services/ai-operators': typeof ServicesAiOperatorsRoute
+  '/services/executive-bench': typeof ServicesExecutiveBenchRoute
+  '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
+  '/services/interim': typeof ServicesInterimRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/for-companies'
+    | '/for-portfolios'
+    | '/insights'
+    | '/operators'
+    | '/partners'
+    | '/services'
+    | '/services/ai-operators'
+    | '/services/executive-bench'
+    | '/services/fractional-cfo'
+    | '/services/interim'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/for-companies'
+    | '/for-portfolios'
+    | '/insights'
+    | '/operators'
+    | '/partners'
+    | '/services/ai-operators'
+    | '/services/executive-bench'
+    | '/services/fractional-cfo'
+    | '/services/interim'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/for-companies'
+    | '/for-portfolios'
+    | '/insights'
+    | '/operators'
+    | '/partners'
+    | '/services'
+    | '/services/ai-operators'
+    | '/services/executive-bench'
+    | '/services/fractional-cfo'
+    | '/services/interim'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  ForCompaniesRoute: typeof ForCompaniesRoute
+  ForPortfoliosRoute: typeof ForPortfoliosRoute
+  InsightsRoute: typeof InsightsRoute
+  OperatorsRoute: typeof OperatorsRoute
+  PartnersRoute: typeof PartnersRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/operators': {
+      id: '/operators'
+      path: '/operators'
+      fullPath: '/operators'
+      preLoaderRoute: typeof OperatorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-portfolios': {
+      id: '/for-portfolios'
+      path: '/for-portfolios'
+      fullPath: '/for-portfolios'
+      preLoaderRoute: typeof ForPortfoliosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-companies': {
+      id: '/for-companies'
+      path: '/for-companies'
+      fullPath: '/for-companies'
+      preLoaderRoute: typeof ForCompaniesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +270,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/interim': {
+      id: '/services/interim'
+      path: '/interim'
+      fullPath: '/services/interim'
+      preLoaderRoute: typeof ServicesInterimRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/fractional-cfo': {
+      id: '/services/fractional-cfo'
+      path: '/fractional-cfo'
+      fullPath: '/services/fractional-cfo'
+      preLoaderRoute: typeof ServicesFractionalCfoRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/executive-bench': {
+      id: '/services/executive-bench'
+      path: '/executive-bench'
+      fullPath: '/services/executive-bench'
+      preLoaderRoute: typeof ServicesExecutiveBenchRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/ai-operators': {
+      id: '/services/ai-operators'
+      path: '/ai-operators'
+      fullPath: '/services/ai-operators'
+      preLoaderRoute: typeof ServicesAiOperatorsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
 
+interface ServicesRouteChildren {
+  ServicesAiOperatorsRoute: typeof ServicesAiOperatorsRoute
+  ServicesExecutiveBenchRoute: typeof ServicesExecutiveBenchRoute
+  ServicesFractionalCfoRoute: typeof ServicesFractionalCfoRoute
+  ServicesInterimRoute: typeof ServicesInterimRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesAiOperatorsRoute: ServicesAiOperatorsRoute,
+  ServicesExecutiveBenchRoute: ServicesExecutiveBenchRoute,
+  ServicesFractionalCfoRoute: ServicesFractionalCfoRoute,
+  ServicesInterimRoute: ServicesInterimRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  ForCompaniesRoute: ForCompaniesRoute,
+  ForPortfoliosRoute: ForPortfoliosRoute,
+  InsightsRoute: InsightsRoute,
+  OperatorsRoute: OperatorsRoute,
+  PartnersRoute: PartnersRoute,
+  ServicesRoute: ServicesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
