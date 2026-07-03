@@ -1,12 +1,14 @@
 const lines = [
+  "Hire executive firepower, not headcount",
   "Faster than executive search",
   "More accountable than consulting",
   "More senior than freelancers",
-  "Build now. Hire later.",
+  "Results, not recommendations",
+  "Pay for leadership, not payroll",
+  "Executive judgment, on demand",
+  "The work cannot wait for the hire",
   "Operator-led. AI-powered.",
-  "Pay for leadership, not payroll.",
-  "Executive judgment, on demand.",
-  "The work cannot wait for the hire.",
+  "Build now. Hire later.",
 ];
 
 export function Marquee() {
