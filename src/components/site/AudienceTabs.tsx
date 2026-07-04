@@ -15,15 +15,15 @@ type Pillar = {
 const companiesPillars: Pillar[] = [
   {
     eyebrow: "Fractional",
-    title: "A C-suite operator, running the function.",
+    title: "CFO capacity for the moment that matters.",
     bullets: [
-      "CFO, CCO, CTO, CMO, or COO capacity on an ongoing cadence",
-      "Owns the function, the team, and the board narrative",
-      "Board and investor reporting, GTM cadence, or product roadmap",
-      "Scoped before you commit to a full-time hire",
+      "Capital raise, lender readiness, and diligence prep",
+      "Board and investor reporting cadence",
+      "13-week cash and forecasting rebuild",
+      "Finance-function scoping before a full-time hire",
     ],
     href: "/services/fractional-cfo",
-    panelTitle: "Fractional C-suite",
+    panelTitle: "Fractional CFO",
     panelRows: [
       { k: "Onboarded", v: "< 10 days" },
       { k: "Cadence", v: "Weekly + on-call" },
@@ -34,13 +34,13 @@ const companiesPillars: Pillar[] = [
     eyebrow: "Interim",
     title: "Own the seat while the search runs.",
     bullets: [
-      "Full ownership of a C-level seat during transition",
+      "Full ownership of a function during transition",
       "Preserves the permanent search",
-      "Clarifies what the full-time hire should actually own",
+      "Clarifies what the full-time hire should own",
       "Stabilizes the team and the board narrative",
     ],
     href: "/services/interim",
-    panelTitle: "Interim CFO / CCO / CTO / CMO / COO",
+    panelTitle: "Interim CFO / COO",
     panelRows: [
       { k: "Coverage", v: "Full seat" },
       { k: "Term", v: "3–9 months" },
@@ -52,8 +52,8 @@ const companiesPillars: Pillar[] = [
     title: "Ship one critical initiative with a clear endpoint.",
     bullets: [
       "GTM redesign, pricing reset, org redesign",
-      "Capital raise, M&A integration, or transaction prep",
-      "Product, platform, or ERP rebuild",
+      "M&A integration or transaction prep",
+      "ERP or reporting rebuild",
       "One senior operator, one outcome, one deadline",
     ],
     href: "/services/ai-operators",
@@ -71,7 +71,7 @@ const portfoliosPillars: Pillar[] = [
     eyebrow: "Bench",
     title: "An executive bench across the portfolio.",
     bullets: [
-      "Priority access to vetted CFO, CCO, CTO, CMO, and COO operators",
+      "Priority access to vetted CFO, COO, and GTM operators",
       "Emergency coverage path for interim vacancies",
       "Quarterly executive capacity planning",
       "Preferred commercial terms on engagements",
@@ -89,7 +89,7 @@ const portfoliosPillars: Pillar[] = [
     title: "Executive Capacity Audit for the portfolio.",
     bullets: [
       "Portfolio-wide leadership risk map",
-      "CFO / CCO / CTO / CMO / COO coverage assessment",
+      "CFO / COO / GTM coverage assessment",
       "Upcoming capital and event triggers",
       "Recommended bench structure per company",
     ],

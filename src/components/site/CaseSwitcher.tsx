@@ -4,33 +4,21 @@ import { Eyebrow } from "./primitives";
 const cases = [
   {
     id: "raise",
-    tab: "CFO — capital raise",
+    tab: "Capital raise",
     metric: "Series B closed in 14 weeks",
     body: "Fractional CFO stepped in to rebuild reporting, run lender-grade forecasting, and own investor diligence — from first meeting to signed term sheet.",
   },
   {
     id: "gtm",
-    tab: "CCO — GTM reset",
+    tab: "GTM reset",
     metric: "Pipeline 3.2× in one quarter",
-    body: "Fractional CCO diagnosed a broken founder-led motion, reset pricing and ICP, and installed a weekly RevOps cadence before hiring a permanent commercial leader.",
-  },
-  {
-    id: "cmo",
-    tab: "CMO — repositioning",
-    metric: "CAC down 38% in two quarters",
-    body: "Interim CMO rebuilt the positioning, killed the channels that weren't converting, and stood up a lifecycle motion the in-house team now runs on its own.",
-  },
-  {
-    id: "cto",
-    tab: "CTO — platform reset",
-    metric: "Roadmap unblocked in 8 weeks",
-    body: "Interim CTO owned engineering during a founder transition, cleared architectural debt, stabilized delivery, and defined the profile for the permanent hire.",
+    body: "Sprint engagement diagnosed a broken founder-led motion, reset pricing and ICP, and installed a weekly RevOps cadence before hiring a permanent CRO.",
   },
   {
     id: "interim",
-    tab: "Interim coverage",
+    tab: "CFO transition",
     metric: "Zero board slippage during a 6-month search",
-    body: "Interim executive owned the seat while the full-time search ran, stabilized the team, and helped define what the permanent hire should actually own.",
+    body: "Interim CFO owned the seat while the full-time search ran, stabilized the finance team, and helped define what the permanent hire should own.",
   },
 ];
 

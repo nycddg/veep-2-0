@@ -3,19 +3,19 @@ import { Eyebrow } from "./primitives";
 const groups = [
   {
     title: "Growth",
-    triggers: ["Raising capital", "Revenue plateau", "GTM redesign", "New geography"],
+    triggers: ["Raising capital", "Hiring executives", "Revenue plateau", "GTM redesign"],
   },
   {
     title: "Operational",
-    triggers: ["ERP or systems rebuild", "Pricing redesign", "Org redesign", "Margin reset"],
+    triggers: ["COO or CFO need", "ERP implementation", "Pricing redesign", "Org redesign"],
   },
   {
     title: "Leadership",
-    triggers: ["C-suite departure", "Founder overwhelmed", "PE transition", "New CEO"],
+    triggers: ["Executive departure", "Founder overwhelmed", "PE transition", "New CEO"],
   },
   {
     title: "Strategic",
-    triggers: ["M&A activity", "New product launch", "Turnaround", "Transaction prep"],
+    triggers: ["M&A activity", "New product launch", "New geography", "Turnaround"],
   },
 ];
 
@@ -28,9 +28,8 @@ export function TriggerBento() {
           Built for the moments that <em className="italic text-forest">create urgency.</em>
         </h2>
         <p className="mt-4 text-stone">
-          Don't ask "do we need a CFO?" Ask: are we raising capital, replacing an
-          executive, resetting GTM, or preparing for diligence? Veep is built for
-          those business moments — across every C-suite seat.
+          Companies come to Veep when the work is urgent, a full-time hire is too
+          slow, or consulting advice is not enough.
         </p>
       </div>
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
