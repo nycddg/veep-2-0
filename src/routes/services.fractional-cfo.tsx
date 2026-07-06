@@ -36,10 +36,10 @@ function Page() {
   return (
     <>
       <PageHero
-        eyebrow="Fractional C-Suite"
+        eyebrow="Fractional C-suite"
         title="Any C-suite role,"
         italic="on the day you need it."
-        sub="CFO, COO, CTO, CRO, CMO, or CPO — a senior operator steps into your business, owns the outcome, and leaves cleanly. Onboarded in under 10 days, with a 30-day fit guarantee."
+        sub="CFO, COO, CTO, CRO, CMO, or CPO — a vetted senior operator steps into your business, owns the outcome, and leaves cleanly. Onboarded in under 10 days, with a 30-day fit guarantee."
       />
 
       <Section>
@@ -47,7 +47,7 @@ function Page() {
           <div>
             <Eyebrow>When teams call</Eyebrow>
             <h2 className="mt-4 font-serif text-3xl md:text-4xl text-cream">Triggers we see every week.</h2>
-            <p className="mt-4 text-stone">Any one of these is enough to talk — across any C-suite function.</p>
+            <p className="mt-4 text-stone">Any one of these is enough to start a conversation — across any C-suite function.</p>
           </div>
           <CheckList items={triggers} />
         </div>
