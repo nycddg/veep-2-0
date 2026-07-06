@@ -56,7 +56,7 @@ function Page() {
         <div className="max-w-2xl">
           <Eyebrow>Deep dives</Eyebrow>
           <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">
-            Wedges we lead with.
+            Where we lead.
           </h2>
         </div>
         <div className="mt-10 grid md:grid-cols-2 gap-4">
