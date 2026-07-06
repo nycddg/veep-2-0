@@ -91,12 +91,14 @@ function Page() {
               A sample of the bench
             </div>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
-              Twelve of{" "}
-              <span className="italic text-stone">twenty-six.</span>
+              Fifteen operators.{" "}
+              <span className="italic text-stone">And more.</span>
             </h2>
             <p className="mt-6 text-stone text-lg leading-relaxed">
-              Full profiles, references, and availability are shared on the discovery call —
-              once we know which outcome needs an owner.
+              Our network spans 150+ senior operators across finance, ops, revenue,
+              product, tech, and people. The fifteen below are a slice of the executives
+              we actively spotlight — full profiles, references, and availability are
+              shared on the discovery call, once we know which outcome needs an owner.
             </p>
           </div>
           <div className="space-y-14">
