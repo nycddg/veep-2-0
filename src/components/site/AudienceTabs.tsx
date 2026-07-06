@@ -29,7 +29,7 @@ const companiesPillars: Pillar[] = [
       "Function scoping before a full-time hire",
     ],
     href: "/services/fractional-cfo",
-    panelTitle: "Fractional C-Suite",
+    panelTitle: "Fractional C-suite",
     panelRows: [
       { k: "Onboarded", v: "< 10 days" },
       { k: "Cadence", v: "Weekly + on-call" },
