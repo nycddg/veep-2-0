@@ -130,23 +130,15 @@
     letter-spacing: -0.005em;
   }
 
-  /* All display headlines render in the display sans, tight tracking.
-     Old .font-serif usage inherits this automatically. */
-  h1, h2, h3, .font-serif {
+  /* Editorial serif for h1/h2/h3; italics render as italic serif (never de-styled). */
+  h1, h2, h3, .font-serif, .font-display {
     font-family: var(--font-serif);
-    letter-spacing: -0.025em;
-    font-weight: 500;
+    letter-spacing: -0.02em;
+    font-weight: 400;
   }
 
-  h1 { letter-spacing: -0.035em; }
+  h1 { letter-spacing: -0.025em; }
 
-  /* Remove decorative italics site-wide — Attio never italicizes for emphasis.
-     Emphasis comes from color contrast (mono-label + grey continuation). */
-  em, i, .italic {
-    font-style: normal;
-    color: var(--color-stone);
-  }
-}
 
 /* Monospace label utility for section indices and category tags */
 @utility mono-label {
