@@ -156,9 +156,9 @@ export function AudienceTabs() {
             One platform. Two ways to buy.
           </h2>
           <p className="mt-6 text-stone max-w-lg">
-            Individual companies buy engagements against a specific business
-            moment. Investors and holdcos retain an executive bench across
-            their portfolio.
+            Companies buy engagements against a specific business moment.
+            Investors and holdcos retain an executive bench across their
+            portfolio.
           </p>
         </div>
 
