@@ -40,13 +40,13 @@ export function SiteHeader() {
           <Link
             to="/contact"
             search={{ intent: "audit" }}
-            className="rounded-md border border-white/15 px-3.5 py-1.5 text-sm text-cream hover:bg-white/5 transition"
+            className="rounded-full border border-white/15 px-3.5 py-1.5 text-sm text-cream hover:bg-white/5 transition"
           >
             Talk to us
           </Link>
           <Link
             to="/contact"
-            className="rounded-md bg-cream px-3.5 py-1.5 text-sm font-medium text-cream hover:opacity-90 transition"
+            className="rounded-full bg-cream px-3.5 py-1.5 text-sm font-medium text-ink hover:opacity-90 transition"
           >
             Book a call
           </Link>
