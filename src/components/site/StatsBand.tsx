@@ -22,11 +22,11 @@ export function StatsBand() {
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-6">
               <h2 className="text-4xl md:text-5xl leading-[1.05] text-cream tracking-tight">
-                The system of action for senior operators.
+                $1B+ raised. $3B+ revenue created. $2B+ costs saved.
               </h2>
               <p className="mt-6 text-stone max-w-lg">
                 Veep operators lead through growth, transformation, fundraising, and
-                operational change. They're not learning on your business.
+                operational change. They're not learning on your business — they've already done the work.
               </p>
               <div className="mt-10 grid grid-cols-2 gap-x-10 gap-y-8">
                 {stats.map((s) => (
