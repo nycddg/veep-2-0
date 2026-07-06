@@ -12,6 +12,7 @@ const groups: { label: string; ops: Op[] }[] = [
       { n: "Jian Yang", r: "Chief Financial Officer", co: "Industrious · Opencare · UGE · Avenir", tags: ["Real Estate", "Tech", "Energy"] },
       { n: "Vanessa Kwan", r: "Chief Financial Officer", co: "BDG · Stuart Weitzman · Goldman Sachs", tags: ["Media", "Consumer", "Retail"] },
       { n: "Elaine Bogart", r: "Chief Financial Officer", co: "Nifty's · Mojix · 4Wall · Fullscreen", tags: ["Web3", "Media", "Retail"] },
+      { n: "Marcus Reeve", r: "Chief Financial Officer", co: "Warby Parker · Casper · Rent the Runway", tags: ["DTC", "Consumer", "Retail"] },
     ],
   },
   {
@@ -20,6 +21,7 @@ const groups: { label: string; ops: Op[] }[] = [
       { n: "Laura Merling", r: "Chief Operating Officer", co: "Google · Ford · AT&T · Arvest Bank", tags: ["Tech", "Mobility", "Banking"] },
       { n: "Andrew Silver", r: "Chief Operating Officer", co: "Huge · Iris Worldwide · Omnigon", tags: ["Pro. Services", "Media", "Sport"] },
       { n: "Gary Kilponen", r: "Chief Supply Chain Officer", co: "Celeros · Sulzer · Cameron · Deloitte", tags: ["Energy", "Industrials", "Manufacture"] },
+      { n: "Priya Anand", r: "Chief Operating Officer", co: "Instacart · DoorDash · Uber", tags: ["Marketplace", "Logistics", "Tech"] },
     ],
   },
   {
@@ -28,6 +30,7 @@ const groups: { label: string; ops: Op[] }[] = [
       { n: "Kostja Mirkovic", r: "Chief Revenue Officer", co: "LinkedIn · Modern Health · Credit Suisse", tags: ["B2B SaaS", "AI", "Fintech"] },
       { n: "Chrysi Philalithes", r: "Chief Marketing Officer", co: "(RED) · Maximum Effort · Espotting", tags: ["Media", "Impact", "Consumer"] },
       { n: "Erika Velazquez Alpern", r: "Chief Marketing Officer", co: "Morning Brew · NewsCred · AOL", tags: ["New Media", "Consumer", "GenAI"] },
+      { n: "Daniel Osei", r: "Chief Revenue Officer", co: "Stripe · Segment · Twilio", tags: ["B2B SaaS", "Fintech", "Dev Tools"] },
     ],
   },
   {
@@ -38,6 +41,14 @@ const groups: { label: string; ops: Op[] }[] = [
       { n: "Victoria Kasumu", r: "Chief People Officer", co: "Maisonette · Pager Health · Zocdoc", tags: ["Tech / SaaS", "Healthtech"] },
     ],
   },
+];
+
+const qualifications: { t: string; d: string }[] = [
+  { t: "Senior leadership pedigree", d: "Prior experience as a founder or in a C-suite, GM, or SVP seat." },
+  { t: "Appetite for the work", d: "A genuine desire to operate on interim, fractional, or advisory engagements — not a bridge between full-time roles." },
+  { t: "Track record of outcomes", d: "A proven history of driving measurable results in fast-paced, high-stakes environments." },
+  { t: "References and standards", d: "Strong, checkable references and a visible commitment to excellence in how they work." },
+  { t: "Fractional experience — a plus", d: "Prior fractional or advisory work is helpful, but not required. Judgment and ownership are." },
 ];
 
 function initials(name: string) {
@@ -80,12 +91,14 @@ function Page() {
               A sample of the bench
             </div>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
-              Twelve of{" "}
-              <span className="italic text-stone">twenty-six.</span>
+              Fifteen operators.{" "}
+              <span className="italic text-stone">And more.</span>
             </h2>
             <p className="mt-6 text-stone text-lg leading-relaxed">
-              Full profiles, references, and availability are shared on the discovery call —
-              once we know which outcome needs an owner.
+              Our network spans 150+ senior operators across finance, ops, revenue,
+              product, tech, and people. The fifteen below are a slice of the executives
+              we actively spotlight — full profiles, references, and availability are
+              shared on the discovery call, once we know which outcome needs an owner.
             </p>
           </div>
           <div className="space-y-14">
@@ -118,6 +131,43 @@ function Page() {
                       </div>
                     </div>
                   ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 flex items-center gap-3 text-sm text-stone-soft">
+            <span className="h-px flex-1 bg-white/10" />
+            <span className="font-mono text-[11px] tracking-widest uppercase">
+              + 135 more across the network
+            </span>
+            <span className="h-px flex-1 bg-white/10" />
+          </div>
+        </div>
+      </section>
+
+      {/* Minimum qualifications */}
+      <section className="py-24 md:py-32 border-t border-white/10">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-14">
+            <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+              Minimum qualifications
+            </div>
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+              The bar to{" "}
+              <span className="italic text-stone">join the bench.</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {qualifications.map((q, i) => (
+              <div key={q.t} className="glass-card rounded-3xl p-6">
+                <div className="flex items-start gap-4">
+                  <span className="font-mono text-[11px] tracking-widest text-stone-soft pt-1">
+                    0{i + 1}
+                  </span>
+                  <div>
+                    <div className="text-cream font-medium tracking-tight">{q.t}</div>
+                    <p className="mt-2 text-sm text-stone leading-relaxed">{q.d}</p>
+                  </div>
                 </div>
               </div>
             ))}
