@@ -3,14 +3,28 @@ import { PageHero } from "@/components/site/PageHero";
 import { Section, CheckList, Eyebrow } from "@/components/site/primitives";
 import { FooterCTA } from "@/components/site/FooterCTA";
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Fractional CFO and C-Suite Services",
+  provider: { "@type": "Organization", name: "Veep" },
+  areaServed: "US",
+  description:
+    "Fractional CFO, COO, CTO, CRO, CMO, and CPO capacity for companies at capital, growth, and operating inflection points. Operator in the seat in under 10 days.",
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", lowPrice: "12000", highPrice: "40000", priceSpecification: "per month" },
+};
+
 export const Route = createFileRoute("/services/fractional-cfo")({
   head: () => ({
     meta: [
-      { title: "Fractional C-Suite — Veep" },
-      { name: "description", content: "Fractional C-Suite capacity — CFO, COO, CTO, CRO, CMO, or CPO — for companies at capital, growth, and operating inflection points." },
-      { property: "og:title", content: "Fractional C-Suite — Veep" },
+      { title: "Fractional CFO & C-Suite Services in Under 10 Days | Veep" },
+      { name: "description", content: "Fractional CFO, COO, CTO, CRO, CMO, or CPO capacity — $12k–$40k/mo. In the seat in under 10 days. 30-day fit guarantee." },
+      { property: "og:title", content: "Fractional CFO & C-Suite | Veep" },
       { property: "og:description", content: "The senior executive you need now — any C-suite role — without the cost of a full-time hire." },
+      { property: "og:url", content: "/services/fractional-cfo" },
     ],
+    links: [{ rel: "canonical", href: "/services/fractional-cfo" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(serviceSchema) }],
   }),
   component: Page,
 });

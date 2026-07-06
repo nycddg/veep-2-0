@@ -181,7 +181,6 @@ function Page() {
         headline="Talk to us before you spend it."
         sub="30-minute discovery call. We'll tell you exactly which model fits — or that Veep isn't the right answer."
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     </>
   );
 }
