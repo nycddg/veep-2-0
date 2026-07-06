@@ -14,7 +14,7 @@ const cols = [
     title: "Services",
     links: [
       { to: "/services", label: "Overview" },
-      { to: "/services/fractional-cfo", label: "Fractional C-Suite" },
+      { to: "/services/fractional-cfo", label: "Fractional C-suite" },
       { to: "/services/interim", label: "Interim coverage" },
       { to: "/services/executive-bench", label: "Executive Bench" },
       { to: "/services/ai-operators", label: "AI-powered operators" },
@@ -41,7 +41,7 @@ export function SiteFooter() {
               <img src={wordmarkWhite.url} alt="Veep" className="h-6 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-stone max-w-xs">
-              Senior leadership, without the full-time commitment. Operator-led. AI-powered.
+              Senior operators. Owned outcomes. Operator-led. AI-powered.
             </p>
           </div>
           {cols.map((c) => (

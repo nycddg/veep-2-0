@@ -22,7 +22,7 @@ function Page() {
         eyebrow="Executive Bench"
         title="Executive capacity"
         italic="as infrastructure."
-        sub="An annual partnership that gives your portfolio priority access to Veep operators — plus quarterly capacity planning and emergency coverage."
+        sub="An annual partnership that gives your portfolio priority access to vetted Veep operators — plus quarterly capacity planning and emergency coverage when you need it."
       />
 
       <Section>

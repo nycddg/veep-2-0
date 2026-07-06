@@ -29,7 +29,7 @@ const companiesPillars: Pillar[] = [
       "Function scoping before a full-time hire",
     ],
     href: "/services/fractional-cfo",
-    panelTitle: "Fractional C-Suite",
+    panelTitle: "Fractional C-suite",
     panelRows: [
       { k: "Onboarded", v: "< 10 days" },
       { k: "Cadence", v: "Weekly + on-call" },
@@ -156,9 +156,9 @@ export function AudienceTabs() {
             One platform. Two ways to buy.
           </h2>
           <p className="mt-6 text-stone max-w-lg">
-            Individual companies buy engagements against a specific business
-            moment. Investors and holdcos retain an executive bench across
-            their portfolio.
+            Companies buy engagements against a specific business moment.
+            Investors and holdcos retain an executive bench across their
+            portfolio.
           </p>
         </div>
 

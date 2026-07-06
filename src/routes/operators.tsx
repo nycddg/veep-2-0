@@ -16,7 +16,7 @@ export const Route = createFileRoute("/operators")({
 });
 
 const operators = [
-  { n: "Maya R.", r: "Fractional C-Suite · CFO", tags: ["Series B/C", "Lender readiness", "Post-close"] },
+  { n: "Maya R.", r: "Fractional C-suite · CFO", tags: ["Series B/C", "Lender readiness", "Post-close"] },
   { n: "Jordan K.", r: "Interim COO", tags: ["Multi-site", "Ops turnaround", "Integration"] },
   { n: "Priya S.", r: "Fractional CRO", tags: ["GTM redesign", "Enterprise motion", "Pricing"] },
   { n: "Andre M.", r: "CFO / Sponsor bench", tags: ["Independent sponsor", "M&A", "Family office"] },
@@ -31,7 +31,7 @@ function Page() {
         eyebrow="The network"
         title="Operators who have"
         italic="already done the work."
-        sub="Not learning on your business. Veep operators have led CFO, COO, CRO, and CTO functions through growth, fundraising, transformation, and transitions."
+        sub="Not learning on your business. Veep operators have led CFO, COO, CRO, and CTO functions through growth, fundraising, transformation, and transitions. They're matched to the work ahead, not just the title."
       />
 
       <Section>
