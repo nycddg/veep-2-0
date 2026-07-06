@@ -74,7 +74,95 @@ function Page() {
         </div>
       </Section>
 
+      <Section>
+        <div className="max-w-2xl">
+          <Eyebrow>Functional coverage</Eyebrow>
+          <h2 className="mt-4 text-4xl md:text-5xl leading-tight text-cream tracking-tight">
+            Every function. Real operators.
+          </h2>
+          <p className="mt-6 text-stone">
+            Veeps step into the seat across the functions that matter most —
+            with the pattern-matching of leaders who have already done the work.
+          </p>
+        </div>
+        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {functions.map((f) => (
+            <div key={f.t} className="rounded-3xl border border-border bg-card p-6 flex flex-col">
+              <Eyebrow>{f.t}</Eyebrow>
+              <p className="mt-4 text-sm text-cream/90 leading-relaxed">{f.d}</p>
+              <ul className="mt-5 space-y-2 text-sm text-stone leading-relaxed">
+                {f.items.map((i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-accent-gold mt-1.5 h-1 w-1 rounded-full bg-accent-gold shrink-0" />
+                    <span>{i}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       <FooterCTA />
     </>
   );
 }
+
+const functions = [
+  {
+    t: "Finance",
+    d: "Strengthen the foundation and unlock growth with strategic finance leadership.",
+    items: [
+      "Implement systems and processes",
+      "Lead annual planning",
+      "Build FP&A discipline",
+      "Secure funding and manage IR",
+      "Manage compliance and risk",
+    ],
+  },
+  {
+    t: "People",
+    d: "Build a thriving, performance-driven culture with experienced people leaders.",
+    items: [
+      "Develop talent systems that scale",
+      "Optimize organizational structure",
+      "Design company policies",
+      "Shape internal comms strategies",
+      "Launch performance management",
+    ],
+  },
+  {
+    t: "Marketing & Revenue",
+    d: "Accelerate growth with operators who build and execute modern GTM.",
+    items: [
+      "Craft and lead GTM plans",
+      "Drive acquisition and retention",
+      "Build revenue operations",
+      "Launch into new markets",
+      "Support product rollouts that land",
+    ],
+  },
+  {
+    t: "Operations",
+    d: "Scale smart and stay agile with operators who streamline systems.",
+    items: [
+      "Implement business OS",
+      "Standardize SOPs and workflows",
+      "Lead infrastructure buildouts",
+      "Launch into new geographies",
+      "Steer turnarounds and resets",
+    ],
+  },
+  {
+    t: "Product",
+    d: "Bring the product vision to life with leaders who ship, iterate, and scale — fast.",
+    items: [
+      "Launch and scale new products",
+      "Deepen user insights",
+      "Expand vertical use cases",
+      "Optimize shared workflows",
+      "Increase adoption and stickiness",
+    ],
+  },
+];
+
