@@ -9,13 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as OperatorsRouteImport } from './routes/operators'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as ForPortfoliosRouteImport } from './routes/for-portfolios'
 import { Route as ForCompaniesRouteImport } from './routes/for-companies'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CompareRouteImport } from './routes/compare'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
@@ -23,10 +27,22 @@ import { Route as ServicesInterimRouteImport } from './routes/services.interim'
 import { Route as ServicesFractionalCfoRouteImport } from './routes/services.fractional-cfo'
 import { Route as ServicesExecutiveBenchRouteImport } from './routes/services.executive-bench'
 import { Route as ServicesAiOperatorsRouteImport } from './routes/services.ai-operators'
+import { Route as CompareVsExecutiveSearchRouteImport } from './routes/compare.vs-executive-search'
+import { Route as CompareVsConsultantsRouteImport } from './routes/compare.vs-consultants'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PartnersRoute = PartnersRouteImport.update({
@@ -54,9 +70,19 @@ const ForCompaniesRoute = ForCompaniesRouteImport.update({
   path: '/for-companies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompareRoute = CompareRouteImport.update({
+  id: '/compare',
+  path: '/compare',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -94,17 +120,34 @@ const ServicesAiOperatorsRoute = ServicesAiOperatorsRouteImport.update({
   path: '/ai-operators',
   getParentRoute: () => ServicesRoute,
 } as any)
+const CompareVsExecutiveSearchRoute =
+  CompareVsExecutiveSearchRouteImport.update({
+    id: '/vs-executive-search',
+    path: '/vs-executive-search',
+    getParentRoute: () => CompareRoute,
+  } as any)
+const CompareVsConsultantsRoute = CompareVsConsultantsRouteImport.update({
+  id: '/vs-consultants',
+  path: '/vs-consultants',
+  getParentRoute: () => CompareRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/compare': typeof CompareRouteWithChildren
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/for-companies': typeof ForCompaniesRoute
   '/for-portfolios': typeof ForPortfoliosRoute
   '/insights': typeof InsightsRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
+  '/pricing': typeof PricingRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/compare/vs-consultants': typeof CompareVsConsultantsRoute
+  '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
   '/services/executive-bench': typeof ServicesExecutiveBenchRoute
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
@@ -114,12 +157,18 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/compare': typeof CompareRouteWithChildren
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/for-companies': typeof ForCompaniesRoute
   '/for-portfolios': typeof ForPortfoliosRoute
   '/insights': typeof InsightsRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
+  '/pricing': typeof PricingRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/compare/vs-consultants': typeof CompareVsConsultantsRoute
+  '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
   '/services/executive-bench': typeof ServicesExecutiveBenchRoute
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
@@ -130,13 +179,19 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/compare': typeof CompareRouteWithChildren
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/for-companies': typeof ForCompaniesRoute
   '/for-portfolios': typeof ForPortfoliosRoute
   '/insights': typeof InsightsRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
+  '/pricing': typeof PricingRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/compare/vs-consultants': typeof CompareVsConsultantsRoute
+  '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
   '/services/executive-bench': typeof ServicesExecutiveBenchRoute
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
@@ -148,13 +203,19 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/compare'
     | '/contact'
+    | '/faq'
     | '/for-companies'
     | '/for-portfolios'
     | '/insights'
     | '/operators'
     | '/partners'
+    | '/pricing'
     | '/services'
+    | '/sitemap.xml'
+    | '/compare/vs-consultants'
+    | '/compare/vs-executive-search'
     | '/services/ai-operators'
     | '/services/executive-bench'
     | '/services/fractional-cfo'
@@ -164,12 +225,18 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/compare'
     | '/contact'
+    | '/faq'
     | '/for-companies'
     | '/for-portfolios'
     | '/insights'
     | '/operators'
     | '/partners'
+    | '/pricing'
+    | '/sitemap.xml'
+    | '/compare/vs-consultants'
+    | '/compare/vs-executive-search'
     | '/services/ai-operators'
     | '/services/executive-bench'
     | '/services/fractional-cfo'
@@ -179,13 +246,19 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/compare'
     | '/contact'
+    | '/faq'
     | '/for-companies'
     | '/for-portfolios'
     | '/insights'
     | '/operators'
     | '/partners'
+    | '/pricing'
     | '/services'
+    | '/sitemap.xml'
+    | '/compare/vs-consultants'
+    | '/compare/vs-executive-search'
     | '/services/ai-operators'
     | '/services/executive-bench'
     | '/services/fractional-cfo'
@@ -196,22 +269,40 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CompareRoute: typeof CompareRouteWithChildren
   ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
   ForCompaniesRoute: typeof ForCompaniesRoute
   ForPortfoliosRoute: typeof ForPortfoliosRoute
   InsightsRoute: typeof InsightsRoute
   OperatorsRoute: typeof OperatorsRoute
   PartnersRoute: typeof PartnersRoute
+  PricingRoute: typeof PricingRoute
   ServicesRoute: typeof ServicesRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/partners': {
@@ -249,11 +340,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForCompaniesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compare': {
+      id: '/compare'
+      path: '/compare'
+      fullPath: '/compare'
+      preLoaderRoute: typeof CompareRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -305,8 +410,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAiOperatorsRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/compare/vs-executive-search': {
+      id: '/compare/vs-executive-search'
+      path: '/vs-executive-search'
+      fullPath: '/compare/vs-executive-search'
+      preLoaderRoute: typeof CompareVsExecutiveSearchRouteImport
+      parentRoute: typeof CompareRoute
+    }
+    '/compare/vs-consultants': {
+      id: '/compare/vs-consultants'
+      path: '/vs-consultants'
+      fullPath: '/compare/vs-consultants'
+      preLoaderRoute: typeof CompareVsConsultantsRouteImport
+      parentRoute: typeof CompareRoute
+    }
   }
 }
+
+interface CompareRouteChildren {
+  CompareVsConsultantsRoute: typeof CompareVsConsultantsRoute
+  CompareVsExecutiveSearchRoute: typeof CompareVsExecutiveSearchRoute
+}
+
+const CompareRouteChildren: CompareRouteChildren = {
+  CompareVsConsultantsRoute: CompareVsConsultantsRoute,
+  CompareVsExecutiveSearchRoute: CompareVsExecutiveSearchRoute,
+}
+
+const CompareRouteWithChildren =
+  CompareRoute._addFileChildren(CompareRouteChildren)
 
 interface ServicesRouteChildren {
   ServicesAiOperatorsRoute: typeof ServicesAiOperatorsRoute
@@ -331,13 +463,17 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CompareRoute: CompareRouteWithChildren,
   ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
   ForCompaniesRoute: ForCompaniesRoute,
   ForPortfoliosRoute: ForPortfoliosRoute,
   InsightsRoute: InsightsRoute,
   OperatorsRoute: OperatorsRoute,
   PartnersRoute: PartnersRoute,
+  PricingRoute: PricingRoute,
   ServicesRoute: ServicesRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

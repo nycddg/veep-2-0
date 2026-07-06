@@ -14,6 +14,18 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
 
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Veep",
+  description:
+    "Veep places senior fractional and interim executives — CFO, COO, CRO, CTO — inside companies in under 10 days. Operator-led. 30-day fit guarantee.",
+  url: "/",
+  logo: "/favicon.ico",
+  email: "hello@veep.co",
+  slogan: "Fractional and interim executives who own the outcome.",
+};
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -76,19 +88,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Veep — Senior operators. Owned outcomes." },
+      { title: "Veep — Fractional & Interim Executives in Under 10 Days" },
       {
         name: "description",
         content:
-          "Veep gives companies immediate access to senior operators who own outcomes — without the cost, delay, or commitment of a full-time executive.",
+          "Veep places senior fractional and interim executives — CFO, COO, CRO, CTO — inside your company in under 10 days. Operator-led. 30-day fit guarantee.",
       },
       { name: "author", content: "Veep" },
-      { property: "og:title", content: "Veep — Senior operators. Owned outcomes." },
-      {
-        property: "og:description",
-        content:
-          "Fractional, interim, and portfolio executive capacity for companies at pivotal business moments.",
-      },
+      { property: "og:site_name", content: "Veep" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -102,6 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap",
       },
     ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(orgSchema) }],
   }),
   shellComponent: RootShell,
   component: RootComponent,

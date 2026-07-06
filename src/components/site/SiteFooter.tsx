@@ -3,11 +3,11 @@ import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 
 const cols = [
   {
-    title: "For Buyers",
+    title: "Solutions",
     links: [
       { to: "/for-companies", label: "For Companies" },
       { to: "/for-portfolios", label: "For Portfolios" },
-      { to: "/contact", label: "Book a discovery call" },
+      { to: "/pricing", label: "Pricing" },
     ],
   },
   {
@@ -21,12 +21,21 @@ const cols = [
     ],
   },
   {
+    title: "Resources",
+    links: [
+      { to: "/faq", label: "FAQ" },
+      { to: "/compare/vs-consultants", label: "Veep vs consultants" },
+      { to: "/compare/vs-executive-search", label: "Veep vs executive search" },
+      { to: "/insights", label: "Insights" },
+    ],
+  },
+  {
     title: "Company",
     links: [
       { to: "/about", label: "About" },
       { to: "/operators", label: "Operators" },
       { to: "/partners", label: "Partners" },
-      { to: "/insights", label: "Insights" },
+      { to: "/contact", label: "Contact" },
     ],
   },
 ] as const;
@@ -35,13 +44,13 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-white/8 bg-background text-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+          <div className="md:col-span-1">
             <Link to="/" className="flex items-center" aria-label="Veep home">
               <img src={wordmarkWhite.url} alt="Veep" className="h-6 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-stone max-w-xs">
-              Senior leadership, without the full-time commitment. Operator-led. AI-powered.
+              Senior fractional and interim executives — in place in under 10 days.
             </p>
           </div>
           {cols.map((c) => (
