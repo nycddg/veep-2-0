@@ -60,7 +60,7 @@ function Index() {
 
       <StatsBand />
 
-      <Section index={5} category="How Veep is different"><CompareTable /></Section>
+      <Section index={5} category="How Veep is different" tone="light"><CompareTable /></Section>
 
       <Section index={6} category="Pivotal moments" tone="muted"><TriggerBento /></Section>
 

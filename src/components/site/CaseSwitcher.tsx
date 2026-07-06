@@ -44,7 +44,7 @@ export function CaseSwitcher() {
               key={c.id}
               onClick={() => setActive(c.id)}
               className={`px-3.5 py-1.5 text-sm rounded-[3px] transition font-mono tracking-wide uppercase text-[11px] ${
-                active === c.id ? "bg-cream text-cream" : "text-stone hover:text-cream"
+                active === c.id ? "bg-cream text-ink" : "text-stone hover:text-cream"
               }`}
             >
               {c.tab}

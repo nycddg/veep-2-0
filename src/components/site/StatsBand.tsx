@@ -11,35 +11,35 @@ const stats = [
 
 export function StatsBand() {
   return (
-    <section className="bg-cream text-cream border-t border-b border-ink/10">
+    <section className="bg-background text-cream border-t border-b border-white/8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between border-t border-ink/10 pt-5">
-          <span className="font-mono text-[11px] tracking-widest text-cream/50">[04]</span>
-          <span className="font-mono text-[11px] tracking-widest text-cream/50">/ GROWTH + SECURITY</span>
+        <div className="flex items-center justify-between border-t border-white/8 pt-5">
+          <span className="font-mono text-[11px] tracking-widest text-stone-soft">[04]</span>
+          <span className="font-mono text-[11px] tracking-widest text-stone-soft">/ GROWTH + SECURITY</span>
         </div>
 
         <div className="py-20 md:py-28">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-6">
-              <h2 className="text-4xl md:text-5xl leading-[1.05] text-cream">
+              <h2 className="text-4xl md:text-5xl leading-[1.05] text-cream tracking-tight">
                 The system of action for senior operators.
               </h2>
-              <p className="mt-6 text-cream/60 max-w-lg">
+              <p className="mt-6 text-stone max-w-lg">
                 Veep operators lead through growth, transformation, fundraising, and
                 operational change. They're not learning on your business.
               </p>
               <div className="mt-10 grid grid-cols-2 gap-x-10 gap-y-8">
                 {stats.map((s) => (
-                  <div key={s.k} className="border-t border-ink/10 pt-4">
+                  <div key={s.k} className="border-t border-white/8 pt-4">
                     <div className="text-3xl md:text-4xl text-cream leading-none tracking-tight">{s.v}</div>
-                    <div className="mt-2 text-sm text-cream/55">{s.k}</div>
+                    <div className="mt-2 text-sm text-stone">{s.k}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="lg:col-span-6 relative min-h-[320px] flex items-center">
-              <Waveform variant="light" bars={110} peakCenter={0.58} peakWidth={0.14} className="w-full h-72" />
+              <Waveform bars={110} peakCenter={0.58} peakWidth={0.14} className="w-full h-72" />
             </div>
           </div>
         </div>
