@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 
 const cols = [
   {
