@@ -29,7 +29,7 @@ function Page() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-16">
           <div>
             <Eyebrow>What interim covers</Eyebrow>
-            <h2 className="mt-4 font-serif text-3xl md:text-4xl text-ink">Full ownership, not advice.</h2>
+            <h2 className="mt-4 font-serif text-3xl md:text-4xl text-cream">Full ownership, not advice.</h2>
             <p className="mt-4 text-stone">A Veep interim operator is accountable for the outcome for the term of the engagement.</p>
           </div>
           <CheckList items={[
@@ -46,7 +46,7 @@ function Page() {
       <Section tone="muted">
         <div className="max-w-3xl">
           <Eyebrow>Economics</Eyebrow>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-ink">$35k–$90k / month.</h2>
+          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">$35k–$90k / month.</h2>
           <p className="mt-4 text-stone">Priced to full-seat ownership. Term is typically 3–9 months with structured handoff milestones.</p>
         </div>
       </Section>

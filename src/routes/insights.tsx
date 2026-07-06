@@ -52,7 +52,7 @@ function Page() {
           {posts.map((p) => (
             <Link key={p.t} to="/insights" className="group rounded-3xl border border-border bg-card p-8 flex flex-col gap-6 hover:shadow-elegant transition">
               <Eyebrow>{p.tag}</Eyebrow>
-              <div className="font-serif text-2xl text-ink leading-tight">{p.t}</div>
+              <div className="font-serif text-2xl text-cream leading-tight">{p.t}</div>
               <p className="text-stone text-sm">{p.d}</p>
               <div className="mt-auto flex items-center justify-between text-sm text-forest">
                 <span>{p.read}</span>

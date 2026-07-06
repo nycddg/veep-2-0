@@ -30,7 +30,7 @@ function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12">
           <div className="max-w-3xl">
             <Eyebrow>Contact</Eyebrow>
-            <h1 className="mt-6 font-serif text-5xl md:text-7xl leading-[1.02] text-ink">
+            <h1 className="mt-6 font-serif text-5xl md:text-7xl leading-[1.02] text-cream">
               What critical initiative <em className="italic text-forest">doesn't have an owner?</em>
             </h1>
             <p className="mt-6 text-lg text-stone max-w-2xl">
@@ -52,7 +52,7 @@ function Page() {
                   key={t.id}
                   onClick={() => { setTab(t.id as typeof tab); setSubmitted(false); }}
                   className={`px-4 py-2 text-sm rounded-full transition ${
-                    tab === t.id ? "bg-ink text-cream" : "text-stone hover:text-ink"
+                    tab === t.id ? "bg-ink text-cream" : "text-stone hover:text-cream"
                   }`}
                 >
                   {t.label}
@@ -60,7 +60,7 @@ function Page() {
               ))}
             </div>
             <div>
-              <h2 className="font-serif text-3xl text-ink">
+              <h2 className="font-serif text-3xl text-cream">
                 {tab === "call" ? "30-minute discovery call" : "Executive Capacity Audit"}
               </h2>
               <p className="mt-3 text-stone">
@@ -82,7 +82,7 @@ function Page() {
                 <div className="mx-auto h-12 w-12 rounded-full bg-forest/15 grid place-items-center text-forest">
                   <Check strokeWidth={3} />
                 </div>
-                <h3 className="mt-6 font-serif text-2xl text-ink">Thanks — we'll be in touch.</h3>
+                <h3 className="mt-6 font-serif text-2xl text-cream">Thanks — we'll be in touch.</h3>
                 <p className="mt-2 text-stone text-sm">
                   A Veep partner will reach out within one business day.
                 </p>
@@ -130,7 +130,7 @@ function Page() {
 }
 
 const inputCls =
-  "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-ink placeholder-stone-soft focus:outline-none focus:ring-2 focus:ring-forest/40 focus:border-forest";
+  "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-cream placeholder-stone-soft focus:outline-none focus:ring-2 focus:ring-forest/40 focus:border-forest";
 
 function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
   return (

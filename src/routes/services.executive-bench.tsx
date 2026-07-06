@@ -29,7 +29,7 @@ function Page() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-16">
           <div>
             <Eyebrow>Included in the bench</Eyebrow>
-            <h2 className="mt-4 font-serif text-3xl md:text-4xl text-ink">The annual layer.</h2>
+            <h2 className="mt-4 font-serif text-3xl md:text-4xl text-cream">The annual layer.</h2>
             <p className="mt-4 text-stone">The retainer covers access, planning, and priority. Operator deployments are billed separately per SOW.</p>
           </div>
           <CheckList items={[
@@ -53,7 +53,7 @@ function Page() {
           ].map((x) => (
             <div key={x.t} className="rounded-3xl border border-border bg-card p-8">
               <Eyebrow>{x.t}</Eyebrow>
-              <div className="mt-4 font-serif text-3xl text-ink">{x.p}</div>
+              <div className="mt-4 font-serif text-3xl text-cream">{x.p}</div>
               <p className="mt-3 text-stone text-sm">{x.d}</p>
             </div>
           ))}

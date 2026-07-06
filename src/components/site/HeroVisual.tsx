@@ -1,57 +1,38 @@
-import { FloatingChip, MockPanel } from "./primitives";
+import { GradientPyramid } from "./illustrations";
+
+const cols = [
+  { k: "0.1", h: "Fractional", d: "C-suite capacity for the pivotal moment." },
+  { k: "0.2", h: "Interim", d: "Own the seat while the search runs." },
+  { k: "0.3", h: "Sprint", d: "Ship one outcome with a clear endpoint." },
+  { k: "0.4", h: "Bench", d: "Portfolio-wide executive capacity." },
+  { k: "0.5", h: "AI Ops", d: "Operators governing unlimited AI staff." },
+];
 
 export function HeroVisual() {
   return (
-    <div className="relative">
-      <MockPanel>
-        <div className="flex items-center justify-between">
-          <div>
-            <div className="text-xs uppercase tracking-widest text-stone">Engagement</div>
-            <div className="mt-1 font-serif text-2xl text-ink">Fractional C-Suite — Series B prep</div>
+    <div className="w-full">
+      <div className="text-center">
+        <div className="font-mono text-[11px] tracking-widest text-stone-soft">
+          / POWERED BY
+        </div>
+        <div className="mt-3 text-3xl md:text-4xl tracking-tight text-cream">
+          Operator Bench<sup className="font-mono text-[10px] text-stone-soft ml-1">™</sup>
+        </div>
+      </div>
+      <GradientPyramid className="w-full h-[300px] mt-6" />
+      <div className="grid grid-cols-5 gap-4 pt-6 border-t border-white/8">
+        {cols.map((c) => (
+          <div key={c.k}>
+            <div className="text-[12px] leading-snug">
+              <span className="text-cream">{c.h}</span>{" "}
+              <span className="text-stone">{c.d}</span>
+            </div>
+            <div className="mt-6 font-mono text-[11px] tracking-widest text-stone-soft">
+              {c.k}
+            </div>
           </div>
-          <span className="rounded-full bg-forest/10 text-forest text-xs px-3 py-1">Active · Day 18</span>
-        </div>
-
-        <div className="mt-6 grid grid-cols-3 gap-3">
-          {[
-            { k: "Owner", v: "Maya R." },
-            { k: "Cadence", v: "Weekly" },
-            { k: "Runway", v: "22 mo" },
-          ].map((s) => (
-            <div key={s.k} className="rounded-xl bg-secondary p-3">
-              <div className="text-[10px] uppercase tracking-widest text-stone">{s.k}</div>
-              <div className="mt-1 text-sm font-medium text-ink">{s.v}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-6 space-y-2">
-          {[
-            { t: "Lender diligence pack shipped", d: "Yesterday" },
-            { t: "Board reporting v2 approved", d: "3 days ago" },
-            { t: "13-week cash rebuilt with ops", d: "This week" },
-          ].map((r) => (
-            <div key={r.t} className="flex items-center justify-between rounded-xl border border-border px-4 py-3">
-              <div className="flex items-center gap-3">
-                <span className="h-2 w-2 rounded-full bg-forest" />
-                <span className="text-sm text-ink">{r.t}</span>
-              </div>
-              <span className="text-xs text-stone">{r.d}</span>
-            </div>
-          ))}
-        </div>
-      </MockPanel>
-
-      <FloatingChip
-        label="Onboarded"
-        value="7 days"
-        className="absolute -left-4 md:-left-10 top-8"
-      />
-      <FloatingChip
-        label="Fit guarantee"
-        value="30 days"
-        className="absolute -right-2 md:-right-8 bottom-10"
-      />
+        ))}
+      </div>
     </div>
   );
 }

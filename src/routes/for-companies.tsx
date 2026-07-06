@@ -71,7 +71,7 @@ function Page() {
           ].map((p) => (
             <div key={p.t} className="rounded-3xl border border-border bg-card p-8">
               <Eyebrow>{p.t}</Eyebrow>
-              <p className="mt-4 font-serif text-2xl text-ink">{p.d}</p>
+              <p className="mt-4 font-serif text-2xl text-cream">{p.d}</p>
               <div className="mt-6"><CheckList items={p.items} /></div>
             </div>
           ))}
@@ -85,14 +85,14 @@ function Page() {
       <Section>
         <div className="max-w-2xl">
           <Eyebrow>Common questions</Eyebrow>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-ink">
+          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">
             The objections we hear — and answer.
           </h2>
         </div>
         <div className="mt-10 grid md:grid-cols-2 gap-6">
           {objections.map((o) => (
             <div key={o.q} className="rounded-3xl border border-border bg-card p-6">
-              <div className="font-serif text-xl text-ink">{o.q}</div>
+              <div className="font-serif text-xl text-cream">{o.q}</div>
               <p className="mt-3 text-stone text-sm leading-relaxed">{o.a}</p>
             </div>
           ))}

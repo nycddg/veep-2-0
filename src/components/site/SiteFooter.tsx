@@ -32,13 +32,14 @@ const cols = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="border-t border-white/8 bg-background text-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div>
             <Link to="/" className="flex items-center gap-2">
-              <span className="inline-block h-6 w-6 rounded-full bg-forest" />
-              <span className="font-serif text-2xl text-ink">Veep</span>
+              <span className="inline-block h-2 w-2 rounded-full bg-accent-gold" />
+              <span className="text-[15px] font-medium tracking-tight text-cream">Veep</span>
+              <span className="font-mono text-[10px] tracking-widest text-stone-soft ml-1">™</span>
             </Link>
             <p className="mt-4 text-sm text-stone max-w-xs">
               Senior leadership, without the full-time commitment. Operator-led. AI-powered.
@@ -46,11 +47,13 @@ export function SiteFooter() {
           </div>
           {cols.map((c) => (
             <div key={c.title}>
-              <div className="text-xs uppercase tracking-widest text-stone-soft">{c.title}</div>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-stone-soft">
+                / {c.title}
+              </div>
               <ul className="mt-4 space-y-2">
                 {c.links.map((l) => (
                   <li key={l.to}>
-                    <Link to={l.to} className="text-sm text-ink hover:text-forest transition">
+                    <Link to={l.to} className="text-sm text-cream/85 hover:text-cream transition">
                       {l.label}
                     </Link>
                   </li>
@@ -59,12 +62,12 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="mt-14 pt-6 border-t border-border flex flex-col md:flex-row justify-between gap-4 text-xs text-stone">
-          <div>© {new Date().getFullYear()} Veep. All rights reserved.</div>
+        <div className="mt-14 pt-6 border-t border-white/8 flex flex-col md:flex-row justify-between gap-4 font-mono text-[11px] text-stone-soft tracking-widest">
+          <div>© {new Date().getFullYear()} VEEP · ALL RIGHTS RESERVED</div>
           <div className="flex gap-6">
-            <span>Privacy</span>
-            <span>Terms</span>
-            <span>hello@veep.co</span>
+            <span>PRIVACY</span>
+            <span>TERMS</span>
+            <span>HELLO@VEEP.CO</span>
           </div>
         </div>
       </div>

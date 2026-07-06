@@ -34,7 +34,7 @@ function Page() {
           ].map((s) => (
             <div key={s.n} className="rounded-3xl border border-border bg-card p-8">
               <div className="font-serif text-4xl text-forest">{s.n}</div>
-              <div className="mt-4 font-serif text-2xl text-ink">{s.t}</div>
+              <div className="mt-4 font-serif text-2xl text-cream">{s.t}</div>
               <p className="mt-3 text-stone text-sm leading-relaxed">{s.d}</p>
             </div>
           ))}
@@ -45,7 +45,7 @@ function Page() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-16">
           <div>
             <Eyebrow>What this unlocks</Eyebrow>
-            <h2 className="mt-4 font-serif text-3xl md:text-4xl text-ink">Leverage without dilution.</h2>
+            <h2 className="mt-4 font-serif text-3xl md:text-4xl text-cream">Leverage without dilution.</h2>
           </div>
           <CheckList items={[
             "More department-level output per operator",
