@@ -7,7 +7,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Veep" },
-      { name: "description", content: "Veep gives companies immediate access to senior operators who own outcomes — without the cost, delay, or commitment of a full-time executive." },
+      { name: "description", content: "Veep places vetted senior operators inside companies to own the outcome — without the cost, delay, or commitment of a full-time executive." },
       { property: "og:title", content: "About — Veep" },
       { property: "og:description", content: "Operator-led. AI-powered. Built for pivotal business moments." },
     ],
