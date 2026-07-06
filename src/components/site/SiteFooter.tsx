@@ -14,7 +14,7 @@ const cols = [
     title: "Services",
     links: [
       { to: "/services", label: "Overview" },
-      { to: "/services/fractional-cfo", label: "Fractional C-Suite" },
+      { to: "/services/fractional-cfo", label: "Fractional C-suite" },
       { to: "/services/interim", label: "Interim coverage" },
       { to: "/services/executive-bench", label: "Executive Bench" },
       { to: "/services/ai-operators", label: "AI-powered operators" },
