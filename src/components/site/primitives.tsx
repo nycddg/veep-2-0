@@ -104,14 +104,14 @@ export function DualCTA({
     <div className="flex flex-wrap gap-3">
       <Link
         to="/contact"
-        className={`rounded-md px-5 py-3 text-sm font-medium transition ${primary}`}
+        className={`rounded-full px-5 py-3 text-sm font-medium transition ${primary}`}
       >
         {primaryLabel}
       </Link>
       <Link
         to="/contact"
         search={{ intent: "audit" }}
-        className={`rounded-md px-5 py-3 text-sm font-medium transition ${secondary}`}
+        className={`rounded-full px-5 py-3 text-sm font-medium transition ${secondary}`}
       >
         {secondaryLabel}
       </Link>

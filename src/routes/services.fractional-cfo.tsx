@@ -60,11 +60,11 @@ function Page() {
         </div>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
           {packages.map((p) => (
-            <div key={p.name} className={`rounded-3xl p-8 border ${p.featured ? "bg-ink text-cream border-ink" : "bg-card border-border text-cream"}`}>
-              <div className={`text-xs uppercase tracking-widest ${p.featured ? "text-cream/70" : "text-stone"}`}>Package</div>
+            <div key={p.name} className={`rounded-3xl p-8 border ${p.featured ? "bg-cream text-ink border-cream" : "bg-card border-border text-cream"}`}>
+              <div className={`text-xs uppercase tracking-widest ${p.featured ? "text-ink/60" : "text-stone"}`}>Package</div>
               <div className="mt-2 font-serif text-2xl">{p.name}</div>
               <div className="mt-4 font-serif text-3xl">{p.price}</div>
-              <p className={`mt-4 text-sm ${p.featured ? "text-cream/80" : "text-stone"}`}>{p.for}</p>
+              <p className={`mt-4 text-sm ${p.featured ? "text-ink/75" : "text-stone"}`}>{p.for}</p>
             </div>
           ))}
         </div>

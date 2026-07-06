@@ -50,7 +50,7 @@ const companiesPillars: Pillar[] = [
       "Stabilizes the team and the board narrative",
     ],
     href: "/services/interim",
-    panelTitle: "Interim CFO / COO",
+    panelTitle: "Interim coverage",
     panelRows: [
       { k: "Coverage", v: "Full seat" },
       { k: "Term", v: "3–9 months" },
