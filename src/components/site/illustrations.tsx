@@ -9,13 +9,13 @@ import { useInView } from "./useInView";
 function GradientDefs() {
   return (
     <defs>
-      <linearGradient id="ill-spectrum" x1="0" x2="1" y1="0" y2="0">
+      <linearGradient id="ill-spectrum" x1="0" x2="720" y1="0" y2="0" gradientUnits="userSpaceOnUse">
         <stop offset="0" stopColor="#7CE0C0" />
         <stop offset="0.4" stopColor="#56C7C0" />
         <stop offset="0.7" stopColor="#F2A47C" />
         <stop offset="1" stopColor="#EE6A4D" />
       </linearGradient>
-      <linearGradient id="ill-spectrum-soft" x1="0" x2="1" y1="0" y2="0">
+      <linearGradient id="ill-spectrum-soft" x1="0" x2="720" y1="0" y2="0" gradientUnits="userSpaceOnUse">
         <stop offset="0" stopColor="#7CE0C0" stopOpacity="0" />
         <stop offset="0.15" stopColor="#7CE0C0" stopOpacity="0.9" />
         <stop offset="0.5" stopColor="#F2A47C" stopOpacity="0.9" />
