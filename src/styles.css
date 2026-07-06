@@ -138,6 +138,16 @@
   }
 
   h1 { letter-spacing: -0.025em; }
+}
+
+/* Glass-morphic operator proof card */
+@utility glass-card {
+  background: color-mix(in srgb, white 4%, transparent);
+  border: 1px solid color-mix(in srgb, white 10%, transparent);
+  backdrop-filter: blur(24px) saturate(140%);
+}
+
+
 
 
 /* Monospace label utility for section indices and category tags */
