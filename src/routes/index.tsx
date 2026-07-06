@@ -88,8 +88,8 @@ const outcomes = [
 
 const engagements = [
   { name: "Advisory", price: "$5k–$12.5k / mo", bestWhen: "Founder or CEO needs executive judgment on a cadence.", to: "/services" },
-  { name: "Fractional", price: "$12k–$40k / mo", bestWhen: "A senior operator runs the function 1–3 days a week.", to: "/services/fractional-cfo", featured: true },
-  { name: "Interim", price: "$35k–$90k / mo", bestWhen: "Full-seat ownership while the permanent search runs.", to: "/services/interim" },
+  { name: "Fractional", price: "$12k–$40k / mo", bestWhen: "A senior operator runs the function 1–3 days a week.", to: "/services", featured: true },
+  { name: "Interim", price: "$35k–$90k / mo", bestWhen: "Full-seat ownership while the permanent search runs.", to: "/services" },
   { name: "Sprint", price: "Scoped / outcome", bestWhen: "One critical initiative, a clear endpoint, and an owner.", to: "/services" },
 ];
 
