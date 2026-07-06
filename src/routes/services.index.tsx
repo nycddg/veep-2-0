@@ -10,7 +10,7 @@ export const Route = createFileRoute("/services/")({
       { title: "Services — Veep" },
       { name: "description", content: "Advisory, fractional, interim, and sprint engagement models — plus a portfolio bench and AI-powered operators." },
       { property: "og:title", content: "Services — Veep" },
-      { property: "og:description", content: "Four ways to engage a Veep operator, matched to how urgent and how deep the work is." },
+      { property: "og:description", content: "Four ways to engage a senior operator, matched to how urgent and how deep the work is." },
     ],
   }),
   component: Page,
