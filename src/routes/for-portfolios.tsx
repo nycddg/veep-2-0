@@ -139,7 +139,7 @@ function Page() {
         </div>
       </Section>
 
-      <FooterCTA headline="Ready to audit your portfolio's executive capacity?" />
+      <FooterCTA headline="Ready to map your portfolio's executive capacity?" />
     </>
   );
 }
