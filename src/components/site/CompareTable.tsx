@@ -47,7 +47,7 @@ export function CompareTable() {
           / How Veep is different
         </div>
         <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05] text-ink tracking-tight">
-          Sits in the gap between search, consulting, and freelancers.
+          Too urgent for search. Too senior for freelancers. Too operational for consultants.
         </h2>
       </div>
       <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-ink/10">
