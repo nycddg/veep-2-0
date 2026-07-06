@@ -7,7 +7,7 @@ export const Route = createFileRoute("/services/ai-operators")({
   head: () => ({
     meta: [
       { title: "AI-powered Operators — Veep" },
-      { name: "description", content: "A-list executives. Unlimited AI staff. Operator governs the work — AI executes routine tasks." },
+      { name: "description", content: "Senior operators governing unlimited AI staff — department-level output without the headcount." },
       { property: "og:title", content: "AI-powered Operators — Veep" },
       { property: "og:description", content: "Department-level output without the department-level headcount." },
     ],
