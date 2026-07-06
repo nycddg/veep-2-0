@@ -27,19 +27,13 @@ function Page() {
 
   return (
     <>
-      <section className="bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12">
-          <div className="max-w-3xl">
-            <Eyebrow>Contact</Eyebrow>
-            <h1 className="mt-6 font-serif text-5xl md:text-7xl leading-[1.02] text-cream">
-              What critical initiative <em className="italic text-forest">doesn't have an owner?</em>
-            </h1>
-            <p className="mt-6 text-lg text-stone max-w-2xl">
-              Two ways in: book a 30-minute discovery call, or request an Executive Capacity Audit for your company or portfolio.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact"
+        title="What critical initiative"
+        italic="doesn't have an owner?"
+        sub="Two ways in: book a 30-minute discovery call, or request an Executive Capacity Audit for your company or portfolio."
+      />
+
 
       <Section>
         <div className="grid lg:grid-cols-5 gap-10">
