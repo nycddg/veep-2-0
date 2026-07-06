@@ -5,7 +5,10 @@ import { Section, CheckList } from "@/components/site/primitives";
 import { PageHero } from "@/components/site/PageHero";
 import { Check } from "lucide-react";
 
-const searchSchema = z.object({ intent: z.enum(["call", "audit"]).catch("call") });
+const searchSchema = z.object({
+  intent: z.string().catch("call"),
+  outcome: z.string().optional(),
+});
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -24,7 +27,8 @@ export const Route = createFileRoute("/contact")({
 
 function Page() {
   const { intent } = Route.useSearch();
-  const [tab, setTab] = useState<"call" | "audit">(intent);
+  const initialTab: "call" | "audit" = intent === "audit" ? "audit" : "call";
+  const [tab, setTab] = useState<"call" | "audit">(initialTab);
   const [submitted, setSubmitted] = useState(false);
 
   return (

@@ -1,84 +1,50 @@
-# Incorporate from live veep.work (approved subset)
 
-Skipping items 5 (services restructure), 7 (pricing), 9 (3-step process), 11 (newsletter). Implementing the seven below.
+# Veep redesign — locked direction (v3: floating roster on dark navy)
 
-## 1. Real operator roster → `/operators`
+Direction chosen: dark navy `#050810` canvas, Playfair Display serif + Inter sans, indigo accent, white pill CTA, tilted glass-morphic operator proof cards on the right of a split hero. That is the visual contract — I will not re-derive it.
 
-Replace the six fake anonymized cards (Maya R., Jordan K., …) with the 26 real operators from `/operatingpartners`. Each card: initials avatar, name, title, company line in mono (e.g. "Meta · LVMH · MediaLink · Macy's"), and industry pills. Grid goes to 3 columns on desktop to accommodate the count.
+## What I'll build (this pass = homepage + design system)
 
-Roster ingested verbatim from the live site — Jian Yang, Miguel Ferreya de Bone, Elaine Bogart, Vanessa Kwan, Stephanie Lung, Yong Kang, Victoria Kasumu, Melanie Kingdon, Jessica Davila, Sean Park, Jennifer Kasper, Chrysi Philalithes, Erika Velazquez Alpern, Alasdair Lloyd-Jones, Christine Miranda Barnekow, Stephanie Shore, Dave Garcia, Steve Reed, Kostja Mirkovic, Mark Newhouse, Munawar Ahmed, Jorge Lopez, Laura Merling, Gary Kilponen, Andrew Silver, Bob Gower.
+### 1. Design system swap (`src/styles.css`, `src/routes/__root.tsx`)
+- New tokens: `--background` navy `#050810`, `--card` `rgba(255,255,255,0.04)`, `--border` `rgba(255,255,255,0.1)`, `--primary` white, `--accent` indigo `#6366f1`, keep gold retired.
+- Load Playfair Display + Inter via `<link>` in `__root.tsx` head; register in `@theme` as `--font-display` and `--font-sans`.
+- Retire the `[01] / CATEGORY` mono rulers as dominant chrome — keep monospace only for small meta.
 
-No headshots yet (initials avatars); text tags only for company names.
+### 2. New primitives (`src/components/site/`)
+- `OperatorProofCard` — tilted glass card (initials avatar, name, role, 1–2 pedigree chips). Display-only, no CTA, no rate, no availability.
+- `OutcomeTile` — dark glass tile with serif headline + short line, hover lift, links to `/contact?outcome=…`.
+- `EngagementTile` — 4-up product tile (name, price band, "best when", CTA).
+- `StepFlow` — 4-step visual (Diagnose · Match · Deploy <10d · Handoff).
+- `TrustChip` — "72-hr match · 30-day fit guarantee".
+- Rework `SiteHeader`/`SiteFooter` to match dark navy palette.
 
-## 2. Real metrics → homepage proof strip
+### 3. Homepage rebuild (`src/routes/index.tsx`)
+Sections, top to bottom:
+1. **Split hero** — left: eyebrow chip, H1 in Playfair ("Executive leadership, on demand." with "Exceptional" in italic), subhead framing the 3 core ideas, white pill CTA "Book intro call" (Fillout) + ghost CTA "How it works", trust chip. Right: 4 tilted operator proof cards using real names from existing roster (Jian Yang, Elaine Bogart, Vanessa Kwan, Stephanie Lung) with pedigree chips.
+2. **Trust bar** — slow logo marquee + 4 metrics ($1B+ raised · 15+ exits · $2B+ savings · 30M users).
+3. **Outcomes grid (6 tiles)** — Close the raise · Fix the forecast · Integrate the acquisition · Unblock GTM · Ship the platform · Cover the seat. Each → prefilled `/contact`.
+4. **Why not hire or consult** — 3-column contrast (Hire 4–6mo permanent · Consult advice not ownership · Veep operator owns it in <10 days), Veep column visually weighted.
+5. **How it works** — 4-step flow, visual.
+6. **Engagement models** — 4 product tiles (Advisory, Fractional, Interim, Sprint) with price band + "best when" + CTA to leaf.
+7. **Operator caliber strip** — pedigree company logos mosaic + "26 vetted operators · led at Stripe, Airbnb, Uber, Coinbase, Shopify…". No cards, no browse.
+8. **Case studies** — 3 anonymized outcome cards (existing).
+9. **Testimonial** — Jerry Kolber, full-bleed dark.
+10. **FAQ** — condensed 6.
+11. **Closing CTA band**.
 
-Replace invented figures with the four the live site uses everywhere:
-- **$1B+** capital raised
-- **15+** startup exits (down from our invented "20+")
-- **$2B+** cost savings
-- **30M** users served (replaces invented "$3B revenue created")
+Persistent bottom-right "Book intro call" chip on scroll past hero.
 
-## 3. Real testimonial → homepage
+## Explicitly out of scope this pass
 
-Rewrite `Testimonials.tsx` to feature one attributed quote instead of three anonymous ones:
-> "I cannot recommend this team more highly. They think, act, and engage like co-founders."
-> — Jerry Kolber, Founder & CEO, Atomic Audio
+- Interior routes (`/operators`, `/services/*`, `/pricing`, `/compare`, `/about`, `/faq`, `/contact`) — will restyle to the new system in a follow-up pass once you approve the homepage. IA stays.
+- No search, no filters, no browsable operator directory, no per-operator rates or availability. Roster is proof only.
+- No new backend, no live matching engine. Outcome tiles prefill `/contact` via querystring.
+- No headshot scraping — initials avatars.
+- `/insights` stays "coming soon".
 
-Single centered/large layout, keeps the numeric `0.1 / VERIFIED` chrome.
+## Verification
 
-## 4. Positioning voice → homepage
+- `bunx tsgo` typecheck
+- Playwright screenshot at 1280 + 390 widths, view outputs to confirm the hero matches the chosen direction.
 
-Adopt the sharper live-site phrasing:
-- Hero eyebrow becomes **"Elite Strategy · Operator Hustle · Freelancer Speed"** (replaces "Operator-led · 30-day fit guarantee" — guarantee moves into the trust chips below).
-- Sub-hero tagline block adds **"Second-in-command, on-demand."**
-- Rename the compare-section heading to **"Better. Faster. Cheaper. Really."**
-
-## 6. Functional coverage grid → `/services` index
-
-Since we are NOT restructuring services (item 5 skipped), add a new section to the existing `services.index.tsx` with the five-function grid from `/fractional`:
-- **Finance** — systems & processes, annual planning, FP&A, funding & IR, compliance
-- **People** — talent systems, org structure, policies, internal comms, performance
-- **Marketing & Revenue** — GTM, acquisition & retention, revops, market launches, product rollouts
-- **Operations** — business OS, SOPs, infrastructure, geo expansion, turnarounds
-- **Product** — launch & scale, user insights, vertical expansion, workflows, adoption
-
-Section slots below the existing "Wedges we lead with" block.
-
-## 8. Compare table → homepage
-
-Replace the current 4-column narrative CompareTable with the live-site 6-row × 4-column matrix (dimensions × approaches):
-
-```text
-              Veep        Exec Hiring  Consulting   Freelancers
-Speed         Instant     Slow         Delayed      Fast
-Cost          Affordable  Expensive    Expensive    Variable
-Flexibility   Scalable    Fixed        Rigid        High
-Quality       Vetted      Variable     Uncertain    Unreliable
-Engagement    Adaptive    Permanent    Limited      Temporary
-Risk          Low         High         Costly       Inconsistent
-```
-
-Veep column highlighted. Section heading becomes "Better. Faster. Cheaper. Really." Section footer adds the "Save 40–80%" line.
-
-## 10. Booking flow → real Fillout calendar link
-
-Wire every primary "Book a call" CTA (SiteHeader desktop + mobile, `DualCTA` primary, hero primary in `index.tsx`) to `https://schedule.fillout.com/t/3AddME1CYfus` via `target="_blank" rel="noopener noreferrer"`. Centralize the URL in a new `src/lib/booking.ts` constant. CTA label shortens from "Book a discovery call" to "Book a call" to match live-site copy. The `/contact` form stays as the secondary path (Capacity Audit + long-form intake).
-
-## Files touched
-
-- `src/lib/booking.ts` (new) — BOOKING_URL constant
-- `src/routes/operators.tsx` — full 26-operator rewrite
-- `src/routes/index.tsx` — metrics, hero eyebrow/tagline, compare heading; no structural changes
-- `src/routes/services.index.tsx` — add functional-coverage grid section
-- `src/components/site/Testimonials.tsx` — Jerry Kolber single-quote layout
-- `src/components/site/CompareTable.tsx` — 6×4 matrix rewrite
-- `src/components/site/SiteHeader.tsx` — Fillout link, "Book a call" label
-- `src/components/site/primitives.tsx` — `DualCTA` primary uses BOOKING_URL, label update
-
-## Out of scope (per your skip list)
-
-- Services IA restructure (Placement / Managed Projects / Dynamic Rosters)
-- Pricing page rewrite to the capacity model
-- 4-step → 3-step "How it works" swap
-- Newsletter block
-- Operator headshots (still initials avatars)
+Approve and I'll build it.

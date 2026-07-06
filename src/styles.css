@@ -13,11 +13,11 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* Headlines in IBM Plex Mono, body in IBM Plex Sans. Keep --font-serif key
-     so any legacy .font-serif usage renders in the mono display face. */
-  --font-serif: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* Playfair Display for editorial serif headlines; Inter for body/UI. */
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -60,45 +60,44 @@
 :root {
   --radius: 0.5rem;
 
-  /* Dark-first instrument palette — navy anchored at #000435. */
-  --background: oklch(0.115 0.09 268);        /* deep midnight navy #000435 */
+  /* Premium managed-marketplace palette — deep navy #050810 canvas, indigo accent. */
+  --background: oklch(0.115 0.03 265);        /* deep navy ≈ #050810 */
   --foreground: oklch(0.96 0 0);              /* off-white */
 
-  /* Semantic surface + text roles (tonal navy ladder) */
-  --ink: oklch(0.095 0.08 268);               /* darkest navy for inverted pills */
-  --cream: oklch(0.965 0 0);                  /* off-white for text on dark, and light pills */
-  --stone: oklch(0.72 0.03 250);              /* secondary text — soft blue-gray */
-  --stone-soft: oklch(0.55 0.04 255);         /* tertiary / mono labels — dim blue-gray */
-  --rule: oklch(0.85 0.05 240 / 0.10);        /* faint ruled-grid lines, cool tint */
+  /* Semantic surface + text roles */
+  --ink: oklch(0.115 0.03 265);               /* darkest navy for inverted pills */
+  --cream: oklch(0.98 0 0);                   /* off-white for text on dark, and light pills */
+  --stone: oklch(0.72 0.02 250);              /* secondary text — soft blue-gray */
+  --stone-soft: oklch(0.55 0.03 255);         /* tertiary / mono labels — dim blue-gray */
+  --rule: oklch(1 0 0 / 0.10);                /* faint ruled-grid lines */
 
-  /* Accent kept as single-color forest, demoted from surface to accent-only.
-     Shifted to a warm gold for the Attio spectrum feel. */
-  --forest: oklch(0.82 0.14 82);              /* warm gold */
-  --forest-deep: oklch(0.205 0.07 265);       /* navy inset panel */
-  --forest-foreground: oklch(0.965 0 0);
+  /* Accent kept but retired from chrome — reserved for status */
+  --forest: oklch(0.68 0.18 275);             /* indigo #6366f1 */
+  --forest-deep: oklch(0.205 0.05 265);       /* navy inset panel */
+  --forest-foreground: oklch(0.98 0 0);
 
   /* Illustration spectrum (never on chrome, only inside SVG illustrations) */
   --accent-mint: oklch(0.82 0.14 175);
   --accent-cyan: oklch(0.80 0.10 220);
-  --accent-gold: oklch(0.82 0.14 82);
+  --accent-gold: oklch(0.68 0.18 275);        /* remapped to indigo */
   --accent-coral: oklch(0.72 0.16 25);
 
-  --card: oklch(0.185 0.07 265);              /* raised navy panel */
+  --card: oklch(1 0 0 / 0.04);                /* glass card over navy canvas */
   --card-foreground: var(--cream);
-  --popover: oklch(0.185 0.07 265);
+  --popover: oklch(0.185 0.04 265);
   --popover-foreground: var(--cream);
   --primary: var(--cream);
   --primary-foreground: var(--ink);
-  --secondary: oklch(1 0 0 / 0.05);            /* white 5% over navy canvas */
+  --secondary: oklch(1 0 0 / 0.05);
   --secondary-foreground: var(--cream);
   --muted: oklch(1 0 0 / 0.05);
   --muted-foreground: var(--stone);
   --accent: var(--forest);
-  --accent-foreground: var(--ink);
+  --accent-foreground: var(--cream);
   --destructive: oklch(0.65 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.85 0.05 240 / 0.12);
-  --input: oklch(0.85 0.05 240 / 0.16);
+  --border: oklch(1 0 0 / 0.10);
+  --input: oklch(1 0 0 / 0.14);
   --ring: var(--forest);
 
   --chart-1: var(--accent-mint);
@@ -131,23 +130,25 @@
     letter-spacing: -0.005em;
   }
 
-  /* All display headlines render in the display sans, tight tracking.
-     Old .font-serif usage inherits this automatically. */
-  h1, h2, h3, .font-serif {
+  /* Editorial serif for h1/h2/h3; italics render as italic serif (never de-styled). */
+  h1, h2, h3, .font-serif, .font-display {
     font-family: var(--font-serif);
-    letter-spacing: -0.025em;
-    font-weight: 500;
+    letter-spacing: -0.02em;
+    font-weight: 400;
   }
 
-  h1 { letter-spacing: -0.035em; }
-
-  /* Remove decorative italics site-wide — Attio never italicizes for emphasis.
-     Emphasis comes from color contrast (mono-label + grey continuation). */
-  em, i, .italic {
-    font-style: normal;
-    color: var(--color-stone);
-  }
+  h1 { letter-spacing: -0.025em; }
 }
+
+/* Glass-morphic operator proof card */
+@utility glass-card {
+  background: color-mix(in srgb, white 4%, transparent);
+  border: 1px solid color-mix(in srgb, white 10%, transparent);
+  backdrop-filter: blur(24px) saturate(140%);
+}
+
+
+
 
 /* Monospace label utility for section indices and category tags */
 @utility mono-label {
