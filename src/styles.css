@@ -13,11 +13,11 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* All display + body in one geometric sans; keep --font-serif key so any existing
-     .font-serif usage renders in the display sans automatically (no serif on site). */
-  --font-serif: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* Headlines in IBM Plex Mono, body in IBM Plex Sans. Keep --font-serif key
+     so any legacy .font-serif usage renders in the mono display face. */
+  --font-serif: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
