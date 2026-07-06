@@ -133,6 +133,60 @@ function Index() {
 
       <LogoWall />
 
+      {/* CASE STUDIES */}
+      <section className="bg-background text-cream">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between border-t border-white/8 pt-5">
+            <span className="font-mono text-[11px] tracking-widest text-stone-soft">[1.5]</span>
+            <span className="font-mono text-[11px] tracking-widest text-stone-soft">/ RECENT ENGAGEMENTS</span>
+          </div>
+          <div className="py-20 md:py-28">
+            <div className="max-w-2xl">
+              <Eyebrow>Anonymized case studies</Eyebrow>
+              <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05] text-cream tracking-tight">
+                What operators unlock in the first 90 days.
+              </h2>
+            </div>
+            <div className="mt-14 grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  tag: "Series B SaaS · Fractional CFO",
+                  trigger: "Board lost confidence in the finance function 60 days before a bridge round.",
+                  work: "Rebuilt the model, ran diligence, negotiated terms.",
+                  outcome: "Bridge closed in 42 days at target valuation.",
+                  metric: "$18M raised",
+                },
+                {
+                  tag: "PE portco · Interim COO",
+                  trigger: "COO exited two months after acquisition. Integration stalled across three sites.",
+                  work: "Held the seat, stabilized ops, ran the search in parallel.",
+                  outcome: "Permanent COO hired at month five. EBITDA +14%.",
+                  metric: "$6.2M annualized savings",
+                },
+                {
+                  tag: "Founder-led · Sprint",
+                  trigger: "GTM stalled at $8M ARR. Founder still owned every deal above $50k.",
+                  work: "Rebuilt pricing, hired two AEs, installed forecast cadence.",
+                  outcome: "Pipeline coverage 3.1x within 90 days. Founder off deals under $250k.",
+                  metric: "+62% Q/Q pipeline",
+                },
+              ].map((c) => (
+                <div key={c.tag} className="rounded-3xl border border-white/8 bg-card p-6 flex flex-col">
+                  <span className="font-mono text-[11px] tracking-widest uppercase text-accent-gold">{c.tag}</span>
+                  <p className="mt-5 text-sm text-stone leading-relaxed"><span className="text-cream">Trigger.</span> {c.trigger}</p>
+                  <p className="mt-3 text-sm text-stone leading-relaxed"><span className="text-cream">Work.</span> {c.work}</p>
+                  <p className="mt-3 text-sm text-stone leading-relaxed"><span className="text-cream">Outcome.</span> <strong className="text-cream font-medium">{c.outcome}</strong></p>
+                  <div className="mt-6 pt-5 border-t border-white/8 text-2xl text-cream tracking-tight">{c.metric}</div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-xs font-mono uppercase tracking-widest text-stone-soft">
+              / Client names withheld under NDA. Full references available on discovery call.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* HOW IT WORKS */}
       <section id="how-it-works" className="bg-background text-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
