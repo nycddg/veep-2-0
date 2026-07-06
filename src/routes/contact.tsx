@@ -27,7 +27,8 @@ export const Route = createFileRoute("/contact")({
 
 function Page() {
   const { intent } = Route.useSearch();
-  const [tab, setTab] = useState<"call" | "audit">(intent);
+  const initialTab: "call" | "audit" = intent === "audit" ? "audit" : "call";
+  const [tab, setTab] = useState<"call" | "audit">(initialTab);
   const [submitted, setSubmitted] = useState(false);
 
   return (
