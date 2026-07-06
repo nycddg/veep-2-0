@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 
 const cols = [
   {
@@ -36,10 +37,8 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div>
-            <Link to="/" className="flex items-center gap-2">
-              <span className="inline-block h-2 w-2 rounded-full bg-accent-gold" />
-              <span className="text-[15px] font-medium tracking-tight text-cream">Veep</span>
-              <span className="font-mono text-[10px] tracking-widest text-stone-soft ml-1">™</span>
+            <Link to="/" className="flex items-center" aria-label="Veep home">
+              <img src={wordmarkWhite.url} alt="Veep" className="h-6 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-stone max-w-xs">
               Senior leadership, without the full-time commitment. Operator-led. AI-powered.
