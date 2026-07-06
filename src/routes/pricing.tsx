@@ -17,6 +17,7 @@ export const Route = createFileRoute("/pricing")({
       { property: "og:url", content: "/pricing" },
     ],
     links: [{ rel: "canonical", href: "/pricing" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(faqSchema) }],
   }),
   component: Page,
 });
