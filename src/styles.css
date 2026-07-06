@@ -89,9 +89,9 @@
   --popover-foreground: var(--cream);
   --primary: var(--cream);
   --primary-foreground: var(--ink);
-  --secondary: oklch(0.235 0.06 262);         /* muted navy surface */
+  --secondary: oklch(1 0 0 / 0.10);            /* white 10% over navy canvas */
   --secondary-foreground: var(--cream);
-  --muted: oklch(0.235 0.06 262);
+  --muted: oklch(1 0 0 / 0.10);
   --muted-foreground: var(--stone);
   --accent: var(--forest);
   --accent-foreground: var(--ink);
