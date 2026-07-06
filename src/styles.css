@@ -60,21 +60,21 @@
 :root {
   --radius: 0.5rem;
 
-  /* Dark-first instrument palette (Attio-inspired). */
-  --background: oklch(0.16 0 0);              /* near-black canvas #0F0F0F */
+  /* Dark-first instrument palette — navy anchored at #000435. */
+  --background: oklch(0.115 0.09 268);        /* deep midnight navy #000435 */
   --foreground: oklch(0.96 0 0);              /* off-white */
 
-  /* Semantic surface + text roles */
-  --ink: oklch(0.13 0 0);                     /* deep near-black for inverted / dark pills */
+  /* Semantic surface + text roles (tonal navy ladder) */
+  --ink: oklch(0.095 0.08 268);               /* darkest navy for inverted pills */
   --cream: oklch(0.965 0 0);                  /* off-white for text on dark, and light pills */
-  --stone: oklch(0.68 0 0);                   /* mid-grey secondary text */
-  --stone-soft: oklch(0.48 0 0);              /* tertiary / mono labels */
-  --rule: oklch(1 0 0 / 0.08);                /* faint ruled-grid lines */
+  --stone: oklch(0.72 0.03 250);              /* secondary text — soft blue-gray */
+  --stone-soft: oklch(0.55 0.04 255);         /* tertiary / mono labels — dim blue-gray */
+  --rule: oklch(0.85 0.05 240 / 0.10);        /* faint ruled-grid lines, cool tint */
 
   /* Accent kept as single-color forest, demoted from surface to accent-only.
      Shifted to a warm gold for the Attio spectrum feel. */
   --forest: oklch(0.82 0.14 82);              /* warm gold */
-  --forest-deep: oklch(0.20 0 0);             /* charcoal panel (used for dark inset blocks) */
+  --forest-deep: oklch(0.205 0.07 265);       /* navy inset panel */
   --forest-foreground: oklch(0.965 0 0);
 
   /* Illustration spectrum (never on chrome, only inside SVG illustrations) */
@@ -83,22 +83,22 @@
   --accent-gold: oklch(0.82 0.14 82);
   --accent-coral: oklch(0.72 0.16 25);
 
-  --card: oklch(0.195 0 0);                   /* slightly raised panel */
+  --card: oklch(0.185 0.07 265);              /* raised navy panel */
   --card-foreground: var(--cream);
-  --popover: oklch(0.195 0 0);
+  --popover: oklch(0.185 0.07 265);
   --popover-foreground: var(--cream);
   --primary: var(--cream);
   --primary-foreground: var(--ink);
-  --secondary: oklch(0.22 0 0);
+  --secondary: oklch(0.235 0.06 262);         /* muted navy surface */
   --secondary-foreground: var(--cream);
-  --muted: oklch(0.22 0 0);
+  --muted: oklch(0.235 0.06 262);
   --muted-foreground: var(--stone);
   --accent: var(--forest);
   --accent-foreground: var(--ink);
   --destructive: oklch(0.65 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(1 0 0 / 0.10);
-  --input: oklch(1 0 0 / 0.14);
+  --border: oklch(0.85 0.05 240 / 0.12);
+  --input: oklch(0.85 0.05 240 / 0.16);
   --ring: var(--forest);
 
   --chart-1: var(--accent-mint);
