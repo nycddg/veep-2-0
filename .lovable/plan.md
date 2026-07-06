@@ -1,50 +1,51 @@
-## Goal
 
-Produce a single markdown file containing every piece of user-facing copy across the site so you can review and mark up edits.
+## Plan: Apply reviewed site copy
 
-## Deliverable
+Update every user-facing string across the site to match `Veep_Site_Copy_-_Updated_2026-07-06.md`. Structure, layouts, styling, and components stay as-is — only text content (headlines, subs, eyebrows, list items, meta, CTAs, tabs, cards, quotes) changes.
 
-`/mnt/documents/veep-site-copy.md` — delivered as a downloadable artifact in chat.
+### Files to edit
 
-## Structure
+**Global / shared components**
+- `src/routes/__root.tsx` — root `<head>` title/description/og
+- `src/components/site/SiteHeader.tsx` — nav labels + CTAs
+- `src/components/site/SiteFooter.tsx` — tagline + link groups + legal row
+- `src/components/site/FooterCTA.tsx` — default headline/sub (per-page overrides applied where the component is used)
+- `src/components/site/primitives.tsx` — `DualCTA` labels, `Eyebrow`/`RatingRow` text
+- `src/lib/error-page.ts` (or wherever 404/error copy lives) — 404 + error page strings
+- `src/components/site/HeroVisual.tsx` — `Operator Bench™` kicker + 5 columns (Fractional/Interim/Sprint/Bench/AI-powered)
+- `src/components/site/LogoWall.tsx` — kicker + logo list
+- `src/components/site/Marquee.tsx` — full 10-line list (adds "Too urgent for search", "Too senior for freelancers", "Too operational for consultants")
+- `src/components/site/StatsBand.tsx` — H2, sub, 6 stats
+- `src/components/site/CompareTable.tsx` — eyebrow, H2, 4 columns (rewritten "use / breaks down" copy)
+- `src/components/site/TriggerBento.tsx` — eyebrow, H2, sub, 4 groups
+- `src/components/site/CaseSwitcher.tsx` — eyebrow, H2, 3 tabs/cases
+- `src/components/site/Testimonials.tsx` — eyebrow, H2, 3 quotes
+- `src/components/site/AudienceTabs.tsx` — eyebrow, H2, sub, tabs, all pillars for both audiences
 
-Organized by route / component, in the order a visitor encounters them. Each entry shows:
-- Section name + source file path (so edits map back to code)
-- The exact strings (eyebrows, headlines, subheads, body, CTAs, tab labels, metrics, list items, meta title/description)
+**Route pages**
+- `src/routes/index.tsx` — hero label/eyebrow/H1/sub
+- `src/routes/for-companies.tsx` — meta, hero, 3 cards, common-questions Q&A
+- `src/routes/for-portfolios.tsx` — meta, hero, Capacity Audit block, 3 tiers
+- `src/routes/services.index.tsx` — meta, hero, 4 engagement modes, deep-dive cards
+- `src/routes/services.fractional-cfo.tsx` — meta, hero, triggers list, 3 packages, diagnostic block (rewritten to cover full C-suite, not just CFO)
+- `src/routes/services.interim.tsx` — meta, hero, coverage list, economics (mostly minor tweaks)
+- `src/routes/services.executive-bench.tsx` — meta, hero, included list, 3 tiers, FooterCTA override
+- `src/routes/services.ai-operators.tsx` — meta, hero, 3 steps, unlocks list
+- `src/routes/operators.tsx` — meta, hero, 6 operator cards, join-network block, FooterCTA override
+- `src/routes/partners.tsx` — meta, hero, 6 partner categories, FooterCTA override
+- `src/routes/about.tsx` — meta, hero, 4 principles, track record
+- `src/routes/insights.tsx` — meta, hero, 3 posts
+- `src/routes/contact.tsx` — meta, hero, both tab panels, form field labels, submit buttons, fine print, success state
 
-### Sections covered
+### Approach
 
-1. **Global chrome**
-   - `SiteHeader` (nav labels, CTA)
-   - `SiteFooter` (columns, links, tagline)
-   - `FooterCTA` (default + per-page overrides)
-   - Root `<head>` meta defaults
+1. Read each target file to capture current structure.
+2. Replace strings in place using search-replace edits — no layout, class, or component-shape changes.
+3. Where the new copy adds/removes list items (e.g. Marquee gains 3 lines, fractional-cfo triggers expand across C-suite), extend the existing data arrays.
+4. Where per-page `FooterCTA` overrides are specified, pass `headline`/`sub` props at the call site.
+5. Verify build after edits.
 
-2. **Home `/`** (`src/routes/index.tsx`)
-   - Hero (eyebrow, H1, sub, CTAs, rating row)
-   - LogoWall, Marquee lines
-   - AudienceTabs, StatsBand, CompareTable, TriggerBento, CaseSwitcher, Testimonials
+### Out of scope
 
-3. **Services**
-   - `/services` index
-   - `/services/fractional-cfo`
-   - `/services/interim`
-   - `/services/executive-bench`
-   - `/services/ai-operators`
-
-4. **Audience pages**
-   - `/for-companies`
-   - `/for-portfolios`
-   - `/operators`
-   - `/partners`
-
-5. **Other routes**
-   - `/about`
-   - `/insights` (post titles + descriptions)
-   - `/contact`
-
-6. **Per-page meta** — title, description, og:title, og:description for every route.
-
-## Process
-
-Read every route file and site component, extract all string literals used for display, and assemble the markdown. No code changes.
+- No new routes, no new components, no visual/design changes.
+- No changes to the assets, fonts, or color tokens updated in earlier turns.
