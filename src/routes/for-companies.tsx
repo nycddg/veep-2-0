@@ -80,7 +80,7 @@ function Page() {
 
       <Section tone="muted"><TriggerBento /></Section>
 
-      <Section><CompareTable /></Section>
+      <Section tone="light"><CompareTable /></Section>
 
       <Section>
         <div className="max-w-2xl">
