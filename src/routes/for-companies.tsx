@@ -11,7 +11,7 @@ export const Route = createFileRoute("/for-companies")({
       { title: "For Companies — Veep" },
       { name: "description", content: "Fractional, interim, and sprint executive capacity for companies at pivotal business moments." },
       { property: "og:title", content: "For Companies — Veep" },
-      { property: "og:description", content: "Senior operators who own the outcome, without the cost or delay of a full-time hire." },
+      { property: "og:description", content: "Senior operators who own the outcome — without the cost or delay of a full-time hire." },
     ],
   }),
   component: Page,
