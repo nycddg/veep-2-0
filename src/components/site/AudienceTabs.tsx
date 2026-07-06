@@ -171,7 +171,7 @@ export function AudienceTabs() {
               key={t.id}
               onClick={() => setTab(t.id as typeof tab)}
               className={`px-3.5 py-1.5 text-[11px] font-mono tracking-widest uppercase rounded-[3px] transition ${
-                tab === t.id ? "bg-cream text-cream" : "text-stone hover:text-cream"
+                tab === t.id ? "bg-cream text-ink" : "text-stone hover:text-cream"
               }`}
             >
               {t.label}
