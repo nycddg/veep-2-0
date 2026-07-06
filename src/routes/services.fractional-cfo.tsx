@@ -17,7 +17,7 @@ export const Route = createFileRoute("/services/fractional-cfo")({
 
 const triggers = [
   "Raising capital, negotiating debt, or preparing for diligence",
-  "Board / investor reporting that needs to survive scrutiny",
+  "Board and investor reporting that needs to survive scrutiny",
   "Scaling ops, supply chain, or delivery through a growth step-change",
   "GTM, revenue, or pricing motion that has stalled",
   "Product, tech, or platform strategy without a permanent leader",
@@ -27,9 +27,9 @@ const triggers = [
 ];
 
 const packages = [
-  { name: "C-Suite Capacity — Light", price: "$12k–$18k / mo", for: "Cadence, reporting discipline, and executive coverage for one function." },
-  { name: "C-Suite Capacity — Core", price: "$18k–$28k / mo", for: "Function build, capital or growth event support, and permanent-hire scoping.", featured: true },
-  { name: "C-Suite Capacity — Intensive", price: "$28k–$40k / mo", for: "Full transaction prep, turnaround, or multi-function leadership load." },
+  { name: "C-suite Capacity — Light", price: "$12k–$18k / mo", for: "Cadence, reporting discipline, and executive coverage for one function." },
+  { name: "C-suite Capacity — Core", price: "$18k–$28k / mo", for: "Function build, capital or growth event support, and permanent-hire scoping.", featured: true },
+  { name: "C-suite Capacity — Intensive", price: "$28k–$40k / mo", for: "Full transaction prep, turnaround, or multi-function leadership load." },
 ];
 
 function Page() {
