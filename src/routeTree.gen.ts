@@ -11,10 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ProofRouteImport } from './routes/proof'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as OperatorsRouteImport } from './routes/operators'
 import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as ForPortfoliosRouteImport } from './routes/for-portfolios'
 import { Route as ForCompaniesRouteImport } from './routes/for-companies'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -40,6 +42,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProofRoute = ProofRouteImport.update({
+  id: '/proof',
+  path: '/proof',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -58,6 +65,11 @@ const OperatorsRoute = OperatorsRouteImport.update({
 const InsightsRoute = InsightsRouteImport.update({
   id: '/insights',
   path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ForPortfoliosRoute = ForPortfoliosRouteImport.update({
@@ -140,10 +152,12 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/for-companies': typeof ForCompaniesRoute
   '/for-portfolios': typeof ForPortfoliosRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/insights': typeof InsightsRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
+  '/proof': typeof ProofRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
@@ -162,10 +176,12 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/for-companies': typeof ForCompaniesRoute
   '/for-portfolios': typeof ForPortfoliosRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/insights': typeof InsightsRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
+  '/proof': typeof ProofRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
@@ -184,10 +200,12 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/for-companies': typeof ForCompaniesRoute
   '/for-portfolios': typeof ForPortfoliosRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/insights': typeof InsightsRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
+  '/proof': typeof ProofRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
@@ -208,10 +226,12 @@ export interface FileRouteTypes {
     | '/faq'
     | '/for-companies'
     | '/for-portfolios'
+    | '/how-it-works'
     | '/insights'
     | '/operators'
     | '/partners'
     | '/pricing'
+    | '/proof'
     | '/services'
     | '/sitemap.xml'
     | '/compare/vs-consultants'
@@ -230,10 +250,12 @@ export interface FileRouteTypes {
     | '/faq'
     | '/for-companies'
     | '/for-portfolios'
+    | '/how-it-works'
     | '/insights'
     | '/operators'
     | '/partners'
     | '/pricing'
+    | '/proof'
     | '/sitemap.xml'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
@@ -251,10 +273,12 @@ export interface FileRouteTypes {
     | '/faq'
     | '/for-companies'
     | '/for-portfolios'
+    | '/how-it-works'
     | '/insights'
     | '/operators'
     | '/partners'
     | '/pricing'
+    | '/proof'
     | '/services'
     | '/sitemap.xml'
     | '/compare/vs-consultants'
@@ -274,10 +298,12 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   ForCompaniesRoute: typeof ForCompaniesRoute
   ForPortfoliosRoute: typeof ForPortfoliosRoute
+  HowItWorksRoute: typeof HowItWorksRoute
   InsightsRoute: typeof InsightsRoute
   OperatorsRoute: typeof OperatorsRoute
   PartnersRoute: typeof PartnersRoute
   PricingRoute: typeof PricingRoute
+  ProofRoute: typeof ProofRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -296,6 +322,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proof': {
+      id: '/proof'
+      path: '/proof'
+      fullPath: '/proof'
+      preLoaderRoute: typeof ProofRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -324,6 +357,13 @@ declare module '@tanstack/react-router' {
       path: '/insights'
       fullPath: '/insights'
       preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/for-portfolios': {
@@ -468,10 +508,12 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   ForCompaniesRoute: ForCompaniesRoute,
   ForPortfoliosRoute: ForPortfoliosRoute,
+  HowItWorksRoute: HowItWorksRoute,
   InsightsRoute: InsightsRoute,
   OperatorsRoute: OperatorsRoute,
   PartnersRoute: PartnersRoute,
   PricingRoute: PricingRoute,
+  ProofRoute: ProofRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
