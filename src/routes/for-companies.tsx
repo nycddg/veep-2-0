@@ -20,23 +20,23 @@ export const Route = createFileRoute("/for-companies")({
 const objections = [
   {
     q: "We're already hiring for this role.",
-    a: "Veep is often most useful while the search runs. The work keeps moving now, and the operator can help define what the permanent role should own.",
+    a: "Veep is most useful while the search runs. The work keeps moving, and the operator helps define what the permanent role should own.",
   },
   {
     q: "We're talking to consultants.",
-    a: "Consultants are useful for analysis and recommendations. Veep is different when the issue is execution — the operator steps in and owns the outcome.",
+    a: "Consultants advise. Veep operators embed and own the outcome. When the issue is execution, not just analysis, that difference matters.",
   },
   {
     q: "We just need a freelancer.",
-    a: "That may be right if the work is task-based. Veep is a better fit when the work requires senior judgment and cross-functional ownership.",
+    a: "That may be right if the work is task-based. Veep fits when the work requires senior judgment and cross-functional ownership.",
   },
   {
     q: "We're not ready for a full-time executive.",
-    a: "That's exactly where Veep fits. Get the leadership you need now, without committing to a permanent hire before the role is fully clear.",
+    a: "That's exactly where Veep fits. Get the leadership you need now, without committing to a permanent hire before the role is clear.",
   },
   {
     q: "Fractional hasn't worked for us before.",
-    a: "Usually that comes down to accountability. Veep is built around operators owning outcomes, with matching, onboarding, and transitions managed around the work.",
+    a: "Usually that comes down to accountability. Veep is built around operators owning outcomes — with matching, onboarding, and transitions managed around the work.",
   },
 ];
 
