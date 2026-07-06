@@ -37,7 +37,7 @@ function Page() {
         eyebrow="Services"
         title="Leadership,"
         italic="not labor."
-        sub="Veep is not selling cheap executive time. Veep is selling the right level of leadership for the work — for as long as you need it."
+        sub="Veep doesn't sell cheap executive time. Veep sells the right level of leadership for the work — for as long as you need it. Every engagement is built around an operator owning an outcome."
       />
 
       <Section>
