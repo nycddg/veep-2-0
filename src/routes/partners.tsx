@@ -55,7 +55,7 @@ function Page() {
         eyebrow="Partners"
         title="Refer the operator"
         italic="when advice runs out."
-        sub="Veep partners with the trusted advisors who see executive-capacity problems first — accountants, lenders, search firms, M&A advisors, investors, and counsel."
+        sub="Veep partners with the trusted advisors who see executive-capacity problems first — accountants, lenders, search firms, M&A advisors, investors, and counsel. We share economics with the advisors who send us the right work."
       />
 
       <Section>
