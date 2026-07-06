@@ -16,7 +16,7 @@ export const Route = createFileRoute("/operators")({
 });
 
 const operators = [
-  { n: "Maya R.", r: "Fractional C-Suite · CFO", tags: ["Series B/C", "Lender readiness", "Post-close"] },
+  { n: "Maya R.", r: "Fractional C-suite · CFO", tags: ["Series B/C", "Lender readiness", "Post-close"] },
   { n: "Jordan K.", r: "Interim COO", tags: ["Multi-site", "Ops turnaround", "Integration"] },
   { n: "Priya S.", r: "Fractional CRO", tags: ["GTM redesign", "Enterprise motion", "Pricing"] },
   { n: "Andre M.", r: "CFO / Sponsor bench", tags: ["Independent sponsor", "M&A", "Family office"] },
