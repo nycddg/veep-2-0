@@ -47,7 +47,7 @@ function Page() {
         eyebrow="For companies"
         title="The work can't wait."
         italic="Neither should the leadership."
-        sub="When you have an important outcome but no clear owner, Veep places a senior operator in your business quickly enough to matter."
+        sub="When you have an important outcome and no clear owner, Veep places a senior operator in your business quickly enough to matter. Onboarded in under 10 days."
       />
 
       <Section>
@@ -55,8 +55,8 @@ function Page() {
           {[
             {
               t: "Fractional",
-              d: "CFO, COO, or GTM leadership on a weekly cadence for the pivotal moment.",
-              items: ["Capital raise", "Board reporting", "Finance function build"],
+              d: "C-suite leadership on a weekly cadence for the pivotal moment.",
+              items: ["Capital raise", "Board reporting", "Function build"],
             },
             {
               t: "Interim",
