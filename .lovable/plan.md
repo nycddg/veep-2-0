@@ -1,109 +1,96 @@
-# Attio-inspired redesign direction for Veep
 
-The four screens you shared are all from Attio's marketing site. They share a very specific design language — quiet, technical, editorial. Here is how I'd translate each layer of that language onto Veep, and where it would replace what's currently on the site.
+# Veep — Attio-Inspired Redesign (locked scope)
 
-## 1. Color — from cream/forest to instrument black
+Based on your answers:
+- **Scope:** full site
+- **Theme:** dark everywhere, one light section (Compare table)
+- **Accent:** mint → coral gradient, used *only inside illustrations* (UI chrome stays neutral white/black/grey with warm-gold reserved as a single hover/link tint or dropped entirely)
+- **Motion:** SVG illustrations animate on scroll
 
-Attio's palette is essentially two values plus one accent:
+---
 
-- Near-black canvas (`#0A0A0A` → `#111`), not pure black
-- Off-white ink (`#EDEDED`, `#B8B8B8` for secondary, `#6E6E6E` for tertiary/labels)
-- Muted spectrum accent only inside the illustration itself (mint → gold → coral gradient across the "Universal Context" pyramid). Never on UI chrome.
+## 1. Design tokens (`src/styles.css`)
 
-For Veep this means flipping the current cream/forest system to a dark-mode-first identity:
+- Base: `--bg #0B0B0C`, `--surface #111113`, `--fg #EDEDED`, `--fg-muted #8A8A8E`, `--rule #1E1E22`
+- Light section tokens: `--bg-light #F4F2ED`, `--fg-light #111`, `--rule-light #E4E1DA`
+- Illustration gradient stops: `--ill-mint #7CE0C0`, `--ill-mint-2 #56C7C0`, `--ill-coral-1 #F2A47C`, `--ill-coral-2 #EE6A4D` (exposed as CSS vars, referenced only inside `illustrations.tsx`)
+- Retire the forest-green + warm-gold UI accents. Keep the gold token but stop using it in components; buttons become white-on-black / black-on-white pills only.
 
-- `--background`: near-black
-- `--ink`: off-white
-- `--stone`: mid-grey for body copy
-- `--forest` stays, but is demoted from surface color to a single accent used sparingly (active nav dot, one hero word, one chart line). No more forest-green filled buttons or forest panels — buttons become the "Start for free" style: white pill on black, black pill on white when inverted.
+## 2. Typography
 
-Result: the site reads as an enterprise instrument rather than a consultancy brochure.
+- Keep Inter Tight (display + body) and JetBrains Mono (labels/indices) — already loaded.
+- Purge remaining Instrument Serif references (headings switch to Inter Tight tight-tracked).
+- Standardize label style: `text-[11px] uppercase tracking-[0.14em] font-mono text-fg-muted`.
 
-## 2. Typography — editorial technical, not literary
+## 3. Section chrome
 
-Attio pairs:
+Every section on every page uses the indexed header primitive already introduced:
 
-- A neutral geometric sans for display at large size, tight leading, generous tracking-in (looks like a customized Söhne / GT America Mono blend)
-- The same sans at small size for body
-- A monospace for micro-labels: `/ GROWTH + SECURITY`, `0.1 / 0.2 / 0.3`, `[04]`
+```
+[03]  / FRACTIONAL
+Any C-suite role, on the day you need it.
+Grey continuation sentence describing scope.
+```
 
-No serif. No italics-for-emphasis. Emphasis comes from weight + color contrast (white sentence, grey continuation).
+Ruled 1px dividers (`--rule`) between blocks. Compare section inverts to light tokens and keeps the same index/label treatment.
 
-For Veep this replaces the Instrument Serif display headlines. Proposed pairing:
+## 4. Illustration kit — animated
 
-- Display + body: **Inter Tight** (already loaded) at tighter tracking, or swap to **Söhne** / **General Sans**
-- Micro-labels: **JetBrains Mono** for eyebrows, section indices, stat units
+Rebuild `src/components/site/illustrations.tsx` so each SVG:
+- Uses the mint→coral linear gradient (no solid greens/golds).
+- Exposes a `useInView` trigger (IntersectionObserver, 20% threshold, one-shot).
+- Animates via CSS custom-property tweens or `<animate>` on `stroke-dashoffset` / `transform` — no runtime JS library beyond a tiny 20-line hook.
 
-The current "Senior operators. *Owned outcomes.*" hero becomes a single-weight statement with the second line greyed rather than italicized.
+Illustrations to ship (one per section type):
+1. **GradientPyramid** (hero) — stacked horizontal bars, gradient sweep left→right on enter, faint vertical scan line loop.
+2. **Timeline** (fractional/interim/sprint) — ruler with a filled engagement window that draws in from left; endpoint dots pop last.
+3. **Waveform** (stats + case switcher) — vertical bars grow from 0 to their target height, gradient colored, staggered 20ms.
+4. **DotCluster** (executive bench) — nodes fade in, connecting lines stroke-draw between them.
+5. **TickRuler** (pricing/compare) — tick marks stroke-draw; active tick pulses once.
+6. **OrbitDial** (AI operators) — arc stroke-draws, satellite dot orbits once then rests.
 
-## 3. Information organization — indexed, numbered, gridded
+## 5. Component updates
 
-Every Attio section is treated like a page in a technical manual:
+- `HeroVisual` → GradientPyramid, keeps existing copy structure.
+- `TriggerBento` → each of 4 cards gets a small inline illustration variant (Timeline/DotCluster/Waveform/TickRuler mini).
+- `StatsBand` → Waveform behind giant numbers; numbers count up on enter.
+- `CaseSwitcher` → Waveform with annotated peak marker.
+- `CompareTable` → wrap in `<section data-theme="light">` block; tokens swap via `[data-theme="light"]` selector in styles.css. Rest of page stays dark.
+- `Testimonials`, `LogoWall`, `Marquee`, `FooterCTA`, `PageHero`, `SiteHeader`, `SiteFooter` → strip any lingering gold/forest classes, adopt neutral chrome.
+- `AudienceTabs` → tab underline uses mint→coral gradient (only exception where the gradient touches UI, since it reads as an illustration accent).
 
-- Section index top-left: `[04]`
-- Section category top-right: `/ GROWTH + SECURITY`
-- Faint ruled grid lines dividing hero, body, and footer bands
-- Content lives in a centered ~1280px column with visible baseline gutters
+## 6. Pages touched
 
-Below the hero, columns are labeled `0.1 / 0.2 / 0.3 / 0.4 / 0.5` — not "Feature 1", not icons. The numbering itself becomes the visual system.
+All routes: `index`, `for-companies`, `for-portfolios`, `services` (+ 5 children), `operators`, `about`, `insights`, `contact`, `partners`. Each gets:
+- Dark theme confirmed
+- Indexed sections
+- One appropriate illustration per major block
+- Compare/pricing table (where present) in the light band
 
-Applied to Veep:
+## 7. Scroll-animation primitive
 
-- Every homepage section gets a `[01]` … `[08]` index and a category tag (`/ FRACTIONAL`, `/ INTERIM`, `/ SPRINT`, `/ BENCH`)
-- The "How Veep engages" 3-pillar block becomes a 5-column indexed row (`0.1 Fractional`, `0.2 Interim`, `0.3 Sprint`, `0.4 Bench`, `0.5 AI Operators`) with a headline sentence + one grey continuation sentence per column — exactly like the "Semantic search delivers…" row
-- The compare table keeps its logic but adopts the ruled-grid + monospace-label treatment
+Add `src/components/site/useInView.ts` — a ~15 line hook returning `[ref, inView]` with `once: true`, `rootMargin: "-10% 0px"`. All illustrations consume it. No new dependencies.
 
-## 4. Illustration — line-based, generative, one per section
+## 8. Motion budget (restraint)
 
-This is the biggest single shift. Attio never uses stock photography or shadcn card mockups. Instead each section has one custom generative-looking line illustration:
+- Illustrations animate once, ~600–900ms, ease-out.
+- Numbers count up once.
+- Nav link underline slides on hover.
+- Marquee stays slow (existing).
+- No parallax, no scroll-scrubbed timelines, no auto-loops except the hero scan line.
 
-- **Universal Context** — a pyramid of horizontal gradient lines
-- **System of action** — a vertical bar chart where a cluster of bars darkens to form an implied waveform
-- **App SDK** — a horizontal tick-mark ruler under partner logos
-- **Reference marks** — three abstract line studies (fan, diagonal hatch, vertical comb)
+## 9. Out of scope
 
-The common vocabulary: thin lines, evenly spaced, one dimension varies (length, opacity, color, weight) to encode meaning.
+- No content/copy rewrites.
+- No route additions or URL changes.
+- No light-mode toggle — dark is the site; the compare block is a designed inversion, not a theme switch.
+- No new npm packages.
 
-For Veep this replaces the current `MockPanel` / `FloatingChip` UI-mockup metaphor (which was Andela's language, not Veep's). New illustration library, one per section, all built in SVG/Canvas so they're crisp and free:
+## 10. Build order
 
-- **Hero** — a vertical bar array where a small central cluster is gold (the "operator moment") and the rest are faint grey (the payroll baseline)
-- **Fractional / Interim / Sprint** — a horizontal timeline of tick marks where one segment is filled (engagement window)
-- **Executive Bench** — a scatter of dots grouped into clusters (portfolio companies), with connecting lines to a central bench
-- **Stats band** — Attio's exact treatment: giant numbers left, waveform-bar illustration right, ruled grid behind
-- **Case switcher** — replace the current giant serif metric with the vertical-bar waveform, where the peak is annotated with the outcome ("Series B closed in 14 weeks")
-
-## 5. Motion — restrained, one gesture per section
-
-Attio uses very little motion, and when it does it's:
-
-- Bars draw in from bottom on scroll into view
-- Numbers count up once
-- Nav underline slides on hover
-
-No parallax, no scroll-jack, no floating chips. Marquee stays (it's on-brand for the manifesto energy) but slows down and drops the italic serif.
-
-## What gets replaced vs. kept
-
-| Kept | Replaced |
-|---|---|
-| IA (12 routes, dual audience) | Cream + forest palette → near-black + off-white |
-| Copy and messaging | Instrument Serif display → geometric sans + mono labels |
-| Pillar / trigger / compare content | `MockPanel` + `FloatingChip` UI mockups → line-based SVG illustrations |
-| CTAs (dual) | Forest-filled buttons → white/black pill buttons, Attio-style |
-| Marquee section | Italic serif marquee copy → tight-tracked sans, single weight |
-| Route structure | Section headers → indexed (`[01]`, `/ CATEGORY`) with ruled grid |
-
-## Suggested build order
-
-1. **Tokens + typography pass** in `src/styles.css` — swap palette, load new font stack, define mono label utility
-2. **Primitives update** — `Eyebrow` becomes mono `/ LABEL`, new `SectionIndex` component (`[0N]`), new `RuledGrid` wrapper
-3. **Illustration kit** — 5–6 reusable SVG components (`BarStack`, `Waveform`, `Timeline`, `TickRuler`, `DotCluster`, `GradientPyramid`)
-4. **Homepage** first, then propagate to `/for-companies`, `/for-portfolios`, `/services/*`
-5. **Retire** `HeroVisual`, `MockPanel`, `FloatingChip` (or keep them for a possible "Portal" area, not marketing)
-
-## Open questions before I build
-
-1. **Scope** — full site redesign in this pass, or homepage first as a proof, then propagate?
-2. **Dark mode only, or light+dark?** Attio is dark-first with a light "system of action" section. Veep could do the same (dark hero, one light section for the compare table).
-3. **Accent color** — keep Veep's forest green as the single spectrum accent, or shift to Attio's mint→coral gradient (only inside illustrations)?
-4. **Illustration ambition** — static SVGs (fast, cheap), or animated on scroll (bars draw in, numbers count up)?
+1. Tokens + purge old accents (`styles.css`, small sweep across components).
+2. `useInView` hook.
+3. Rebuild `illustrations.tsx` with animated gradient SVGs.
+4. Swap illustrations into each section component.
+5. Light-mode Compare band.
+6. Walk every route, verify indices/labels/illustrations render, screenshot homepage + for-companies + services/fractional-cfo to confirm.
