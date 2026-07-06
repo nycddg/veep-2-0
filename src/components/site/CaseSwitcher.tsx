@@ -8,7 +8,7 @@ const cases = [
     tab: "Capital raise",
     metric: "Series B closed in 14 weeks",
     peak: 0.62,
-    body: "Fractional CFO stepped in to rebuild reporting, run lender-grade forecasting, and own investor diligence — from first meeting to signed term sheet.",
+    body: "A Veep fractional finance operator rebuilt reporting, ran lender-grade forecasting, and owned investor diligence — from first meeting to signed term sheet.",
   },
   {
     id: "gtm",
