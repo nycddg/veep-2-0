@@ -1,50 +1,92 @@
+# Interior Pages: Full Rebuild + Consolidation
 
-# Veep redesign — locked direction (v3: floating roster on dark navy)
+The homepage now sells "executive leadership, on demand." The interior pages still read like a professional-services microsite — too many routes, overlapping copy, inconsistent structure, and no shared narrative. This plan rebuilds every interior page from scratch against the homepage's six-question spine and cuts the page count.
 
-Direction chosen: dark navy `#050810` canvas, Playfair Display serif + Inter sans, indigo accent, white pill CTA, tilted glass-morphic operator proof cards on the right of a split hero. That is the visual contract — I will not re-derive it.
+## Narrative spine (every page maps to one question)
 
-## What I'll build (this pass = homepage + design system)
+1. What problem — `/` (done), `/for-companies`, `/for-portfolios`
+2. Why hiring/consulting is wrong — folded into `/how-it-works`
+3. How Veep solves it — `/how-it-works`, `/operators`
+4. Which engagement fits — `/services` (one page, four products)
+5. Why trust Veep — `/proof` (case studies + testimonials + track record)
+6. Next step — `/contact`
 
-### 1. Design system swap (`src/styles.css`, `src/routes/__root.tsx`)
-- New tokens: `--background` navy `#050810`, `--card` `rgba(255,255,255,0.04)`, `--border` `rgba(255,255,255,0.1)`, `--primary` white, `--accent` indigo `#6366f1`, keep gold retired.
-- Load Playfair Display + Inter via `<link>` in `__root.tsx` head; register in `@theme` as `--font-display` and `--font-sans`.
-- Retire the `[01] / CATEGORY` mono rulers as dominant chrome — keep monospace only for small meta.
+## Information architecture changes
 
-### 2. New primitives (`src/components/site/`)
-- `OperatorProofCard` — tilted glass card (initials avatar, name, role, 1–2 pedigree chips). Display-only, no CTA, no rate, no availability.
-- `OutcomeTile` — dark glass tile with serif headline + short line, hover lift, links to `/contact?outcome=…`.
-- `EngagementTile` — 4-up product tile (name, price band, "best when", CTA).
-- `StepFlow` — 4-step visual (Diagnose · Match · Deploy <10d · Handoff).
-- `TrustChip` — "72-hr match · 30-day fit guarantee".
-- Rework `SiteHeader`/`SiteFooter` to match dark navy palette.
+Consolidate 17 routes down to 9:
 
-### 3. Homepage rebuild (`src/routes/index.tsx`)
-Sections, top to bottom:
-1. **Split hero** — left: eyebrow chip, H1 in Playfair ("Executive leadership, on demand." with "Exceptional" in italic), subhead framing the 3 core ideas, white pill CTA "Book intro call" (Fillout) + ghost CTA "How it works", trust chip. Right: 4 tilted operator proof cards using real names from existing roster (Jian Yang, Elaine Bogart, Vanessa Kwan, Stephanie Lung) with pedigree chips.
-2. **Trust bar** — slow logo marquee + 4 metrics ($1B+ raised · 15+ exits · $2B+ savings · 30M users).
-3. **Outcomes grid (6 tiles)** — Close the raise · Fix the forecast · Integrate the acquisition · Unblock GTM · Ship the platform · Cover the seat. Each → prefilled `/contact`.
-4. **Why not hire or consult** — 3-column contrast (Hire 4–6mo permanent · Consult advice not ownership · Veep operator owns it in <10 days), Veep column visually weighted.
-5. **How it works** — 4-step flow, visual.
-6. **Engagement models** — 4 product tiles (Advisory, Fractional, Interim, Sprint) with price band + "best when" + CTA to leaf.
-7. **Operator caliber strip** — pedigree company logos mosaic + "26 vetted operators · led at Stripe, Airbnb, Uber, Coinbase, Shopify…". No cards, no browse.
-8. **Case studies** — 3 anonymized outcome cards (existing).
-9. **Testimonial** — Jerry Kolber, full-bleed dark.
-10. **FAQ** — condensed 6.
-11. **Closing CTA band**.
+```text
+KEEP + REBUILD                       REMOVE / REDIRECT
+/                       (done)       /services/fractional-cfo  → /services#fractional
+/for-companies                       /services/interim         → /services#interim
+/for-portfolios                      /services/executive-bench → /for-portfolios
+/services               (index only) /services/ai-operators    → /how-it-works#ai
+/how-it-works           (new)        /compare                  → /how-it-works#vs
+/operators                           /compare/vs-consultants   → /how-it-works#vs
+/proof                  (new)        /compare/vs-exec-search   → /how-it-works#vs
+/pricing                             /partners                 → /for-portfolios
+/faq                                 /insights                 → removed from nav
+/contact
+```
 
-Persistent bottom-right "Book intro call" chip on scroll past hero.
+Redirects: replace deleted route files with a `beforeLoad` that `throw redirect(...)` to the new anchor, so old links and search results don't 404.
 
-## Explicitly out of scope this pass
+Nav shrinks to: Companies · Portfolios · How it works · Operators · Proof · Pricing · Book a call.
 
-- Interior routes (`/operators`, `/services/*`, `/pricing`, `/compare`, `/about`, `/faq`, `/contact`) — will restyle to the new system in a follow-up pass once you approve the homepage. IA stays.
-- No search, no filters, no browsable operator directory, no per-operator rates or availability. Roster is proof only.
-- No new backend, no live matching engine. Outcome tiles prefill `/contact` via querystring.
-- No headshot scraping — initials avatars.
-- `/insights` stays "coming soon".
+## Page-by-page rebuild
+
+Every page uses the same rhythm: `PageHero` → 2–3 focused sections → `FooterCTA`. No page exceeds 5 sections. Copy is cut ~40%.
+
+### /for-companies
+Hero: "Fill the seat that's blocking the quarter." → outcome tiles (reuse `OutcomeTile`) grouped by trigger (raise, launch, transition, turnaround) → engagement match table (which product for which trigger) → single testimonial → FooterCTA.
+
+### /for-portfolios
+Hero: "An executive bench across the portfolio." → 3-step bench flow (`StepFlow`) → what's included vs billed → one portfolio case → FooterCTA. Absorbs `/partners` content (co-invest / advisor network as a subsection).
+
+### /services (single page, replaces 5 files)
+Hero: "Four ways to engage an operator." → four anchored product blocks (`#advisory`, `#fractional`, `#interim`, `#sprint`) using `EngagementTile` expanded to include: what it is, when to use it, typical scope, price band, one proof point. No more per-product routes. Functional coverage grid (Finance/People/GTM/Ops/Product) stays at the bottom.
+
+### /how-it-works (new — absorbs /compare + /services/ai-operators)
+Hero: "How Veep actually works." → `StepFlow` (Brief → Match in 72h → Operator embeds → Outcome + handoff) → `#vs` contrast block (Veep vs Search vs Consulting vs Freelance, 4-column table, replaces `CompareTable`) → `#ai` AI-powered operators subsection (operator governs / AI executes / operator reviews) → guarantee + SLA strip → FooterCTA.
+
+### /operators
+Hero: "The operators behind the outcomes." → caliber strip (logos) → 6 anonymized operator cards using `OperatorProofCard` grouped by function → one paragraph on vetting (no directory, no search — reinforces curated/managed positioning) → FooterCTA.
+
+### /proof (new — absorbs testimonials + track record from /about)
+Hero: "$1B+ raised. $3B+ revenue. $2B+ saved. 20+ exits." → 3 case studies (problem / operator / outcome, structured identically) → testimonial wall (3–4) → logo mosaic → FooterCTA. Retires `/about` — the "principles" content compresses into a short strip on `/how-it-works`.
+
+### /pricing
+Hero: "Priced to the outcome, not the hour." → four-tier band (Advisory / Fractional / Interim / Sprint) with what's included per tier → "what's not included" honesty block → guarantee → FAQ excerpt (3 pricing Qs) → FooterCTA.
+
+### /faq
+Rebuild as accordion grouped into 4 sections (Engagement · Operators · Pricing · Legal). Cut duplicated Qs already answered on `/how-it-works` and `/pricing`.
+
+### /contact
+Keep current intent/outcome param handling. Tighten layout: left = one-sentence promise + trust chip + 72h SLA, right = form. Remove secondary copy.
+
+## Shared component work
+
+- `EngagementTile`: extend to support anchor id + expanded body (when-to-use, scope, price, proof) so `/services` can render four full product blocks with one component.
+- `CompareTable`: rewrite as a 4-column matrix (Veep / Search / Consulting / Freelance) with rows for Speed, Ownership, Cost model, Exit. Used only on `/how-it-works#vs`.
+- `CaseSwitcher`: reuse on `/proof` as the case study renderer.
+- New: `RedirectRoute` helper — one-liner file per deleted route that calls `throw redirect({ to, hash })` in `beforeLoad`.
+
+## Header, footer, metadata
+
+- `SiteHeader`: update nav to the 7-item set above; remove Insights.
+- `SiteFooter`: mirror new IA; group links under Product / Company / Legal.
+- Every rebuilt route gets fresh `head()` with unique title + description + og:title/og:description matching the new one-sentence promise.
+- `sitemap.xml.ts`: regenerate against the reduced route set.
+
+## Explicitly out of scope
+
+- No new backend, no live matching, no operator directory/search.
+- No new imagery beyond initials avatars and logo wordmarks already in repo.
+- Homepage is not touched.
+- No copy changes to legal pages.
 
 ## Verification
 
-- `bunx tsgo` typecheck
-- Playwright screenshot at 1280 + 390 widths, view outputs to confirm the hero matches the chosen direction.
-
-Approve and I'll build it.
+- `bunx tsgo` typecheck.
+- Playwright pass at 1280 and 390 widths across all 9 kept routes + 3 redirect routes (confirm redirect lands on correct anchor).
+- Manual link audit: grep for `to="/services/fractional-cfo"` etc. and update in-body links to the new anchors.

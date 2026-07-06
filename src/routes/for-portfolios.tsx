@@ -1,145 +1,182 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { Section, CheckList, Eyebrow } from "@/components/site/primitives";
 import { FooterCTA } from "@/components/site/FooterCTA";
+
+const included = [
+  "Portfolio-wide intake and quarterly capacity planning",
+  "Priority operator matching with response SLA",
+  "Emergency CFO / COO / GTM coverage path",
+  "Preferred commercial terms across engagements",
+  "Executive Capacity MSA — one agreement, SOWs per role",
+  "Included diagnostics per portfolio company",
+];
+
+const benchFlow = [
+  { n: "01", t: "Capacity audit", d: "Portfolio-wide leadership risk map: coverage gaps, event triggers, upcoming vacancies." },
+  { n: "02", t: "MSA + bench retainer", d: "One master agreement. Bench sized to your portfolio, activated in days." },
+  { n: "03", t: "Deploy on demand", d: "Each engagement scoped as an SOW. Same terms, same operator pool, no re-contracting." },
+];
+
+const partners = [
+  { t: "PE, family offices, holdcos", d: "The executive bench instead of a full internal operating-partner team." },
+  { t: "M&A advisors, QoE, lenders", d: "Refer operators when portfolio finance or ops needs a real owner." },
+  { t: "Executive search firms", d: "Interim coverage that preserves your permanent search timeline." },
+  { t: "Corporate & M&A counsel", d: "Post-close and restructuring capacity when advice runs out." },
+];
 
 export const Route = createFileRoute("/for-portfolios")({
   head: () => ({
     meta: [
-      { title: "For Portfolios — Veep Executive Bench" },
-      { name: "description", content: "An annual executive capacity partnership for PE, family offices, holdcos, and independent sponsors." },
+      { title: "For Portfolios — An Executive Bench for PE, Family Offices & Holdcos | Veep" },
+      { name: "description", content: "One master agreement. Priority operator access across every portco. Emergency coverage SLA. Deployed via SOW in under 10 days." },
       { property: "og:title", content: "For Portfolios — Veep Executive Bench" },
-      { property: "og:description", content: "Priority access to vetted CFO, COO, and GTM operators across your portfolio." },
+      { property: "og:description", content: "Executive capacity as infrastructure. One MSA, priority matching, deployed via SOW." },
+      { property: "og:url", content: "/for-portfolios" },
     ],
+    links: [{ rel: "canonical", href: "/for-portfolios" }],
   }),
   component: Page,
 });
-
-const tiers = [
-  {
-    name: "Company Bench",
-    price: "$15k–$35k / year",
-    for: "Individual operating companies with recurring capacity needs.",
-    items: [
-      "Annual capacity assessment",
-      "Quarterly leadership planning",
-      "Priority operator matching",
-      "10–20 advisory credits",
-      "Preferred engagement pricing",
-    ],
-  },
-  {
-    name: "Portfolio Bench",
-    price: "$50k–$150k / year",
-    for: "Investors, sponsors, family offices, and holdcos.",
-    items: [
-      "Portfolio-wide intake",
-      "Quarterly capacity review",
-      "Emergency CFO / COO / GTM path",
-      "Included diagnostics",
-      "Executive Capacity MSA",
-    ],
-    featured: true,
-  },
-  {
-    name: "Capacity Subscription",
-    price: "$8k–$25k / month",
-    for: "High-growth companies with cross-functional leadership needs.",
-    items: [
-      "Ongoing advisory access",
-      "Monthly operating cadence",
-      "Cross-functional triage",
-      "Conversion to interim / fractional",
-    ],
-  },
-];
 
 function Page() {
   return (
     <>
       <PageHero
         eyebrow="For portfolios"
-        title="An executive bench, "
-        italic="on retainer."
-        sub="Give every company in your portfolio priority access to vetted CFO, COO, and GTM operators — without building a full internal operating-partner team."
+        title="An executive bench"
+        italic="across the portfolio."
+        sub="Every portco gets priority access to vetted operators. One master agreement. Emergency coverage in days, not months. Priced as infrastructure, not per-headcount."
+        secondaryLabel="Request a capacity audit"
       />
 
-      <Section>
-        <div className="max-w-2xl">
-          <Eyebrow>Start here</Eyebrow>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">
-            Executive Capacity Audit.
-          </h2>
-          <p className="mt-4 text-stone">
-            Before you retain the bench, we run a portfolio-wide leadership map:
-            which companies need CFO help, which need COO help, which need GTM
-            help, which need interim coverage, and which upcoming events will
-            create urgency in the next 6–12 months.
-          </p>
-        </div>
-        <div className="mt-10 grid md:grid-cols-2 gap-6">
-          <div className="rounded-3xl border border-border bg-card p-8">
-            <div className="font-serif text-2xl text-cream">What you get</div>
-            <div className="mt-6">
-              <CheckList items={[
-                "Portfolio-wide leadership risk map",
-                "CFO / COO / GTM coverage assessment",
-                "Upcoming capital and event triggers",
-                "Recommended bench structure per company",
-                "Emergency coverage path",
-              ]} />
+      {/* Bench flow */}
+      <section className="py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-14">
+            <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+              How the bench works
             </div>
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+              One audit. One MSA.{" "}
+              <span className="italic text-stone">Deployed via SOW.</span>
+            </h2>
           </div>
-          <div className="rounded-3xl bg-forest-deep text-forest-foreground p-8">
-            <div className="font-serif text-2xl">Then: Portfolio Executive Bench</div>
-            <p className="mt-4 text-forest-foreground/85 text-sm leading-relaxed">
-              An annual capacity partnership. Priority access, quarterly planning,
-              emergency coverage SLA, preferred commercial terms. Operator
-              deployments billed separately per SOW under a Master Services Agreement.
-            </p>
-            <ul className="mt-6 space-y-2 text-sm">
-              {["Annual bench: $50k–$150k", "Usage billed separately", "MSA activated once, SOWs per role"].map((x) => (
-                <li key={x} className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-forest-foreground/80" /> {x}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Section>
-
-      <Section tone="muted">
-        <div className="max-w-2xl">
-          <Eyebrow>Models</Eyebrow>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">
-            Hire exactly as much leadership as you need.
-          </h2>
-        </div>
-        <div className="mt-10 grid md:grid-cols-3 gap-6">
-          {tiers.map((t) => (
-            <div
-              key={t.name}
-              className={`rounded-3xl p-8 border ${t.featured ? "bg-cream text-ink border-cream" : "bg-card border-border text-cream"}`}
-            >
-              <div className={`text-xs uppercase tracking-widest ${t.featured ? "text-ink/60" : "text-stone"}`}>
-                {t.featured ? "Most common" : "Model"}
+          <div className="grid md:grid-cols-3 gap-px bg-white/10 rounded-3xl overflow-hidden border border-white/10">
+            {benchFlow.map((s) => (
+              <div key={s.n} className="bg-background p-8 flex flex-col">
+                <span className="font-serif text-3xl text-accent">{s.n}</span>
+                <div className="mt-5 font-serif text-2xl text-cream tracking-tight">{s.t}</div>
+                <p className="mt-3 text-sm text-stone leading-relaxed">{s.d}</p>
               </div>
-              <div className="mt-2 font-serif text-2xl">{t.name}</div>
-              <div className={`mt-2 text-sm ${t.featured ? "text-ink/70" : "text-stone"}`}>{t.for}</div>
-              <div className="mt-6 font-serif text-3xl">{t.price}</div>
-              <ul className="mt-6 space-y-2 text-sm">
-                {t.items.map((i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <span className={`h-1.5 w-1.5 rounded-full ${t.featured ? "bg-ink/70" : "bg-forest"}`} /> {i}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
 
-      <FooterCTA headline="Ready to audit your portfolio's executive capacity?" />
+      {/* Included vs billed */}
+      <section className="py-24 md:py-32 border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-10">
+            <div className="lg:col-span-5">
+              <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+                What's included vs billed
+              </div>
+              <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+                Pay for capacity.{" "}
+                <span className="italic text-stone">Not per hire.</span>
+              </h2>
+              <p className="mt-6 text-stone text-lg leading-relaxed">
+                The annual bench covers access, planning, and priority.
+                Operator deployments are billed per SOW at preferred rates —
+                so you fund the infrastructure, not the seat you didn't use.
+              </p>
+            </div>
+            <div className="lg:col-span-7 grid gap-4">
+              <div className="glass-card rounded-3xl p-8">
+                <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+                  Included in the retainer
+                </div>
+                <ul className="mt-6 space-y-3">
+                  {included.map((i) => (
+                    <li key={i} className="flex items-baseline gap-3 text-sm text-cream/85">
+                      <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 translate-y-[-2px]" />
+                      <span>{i}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-3xl border border-white/8 bg-white/[0.02] p-6">
+                <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-stone-soft">
+                  Billed separately, per SOW
+                </div>
+                <p className="mt-3 text-sm text-stone leading-relaxed">
+                  Advisory ($5k–$12.5k/mo) · Fractional ($12k–$40k/mo) · Interim
+                  ($35k–$90k/mo) · Sprint (scoped per outcome). Preferred rates
+                  apply across all four.{" "}
+                  <Link to="/pricing" className="text-cream underline underline-offset-4">
+                    See pricing
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio case */}
+      <section className="py-24 md:py-32 border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="glass-card rounded-3xl p-10 md:p-14">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-4">
+                <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+                  Mid-market PE fund
+                </div>
+                <div className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight">
+                  9 portcos
+                </div>
+                <div className="mt-2 text-sm text-stone">2 emergency covers · 1 exit prep · 6 fractional seats</div>
+              </div>
+              <div className="md:col-span-8">
+                <p className="text-cream text-lg leading-relaxed">
+                  "We used to spend the first 90 days after every acquisition
+                  scrambling to find a CFO. Now we have one call, one MSA, and
+                  an operator in the seat before the deal is fully diligenced."
+                </p>
+                <div className="mt-6 text-xs text-stone">— Operating Partner, mid-market fund</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners strip */}
+      <section className="py-24 md:py-32 border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-14">
+            <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+              Referral network
+            </div>
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+              We partner with the advisors who{" "}
+              <span className="italic text-stone">see it first.</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {partners.map((p) => (
+              <div key={p.t} className="rounded-3xl border border-white/8 bg-white/[0.02] p-6">
+                <div className="font-serif text-xl text-cream tracking-tight">{p.t}</div>
+                <p className="mt-3 text-sm text-stone leading-relaxed">{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FooterCTA
+        headline="Ready to audit your portfolio's executive capacity?"
+        sub="30-minute call. We'll map coverage gaps and event triggers, and propose the bench that fits."
+      />
     </>
   );
 }
