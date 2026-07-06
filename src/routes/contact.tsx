@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
-import { Section, Eyebrow, CheckList } from "@/components/site/primitives";
+import { Section, CheckList } from "@/components/site/primitives";
+import { PageHero } from "@/components/site/PageHero";
 import { Check } from "lucide-react";
 
 const searchSchema = z.object({ intent: z.enum(["call", "audit"]).catch("call") });
