@@ -16,7 +16,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const principles = [
-  { t: "Sell the moment.", d: "The question is rarely 'do you need a CFO'. It's 'what critical initiative has no owner right now'." },
+  { t: "Sell the moment.", d: "The question is rarely \"do you need a CFO.\" It's \"what critical initiative has no owner right now.\"" },
   { t: "Sell the outcome.", d: "Operators are matched to a specific business result — not a title, not a timesheet." },
   { t: "Operator-led.", d: "Judgment and accountability sit with a senior operator, not a slide deck or an AI tool." },
   { t: "Managed model.", d: "You focus on the outcome. Veep manages matching, contracting, onboarding, and transitions." },
@@ -29,7 +29,7 @@ function Page() {
         eyebrow="About"
         title="Built for the"
         italic="pivotal business moment."
-        sub="Veep sits in the gap between executive search, consulting, and freelancers. When a company has an important outcome and no clear owner, we place a senior operator inside the business — quickly enough to matter."
+        sub="Veep sits between executive search, consulting, and freelancers. Too urgent for search. Too senior for freelancers. Too operational for consultants. When a company has an important outcome and no clear owner, we place a senior operator inside the business — quickly enough to matter."
       />
 
       <Section>
