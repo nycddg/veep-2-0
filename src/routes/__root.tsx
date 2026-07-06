@@ -18,15 +18,16 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-serif text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-serif text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <div className="font-mono text-[11px] tracking-widest text-stone-soft">[404] / NOT FOUND</div>
+        <h1 className="mt-6 text-7xl text-cream tracking-tight">404</h1>
+        <h2 className="mt-4 text-xl text-cream tracking-tight">Page not found</h2>
+        <p className="mt-2 text-sm text-stone">
           The page you're looking for doesn't exist or has moved.
         </p>
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-cream transition hover:opacity-90"
+            className="inline-flex items-center justify-center rounded-full bg-cream px-5 py-2.5 text-sm font-medium text-ink transition hover:opacity-90"
           >
             Back to Veep
           </Link>
@@ -46,20 +47,21 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-2xl font-serif text-foreground">This page didn't load</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <div className="font-mono text-[11px] tracking-widest text-stone-soft">[ERR] / SOMETHING BROKE</div>
+        <h1 className="mt-6 text-2xl text-cream tracking-tight">This page didn't load</h1>
+        <p className="mt-2 text-sm text-stone">
           Something went wrong. Try again or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => { router.invalidate(); reset(); }}
-            className="inline-flex items-center justify-center rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-cream transition hover:opacity-90"
+            className="inline-flex items-center justify-center rounded-full bg-cream px-5 py-2.5 text-sm font-medium text-ink transition hover:opacity-90"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-full border border-border bg-background px-5 py-2.5 text-sm font-medium text-foreground transition hover:bg-secondary"
+            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-transparent px-5 py-2.5 text-sm font-medium text-cream transition hover:bg-white/5"
           >
             Go home
           </a>
