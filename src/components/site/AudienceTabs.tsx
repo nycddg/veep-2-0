@@ -15,15 +15,15 @@ type Pillar = {
 const companiesPillars: Pillar[] = [
   {
     eyebrow: "Fractional",
-    title: "CFO capacity for the moment that matters.",
+    title: "C-suite capacity for the moment that matters.",
     bullets: [
-      "Capital raise, lender readiness, and diligence prep",
+      "CFO, COO, CTO, CRO, CMO, or CPO — any C-suite role",
+      "Capital, growth, or operating inflection points",
       "Board and investor reporting cadence",
-      "13-week cash and forecasting rebuild",
-      "Finance-function scoping before a full-time hire",
+      "Function scoping before a full-time hire",
     ],
     href: "/services/fractional-cfo",
-    panelTitle: "Fractional CFO",
+    panelTitle: "Fractional C-Suite",
     panelRows: [
       { k: "Onboarded", v: "< 10 days" },
       { k: "Cadence", v: "Weekly + on-call" },

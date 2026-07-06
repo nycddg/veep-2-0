@@ -24,7 +24,7 @@ const modes = [
 ];
 
 const services = [
-  { to: "/services/fractional-cfo" as const, t: "Fractional CFO", d: "CFO capacity at capital, reporting, and diligence inflection points." },
+  { to: "/services/fractional-cfo" as const, t: "Fractional C-Suite", d: "Any C-suite role — CFO, COO, CTO, CRO, CMO, or CPO — at inflection points." },
   { to: "/services/interim" as const, t: "Interim coverage", d: "Own the executive seat during search, transition, or reset." },
   { to: "/services/executive-bench" as const, t: "Executive Bench", d: "Annual capacity partnership for portfolios and holdcos." },
   { to: "/services/ai-operators" as const, t: "AI-powered operators", d: "A-list executives. Unlimited AI staff. Operator governs the work." },

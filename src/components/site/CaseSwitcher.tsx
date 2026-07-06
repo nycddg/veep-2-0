@@ -6,7 +6,7 @@ const cases = [
     id: "raise",
     tab: "Capital raise",
     metric: "Series B closed in 14 weeks",
-    body: "Fractional CFO stepped in to rebuild reporting, run lender-grade forecasting, and own investor diligence — from first meeting to signed term sheet.",
+    body: "Fractional C-Suite CFO stepped in to rebuild reporting, run lender-grade forecasting, and own investor diligence — from first meeting to signed term sheet.",
   },
   {
     id: "gtm",

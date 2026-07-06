@@ -7,7 +7,7 @@ export function HeroVisual() {
         <div className="flex items-center justify-between">
           <div>
             <div className="text-xs uppercase tracking-widest text-stone">Engagement</div>
-            <div className="mt-1 font-serif text-2xl text-ink">Fractional CFO — Series B prep</div>
+            <div className="mt-1 font-serif text-2xl text-ink">Fractional C-Suite — Series B prep</div>
           </div>
           <span className="rounded-full bg-forest/10 text-forest text-xs px-3 py-1">Active · Day 18</span>
         </div>
