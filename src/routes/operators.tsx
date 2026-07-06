@@ -31,7 +31,7 @@ function Page() {
         eyebrow="The network"
         title="Operators who have"
         italic="already done the work."
-        sub="Not learning on your business. Veep operators have led CFO, COO, CRO, and CTO functions through growth, fundraising, transformation, and transitions."
+        sub="Not learning on your business. Veep operators have led CFO, COO, CRO, and CTO functions through growth, fundraising, transformation, and transitions. They're matched to the work ahead, not just the title."
       />
 
       <Section>
