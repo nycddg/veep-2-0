@@ -11,7 +11,7 @@ const cols: Col[] = [
     idx: "0.1",
     title: "Executive search",
     use: "Permanent hires with a clearly defined role.",
-    breaks: "Breaks down when the work must start immediately.",
+    breaks: "Breaks down when the work must start now.",
   },
   {
     idx: "0.2",
@@ -23,13 +23,13 @@ const cols: Col[] = [
     idx: "0.3",
     title: "Freelancers",
     use: "Task-level, executional support.",
-    breaks: "Break down when the work requires leadership.",
+    breaks: "Break down when the work requires senior judgment.",
   },
   {
     idx: "0.4",
     title: "Veep",
-    use: "An experienced operator steps in and owns the outcome.",
-    breaks: "For senior judgment and operating ownership — now.",
+    use: "A vetted senior operator steps in and owns the outcome.",
+    breaks: "For leadership accountability — without the full-time commitment.",
     highlight: true,
   },
 ];
