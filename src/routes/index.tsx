@@ -7,6 +7,8 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { Eyebrow, Section } from "@/components/site/primitives";
 import { ArrowRight, Clock, Check, Users, Handshake } from "lucide-react";
+import { BOOKING_URL } from "@/lib/booking";
+
 
 const faqs = [
   {
@@ -83,25 +85,30 @@ function Index() {
           </div>
           <div className="pt-14 md:pt-20 pb-16 md:pb-20">
             <div className="max-w-4xl">
-              <Eyebrow>Operator-led · 30-day fit guarantee</Eyebrow>
+              <Eyebrow>Elite strategy · Operator hustle · Freelancer speed</Eyebrow>
               <h1 className="mt-8 text-5xl md:text-7xl xl:text-[84px] leading-[1.0] text-cream tracking-tight">
                 Fractional and interim executives who{" "}
                 <span className="text-stone">own the outcome</span> —
                 <br className="hidden md:block" /> in place in{" "}
                 <span className="text-accent-gold">under 10 days</span>.
               </h1>
-              <p className="mt-8 text-lg md:text-xl text-stone max-w-2xl leading-relaxed">
+              <p className="mt-6 text-xl md:text-2xl text-cream/90 max-w-2xl leading-snug tracking-tight">
+                Second-in-command, on-demand.
+              </p>
+              <p className="mt-6 text-lg md:text-xl text-stone max-w-2xl leading-relaxed">
                 For founders, CEOs, and PE portfolios who need a real CFO, COO, CRO, or
                 CTO now — without a six-month search, a full-time salary, or a
-                consultant's recommendations.
+                consultant's recommendations. 30-day fit guarantee.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
-                <Link
-                  to="/contact"
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full bg-cream px-6 py-3.5 text-sm font-medium text-ink hover:opacity-90 transition inline-flex items-center gap-2"
                 >
-                  Book a discovery call <ArrowRight size={16} />
-                </Link>
+                  Book a call <ArrowRight size={16} />
+                </a>
                 <a
                   href="#how-it-works"
                   className="rounded-full border border-cream/20 px-6 py-3.5 text-sm font-medium text-cream hover:bg-cream/10 transition"
@@ -109,6 +116,7 @@ function Index() {
                   See how it works
                 </a>
               </div>
+
             </div>
           </div>
 
@@ -116,10 +124,11 @@ function Index() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 border-y border-white/8 py-8 mb-8">
             {[
               { k: "$1B+", v: "capital raised" },
-              { k: "$3B+", v: "revenue created" },
-              { k: "$2B+", v: "costs saved" },
-              { k: "20+", v: "exits" },
+              { k: "15+", v: "startup exits" },
+              { k: "$2B+", v: "cost savings" },
+              { k: "30M", v: "users served" },
             ].map((s) => (
+
               <div key={s.k}>
                 <div className="text-3xl md:text-4xl text-cream tracking-tight">{s.k}</div>
                 <div className="mt-1 font-mono text-[11px] tracking-widest uppercase text-stone-soft">

@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import type { ReactNode } from "react";
+import { BOOKING_URL } from "@/lib/booking";
+
 
 /**
  * Section — every marketing band is treated like a page in a technical manual.
@@ -81,11 +83,12 @@ export function MonoLabel({ children }: { children: ReactNode }) {
 }
 
 /**
- * DualCTA — light pill primary + outlined-white secondary. Sized for dark bg.
+ * DualCTA — light pill primary (opens booking calendar in new tab) +
+ * outlined secondary linking to /contact for the audit intent.
  */
 export function DualCTA({
   tone = "onDark",
-  primaryLabel = "Book a discovery call",
+  primaryLabel = "Book a call",
   secondaryLabel = "Request a Capacity Audit",
 }: {
   tone?: "onDark" | "onLight";
@@ -102,12 +105,14 @@ export function DualCTA({
       : "border border-cream/20 text-cream hover:bg-cream/10";
   return (
     <div className="flex flex-wrap gap-3">
-      <Link
-        to="/contact"
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         className={`rounded-full px-5 py-3 text-sm font-medium transition ${primary}`}
       >
         {primaryLabel}
-      </Link>
+      </a>
       <Link
         to="/contact"
         search={{ intent: "audit" }}
@@ -118,6 +123,7 @@ export function DualCTA({
     </div>
   );
 }
+
 
 /**
  * CheckList — thin rules and mono-index bullets, not filled green checks.
