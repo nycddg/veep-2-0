@@ -39,34 +39,24 @@ export function Section({
   const labelColor = isLight ? "text-stone-soft" : "text-stone-soft";
   const ruleColor = isLight ? "border-ink/10" : "border-white/8";
 
+  // Legacy mono index/category chrome retired; args accepted but ignored.
+  void index; void category; void labelColor; void ruleColor;
   return (
-    <section className={`${toneCls} ${className}`}>
+    <section className={`${toneCls} ${className} border-t border-white/10 first:border-t-0`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {(index !== undefined || category) && (
-          <div className={`flex items-center justify-between border-t ${ruleColor} pt-5`}>
-            <span className={`font-mono text-[11px] tracking-widest ${labelColor}`}>
-              {index !== undefined ? `[${String(index).padStart(2, "0")}]` : ""}
-            </span>
-            {category && (
-              <span className={`font-mono text-[11px] tracking-widest ${labelColor}`}>
-                / {category}
-              </span>
-            )}
-          </div>
-        )}
-        <div className={bare ? "" : "py-20 md:py-28"}>{children}</div>
+        <div className={bare ? "" : "py-24 md:py-32"}>{children}</div>
       </div>
     </section>
   );
 }
 
 /**
- * Eyebrow — monospace `/ LABEL` marker. No pill, no dot. Pure typographic.
+ * Eyebrow — indigo micro-caps marker matching the homepage section headers.
  */
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <div className="font-mono text-[11px] tracking-widest uppercase text-stone-soft">
-      / {children}
+    <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+      {children}
     </div>
   );
 }
