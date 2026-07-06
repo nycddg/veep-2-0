@@ -15,20 +15,21 @@ const nav = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 bg-background/80 backdrop-blur border-b border-border/60">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-6">
+    <header className="sticky top-0 z-40 bg-background/85 backdrop-blur border-b border-white/8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-2">
-          <span className="inline-block h-6 w-6 rounded-full bg-forest" />
-          <span className="font-serif text-2xl leading-none text-ink">Veep</span>
+          <span className="inline-block h-2 w-2 rounded-full bg-accent-gold" />
+          <span className="text-[15px] font-medium tracking-tight text-cream">Veep</span>
+          <span className="font-mono text-[10px] tracking-widest text-stone-soft ml-1">™</span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1 rounded-full border border-border/70 bg-card/60 px-2 py-1.5">
+        <nav className="hidden lg:flex items-center gap-1">
           {nav.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              className="px-3 py-1.5 text-sm text-stone hover:text-ink transition rounded-full"
-              activeProps={{ className: "px-3 py-1.5 text-sm text-ink bg-secondary rounded-full" }}
+              className="px-3 py-1.5 text-sm text-stone hover:text-cream transition"
+              activeProps={{ className: "px-3 py-1.5 text-sm text-cream" }}
             >
               {n.label}
             </Link>
@@ -39,20 +40,20 @@ export function SiteHeader() {
           <Link
             to="/contact"
             search={{ intent: "audit" }}
-            className="rounded-full border border-ink/20 px-4 py-2 text-sm font-medium text-ink hover:bg-secondary transition"
+            className="rounded-md border border-white/15 px-3.5 py-1.5 text-sm text-cream hover:bg-white/5 transition"
           >
-            Capacity Audit
+            Talk to us
           </Link>
           <Link
             to="/contact"
-            className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-cream hover:opacity-90 transition"
+            className="rounded-md bg-cream px-3.5 py-1.5 text-sm font-medium text-cream hover:opacity-90 transition"
           >
-            Book a discovery call
+            Book a call
           </Link>
         </div>
 
         <button
-          className="lg:hidden p-2 -mr-2 text-ink"
+          className="lg:hidden p-2 -mr-2 text-cream"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -61,26 +62,26 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div className="lg:hidden border-t border-white/8 bg-background">
           <div className="px-4 py-4 space-y-1">
             {nav.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="block px-3 py-2 text-sm text-ink rounded-md hover:bg-secondary"
+                className="block px-3 py-2 text-sm text-cream rounded-md hover:bg-white/5"
               >
                 {n.label}
               </Link>
             ))}
             <div className="pt-3 flex flex-col gap-2">
               <Link to="/contact" search={{ intent: "audit" }} onClick={() => setOpen(false)}
-                className="rounded-full border border-ink/20 px-4 py-2 text-sm text-center text-ink">
-                Capacity Audit
+                className="rounded-md border border-white/15 px-4 py-2 text-sm text-center text-cream">
+                Talk to us
               </Link>
               <Link to="/contact" onClick={() => setOpen(false)}
-                className="rounded-full bg-ink px-4 py-2 text-sm text-center text-cream">
-                Book a discovery call
+                className="rounded-md bg-cream px-4 py-2 text-sm text-center text-cream">
+                Book a call
               </Link>
             </div>
           </div>

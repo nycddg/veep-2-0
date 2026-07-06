@@ -46,7 +46,7 @@ function Page() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-16">
           <div>
             <Eyebrow>When teams call</Eyebrow>
-            <h2 className="mt-4 font-serif text-3xl md:text-4xl text-ink">Triggers we see every week.</h2>
+            <h2 className="mt-4 font-serif text-3xl md:text-4xl text-cream">Triggers we see every week.</h2>
             <p className="mt-4 text-stone">Any one of these is enough to talk — across any C-suite function.</p>
           </div>
           <CheckList items={triggers} />
@@ -56,11 +56,11 @@ function Page() {
       <Section tone="muted">
         <div className="max-w-2xl">
           <Eyebrow>Packages</Eyebrow>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-ink">Priced to the scope, not the hour.</h2>
+          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">Priced to the scope, not the hour.</h2>
         </div>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
           {packages.map((p) => (
-            <div key={p.name} className={`rounded-3xl p-8 border ${p.featured ? "bg-ink text-cream border-ink" : "bg-card border-border text-ink"}`}>
+            <div key={p.name} className={`rounded-3xl p-8 border ${p.featured ? "bg-ink text-cream border-ink" : "bg-card border-border text-cream"}`}>
               <div className={`text-xs uppercase tracking-widest ${p.featured ? "text-cream/70" : "text-stone"}`}>Package</div>
               <div className="mt-2 font-serif text-2xl">{p.name}</div>
               <div className="mt-4 font-serif text-3xl">{p.price}</div>

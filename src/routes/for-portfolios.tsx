@@ -67,7 +67,7 @@ function Page() {
       <Section>
         <div className="max-w-2xl">
           <Eyebrow>Start here</Eyebrow>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-ink">
+          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">
             Executive Capacity Audit.
           </h2>
           <p className="mt-4 text-stone">
@@ -79,7 +79,7 @@ function Page() {
         </div>
         <div className="mt-10 grid md:grid-cols-2 gap-6">
           <div className="rounded-3xl border border-border bg-card p-8">
-            <div className="font-serif text-2xl text-ink">What you get</div>
+            <div className="font-serif text-2xl text-cream">What you get</div>
             <div className="mt-6">
               <CheckList items={[
                 "Portfolio-wide leadership risk map",
@@ -111,7 +111,7 @@ function Page() {
       <Section tone="muted">
         <div className="max-w-2xl">
           <Eyebrow>Models</Eyebrow>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-ink">
+          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">
             Hire exactly as much leadership as you need.
           </h2>
         </div>
@@ -119,7 +119,7 @@ function Page() {
           {tiers.map((t) => (
             <div
               key={t.name}
-              className={`rounded-3xl p-8 border ${t.featured ? "bg-ink text-cream border-ink" : "bg-card border-border text-ink"}`}
+              className={`rounded-3xl p-8 border ${t.featured ? "bg-ink text-cream border-ink" : "bg-card border-border text-cream"}`}
             >
               <div className={`text-xs uppercase tracking-widest ${t.featured ? "text-cream/70" : "text-stone"}`}>
                 {t.featured ? "Most common" : "Model"}

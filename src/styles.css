@@ -13,8 +13,11 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  /* All display + body in one geometric sans; keep --font-serif key so any existing
+     .font-serif usage renders in the display sans automatically (no serif on site). */
+  --font-serif: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -44,80 +47,74 @@
   --color-stone: var(--stone);
   --color-stone-soft: var(--stone-soft);
   --color-cream: var(--cream);
+  --color-rule: var(--rule);
+  --color-accent-mint: var(--accent-mint);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-coral: var(--accent-coral);
+  --color-accent-cyan: var(--accent-cyan);
 
-  --shadow-elegant: 0 1px 2px oklch(0 0 0 / 0.04), 0 12px 32px -12px oklch(0 0 0 / 0.10);
-  --shadow-float: 0 20px 48px -20px oklch(0.30 0.06 155 / 0.25);
+  --shadow-elegant: 0 1px 0 oklch(1 0 0 / 0.04), 0 24px 60px -30px oklch(0 0 0 / 0.60);
+  --shadow-float: 0 20px 48px -20px oklch(0 0 0 / 0.55);
 }
 
 :root {
-  --radius: 1rem;
+  --radius: 0.5rem;
 
-  --background: oklch(0.985 0.005 90);      /* #FCFBF8 */
-  --foreground: oklch(0.16 0.01 260);
-  --ink: oklch(0.14 0.005 260);              /* near-black */
-  --cream: oklch(0.985 0.005 90);
+  /* Dark-first instrument palette (Attio-inspired). */
+  --background: oklch(0.16 0 0);              /* near-black canvas #0F0F0F */
+  --foreground: oklch(0.96 0 0);              /* off-white */
 
-  --forest: oklch(0.38 0.08 155);            /* deep forest #1E5A3A-ish */
-  --forest-deep: oklch(0.28 0.07 155);
-  --forest-foreground: oklch(0.985 0.005 90);
+  /* Semantic surface + text roles */
+  --ink: oklch(0.13 0 0);                     /* deep near-black for inverted / dark pills */
+  --cream: oklch(0.965 0 0);                  /* off-white for text on dark, and light pills */
+  --stone: oklch(0.68 0 0);                   /* mid-grey secondary text */
+  --stone-soft: oklch(0.48 0 0);              /* tertiary / mono labels */
+  --rule: oklch(1 0 0 / 0.08);                /* faint ruled-grid lines */
 
-  --stone: oklch(0.45 0.008 260);
-  --stone-soft: oklch(0.72 0.008 260);
+  /* Accent kept as single-color forest, demoted from surface to accent-only.
+     Shifted to a warm gold for the Attio spectrum feel. */
+  --forest: oklch(0.82 0.14 82);              /* warm gold */
+  --forest-deep: oklch(0.20 0 0);             /* charcoal panel (used for dark inset blocks) */
+  --forest-foreground: oklch(0.965 0 0);
 
-  --card: oklch(1 0 0);
-  --card-foreground: var(--foreground);
-  --popover: oklch(1 0 0);
-  --popover-foreground: var(--foreground);
-  --primary: var(--ink);
-  --primary-foreground: var(--cream);
-  --secondary: oklch(0.955 0.008 90);
-  --secondary-foreground: var(--ink);
-  --muted: oklch(0.955 0.008 90);
+  /* Illustration spectrum (never on chrome, only inside SVG illustrations) */
+  --accent-mint: oklch(0.82 0.14 175);
+  --accent-cyan: oklch(0.80 0.10 220);
+  --accent-gold: oklch(0.82 0.14 82);
+  --accent-coral: oklch(0.72 0.16 25);
+
+  --card: oklch(0.195 0 0);                   /* slightly raised panel */
+  --card-foreground: var(--cream);
+  --popover: oklch(0.195 0 0);
+  --popover-foreground: var(--cream);
+  --primary: var(--cream);
+  --primary-foreground: var(--ink);
+  --secondary: oklch(0.22 0 0);
+  --secondary-foreground: var(--cream);
+  --muted: oklch(0.22 0 0);
   --muted-foreground: var(--stone);
   --accent: var(--forest);
-  --accent-foreground: var(--forest-foreground);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.90 0.008 90);
-  --input: oklch(0.90 0.008 90);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 0.10);
+  --input: oklch(1 0 0 / 0.14);
   --ring: var(--forest);
 
-  --chart-1: var(--forest);
-  --chart-2: oklch(0.55 0.10 155);
-  --chart-3: oklch(0.70 0.06 90);
-  --chart-4: oklch(0.40 0.03 260);
+  --chart-1: var(--accent-mint);
+  --chart-2: var(--accent-cyan);
+  --chart-3: var(--accent-gold);
+  --chart-4: var(--accent-coral);
   --chart-5: oklch(0.75 0.04 60);
 
   --sidebar: var(--background);
   --sidebar-foreground: var(--foreground);
-  --sidebar-primary: var(--ink);
-  --sidebar-primary-foreground: var(--cream);
+  --sidebar-primary: var(--cream);
+  --sidebar-primary-foreground: var(--ink);
   --sidebar-accent: var(--secondary);
-  --sidebar-accent-foreground: var(--ink);
+  --sidebar-accent-foreground: var(--cream);
   --sidebar-border: var(--border);
   --sidebar-ring: var(--forest);
-}
-
-.dark {
-  --background: oklch(0.14 0.005 260);
-  --foreground: oklch(0.985 0.005 90);
-  --card: oklch(0.20 0.01 260);
-  --card-foreground: oklch(0.985 0.005 90);
-  --popover: oklch(0.20 0.01 260);
-  --popover-foreground: oklch(0.985 0.005 90);
-  --primary: oklch(0.985 0.005 90);
-  --primary-foreground: oklch(0.14 0.005 260);
-  --secondary: oklch(0.22 0.01 260);
-  --secondary-foreground: oklch(0.985 0.005 90);
-  --muted: oklch(0.22 0.01 260);
-  --muted-foreground: oklch(0.72 0.008 260);
-  --accent: var(--forest);
-  --accent-foreground: var(--forest-foreground);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: var(--forest);
 }
 
 @layer base {
@@ -131,19 +128,60 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    letter-spacing: -0.005em;
   }
 
+  /* All display headlines render in the display sans, tight tracking.
+     Old .font-serif usage inherits this automatically. */
   h1, h2, h3, .font-serif {
     font-family: var(--font-serif);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.025em;
+    font-weight: 500;
+  }
+
+  h1 { letter-spacing: -0.035em; }
+
+  /* Remove decorative italics site-wide — Attio never italicizes for emphasis.
+     Emphasis comes from color contrast (mono-label + grey continuation). */
+  em, i, .italic {
+    font-style: normal;
+    color: var(--color-stone);
   }
 }
 
+/* Monospace label utility for section indices and category tags */
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-stone-soft);
+  font-weight: 400;
+}
+
+/* Ruled grid divider */
+@utility ruled-top {
+  border-top: 1px solid var(--color-rule);
+}
+@utility ruled-bottom {
+  border-bottom: 1px solid var(--color-rule);
+}
+
 @utility marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+/* Illustration draw-in — used by BarStack / Waveform on mount */
+@keyframes drawUp {
+  from { transform: scaleY(0); opacity: 0; }
+  to   { transform: scaleY(1); opacity: 1; }
+}
+@utility draw-up {
+  transform-origin: bottom;
+  animation: drawUp 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }

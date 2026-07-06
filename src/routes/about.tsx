@@ -36,12 +36,12 @@ function Page() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-16">
           <div>
             <Eyebrow>Principles</Eyebrow>
-            <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-ink">What we run on.</h2>
+            <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">What we run on.</h2>
           </div>
           <div className="grid gap-4">
             {principles.map((p) => (
               <div key={p.t} className="rounded-3xl border border-border bg-card p-6">
-                <div className="font-serif text-xl text-ink">{p.t}</div>
+                <div className="font-serif text-xl text-cream">{p.t}</div>
                 <p className="mt-2 text-stone text-sm">{p.d}</p>
               </div>
             ))}
@@ -52,7 +52,7 @@ function Page() {
       <Section tone="muted">
         <div className="max-w-3xl">
           <Eyebrow>Track record</Eyebrow>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-ink">
+          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">
             $1B+ raised. $3B+ revenue created. $2B+ costs saved. 20+ exits.
           </h2>
           <p className="mt-4 text-stone">

@@ -1,68 +1,117 @@
 import { Link } from "@tanstack/react-router";
-import { Check, Star } from "lucide-react";
+import { Check } from "lucide-react";
 import type { ReactNode } from "react";
 
+/**
+ * Section — every marketing band is treated like a page in a technical manual.
+ * Optional index ([0N]) and category (/ CATEGORY) render as monospace labels
+ * on a faint ruled top border. Default tone is dark ("canvas"); pass "light"
+ * for the one inverted section on the site, or "panel" for a raised charcoal.
+ */
 export function Section({
   children,
   className = "",
-  tone = "cream",
+  tone = "canvas",
+  index,
+  category,
+  bare = false,
 }: {
   children: ReactNode;
   className?: string;
-  tone?: "cream" | "ink" | "forest" | "muted";
+  tone?: "canvas" | "light" | "panel" | "ink" | "forest" | "muted" | "cream";
+  index?: string | number;
+  category?: string;
+  bare?: boolean;
 }) {
   const toneCls =
-    tone === "ink"
-      ? "bg-ink text-cream"
-      : tone === "forest"
-      ? "bg-forest-deep text-forest-foreground"
+    tone === "light"
+      ? "bg-cream text-ink"
+      : tone === "panel"
+      ? "bg-card text-cream"
       : tone === "muted"
-      ? "bg-secondary text-ink"
-      : "bg-background text-ink";
+      ? "bg-secondary text-cream"
+      : // legacy names all map to the dark canvas
+        "bg-background text-cream";
+
+  const isLight = tone === "light";
+  const labelColor = isLight ? "text-stone-soft" : "text-stone-soft";
+  const ruleColor = isLight ? "border-ink/10" : "border-white/8";
+
   return (
     <section className={`${toneCls} ${className}`}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-        {children}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {(index !== undefined || category) && (
+          <div className={`flex items-center justify-between border-t ${ruleColor} pt-5`}>
+            <span className={`font-mono text-[11px] tracking-widest ${labelColor}`}>
+              {index !== undefined ? `[${String(index).padStart(2, "0")}]` : ""}
+            </span>
+            {category && (
+              <span className={`font-mono text-[11px] tracking-widest ${labelColor}`}>
+                / {category}
+              </span>
+            )}
+          </div>
+        )}
+        <div className={bare ? "" : "py-20 md:py-28"}>{children}</div>
       </div>
     </section>
   );
 }
 
+/**
+ * Eyebrow — monospace `/ LABEL` marker. No pill, no dot. Pure typographic.
+ */
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-current/20 px-3 py-1 text-xs uppercase tracking-widest opacity-80">
-      <span className="h-1.5 w-1.5 rounded-full bg-current" />
-      {children}
+    <div className="font-mono text-[11px] tracking-widest uppercase text-stone-soft">
+      / {children}
     </div>
   );
 }
 
+/**
+ * MonoLabel — Attio-style numeric column indicator ("0.1", "0.2", …).
+ */
+export function MonoLabel({ children }: { children: ReactNode }) {
+  return (
+    <span className="font-mono text-[11px] tracking-widest text-stone-soft">
+      {children}
+    </span>
+  );
+}
+
+/**
+ * DualCTA — light pill primary + outlined-white secondary. Sized for dark bg.
+ */
 export function DualCTA({
-  tone = "light",
+  tone = "onDark",
   primaryLabel = "Book a discovery call",
   secondaryLabel = "Request a Capacity Audit",
 }: {
-  tone?: "light" | "dark";
+  tone?: "onDark" | "onLight";
   primaryLabel?: string;
   secondaryLabel?: string;
 }) {
   const primary =
-    tone === "dark"
-      ? "bg-cream text-ink hover:opacity-90"
-      : "bg-ink text-cream hover:opacity-90";
+    tone === "onLight"
+      ? "bg-ink text-cream hover:opacity-90"
+      : "bg-cream text-ink hover:opacity-90";
   const secondary =
-    tone === "dark"
-      ? "border border-cream/30 text-cream hover:bg-cream/10"
-      : "border border-ink/20 text-ink hover:bg-secondary";
+    tone === "onLight"
+      ? "border border-ink/20 text-ink hover:bg-ink/5"
+      : "border border-cream/20 text-cream hover:bg-cream/10";
   return (
     <div className="flex flex-wrap gap-3">
-      <Link to="/contact" className={`rounded-full px-5 py-3 text-sm font-medium transition ${primary}`}>
+      <Link
+        to="/contact"
+        className={`rounded-md px-5 py-3 text-sm font-medium transition ${primary}`}
+      >
         {primaryLabel}
       </Link>
       <Link
         to="/contact"
         search={{ intent: "audit" }}
-        className={`rounded-full px-5 py-3 text-sm font-medium transition ${secondary}`}
+        className={`rounded-md px-5 py-3 text-sm font-medium transition ${secondary}`}
       >
         {secondaryLabel}
       </Link>
@@ -70,39 +119,43 @@ export function DualCTA({
   );
 }
 
+/**
+ * CheckList — thin rules and mono-index bullets, not filled green checks.
+ */
 export function CheckList({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-3">
-      {items.map((it) => (
-        <li key={it} className="flex gap-3 text-[15px] leading-relaxed">
-          <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-forest/10 text-forest">
-            <Check size={12} strokeWidth={3} />
+    <ul className="divide-y divide-white/8 border-y border-white/8">
+      {items.map((it, i) => (
+        <li key={it} className="flex items-start gap-4 py-3 text-[15px] leading-relaxed text-cream/85">
+          <span className="font-mono text-[11px] tracking-widest text-stone-soft pt-1 w-10 shrink-0">
+            0.{i + 1}
           </span>
-          <span>{it}</span>
+          <span className="flex-1">{it}</span>
+          <Check size={14} strokeWidth={2} className="text-accent-gold mt-1.5 shrink-0" />
         </li>
       ))}
     </ul>
   );
 }
 
+/**
+ * RatingRow — kept lean. Grey text, single gold dot, no filled star row.
+ */
 export function RatingRow() {
   return (
     <div className="flex items-center gap-3 text-sm text-stone">
-      <div className="flex text-forest">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
-        ))}
-      </div>
-      <span>Trusted by founders, boards, and investors.</span>
+      <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-gold" />
+      <span className="font-mono text-[11px] tracking-widest uppercase">
+        Trusted by founders, boards, and investors
+      </span>
     </div>
   );
 }
 
+/* Kept exports (unused by new marketing surfaces) so any lingering imports compile. */
 export function MockPanel({ children }: { children?: ReactNode }) {
   return (
-    <div className="relative rounded-3xl bg-card border border-border shadow-elegant p-6 md:p-8 overflow-hidden">
-      <div className="absolute -top-16 -right-16 h-64 w-64 rounded-full bg-forest/10 blur-3xl" />
-      <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-forest/5 blur-3xl" />
+    <div className="relative rounded-lg bg-card border border-border shadow-elegant p-6 md:p-8 overflow-hidden">
       <div className="relative">{children}</div>
     </div>
   );
@@ -118,9 +171,9 @@ export function FloatingChip({
   className?: string;
 }) {
   return (
-    <div className={`rounded-2xl bg-card border border-border shadow-float px-4 py-3 ${className}`}>
-      <div className="text-[10px] uppercase tracking-widest text-stone">{label}</div>
-      <div className="mt-0.5 text-sm font-medium text-ink">{value}</div>
+    <div className={`rounded-md bg-card border border-border px-4 py-3 ${className}`}>
+      <div className="font-mono text-[10px] uppercase tracking-widest text-stone-soft">{label}</div>
+      <div className="mt-0.5 text-sm font-medium text-cream">{value}</div>
     </div>
   );
 }

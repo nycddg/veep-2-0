@@ -46,7 +46,7 @@ function Page() {
             <div key={m.t} className="rounded-3xl border border-border bg-card p-6">
               <Eyebrow>{m.t}</Eyebrow>
               <p className="mt-4 text-sm text-stone leading-relaxed">{m.d}</p>
-              <div className="mt-6 font-serif text-xl text-ink">{m.price}</div>
+              <div className="mt-6 font-serif text-xl text-cream">{m.price}</div>
             </div>
           ))}
         </div>
@@ -55,7 +55,7 @@ function Page() {
       <Section tone="muted">
         <div className="max-w-2xl">
           <Eyebrow>Deep dives</Eyebrow>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-ink">
+          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">
             Wedges we lead with.
           </h2>
         </div>
@@ -64,7 +64,7 @@ function Page() {
             <Link key={s.to} to={s.to} className="group rounded-3xl border border-border bg-card p-8 hover:shadow-elegant transition">
               <div className="flex items-start justify-between gap-6">
                 <div>
-                  <div className="font-serif text-2xl text-ink">{s.t}</div>
+                  <div className="font-serif text-2xl text-cream">{s.t}</div>
                   <p className="mt-3 text-stone text-sm max-w-md">{s.d}</p>
                 </div>
                 <ArrowUpRight className="text-forest group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />

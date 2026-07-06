@@ -43,13 +43,13 @@ function Page() {
                   {o.n[0]}
                 </div>
                 <div>
-                  <div className="font-serif text-xl text-ink">{o.n}</div>
+                  <div className="font-serif text-xl text-cream">{o.n}</div>
                   <div className="text-xs text-stone">{o.r}</div>
                 </div>
               </div>
               <div className="mt-5 flex flex-wrap gap-2">
                 {o.tags.map((t) => (
-                  <span key={t} className="rounded-full bg-secondary text-ink text-xs px-3 py-1">{t}</span>
+                  <span key={t} className="rounded-full bg-secondary text-cream text-xs px-3 py-1">{t}</span>
                 ))}
               </div>
             </div>
@@ -60,7 +60,7 @@ function Page() {
       <Section tone="muted">
         <div className="max-w-2xl">
           <Eyebrow>Are you an operator?</Eyebrow>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-ink">Join the network.</h2>
+          <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">Join the network.</h2>
           <p className="mt-4 text-stone">
             We work with senior CFOs, COOs, CROs, CTOs, and Chiefs of Staff who
             want to run pivotal engagements — not fill hours.
