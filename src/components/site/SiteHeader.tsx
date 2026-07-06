@@ -2,6 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
+import { BOOKING_URL } from "@/lib/booking";
+
 
 const nav = [
   { to: "/services", label: "Services" },
@@ -35,12 +37,15 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
-          <Link
-            to="/contact"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-cream px-3.5 py-1.5 text-sm font-medium text-ink hover:opacity-90 transition"
           >
-            Book a discovery call
-          </Link>
+            Book a call
+          </a>
+
         </div>
 
         <button
@@ -66,14 +71,17 @@ export function SiteHeader() {
               </Link>
             ))}
             <div className="pt-3">
-              <Link
-                to="/contact"
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="block rounded-full bg-cream px-4 py-2 text-sm text-center font-medium text-ink"
               >
-                Book a discovery call
-              </Link>
+                Book a call
+              </a>
             </div>
+
           </div>
         </div>
       )}

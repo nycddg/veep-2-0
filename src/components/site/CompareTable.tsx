@@ -1,85 +1,89 @@
-type Col = {
-  idx: string;
-  title: string;
-  use: string;
-  breaks: string;
-  highlight?: boolean;
+/**
+ * CompareTable — 6 dimensions × 4 approaches, adapted from the live veep.work
+ * "How we stack up" grid. Veep column highlighted. Renders inside the one
+ * light section on the site (bg-cream, text-ink).
+ */
+
+type Row = {
+  dim: string;
+  veep: string;
+  exec: string;
+  consulting: string;
+  freelance: string;
 };
 
-const cols: Col[] = [
-  {
-    idx: "0.1",
-    title: "Executive search",
-    use: "Permanent hires with a clearly defined role.",
-    breaks: "Breaks down when the work must start immediately.",
-  },
-  {
-    idx: "0.2",
-    title: "Consulting",
-    use: "Strategy, analysis, and recommendations.",
-    breaks: "Breaks down when someone has to own execution.",
-  },
-  {
-    idx: "0.3",
-    title: "Freelancers",
-    use: "Task-level, executional support.",
-    breaks: "Break down when the work requires leadership.",
-  },
-  {
-    idx: "0.4",
-    title: "Veep",
-    use: "An experienced operator steps in and owns the outcome.",
-    breaks: "For senior judgment and operating ownership — now.",
-    highlight: true,
-  },
+const rows: Row[] = [
+  { dim: "Speed",       veep: "Instant",    exec: "Slow",      consulting: "Delayed",   freelance: "Fast" },
+  { dim: "Cost",        veep: "Affordable", exec: "Expensive", consulting: "Expensive", freelance: "Variable" },
+  { dim: "Flexibility", veep: "Scalable",   exec: "Fixed",     consulting: "Rigid",     freelance: "High" },
+  { dim: "Quality",     veep: "Vetted",     exec: "Variable",  consulting: "Uncertain", freelance: "Unreliable" },
+  { dim: "Engagement",  veep: "Adaptive",   exec: "Permanent", consulting: "Limited",   freelance: "Temporary" },
+  { dim: "Risk",        veep: "Low",        exec: "High",      consulting: "Costly",    freelance: "Inconsistent" },
 ];
 
-/**
- * CompareTable — rendered inside the one light section on the site.
- * Colors are locked to the light palette (ink on cream). Do not read
- * dark tokens here.
- */
 export function CompareTable() {
   return (
     <div>
       <div className="max-w-2xl">
         <div className="font-mono text-[11px] tracking-widest uppercase text-ink/50">
-          / How Veep is different
+          / How we stack up
         </div>
         <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05] text-ink tracking-tight">
-          Sits in the gap between search, consulting, and freelancers.
+          Better. Faster. Cheaper. Really.
         </h2>
+        <p className="mt-6 text-ink/70 max-w-xl">
+          Executive hiring, consulting, and freelancers each solve one slice.
+          Veep sits in the middle — vetted senior operators who embed, execute,
+          and stay flexible.
+        </p>
       </div>
-      <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-ink/10">
-        {cols.map((c) => (
-          <div
-            key={c.title}
-            className={`p-6 md:p-7 flex flex-col gap-5 border-b border-ink/10 md:border-r md:border-r-ink/10 ${
-              c.highlight ? "bg-ink/[0.04]" : ""
-            }`}
-          >
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-[11px] tracking-widest text-ink/50">{c.idx}</span>
-              {c.highlight && (
-                <span
-                  className="font-mono text-[10px] tracking-widest bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(90deg, #56C7C0, #F2A47C 60%, #EE6A4D)",
-                  }}
-                >
-                  · VEEP
-                </span>
-              )}
-            </div>
-            <div className="text-2xl leading-tight text-ink tracking-tight">{c.title}</div>
-            <div className="text-sm text-ink/60 leading-relaxed">{c.use}</div>
-            <div className="text-sm text-ink/75 border-t border-ink/10 pt-4 mt-auto">
-              {c.breaks}
-            </div>
-          </div>
-        ))}
+
+      <div className="mt-14 overflow-x-auto">
+        <table className="w-full min-w-[720px] border-t border-ink/10 text-left">
+          <thead>
+            <tr>
+              <th className="p-4 md:p-5 border-b border-ink/10 w-1/5"></th>
+              <th className="p-4 md:p-5 font-mono text-[11px] tracking-widest uppercase text-ink border-b border-ink/10 bg-ink/[0.04] w-1/5">
+                / Veep
+              </th>
+              <th className="p-4 md:p-5 font-mono text-[11px] tracking-widest uppercase text-ink/50 border-b border-ink/10 w-1/5">
+                Exec. Hiring
+              </th>
+              <th className="p-4 md:p-5 font-mono text-[11px] tracking-widest uppercase text-ink/50 border-b border-ink/10 w-1/5">
+                Consulting Firm
+              </th>
+              <th className="p-4 md:p-5 font-mono text-[11px] tracking-widest uppercase text-ink/50 border-b border-ink/10 w-1/5">
+                Freelancers
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.dim}>
+                <td className="p-4 md:p-5 font-mono text-[11px] tracking-widest uppercase text-ink/50 border-b border-ink/10 align-middle">
+                  {r.dim}
+                </td>
+                <td className="p-4 md:p-5 text-ink text-lg tracking-tight border-b border-ink/10 bg-ink/[0.04]">
+                  {r.veep}
+                </td>
+                <td className="p-4 md:p-5 text-ink/70 text-lg tracking-tight border-b border-ink/10">
+                  {r.exec}
+                </td>
+                <td className="p-4 md:p-5 text-ink/70 text-lg tracking-tight border-b border-ink/10">
+                  {r.consulting}
+                </td>
+                <td className="p-4 md:p-5 text-ink/70 text-lg tracking-tight border-b border-ink/10">
+                  {r.freelance}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
+
+      <p className="mt-6 text-xs font-mono uppercase tracking-widest text-ink/50">
+        / Save 40–80% vs. direct hiring, executive search, and consulting firms.
+      </p>
     </div>
   );
 }
