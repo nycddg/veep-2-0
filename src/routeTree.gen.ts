@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as OperatorsRouteImport } from './routes/operators'
@@ -24,6 +25,11 @@ import { Route as ServicesFractionalCfoRouteImport } from './routes/services.fra
 import { Route as ServicesExecutiveBenchRouteImport } from './routes/services.executive-bench'
 import { Route as ServicesAiOperatorsRouteImport } from './routes/services.ai-operators'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
   '/services/executive-bench': typeof ServicesExecutiveBenchRoute
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
@@ -120,6 +127,7 @@ export interface FileRoutesByTo {
   '/insights': typeof InsightsRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
   '/services/executive-bench': typeof ServicesExecutiveBenchRoute
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
@@ -137,6 +145,7 @@ export interface FileRoutesById {
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
   '/services/executive-bench': typeof ServicesExecutiveBenchRoute
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
@@ -155,6 +164,7 @@ export interface FileRouteTypes {
     | '/operators'
     | '/partners'
     | '/services'
+    | '/sitemap.xml'
     | '/services/ai-operators'
     | '/services/executive-bench'
     | '/services/fractional-cfo'
@@ -170,6 +180,7 @@ export interface FileRouteTypes {
     | '/insights'
     | '/operators'
     | '/partners'
+    | '/sitemap.xml'
     | '/services/ai-operators'
     | '/services/executive-bench'
     | '/services/fractional-cfo'
@@ -186,6 +197,7 @@ export interface FileRouteTypes {
     | '/operators'
     | '/partners'
     | '/services'
+    | '/sitemap.xml'
     | '/services/ai-operators'
     | '/services/executive-bench'
     | '/services/fractional-cfo'
@@ -203,10 +215,18 @@ export interface RootRouteChildren {
   OperatorsRoute: typeof OperatorsRoute
   PartnersRoute: typeof PartnersRoute
   ServicesRoute: typeof ServicesRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -338,6 +358,7 @@ const rootRouteChildren: RootRouteChildren = {
   OperatorsRoute: OperatorsRoute,
   PartnersRoute: PartnersRoute,
   ServicesRoute: ServicesRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

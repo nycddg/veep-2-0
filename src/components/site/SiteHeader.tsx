@@ -4,13 +4,12 @@ import { Menu, X } from "lucide-react";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 
 const nav = [
+  { to: "/services", label: "Services" },
   { to: "/for-companies", label: "For Companies" },
   { to: "/for-portfolios", label: "For Portfolios" },
-  { to: "/services", label: "Services" },
+  { to: "/pricing", label: "Pricing" },
   { to: "/operators", label: "Operators" },
-  { to: "/partners", label: "Partners" },
-  { to: "/insights", label: "Insights" },
-  { to: "/about", label: "About" },
+  { to: "/faq", label: "FAQ" },
 ] as const;
 
 export function SiteHeader() {
@@ -38,16 +37,9 @@ export function SiteHeader() {
         <div className="hidden lg:flex items-center gap-2">
           <Link
             to="/contact"
-            search={{ intent: "audit" }}
-            className="rounded-full border border-white/15 px-3.5 py-1.5 text-sm text-cream hover:bg-white/5 transition"
-          >
-            Talk to us
-          </Link>
-          <Link
-            to="/contact"
             className="rounded-full bg-cream px-3.5 py-1.5 text-sm font-medium text-ink hover:opacity-90 transition"
           >
-            Book a call
+            Book a discovery call
           </Link>
         </div>
 
@@ -73,14 +65,13 @@ export function SiteHeader() {
                 {n.label}
               </Link>
             ))}
-            <div className="pt-3 flex flex-col gap-2">
-              <Link to="/contact" search={{ intent: "audit" }} onClick={() => setOpen(false)}
-                className="rounded-full border border-white/15 px-4 py-2 text-sm text-center text-cream">
-                Talk to us
-              </Link>
-              <Link to="/contact" onClick={() => setOpen(false)}
-                className="rounded-full bg-cream px-4 py-2 text-sm text-center text-ink">
-                Book a call
+            <div className="pt-3">
+              <Link
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className="block rounded-full bg-cream px-4 py-2 text-sm text-center font-medium text-ink"
+              >
+                Book a discovery call
               </Link>
             </div>
           </div>
