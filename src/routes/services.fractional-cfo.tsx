@@ -76,7 +76,7 @@ function Page() {
             <Eyebrow>Start smaller</Eyebrow>
             <h3 className="mt-4 font-serif text-3xl md:text-4xl">Executive Leadership Diagnostic.</h3>
             <p className="mt-4 text-forest-foreground/85">
-              A 2–3 week engagement priced $5k–$15k. Assess the function that needs
+              A 2–3 week engagement priced $5k–$15k. We assess the function that needs
               leadership, build a 90-day executive roadmap, and recommend the right
               operator for the role. Credited against the first month if you continue.
             </p>
