@@ -72,9 +72,9 @@ function Page() {
           </h2>
           <p className="mt-4 text-stone">
             Before you retain the bench, we run a portfolio-wide leadership map:
-            which companies need CFO help, which need COO, which need GTM,
-            which need interim coverage, and which upcoming events will create
-            urgency in the next 6–12 months.
+            which companies need CFO help, which need COO help, which need GTM
+            help, which need interim coverage, and which upcoming events will
+            create urgency in the next 6–12 months.
           </p>
         </div>
         <div className="mt-10 grid md:grid-cols-2 gap-6">
@@ -139,7 +139,7 @@ function Page() {
         </div>
       </Section>
 
-      <FooterCTA headline="Ready to map your portfolio's executive capacity?" />
+      <FooterCTA headline="Ready to audit your portfolio's executive capacity?" />
     </>
   );
 }

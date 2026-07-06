@@ -1,9 +1,7 @@
 const lines = [
-  "Too urgent for search",
-  "Too senior for freelancers",
-  "Too operational for consultants",
   "Faster than executive search",
   "More accountable than consulting",
+  "More senior than freelancers",
   "Build now — hire later",
   "Operator-led · AI-powered",
   "Pay for leadership, not payroll",

@@ -80,14 +80,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Veep places vetted senior operators inside companies to own the outcome — without the cost, delay, or commitment of a full-time executive.",
+          "Veep gives companies immediate access to senior operators who own outcomes — without the cost, delay, or commitment of a full-time executive.",
       },
       { name: "author", content: "Veep" },
       { property: "og:title", content: "Veep — Senior operators. Owned outcomes." },
       {
         property: "og:description",
         content:
-          "Too urgent for search. Too senior for freelancers. Too operational for consultants.",
+          "Fractional, interim, and portfolio executive capacity for companies at pivotal business moments.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

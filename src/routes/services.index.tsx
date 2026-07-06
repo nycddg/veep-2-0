@@ -10,7 +10,7 @@ export const Route = createFileRoute("/services/")({
       { title: "Services — Veep" },
       { name: "description", content: "Advisory, fractional, interim, and sprint engagement models — plus a portfolio bench and AI-powered operators." },
       { property: "og:title", content: "Services — Veep" },
-      { property: "og:description", content: "Four ways to engage a senior operator, matched to how urgent and how deep the work is." },
+      { property: "og:description", content: "Four ways to engage a Veep operator, matched to how urgent and how deep the work is." },
     ],
   }),
   component: Page,
@@ -24,10 +24,10 @@ const modes = [
 ];
 
 const services = [
-  { to: "/services/fractional-cfo" as const, t: "Fractional C-suite", d: "Any C-suite role — CFO, COO, CTO, CRO, CMO, or CPO — at inflection points." },
+  { to: "/services/fractional-cfo" as const, t: "Fractional C-Suite", d: "Any C-suite role — CFO, COO, CTO, CRO, CMO, or CPO — at inflection points." },
   { to: "/services/interim" as const, t: "Interim coverage", d: "Own the executive seat during search, transition, or reset." },
   { to: "/services/executive-bench" as const, t: "Executive Bench", d: "Annual capacity partnership for portfolios and holdcos." },
-  { to: "/services/ai-operators" as const, t: "AI-powered operators", d: "Senior operators governing unlimited AI staff." },
+  { to: "/services/ai-operators" as const, t: "AI-powered operators", d: "A-list executives. Unlimited AI staff. Operator governs the work." },
 ];
 
 function Page() {
@@ -37,7 +37,7 @@ function Page() {
         eyebrow="Services"
         title="Leadership,"
         italic="not labor."
-        sub="Veep doesn't sell cheap executive time. Veep sells the right level of leadership for the work — for as long as you need it. Every engagement is built around an operator owning an outcome."
+        sub="Veep is not selling cheap executive time. Veep is selling the right level of leadership for the work — for as long as you need it."
       />
 
       <Section>
@@ -56,7 +56,7 @@ function Page() {
         <div className="max-w-2xl">
           <Eyebrow>Deep dives</Eyebrow>
           <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-cream">
-            Where we lead.
+            Wedges we lead with.
           </h2>
         </div>
         <div className="mt-10 grid md:grid-cols-2 gap-4">

@@ -5,7 +5,7 @@ const cols = [
   { k: "0.2", h: "Interim", d: "Own the seat while the search runs." },
   { k: "0.3", h: "Sprint", d: "Ship one outcome with a clear endpoint." },
   { k: "0.4", h: "Bench", d: "Portfolio-wide executive capacity." },
-  { k: "0.5", h: "AI-powered", d: "Operators governing unlimited AI staff." },
+  { k: "0.5", h: "AI Ops", d: "Operators governing unlimited AI staff." },
 ];
 
 export function HeroVisual() {
