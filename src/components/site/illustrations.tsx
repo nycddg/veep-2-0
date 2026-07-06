@@ -218,7 +218,8 @@ export function Timeline({
               x2={x}
               y1={height / 2 - (inFill ? 12 : 4)}
               y2={height / 2 + (inFill ? 12 : 4)}
-              stroke={inFill ? "url(#ill-spectrum)" : "rgba(255,255,255,0.16)"}
+              stroke="url(#ill-spectrum)"
+              strokeOpacity={inFill ? 1 : 0.35}
               strokeWidth={inFill ? 2 : 1}
               strokeLinecap="round"
               style={{
