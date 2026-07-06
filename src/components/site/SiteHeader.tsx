@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 
 const nav = [
   { to: "/for-companies", label: "For Companies" },
