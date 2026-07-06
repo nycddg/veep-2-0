@@ -4,14 +4,14 @@ import { Menu, X } from "lucide-react";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import { BOOKING_URL } from "@/lib/booking";
 
-
 const nav = [
-  { to: "/services", label: "Services" },
-  { to: "/for-companies", label: "For Companies" },
-  { to: "/for-portfolios", label: "For Portfolios" },
-  { to: "/pricing", label: "Pricing" },
+  { to: "/for-companies", label: "Companies" },
+  { to: "/for-portfolios", label: "Portfolios" },
+  { to: "/how-it-works", label: "How it works" },
+  { to: "/services", label: "Engagements" },
   { to: "/operators", label: "Operators" },
-  { to: "/faq", label: "FAQ" },
+  { to: "/proof", label: "Proof" },
+  { to: "/pricing", label: "Pricing" },
 ] as const;
 
 export function SiteHeader() {
@@ -45,7 +45,6 @@ export function SiteHeader() {
           >
             Book a call
           </a>
-
         </div>
 
         <button
@@ -81,7 +80,6 @@ export function SiteHeader() {
                 Book a call
               </a>
             </div>
-
           </div>
         </div>
       )}

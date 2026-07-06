@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-// TODO: replace with your project URL once a project name or custom domain is set.
 const BASE_URL = "";
 
 interface SitemapEntry {
@@ -16,21 +15,14 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/services", changefreq: "monthly", priority: "0.9" },
-          { path: "/services/fractional-cfo", changefreq: "monthly", priority: "0.9" },
-          { path: "/services/interim", changefreq: "monthly", priority: "0.9" },
-          { path: "/services/executive-bench", changefreq: "monthly", priority: "0.8" },
-          { path: "/services/ai-operators", changefreq: "monthly", priority: "0.7" },
           { path: "/for-companies", changefreq: "monthly", priority: "0.9" },
           { path: "/for-portfolios", changefreq: "monthly", priority: "0.9" },
+          { path: "/services", changefreq: "monthly", priority: "0.9" },
+          { path: "/how-it-works", changefreq: "monthly", priority: "0.9" },
+          { path: "/operators", changefreq: "monthly", priority: "0.8" },
+          { path: "/proof", changefreq: "monthly", priority: "0.8" },
           { path: "/pricing", changefreq: "monthly", priority: "0.9" },
-          { path: "/faq", changefreq: "monthly", priority: "0.8" },
-          { path: "/compare/vs-consultants", changefreq: "monthly", priority: "0.7" },
-          { path: "/compare/vs-executive-search", changefreq: "monthly", priority: "0.7" },
-          { path: "/operators", changefreq: "monthly", priority: "0.7" },
-          { path: "/about", changefreq: "monthly", priority: "0.6" },
-          { path: "/insights", changefreq: "weekly", priority: "0.6" },
-          { path: "/partners", changefreq: "monthly", priority: "0.5" },
+          { path: "/faq", changefreq: "monthly", priority: "0.7" },
           { path: "/contact", changefreq: "monthly", priority: "0.8" },
         ];
 
@@ -41,9 +33,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,
-          ]
-            .filter(Boolean)
-            .join("\n"),
+          ].filter(Boolean).join("\n"),
         );
 
         const xml = [
