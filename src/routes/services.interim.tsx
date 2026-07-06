@@ -30,7 +30,7 @@ function Page() {
           <div>
             <Eyebrow>What interim covers</Eyebrow>
             <h2 className="mt-4 font-serif text-3xl md:text-4xl text-cream">Full ownership, not advice.</h2>
-            <p className="mt-4 text-stone">A Veep interim operator is accountable for the outcome for the term of the engagement.</p>
+            <p className="mt-4 text-stone">A Veep interim operator is accountable for the outcome for the full term of the engagement.</p>
           </div>
           <CheckList items={[
             "CFO, COO, or CMO transitions",
