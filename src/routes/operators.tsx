@@ -135,6 +135,43 @@ function Page() {
               </div>
             ))}
           </div>
+          <div className="mt-10 flex items-center gap-3 text-sm text-stone-soft">
+            <span className="h-px flex-1 bg-white/10" />
+            <span className="font-mono text-[11px] tracking-widest uppercase">
+              + 135 more across the network
+            </span>
+            <span className="h-px flex-1 bg-white/10" />
+          </div>
+        </div>
+      </section>
+
+      {/* Minimum qualifications */}
+      <section className="py-24 md:py-32 border-t border-white/10">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-14">
+            <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+              Minimum qualifications
+            </div>
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+              The bar to{" "}
+              <span className="italic text-stone">join the bench.</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {qualifications.map((q, i) => (
+              <div key={q.t} className="glass-card rounded-3xl p-6">
+                <div className="flex items-start gap-4">
+                  <span className="font-mono text-[11px] tracking-widest text-stone-soft pt-1">
+                    0{i + 1}
+                  </span>
+                  <div>
+                    <div className="text-cream font-medium tracking-tight">{q.t}</div>
+                    <p className="mt-2 text-sm text-stone leading-relaxed">{q.d}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
