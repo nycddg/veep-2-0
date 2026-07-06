@@ -119,18 +119,18 @@ function Page() {
           {tiers.map((t) => (
             <div
               key={t.name}
-              className={`rounded-3xl p-8 border ${t.featured ? "bg-ink text-cream border-ink" : "bg-card border-border text-cream"}`}
+              className={`rounded-3xl p-8 border ${t.featured ? "bg-cream text-ink border-cream" : "bg-card border-border text-cream"}`}
             >
-              <div className={`text-xs uppercase tracking-widest ${t.featured ? "text-cream/70" : "text-stone"}`}>
+              <div className={`text-xs uppercase tracking-widest ${t.featured ? "text-ink/60" : "text-stone"}`}>
                 {t.featured ? "Most common" : "Model"}
               </div>
               <div className="mt-2 font-serif text-2xl">{t.name}</div>
-              <div className={`mt-2 text-sm ${t.featured ? "text-cream/70" : "text-stone"}`}>{t.for}</div>
+              <div className={`mt-2 text-sm ${t.featured ? "text-ink/70" : "text-stone"}`}>{t.for}</div>
               <div className="mt-6 font-serif text-3xl">{t.price}</div>
               <ul className="mt-6 space-y-2 text-sm">
                 {t.items.map((i) => (
                   <li key={i} className="flex items-center gap-3">
-                    <span className={`h-1.5 w-1.5 rounded-full ${t.featured ? "bg-cream/80" : "bg-forest"}`} /> {i}
+                    <span className={`h-1.5 w-1.5 rounded-full ${t.featured ? "bg-ink/70" : "bg-forest"}`} /> {i}
                   </li>
                 ))}
               </ul>
