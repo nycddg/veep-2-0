@@ -19,7 +19,7 @@ export const Route = createFileRoute("/insights")({
 const posts = [
   {
     t: "The CFO wedge: why finance pain converts first",
-    d: "Finance pain attaches to hard events. That's why it's the fastest wedge into a real executive-capacity engagement.",
+    d: "Finance pain attaches to hard events. That's why it's the fastest wedge into an executive-capacity engagement.",
     tag: "Positioning",
     read: "6 min read",
   },
