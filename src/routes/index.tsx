@@ -34,9 +34,10 @@ function Index() {
                 <span className="text-stone">Owned outcomes.</span>
               </h1>
               <p className="mt-8 text-lg text-stone max-w-xl leading-relaxed">
-                Veep gives companies immediate access to senior operators who own
-                outcomes — without the cost, delay, or commitment of a full-time
-                executive. Leadership when you need it, not when hiring catches up.
+                C-suite expertise without C-suite burn. Veep places vetted senior
+                operators inside your business to own the outcome — without the
+                cost, delay, or commitment of a full-time hire. Leadership when
+                you need it, not when hiring catches up.
               </p>
               <div className="mt-10">
                 <DualCTA />
