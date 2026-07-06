@@ -18,10 +18,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 bg-background/85 backdrop-blur border-b border-white/8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-6">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="inline-block h-2 w-2 rounded-full bg-accent-gold" />
-          <span className="text-[15px] font-medium tracking-tight text-cream">Veep</span>
-          <span className="font-mono text-[10px] tracking-widest text-stone-soft ml-1">™</span>
+        <Link to="/" className="flex items-center" aria-label="Veep home">
+          <img src={wordmarkWhite.url} alt="Veep" className="h-5 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
