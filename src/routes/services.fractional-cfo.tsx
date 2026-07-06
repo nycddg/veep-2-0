@@ -6,9 +6,9 @@ import { FooterCTA } from "@/components/site/FooterCTA";
 export const Route = createFileRoute("/services/fractional-cfo")({
   head: () => ({
     meta: [
-      { title: "Fractional C-Suite — Veep" },
-      { name: "description", content: "Fractional C-Suite capacity — CFO, COO, CTO, CRO, CMO, or CPO — for companies at capital, growth, and operating inflection points." },
-      { property: "og:title", content: "Fractional C-Suite — Veep" },
+      { title: "Fractional C-suite — Veep" },
+      { name: "description", content: "Fractional C-suite capacity — CFO, COO, CTO, CRO, CMO, or CPO — for companies at capital, growth, and operating inflection points." },
+      { property: "og:title", content: "Fractional C-suite — Veep" },
       { property: "og:description", content: "The senior executive you need now — any C-suite role — without the cost of a full-time hire." },
     ],
   }),
