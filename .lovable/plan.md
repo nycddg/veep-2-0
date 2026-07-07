@@ -1,92 +1,107 @@
-# Interior Pages: Full Rebuild + Consolidation
 
-The homepage now sells "executive leadership, on demand." The interior pages still read like a professional-services microsite — too many routes, overlapping copy, inconsistent structure, and no shared narrative. This plan rebuilds every interior page from scratch against the homepage's six-question spine and cuts the page count.
+## Goal
 
-## Narrative spine (every page maps to one question)
+Turn `/` into a focused one-page conversion site for **founders and CEOs of scaling companies** looking for a **fractional CXO** (CFO / COO / CRO / CTO). Single primary CTA sitewide: **Book intro call** (existing Fillout link). Keep `/contact`, `/pricing`, `/faq` as standalone pages; retire the rest.
 
-1. What problem — `/` (done), `/for-companies`, `/for-portfolios`
-2. Why hiring/consulting is wrong — folded into `/how-it-works`
-3. How Veep solves it — `/how-it-works`, `/operators`
-4. Which engagement fits — `/services` (one page, four products)
-5. Why trust Veep — `/proof` (case studies + testimonials + track record)
-6. Next step — `/contact`
+## Routes
 
-## Information architecture changes
+**Keep**
+- `/` — rebuilt one-page conversion site (this plan)
+- `/contact`, `/pricing`, `/faq` — kept for detail + SEO, restyled to match
 
-Consolidate 17 routes down to 9:
+**Redirect to `/#anchor`** (via TanStack `beforeLoad` stubs)
+- `/for-companies` → `/#solution`
+- `/for-portfolios` → `/#solution` (portfolios becomes a small secondary block on `/`)
+- `/how-it-works` → `/#how`
+- `/services`, `/services/*` → `/#offer`
+- `/operators` → `/#operators`
+- `/proof` → `/#proof`
+- `/about`, `/insights`, `/partners`, `/compare*` → `/`
 
-```text
-KEEP + REBUILD                       REMOVE / REDIRECT
-/                       (done)       /services/fractional-cfo  → /services#fractional
-/for-companies                       /services/interim         → /services#interim
-/for-portfolios                      /services/executive-bench → /for-portfolios
-/services               (index only) /services/ai-operators    → /how-it-works#ai
-/how-it-works           (new)        /compare                  → /how-it-works#vs
-/operators                           /compare/vs-consultants   → /how-it-works#vs
-/proof                  (new)        /compare/vs-exec-search   → /how-it-works#vs
-/pricing                             /partners                 → /for-portfolios
-/faq                                 /insights                 → removed from nav
-/contact
-```
+Sitemap trimmed to `/`, `/contact`, `/pricing`, `/faq`.
 
-Redirects: replace deleted route files with a `beforeLoad` that `throw redirect(...)` to the new anchor, so old links and search results don't 404.
+## Navigation
 
-Nav shrinks to: Companies · Portfolios · How it works · Operators · Proof · Pricing · Book a call.
+Sticky top nav with anchor links + Book intro call pill:
+`Overview · Benefits · How it works · Proof · Pricing · FAQ · [Book intro call]`
 
-## Page-by-page rebuild
+Pricing/FAQ links go to the standalone pages; the rest scroll to sections. Mobile: hamburger + persistent bottom "Book intro call" bar.
 
-Every page uses the same rhythm: `PageHero` → 2–3 focused sections → `FooterCTA`. No page exceeds 5 sections. Copy is cut ~40%.
+## Page structure (in order)
 
-### /for-companies
-Hero: "Fill the seat that's blocking the quarter." → outcome tiles (reuse `OutcomeTile`) grouped by trigger (raise, launch, transition, turnaround) → engagement match table (which product for which trigger) → single testimonial → FooterCTA.
+1. **Hero** — Headline formula: *"Get a fractional CXO owning the outcome in under 10 days — without a 90-day exec search."* Subhead speaks to scaling-company founders/CEOs. Primary CTA: Book intro call. Secondary: "See how it works" (scroll to #how). Trust chip: "72-hour match · 10-day deploy · 30-day fit guarantee." Visual: existing `HeroVisual` refined.
+2. **Company definition band** (GEO/AI-search) — one-sentence extractable definition: "Veep is a fractional CXO firm that places senior CFO, COO, CRO, and CTO operators inside scaling companies in under 10 days."
+3. **Problem** — 4 pains founders feel (open exec seat, stalled fundraise, ops chaos, GTM plateau) + cost of inaction + why the alternatives (retained search, big-4 consultants, job boards) fail.
+4. **Solution** — What Veep is, how it works, why operator-led beats consultants and search.
+5. **Benefits** — 6 outcome cards (Own the outcome, Deploy in <10 days, Senior-only bench, No 6-figure retainers, Clean handoff, 30-day fit guarantee).
+6. **Offer / Engagements** — Consolidated cards for Fractional CXO, Interim, Executive Bench, Advisory. Each: who it's for, what's included, outcome. Link out to `/pricing` for detail.
+7. **How it works** — 4-step flow reusing `StepFlow`: Diagnose → Match → Deploy → Handoff.
+8. **Proof** — Logo wall + hero testimonial (Jerry Kolber) + 3 operator proof cards + stats band (150+ operators, 72h match, <10d deploy).
+9. **Differentiation** — "Old way vs. Veep" table (Retained search / Consultants / Job boards vs. Veep) using `CompareTable`.
+10. **For portfolios** — small secondary band with one paragraph + CTA for PE/VC readers (replaces `/for-portfolios`).
+11. **Objections** — 6 direct Q&A (Is this for me? What does it cost? How fast? Can I trust you? What if it doesn't fit? What happens after the call?).
+12. **FAQ** — 8 concise Q&A optimized for AI search + `FAQPage` JSON-LD. Link to full `/faq`.
+13. **Final CTA** — Reuse `FooterCTA`: "What critical initiative doesn't have an owner right now?" + Book intro call + fit-guarantee reassurance.
+14. **Footer** — Compact: wordmark, one-liner, hello@veep.co, links to `/pricing`, `/faq`, `/contact`, Privacy, Terms.
 
-### /for-portfolios
-Hero: "An executive bench across the portfolio." → 3-step bench flow (`StepFlow`) → what's included vs billed → one portfolio case → FooterCTA. Absorbs `/partners` content (co-invest / advisor network as a subsection).
+## Copy principles
 
-### /services (single page, replaces 5 files)
-Hero: "Four ways to engage an operator." → four anchored product blocks (`#advisory`, `#fractional`, `#interim`, `#sprint`) using `EngagementTile` expanded to include: what it is, when to use it, typical scope, price band, one proof point. No more per-product routes. Functional coverage grid (Finance/People/GTM/Ops/Product) stays at the bottom.
+Every section answers one of: Why care? Is this for me? What do I get? Why trust you? Why now? What's next? No jargon, buyer-focused, outcome-first. Rewrite headlines to the "[outcome] for [audience] without [friction]" formula.
 
-### /how-it-works (new — absorbs /compare + /services/ai-operators)
-Hero: "How Veep actually works." → `StepFlow` (Brief → Match in 72h → Operator embeds → Outcome + handoff) → `#vs` contrast block (Veep vs Search vs Consulting vs Freelance, 4-column table, replaces `CompareTable`) → `#ai` AI-powered operators subsection (operator governs / AI executes / operator reviews) → guarantee + SLA strip → FooterCTA.
+## SEO
 
-### /operators
-Hero: "The operators behind the outcomes." → caliber strip (logos) → 6 anonymized operator cards using `OperatorProofCard` grouped by function → one paragraph on vetting (no directory, no search — reinforces curated/managed positioning) → FooterCTA.
+- Single H1 in hero targeting **fractional CXO**.
+- Secondary terms woven into H2s: fractional CFO, interim COO, fractional executive for startups, executive on demand.
+- Route `head()` on `/`: new title `Fractional CXO in Under 10 Days — Veep`, matching description, og:title/description/url, canonical `/`.
+- Semantic sections with `id`s matching nav anchors.
+- Descriptive `alt` on every image; existing lazy loading kept.
+- JSON-LD: keep Organization on `__root`; add `FAQPage` + `Service` schema on `/`.
+- Update `sitemap.xml.ts` to just `/`, `/contact`, `/pricing`, `/faq`.
+- Update `SiteFooter` + `SiteHeader` nav to the new anchor-based structure.
 
-### /proof (new — absorbs testimonials + track record from /about)
-Hero: "$1B+ raised. $3B+ revenue. $2B+ saved. 20+ exits." → 3 case studies (problem / operator / outcome, structured identically) → testimonial wall (3–4) → logo mosaic → FooterCTA. Retires `/about` — the "principles" content compresses into a short strip on `/how-it-works`.
+## GEO / AI search
 
-### /pricing
-Hero: "Priced to the outcome, not the hour." → four-tier band (Advisory / Fractional / Interim / Sprint) with what's included per tier → "what's not included" honesty block → guarantee → FAQ excerpt (3 pricing Qs) → FooterCTA.
+- Company definition band #2 is a single extractable sentence.
+- FAQ answers written as direct, standalone answers (not "well, it depends…").
+- "Best for" language in Offer cards.
+- Consistent entity naming ("Veep") everywhere.
+- Location/service-area line in footer + Organization schema.
 
-### /faq
-Rebuild as accordion grouped into 4 sections (Engagement · Operators · Pricing · Legal). Cut duplicated Qs already answered on `/how-it-works` and `/pricing`.
+## Design
 
-### /contact
-Keep current intent/outcome param handling. Tighten layout: left = one-sentence promise + trust chip + 72h SLA, right = form. Remove secondary copy.
+- Keep existing dark-navy + cream + Playfair aesthetic (locked design system, no repaint).
+- Reuse `PageHero` visual language for the hero, `glass-card`, `StepFlow`, `CompareTable`, `LogoWall`, `Testimonials`, `OperatorProofCard`, `OutcomeTile`, `EngagementTile`, `TrustChip`, `FooterCTA`.
+- Add repeated inline Book-intro-call CTAs after Benefits, Proof, and Objections.
+- Mobile: sticky bottom CTA bar (new small component) so the primary action is always one tap away.
 
-## Shared component work
+## Technical changes
 
-- `EngagementTile`: extend to support anchor id + expanded body (when-to-use, scope, price, proof) so `/services` can render four full product blocks with one component.
-- `CompareTable`: rewrite as a 4-column matrix (Veep / Search / Consulting / Freelance) with rows for Speed, Ownership, Cost model, Exit. Used only on `/how-it-works#vs`.
-- `CaseSwitcher`: reuse on `/proof` as the case study renderer.
-- New: `RedirectRoute` helper — one-liner file per deleted route that calls `throw redirect({ to, hash })` in `beforeLoad`.
+### New / edited files
+- `src/routes/index.tsx` — full rewrite into the 14-section flow above.
+- `src/components/site/SiteHeader.tsx` — new anchor-based nav + Book intro call pill (kept mobile menu).
+- `src/components/site/SiteFooter.tsx` — trimmed to kept routes + legal links.
+- `src/components/site/StickyMobileCTA.tsx` *(new)* — bottom sticky "Book intro call" bar on mobile only.
+- `src/components/site/ObjectionList.tsx` *(new)* — 6-item Q&A grid.
+- `src/routes/__root.tsx` — mount `StickyMobileCTA`; update sitewide title/description defaults.
+- `src/routes/contact.tsx`, `src/routes/pricing.tsx`, `src/routes/faq.tsx` — light nav/CTA alignment only; content preserved. Ensure canonical + og:url self-reference.
+- `src/routes/sitemap[.]xml.ts` — reduce to 4 URLs.
 
-## Header, footer, metadata
+### Redirect stubs (replace existing files with `beforeLoad` throw redirect)
+- `for-companies.tsx`, `for-portfolios.tsx`, `how-it-works.tsx`, `operators.tsx`, `proof.tsx`, `about.tsx`, `insights.tsx`, `partners.tsx`, `compare.tsx`, `compare.vs-consultants.tsx`, `compare.vs-executive-search.tsx`, `services.tsx`, `services.index.tsx`, `services.ai-operators.tsx`, `services.executive-bench.tsx`, `services.fractional-cfo.tsx`, `services.interim.tsx` — all become `beforeLoad: () => { throw redirect({ to: '/', hash: '<anchor>' }) }` stubs so existing inbound links keep working. (Route files stay so `routeTree.gen.ts` stays consistent.)
 
-- `SiteHeader`: update nav to the 7-item set above; remove Insights.
-- `SiteFooter`: mirror new IA; group links under Product / Company / Legal.
-- Every rebuilt route gets fresh `head()` with unique title + description + og:title/og:description matching the new one-sentence promise.
-- `sitemap.xml.ts`: regenerate against the reduced route set.
+### JSON-LD
+- Add `FAQPage` + `Service` schema in `/` route `head().scripts`.
 
-## Explicitly out of scope
+## Content the user still needs to supply (post-build)
 
-- No new backend, no live matching, no operator directory/search.
-- No new imagery beyond initials avatars and logo wordmarks already in repo.
-- Homepage is not touched.
-- No copy changes to legal pages.
+- Real client logos (currently placeholder LogoWall).
+- 2–3 additional named testimonials with role + company.
+- 1–2 short case studies with metric (e.g. "Cut close from 22 to 6 days").
+- Confirmed pricing bands for `/pricing` (or confirm "custom / on call").
+- Any certifications, press mentions, or founder bio for extra trust.
 
-## Verification
+## Out of scope
 
-- `bunx tsgo` typecheck.
-- Playwright pass at 1280 and 390 widths across all 9 kept routes + 3 redirect routes (confirm redirect lands on correct anchor).
-- Manual link audit: grep for `to="/services/fractional-cfo"` etc. and update in-body links to the new anchors.
+- No backend / auth / DB work.
+- No visual redesign — existing token system and typography stay.
+- Standalone `/pricing`, `/contact`, `/faq` content is preserved as-is; only nav/CTA styling touched.
