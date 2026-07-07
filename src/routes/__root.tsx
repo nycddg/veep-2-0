@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
+import { StickyMobileCTA } from "../components/site/StickyMobileCTA";
 
 const orgSchema = {
   "@context": "https://schema.org",
@@ -88,11 +89,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Veep — Fractional & Interim Executives in Under 10 Days" },
+      { title: "Fractional CXO in Under 10 Days — Veep" },
       {
         name: "description",
         content:
-          "Veep places senior fractional and interim executives — CFO, COO, CRO, CTO — inside your company in under 10 days. Operator-led. 30-day fit guarantee.",
+          "Veep places a senior fractional CXO — CFO, COO, CRO, CTO — inside your scaling company in under 10 days. Operator-led. 30-day fit guarantee.",
       },
       { name: "author", content: "Veep" },
       { property: "og:site_name", content: "Veep" },
@@ -142,6 +143,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <StickyMobileCTA />
       </div>
     </QueryClientProvider>
   );

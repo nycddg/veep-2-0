@@ -1,27 +1,29 @@
 import { Link } from "@tanstack/react-router";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 
-const cols = [
+type FooterLink =
+  | { kind: "hash"; hash: string; label: string }
+  | { kind: "route"; to: "/pricing" | "/faq" | "/contact"; label: string };
+
+const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
   {
-    title: "Product",
+    title: "Explore",
     links: [
-      { to: "/for-companies", label: "For Companies" },
-      { to: "/for-portfolios", label: "For Portfolios" },
-      { to: "/services", label: "Engagements" },
-      { to: "/how-it-works", label: "How it works" },
-      { to: "/pricing", label: "Pricing" },
+      { kind: "hash", hash: "how", label: "How it works" },
+      { kind: "hash", hash: "offer", label: "Engagements" },
+      { kind: "hash", hash: "proof", label: "Proof" },
+      { kind: "hash", hash: "faq", label: "FAQ on this page" },
     ],
   },
   {
-    title: "Company",
+    title: "Details",
     links: [
-      { to: "/operators", label: "Operators" },
-      { to: "/proof", label: "Proof" },
-      { to: "/faq", label: "FAQ" },
-      { to: "/contact", label: "Contact" },
+      { kind: "route", to: "/pricing", label: "Pricing" },
+      { kind: "route", to: "/faq", label: "Full FAQ" },
+      { kind: "route", to: "/contact", label: "Contact" },
     ],
   },
-] as const;
+];
 
 export function SiteFooter() {
   return (
@@ -44,10 +46,16 @@ export function SiteFooter() {
               </div>
               <ul className="mt-4 space-y-2">
                 {c.links.map((l) => (
-                  <li key={l.to}>
-                    <Link to={l.to} className="text-sm text-cream/85 hover:text-cream transition">
-                      {l.label}
-                    </Link>
+                  <li key={l.label}>
+                    {l.kind === "hash" ? (
+                      <Link to="/" hash={l.hash} className="text-sm text-cream/85 hover:text-cream transition">
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <Link to={l.to} className="text-sm text-cream/85 hover:text-cream transition">
+                        {l.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

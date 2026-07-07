@@ -4,15 +4,19 @@ import { Menu, X } from "lucide-react";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import { BOOKING_URL } from "@/lib/booking";
 
-const nav = [
-  { to: "/for-companies", label: "Companies" },
-  { to: "/for-portfolios", label: "Portfolios" },
-  { to: "/how-it-works", label: "How it works" },
-  { to: "/services", label: "Engagements" },
-  { to: "/operators", label: "Operators" },
-  { to: "/proof", label: "Proof" },
-  { to: "/pricing", label: "Pricing" },
-] as const;
+// Anchor links on /, plus two standalone routes (/pricing, /faq).
+type NavItem =
+  | { kind: "hash"; hash: string; label: string }
+  | { kind: "route"; to: "/pricing" | "/faq"; label: string };
+
+const nav: readonly NavItem[] = [
+  { kind: "hash", hash: "overview", label: "Overview" },
+  { kind: "hash", hash: "benefits", label: "Benefits" },
+  { kind: "hash", hash: "how", label: "How it works" },
+  { kind: "hash", hash: "proof", label: "Proof" },
+  { kind: "route", to: "/pricing", label: "Pricing" },
+  { kind: "route", to: "/faq", label: "FAQ" },
+];
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -24,16 +28,27 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
-          {nav.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              className="px-3 py-1.5 text-sm text-stone hover:text-cream transition"
-              activeProps={{ className: "px-3 py-1.5 text-sm text-cream" }}
-            >
-              {n.label}
-            </Link>
-          ))}
+          {nav.map((n) =>
+            n.kind === "hash" ? (
+              <Link
+                key={n.hash}
+                to="/"
+                hash={n.hash}
+                className="px-3 py-1.5 text-sm text-stone hover:text-cream transition"
+              >
+                {n.label}
+              </Link>
+            ) : (
+              <Link
+                key={n.to}
+                to={n.to}
+                className="px-3 py-1.5 text-sm text-stone hover:text-cream transition"
+                activeProps={{ className: "px-3 py-1.5 text-sm text-cream" }}
+              >
+                {n.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
@@ -43,7 +58,7 @@ export function SiteHeader() {
             rel="noopener noreferrer"
             className="rounded-full bg-cream px-3.5 py-1.5 text-sm font-medium text-ink hover:opacity-90 transition"
           >
-            Book a call
+            Book intro call
           </a>
         </div>
 
@@ -59,16 +74,28 @@ export function SiteHeader() {
       {open && (
         <div className="lg:hidden border-t border-white/8 bg-background">
           <div className="px-4 py-4 space-y-1">
-            {nav.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                onClick={() => setOpen(false)}
-                className="block px-3 py-2 text-sm text-cream rounded-md hover:bg-white/5"
-              >
-                {n.label}
-              </Link>
-            ))}
+            {nav.map((n) =>
+              n.kind === "hash" ? (
+                <Link
+                  key={n.hash}
+                  to="/"
+                  hash={n.hash}
+                  onClick={() => setOpen(false)}
+                  className="block px-3 py-2 text-sm text-cream rounded-md hover:bg-white/5"
+                >
+                  {n.label}
+                </Link>
+              ) : (
+                <Link
+                  key={n.to}
+                  to={n.to}
+                  onClick={() => setOpen(false)}
+                  className="block px-3 py-2 text-sm text-cream rounded-md hover:bg-white/5"
+                >
+                  {n.label}
+                </Link>
+              ),
+            )}
             <div className="pt-3">
               <a
                 href={BOOKING_URL}
@@ -77,7 +104,7 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="block rounded-full bg-cream px-4 py-2 text-sm text-center font-medium text-ink"
               >
-                Book a call
+                Book intro call
               </a>
             </div>
           </div>
