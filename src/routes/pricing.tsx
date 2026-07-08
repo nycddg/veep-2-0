@@ -125,8 +125,8 @@ function Page() {
                     : "border border-white/8 bg-white/[0.02]"
                 }`}
               >
-                <div className="flex items-center justify-between">
-                  <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="font-serif text-2xl text-cream tracking-tight">
                     {t.t}
                   </div>
                   {t.featured && (
@@ -135,9 +135,7 @@ function Page() {
                     </span>
                   )}
                 </div>
-                <div className="mt-8 font-mono text-4xl text-cream tracking-tight" style={{ fontFeatureSettings: '"zero", "ss01"' }}>{t.p}</div>
-                <div className="text-xs text-stone mt-1 font-mono tracking-wide">{t.per}</div>
-                <p className="mt-5 text-sm text-cream/85 leading-relaxed">{t.best}</p>
+                <p className="mt-3 text-sm text-cream/85 leading-relaxed">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-stone">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-baseline gap-2.5">
@@ -146,7 +144,10 @@ function Page() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8 pt-6 border-t border-white/10">
+                <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between gap-4">
+                  <span className="font-mono text-xs text-stone-soft tracking-wide">
+                    {t.p} {t.per}
+                  </span>
                   <Link
                     to="/services"
                     hash={t.t.toLowerCase()}
