@@ -1,48 +1,33 @@
-Add **Operator in the Loop** as a fifth engagement model across the Veep offer ladder, with copy and positioning that matches the existing four offers (Advisory, Sprint, Operator, Pod).
+Replace all mentions of "Bottleneck Call" across the site with the new "30-minute call with a Veep founder" framing, keeping the tone consistent with the existing site voice.
 
-## Where it goes
+## Files and exact changes
 
-1. **Homepage offer ladder (`src/routes/index.tsx`, `#offer` section)**
-  - Insert "Operator in the Loop" into the `engagements` array as the fifth tile.
-  - Update the grid from `lg:grid-cols-4` to `lg:grid-cols-5` so five tiles fit cleanly.
-  - Keep the existing "Operator" tile as the featured one.
-2. **Pricing page (`src/routes/pricing.tsx`)**
-  - Insert "Operator in the Loop" into the `tiers` array.
-  - Update the grid from `lg:grid-cols-4` to `lg:grid-cols-5`.
-  - Update the page meta description to include the new price.
-  - Update the FAQ answer about converting between models to mention where Operator in the Loop fits.
-3. **Cross-references that list the four existing models**
-  - `src/components/site/StepFlow.tsx` — add "Operator in the Loop" to the scope step list.
-  - `src/routes/faq.tsx` — update the price list and the model list.
-  - `src/routes/index.tsx` FAQ answer — update the price list.
-  - `src/components/site/ObjectionList.tsx` — update the price list.
-  - `src/routes/for-portfolios.tsx` — update the two lists that mention the engagement models.
-4. **Structured data (`src/routes/index.tsx`)**
-  - Add the new offer to the `serviceSchema` offers array so the JSON-LD stays accurate.
+1. **src/components/site/FooterCTA.tsx**
+   - Change: `Book a 30-minute Bottleneck Call. Matched in 72 hours...` → `Book a 30-minute call with a Veep founder. Matched in 72 hours...`
 
-## Proposed copy
+2. **src/components/site/ObjectionList.tsx**
+   - Change: `We run a 30-minute Bottleneck Call to clarify the work...` → `We run a 30-minute call with a Veep founder to clarify the work...`
 
-### Homepage tile (EngagementTile)
+3. **src/routes/pricing.tsx**
+   - Change: `Book a 30-minute Bottleneck Call. We'll clarify the work...` → `Book a 30-minute call with a Veep founder. We'll clarify the work...`
+   - Change: `Bottleneck Calls and operator matching are free.` → `Calls with a Veep founder and operator matching are free.`
+   - Change: `No. Bottleneck Calls and operator matching are free.` → `No. Calls with a Veep founder and operator matching are free.`
 
-- **Name:** Operator in the Loop
-- **Price:** From $20k / mo
-- **Best when:** AI agent teams and recurring workflows governed by a senior Veep operator. For work that needs more capacity, more consistency, and senior oversight without building a department.
+4. **src/routes/faq.tsx**
+   - Change: `Most engagements begin in under 10 days from the Bottleneck Call.` → `Most engagements begin in under 10 days from the call with a Veep founder.`
+   - Change: `No. Bottleneck Calls and operator matching are free.` → `No. Calls with a Veep founder and operator matching are free.`
+   - Change: `If the answer is not here, book a Bottleneck Call.` → `If the answer is not here, book a 30-minute call with a Veep founder.`
 
-### Pricing tier
+## What stays the same
 
-- **Name:** Operator in the Loop
-- **Price:** From $20k / per month
-- **Best for:** AI agent teams and recurring workflows governed by a senior Veep operator.
-- **Items:**
-  - Recurring finance, RevOps, sales, and marketing workflows
-  - Customer operations and back-office execution
-  - AI workflow implementation and process improvement
-  - Function-level capacity without the department hire
+- The surrounding copy, CTAs, and structure of each component/page.
+- No new files, no route changes, no dependency installs.
 
-The full use-case list you provided (recurring finance workflows, revenue operations, sales and marketing execution, customer operations, reporting and analysis, internal process management, back-office operations, content and campaign production, data cleanup and enrichment, operating cadence support, AI workflow implementation, function-level process improvement) is condensed into the four bullets above to match the brevity of the other tiers. We can expand the card with the full list if you prefer.
+## Verification
 
-## Open questions
+- Run a build to confirm no JSX/string breakage.
+- Search the codebase after the edit to confirm zero remaining "Bottleneck Call" references.
 
-1. Should the full 12-item use-case list appear on the pricing card, or is the condensed 4-bullet version acceptable? no
-2. Should "Operator in the Loop" also be added to the homepage solution section sentence that already lists the models ("Advisory, Sprint, Operator, Pod, or Operator in the Loop") — or is that already fine as-is? yes homepage 
-3. Should the featured "Most requested" tile remain on Operator, or move to Operator in the Loop? stay on operator
+## Open question
+
+For the plural mentions (`Bottleneck Calls and operator matching are free`), the rewrite becomes `Calls with a Veep founder and operator matching are free`. If you'd prefer a different phrasing like `Intro calls with a Veep founder...`, let me know — otherwise I'll proceed with the plan above.

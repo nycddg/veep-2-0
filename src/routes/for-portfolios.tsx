@@ -53,7 +53,7 @@ const steps = [
 
 const included = [
   { t: "In the roster", d: "Access, planning, quarterly review, emergency coverage SLA, preferred rates, and included diagnostics." },
-  { t: "Billed by SOW", d: "Advisory, Sprint, Operator, Pod, and Operator in the Loop engagements are scoped and billed per company at preferred roster rates." },
+  { t: "Billed by SOW", d: "Advisory, Sprint, Operator, and Pod engagements are scoped and billed per company at preferred roster rates." },
 ];
 
 export const Route = createFileRoute("/for-portfolios")({
@@ -214,7 +214,7 @@ function Page() {
             ))}
           </div>
           <p className="mt-14 text-sm text-stone">
-            Engagements convert cleanly into Advisory, Sprint, Operator, Pod, or Operator in the Loop work at
+            Engagements convert cleanly into Advisory, Sprint, Operator, or Pod work at
             preferred roster rates.{" "}
             <Link
               to="/pricing"

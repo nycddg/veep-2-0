@@ -5,7 +5,7 @@ const objections = [
   },
   {
     q: "How much does it cost?",
-    a: "Advisory starts at $3k/month. Sprints start at $25k. Operators start at $15k/month. Pods start at $30k/month. Operator in the Loop starts at $20k/month. The right structure depends on the work, urgency, and level of ownership required.",
+    a: "Advisory starts at $3k/month. Sprints start at $25k. Operators start at $15k/month. Pods start at $30k/month. The right structure depends on the work, urgency, and level of ownership required.",
   },
   {
     q: "How fast does it actually move?",
