@@ -119,23 +119,19 @@ function Page() {
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className={`rounded-3xl p-7 flex flex-col ${
+                className={`rounded-3xl p-7 flex flex-col min-h-[420px] ${
                   t.featured
                     ? "glass-card ring-1 ring-accent/40 shadow-[0_0_80px_-30px_hsl(from_var(--accent)_h_s_l_/_0.4)]"
                     : "border border-white/8 bg-white/[0.02]"
                 }`}
               >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="font-serif text-2xl text-cream tracking-tight">
-                    {t.t}
-                  </div>
-                  {t.featured && (
-                    <span className="text-[10px] font-medium uppercase tracking-wider text-accent">
-                      Most common
-                    </span>
-                  )}
+                <div className="h-4 text-[10px] font-medium uppercase tracking-[0.16em] text-accent">
+                  {t.featured ? "Most common" : "\u00A0"}
                 </div>
-                <p className="mt-3 text-sm text-cream/85 leading-relaxed">{t.best}</p>
+                <div className="mt-3 font-serif text-2xl text-cream tracking-tight">
+                  {t.t}
+                </div>
+                <p className="mt-4 text-sm text-cream/85 leading-[1.55]">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-stone">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-baseline gap-2.5">
@@ -144,8 +140,8 @@ function Page() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between gap-4">
-                  <span className="font-mono text-xs text-stone-soft tracking-wide">
+                <div className="mt-auto pt-8 border-t border-white/10 flex items-center justify-between gap-4">
+                  <span className="font-mono text-xs text-cream/80 tracking-tight tabular-nums">
                     {t.p} {t.per}
                   </span>
                   <Link
