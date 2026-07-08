@@ -490,28 +490,63 @@ function Index() {
           </div>
 
           {/* Network impact */}
-          <div className="mt-16 border-t border-white/10 pt-12">
-            <div className="max-w-2xl mb-10">
+          <div className="mt-16">
+            <div className="flex items-center gap-4 mb-10">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-accent/20" />
               <SectionEyebrow>Network impact</SectionEyebrow>
-              <p className="mt-4 text-sm text-stone-soft">
-                Aggregated outcomes across our operator roster.
-              </p>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-accent/20" />
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {networkImpact.map((m) => (
-                <div key={m.label} className="glass-card rounded-3xl p-6">
-                  <div className="font-serif text-3xl md:text-4xl text-accent tracking-tight leading-none">
-                    {m.figure}
+
+            <div className="relative overflow-hidden border border-white/10 bg-secondary">
+              {/* Subtle dot grid */}
+              <div
+                className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                style={{
+                  backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+                  backgroundSize: "20px 20px",
+                }}
+              />
+
+              <div className="relative grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-white/5">
+                {networkImpact.map((m, i) => (
+                  <div
+                    key={m.label}
+                    className="p-7 md:p-10 flex flex-col gap-3 group transition-colors duration-300 hover:bg-white/[0.015]"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <div className="relative">
+                        {i === 0 && (
+                          <div className="absolute inset-0 animate-ping rounded-full bg-accent/40" />
+                        )}
+                        <div className="relative w-2 h-2 rounded-full bg-accent" />
+                      </div>
+                      <span className="text-[10px] text-stone-soft uppercase tracking-widest font-medium">
+                        {m.label}
+                      </span>
+                    </div>
+                    <div className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-none">
+                      {m.figure}
+                    </div>
+                    <p className="text-xs text-stone-soft leading-relaxed">
+                      {m.detail}
+                    </p>
                   </div>
-                  <div className="mt-4 text-[10px] font-medium uppercase tracking-[0.16em] text-cream">
-                    {m.label}
-                  </div>
-                  <p className="mt-2 text-xs text-stone-soft leading-relaxed">
-                    {m.detail}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Corner accent lines */}
+              <div className="absolute top-0 left-0 w-8 h-px bg-accent/50" />
+              <div className="absolute top-0 left-0 w-px h-8 bg-accent/50" />
+              <div className="absolute bottom-0 right-0 w-8 h-px bg-accent/50" />
+              <div className="absolute bottom-0 right-0 w-px h-8 bg-accent/50" />
+
+              {/* Scan line */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.07] to-transparent h-20 -top-20 animate-scan pointer-events-none" />
             </div>
+
+            <p className="mt-4 text-sm text-stone-soft">
+              Aggregated outcomes across our operator roster.
+            </p>
           </div>
 
           <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">

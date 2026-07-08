@@ -238,6 +238,16 @@
   to   { transform: rotate(360deg); }
 }
 
+/* Subtle command-center scan line used by the Network Impact panel */
+@keyframes scan {
+  from { top: -80px; }
+  to   { top: 100%; }
+}
+
+@utility animate-scan {
+  animation: scan 6s linear infinite;
+}
+
 /* Mint→coral gradient text — used only on the AudienceTabs active underline. */
 @utility gradient-underline {
   background-image: linear-gradient(90deg, #7CE0C0, #56C7C0 40%, #F2A47C 70%, #EE6A4D);
