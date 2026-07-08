@@ -29,27 +29,27 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
-          {nav.map((n) =>
-            n.kind === "hash" ? (
-              <Link
-                key={n.hash}
-                to="/"
-                hash={n.hash}
-                className="px-3 py-1.5 text-sm text-stone hover:text-cream transition"
-              >
-                {n.label}
-              </Link>
-            ) : (
-              <Link
-                key={n.to}
-                to={n.to}
-                className="px-3 py-1.5 text-sm text-stone hover:text-cream transition"
-                activeProps={{ className: "px-3 py-1.5 text-sm text-cream" }}
-              >
-                {n.label}
-              </Link>
-            ),
-          )}
+          {nav.filter((n) => n.kind === "hash").map((n) => (
+            <Link
+              key={(n as { hash: string }).hash}
+              to="/"
+              hash={(n as { hash: string }).hash}
+              className="px-3 py-1.5 text-sm text-stone hover:text-cream transition"
+            >
+              {n.label}
+            </Link>
+          ))}
+          <span aria-hidden className="mx-2 h-4 w-px bg-white/10" />
+          {nav.filter((n) => n.kind === "route").map((n) => (
+            <Link
+              key={(n as { to: "/pricing" | "/faq" }).to}
+              to={(n as { to: "/pricing" | "/faq" }).to}
+              className="px-3 py-1.5 text-sm text-stone hover:text-cream transition"
+              activeProps={{ className: "px-3 py-1.5 text-sm text-cream" }}
+            >
+              {n.label}
+            </Link>
+          ))}
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
@@ -57,7 +57,7 @@ export function SiteHeader() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-cream px-3.5 py-1.5 text-sm font-medium text-ink hover:opacity-90 transition"
+            className="rounded-full bg-cream px-4 py-1.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition"
           >
             Book intro call
           </a>
