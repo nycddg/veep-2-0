@@ -213,7 +213,7 @@ function Page() {
               </div>
             ))}
           </div>
-          <p className="mt-8 text-sm text-stone">
+          <p className="mt-14 text-sm text-stone max-w-2xl mx-auto">
             Engagements convert cleanly into Advisory, Sprint, Operator, or Pod work at
             preferred roster rates.{" "}
             <Link
