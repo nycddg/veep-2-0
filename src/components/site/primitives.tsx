@@ -17,6 +17,8 @@ export function Section({
   index,
   category,
   bare = false,
+  density = "default",
+  divider = false,
 }: {
   children: ReactNode;
   className?: string;
@@ -24,6 +26,8 @@ export function Section({
   index?: string | number;
   category?: string;
   bare?: boolean;
+  density?: "default" | "dense" | "spacious" | "hero";
+  divider?: boolean;
 }) {
   const toneCls =
     tone === "light"
@@ -41,10 +45,26 @@ export function Section({
 
   // Legacy mono index/category chrome retired; args accepted but ignored.
   void index; void category; void labelColor; void ruleColor;
+
+  const padCls =
+    density === "hero"
+      ? "py-20 md:py-28"
+      : density === "dense"
+      ? "py-14 md:py-20"
+      : density === "spacious"
+      ? "py-28 md:py-40"
+      : "py-20 md:py-28";
+
+  const borderCls = divider
+    ? tone === "light"
+      ? "border-t border-ink/10"
+      : "border-t border-white/10"
+    : "";
+
   return (
-    <section className={`${toneCls} ${className} border-t border-white/10 first:border-t-0`}>
+    <section className={`${toneCls} ${borderCls} ${className}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className={bare ? "" : "py-24 md:py-32"}>{children}</div>
+        <div className={bare ? "" : padCls}>{children}</div>
       </div>
     </section>
   );
