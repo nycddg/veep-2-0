@@ -29,11 +29,10 @@ const groups: { label: string; items: QA[] }[] = [
   {
     label: "Pricing",
     items: [
-      { q: "How much does Veep cost?", a: "Typical ranges: Advisory from $3.5k/month · Sprint from $15k · Operator from $15k/month · Pod from $30k/month · Operator in the Loop from $20k/month · Interim / high-intensity coverage typically $35k–$90k/month. Every engagement is scoped around the work, urgency, complexity, and level of ownership required." },
-      // (kept prior wording; pricing figures adjusted to match /pricing)
+      { q: "How much does Veep cost?", a: "Typical ranges: Advisory from $3k/month · Sprint from $25k · Operator from $15k/month · Pod from $30k/month. Every engagement is scoped to the work, urgency, and level of ownership required." },
       { q: "Are there setup or matching fees?", a: "No. Bottleneck Calls and operator matching are free. Contracting, onboarding, and access setup are included in the engagement. You only pay once an engagement is signed." },
-      { q: "What if the operator is not the right fit?", a: "Every engagement carries a 30-day fit guarantee. If the operator is not right, we swap them or you walk with no fee owed for the remaining term." },
-      { q: "Can we start with a smaller engagement?", a: "Yes. Many companies start with Advisory or a Sprint before moving into an ongoing Operator engagement. That is often the right path when the role is still undefined, the work is urgent but focused, or the company needs to learn what kind of senior support it actually needs." },
+      { q: "What if the operator is not the right fit?", a: "Every engagement carries a 30-day fit guarantee. If the operator isn't right, we swap them or you walk — no fee owed for the remaining term." },
+      { q: "Can we start with a smaller engagement?", a: "Yes. Many companies start with Advisory or a Sprint before moving into an ongoing Operator engagement. That's often the right path when the role is still undefined or the work is urgent but focused." },
     ],
   },
   {
