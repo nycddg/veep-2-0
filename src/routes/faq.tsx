@@ -29,7 +29,7 @@ const groups: { label: string; items: QA[] }[] = [
   {
     label: "Pricing",
     items: [
-      { q: "How much does Veep cost?", a: "Typical ranges: Advisory from $3k/month · Sprint from $25k · Operator from $15k/month · Pod from $30k/month. Every engagement is scoped to the work, urgency, and level of ownership required." },
+      { q: "How much does Veep cost?", a: "Typical ranges: Advisory from $3k/month · Sprint from $25k · Operator from $15k/month · Pod from $30k/month · Operator in the Loop from $20k/month. Every engagement is scoped to the work, urgency, and level of ownership required." },
       { q: "Are there setup or matching fees?", a: "No. Calls with a Veep founder and operator matching are free. Contracting, onboarding, and access setup are included in the engagement. You only pay once an engagement is signed." },
       { q: "What if the operator is not the right fit?", a: "Every engagement carries a 30-day fit guarantee. If the operator isn't right, we swap them or you walk — no fee owed for the remaining term." },
       { q: "Can we start with a smaller engagement?", a: "Yes. Many companies start with Advisory or a Sprint before moving into an ongoing Operator engagement. That's often the right path when the role is still undefined or the work is urgent but focused." },

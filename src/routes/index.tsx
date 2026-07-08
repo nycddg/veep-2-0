@@ -128,6 +128,12 @@ const engagements = [
     bestWhen: "A lead operator plus specialist support for cross-functional work — GTM + RevOps, finance + operations, AI transformation, new market launch, or operating reset.",
     to: "/pricing" as const,
   },
+  {
+    name: "Operator in the Loop",
+    price: "From $20k / mo",
+    bestWhen: "AI agent teams and recurring workflows governed by a senior Veep operator. For work that needs more capacity, more consistency, and senior oversight without building a department.",
+    to: "/pricing" as const,
+  },
 ];
 
 const differentiators = [
@@ -206,7 +212,7 @@ const faqs = [
   },
   {
     q: "How much does Veep cost?",
-    a: "Advisory starts at $3k/month. Sprints start at $25k. Operators start at $15k/month. Pods start at $30k/month. Every engagement is scoped to the work.",
+    a: "Advisory starts at $3k/month. Sprints start at $25k. Operators start at $15k/month. Pods start at $30k/month. Operator in the Loop starts at $20k/month. Every engagement is scoped to the work.",
   },
   {
     q: "How is Veep different from a consulting firm?",
@@ -257,6 +263,7 @@ const serviceSchema = {
     { "@type": "Offer", name: "Sprint", priceSpecification: { "@type": "PriceSpecification", price: "25000", priceCurrency: "USD" } },
     { "@type": "Offer", name: "Operator", priceSpecification: { "@type": "PriceSpecification", price: "15000", priceCurrency: "USD" } },
     { "@type": "Offer", name: "Pod", priceSpecification: { "@type": "PriceSpecification", price: "30000", priceCurrency: "USD" } },
+    { "@type": "Offer", name: "Operator in the Loop", priceSpecification: { "@type": "PriceSpecification", price: "20000", priceCurrency: "USD" } },
   ],
 };
 
@@ -606,7 +613,7 @@ function Index() {
               See full pricing →
             </Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
             {engagements.map((e) => (
               <EngagementTile key={e.name} {...e} />
             ))}

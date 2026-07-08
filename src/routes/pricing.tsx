@@ -53,6 +53,18 @@ const tiers = [
       "Coordinated senior execution",
     ],
   },
+  {
+    t: "Operator in the Loop",
+    p: "From $20k",
+    per: "per month",
+    best: "AI agent teams and recurring workflows governed by a senior Veep operator.",
+    items: [
+      "Recurring finance, RevOps, sales, and marketing workflows",
+      "Customer operations and back-office execution",
+      "AI workflow implementation and process improvement",
+      "Function-level capacity without the department hire",
+    ],
+  },
 ];
 
 const notIncluded = [
@@ -69,7 +81,7 @@ const faqs = [
   },
   {
     q: "Can I convert between models mid-term?",
-    a: "Yes. Many engagements change shape as the work becomes clearer. Advisory can become a Sprint. A Sprint can become an Operator engagement. Operator work can expand into a Pod. Interim coverage can step down into fractional support after a permanent hire lands.",
+    a: "Yes. Many engagements change shape as the work becomes clearer. Advisory can become a Sprint. A Sprint can become an Operator engagement. Operator work can expand into a Pod or add an Operator in the Loop for recurring AI-enabled capacity. Interim coverage can step down into fractional support after a permanent hire lands.",
   },
   {
     q: "How does the 30-day fit guarantee work?",
@@ -91,7 +103,7 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "Pricing — Priced to the Work, Not the Hour | Veep" },
-      { name: "description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
+      { name: "description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo · Operator in the Loop from $20k/mo. Every engagement carries a 30-day fit guarantee." },
       { property: "og:title", content: "Pricing — Veep" },
       { property: "og:description", content: "Four engagement models. Priced to the work. 30-day fit guarantee." },
       { property: "og:url", content: "/pricing" },
@@ -115,7 +127,7 @@ function Page() {
       {/* Four tiers */}
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
             {tiers.map((t) => (
               <div
                 key={t.t}
