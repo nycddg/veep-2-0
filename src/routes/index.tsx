@@ -21,6 +21,53 @@ const heroOperators = [
   { name: "Laura Merling", role: "Senior Operations Operator", chips: ["Ex-Google", "Mobility"], tilt: 2, translateY: 0 },
 ];
 
+const spotlightOperators = [
+  {
+    name: "Jian Yang",
+    role: "Senior Finance Operator",
+    priorSeat: "Former VP Finance, Industrious (acq. by CBRE)",
+    outcomes: [
+      "Led $80M Series C readiness",
+      "Built FP&A for 40+ locations",
+      "Ran diligence through acquisition",
+    ],
+    chips: ["Real Estate", "Consumer", "M&A"],
+  },
+  {
+    name: "Vanessa Kwan",
+    role: "Senior Finance Operator",
+    priorSeat: "Former CFO, DTC brand (Ex-Goldman Sachs)",
+    outcomes: [
+      "Raised $45M across Series A–C",
+      "Improved gross margin +12 pts",
+      "Owned board reporting cadence",
+    ],
+    chips: ["Consumer", "DTC", "Fundraising"],
+  },
+  {
+    name: "Kostja Mirkovic",
+    role: "Senior GTM Operator",
+    priorSeat: "Former Head of Sales, LinkedIn Talent Solutions",
+    outcomes: [
+      "Scaled ARR from $8M → $32M",
+      "Built enterprise motion from zero",
+      "Rebuilt comp + territory model",
+    ],
+    chips: ["B2B SaaS", "Enterprise", "GTM Reset"],
+  },
+  {
+    name: "Laura Merling",
+    role: "Senior Operations Operator",
+    priorSeat: "Former COO, mobility startup (Ex-Google)",
+    outcomes: [
+      "Cut ops cost per unit by 28%",
+      "Stood up 3 new markets in 6 mo",
+      "Hired + onboarded full ops org",
+    ],
+    chips: ["Mobility", "Operations", "Scaling"],
+  },
+];
+
 const problems = [
   {
     t: "The work is critical — and no one clearly owns it.",
@@ -406,6 +453,51 @@ function Index() {
       </section>
 
       {/* 5 — BENEFITS */}
+      {/* 4.5 — OPERATORS SPOTLIGHT */}
+      <section id="operators" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-14">
+            <SectionEyebrow>Operators</SectionEyebrow>
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+              Operators who've been in the seat —{" "}
+              <span className="italic text-stone">and delivered.</span>
+            </h2>
+            <p className="mt-8 text-stone text-lg leading-relaxed">
+              Every Veep operator has previously held the role they're deployed into, at
+              a comparable-stage company, with outcomes we can reference. No juniors, no
+              generalists, no career consultants.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {spotlightOperators.map((op) => (
+              <OperatorProofCard
+                key={op.name}
+                name={op.name}
+                role={op.role}
+                priorSeat={op.priorSeat}
+                outcomes={op.outcomes}
+                chips={op.chips}
+              />
+            ))}
+          </div>
+          <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
+            <p className="text-sm text-stone-soft">
+              150+ vetted senior operators · avg. 18 yrs experience · every operator has
+              held the seat before.
+            </p>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60 transition"
+            >
+              Meet operators for your work <ArrowRight size={14} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 5 — BENEFITS */}
       <section id="benefits" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
@@ -504,7 +596,7 @@ function Index() {
             ))}
           </div>
 
-          <div id="operators" className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10 scroll-mt-20">
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10">
             {[
               { k: "150+", v: "vetted operators" },
               { k: "72h", v: "to shortlist" },

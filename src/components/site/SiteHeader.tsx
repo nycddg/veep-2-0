@@ -11,6 +11,7 @@ type NavItem =
 
 const nav: readonly NavItem[] = [
   { kind: "hash", hash: "overview", label: "Overview" },
+  { kind: "hash", hash: "operators", label: "Operators" },
   { kind: "hash", hash: "benefits", label: "Benefits" },
   { kind: "hash", hash: "how", label: "How it works" },
   { kind: "hash", hash: "proof", label: "Proof" },

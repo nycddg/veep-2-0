@@ -8,12 +8,16 @@ export function OperatorProofCard({
   chips,
   tilt = 0,
   translateY = 0,
+  priorSeat,
+  outcomes,
 }: {
   name: string;
   role: string;
   chips: string[];
   tilt?: number;
   translateY?: number;
+  priorSeat?: string;
+  outcomes?: string[];
 }) {
   return (
     <div
@@ -33,6 +37,21 @@ export function OperatorProofCard({
           </p>
         </div>
       </div>
+      {priorSeat && (
+        <p className="text-sm text-stone leading-relaxed mb-4 border-t border-white/10 pt-4">
+          {priorSeat}
+        </p>
+      )}
+      {outcomes && outcomes.length > 0 && (
+        <ul className="mb-4 space-y-1.5">
+          {outcomes.map((o) => (
+            <li key={o} className="text-xs text-stone-soft flex gap-2">
+              <span className="text-accent">→</span>
+              <span>{o}</span>
+            </li>
+          ))}
+        </ul>
+      )}
       <div className="flex flex-wrap gap-2">
         {chips.map((c) => (
           <span
