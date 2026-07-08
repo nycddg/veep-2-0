@@ -3,8 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { BOOKING_URL } from "@/lib/booking";
 
 export function FooterCTA({
-  headline = "What critical initiative doesn't have an owner right now?",
-  sub = "Book a 30-minute call. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
+  headline = "What critical work needs an owner right now?",
+  sub = "Book a 30-minute Bottleneck Call. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
 }: { headline?: string; sub?: string }) {
   return (
     <section className="py-28 md:py-40 border-t border-white/10 relative overflow-hidden">
