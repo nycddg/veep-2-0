@@ -96,7 +96,7 @@ function Page() {
             </div>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
               The seat is open.{" "}
-              <span className="italic text-stone">The work is not.</span>
+              <span className="text-accent">The work is not.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
@@ -176,7 +176,7 @@ function Page() {
             </div>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
               Retain exactly as much capacity{" "}
-              <span className="italic text-stone">as the portfolio needs.</span>
+              <span className="text-accent">as the portfolio needs.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-1 gap-4 max-w-2xl">
@@ -235,7 +235,7 @@ function Page() {
             </div>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
               One agreement.{" "}
-              <span className="italic text-stone">Every portco activated.</span>
+              <span className="text-accent">Every portco activated.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-4 gap-4">
@@ -259,7 +259,7 @@ function Page() {
             </div>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
               Roster access is retained.{" "}
-              <span className="italic text-stone">Operator work is scoped.</span>
+              <span className="text-accent">Operator work is scoped.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
