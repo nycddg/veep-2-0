@@ -15,160 +15,160 @@ import { FooterCTA } from "@/components/site/FooterCTA";
 // ─────────────────────────────────────────────────────────────────────────────
 
 const heroOperators = [
-  { name: "Jian Yang", role: "Fractional CFO", chips: ["Ex-Industrious", "Real Estate"], tilt: -2, translateY: 16 },
-  { name: "Vanessa Kwan", role: "Fractional CFO", chips: ["Ex-Goldman", "Consumer"], tilt: 3, translateY: -32 },
-  { name: "Kostja Mirkovic", role: "Chief Revenue Officer", chips: ["Ex-LinkedIn", "B2B SaaS"], tilt: -4, translateY: 48 },
-  { name: "Laura Merling", role: "Chief Operating Officer", chips: ["Ex-Google", "Mobility"], tilt: 2, translateY: 0 },
+  { name: "Jian Yang", role: "Senior Finance Operator", chips: ["Ex-Industrious", "Real Estate"], tilt: -2, translateY: 16 },
+  { name: "Vanessa Kwan", role: "Senior Finance Operator", chips: ["Ex-Goldman", "Consumer"], tilt: 3, translateY: -32 },
+  { name: "Kostja Mirkovic", role: "Senior GTM Operator", chips: ["Ex-LinkedIn", "B2B SaaS"], tilt: -4, translateY: 48 },
+  { name: "Laura Merling", role: "Senior Operations Operator", chips: ["Ex-Google", "Mobility"], tilt: 2, translateY: 0 },
 ];
 
 const problems = [
   {
-    t: "The exec seat is open — and the work isn't waiting.",
-    d: "A CFO exits mid-quarter. A COO leaves after the acquisition closes. The team stalls while the board asks who's driving.",
+    t: "The work is critical — and no one clearly owns it.",
+    d: "A fundraise, GTM reset, operating issue, margin problem, or leadership gap keeps coming back to the founder. The team is busy, but the priority is still stuck.",
   },
   {
-    t: "The raise slipped and the model won't hold up.",
-    d: "Diligence is coming and the forecast doesn't reconcile. You need board-grade finance now, not in six months.",
+    t: "The hire can come later. The work cannot.",
+    d: "A full-time executive may be the right answer eventually. But the search could take months, the role may still be undefined, and the business needs movement now.",
   },
   {
-    t: "GTM plateaued and the founder still owns every deal.",
-    d: "Pipeline coverage is thin, pricing is soft, and the CEO is a bottleneck. You need a revenue owner who can install rigor this quarter.",
+    t: "The founder is still in the middle.",
+    d: "Sales decisions, finance questions, operational escalations, people issues, and strategic initiatives keep landing on the CEO's desk.",
   },
   {
-    t: "Ops is a mess and headcount won't fix it.",
-    d: "The company outran its systems. You need a senior operator to rebuild the machine — not another IC to babysit chaos.",
+    t: "More advice is not enough.",
+    d: "You do not need another deck, another tool, or a list of candidates to sort through. You need someone senior to step in, take responsibility, and move the work forward.",
   },
 ];
 
 const alternatives = [
-  { t: "Retained search", d: "4–6 months to close. 20–30% first-year comp. Wrong-hire risk lands on you." },
-  { t: "Consulting firms", d: "$150–400k for a deck. Recommends, doesn't own. Leaves before the work lands." },
-  { t: "Job boards & freelancers", d: "Weeks of sourcing. Junior candidates. No accountability for the outcome." },
+  { t: "Retained search", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you." },
+  { t: "Consulting firms", d: "Recommendations without ownership. The work still lands back on your team." },
+  { t: "Marketplaces and freelancers", d: "Profiles to browse. Variable quality. More decisions for the founder." },
 ];
 
 const benefits = [
-  { t: "Own the outcome", d: "Operators step in as the accountable executive, not an outside advisor." },
-  { t: "Deploy in under 10 days", d: "Shortlist in 72 hours. Onboarded and driving the work inside 10 days." },
-  { t: "Senior-only bench", d: "150+ invite-only CFOs, COOs, CROs, and CTOs. No consultants. No juniors." },
-  { t: "No 6-figure retainers", d: "Priced to the scope, not the hour. 40–80% less than search plus a full-time hire." },
-  { t: "Clean handoff", d: "When the outcome lands or a permanent hire arrives, you get documentation — not dependency." },
-  { t: "30-day fit guarantee", d: "If the operator isn't right, we swap them or you walk. No fee owed for the remaining term." },
+  { t: "Own the work", d: "Operators step in to take responsibility for critical work, not advise from the sidelines." },
+  { t: "Deploy in under 10 days", d: "Shortlist in 72 hours. Onboarded and moving the work inside 10 days." },
+  { t: "Senior-only bench", d: "150+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
+  { t: "No permanent commitment", d: "Get senior ownership before the full-time hire is clear, affordable, available, or necessary." },
+  { t: "Clean handoff", d: "When the work lands or a permanent hire arrives, you get documentation, context, and continuity." },
+  { t: "30-day fit guarantee", d: "If the operator is not right, we swap them or you walk. No fee owed for the remaining term." },
 ];
 
 const engagements = [
   {
     name: "Advisory",
-    price: "$5k–$12.5k / mo",
-    bestWhen: "Founder or CEO needs executive judgment on a cadence — board prep, hiring, fundraise strategy.",
-    to: "/pricing" as const,
-  },
-  {
-    name: "Fractional",
-    price: "$12k–$40k / mo",
-    bestWhen: "A senior CXO runs the function 1–3 days a week. Best for scaling companies pre-full-time hire.",
-    to: "/pricing" as const,
-    featured: true,
-  },
-  {
-    name: "Interim",
-    price: "$35k–$90k / mo",
-    bestWhen: "Full-seat ownership while the permanent search runs. Best when a CXO exits or a seat is vacant.",
+    price: "From $3.5k / mo",
+    bestWhen: "Senior judgment for high-stakes decisions — board prep, fundraising, transactions, executive issues, and strategic tradeoffs.",
     to: "/pricing" as const,
   },
   {
     name: "Sprint",
-    price: "Scoped / outcome",
-    bestWhen: "One critical initiative — fundraise, integration, GTM reset — with a clear endpoint and an owner.",
+    price: "From $15k",
+    bestWhen: "One urgent priority with a clear owner and endpoint — fundraise readiness, GTM reset, margin improvement, operating cadence, or transaction prep.",
+    to: "/pricing" as const,
+  },
+  {
+    name: "Operator",
+    price: "From $15k / mo",
+    bestWhen: "Ongoing senior ownership without a permanent executive hire. Best when a function, initiative, or leadership gap needs consistent operating support.",
+    to: "/pricing" as const,
+    featured: true,
+  },
+  {
+    name: "Pod",
+    price: "From $30k / mo",
+    bestWhen: "A lead operator plus specialist support for cross-functional work — GTM + RevOps, finance + operations, AI transformation, new market launch, or operating reset.",
     to: "/pricing" as const,
   },
 ];
 
 const differentiators = [
   {
-    dim: "Time to seat",
-    veep: "Under 10 days",
-    old: "4–6 months (search) · 6–10 weeks (consulting)",
+    dim: "Time to start",
+    veep: "Shortlist in 72 hours, deployed in under 10 days",
+    old: "Months to hire, weeks to scope, or endless profile browsing",
   },
   {
     dim: "Ownership",
-    veep: "Owns the outcome as the executive",
-    old: "Recommendations, permanent hire risk, or hourly help",
+    veep: "Senior operator owns the work",
+    old: "Recommendations, candidates, tools, or hourly help",
   },
   {
     dim: "Cost",
-    veep: "$5k–$90k/mo, priced to scope",
-    old: "20–30% first-year comp + salary, or $150–400k engagements",
+    veep: "Priced to scope and level of support",
+    old: "Search fees plus salary, or large consulting engagements",
   },
   {
     dim: "Seniority",
-    veep: "Invite-only senior operators only",
-    old: "Variable — junior consultants, unknown freelancers",
+    veep: "Vetted senior operators only",
+    old: "Variable — junior consultants, unknown freelancers, or mismatched candidates",
   },
   {
     dim: "Exit",
-    veep: "Clean handoff to permanent hire, documented",
-    old: "Deck delivered, follow-on scope proposed, or wrong-hire lawsuit",
+    veep: "Clean handoff with documentation",
+    old: "Deck delivered, search continues, or dependency grows",
   },
   {
     dim: "Risk",
     veep: "30-day fit guarantee — swap or walk",
-    old: "None — you own the miss",
+    old: "You own the miss",
   },
 ];
 
 const cases = [
   {
-    tag: "Series B SaaS · Fractional CFO",
-    trigger: "Board lost confidence in finance 60 days before a bridge round.",
-    outcome: "Bridge closed in 42 days at target valuation.",
+    tag: "Series B SaaS · Finance Sprint",
+    trigger: "Board confidence in finance slipped 60 days before a bridge round.",
+    outcome: "Forecast rebuilt, board materials tightened, and bridge closed in 42 days.",
     metric: "$18M raised",
   },
   {
-    tag: "PE portco · Interim COO",
+    tag: "PE portco · Operations Operator",
     trigger: "COO exited two months after acquisition. Integration stalled.",
-    outcome: "Permanent COO hired at month five. EBITDA +14%.",
+    outcome: "Operating cadence installed, integration restarted, and permanent COO hired at month five.",
     metric: "$6.2M annualized savings",
   },
   {
-    tag: "Founder-led · Sprint",
-    trigger: "GTM stalled at $8M ARR. Founder still owned every deal above $50k.",
-    outcome: "Pipeline coverage 3.1x within 90 days.",
+    tag: "Founder-led · GTM Sprint",
+    trigger: "GTM stalled at $8M ARR. Founder still owned every strategic deal.",
+    outcome: "Sales motion rebuilt and pipeline coverage reached 3.1x within 90 days.",
     metric: "+62% Q/Q pipeline",
   },
 ];
 
 const faqs = [
   {
-    q: "What is a fractional CXO?",
-    a: "A fractional CXO is a senior executive (CFO, COO, CRO, CTO) who runs a function part-time — typically 1–3 days a week — instead of joining full-time. You get executive judgment and ownership without a permanent salary.",
+    q: "What is a Veep operator?",
+    a: "A Veep operator is a vetted senior operator who steps into your business to own critical work before a full-time executive hire makes sense. Depending on the need, that operator may be a CFO, COO, CRO, CMO, CTO, product leader, people leader, chief of staff, or functional expert.",
   },
   {
     q: "How fast can a Veep operator start?",
-    a: "Shortlist in 72 hours. Operator in the seat in under 10 days. Interim coverage can begin in as little as 5 days when the trigger is urgent.",
+    a: "Shortlist in 72 hours. Operator deployed in under 10 days. Urgent interim or leadership-gap coverage can move faster when needed.",
   },
   {
-    q: "How much does a fractional CXO cost?",
-    a: "Fractional runs $12k–$40k per month. Interim runs $35k–$90k per month. Advisory starts at $5k per month. Sprint engagements are scoped per outcome.",
+    q: "How much does Veep cost?",
+    a: "Advisory starts around $3.5k/month. Sprints start around $15k. Operators start around $15k/month. Pods start around $30k/month. Operator-in-the-Loop engagements start around $20k/month. Every engagement is scoped around the work.",
   },
   {
     q: "How is Veep different from a consulting firm?",
-    a: "A consultant recommends. A Veep operator owns. Our operators step into your business as the accountable executive for the outcome — not as an outside advisor writing a deck.",
+    a: "A consultant recommends. A Veep operator owns. Our operators step into the work, set the rhythm, build the materials, make decisions with the team, and move the priority forward.",
   },
   {
     q: "How is Veep different from executive search?",
-    a: "Search firms take 4–6 months to place a permanent hire. Veep places a senior operator in the seat in under 10 days — so the work moves now, and the permanent search runs in parallel without pressure.",
+    a: "Search is for permanent hiring. Veep is for critical work that needs senior ownership before the full-time hire makes sense. The work moves now, while the permanent hiring decision stays open.",
   },
   {
     q: "Who is Veep for?",
-    a: "Series A–C founders and CEOs of scaling companies ($3M–$150M revenue), plus PE and family-office portfolio companies that need senior CFO, COO, CRO, or CTO capacity without committing to a full-time hire.",
+    a: "Veep is built for founder-led, owner-led, and investor-backed companies with real revenue, real teams, and growing complexity. Most clients are doing $5M–$150M in revenue, though the right fit depends more on the work than the exact company size.",
   },
   {
-    q: "What if it isn't a fit?",
-    a: "Every engagement carries a 30-day fit guarantee. If the operator isn't right, we swap them or you walk with no fee owed for the remaining term.",
+    q: "What if it is not a fit?",
+    a: "Every engagement carries a 30-day fit guarantee. If the operator is not right, we swap them or you walk with no fee owed for the remaining term.",
   },
   {
     q: "Where does Veep operate?",
-    a: "Veep operators work remotely across North America and Europe with on-site availability for key moments — board meetings, offsites, integration weeks.",
+    a: "Veep operators work remotely across North America and Europe, with on-site availability for key moments such as board meetings, offsites, integration weeks, and major operating milestones.",
   },
 ];
 
