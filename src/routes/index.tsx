@@ -189,15 +189,16 @@ const faqSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: "Fractional CXO placement",
+  serviceType: "Senior operator placement",
   provider: { "@type": "Organization", name: "Veep" },
   areaServed: ["North America", "Europe"],
   description:
-    "Veep places senior fractional and interim CXOs — CFO, COO, CRO, CTO — inside scaling companies in under 10 days.",
+    "Veep places vetted senior operators — CFOs, COOs, CROs, CMOs, CTOs, product, people, and functional leaders — inside founder-led companies to own critical work in under 10 days.",
   offers: [
-    { "@type": "Offer", name: "Advisory", priceSpecification: { "@type": "PriceSpecification", price: "5000-12500", priceCurrency: "USD" } },
-    { "@type": "Offer", name: "Fractional", priceSpecification: { "@type": "PriceSpecification", price: "12000-40000", priceCurrency: "USD" } },
-    { "@type": "Offer", name: "Interim", priceSpecification: { "@type": "PriceSpecification", price: "35000-90000", priceCurrency: "USD" } },
+    { "@type": "Offer", name: "Advisory", priceSpecification: { "@type": "PriceSpecification", price: "3500", priceCurrency: "USD" } },
+    { "@type": "Offer", name: "Sprint", priceSpecification: { "@type": "PriceSpecification", price: "15000", priceCurrency: "USD" } },
+    { "@type": "Offer", name: "Operator", priceSpecification: { "@type": "PriceSpecification", price: "15000", priceCurrency: "USD" } },
+    { "@type": "Offer", name: "Pod", priceSpecification: { "@type": "PriceSpecification", price: "30000", priceCurrency: "USD" } },
   ],
 };
 
@@ -208,17 +209,17 @@ const serviceSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fractional CXO in Under 10 Days — Veep" },
+      { title: "The Work Needs an Owner — Veep" },
       {
         name: "description",
         content:
-          "Veep places a senior fractional CXO — CFO, COO, CRO, CTO — inside your scaling company in under 10 days. Operator-led. 30-day fit guarantee.",
+          "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
       },
-      { property: "og:title", content: "Fractional CXO in Under 10 Days — Veep" },
+      { property: "og:title", content: "The Work Needs an Owner — Veep" },
       {
         property: "og:description",
         content:
-          "Get a senior CFO, COO, CRO, or CTO owning the outcome — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
+          "Senior operators to own critical work before the full-time executive hire makes sense — matched in 72 hours, deployed in under 10 days.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
