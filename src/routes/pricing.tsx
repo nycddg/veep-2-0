@@ -245,7 +245,7 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline="Ready to make your next big move."
+        headline="Make your next big move."
         sub="Book a 30-minute call with a Veep founder. We'll clarify the work, recommend the right model, and tell you directly if Veep isn't the answer."
       />
     </>
