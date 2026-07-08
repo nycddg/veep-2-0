@@ -1,107 +1,75 @@
+## Copy update across homepage, FAQ, and pricing
 
-## Goal
+Replace copy in three route files with the new text provided. Preserve current layout, components, and section structure — text only. Update related component copy where the sections are componentized (proof cards, testimonials headline, engagement tiles, stats, objections, footer, header).
 
-Turn `/` into a focused one-page conversion site for **founders and CEOs of scaling companies** looking for a **fractional CXO** (CFO / COO / CRO / CTO). Single primary CTA sitewide: **Book intro call** (existing Fillout link). Keep `/contact`, `/pricing`, `/faq` as standalone pages; retire the rest.
+### Scope
 
-## Routes
+**1. `src/routes/index.tsx` (homepage) — full copy swap**
+- Hero: new headline "The work needs an owner.", new sub, keep both CTAs ("Book intro call" / "See how it works").
+- Operator proof cards: replace with Jian Yang / Vanessa Kwan / Kostja Mirkovic / Laura Merling (Senior Finance/GTM/Operations Operator + Ex-Company + Industry chips).
+- Logo strip: Google, Meta, Stripe, Coinbase, LinkedIn, Airbnb, Uber, Shopify, Goldman Sachs, LVMH, Morning Brew, Deloitte.
+- "What Veep is" section — new headline + body.
+- "The moment you're in" — new problem block copy.
+- "Instead of" cards — Retained search / Consulting firms / Marketplaces & freelancers.
+- "What we do" — new copy.
+- "The Veep model" — 4 pillars (Start with the work / Senior only / Priced to scope / Guaranteed fit).
+- "What you get" — 6 benefit cards with new titles/copy.
+- Engagements: 4 tiles — Advisory $3.5k/mo, Sprint $15k, Operator $15k/mo, Pod $30k/mo (new descriptions).
+- How it works: 4 steps — Diagnose / Scope / Match / Deploy in <10 days.
+- Proof mini-cases (3): Series B SaaS Finance Sprint ($18M raised) / PE portco Ops Operator ($6.2M savings) / Founder-led GTM Sprint (+62% Q/Q pipeline).
+- Stats band: 150+ / 72h / <10d / 30d.
+- Testimonial: keep Jerry Kolber quote as-is (already matches).
+- "Why Veep" compare table: new dimensions (Time to start / Ownership / Cost / Seniority / Exit / Risk).
+- Portfolio band: new headline + "Request a capacity audit" CTA.
+- "Before you book" objections (6): rewrite to new copy.
+- FAQ (8): rewrite to homepage FAQ set from spec.
+- Final CTA: "What critical work needs an owner right now?" with both CTAs.
+- Update `<Service>` + `FAQPage` JSON-LD to match new FAQ + pricing ranges.
+- Update `head()` meta if needed to reflect "The work needs an owner" positioning (keep Fractional CXO keyword secondary — user did not change positioning, so keep existing title unless copy explicitly conflicts; will keep title, refresh description to match new hero).
 
-**Keep**
-- `/` — rebuilt one-page conversion site (this plan)
-- `/contact`, `/pricing`, `/faq` — kept for detail + SEO, restyled to match
+**2. `src/routes/faq.tsx` — full copy swap**
+- New intro + grouped sections: Engagement / Operators / Pricing / Portfolios & partnerships.
+- Update `FAQPage` JSON-LD to match the new questions/answers.
+- Final CTA and footer CTA copy.
 
-**Redirect to `/#anchor`** (via TanStack `beforeLoad` stubs)
-- `/for-companies` → `/#solution`
-- `/for-portfolios` → `/#solution` (portfolios becomes a small secondary block on `/`)
-- `/how-it-works` → `/#how`
-- `/services`, `/services/*` → `/#offer`
-- `/operators` → `/#operators`
-- `/proof` → `/#proof`
-- `/about`, `/insights`, `/partners`, `/compare*` → `/`
+**3. `src/routes/pricing.tsx` — full copy swap**
+- Hero: "Priced to the work. Not the hour." + new sub.
+- 4 tier cards: Advisory $3.5k/mo, Sprint $15k, Operator $15k/mo, Pod $30k/mo (new bullets, remove "Interim" and "Most common" ribbon or move it to Operator as most common).
+- "What we don't charge for" 4 items — updated copy.
+- Portfolio callout — updated copy + range $50k–$150k/yr.
+- Pricing FAQ — 3 updated Q&A.
+- Update pricing `FAQPage` JSON-LD.
 
-Sitemap trimmed to `/`, `/contact`, `/pricing`, `/faq`.
+**4. Componentized copy touch-ups**
+- `src/components/site/SiteFooter.tsx`: tagline copy is already close — update to "Senior operators to own work that cannot wait — matched in 72 hours, deployed in under 10 days."
+- `src/components/site/StepFlow.tsx`: replace 4 steps with Diagnose / Scope / Match / Deploy in <10 days copy from spec.
+- `src/components/site/ObjectionList.tsx`: replace 6 Q&A with the "Before you book" set.
+- `src/components/site/OperatorProofCard.tsx` usage in index: pass new operator data.
+- `src/components/site/EngagementTile.tsx` usage: swap to Advisory/Sprint/Operator/Pod with new prices + copy. `to` links will keep pointing at existing service routes (they redirect to `/#offer`), which is fine.
+- `src/components/site/Testimonials.tsx`: unchanged (quote matches).
+- `src/components/site/StatsBand.tsx`: verify labels match 150+ operators / 72h shortlist / <10d deploy / 30d fit — update if different.
+- `src/components/site/CompareTable.tsx`: replace rows with the 6 new dimensions.
+- `src/components/site/FooterCTA.tsx` default copy stays; homepage/pricing/FAQ pass specific headlines.
 
-## Navigation
+### Out of scope
 
-Sticky top nav with anchor links + Book intro call pill:
-`Overview · Benefits · How it works · Proof · Pricing · FAQ · [Book intro call]`
+- No layout, styling, or component structure changes.
+- No new routes, redirects, or nav changes.
+- No backend, no image generation.
+- No changes to `SiteHeader` nav (labels already match spec).
+- Standalone `/contact` copy untouched (user did not provide new copy).
 
-Pricing/FAQ links go to the standalone pages; the rest scroll to sections. Mobile: hamburger + persistent bottom "Book intro call" bar.
+### Files to edit
 
-## Page structure (in order)
+- `src/routes/index.tsx`
+- `src/routes/faq.tsx`
+- `src/routes/pricing.tsx`
+- `src/components/site/SiteFooter.tsx`
+- `src/components/site/StepFlow.tsx`
+- `src/components/site/ObjectionList.tsx`
+- `src/components/site/CompareTable.tsx`
+- `src/components/site/StatsBand.tsx` (only if labels differ)
 
-1. **Hero** — Headline formula: *"Get a fractional CXO owning the outcome in under 10 days — without a 90-day exec search."* Subhead speaks to scaling-company founders/CEOs. Primary CTA: Book intro call. Secondary: "See how it works" (scroll to #how). Trust chip: "72-hour match · 10-day deploy · 30-day fit guarantee." Visual: existing `HeroVisual` refined.
-2. **Company definition band** (GEO/AI-search) — one-sentence extractable definition: "Veep is a fractional CXO firm that places senior CFO, COO, CRO, and CTO operators inside scaling companies in under 10 days."
-3. **Problem** — 4 pains founders feel (open exec seat, stalled fundraise, ops chaos, GTM plateau) + cost of inaction + why the alternatives (retained search, big-4 consultants, job boards) fail.
-4. **Solution** — What Veep is, how it works, why operator-led beats consultants and search.
-5. **Benefits** — 6 outcome cards (Own the outcome, Deploy in <10 days, Senior-only bench, No 6-figure retainers, Clean handoff, 30-day fit guarantee).
-6. **Offer / Engagements** — Consolidated cards for Fractional CXO, Interim, Executive Bench, Advisory. Each: who it's for, what's included, outcome. Link out to `/pricing` for detail.
-7. **How it works** — 4-step flow reusing `StepFlow`: Diagnose → Match → Deploy → Handoff.
-8. **Proof** — Logo wall + hero testimonial (Jerry Kolber) + 3 operator proof cards + stats band (150+ operators, 72h match, <10d deploy).
-9. **Differentiation** — "Old way vs. Veep" table (Retained search / Consultants / Job boards vs. Veep) using `CompareTable`.
-10. **For portfolios** — small secondary band with one paragraph + CTA for PE/VC readers (replaces `/for-portfolios`).
-11. **Objections** — 6 direct Q&A (Is this for me? What does it cost? How fast? Can I trust you? What if it doesn't fit? What happens after the call?).
-12. **FAQ** — 8 concise Q&A optimized for AI search + `FAQPage` JSON-LD. Link to full `/faq`.
-13. **Final CTA** — Reuse `FooterCTA`: "What critical initiative doesn't have an owner right now?" + Book intro call + fit-guarantee reassurance.
-14. **Footer** — Compact: wordmark, one-liner, hello@veep.co, links to `/pricing`, `/faq`, `/contact`, Privacy, Terms.
+### Verification
 
-## Copy principles
-
-Every section answers one of: Why care? Is this for me? What do I get? Why trust you? Why now? What's next? No jargon, buyer-focused, outcome-first. Rewrite headlines to the "[outcome] for [audience] without [friction]" formula.
-
-## SEO
-
-- Single H1 in hero targeting **fractional CXO**.
-- Secondary terms woven into H2s: fractional CFO, interim COO, fractional executive for startups, executive on demand.
-- Route `head()` on `/`: new title `Fractional CXO in Under 10 Days — Veep`, matching description, og:title/description/url, canonical `/`.
-- Semantic sections with `id`s matching nav anchors.
-- Descriptive `alt` on every image; existing lazy loading kept.
-- JSON-LD: keep Organization on `__root`; add `FAQPage` + `Service` schema on `/`.
-- Update `sitemap.xml.ts` to just `/`, `/contact`, `/pricing`, `/faq`.
-- Update `SiteFooter` + `SiteHeader` nav to the new anchor-based structure.
-
-## GEO / AI search
-
-- Company definition band #2 is a single extractable sentence.
-- FAQ answers written as direct, standalone answers (not "well, it depends…").
-- "Best for" language in Offer cards.
-- Consistent entity naming ("Veep") everywhere.
-- Location/service-area line in footer + Organization schema.
-
-## Design
-
-- Keep existing dark-navy + cream + Playfair aesthetic (locked design system, no repaint).
-- Reuse `PageHero` visual language for the hero, `glass-card`, `StepFlow`, `CompareTable`, `LogoWall`, `Testimonials`, `OperatorProofCard`, `OutcomeTile`, `EngagementTile`, `TrustChip`, `FooterCTA`.
-- Add repeated inline Book-intro-call CTAs after Benefits, Proof, and Objections.
-- Mobile: sticky bottom CTA bar (new small component) so the primary action is always one tap away.
-
-## Technical changes
-
-### New / edited files
-- `src/routes/index.tsx` — full rewrite into the 14-section flow above.
-- `src/components/site/SiteHeader.tsx` — new anchor-based nav + Book intro call pill (kept mobile menu).
-- `src/components/site/SiteFooter.tsx` — trimmed to kept routes + legal links.
-- `src/components/site/StickyMobileCTA.tsx` *(new)* — bottom sticky "Book intro call" bar on mobile only.
-- `src/components/site/ObjectionList.tsx` *(new)* — 6-item Q&A grid.
-- `src/routes/__root.tsx` — mount `StickyMobileCTA`; update sitewide title/description defaults.
-- `src/routes/contact.tsx`, `src/routes/pricing.tsx`, `src/routes/faq.tsx` — light nav/CTA alignment only; content preserved. Ensure canonical + og:url self-reference.
-- `src/routes/sitemap[.]xml.ts` — reduce to 4 URLs.
-
-### Redirect stubs (replace existing files with `beforeLoad` throw redirect)
-- `for-companies.tsx`, `for-portfolios.tsx`, `how-it-works.tsx`, `operators.tsx`, `proof.tsx`, `about.tsx`, `insights.tsx`, `partners.tsx`, `compare.tsx`, `compare.vs-consultants.tsx`, `compare.vs-executive-search.tsx`, `services.tsx`, `services.index.tsx`, `services.ai-operators.tsx`, `services.executive-bench.tsx`, `services.fractional-cfo.tsx`, `services.interim.tsx` — all become `beforeLoad: () => { throw redirect({ to: '/', hash: '<anchor>' }) }` stubs so existing inbound links keep working. (Route files stay so `routeTree.gen.ts` stays consistent.)
-
-### JSON-LD
-- Add `FAQPage` + `Service` schema in `/` route `head().scripts`.
-
-## Content the user still needs to supply (post-build)
-
-- Real client logos (currently placeholder LogoWall).
-- 2–3 additional named testimonials with role + company.
-- 1–2 short case studies with metric (e.g. "Cut close from 22 to 6 days").
-- Confirmed pricing bands for `/pricing` (or confirm "custom / on call").
-- Any certifications, press mentions, or founder bio for extra trust.
-
-## Out of scope
-
-- No backend / auth / DB work.
-- No visual redesign — existing token system and typography stay.
-- Standalone `/pricing`, `/contact`, `/faq` content is preserved as-is; only nav/CTA styling touched.
+- Read affected files, apply patches, then confirm build passes and spot-check `/`, `/faq`, `/pricing` in preview.

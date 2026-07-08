@@ -5,74 +5,75 @@ import { FooterCTA } from "@/components/site/FooterCTA";
 const tiers = [
   {
     t: "Advisory",
-    p: "$5k–$12.5k",
+    p: "From $3.5k",
     per: "/ month",
-    best: "Executive judgment on a cadence, no seat.",
+    best: "Senior judgment for high-stakes decisions.",
     items: [
-      "2–4 hours per week",
-      "Board & investor prep",
-      "Hiring calibration",
+      "Board and investor prep",
+      "Fundraise strategy",
+      "Executive decisions",
+      "Strategic tradeoffs",
       "Month-to-month",
     ],
   },
   {
-    t: "Fractional",
-    p: "$12k–$40k",
-    per: "/ month",
-    best: "A senior operator runs the function.",
+    t: "Sprint",
+    p: "From $15k",
+    per: "per outcome",
+    best: "One urgent priority with a clear owner and endpoint.",
     items: [
-      "1–3 days per week",
+      "Fixed scope, fixed price",
+      "4–12 week engagement",
+      "GTM reset, fundraise, margin, diligence",
+      "Clear success criteria",
+    ],
+  },
+  {
+    t: "Operator",
+    p: "From $15k",
+    per: "/ month",
+    best: "Ongoing senior ownership before the full-time hire makes sense.",
+    items: [
+      "Finance, GTM, operations, product, or people",
       "Owns cadence and reporting",
-      "Capital events or function build",
-      "3–12 month term",
+      "Function buildout or leadership gap",
+      "Typically 3–12 months",
     ],
     featured: true,
   },
   {
-    t: "Interim",
-    p: "$35k–$90k",
+    t: "Pod",
+    p: "From $30k",
     per: "/ month",
-    best: "Full-seat ownership during transition.",
+    best: "A lead operator plus specialist support for cross-functional work.",
     items: [
-      "Full-seat accountability",
-      "Preserves the search",
-      "3–9 month term",
-      "Structured handoff",
-    ],
-  },
-  {
-    t: "Sprint",
-    p: "Scoped",
-    per: "per outcome",
-    best: "One critical initiative, fixed endpoint.",
-    items: [
-      "Fixed scope, fixed price",
-      "4–12 week engagement",
-      "M&A · pricing · diligence",
-      "Clear success criteria",
+      "Multi-function execution",
+      "Operating reset or transformation",
+      "GTM + RevOps, finance + ops, AI initiatives",
+      "Coordinated senior execution",
     ],
   },
 ];
 
 const notIncluded = [
-  { t: "Placement fees", d: "Discovery calls and operator matching are always free." },
+  { t: "Placement fees", d: "Bottleneck Calls and operator matching are free." },
   { t: "Setup or onboarding fees", d: "Contracting, access, and onboarding are managed at no extra cost." },
-  { t: "Long-term lock-in", d: "Monthly retainers are month-to-month after the initial term." },
-  { t: "Hourly billing surprises", d: "Every engagement is scope-priced. You know the number before you sign." },
+  { t: "Long-term lock-in", d: "Most engagements can start focused, continue, pause, or scale as the work changes." },
+  { t: "Hourly billing surprises", d: "Every engagement is scoped around the work. You know the number before you sign." },
 ];
 
 const faqs = [
   {
     q: "Are there setup or matching fees?",
-    a: "No. Discovery calls and operator matching are free. You only pay once an engagement is signed.",
+    a: "No. Bottleneck Calls and operator matching are free. You only pay once an engagement is signed.",
   },
   {
     q: "Can I convert between models mid-term?",
-    a: "Yes. Roughly 30% of engagements change shape — interim becomes fractional after the search lands, or fractional expands into interim before a raise.",
+    a: "Yes. Many engagements change shape as the work becomes clearer. Advisory can become a Sprint. A Sprint can become an Operator engagement. Operator work can expand into a Pod. Interim coverage can step down into fractional support after a permanent hire lands.",
   },
   {
     q: "How does the 30-day fit guarantee work?",
-    a: "If the operator isn't right within the first 30 days, we swap them or you walk with no fee owed for the remaining term.",
+    a: "If the operator is not right within the first 30 days, we swap them or you walk with no fee owed for the remaining term.",
   },
 ];
 
@@ -89,10 +90,10 @@ const faqSchema = {
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — Real Numbers, Not 'Contact Us' | Veep" },
-      { name: "description", content: "Advisory from $5k/mo · Fractional $12k–$40k/mo · Interim $35k–$90k/mo · Sprint scoped per outcome. Every engagement carries a 30-day fit guarantee." },
+      { title: "Pricing — Priced to the Work, Not the Hour | Veep" },
+      { name: "description", content: "Advisory from $3.5k/mo · Sprint from $15k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
       { property: "og:title", content: "Pricing — Veep" },
-      { property: "og:description", content: "Four engagement models. Real prices. 30-day fit guarantee." },
+      { property: "og:description", content: "Four engagement models. Priced to the work. 30-day fit guarantee." },
       { property: "og:url", content: "/pricing" },
     ],
     links: [{ rel: "canonical", href: "/pricing" }],
@@ -106,9 +107,9 @@ function Page() {
     <>
       <PageHero
         eyebrow="Pricing"
-        title="Priced to the outcome,"
-        italic="not the hour."
-        sub="Every engagement is scope-priced with a fit guarantee. The ranges below are what buyers actually pay — no 'contact us for a quote'."
+        title="Priced to the work."
+        italic="Not the hour."
+        sub="Every engagement is scoped around the work, urgency, complexity, and level of ownership required. Clear ranges. No browsing. No hourly surprises. No long-term lock-in by default."
       />
 
       {/* Four tiers */}
@@ -194,12 +195,15 @@ function Page() {
               Portfolios
             </div>
             <h3 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
-              Executive Bench for PE, family offices, and holdcos.
+              Executive Bench for PE, family offices, holdcos, and multi-company founders.
             </h3>
             <p className="mt-5 text-stone leading-relaxed">
-              Annual capacity partnership: priority operator matching, quarterly planning,
-              emergency CFO/COO/GTM coverage, preferred commercial terms. Bench $50k–$150k/yr;
-              deployments per SOW at preferred rates.
+              Annual executive-capacity partnership for recurring leadership gaps and
+              value-creation work. Bench includes priority operator matching, quarterly
+              capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits,
+              and preferred commercial terms. Bench pricing typically ranges from
+              $50k–$150k/year. Operator deployments are billed separately by SOW at
+              preferred rates.
             </p>
             <div className="mt-8">
               <Link
@@ -246,7 +250,7 @@ function Page() {
 
       <FooterCTA
         headline="Talk to us before you spend it."
-        sub="30-minute discovery call. We'll tell you exactly which model fits — or that Veep isn't the right answer."
+        sub="Book a 30-minute Bottleneck Call. We will help clarify the work, recommend the right model, and tell you directly if Veep is not the right answer."
       />
     </>
   );

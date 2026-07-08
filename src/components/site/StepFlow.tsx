@@ -1,8 +1,8 @@
 const steps = [
-  { n: "01", t: "Diagnose", d: "30-minute call to classify the trigger, urgency, and outcome that needs an owner." },
-  { n: "02", t: "Match", d: "We shortlist one or two senior operators — matched to the outcome, not a title." },
-  { n: "03", t: "Deploy in <10 days", d: "Contracts, onboarding, and access complete. The operator starts owning the outcome." },
-  { n: "04", t: "Clean handoff", d: "When the outcome lands or a permanent hire arrives, we hand off — with documentation, not dependency." },
+  { n: "01", t: "Diagnose", d: "30-minute call to clarify the priority, urgency, current owner, and outcome that needs movement." },
+  { n: "02", t: "Scope", d: "We define the work and recommend the right structure: Advisory, Sprint, Operator, Pod, or Operator in the Loop." },
+  { n: "03", t: "Match", d: "We shortlist one or two senior operators matched to the work, company stage, function, industry, business model, and fit." },
+  { n: "04", t: "Deploy in <10 days", d: "Contracts, onboarding, and working rhythm are set. The operator starts owning the work." },
 ];
 
 export function StepFlow() {
