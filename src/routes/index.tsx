@@ -321,7 +321,7 @@ function Index() {
             <div className="space-y-9">
               <TrustChip label="72-hour match · 10-day deploy · 30-day fit guarantee" />
 
-              <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl leading-[1.05] text-cream tracking-tight">
+              <h1 className="font-serif text-3xl md:text-4xl xl:text-6xl leading-[1.05] text-cream tracking-tight">
                 The work{" "}
                 <span className="text-accent">needs an owner.</span>
               </h1>
@@ -385,7 +385,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-14">
             <SectionEyebrow>The moment you're in</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Your business is too important{" "}
               <span className="text-accent">for ownerless work.</span>
             </h2>
@@ -418,7 +418,7 @@ function Index() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <SectionEyebrow>What we do</SectionEyebrow>
-              <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+              <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
                 Senior operators to own work{" "}
                 <span className="text-accent">that cannot wait.</span>
               </h2>
@@ -458,7 +458,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>Operators</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Operators who've been in the seat —{" "}
               <span className="text-accent">and delivered.</span>
             </h2>
@@ -502,7 +502,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Executive capacity —{" "}
               <span className="text-accent">before the executive hire.</span>
             </h2>
@@ -532,7 +532,7 @@ function Index() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
-              <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+              <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
                 Choose the right level of support{" "}
                 <span className="text-accent">for the work.</span>
               </h2>
@@ -557,7 +557,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>How it works</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               From bottleneck to operator in the work —{" "}
               <span className="text-accent">in under 10 days.</span>
             </h2>
@@ -571,7 +571,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               What operators can unlock in the{" "}
               <span className="text-accent">first 90 days.</span>
             </h2>
@@ -627,7 +627,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               A better way to get{" "}
               <span className="text-accent">senior work owned.</span>
             </h2>
@@ -693,7 +693,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>Before you book</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               The questions founders ask{" "}
               <span className="text-accent">on the first call.</span>
             </h2>
@@ -710,7 +710,7 @@ function Index() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>FAQ</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Straight answers.
             </h2>
           </div>

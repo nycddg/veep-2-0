@@ -94,7 +94,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
               Where portfolios lose time
             </div>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               The seat is open.{" "}
               <span className="text-accent">The work is not.</span>
             </h2>
@@ -117,7 +117,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
               Start here
             </div>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Executive Capacity Audit.
             </h2>
             <p className="mt-6 text-stone leading-relaxed">
@@ -174,7 +174,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
               Roster models
             </div>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Retain exactly as much capacity{" "}
               <span className="text-accent">as the portfolio needs.</span>
             </h2>
@@ -233,7 +233,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
               How it works
             </div>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               One agreement.{" "}
               <span className="text-accent">Every portco activated.</span>
             </h2>

@@ -171,7 +171,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
               What we don't charge for
             </div>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               The price you see{" "}
               <span className="text-accent">is the price you pay.</span>
             </h2>
@@ -223,7 +223,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
               Pricing FAQ
             </div>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Common questions.{" "}
               <span className="text-accent">Direct answers.</span>
             </h2>
