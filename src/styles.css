@@ -13,10 +13,11 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* IBM Plex — Mono owns display/headings/accents, Sans owns body/UI. */
+  /* IBM Plex — Sans owns the voice (body + headings). Mono is a mark,
+     reserved for eyebrows, numeric labels, and one signature phrase per page. */
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-display: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-serif: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --color-background: var(--background);
@@ -133,31 +134,35 @@
     font-feature-settings: "ss02", "cv11";
   }
 
-  /* Display headings — IBM Plex Mono, weight 500, tight tracking. */
+  /* Display headings — IBM Plex Sans, weight 500, editorial tracking.
+     Balance wrap by default so short headlines don't strand a word. */
   h1, h2, h3, h4, h5, h6, .font-serif, .font-display {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-weight: 500;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     line-height: 1.1;
-    font-feature-settings: "zero", "ss01";
+    text-wrap: balance;
   }
 
   h1 {
-    letter-spacing: -0.03em;
-    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
   }
 
-  h2 { letter-spacing: -0.022em; line-height: 1.08; }
-  h3, h4 { letter-spacing: -0.015em; line-height: 1.15; }
+  h2 { letter-spacing: -0.028em; line-height: 1.06; }
+  h3 { letter-spacing: -0.018em; line-height: 1.18; }
+  h4 { letter-spacing: -0.012em; line-height: 1.25; }
+
+  p { text-wrap: pretty; }
 
   /* Cap emphasis at 500 — no browser 700 defaults. */
   strong, b { font-weight: 500; }
 
-  /* No italics anywhere — emphasis is color, not slant. */
-  em, i, .italic {
-    font-style: normal;
-    color: var(--color-accent);
-  }
+  /* Italics kept as normal weight; do NOT globally recolor emphasis.
+     Accent color is applied explicitly where it belongs (hero tail phrase),
+     not injected into every <em> in body copy. */
+  em, i, .italic { font-style: normal; }
 
   /* Numeric alignment for prices/stats. */
   .font-mono, code, kbd, pre, samp { font-variant-numeric: tabular-nums; }
@@ -193,7 +198,7 @@
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-accent);
 }
