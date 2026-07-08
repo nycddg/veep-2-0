@@ -184,6 +184,17 @@ const cases = [
   },
 ];
 
+const networkImpact = [
+  { figure: "$2B+", label: "Cost savings delivered", detail: "Across transformation, product redesign, and operational efficiency initiatives at global enterprises." },
+  { figure: "$1B+", label: "Capital raised", detail: "Venture funding, structured finance, SPACs, and instruments like securitized bonds." },
+  { figure: "$3B+", label: "Revenue opportunity created", detail: "Through new business lines, go-to-market strategy, and product commercialization." },
+  { figure: "$24B", label: "M&A integrations led", detail: "Some of the largest and most complex transactions across aerospace, tech, and services." },
+  { figure: "10x+", label: "Revenue scaling enabled", detail: "Systems, teams, and strategies behind hypergrowth companies." },
+  { figure: "75+", label: "Global brands transformed", detail: "From luxury and retail to SaaS and fintech — growth, repositioning, and innovation." },
+  { figure: "1,000+", label: "Team members led & scaled", detail: "Across global organizations, from startups to Fortune 50 enterprises." },
+  { figure: "100+", label: "Products & platforms launched", detail: "From AI and SaaS to consumer and enterprise solutions." },
+];
+
 const faqs = [
   {
     q: "What is a Veep operator?",
@@ -477,6 +488,32 @@ function Index() {
               />
             ))}
           </div>
+
+          {/* Network impact */}
+          <div className="mt-16 border-t border-white/10 pt-12">
+            <div className="max-w-2xl mb-10">
+              <SectionEyebrow>Network impact</SectionEyebrow>
+              <p className="mt-4 text-sm text-stone-soft">
+                Aggregated outcomes across our operator roster.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {networkImpact.map((m) => (
+                <div key={m.label} className="glass-card rounded-3xl p-6">
+                  <div className="font-serif text-3xl md:text-4xl text-accent tracking-tight leading-none">
+                    {m.figure}
+                  </div>
+                  <div className="mt-4 text-[10px] font-medium uppercase tracking-[0.16em] text-cream">
+                    {m.label}
+                  </div>
+                  <p className="mt-2 text-xs text-stone-soft leading-relaxed">
+                    {m.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
             <p className="text-sm text-stone-soft">
               150+ vetted senior operators · avg. 18 yrs experience · every operator has held the seat.
