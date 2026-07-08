@@ -201,9 +201,8 @@ function Page() {
               Annual executive-capacity partnership for recurring leadership gaps and
               value-creation work. Roster includes priority operator matching, quarterly
               capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits,
-              and preferred commercial terms. Roster pricing typically ranges from
-              $50k–$150k/year. Operator deployments are billed separately by SOW at
-              preferred rates.
+              and preferred commercial terms. Roster is $75k/year — operator deployments
+              are billed separately by SOW at preferred rates.
             </p>
             <div className="mt-8">
               <Link
