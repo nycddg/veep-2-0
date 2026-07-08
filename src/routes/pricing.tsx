@@ -56,7 +56,7 @@ const tiers = [
 ];
 
 const notIncluded = [
-  { t: "Placement fees", d: "Bottleneck Calls and operator matching are free." },
+  { t: "Placement fees", d: "Calls with a Veep founder and operator matching are free." },
   { t: "Setup or onboarding fees", d: "Contracting, access, and onboarding are managed at no extra cost." },
   { t: "Long-term lock-in", d: "Most engagements can start focused, continue, pause, or scale as the work changes." },
   { t: "Hourly billing surprises", d: "Every engagement is scoped around the work. You know the number before you sign." },
@@ -65,7 +65,7 @@ const notIncluded = [
 const faqs = [
   {
     q: "Are there setup or matching fees?",
-    a: "No. Bottleneck Calls and operator matching are free. You only pay once an engagement is signed.",
+    a: "No. Calls with a Veep founder and operator matching are free. You only pay once an engagement is signed.",
   },
   {
     q: "Can I convert between models mid-term?",
@@ -246,7 +246,7 @@ function Page() {
 
       <FooterCTA
         headline="Talk to us before you spend it."
-        sub="Book a 30-minute Bottleneck Call. We'll clarify the work, recommend the right model, and tell you directly if Veep isn't the answer."
+        sub="Book a 30-minute call with a Veep founder. We'll clarify the work, recommend the right model, and tell you directly if Veep isn't the answer."
       />
     </>
   );

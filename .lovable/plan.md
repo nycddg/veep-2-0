@@ -1,49 +1,33 @@
-You selected the **Command center monolithic** direction for the Network Impact metrics band. The goal is to break away from the repetitive glass-card grid and make the network totals feel like a single, authoritative read-out.
+Replace all mentions of "Bottleneck Call" across the site with the new "30-minute call with a Veep founder" framing, keeping the tone consistent with the existing site voice.
 
-## What we'll change
+## Files and exact changes
 
-In `src/routes/index.tsx`, replace the current 8-tile `glass-card` grid under the `#operators` section with a single unified panel that still lives between the operator spotlight grid and the "150+ vetted senior operators…" footer row.
+1. **src/components/site/FooterCTA.tsx**
+   - Change: `Book a 30-minute Bottleneck Call. Matched in 72 hours...` → `Book a 30-minute call with a Veep founder. Matched in 72 hours...`
 
-### Visual structure
+2. **src/components/site/ObjectionList.tsx**
+   - Change: `We run a 30-minute Bottleneck Call to clarify the work...` → `We run a 30-minute call with a Veep founder to clarify the work...`
 
-```text
-┌─────────────────────────────────────────────────────────────────────┐
-│  ─────────────── Network Impact ───────────────                    │
-│                                                                     │
-│  ┌─────────────────────────────────────────────────────────────┐  │
-│  │  · $2B+          · $1B+           · $3B+          · $24B     │  │
-│  │    Cost savings    Capital          Revenue          M&A      │  │
-│  │    delivered       raised           opportunity      led       │  │
-│  │                                                                │  │
-│  │  · 10x+          · 75+            · 1,000+        · 100+      │  │
-│  │    Revenue         Global brands    Team members    Products  │  │
-│  │    scaling         transformed      led & scaled    launched    │  │
-│  └─────────────────────────────────────────────────────────────┘  │
-│                                                                     │
-│  Aggregated outcomes across our operator roster.                     │
-└─────────────────────────────────────────────────────────────────────┘
-```
+3. **src/routes/pricing.tsx**
+   - Change: `Book a 30-minute Bottleneck Call. We'll clarify the work...` → `Book a 30-minute call with a Veep founder. We'll clarify the work...`
+   - Change: `Bottleneck Calls and operator matching are free.` → `Calls with a Veep founder and operator matching are free.`
+   - Change: `No. Bottleneck Calls and operator matching are free.` → `No. Calls with a Veep founder and operator matching are free.`
 
-- **Monolithic panel**: one dark, slightly raised surface with a faint border and subtle inner dot grid, replacing 8 separate glass cards.
-- **Section label**: centered "Network Impact" eyebrow flanked by thin gradient rules, so it feels like a deliberate module rather than an afterthought.
-- **Metric layout**: 2 columns on mobile, 4 on desktop inside the panel, divided by hairline vertical rules on desktop.
-- **Metric tile**: small label, large figure, and one-line supporting detail. No icons — keeps the text-only constraint.
-- **Accent details**: small indigo corner brackets on the panel and a very subtle scan-line animation to give it a "live command center" feel without adding color.
-- **Tokens**: all colors and typography come from the existing design system (IBM Plex Mono, indigo accent, cream/stone text). No new hardcoded colors or fonts.
+4. **src/routes/faq.tsx**
+   - Change: `Most engagements begin in under 10 days from the Bottleneck Call.` → `Most engagements begin in under 10 days from the call with a Veep founder.`
+   - Change: `No. Bottleneck Calls and operator matching are free.` → `No. Calls with a Veep founder and operator matching are free.`
+   - Change: `If the answer is not here, book a Bottleneck Call.` → `If the answer is not here, book a 30-minute call with a Veep founder.`
 
-## What we'll keep
+## What stays the same
 
-- The 8 existing metrics and their exact copy.
-- The section placement inside `#operators`.
-- The existing "150+ vetted senior operators…" footer row.
+- The surrounding copy, CTAs, and structure of each component/page.
+- No new files, no route changes, no dependency installs.
 
-## Technical notes
+## Verification
 
-- Single file edit: `src/routes/index.tsx`.
-- Add one `@keyframes` rule to `src/styles.css` for the scan-line animation.
-- No new components, no new dependencies, no route changes.
-- Verify the build passes and the section looks correct at mobile, tablet, and desktop widths.
+- Run a build to confirm no JSX/string breakage.
+- Search the codebase after the edit to confirm zero remaining "Bottleneck Call" references.
 
-## Open decision
+## Open question
 
-Should the scan-line animation be included, or should we keep the panel static for now? The prototype includes it, but we can omit it if you prefer a calmer read.
+For the plural mentions (`Bottleneck Calls and operator matching are free`), the rewrite becomes `Calls with a Veep founder and operator matching are free`. If you'd prefer a different phrasing like `Intro calls with a Veep founder...`, let me know — otherwise I'll proceed with the plan above.
