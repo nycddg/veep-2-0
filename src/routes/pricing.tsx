@@ -169,7 +169,7 @@ function Page() {
       <section className="py-24 md:py-32 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
-            <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+            <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
               What we don't charge for
             </div>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
@@ -192,7 +192,7 @@ function Page() {
       <section className="py-24 md:py-32 border-t border-white/10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="glass-card rounded-3xl p-10 md:p-12">
-            <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+            <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
               Portfolios
             </div>
             <h3 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
@@ -221,7 +221,7 @@ function Page() {
       <section className="py-24 md:py-32 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
-            <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+            <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
               Pricing FAQ
             </div>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">

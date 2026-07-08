@@ -304,7 +304,7 @@ function InlineCTA({ label = "Book intro call" }: { label?: string }) {
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+    <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
       {children}
     </div>
   );
@@ -403,7 +403,7 @@ function Index() {
           <div className="mt-16 grid md:grid-cols-3 gap-6">
             {alternatives.map((a) => (
               <div key={a.t} className="rounded-3xl border border-white/8 bg-white/[0.02] p-6">
-                <div className="text-[10px] uppercase tracking-[0.2em] text-stone-soft">Instead of</div>
+                <div className="text-[10px] uppercase tracking-[0.16em] text-stone-soft">Instead of</div>
                 <div className="mt-3 font-serif text-xl text-stone tracking-tight">{a.t}</div>
                 <p className="mt-3 text-sm text-stone-soft leading-relaxed">{a.d}</p>
               </div>
@@ -434,7 +434,7 @@ function Index() {
               </p>
             </div>
             <div className="glass-card rounded-3xl p-10 space-y-6">
-              <div className="text-[10px] uppercase tracking-[0.25em] text-accent">The Veep model</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-accent">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
                 ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, product leaders, people leaders, and chiefs of staff."],
@@ -508,7 +508,7 @@ function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {benefits.map((b, i) => (
               <div key={b.t} className="glass-card rounded-3xl p-7">
-                <div className="font-mono text-[10px] tracking-[0.2em] text-accent">
+                <div className="font-mono text-[10px] tracking-[0.16em] text-accent">
                   0{i + 1}
                 </div>
                 <div className="mt-5 font-serif text-2xl text-cream tracking-tight leading-tight">
@@ -578,7 +578,7 @@ function Index() {
           <div className="grid md:grid-cols-3 gap-4">
             {cases.map((c) => (
               <div key={c.tag} className="glass-card rounded-3xl p-7 flex flex-col">
-                <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-accent">
+                <span className="text-[10px] font-medium tracking-[0.16em] uppercase text-accent">
                   {c.tag}
                 </span>
                 <p className="mt-6 text-sm text-stone leading-relaxed">
@@ -603,7 +603,7 @@ function Index() {
             ].map((s) => (
               <div key={s.k}>
                 <div className="font-mono text-4xl md:text-5xl text-cream tracking-tight" style={{ fontFeatureSettings: '"zero", "ss01"' }}>{s.k}</div>
-                <div className="mt-2 text-[11px] font-medium tracking-[0.2em] uppercase text-stone-soft">
+                <div className="mt-2 text-[11px] font-medium tracking-[0.16em] uppercase text-stone-soft">
                   {s.v}
                 </div>
               </div>
@@ -633,13 +633,13 @@ function Index() {
 
           <div className="rounded-3xl border border-white/10 overflow-hidden divide-y divide-white/10">
             <div className="hidden md:grid grid-cols-3 bg-white/[0.03]">
-              <div className="p-5 text-[10px] uppercase tracking-[0.2em] text-stone-soft">Dimension</div>
-              <div className="p-5 text-[10px] uppercase tracking-[0.2em] text-stone-soft">The old way</div>
-              <div className="p-5 text-[10px] uppercase tracking-[0.2em] text-accent">Veep</div>
+              <div className="p-5 text-[10px] uppercase tracking-[0.16em] text-stone-soft">Dimension</div>
+              <div className="p-5 text-[10px] uppercase tracking-[0.16em] text-stone-soft">The old way</div>
+              <div className="p-5 text-[10px] uppercase tracking-[0.16em] text-accent">Veep</div>
             </div>
             {differentiators.map((r) => (
               <div key={r.dim} className="grid md:grid-cols-3 gap-2 md:gap-0 p-5 md:p-0">
-                <div className="md:p-5 font-mono text-[11px] uppercase tracking-widest text-stone-soft">
+                <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.14em] text-stone-soft">
                   {r.dim}
                 </div>
                 <div className="md:p-5 text-sm text-stone leading-relaxed">{r.old}</div>
