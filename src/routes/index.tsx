@@ -70,12 +70,12 @@ const spotlightOperators = [
 
 const problems = [
   {
-    t: "The work is critical — and no one clearly owns it.",
+    t: "Critical work with no clear owner.",
     d: "A fundraise, GTM reset, operating issue, margin problem, or leadership gap keeps coming back to the founder. The team is busy, but the priority is still stuck.",
   },
   {
     t: "The hire can come later. The work cannot.",
-    d: "A full-time executive may be the right answer eventually. But the search could take months, the role may still be undefined, and the business needs movement now.",
+    d: "A full-time executive may be the right answer eventually. The search takes months, the role may still be undefined, and the business needs movement now.",
   },
   {
     t: "The founder is still in the middle.",
@@ -83,7 +83,7 @@ const problems = [
   },
   {
     t: "More advice is not enough.",
-    d: "You do not need another deck, another tool, or a list of candidates to sort through. You need someone senior to step in, take responsibility, and move the work forward.",
+    d: "You don't need another deck or a stack of candidate profiles. You need someone senior to step in, take responsibility, and move the work.",
   },
 ];
 
@@ -95,11 +95,11 @@ const alternatives = [
 
 const benefits = [
   { t: "Own the work", d: "Operators step in to take responsibility for critical work, not advise from the sidelines." },
-  { t: "Deploy in under 10 days", d: "Shortlist in 72 hours. Onboarded and moving the work inside 10 days." },
+  { t: "Deploy in under 10 days", d: "Shortlist in 72 hours. Onboarded and in the work inside 10 days." },
   { t: "Senior-only roster", d: "150+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
-  { t: "No permanent commitment", d: "Get senior ownership before the full-time hire is clear, affordable, available, or necessary." },
+  { t: "No permanent commitment", d: "Senior ownership without a full-time hire — engagements start focused and can pause, extend, or scale with the work." },
   { t: "Clean handoff", d: "When the work lands or a permanent hire arrives, you get documentation, context, and continuity." },
-  { t: "30-day fit guarantee", d: "If the operator is not right, we swap them or you walk. No fee owed for the remaining term." },
+  { t: "30-day fit guarantee", d: "If the operator isn't the right fit, we swap them or you walk — no fee owed for the remaining term." },
 ];
 
 const engagements = [
@@ -369,13 +369,13 @@ function Index() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>What Veep is</SectionEyebrow>
           <p className="mt-6 font-serif text-2xl md:text-3xl text-cream tracking-tight leading-snug">
-            Veep brings senior ownership to work that cannot wait — helping founder-led
-            companies deploy vetted operators across finance, GTM, operations, product,
-            people, fundraising, and strategic initiatives.
+            Veep brings senior ownership to work that can't wait. We deploy vetted
+            operators inside founder-led companies across finance, GTM, operations,
+            product, people, fundraising, and strategy.
           </p>
           <p className="mt-4 text-sm text-stone">
-            Built for companies with real revenue, real teams, and growing complexity — before
-            the full-time executive hire makes sense.
+            Built for companies with real revenue and growing complexity, before the
+            full-time executive hire makes sense.
           </p>
         </div>
       </section>
@@ -419,18 +419,17 @@ function Index() {
             <div>
               <SectionEyebrow>What we do</SectionEyebrow>
               <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
-                Senior operators to own work{" "}
-                <span className="text-accent">that cannot wait.</span>
+                Senior operators to own the work{" "}
+                <span className="text-accent">that can't wait.</span>
               </h2>
               <p className="mt-8 text-stone text-lg leading-relaxed">
-                Tell us what needs movement: a fundraise, GTM reset, margin issue, leadership
-                gap, operating problem, recurring workflow, or strategic decision. Veep helps
-                define the work, recommends the right level of senior support, and matches the
-                operator or team to the job — Advisory, Sprint, Operator, Pod, or
-                Operator-in-the-Loop capacity.
+                Tell us what's stuck: a fundraise, GTM reset, margin issue, leadership
+                gap, or a strategic decision that keeps coming back to you. We define the
+                work, recommend the right level of support (Advisory, Sprint, Operator,
+                or Pod), and match the operator to the job.
               </p>
               <p className="mt-4 text-stone text-lg leading-relaxed">
-                When the work lands or the permanent hire arrives, we hand off — with
+                When the work lands or the permanent hire arrives, we hand off with
                 documentation, not dependency.
               </p>
             </div>
@@ -459,12 +458,12 @@ function Index() {
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>Operators</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
-              Operators who've been in the seat —{" "}
+              Operators who've held the seat{" "}
               <span className="text-accent">and delivered.</span>
             </h2>
             <p className="mt-8 text-stone text-lg leading-relaxed">
-              Every Veep operator has previously held the role they're deployed into, at
-              a comparable-stage company, with outcomes we can reference. No juniors, no
+              Every Veep operator has held the role they're deployed into, at a
+              comparable-stage company, with outcomes we can reference. No juniors, no
               generalists, no career consultants.
             </p>
           </div>
@@ -482,8 +481,7 @@ function Index() {
           </div>
           <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
             <p className="text-sm text-stone-soft">
-              150+ vetted senior operators · avg. 18 yrs experience · every operator has
-              held the seat before.
+              150+ vetted senior operators · avg. 18 yrs experience · every operator has held the seat.
             </p>
             <a
               href={BOOKING_URL}
@@ -503,7 +501,7 @@ function Index() {
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
-              Executive capacity —{" "}
+              Executive capacity,{" "}
               <span className="text-accent">before the executive hire.</span>
             </h2>
           </div>
@@ -533,8 +531,8 @@ function Index() {
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
               <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
-                Choose the right level of support{" "}
-                <span className="text-accent">for the work.</span>
+                Pick the level of support{" "}
+                <span className="text-accent">the work needs.</span>
               </h2>
             </div>
             <Link
@@ -558,7 +556,7 @@ function Index() {
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>How it works</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
-              From bottleneck to operator in the work —{" "}
+              From first call to operator in the seat{" "}
               <span className="text-accent">in under 10 days.</span>
             </h2>
           </div>
@@ -572,7 +570,7 @@ function Index() {
           <div className="max-w-2xl mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
-              What operators can unlock in the{" "}
+              What senior operators change in the{" "}
               <span className="text-accent">first 90 days.</span>
             </h2>
           </div>
@@ -628,8 +626,8 @@ function Index() {
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
-              A better way to get{" "}
-              <span className="text-accent">senior work owned.</span>
+              How Veep compares{" "}
+              <span className="text-accent">to the alternatives.</span>
             </h2>
           </div>
 
@@ -661,12 +659,12 @@ function Index() {
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>For PE, VC, and family-office portfolios</SectionEyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
-                Portfolio-wide executive capacity — ready when the work needs an owner.
+                One roster. Every portco. Ready when the work needs an owner.
               </h2>
               <p className="text-stone leading-relaxed">
-                We help investors and portfolio leaders identify executive-capacity gaps, map
-                operating risk, and deploy vetted senior operators when a leadership gap opens
-                or a value-creation priority stalls.
+                We map executive-capacity gaps across the portfolio and deploy vetted
+                senior operators when a leadership seat opens or a value-creation
+                priority stalls.
               </p>
             </div>
             <div className="lg:col-span-2 flex flex-col lg:items-end gap-3">
