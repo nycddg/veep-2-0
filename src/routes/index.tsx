@@ -368,7 +368,7 @@ function Index() {
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
-          <p className="mt-6 font-serif text-2xl md:text-3xl text-cream tracking-tight leading-snug text-center max-w-2xl mx-auto">
+          <p className="mt-6 font-serif text-2xl md:text-3xl text-cream tracking-tight leading-snug text-center w-1/2 mx-auto">
             On demand senior operators for the job to be done. We deploy vetted executives inside founder-led companies across finance, GTM, operations, product, people, fundraising, and strategy.
           </p>
           <p className="mt-4 text-sm text-stone">
