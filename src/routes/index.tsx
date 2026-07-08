@@ -534,12 +534,6 @@ function Index() {
                 ))}
               </div>
 
-              {/* Corner accent lines */}
-              <div className="absolute top-0 left-0 w-8 h-px bg-accent/50" />
-              <div className="absolute top-0 left-0 w-px h-8 bg-accent/50" />
-              <div className="absolute bottom-0 right-0 w-8 h-px bg-accent/50" />
-              <div className="absolute bottom-0 right-0 w-px h-8 bg-accent/50" />
-
               {/* Scan line */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.07] to-transparent h-20 -top-20 animate-scan pointer-events-none" />
             </div>
