@@ -109,7 +109,7 @@ function Page() {
         eyebrow="Pricing"
         title="Priced to the work."
         italic="Not the hour."
-        sub="Every engagement is scoped around the work, urgency, complexity, and level of ownership required. Clear ranges. No browsing. No hourly surprises. No long-term lock-in by default."
+        sub="Every engagement is scoped to the work, urgency, and level of ownership required. Clear ranges. No hourly billing. No lock-in by default."
       />
 
       {/* Four tiers */}
@@ -225,8 +225,8 @@ function Page() {
               Pricing FAQ
             </div>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
-              Common questions.{" "}
-              <span className="text-accent">Direct answers.</span>
+              Straight answers to{" "}
+              <span className="text-accent">the questions we get most.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
@@ -250,7 +250,7 @@ function Page() {
 
       <FooterCTA
         headline="Talk to us before you spend it."
-        sub="Book a 30-minute Bottleneck Call. We will help clarify the work, recommend the right model, and tell you directly if Veep is not the right answer."
+        sub="Book a 30-minute Bottleneck Call. We'll clarify the work, recommend the right model, and tell you directly if Veep isn't the answer."
       />
     </>
   );

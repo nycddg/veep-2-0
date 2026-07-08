@@ -20,11 +20,11 @@ const orgSchema = {
   "@type": "Organization",
   name: "Veep",
   description:
-    "Veep places senior fractional and interim executives — CFO, COO, CRO, CTO — inside companies in under 10 days. Operator-led. 30-day fit guarantee.",
+    "Veep places vetted senior operators inside founder-led companies to own critical work. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
   url: "/",
   logo: "/favicon.ico",
   email: "hello@veep.co",
-  slogan: "Fractional and interim executives who own the outcome.",
+  slogan: "Senior operators for work that can't wait.",
 };
 
 function NotFoundComponent() {
@@ -89,11 +89,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Fractional CXO in Under 10 Days — Veep" },
+      { title: "Veep — Senior operators for work that can't wait" },
       {
         name: "description",
         content:
-          "Veep places a senior fractional CXO — CFO, COO, CRO, CTO — inside your scaling company in under 10 days. Operator-led. 30-day fit guarantee.",
+          "Vetted senior operators embed inside founder-led companies to own critical work. Matched in 72 hours. Deployed in under 10 days.",
       },
       { name: "author", content: "Veep" },
       { property: "og:site_name", content: "Veep" },

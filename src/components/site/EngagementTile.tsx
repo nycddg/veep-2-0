@@ -36,7 +36,7 @@ export function EngagementTile({
           {price}
         </span>
         <span className="text-xs font-medium text-cream/80 group-hover:text-accent inline-flex items-center gap-2">
-          Learn more →
+          See scope →
         </span>
       </div>
     </Link>

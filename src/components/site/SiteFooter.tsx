@@ -35,8 +35,8 @@ export function SiteFooter() {
               <img src={wordmarkWhite.url} alt="Veep" className="h-6 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-stone max-w-sm leading-relaxed">
-              Senior operators to own work that cannot wait — matched in 72
-              hours, deployed in under 10 days.
+              Senior operators to own the work that can't wait. Matched in 72
+              hours. Deployed in under 10 days.
             </p>
           </div>
           {cols.map((c) => (
