@@ -35,17 +35,16 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden border-b border-white/10">
-      <div className="absolute inset-x-0 top-0 h-[520px] bg-accent/8 blur-[140px] rounded-full max-w-3xl mx-auto pointer-events-none" aria-hidden />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 md:pt-28 pb-20 md:pb-28">
-        <div className="max-w-4xl space-y-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-16 md:pb-24">
+        <div className="max-w-3xl space-y-7">
           {chip ? (
             <TrustChip label={chip} />
           ) : (
-            <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
               {eyebrow}
             </div>
           )}
-          <h1 className="font-serif text-3xl md:text-4xl xl:text-6xl leading-[1.05] text-cream tracking-tight">
+          <h1 className="text-4xl md:text-5xl xl:text-6xl text-cream">
             {title}
             {italic && (
               <>
@@ -54,15 +53,15 @@ export function PageHero({
               </>
             )}
           </h1>
-          <p className="text-lg md:text-xl text-stone max-w-2xl leading-relaxed">
+          <p className="text-lg text-stone max-w-2xl leading-relaxed">
             {sub}
           </p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-2">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-1">
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-cream px-8 py-4 text-sm font-medium text-ink hover:bg-cream/90 transition-all inline-flex items-center gap-2 shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)]"
+              className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center gap-2"
             >
               {primaryLabel} <ArrowRight size={16} />
             </a>
