@@ -1,43 +1,49 @@
-## Where it goes
+You selected the **Command center monolithic** direction for the Network Impact metrics band. The goal is to break away from the repetitive glass-card grid and make the network totals feel like a single, authoritative read-out.
 
-Insert a new **"Network impact"** metrics band directly below the Operators Spotlight grid (`#operators` section in `src/routes/index.tsx`), just above the existing "150+ vetted senior operators…" footer row. It reinforces the operator credibility story right where prospects are already evaluating the roster — no new page or new section header needed.
+## What we'll change
 
-## What it looks like
+In `src/routes/index.tsx`, replace the current 8-tile `glass-card` grid under the `#operators` section with a single unified panel that still lives between the operator spotlight grid and the "150+ vetted senior operators…" footer row.
 
-A compact eyebrow ("Network impact — aggregated across our operator roster") followed by a responsive grid of stat tiles: 2 cols on mobile, 3 on tablet, 5 on desktop. Each tile shows:
+### Visual structure
 
-- Large serif figure in `text-accent` (e.g. `$2B+`)
-- Uppercase micro-label (e.g. `Cost savings delivered`)
-- One-line supporting sentence in `text-stone-soft`
+```text
+┌─────────────────────────────────────────────────────────────────────┐
+│  ─────────────── Network Impact ───────────────                    │
+│                                                                     │
+│  ┌─────────────────────────────────────────────────────────────┐  │
+│  │  · $2B+          · $1B+           · $3B+          · $24B     │  │
+│  │    Cost savings    Capital          Revenue          M&A      │  │
+│  │    delivered       raised           opportunity      led       │  │
+│  │                                                                │  │
+│  │  · 10x+          · 75+            · 1,000+        · 100+      │  │
+│  │    Revenue         Global brands    Team members    Products  │  │
+│  │    scaling         transformed      led & scaled    launched    │  │
+│  └─────────────────────────────────────────────────────────────┘  │
+│                                                                     │
+│  Aggregated outcomes across our operator roster.                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
 
-Styling matches the existing site: `glass-card rounded-3xl`, serif display type, `SectionEyebrow`, `text-accent` for the numbers. No new components required — inline the grid in `index.tsx` next to the existing `spotlightOperators` block.
+- **Monolithic panel**: one dark, slightly raised surface with a faint border and subtle inner dot grid, replacing 8 separate glass cards.
+- **Section label**: centered "Network Impact" eyebrow flanked by thin gradient rules, so it feels like a deliberate module rather than an afterthought.
+- **Metric layout**: 2 columns on mobile, 4 on desktop inside the panel, divided by hairline vertical rules on desktop.
+- **Metric tile**: small label, large figure, and one-line supporting detail. No icons — keeps the text-only constraint.
+- **Accent details**: small indigo corner brackets on the panel and a very subtle scan-line animation to give it a "live command center" feel without adding color.
+- **Tokens**: all colors and typography come from the existing design system (IBM Plex Mono, indigo accent, cream/stone text). No new hardcoded colors or fonts.
 
-## Which metrics to include
+## What we'll keep
 
-All 10 provided are strong but 10 tiles is heavy. Recommended edit to the top 8 most differentiated (drop overlap between "revenue scaling" and "revenue opportunity", and drop "exits" which overlaps M&A):
-
-1. `$2B+` — Cost savings delivered
-2. `$1B+` — Capital raised
-3. `$3B+` — Revenue opportunity created
-4. `$24B` — M&A integrations led
-5. `10x+` — Revenue scaling enabled
-6. `75+` — Global brands transformed
-7. `1,000+` — Team members led & scaled
-8. `100+` — Products & platforms launched
-
-(Full 10 also fits as 2×5 if you'd rather keep everything.)
-
-## Framing / disclosure
-
-Label the band **"Aggregated across our operator roster"** so the numbers read as network totals, not per-engagement claims. Keeps it honest and matches the site's grounded tone.
+- The 8 existing metrics and their exact copy.
+- The section placement inside `#operators`.
+- The existing "150+ vetted senior operators…" footer row.
 
 ## Technical notes
 
-- Single edit to `src/routes/index.tsx`: add a `networkImpact` array near the other content arrays (~line 165) and render a new `<div>` inside the `#operators` section between the spotlight grid (line 479) and the footer row (line 480).
-- No new files, no new dependencies, no route changes.
-- Update `serviceSchema` JSON-LD? Not needed — these are marketing figures, not structured offers.
+- Single file edit: `src/routes/index.tsx`.
+- Add one `@keyframes` rule to `src/styles.css` for the scan-line animation.
+- No new components, no new dependencies, no route changes.
+- Verify the build passes and the section looks correct at mobile, tablet, and desktop widths.
 
-## Open questions before build
+## Open decision
 
-1. 8 above
-2. place under operators
+Should the scan-line animation be included, or should we keep the panel static for now? The prototype includes it, but we can omit it if you prefer a calmer read.
