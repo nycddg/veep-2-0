@@ -497,7 +497,7 @@ function Index() {
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-accent/20" />
             </div>
 
-            <div className="relative overflow-hidden border border-white/10 bg-secondary">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-secondary">
               {/* Subtle dot grid */}
               <div
                 className="absolute inset-0 opacity-[0.03] pointer-events-none"
