@@ -1,57 +1,43 @@
-## Where to add it
+## Goal
 
-Insert a dedicated **"Operators"** section on the homepage as its own anchor (`#operators`) and add **Operators** to the global nav between **Overview** and **Benefits**.
+Restore a dedicated `/for-portfolios` interior page (currently just a redirect to `/#portfolios`) and route the homepage + pricing links to it. Content and pricing must reflect the current "The work needs an owner" positioning and the four-tier model (Advisory / Sprint / Operator / Pod) — not the old CFO/COO/GTM tier language from the previous version.
 
-### Recommended placement
+## Changes
 
-Between **Solution** (`#solution`) and **Benefits** (`#benefits`), i.e. new section #4 in the flow.
+### 1. Replace `src/routes/for-portfolios.tsx` (currently a redirect) with a full page
 
-Rationale:
-- The current page already introduces the operator concept in Solution ("senior operators own the work"). The immediate next question in a buyer's head is *"who are these people?"* Answering it there — before Benefits, Engagements, and Pricing — front-loads credibility while intent is highest.
-- The Proof section further down already contains a small operator strip (line 507, `id="operators"`), but it's buried under testimonials/logos and functions as social proof, not as a spotlight. We'll promote operators to a first-class section and demote that strip to a supporting role (or remove it to avoid duplication).
-- Placing it before Benefits/Pricing means every downstream claim ("own the work", "senior-only bench", "$15k/mo") is already backed by named faces.
+Structure, using existing components (`PageHero`, `FooterCTA`, `Section`/primitives, glass-card patterns from `pricing.tsx`):
 
-Resulting page order:
+- **Head**: title "For Portfolios — Executive Capacity Partnership | Veep", matching description, og tags, canonical.
+- **PageHero**: eyebrow "For Portfolios" · title "An executive bench," italic "on retainer." · sub explaining priority access to vetted senior operators across portfolio companies, framed around "work that needs an owner."
+- **Section: The problem** — 3 short cards: unplanned CEO transitions, value-creation work stalling between board meetings, portcos each rebuilding the same operator search from scratch.
+- **Section: Executive Capacity Audit** — the entry point. Two-column: "What you get" (portfolio-wide leadership risk map, function coverage assessment, upcoming capital/event triggers, recommended bench structure per company, emergency coverage path) + a dark callout describing the Portfolio Executive Bench that follows.
+- **Section: Bench tiers** — three cards aligned to updated messaging:
+  - *Company Bench* — for a single portco with recurring capacity needs (~$15k–$35k/yr).
+  - *Portfolio Bench* (featured) — for investors/holdcos, $50k–$150k/yr; priority matching, quarterly capacity planning, emergency Operator/Pod coverage SLA, included diagnostics, Executive Capacity MSA.
+  - *Capacity Subscription* — ongoing multi-function support for a high-growth portco, priced from Pod range ($30k+/mo).
+  Each card notes: engagements billed separately by SOW at preferred rates; converts cleanly to Advisory/Sprint/Operator/Pod models from the main pricing page.
+- **Section: How it works with portfolios** — 4-step strip: Audit → MSA signed once → SOW per engagement → Quarterly review. Reuses `StepFlow` styling or inline mirrors of it.
+- **Section: What's included vs. billed separately** — small clarity block (bench = access + planning + SLA; deployments = SOW).
+- **FooterCTA**: headline "Map your portfolio's executive capacity." with primary "Book intro call" and secondary link "Request a capacity audit" (→ `/contact?intent=audit`).
 
-```text
-Hero → Overview → Problem → Solution → Operators (NEW) → Benefits →
-Engagements → How it works → Proof → Comparison → Portfolios → FAQ → Footer CTA
-```
+All copy uses current voice: "operators who've been in the seat," "work that needs an owner," 72-hour match / 10-day deploy / 30-day fit guarantee where relevant. No references to the removed positioning.
 
-### Section content
+### 2. Update links pointing at `/#portfolios` or the redirect stub to the interior page
 
-Header:
-- Eyebrow: `Operators`
-- Headline: **"Operators who've been in the seat — and delivered."**
-- Sub: One line reinforcing: every operator on the bench has previously held the role they're deployed into, at a comparable-stage company, with outcomes we can reference.
+- `src/routes/index.tsx` (section #10, lines 657–683): change the "Request a capacity audit" CTA target to `/for-portfolios`, and add a primary link ("See how the bench works →") also to `/for-portfolios`. Keep the `id="portfolios"` anchor on the homepage section so the nav hash link still scrolls there.
+- `src/routes/pricing.tsx` (line ~210): the "See how the bench works →" link already points to `/for-portfolios` — verify it now resolves to the real page (no code change needed beyond the route replacement).
+- `src/components/site/SiteHeader.tsx`: no nav change requested; leave as-is.
 
-Body — 4–6 spotlight cards (larger than the existing hero cards), each showing:
-- Name + headshot/initials
-- Current title on Veep bench (e.g. "Senior Finance Operator")
-- Prior seat (e.g. "Former CFO, Industrious")
-- 2–3 outcome chips (e.g. "Series C raise", "Margin +12pts", "Exit to WeWork")
-- Domain tags (e.g. "Real Estate", "B2B SaaS")
+### 3. Route wiring
 
-Below the grid:
-- Trust strip: `150+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat before`
-- Secondary CTA: `See the full bench →` linking to `#operators` on a future `/operators` page, OR `Book intro call` if we don't want to promise a bench page yet.
+Because `/for-portfolios` already exists in `routeTree.gen.ts` (as a redirect), simply replacing the file's exported `Route` with the real page component is enough — the router plugin regenerates the tree on next build. No manual edits to `routeTree.gen.ts`.
 
-### Nav change
+## Out of scope
 
-Update `SiteHeader.tsx` nav array to insert Operators after Overview:
+- No new nav entry, no changes to `/operators` redirect, no changes to header/footer beyond the link retarget above.
+- No new imagery — page uses the same typographic + glass-card system as `pricing.tsx` and `PageHero`.
 
-```text
-Overview · Operators · Benefits · How it works · Proof · Pricing · FAQ
-```
+## Open question
 
-Same treatment in the mobile menu.
-
-### Files to change
-
-- `src/routes/index.tsx` — add new `<section id="operators">` between Solution and Benefits; rename the existing in-Proof `<div id="operators">` to `id="operator-strip"` (or delete it) to keep the anchor unique.
-- `src/components/site/SiteHeader.tsx` — add `{ kind: "hash", hash: "operators", label: "Operators" }` to the `nav` array.
-- `src/components/site/OperatorProofCard.tsx` — extend props to support an optional `priorSeat` line and `outcomes` chips for the spotlight variant (hero cards keep working with existing props).
-
-### Content you'll need to supply
-
-Real spotlight data for 4–6 operators: name, headshot (or approve initials), prior title + company, 2–3 named outcomes, and permission to list them. Without real names/outcomes the section undercuts the exact credibility it's meant to build — I'd rather ship 4 real profiles than 6 placeholders.
+None blocking — I'll mirror the tier ranges already shown in `pricing.tsx`'s portfolio callout ($50k–$150k/yr bench, deployments billed by SOW) so the two pages agree. If you want different numbers on the interior page, tell me before I build.
