@@ -152,7 +152,7 @@ function Page() {
               </p>
               <ul className="mt-6 space-y-2 text-sm text-cream/85">
                 {[
-                  "Annual roster: $50k–$150k",
+                  "Annual roster: $75k",
                   "Usage billed separately at preferred rates",
                   "MSA activated once, SOWs per role",
                 ].map((x) => (
@@ -179,7 +179,7 @@ function Page() {
               <span className="italic text-stone">as the portfolio needs.</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-1 gap-4 max-w-2xl">
             {tiers.map((t) => (
               <div
                 key={t.t}
