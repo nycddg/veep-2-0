@@ -369,9 +369,9 @@ function Index() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
           <p className="mt-6 font-serif text-2xl md:text-3xl text-cream tracking-tight leading-snug">
-            On demand senior operators to get the job that needs to be done, done.
-            We deploy vetted operators inside founder-led companies across finance,
-            GTM, operations, product, people, fundraising, and strategy.
+            On demand senior operators for the job to be done. We deploy vetted
+            executives inside founder-led companies across finance, GTM,
+            operations, product, people, fundraising, and strategy.
           </p>
           <p className="mt-4 text-sm text-stone">
             Built for companies with real revenue and growing complexity, before the
