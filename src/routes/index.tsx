@@ -195,7 +195,7 @@ const faqs = [
   },
   {
     q: "How much does Veep cost?",
-    a: "Advisory starts around $3k/month. Sprints start around $25k. Operators start around $15k/month. Pods start around $30k/month. Operator-in-the-Loop engagements start around $20k/month. Every engagement is scoped around the work.",
+    a: "Advisory starts at $3k/month. Sprints start at $25k. Operators start at $15k/month. Pods start at $30k/month. Every engagement is scoped to the work.",
   },
   {
     q: "How is Veep different from a consulting firm?",
