@@ -19,8 +19,8 @@ export function LogoWall() {
   return (
     <section className="border-y border-white/10 bg-background overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-        <div className="text-center text-[10px] font-medium uppercase tracking-[0.18em] text-stone-soft">
-          Our operators have led at
+        <div className="text-center text-lg md:text-xl tracking-tight text-cream font-medium">
+          operators who built the companies you admire
         </div>
         <div className="mt-8 relative overflow-hidden">
           <div className="flex marquee whitespace-nowrap gap-16 items-center">
