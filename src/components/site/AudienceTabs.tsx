@@ -86,8 +86,8 @@ const companiesPillars: Pillar[] = [
 const portfoliosPillars: Pillar[] = [
   {
     idx: "0.1",
-    eyebrow: "Bench",
-    title: "An executive bench across the portfolio.",
+    eyebrow: "Roster",
+    title: "An executive roster across the portfolio.",
     bullets: [
       "Priority access to vetted CFO, COO, and GTM operators",
       "Emergency coverage path for interim vacancies",
@@ -95,7 +95,7 @@ const portfoliosPillars: Pillar[] = [
       "Preferred commercial terms on engagements",
     ],
     href: "/services/executive-bench",
-    panelTitle: "Portfolio Executive Bench",
+    panelTitle: "Portfolio Executive Roster",
     panelRows: [
       { k: "Response SLA", v: "5 business days" },
       { k: "Included", v: "Diagnostics + planning" },
@@ -111,7 +111,7 @@ const portfoliosPillars: Pillar[] = [
       "Portfolio-wide leadership risk map",
       "CFO / COO / GTM coverage assessment",
       "Upcoming capital and event triggers",
-      "Recommended bench structure per company",
+      "Recommended roster structure per company",
     ],
     href: "/for-portfolios",
     panelTitle: "Capacity Audit",
@@ -157,7 +157,7 @@ export function AudienceTabs() {
           </h2>
           <p className="mt-6 text-stone max-w-lg">
             Individual companies buy engagements against a specific business
-            moment. Investors and holdcos retain an executive bench across
+            moment. Investors and holdcos retain an executive roster across
             their portfolio.
           </p>
         </div>

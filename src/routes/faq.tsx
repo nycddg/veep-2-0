@@ -38,7 +38,7 @@ const groups: { label: string; items: QA[] }[] = [
   {
     label: "Portfolios & partnerships",
     items: [
-      { q: "How does the Executive Bench work for portfolios?", a: "PE firms, family offices, holdcos, independent sponsors, search funds, and multi-company founders can retain Veep as an executive-capacity partner. The Bench typically includes priority matching, quarterly capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits, and preferred commercial terms. Annual Bench pricing typically ranges from $50k–$150k/year, with operator deployments billed separately by SOW." },
+      { q: "How does the Executive Roster work for portfolios?", a: "PE firms, family offices, holdcos, independent sponsors, search funds, and multi-company founders can retain Veep as an executive-capacity partner. The Roster typically includes priority matching, quarterly capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits, and preferred commercial terms. Annual Roster pricing is $75k/year, with operator deployments billed separately by SOW." },
       { q: "Do you have a referral program?", a: "Yes. We share economics with accountants, lenders, search firms, M&A advisors, attorneys, investors, and other partners who send us the right work. The best referrals are companies with critical work that needs senior ownership before a full-time hire makes sense." },
     ],
   },
@@ -58,7 +58,7 @@ export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
       { title: "FAQ — Straight Answers on Cost, Timing & Fit | Veep" },
-      { name: "description", content: "How Veep engagements work: pricing, timing, operator vetting, fit guarantee, and how the Executive Bench for portfolios works." },
+      { name: "description", content: "How Veep engagements work: pricing, timing, operator vetting, fit guarantee, and how the Executive Roster for portfolios works." },
       { property: "og:title", content: "FAQ — Veep" },
       { property: "og:description", content: "Straight answers on cost, timing, and fit." },
       { property: "og:url", content: "/faq" },
