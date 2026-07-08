@@ -4,7 +4,7 @@ const cols = [
   { k: "0.1", h: "Fractional", d: "C-suite capacity for the pivotal moment." },
   { k: "0.2", h: "Interim", d: "Own the seat while the search runs." },
   { k: "0.3", h: "Sprint", d: "Ship one outcome with a clear endpoint." },
-  { k: "0.4", h: "Bench", d: "Portfolio-wide executive capacity." },
+  { k: "0.4", h: "Roster", d: "Portfolio-wide executive capacity." },
   { k: "0.5", h: "AI Ops", d: "Operators governing unlimited AI staff." },
 ];
 
@@ -16,7 +16,7 @@ export function HeroVisual() {
           / POWERED BY
         </div>
         <div className="mt-3 text-3xl md:text-4xl tracking-tight text-cream">
-          Operator Bench<sup className="font-mono text-[10px] text-stone-soft ml-1">™</sup>
+          Operator Roster<sup className="font-mono text-[10px] text-stone-soft ml-1">™</sup>
         </div>
       </div>
       <GradientPyramid className="w-full h-[300px] mt-6" />

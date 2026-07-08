@@ -96,7 +96,7 @@ const alternatives = [
 const benefits = [
   { t: "Own the work", d: "Operators step in to take responsibility for critical work, not advise from the sidelines." },
   { t: "Deploy in under 10 days", d: "Shortlist in 72 hours. Onboarded and moving the work inside 10 days." },
-  { t: "Senior-only bench", d: "150+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
+  { t: "Senior-only roster", d: "150+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
   { t: "No permanent commitment", d: "Get senior ownership before the full-time hire is clear, affordable, available, or necessary." },
   { t: "Clean handoff", d: "When the work lands or a permanent hire arrives, you get documentation, context, and continuity." },
   { t: "30-day fit guarantee", d: "If the operator is not right, we swap them or you walk. No fee owed for the remaining term." },
@@ -674,7 +674,7 @@ function Index() {
                 to="/for-portfolios"
                 className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 transition"
               >
-                See how the bench works
+                See how the roster works
               </Link>
               <Link
                 to="/contact"

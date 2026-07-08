@@ -48,7 +48,7 @@ function Page() {
         italic={isAudit ? "executive risk." : "doesn't have an owner?"}
         sub={
           isAudit
-            ? "A structured audit of leadership risk across your portfolio, with a recommended bench structure per company. Delivered in 2–3 weeks."
+            ? "A structured audit of leadership risk across your portfolio, with a recommended roster structure per company. Delivered in 2–3 weeks."
             : "30-minute call. Response within one business day. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
         }
         secondaryLabel="See how it works"
@@ -68,7 +68,7 @@ function Page() {
                   ? [
                       "Portfolio-wide risk map",
                       "CFO / COO / GTM coverage assessment",
-                      "Recommended bench structure per company",
+                      "Recommended roster structure per company",
                       "Emergency coverage path",
                     ]
                   : [

@@ -195,13 +195,13 @@ function Page() {
               Portfolios
             </div>
             <h3 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
-              Executive Bench for PE, family offices, holdcos, and multi-company founders.
+              Executive Roster for PE, family offices, holdcos, and multi-company founders.
             </h3>
             <p className="mt-5 text-stone leading-relaxed">
               Annual executive-capacity partnership for recurring leadership gaps and
-              value-creation work. Bench includes priority operator matching, quarterly
+              value-creation work. Roster includes priority operator matching, quarterly
               capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits,
-              and preferred commercial terms. Bench pricing typically ranges from
+              and preferred commercial terms. Roster pricing typically ranges from
               $50k–$150k/year. Operator deployments are billed separately by SOW at
               preferred rates.
             </p>
@@ -210,7 +210,7 @@ function Page() {
                 to="/for-portfolios"
                 className="text-sm text-cream/90 hover:text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60"
               >
-                See how the bench works →
+                See how the roster works →
               </Link>
             </div>
           </div>
