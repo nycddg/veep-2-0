@@ -53,6 +53,18 @@ const tiers = [
       "Coordinated senior execution",
     ],
   },
+  {
+    t: "Operator in the Loop",
+    p: "From $20k",
+    per: "per month",
+    best: "AI agent teams and recurring workflows governed by a senior Veep operator.",
+    items: [
+      "Recurring finance, RevOps, sales, and marketing workflows",
+      "Customer operations and back-office execution",
+      "AI workflow implementation and process improvement",
+      "Function-level capacity without the department hire",
+    ],
+  },
 ];
 
 const notIncluded = [
