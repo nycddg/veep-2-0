@@ -275,13 +275,13 @@ function Index() {
               <TrustChip label="72-hour match · 10-day deploy · 30-day fit guarantee" />
 
               <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl leading-[1.02] text-cream tracking-tight">
-                Get a fractional CXO owning the outcome in under 10 days —{" "}
-                <span className="italic text-stone">without a 90-day search.</span>
+                The work{" "}
+                <span className="italic text-stone">needs an owner.</span>
               </h1>
 
               <p className="text-lg md:text-xl text-stone max-w-xl leading-relaxed font-light">
-                Veep places a senior CFO, COO, CRO, or CTO inside your scaling company as the
-                accountable executive — matched in 72 hours, in the seat in under 10 days.
+                Veep helps founder-led companies bring in vetted senior operators to own
+                critical work before the full-time executive hire makes sense.
               </p>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-2">
@@ -322,11 +322,13 @@ function Index() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>What Veep is</SectionEyebrow>
           <p className="mt-6 font-serif text-2xl md:text-3xl text-cream tracking-tight leading-snug">
-            Veep is a fractional CXO firm that places senior CFO, COO, CRO, and CTO operators
-            inside scaling companies in under 10 days.
+            Veep brings senior ownership to work that cannot wait — helping founder-led
+            companies deploy vetted operators across finance, GTM, operations, product,
+            people, fundraising, and strategic initiatives.
           </p>
           <p className="mt-4 text-sm text-stone">
-            Built for Series A–C founders and CEOs. 150+ vetted operators. 30-day fit guarantee.
+            Built for companies with real revenue, real teams, and growing complexity — before
+            the full-time executive hire makes sense.
           </p>
         </div>
       </section>
@@ -337,8 +339,8 @@ function Index() {
           <div className="max-w-3xl mb-14">
             <SectionEyebrow>The moment you're in</SectionEyebrow>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
-              You don't have six months to hire the executive{" "}
-              <span className="italic text-stone">you need this quarter.</span>
+              Your business is too important{" "}
+              <span className="italic text-stone">for ownerless work.</span>
             </h2>
           </div>
 
@@ -370,27 +372,28 @@ function Index() {
             <div>
               <SectionEyebrow>What we do</SectionEyebrow>
               <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
-                A senior operator in the seat —{" "}
-                <span className="italic text-stone">owning the outcome, not a deck.</span>
+                Senior operators to own work{" "}
+                <span className="italic text-stone">that cannot wait.</span>
               </h2>
               <p className="mt-8 text-stone text-lg leading-relaxed">
-                Tell us the initiative that's stuck. We match one or two senior CXOs from an
-                invite-only bench of 150+ operators — CFOs, COOs, CROs, CTOs who've led at
-                Stripe, Google, LinkedIn, Goldman, and Meta. They start inside 10 days as the
-                accountable executive.
+                Tell us what needs movement: a fundraise, GTM reset, margin issue, leadership
+                gap, operating problem, recurring workflow, or strategic decision. Veep helps
+                define the work, recommends the right level of senior support, and matches the
+                operator or team to the job — Advisory, Sprint, Operator, Pod, or
+                Operator-in-the-Loop capacity.
               </p>
               <p className="mt-4 text-stone text-lg leading-relaxed">
-                When the outcome lands or a permanent hire arrives, we hand off — with
+                When the work lands or the permanent hire arrives, we hand off — with
                 documentation, not dependency.
               </p>
             </div>
             <div className="glass-card rounded-3xl p-10 space-y-6">
               <div className="text-[10px] uppercase tracking-[0.25em] text-accent">The Veep model</div>
               {[
-                ["Match to outcome, not title", "We diagnose the trigger and match a CXO to it — not the org chart."],
-                ["Senior only", "Every operator is a former CFO, COO, CRO, or CTO. Invite-only bench."],
-                ["Priced to scope", "Advisory, Fractional, Interim, or Sprint — $5k–$90k/mo. No hourly billing."],
-                ["Guaranteed fit", "30 days to prove it. Swap the operator or walk."],
+                ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
+                ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, product leaders, people leaders, and chiefs of staff."],
+                ["Priced to scope", "Advisory, Sprint, Operator, Pod, or Operator in the Loop — structured around the work, not hourly browsing."],
+                ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
               ].map(([t, d]) => (
                 <div key={t} className="border-t border-white/10 pt-5 first:border-0 first:pt-0">
                   <div className="font-serif text-xl text-cream tracking-tight">{t}</div>
@@ -409,7 +412,7 @@ function Index() {
             <SectionEyebrow>What you get</SectionEyebrow>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
               Executive capacity —{" "}
-              <span className="italic text-stone">without the executive hire.</span>
+              <span className="italic text-stone">before the executive hire.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -438,8 +441,8 @@ function Index() {
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
               <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
-                Priced to the scope.{" "}
-                <span className="italic text-stone">Not the hour.</span>
+                Choose the right level of support{" "}
+                <span className="italic text-stone">for the work.</span>
               </h2>
             </div>
             <Link
@@ -463,7 +466,7 @@ function Index() {
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>How it works</SectionEyebrow>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
-              From intro call to operator in the seat —{" "}
+              From bottleneck to operator in the work —{" "}
               <span className="italic text-stone">in under 10 days.</span>
             </h2>
           </div>
@@ -477,7 +480,7 @@ function Index() {
           <div className="max-w-2xl mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
-              What operators unlock in the{" "}
+              What operators can unlock in the{" "}
               <span className="italic text-stone">first 90 days.</span>
             </h2>
           </div>
@@ -533,8 +536,8 @@ function Index() {
           <div className="max-w-2xl mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
-              The old way vs.{" "}
-              <span className="italic text-stone">the operator way.</span>
+              A better way to get{" "}
+              <span className="italic text-stone">senior work owned.</span>
             </h2>
           </div>
 
@@ -566,11 +569,12 @@ function Index() {
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>For PE, VC, and family-office portfolios</SectionEyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
-                Portfolio-wide executive capacity — on standby, deployable in days.
+                Portfolio-wide executive capacity — ready when the work needs an owner.
               </h2>
               <p className="text-stone leading-relaxed">
-                We run capacity audits across your portfolio, map exec risk per company, and
-                place operators the moment a seat opens or a value-creation initiative stalls.
+                We help investors and portfolio leaders identify executive-capacity gaps, map
+                operating risk, and deploy vetted senior operators when a leadership gap opens
+                or a value-creation priority stalls.
               </p>
             </div>
             <div className="lg:col-span-2 flex lg:justify-end">
