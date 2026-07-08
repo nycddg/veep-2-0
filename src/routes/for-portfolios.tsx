@@ -27,43 +27,20 @@ const auditDeliverables = [
 
 const tiers = [
   {
-    t: "Company Roster",
-    p: "$15k–$35k",
-    per: "/ year",
-    best: "One portfolio company with recurring capacity needs.",
-    items: [
-      "Annual capacity assessment",
-      "Quarterly leadership planning",
-      "Priority operator matching",
-      "Preferred engagement pricing",
-      "Direct line to a Veep partner",
-    ],
-  },
-  {
     t: "Portfolio Roster",
-    p: "$50k–$150k",
-    per: "/ year",
+    p: "$75k",
+    per: "/ year · usage billed separately",
     best: "Investors, family offices, holdcos, and independent sponsors.",
     items: [
       "Portfolio-wide intake and capacity map",
       "Quarterly capacity review",
+      "Priority operator matching across portcos",
       "Emergency Operator / Pod coverage SLA",
       "Included diagnostics and shortlists",
       "Executive Capacity MSA signed once",
+      "Preferred engagement rates on every SOW",
     ],
     featured: true,
-  },
-  {
-    t: "Capacity Subscription",
-    p: "From $30k",
-    per: "/ month",
-    best: "A high-growth portco with ongoing multi-function ownership needs.",
-    items: [
-      "Standing Pod across finance, GTM, or ops",
-      "Monthly operating cadence",
-      "Cross-functional triage",
-      "Converts cleanly into Operator or interim coverage",
-    ],
   },
 ];
 
