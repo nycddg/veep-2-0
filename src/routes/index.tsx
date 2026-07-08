@@ -669,13 +669,19 @@ function Index() {
                 or a value-creation priority stalls.
               </p>
             </div>
-            <div className="lg:col-span-2 flex lg:justify-end">
+            <div className="lg:col-span-2 flex flex-col lg:items-end gap-3">
+              <Link
+                to="/for-portfolios"
+                className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 transition"
+              >
+                See how the bench works
+              </Link>
               <Link
                 to="/contact"
                 search={{ intent: "audit" }}
-                className="rounded-full border border-white/20 px-7 py-3.5 text-sm font-medium text-cream hover:bg-white/5 transition"
+                className="text-sm text-cream/80 hover:text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60"
               >
-                Request a capacity audit
+                Request a capacity audit →
               </Link>
             </div>
           </div>
