@@ -38,7 +38,7 @@ const groups: { label: string; items: QA[] }[] = [
   {
     label: "Portfolios & partnerships",
     items: [
-      { q: "How does the Executive Roster work for portfolios?", a: "PE firms, family offices, holdcos, independent sponsors, search funds, and multi-company founders can retain Veep as an executive-capacity partner. The Roster typically includes priority matching, quarterly capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits, and preferred commercial terms. Annual Roster pricing typically ranges from $75k/year, with operator deployments billed separately by SOW." },
+      { q: "How does the Executive Roster work for portfolios?", a: "PE firms, family offices, holdcos, independent sponsors, search funds, and multi-company founders can retain Veep as an executive-capacity partner. The Roster typically includes priority matching, quarterly capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits, and preferred commercial terms. Annual Roster pricing is $75k/year, with operator deployments billed separately by SOW." },
       { q: "Do you have a referral program?", a: "Yes. We share economics with accountants, lenders, search firms, M&A advisors, attorneys, investors, and other partners who send us the right work. The best referrals are companies with critical work that needs senior ownership before a full-time hire makes sense." },
     ],
   },
