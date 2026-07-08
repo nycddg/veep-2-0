@@ -488,6 +488,32 @@ function Index() {
               />
             ))}
           </div>
+
+          {/* Network impact */}
+          <div className="mt-16 border-t border-white/10 pt-12">
+            <div className="max-w-2xl mb-10">
+              <SectionEyebrow>Network impact</SectionEyebrow>
+              <p className="mt-4 text-sm text-stone-soft">
+                Aggregated outcomes across our operator roster.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {networkImpact.map((m) => (
+                <div key={m.label} className="glass-card rounded-3xl p-6">
+                  <div className="font-serif text-3xl md:text-4xl text-accent tracking-tight leading-none">
+                    {m.figure}
+                  </div>
+                  <div className="mt-4 text-[10px] font-medium uppercase tracking-[0.16em] text-cream">
+                    {m.label}
+                  </div>
+                  <p className="mt-2 text-xs text-stone-soft leading-relaxed">
+                    {m.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
             <p className="text-sm text-stone-soft">
               150+ vetted senior operators · avg. 18 yrs experience · every operator has held the seat.
