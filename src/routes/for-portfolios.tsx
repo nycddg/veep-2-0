@@ -199,8 +199,8 @@ function Page() {
                     </span>
                   )}
                 </div>
-                <div className="mt-8 font-serif text-4xl text-cream tracking-tight">{t.p}</div>
-                <div className="text-xs text-stone mt-1">{t.per}</div>
+                <div className="mt-8 font-mono text-4xl text-cream tracking-tight" style={{ fontFeatureSettings: '"zero", "ss01"' }}>{t.p}</div>
+                <div className="text-xs text-stone mt-1 font-mono tracking-wide">{t.per}</div>
                 <p className="mt-5 text-sm text-cream/85 leading-relaxed">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-stone">
                   {t.items.map((i) => (

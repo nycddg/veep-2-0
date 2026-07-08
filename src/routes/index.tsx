@@ -326,7 +326,7 @@ function Index() {
                 <span className="italic text-stone">needs an owner.</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-stone max-w-xl leading-relaxed font-light">
+              <p className="text-lg md:text-xl text-stone max-w-xl leading-relaxed">
                 Veep helps founder-led companies bring in vetted senior operators to own
                 critical work before the full-time executive hire makes sense.
               </p>
@@ -604,7 +604,7 @@ function Index() {
               { k: "30d", v: "fit guarantee" },
             ].map((s) => (
               <div key={s.k}>
-                <div className="font-serif text-4xl md:text-5xl text-cream tracking-tight">{s.k}</div>
+                <div className="font-mono text-4xl md:text-5xl text-cream tracking-tight" style={{ fontFeatureSettings: '"zero", "ss01"' }}>{s.k}</div>
                 <div className="mt-2 text-[11px] font-medium tracking-[0.2em] uppercase text-stone-soft">
                   {s.v}
                 </div>
