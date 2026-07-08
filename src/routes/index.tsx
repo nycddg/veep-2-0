@@ -596,7 +596,7 @@ function Index() {
             ))}
           </div>
 
-          <div id="operators" className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10 scroll-mt-20">
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10">
             {[
               { k: "150+", v: "vetted operators" },
               { k: "72h", v: "to shortlist" },
