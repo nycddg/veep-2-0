@@ -326,28 +326,27 @@ function Index() {
     <>
       {/* 1 — HERO */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
-        <div className="absolute inset-x-0 top-0 h-[520px] bg-accent/10 blur-[140px] rounded-full max-w-3xl mx-auto pointer-events-none" aria-hidden />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-20 md:pb-28">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 md:pt-20 pb-16 md:pb-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-9">
               <TrustChip label="72-hour match · 10-day deploy · 30-day fit guarantee" />
 
-              <h1 className="font-serif text-3xl md:text-4xl xl:text-6xl leading-[1.05] text-cream tracking-tight">
+              <h1 className="text-4xl md:text-5xl xl:text-7xl text-cream">
                 The work{" "}
                 <span className="text-accent">needs an owner.</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-stone max-w-xl leading-relaxed">
+              <p className="text-lg text-stone max-w-xl leading-relaxed">
                 Veep helps founder-led companies bring in vetted senior operators to own
                 critical work before the full-time executive hire makes sense.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-2">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-1">
                 <a
                   href={BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-cream px-8 py-4 text-sm font-medium text-ink hover:bg-cream/90 transition-all inline-flex items-center gap-2 shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)]"
+                  className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center gap-2"
                 >
                   Book intro call <ArrowRight size={16} />
                 </a>
@@ -362,7 +361,6 @@ function Index() {
             </div>
 
             <div className="relative min-h-[520px] flex items-center justify-center">
-              <div className="absolute inset-0 bg-accent/10 blur-[120px] rounded-full" aria-hidden />
               <div className="relative grid grid-cols-2 gap-4 w-full max-w-lg">
                 {heroOperators.map((op) => (
                   <OperatorProofCard key={op.name} {...op} />

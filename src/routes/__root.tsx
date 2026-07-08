@@ -13,7 +13,6 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
-import { StickyMobileCTA } from "../components/site/StickyMobileCTA";
 
 const orgSchema = {
   "@context": "https://schema.org",
@@ -139,11 +138,10 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-background text-foreground flex flex-col">
         <SiteHeader />
-        <main className="flex-1 pb-20 lg:pb-0">
+        <main className="flex-1">
           <Outlet />
         </main>
         <SiteFooter />
-        <StickyMobileCTA />
       </div>
     </QueryClientProvider>
   );

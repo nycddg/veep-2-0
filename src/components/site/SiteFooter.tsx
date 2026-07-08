@@ -27,24 +27,30 @@ const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/8 bg-background text-cream">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="md:col-span-2">
+    <footer className="border-t border-white/10 bg-background text-cream">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+          <div className="md:col-span-5">
             <Link to="/" className="flex items-center" aria-label="Veep home">
               <img src={wordmarkWhite.url} alt="Veep" className="h-6 w-auto" />
             </Link>
-            <p className="mt-4 text-sm text-stone max-w-sm leading-relaxed">
+            <p className="mt-5 text-sm text-stone max-w-sm leading-relaxed">
               Senior operators to own the work that can't wait. Matched in 72
               hours. Deployed in under 10 days.
             </p>
+            <a
+              href="mailto:hello@veep.co"
+              className="mt-6 inline-block text-lg text-cream hover:text-accent underline underline-offset-8 decoration-white/20 hover:decoration-accent transition"
+            >
+              hello@veep.co
+            </a>
           </div>
           {cols.map((c) => (
-            <div key={c.title}>
-              <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-stone-soft">
+            <div key={c.title} className="md:col-span-3">
+              <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-stone-soft font-mono">
                 {c.title}
               </div>
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-4 space-y-2.5">
                 {c.links.map((l) => (
                   <li key={l.label}>
                     {l.kind === "hash" ? (
@@ -62,11 +68,9 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="mt-14 pt-6 border-t border-white/8 flex flex-col md:flex-row justify-between gap-4 text-[11px] text-stone-soft tracking-[0.14em] uppercase">
-          <div>© {new Date().getFullYear()} Veep · All rights reserved</div>
-          <div className="flex gap-6">
-            <span>hello@veep.co</span>
-          </div>
+        <div className="mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-stone-soft">
+          <div>© {new Date().getFullYear()} Veep. All rights reserved.</div>
+          <div>Senior operators for work that can't wait.</div>
         </div>
       </div>
     </footer>
