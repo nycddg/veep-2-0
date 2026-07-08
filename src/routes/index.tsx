@@ -367,11 +367,11 @@ function Index() {
       {/* 2 — WHAT IS VEEP (extractable AI-search definition) */}
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
-          <SectionEyebrow>What Veep is</SectionEyebrow>
+          <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
           <p className="mt-6 font-serif text-2xl md:text-3xl text-cream tracking-tight leading-snug">
-            Veep brings senior ownership to work that can't wait. We deploy vetted
-            operators inside founder-led companies across finance, GTM, operations,
-            product, people, fundraising, and strategy.
+            On demand senior operators to get the job that needs to be done, done.
+            We deploy vetted operators inside founder-led companies across finance,
+            GTM, operations, product, people, fundraising, and strategy.
           </p>
           <p className="mt-4 text-sm text-stone">
             Built for companies with real revenue and growing complexity, before the
