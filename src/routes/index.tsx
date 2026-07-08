@@ -105,13 +105,13 @@ const benefits = [
 const engagements = [
   {
     name: "Advisory",
-    price: "From $3.5k / mo",
+    price: "From $3k / mo",
     bestWhen: "Senior judgment for high-stakes decisions — board prep, fundraising, transactions, executive issues, and strategic tradeoffs.",
     to: "/pricing" as const,
   },
   {
     name: "Sprint",
-    price: "From $15k",
+    price: "From $25k",
     bestWhen: "One urgent priority with a clear owner and endpoint — fundraise readiness, GTM reset, margin improvement, operating cadence, or transaction prep.",
     to: "/pricing" as const,
   },
@@ -195,7 +195,7 @@ const faqs = [
   },
   {
     q: "How much does Veep cost?",
-    a: "Advisory starts around $3.5k/month. Sprints start around $15k. Operators start around $15k/month. Pods start around $30k/month. Operator-in-the-Loop engagements start around $20k/month. Every engagement is scoped around the work.",
+    a: "Advisory starts around $3k/month. Sprints start around $25k. Operators start around $15k/month. Pods start around $30k/month. Operator-in-the-Loop engagements start around $20k/month. Every engagement is scoped around the work.",
   },
   {
     q: "How is Veep different from a consulting firm?",
