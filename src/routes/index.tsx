@@ -128,6 +128,12 @@ const engagements = [
     bestWhen: "A lead operator plus specialist support for cross-functional work — GTM + RevOps, finance + operations, AI transformation, new market launch, or operating reset.",
     to: "/pricing" as const,
   },
+  {
+    name: "Operator in the Loop",
+    price: "From $20k / mo",
+    bestWhen: "AI agent teams and recurring workflows governed by a senior Veep operator. For work that needs more capacity, more consistency, and senior oversight without building a department.",
+    to: "/pricing" as const,
+  },
 ];
 
 const differentiators = [
