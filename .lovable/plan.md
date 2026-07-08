@@ -1,47 +1,59 @@
-# Site-wide copy sweep
+# Typography discipline sweep
 
-Rewrite user-facing copy across the site so it reads like a sharp founder/senior copywriter wrote it — clear, specific, confident, human. No new claims, metrics, or capabilities invented. Layout, structure, components, and pricing numbers stay as-is; only strings change.
+Full-site retune to enforce the new type contract: IBM Plex Mono for display, IBM Plex Sans for UI/body, weights capped at 500 with 600 reserved for the strongest emphasis, no italics, no 700+, hierarchy from size/spacing/color — not weight.
 
-## Scope (files with real copy today)
+## Baseline (styles.css)
 
-Pages
-- `src/routes/index.tsx` (home — hero, problem, solution, engagements, proof, FAQ, CTA)
-- `src/routes/pricing.tsx` (tier cards, FAQ, comparison strip)
-- `src/routes/for-portfolios.tsx` (PE/VC audience page)
-- `src/routes/contact.tsx` (form headers, helper text, success/empty states)
-- `src/routes/faq.tsx`
-- `src/routes/__root.tsx` (default title, description, og/twitter metadata)
+- Add `@font-face`/preconnect requests for Plex weights **300, 400, 500, 600** only (drop 700 from the current Google Fonts href in `__root.tsx`).
+- Global rules in `@layer base`:
+  - `body`: `font-family: var(--font-sans); font-weight: 400; letter-spacing: -0.005em; line-height: 1.55` (already close).
+  - `strong, b`: `font-weight: 500` (kill browser default 700).
+  - `h1`: mono, weight 500, tracking `-0.03em`, leading 1.05.
+  - `h2`: mono, weight 500, tracking `-0.02em`, leading 1.1.
+  - `h3, h4`: mono, weight 500, tracking `-0.015em`, leading 1.15.
+  - Existing italic override kept (no visual italic anywhere; accent color still communicates emphasis).
+- New `@utility` set to standardize labels:
+  - `eyebrow` — mono, 10–11px, weight 500, tracking `0.18em`, uppercase.
+  - `meta-label` — mono, 11px, weight 400, tracking `0.14em`, uppercase, `text-stone-soft`.
+  - `stat-figure` — mono, weight 500, tracking `-0.02em`, tabular-nums.
 
-Shared components
-- `PageHero`, `EngagementTile`, `OutcomeTile`, `TriggerBento`, `ObjectionList`, `StatsBand`, `StepFlow`, `AudienceTabs`, `CaseSwitcher`, `CompareTable`, `LogoWall`, `Testimonials`, `Marquee`, `TrustChip`, `FooterCTA`, `StickyMobileCTA`, `SiteHeader`, `SiteFooter`, `OperatorProofCard`
+## Class-level cleanup (grep-driven)
 
-Stubs (`about`, `compare*`, `how-it-works`, `insights`, `operators`, `partners`, `proof`, `services*`) are 5-line placeholders — leave untouched this pass.
+- Replace every `font-bold` / `font-extrabold` / `font-black` / `font-semibold` in `src/components/site/**` and `src/routes/**` with `font-medium` (500). Retain `font-medium` where hierarchy needs it; strip it from body paragraphs and helper text so 400 is the default.
+- Drop all `italic` classnames (they already render upright via CSS reset — but the class hints wrong intent). Remove from JSX so intent matches output.
+- Tighten uppercase tracking: `tracking-[0.25em]` → `tracking-[0.18em]`, `tracking-widest` on 10–11px mono → `tracking-[0.14em]` for readability.
+- Rebalance leading:
+  - Display headings: `leading-[1.05]` (h1/large h2) or `leading-[1.1]` (medium h2/h3). Remove `leading-tight`/`leading-snug` scatter — pick one per scale tier.
+  - Body paragraphs: `leading-relaxed` (1.625) stays for long copy; card descriptions move to `leading-[1.55]` for tighter rhythm.
+- Numeric emphasis: add `tabular-nums` + `tracking-tight` to price/stat blocks so mono figures line up in grids.
 
-## Rewrite rules
+## Component pass (rendered surfaces only)
 
-Kill on sight: unlock, elevate, seamless, robust, empower, leverage, transform, revolutionize, next-level, game-changing, cutting-edge, tailored solutions, designed to help you, in today's fast-paced world, "whether you're…", "say goodbye to…". Cut excess em dashes, three-part list tics ("faster, smarter, better"), inflated adjectives, vague benefit claims, generic motivational lines.
+Scope stays on files that actually render today; the stub routes and unused components (`StatsBand`, `Marquee`, `AudienceTabs`, `CompareTable`, `CaseSwitcher`, `TriggerBento`, `OutcomeTile`) are skipped this pass.
 
-Tone target per section:
-- Hero — one sharp promise, named audience, one visible outcome. Subhead adds the how in <20 words.
-- Problem — plain-language pain, no melodrama.
-- Solution — mechanism, not adjectives.
-- Benefits — what changes for the buyer, phrased concretely.
-- Features — one line each: what it is, why it matters.
-- Pricing — reduce hesitation; what's included, who it's for, what happens next.
-- Portfolio / proof — concrete situations, credible framing, no invented stats.
-- CTAs — verbs, low friction ("Book a 20-min intro", "See engagement scope", "Talk to a partner").
-- Metadata — real title (<60ch) + description (<160ch) per route, matching og/twitter, no "Lovable" defaults.
+- `PageHero`, `SiteHeader`, `SiteFooter`, `StickyMobileCTA`, `TrustChip`, `FooterCTA`
+- `EngagementTile`, `OperatorProofCard`, `ObjectionList`, `StepFlow`, `Testimonials`, `LogoWall`
+- `src/routes/index.tsx`, `pricing.tsx`, `for-portfolios.tsx`, `contact.tsx`, `faq.tsx`, `__root.tsx`
 
-## Guardrails
+For each, verify: eyebrow tracking, headline weight/leading, body weight = 400, price/stat uses mono + tabular-nums, CTA labels = `font-medium` max, no `italic` class, no `font-serif` mismatch (the alias points at Mono — kept for continuity, no rename).
 
-- Preserve current positioning (Operators / Advisory / Sprint / Pod, PE/VC + founder audiences, price tiers).
-- No new metrics, logos, testimonials, guarantees, or capabilities.
-- If an existing claim is vague, sharpen wording without changing meaning.
-- Keep all routes, props, class names, and component APIs unchanged — text-only edits.
-- Keep pricing numbers ($3k, $25k, etc.) exactly as they are.
-- Nav labels stay short; only rewrite where a label reads awkwardly.
+## Rhythm and density
+
+- Cards: standardize inner padding (`p-7`), eyebrow → title gap `mt-4`, title → body gap `mt-3`, body → footer gap `mt-auto pt-8`.
+- Section vertical: `py-24 md:py-32` stays; kill the one-off `py-20`/`py-28` outliers on hero/objection sections so bands read as a series.
+- Hero: subheadline max-width `max-w-xl` on home, `max-w-2xl` on interior pages; consistent `mt-8` between headline and sub.
+- Pricing tiles + engagement tiles: unified min-height `min-h-[320px]`, consistent price row (mono, 500, `tracking-tight`, `tabular-nums`).
 
 ## Verification
 
 - `bun run build:dev` clean.
-- Spot-check `/`, `/pricing`, `/for-portfolios`, `/contact`, `/faq` via Playwright screenshot at 1280×1800; confirm no banned words remain (`rg -i` sweep for the AI-tic list).
+- Playwright screenshots at 1280×1800 and 390×1600 for `/`, `/pricing`, `/for-portfolios`, `/contact`, `/faq`.
+- `rg -n "font-(bold|extrabold|black|semibold)|\bitalic\b|tracking-\[0\.25em\]"` returns nothing in `src/routes` + `src/components/site`.
+- Visual check: uppercase labels legible, mono headlines feel intentional (not spaced-out), body reads calm at 400.
+
+## Out of scope
+
+- No copy changes (last sweep is authoritative).
+- No color/palette edits.
+- No new components, no layout restructuring beyond spacing tokens.
+- Stub routes and unused components untouched.

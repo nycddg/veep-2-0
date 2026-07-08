@@ -125,6 +125,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     letter-spacing: -0.005em;
@@ -133,11 +134,11 @@
   }
 
   /* Display headings — IBM Plex Mono, weight 500, tight tracking. */
-  h1, h2, h3, .font-serif, .font-display {
+  h1, h2, h3, h4, h5, h6, .font-serif, .font-display {
     font-family: var(--font-mono);
     font-weight: 500;
     letter-spacing: -0.02em;
-    line-height: 1.08;
+    line-height: 1.1;
     font-feature-settings: "zero", "ss01";
   }
 
@@ -146,11 +147,20 @@
     line-height: 1.05;
   }
 
+  h2 { letter-spacing: -0.022em; line-height: 1.08; }
+  h3, h4 { letter-spacing: -0.015em; line-height: 1.15; }
+
+  /* Cap emphasis at 500 — no browser 700 defaults. */
+  strong, b { font-weight: 500; }
+
   /* No italics anywhere — emphasis is color, not slant. */
   em, i, .italic {
     font-style: normal;
     color: var(--color-accent);
   }
+
+  /* Numeric alignment for prices/stats. */
+  .font-mono, code, kbd, pre, samp { font-variant-numeric: tabular-nums; }
 
   code, kbd, pre, samp, .font-mono {
     font-family: var(--font-mono);
@@ -171,11 +181,29 @@
 /* Monospace label utility for section indices and category tags */
 @utility mono-label {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-stone-soft);
   font-weight: 400;
+}
+
+/* Eyebrow — accented uppercase label above headlines. */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* Numeric figure — prices and stats. */
+@utility stat-figure {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Ruled grid divider */

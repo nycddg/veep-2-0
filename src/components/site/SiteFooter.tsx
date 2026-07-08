@@ -41,7 +41,7 @@ export function SiteFooter() {
           </div>
           {cols.map((c) => (
             <div key={c.title}>
-              <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-stone-soft">
+              <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-stone-soft">
                 {c.title}
               </div>
               <ul className="mt-4 space-y-2">
@@ -62,7 +62,7 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="mt-14 pt-6 border-t border-white/8 flex flex-col md:flex-row justify-between gap-4 text-[11px] text-stone-soft tracking-widest uppercase">
+        <div className="mt-14 pt-6 border-t border-white/8 flex flex-col md:flex-row justify-between gap-4 text-[11px] text-stone-soft tracking-[0.14em] uppercase">
           <div>© {new Date().getFullYear()} Veep · All rights reserved</div>
           <div className="flex gap-6">
             <span>hello@veep.co</span>

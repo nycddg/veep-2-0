@@ -83,7 +83,7 @@ function Page() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-14">
           {groups.map((g) => (
             <div key={g.label}>
-              <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent mb-6">
+              <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent mb-6">
                 {g.label}
               </div>
               <div className="divide-y divide-white/8 border-y border-white/8">

@@ -1,7 +1,7 @@
 export function Testimonials() {
   return (
     <figure className="max-w-5xl mx-auto text-center">
-      <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
+      <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
         Verified — Founder testimonial
       </div>
       <blockquote className="mt-10 font-sans font-medium text-3xl md:text-5xl leading-[1.2] text-cream tracking-tight">

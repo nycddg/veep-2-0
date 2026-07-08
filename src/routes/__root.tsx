@@ -31,7 +31,7 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <div className="font-mono text-[11px] tracking-widest text-stone-soft">[404] / NOT FOUND</div>
+        <div className="font-mono text-[11px] tracking-[0.14em] text-stone-soft">[404] / NOT FOUND</div>
         <h1 className="mt-6 text-7xl text-cream tracking-tight">404</h1>
         <h2 className="mt-4 text-xl text-cream tracking-tight">Page not found</h2>
         <p className="mt-2 text-sm text-stone">
@@ -60,7 +60,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <div className="font-mono text-[11px] tracking-widest text-stone-soft">[ERR] / SOMETHING BROKE</div>
+        <div className="font-mono text-[11px] tracking-[0.14em] text-stone-soft">[ERR] / SOMETHING BROKE</div>
         <h1 className="mt-6 text-2xl text-cream tracking-tight">This page didn't load</h1>
         <p className="mt-2 text-sm text-stone">
           Something went wrong. Try again or head back home.
@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
       },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(orgSchema) }],
