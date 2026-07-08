@@ -111,7 +111,7 @@ const engagements = [
   },
   {
     name: "Sprint",
-    price: "From $25k / outcome",
+    price: "From $25k / scope",
     bestWhen: "One urgent priority with a clear owner and endpoint — fundraise readiness, GTM reset, margin improvement, operating cadence, or transaction prep.",
     to: "/pricing" as const,
   },
