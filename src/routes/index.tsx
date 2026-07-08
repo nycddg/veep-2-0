@@ -326,7 +326,7 @@ function Index() {
                 <span className="italic text-stone">needs an owner.</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-stone max-w-xl leading-relaxed font-light">
+              <p className="text-lg md:text-xl text-stone max-w-xl leading-relaxed">
                 Veep helps founder-led companies bring in vetted senior operators to own
                 critical work before the full-time executive hire makes sense.
               </p>

@@ -54,7 +54,7 @@ export function PageHero({
               </>
             )}
           </h1>
-          <p className="text-lg md:text-xl text-stone max-w-2xl leading-relaxed font-light">
+          <p className="text-lg md:text-xl text-stone max-w-2xl leading-relaxed">
             {sub}
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-2">
