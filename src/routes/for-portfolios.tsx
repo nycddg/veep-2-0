@@ -84,7 +84,7 @@ function Page() {
         eyebrow="For Portfolios"
         title="An executive roster,"
         italic="on retainer."
-        sub="Priority access to vetted senior operators across every company in your portfolio — ready the moment critical work needs an owner. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
+        sub="Priority access to vetted senior operators across every portco, ready the moment critical work needs an owner. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
       />
 
       {/* Problem */}
@@ -275,7 +275,7 @@ function Page() {
 
       <FooterCTA
         headline="Map your portfolio's executive capacity."
-        sub="Book a 30-minute call to walk through the audit and roster structure. We'll tell you directly whether Veep is the right partner for your portfolio."
+        sub="Book a 30-minute call to walk through the audit and roster. We'll tell you directly whether Veep is the right partner for your portfolio."
       />
     </>
   );
