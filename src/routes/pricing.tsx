@@ -5,8 +5,8 @@ import { FooterCTA } from "@/components/site/FooterCTA";
 const tiers = [
   {
     t: "Advisory",
-    p: "From $3.5k",
-    per: "/ month",
+    p: "From $3k",
+    per: "per month",
     best: "Senior judgment for high-stakes decisions.",
     items: [
       "Board and investor prep",
@@ -18,8 +18,8 @@ const tiers = [
   },
   {
     t: "Sprint",
-    p: "From $15k",
-    per: "per outcome",
+    p: "From $25k",
+    per: "per scope",
     best: "One urgent priority with a clear owner and endpoint.",
     items: [
       "Fixed scope, fixed price",
@@ -31,7 +31,7 @@ const tiers = [
   {
     t: "Operator",
     p: "From $15k",
-    per: "/ month",
+    per: "per month",
     best: "Ongoing senior ownership before the full-time hire makes sense.",
     items: [
       "Finance, GTM, operations, product, or people",
@@ -44,7 +44,7 @@ const tiers = [
   {
     t: "Pod",
     p: "From $30k",
-    per: "/ month",
+    per: "per month",
     best: "A lead operator plus specialist support for cross-functional work.",
     items: [
       "Multi-function execution",
@@ -91,7 +91,7 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "Pricing — Priced to the Work, Not the Hour | Veep" },
-      { name: "description", content: "Advisory from $3.5k/mo · Sprint from $15k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
+      { name: "description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
       { property: "og:title", content: "Pricing — Veep" },
       { property: "og:description", content: "Four engagement models. Priced to the work. 30-day fit guarantee." },
       { property: "og:url", content: "/pricing" },
