@@ -1,28 +1,43 @@
-Update the homepage Proof section's three case-study cards to use the three case studies from the uploaded PDF, rewritten in the site's current concise voice and kept as text-only cards.
+## Where it goes
 
-## What will change
+Insert a new **"Network impact"** metrics band directly below the Operators Spotlight grid (`#operators` section in `src/routes/index.tsx`), just above the existing "150+ vetted senior operators…" footer row. It reinforces the operator credibility story right where prospects are already evaluating the roster — no new page or new section header needed.
 
-In `src/routes/index.tsx`, replace the current `cases` array (lines 166–185) with three new entries mapped to the existing card structure: `tag`, `trigger`, `outcome`, `metric`.
+## What it looks like
 
-## Proposed new copy
+A compact eyebrow ("Network impact — aggregated across our operator roster") followed by a responsive grid of stat tiles: 2 cols on mobile, 3 on tablet, 5 on desktop. Each tile shows:
 
-1. **B2B SaaS · Seed Sprint**
-   - Trigger: "CEO was preparing for a first institutional round without a financial model, investor materials, or fundraising experience."
-   - Outcome: "Built a 3-year model, diligence-ready CAC/LTV dashboards, and coached the CEO through term sheets and investor meetings."
-   - Metric: "$6M seed round in 6 weeks"
+- Large serif figure in `text-accent` (e.g. `$2B+`)
+- Uppercase micro-label (e.g. `Cost savings delivered`)
+- One-line supporting sentence in `text-stone-soft`
 
-2. **Software Studio · Operations Operator**
-   - Trigger: "An $8M dev shop was stuck firefighting, with inconsistent project profitability and no scalable path into AI."
-   - Outcome: "Installed standardized project scoping and staffing, built an AI GTM and delivery framework, and hired a Director of AI."
-   - Metric: "Project profitability up 25%"
+Styling matches the existing site: `glass-card rounded-3xl`, serif display type, `SectionEyebrow`, `text-accent` for the numbers. No new components required — inline the grid in `index.tsx` next to the existing `spotlightOperators` block.
 
-3. **Podcast Publisher · Business Operator**
-   - Trigger: "A profitable, bootstrapped publisher with millions in revenue had never raised outside capital and had no financial model or growth plan."
-   - Outcome: "Built the company's first financial model, defined use of proceeds, and sourced investors representing over a third of the round."
-   - Metric: "35% of round sourced"
+## Which metrics to include
 
-## Verification
+All 10 provided are strong but 10 tiles is heavy. Recommended edit to the top 8 most differentiated (drop overlap between "revenue scaling" and "revenue opportunity", and drop "exits" which overlaps M&A):
 
-- Run `bun run build:dev` to confirm the build is clean.
-- Take a Playwright screenshot of the homepage Proof section to verify the three cards render correctly.
-- No other components or pages will be touched.
+1. `$2B+` — Cost savings delivered
+2. `$1B+` — Capital raised
+3. `$3B+` — Revenue opportunity created
+4. `$24B` — M&A integrations led
+5. `10x+` — Revenue scaling enabled
+6. `75+` — Global brands transformed
+7. `1,000+` — Team members led & scaled
+8. `100+` — Products & platforms launched
+
+(Full 10 also fits as 2×5 if you'd rather keep everything.)
+
+## Framing / disclosure
+
+Label the band **"Aggregated across our operator roster"** so the numbers read as network totals, not per-engagement claims. Keeps it honest and matches the site's grounded tone.
+
+## Technical notes
+
+- Single edit to `src/routes/index.tsx`: add a `networkImpact` array near the other content arrays (~line 165) and render a new `<div>` inside the `#operators` section between the spotlight grid (line 479) and the footer row (line 480).
+- No new files, no new dependencies, no route changes.
+- Update `serviceSchema` JSON-LD? Not needed — these are marketing figures, not structured offers.
+
+## Open questions before build
+
+1. 8 above
+2. place under operators
