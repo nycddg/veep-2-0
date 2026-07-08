@@ -13,7 +13,7 @@ export function FooterCTA({
         aria-hidden
       />
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-serif text-4xl md:text-6xl text-cream tracking-tight leading-[1.05]">
+        <h2 className="font-serif text-3xl md:text-5xl text-cream tracking-tight leading-[1.08]">
           {headline}
         </h2>
         <p className="mt-6 text-stone text-lg max-w-2xl mx-auto leading-relaxed">

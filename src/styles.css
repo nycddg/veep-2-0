@@ -13,10 +13,10 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* IBM Plex system — Sans for UI/headings, Mono for labels/data. */
+  /* IBM Plex — Mono owns display/headings/accents, Sans owns body/UI. */
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --color-background: var(--background);
@@ -127,28 +127,29 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.005em;
+    line-height: 1.55;
     font-feature-settings: "ss02", "cv11";
   }
 
-  /* Display headings — IBM Plex Sans, weight 500, tight tracking. */
+  /* Display headings — IBM Plex Mono, weight 500, tight tracking. */
   h1, h2, h3, .font-serif, .font-display {
-    font-family: var(--font-sans);
-    letter-spacing: -0.028em;
+    font-family: var(--font-mono);
     font-weight: 500;
-    line-height: 1.05;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    font-feature-settings: "zero", "ss01";
   }
 
   h1 {
-    letter-spacing: -0.035em;
-    line-height: 1.02;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
   }
 
-  /* Italic display accents keep the editorial rhythm in Plex Sans italic. */
-  h1 em, h2 em, h3 em, .font-serif em, .font-display em,
-  h1 i, h2 i, h3 i, .font-serif i, .font-display i,
-  .italic {
-    font-style: italic;
+  /* No italics anywhere — emphasis is color, not slant. */
+  em, i, .italic {
+    font-style: normal;
+    color: var(--color-accent);
   }
 
   code, kbd, pre, samp, .font-mono {

@@ -4,7 +4,7 @@ export function Testimonials() {
       <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
         Verified — Founder testimonial
       </div>
-      <blockquote className="mt-10 font-serif text-3xl md:text-5xl leading-[1.15] text-cream tracking-tight italic">
+      <blockquote className="mt-10 font-sans font-medium text-3xl md:text-5xl leading-[1.2] text-cream tracking-tight">
         "I cannot recommend this team more highly. They think, act, and engage like co-founders."
       </blockquote>
       <figcaption className="mt-10 flex items-center justify-center gap-4">
