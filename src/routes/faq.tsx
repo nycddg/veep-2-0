@@ -10,7 +10,7 @@ const groups: { label: string; items: QA[] }[] = [
   {
     label: "Engagement",
     items: [
-      { q: "How fast can a Veep operator start?", a: "Most engagements begin in under 10 days from the Bottleneck Call. Urgent leadership-gap or interim coverage can move faster when the work cannot wait." },
+      { q: "How fast can a Veep operator start?", a: "Most engagements begin in under 10 days from the call with a Veep founder. Urgent leadership-gap or interim coverage can move faster when the work cannot wait." },
       { q: "How is Veep different from a consultant?", a: "A consultant recommends. A Veep operator owns. Our operators step into the work, set the rhythm, build the materials, make decisions with the team, and move the priority forward." },
       { q: "How is Veep different from executive search?", a: "Search is for permanent hiring. Veep is for critical work that needs senior ownership before the full-time hire makes sense. We help the work move now while the permanent hiring decision stays open." },
       { q: "Remote or on-site?", a: "Both. Most Advisory, Sprint, and Operator engagements are remote with on-site presence for key moments: board meetings, offsites, integrations, planning sessions, and major operating milestones. Interim or high-intensity engagements may include regular on-site time." },
@@ -30,7 +30,7 @@ const groups: { label: string; items: QA[] }[] = [
     label: "Pricing",
     items: [
       { q: "How much does Veep cost?", a: "Typical ranges: Advisory from $3k/month · Sprint from $25k · Operator from $15k/month · Pod from $30k/month. Every engagement is scoped to the work, urgency, and level of ownership required." },
-      { q: "Are there setup or matching fees?", a: "No. Bottleneck Calls and operator matching are free. Contracting, onboarding, and access setup are included in the engagement. You only pay once an engagement is signed." },
+      { q: "Are there setup or matching fees?", a: "No. Calls with a Veep founder and operator matching are free. Contracting, onboarding, and access setup are included in the engagement. You only pay once an engagement is signed." },
       { q: "What if the operator is not the right fit?", a: "Every engagement carries a 30-day fit guarantee. If the operator isn't right, we swap them or you walk — no fee owed for the remaining term." },
       { q: "Can we start with a smaller engagement?", a: "Yes. Many companies start with Advisory or a Sprint before moving into an ongoing Operator engagement. That's often the right path when the role is still undefined or the work is urgent but focused." },
     ],
@@ -76,7 +76,7 @@ function Page() {
         eyebrow="FAQ"
         title="Straight answers"
         italic="on cost, timing, and fit."
-        sub="If the answer is not here, book a Bottleneck Call. We will help clarify the work, the right level of support, and whether Veep is the right fit."
+        sub="If the answer is not here, book a 30-minute call with a Veep founder. We will help clarify the work, the right level of support, and whether Veep is the right fit."
       />
 
       <section className="py-24 md:py-32">

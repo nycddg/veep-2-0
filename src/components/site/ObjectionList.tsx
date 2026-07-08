@@ -21,7 +21,7 @@ const objections = [
   },
   {
     q: "What happens after the intro call?",
-    a: "We run a 30-minute Bottleneck Call to clarify the work, urgency, and outcome. Within 72 hours we recommend the structure and shortlist the operator.",
+    a: "We run a 30-minute call with a Veep founder to clarify the work, urgency, and outcome. Within 72 hours we recommend the structure and shortlist the operator.",
   },
 ];
 
