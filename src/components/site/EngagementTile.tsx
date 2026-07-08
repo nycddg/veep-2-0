@@ -16,21 +16,17 @@ export function EngagementTile({
   return (
     <Link
       to={to}
-      className={`glass-card group rounded-3xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
+      className={`glass-card group rounded-3xl p-7 flex flex-col min-h-[320px] transition-all duration-300 hover:-translate-y-1 ${
         featured ? "ring-1 ring-accent/40" : ""
       }`}
     >
-      <div className="flex items-start justify-between gap-3">
-        <span className="font-serif text-2xl text-cream tracking-tight">
-          {name}
-        </span>
-        {featured && (
-          <span className="text-[10px] font-medium uppercase tracking-wider text-accent">
-            Most requested
-          </span>
-        )}
+      <div className="h-4 text-[10px] font-medium uppercase tracking-wider text-accent">
+        {featured ? "Most requested" : "\u00A0"}
       </div>
-      <p className="mt-3 text-sm text-stone leading-relaxed">{bestWhen}</p>
+      <span className="mt-3 font-serif text-2xl text-cream tracking-tight">
+        {name}
+      </span>
+      <p className="mt-4 text-sm text-stone leading-relaxed">{bestWhen}</p>
       <div className="mt-auto pt-8 flex items-center justify-between gap-4">
         <span className="font-mono text-xs text-stone-soft tracking-wide">
           {price}
