@@ -21,6 +21,53 @@ const heroOperators = [
   { name: "Laura Merling", role: "Senior Operations Operator", chips: ["Ex-Google", "Mobility"], tilt: 2, translateY: 0 },
 ];
 
+const spotlightOperators = [
+  {
+    name: "Jian Yang",
+    role: "Senior Finance Operator",
+    priorSeat: "Former VP Finance, Industrious (acq. by CBRE)",
+    outcomes: [
+      "Led $80M Series C readiness",
+      "Built FP&A for 40+ locations",
+      "Ran diligence through acquisition",
+    ],
+    chips: ["Real Estate", "Consumer", "M&A"],
+  },
+  {
+    name: "Vanessa Kwan",
+    role: "Senior Finance Operator",
+    priorSeat: "Former CFO, DTC brand (Ex-Goldman Sachs)",
+    outcomes: [
+      "Raised $45M across Series A–C",
+      "Improved gross margin +12 pts",
+      "Owned board reporting cadence",
+    ],
+    chips: ["Consumer", "DTC", "Fundraising"],
+  },
+  {
+    name: "Kostja Mirkovic",
+    role: "Senior GTM Operator",
+    priorSeat: "Former Head of Sales, LinkedIn Talent Solutions",
+    outcomes: [
+      "Scaled ARR from $8M → $32M",
+      "Built enterprise motion from zero",
+      "Rebuilt comp + territory model",
+    ],
+    chips: ["B2B SaaS", "Enterprise", "GTM Reset"],
+  },
+  {
+    name: "Laura Merling",
+    role: "Senior Operations Operator",
+    priorSeat: "Former COO, mobility startup (Ex-Google)",
+    outcomes: [
+      "Cut ops cost per unit by 28%",
+      "Stood up 3 new markets in 6 mo",
+      "Hired + onboarded full ops org",
+    ],
+    chips: ["Mobility", "Operations", "Scaling"],
+  },
+];
+
 const problems = [
   {
     t: "The work is critical — and no one clearly owns it.",
