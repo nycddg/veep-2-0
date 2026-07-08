@@ -604,7 +604,7 @@ function Index() {
               { k: "30d", v: "fit guarantee" },
             ].map((s) => (
               <div key={s.k}>
-                <div className="font-serif text-4xl md:text-5xl text-cream tracking-tight">{s.k}</div>
+                <div className="font-mono text-4xl md:text-5xl text-cream tracking-tight" style={{ fontFeatureSettings: '"zero", "ss01"' }}>{s.k}</div>
                 <div className="mt-2 text-[11px] font-medium tracking-[0.2em] uppercase text-stone-soft">
                   {s.v}
                 </div>
