@@ -242,8 +242,8 @@ const serviceSchema = {
   description:
     "Veep places vetted senior operators — CFOs, COOs, CROs, CMOs, CTOs, product, people, and functional leaders — inside founder-led companies to own critical work in under 10 days.",
   offers: [
-    { "@type": "Offer", name: "Advisory", priceSpecification: { "@type": "PriceSpecification", price: "3500", priceCurrency: "USD" } },
-    { "@type": "Offer", name: "Sprint", priceSpecification: { "@type": "PriceSpecification", price: "15000", priceCurrency: "USD" } },
+    { "@type": "Offer", name: "Advisory", priceSpecification: { "@type": "PriceSpecification", price: "3000", priceCurrency: "USD" } },
+    { "@type": "Offer", name: "Sprint", priceSpecification: { "@type": "PriceSpecification", price: "25000", priceCurrency: "USD" } },
     { "@type": "Offer", name: "Operator", priceSpecification: { "@type": "PriceSpecification", price: "15000", priceCurrency: "USD" } },
     { "@type": "Offer", name: "Pod", priceSpecification: { "@type": "PriceSpecification", price: "30000", priceCurrency: "USD" } },
   ],
