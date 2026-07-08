@@ -1,61 +1,62 @@
 ## Goal
 
-Move the entire site off Inter + Playfair Display to **IBM Plex Sans** (UI, body, headings, italics) and **IBM Plex Mono** (labels, stats, timestamps, code, monospace chrome). Preserve the current dark editorial brand — just re-tune weights, sizes, tracking, and spacing so IBM Plex reads as intentional, not defaulted.
+Invert the type roles: **IBM Plex Mono** owns structure/accent (headlines, section titles, eyebrows, callouts, stats, prices); **IBM Plex Sans** owns readability (body, nav, buttons, forms, cards). Remove every `italic` on the site and replace italic emphasis with the existing accent color.
 
 ## Changes
 
-### 1. Load the fonts (`src/routes/__root.tsx`)
+### 1. Global tokens (`src/styles.css`)
 
-Replace the current Google Fonts `<link>` with:
+- Keep both Plex families loaded (already wired in `__root.tsx`).
+- Repoint the display slot to mono:
+  - `--font-display: "IBM Plex Mono", …`
+  - `--font-serif: "IBM Plex Mono", …` (so every existing `font-serif` class becomes mono — no per-file churn)
+  - `--font-sans: "IBM Plex Sans", …` (unchanged)
+  - `--font-mono: "IBM Plex Mono", …` (unchanged)
+- Rewrite the base heading rule for mono:
+  - `font-family: var(--font-mono)`, `font-weight: 500`, `letter-spacing: -0.02em` (h1: `-0.03em`), `line-height: 1.08` (h1: `1.05`).
+  - Mono needs slightly tighter tracking and a bit more line-height than sans display; these values keep h1/h2 from feeling wide or mechanical.
+- Body base: keep `font-sans`, weight 400, `letter-spacing: -0.005em`, `line-height: 1.55`.
+- Drop the italic block added last round. Add a global reset:
+  ```
+  em, i, .italic { font-style: normal; color: var(--color-accent); }
+  ```
+  So every existing `<em>` / `<span className="italic">` renders upright in indigo (the current accent) — the emphasis rhythm survives without italics.
 
-```
-family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600
-&family=IBM+Plex+Mono:wght@400;500;600
-```
+### 2. Component retune (targeted, no layout changes)
 
-Keep the `preconnect` links.
+- **`PageHero.tsx`** — H1 currently `text-5xl md:text-6xl xl:text-7xl`. Mono at 7xl is oversized; scale to `text-4xl md:text-5xl xl:text-6xl`, keep tracking from the global rule, drop `leading-[1.02]` in favor of `leading-[1.05]`. Sub-copy unchanged.
+- **`FooterCTA.tsx`** — headline `text-4xl md:text-6xl` → `text-3xl md:text-5xl`; same tracking/line-height as global.
+- **Homepage section h2s** (`index.tsx`) and other route h2s using `text-4xl md:text-5xl` → `text-3xl md:text-4xl` where they currently span multiple lines with the "italic" accent word, so mono lines don't wrap awkwardly.
+- **Pricing tier prices** (`pricing.tsx`, `for-portfolios.tsx`) — already `font-mono`; keep, just verify tracking is `tracking-tight` (already set).
+- **Stats band** (`index.tsx` line ~607) — already `font-mono`; keep.
+- **`SiteHeader.tsx`** — nav links remain Plex Sans; no change. Wordmark stays image.
+- **`SiteFooter.tsx`** — section titles get `font-mono uppercase tracking-[0.18em] text-xs` (already close); confirm.
+- **`primitives.tsx` `Eyebrow`** — already indigo micro-caps; wrap in `font-mono` so it's explicit (Plex Sans currently supplies it via the missing utility). Keep tracking `0.25em`.
+- **Cards** (`ObjectionList`, `TriggerBento`, `OperatorProofCard`, `StepFlow`, engagement tiles) — card *titles* (currently `font-serif text-xl/2xl`) become mono via the global remap. Verify tracking doesn't blow up: for card titles `text-xl`, add a per-file `tracking-tight` where missing.
+- **`Testimonials.tsx`** — the huge pull-quote uses `font-serif text-3xl md:text-5xl … italic`. Remove `italic`; keep it as mono (via `font-serif` remap) or explicitly switch to sans for readability. Plan: switch this one component to `font-sans` weight 500 — a giant mono quote reads like a code block, not a testimonial.
 
-### 2. Rewire the type tokens (`src/styles.css`)
+### 3. Italic sweep
 
-- `--font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;`
-- `--font-serif: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;` (all `font-serif` usages become Plex Sans — no more Playfair)
-- `--font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;`
-- `--font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;`
+Find every occurrence of `italic` in `src/` and remove the class. For each removed `italic`, ensure the element has `text-accent` (or the existing accent-toned class, e.g. `text-stone` swaps stay `text-stone` only where they were the *dim* half of an italic pair — otherwise switch to `text-accent`). Concretely, the pattern `<span className="italic text-stone">…</span>` inside headings becomes `<span className="text-accent">…</span>` so the emphasis stays visible against the cream headline.
 
-Body base:
-- `font-family: var(--font-sans)`, weight 400, `letter-spacing: -0.01em`, `font-feature-settings: "ss02", "cv11"` for Plex Sans's cleaner `a`/`g`.
-
-Headings (`h1, h2, h3, .font-serif, .font-display`):
-- keep display sizes, but drop to `font-weight: 500`, `letter-spacing: -0.028em` (h1: `-0.035em`), `line-height: 1.02` on display, `1.1` on section h2s. Editorial italic accent (`<span className="italic">`) stays — Plex Sans italic is distinct and preserves the current rhythm.
-
-Mono (`.font-mono`, `.mono-label`, `--font-mono` consumers):
-- `letter-spacing: 0.08em` for uppercase labels, `0.02em` for numeric stat displays, weight 500 for legibility at small sizes.
-
-### 3. Component pass (small, targeted tweaks — no layout changes)
-
-Only touch what visibly breaks or reads worse after the swap:
-
-- **`SiteHeader.tsx`** — nav links: bump to `text-[13px]` weight 500, tighten button label to weight 500 (Plex Sans at 500 reads as the previous Inter 500 well); confirm wordmark image still balances.
-- **`PageHero.tsx`** — hero H1 was Playfair 5xl–7xl. Plex Sans at that scale reads heavy; set weight 500, tracking `-0.04em`, line-height 1.02. Sub-copy: `text-lg md:text-xl`, weight 400 (drop the `font-light`).
-- **`FooterCTA.tsx`** — same treatment: weight 500 on the huge headline, tracking `-0.035em`.
-- **`primitives.tsx` `Eyebrow`** — already mono-label style via accent; ensure `font-mono` class applied and letter-spacing bumped to `0.28em` for Plex Mono's wider glyph.
-- **Route files using `font-serif` for section h2s** (`index.tsx`, `pricing.tsx`, `for-portfolios.tsx`, `faq.tsx`, `contact.tsx`, `about.tsx`, `services.*`, `compare*`, `how-it-works`, `proof`, `insights`, `partners`) — no per-file edits needed because `font-serif` now maps to Plex Sans; the global heading rule handles weight/tracking. Do a Playwright screenshot pass to catch any h2 that still looks off.
-- **Stat/number displays** (`StatsBand`, pricing tier prices `$75k`, hero chips) — apply `font-mono` where the design intent was numeric emphasis; today those use `font-serif` for the price. For pricing tiers, switch the `$…` number to `font-mono` weight 500, `tracking-tight`, so it reads as data, not display copy.
-- **`OperatorProofCard.tsx`** — initials chip and name treatment: name stays sans, initials use `font-mono`.
-- **Cards / list bullets** — no changes; spacing already generous.
-- **Buttons** — pill buttons keep current padding; label weight 500 (Plex Sans 400 looks anemic on the cream pill against navy). Global sweep of `font-medium` on buttons is already correct.
-- **Forms/inputs** (`contact.tsx`) — inputs get `font-mono` for values users type (email, company), labels stay sans.
+Files touched (from a repo sweep): `PageHero.tsx`, `FooterCTA.tsx`, `Testimonials.tsx`, `index.tsx`, `pricing.tsx`, `for-portfolios.tsx`, `faq.tsx`, `contact.tsx`, `about.tsx`, `how-it-works.tsx`, `proof.tsx`, `insights.tsx`, `partners.tsx`, `compare*.tsx`, `services.*.tsx`, `primitives.tsx`, and any other file where `rg italic` matches.
 
 ### 4. Visual verification pass
 
-After the edits, drive Playwright against `localhost:8080` and capture screenshots of `/`, `/for-portfolios`, `/pricing`, `/faq`, `/contact`, `/services`, `/about` at 1280×1800 and 390×844. Review each; if a heading looks too heavy or a card feels cramped, patch that specific component. Iterate until the pass is clean.
+Drive Playwright against `localhost:8080`, capture `/`, `/for-portfolios`, `/pricing`, `/faq`, `/contact` at 1280×1800 and 390×844. Review for:
+- Mono headlines wrapping mid-word or spilling past container
+- Card titles feeling cramped or mechanical
+- Any leftover italic
+- Accent-emphasis words being legible on cream/stone headlines
+
+Patch anything that reads off; iterate until clean.
 
 ## Out of scope
 
-- Palette, layout structure, section order, or component composition — nothing moves.
-- No new components, no route changes.
-- No self-hosted `@fontsource` install — Google Fonts CDN is already wired and preconnected.
+- Palette, layout, section order, component composition — nothing moves.
+- No changes to icons, imagery, or motion.
+- No self-hosted font install.
 
 ## Open question
 
-None — proceeding with Plex Sans for both body and (former) serif slots since the brief says "all fonts use IBM Plex." If you'd rather keep Playfair for the italic display accents and only move UI/body to Plex Sans, say so before I build.
+None — proceeding as spec'd. If a specific headline reads badly at the retuned size on your screen after the pass, point me at it and I'll adjust that one.
