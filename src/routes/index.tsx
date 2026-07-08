@@ -165,22 +165,22 @@ const differentiators = [
 
 const cases = [
   {
-    tag: "Series B SaaS · Finance Sprint",
-    trigger: "Board confidence in finance slipped 60 days before a bridge round.",
-    outcome: "Forecast rebuilt, board materials tightened, and bridge closed in 42 days.",
-    metric: "$18M raised",
+    tag: "B2B SaaS · Seed Sprint",
+    trigger: "CEO was preparing for a first institutional round without a financial model, investor materials, or fundraising experience.",
+    outcome: "Built a 3-year model, diligence-ready CAC/LTV dashboards, and coached the CEO through term sheets and investor meetings.",
+    metric: "$6M seed round in 6 weeks",
   },
   {
-    tag: "PE portco · Operations Operator",
-    trigger: "COO exited two months after acquisition. Integration stalled.",
-    outcome: "Operating cadence installed, integration restarted, and permanent COO hired at month five.",
-    metric: "$6.2M annualized savings",
+    tag: "Software Studio · Operations Operator",
+    trigger: "An $8M dev shop was stuck firefighting, with inconsistent project profitability and no scalable path into AI.",
+    outcome: "Installed standardized project scoping and staffing, built an AI GTM and delivery framework, and hired a Director of AI.",
+    metric: "Project profitability up 25%",
   },
   {
-    tag: "Founder-led · GTM Sprint",
-    trigger: "GTM stalled at $8M ARR. Founder still owned every strategic deal.",
-    outcome: "Sales motion rebuilt and pipeline coverage reached 3.1x within 90 days.",
-    metric: "+62% Q/Q pipeline",
+    tag: "Podcast Publisher · Business Operator",
+    trigger: "A profitable, bootstrapped publisher with millions in revenue had never raised outside capital and had no financial model or growth plan.",
+    outcome: "Built the company's first financial model, defined use of proceeds, and sourced investors representing over a third of the round.",
+    metric: "35% of round sourced",
   },
 ];
 
