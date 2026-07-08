@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { BOOKING_URL } from "@/lib/booking";
 
 export function FooterCTA({
-  headline = "What critical work needs an owner right now?",
+  headline = "What work in your business needs an owner right now?",
   sub = "Book a 30-minute Bottleneck Call. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
 }: { headline?: string; sub?: string }) {
   return (
