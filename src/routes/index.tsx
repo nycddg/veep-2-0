@@ -453,6 +453,51 @@ function Index() {
       </section>
 
       {/* 5 — BENEFITS */}
+      {/* 4.5 — OPERATORS SPOTLIGHT */}
+      <section id="operators" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-14">
+            <SectionEyebrow>Operators</SectionEyebrow>
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-cream tracking-tight leading-[1.05]">
+              Operators who've been in the seat —{" "}
+              <span className="italic text-stone">and delivered.</span>
+            </h2>
+            <p className="mt-8 text-stone text-lg leading-relaxed">
+              Every Veep operator has previously held the role they're deployed into, at
+              a comparable-stage company, with outcomes we can reference. No juniors, no
+              generalists, no career consultants.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {spotlightOperators.map((op) => (
+              <OperatorProofCard
+                key={op.name}
+                name={op.name}
+                role={op.role}
+                priorSeat={op.priorSeat}
+                outcomes={op.outcomes}
+                chips={op.chips}
+              />
+            ))}
+          </div>
+          <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
+            <p className="text-sm text-stone-soft">
+              150+ vetted senior operators · avg. 18 yrs experience · every operator has
+              held the seat before.
+            </p>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60 transition"
+            >
+              Meet operators for your work <ArrowRight size={14} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 5 — BENEFITS */}
       <section id="benefits" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
