@@ -321,7 +321,7 @@ function Index() {
             <div className="space-y-9">
               <TrustChip label="72-hour match · 10-day deploy · 30-day fit guarantee" />
 
-              <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl leading-[1.02] text-cream tracking-tight">
+              <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl leading-[1.05] text-cream tracking-tight">
                 The work{" "}
                 <span className="text-accent">needs an owner.</span>
               </h1>
