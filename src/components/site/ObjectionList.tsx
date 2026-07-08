@@ -5,11 +5,11 @@ const objections = [
   },
   {
     q: "How much does it cost?",
-    a: "Advisory starts around $3.5k/month. Sprints start around $15k. Operators start around $15k/month. Pods start around $30k/month. Operator-in-the-Loop engagements start around $20k/month. The right structure depends on the work, urgency, complexity, and level of ownership required.",
+    a: "Advisory starts at $3k/month. Sprints start at $25k. Operators start at $15k/month. Pods start at $30k/month. The right structure depends on the work, urgency, and level of ownership required.",
   },
   {
     q: "How fast does it actually move?",
-    a: "Shortlist in 72 hours. Operator deployed in under 10 days. Urgent leadership coverage can move faster when the situation requires it.",
+    a: "Shortlist in 72 hours. Operator deployed in under 10 days. Urgent coverage can move faster when the situation requires it.",
   },
   {
     q: "Can I trust the operator?",
@@ -17,11 +17,11 @@ const objections = [
   },
   {
     q: "What if it is not a fit?",
-    a: "Every engagement carries a 30-day fit guarantee. If the operator is not right, we swap them or you walk with no fee owed for the remaining term.",
+    a: "Every engagement carries a 30-day fit guarantee. If the operator isn't right, we swap them or you walk — no fee owed for the remaining term.",
   },
   {
     q: "What happens after the intro call?",
-    a: "We run a 30-minute Bottleneck Call to clarify the work, urgency, outcome, and right level of support. Within 72 hours, we recommend the structure and shortlist the operator or team.",
+    a: "We run a 30-minute Bottleneck Call to clarify the work, urgency, and outcome. Within 72 hours we recommend the structure and shortlist the operator.",
   },
 ];
 
