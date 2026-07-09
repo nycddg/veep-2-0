@@ -133,7 +133,7 @@ function Page() {
               Start here
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
-              Portfolio Capacity Audit.
+              Portfolio Capacity Audit
             </h2>
             <p className="mt-6 text-cream/80 leading-relaxed">
               Before you retain the roster, we map where transactions and operating priorities are likely to create staffing volatility across the portfolio. We identify which companies need what, which upcoming events could create urgency in the next 6 to 12 months, and where a Veep operator would help stabilize execution.
