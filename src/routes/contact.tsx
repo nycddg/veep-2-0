@@ -79,7 +79,7 @@ function Page() {
                     ]
                 ).map((i, idx) => (
                   <li key={i} className="flex items-baseline gap-4">
-                    <span className="font-serif text-lg text-accent w-6 shrink-0">
+                    <span className="font-mono text-sm text-accent w-6 shrink-0 tabular-nums">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     <span className="text-cream/85 text-sm leading-relaxed">{i}</span>
@@ -99,21 +99,21 @@ function Page() {
             {/* Right: form */}
             <div className="lg:col-span-3">
               {submitted ? (
-                <div className="glass-card rounded-3xl p-10 text-center">
+                <div className="glass-card rounded-3xl p-8 sm:p-10 text-center">
                   <div className="mx-auto h-12 w-12 rounded-full bg-accent/15 grid place-items-center text-accent">
                     <Check strokeWidth={3} />
                   </div>
-                  <h3 className="mt-6 font-serif text-2xl text-cream tracking-tight">
+                  <h3 className="mt-6 text-2xl text-cream tracking-tight">
                     Thanks — we'll be in touch.
                   </h3>
-                  <p className="mt-2 text-stone text-sm">
+                  <p className="mt-3 text-cream/80 text-sm">
                     A Veep partner will reach out within one business day.
                   </p>
                 </div>
               ) : (
                 <form
                   onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
-                  className="glass-card rounded-3xl p-8 grid gap-5"
+                  className="glass-card rounded-3xl p-6 sm:p-8 grid gap-5"
                 >
                   <div className="grid sm:grid-cols-2 gap-4">
                     <Field label="Name" required><input required name="name" className={inputCls} /></Field>
@@ -131,8 +131,8 @@ function Page() {
                       className={inputCls}
                     />
                   </Field>
-                  <details className="text-sm text-stone">
-                    <summary className="cursor-pointer hover:text-cream transition">
+                  <details className="text-sm text-cream/80">
+                    <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none">
                       Add company, role, or timing (optional)
                     </summary>
                     <div className="mt-4 grid gap-4">
@@ -152,11 +152,11 @@ function Page() {
                   </details>
                   <button
                     type="submit"
-                    className="mt-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:bg-cream/90 transition shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)]"
+                    className="mt-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)] min-h-11"
                   >
                     {isAudit ? "Request the audit" : "Book the call"}
                   </button>
-                  <p className="text-xs text-stone-soft">
+                  <p className="text-xs text-cream/65">
                     By submitting you agree to be contacted by Veep about your inquiry.
                   </p>
                 </form>
@@ -170,12 +170,12 @@ function Page() {
 }
 
 const inputCls =
-  "w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder-stone-soft focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60";
+  "w-full rounded-xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
 
 function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="text-[10px] uppercase tracking-[0.12em] text-stone-soft">
+      <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-cream/70">
         {label}{required && " *"}
       </span>
       <div className="mt-2">{children}</div>
