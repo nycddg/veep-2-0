@@ -27,7 +27,7 @@ export function Testimonials() {
 
         <figure className="mt-10">
           <blockquote className="font-sans font-medium text-3xl md:text-5xl leading-[1.2] text-cream tracking-tight text-balance">
-            {hero.quote}\u201D
+            {hero.quote}
           </blockquote>
           <figcaption className="mt-10 flex items-center justify-center gap-4">
             <div className="h-11 w-11 rounded-full bg-white/5 ring-1 ring-white/20 grid place-items-center text-cream text-sm">
