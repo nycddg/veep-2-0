@@ -381,7 +381,9 @@ function Index() {
             </div>
           </div>
 
-          <OperatorCanvas className="mt-20" />
+          <div className="mt-20">
+            <OperatorCanvas />
+          </div>
         </div>
       </section>
 
