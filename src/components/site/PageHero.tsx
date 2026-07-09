@@ -22,7 +22,7 @@ export function PageHero({
   secondaryTo = "/contact",
 }: {
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   /** Indigo tail phrase appended after the title. */
   accent?: string;
   /** @deprecated Use `accent`. Kept for backward compatibility. */
