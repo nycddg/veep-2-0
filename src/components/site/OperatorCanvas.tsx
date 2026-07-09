@@ -24,8 +24,8 @@ export function OperatorCanvas() {
           />
         </div>
 
-        {/* Match badge */}
-        <div className="absolute -top-6 left-2 md:-left-4 z-20 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex items-center gap-3 op-float">
+        {/* Match badge — hidden on small screens to keep hero uncluttered */}
+        <div className="hidden sm:flex absolute -top-6 left-2 md:-left-4 z-20 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] items-center gap-3 op-float">
           <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shadow-[0_0_20px_rgba(120,159,255,0.4)]">
             <Star size={18} className="text-white fill-white" />
           </div>
@@ -35,8 +35,8 @@ export function OperatorCanvas() {
           </div>
         </div>
 
-        {/* Match matrix */}
-        <div className="absolute -bottom-10 right-0 md:-right-6 z-20 bg-[#0a0c16]/80 backdrop-blur-3xl border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_rgba(0,0,0,0.7)] w-[260px] md:w-[280px] op-float-delayed">
+        {/* Match matrix — hidden on small screens */}
+        <div className="hidden sm:block absolute -bottom-10 right-0 md:-right-6 z-20 bg-[#0a0c16]/80 backdrop-blur-3xl border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_rgba(0,0,0,0.7)] w-[260px] md:w-[280px] op-float-delayed">
           <p className="text-[10px] text-cream/80 mb-5 font-medium uppercase tracking-[0.16em]">Match Matrix</p>
           <div className="space-y-4">
             {MATRIX.map((row) => (
