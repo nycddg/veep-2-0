@@ -1,9 +1,7 @@
-Update the hero CTA row in src/routes/index.tsx so its visual treatment matches the existing FooterCTA component ("Make your next big move" section).
+Replace the "OP" placeholder in the OperatorCanvas headshot slot with the uploaded portrait image.
 
-Changes:
-- Primary "Book intro call" button: switch from the indigo solid pill to the cream pill used in FooterCTA — `bg-cream`, `text-ink`, `font-medium`, `px-7 py-3.5`, `text-sm`, `rounded-full`, with the arrow icon retained. Remove the accent shadow and hover:scale.
-- Secondary action: switch from the outline pill to the FooterCTA text-link treatment — cream text with `underline underline-offset-8 decoration-white/20 hover:decoration-white/60`, `pb-1`, no border or pill shape.
-- Keep the existing destinations/behavior: primary still opens BOOKING_URL; secondary still links to `#how` as "See how it works" (only the styling changes, not the action).
-- No new imports needed — `Link` and `ArrowRight` are already imported.
-
-Only src/routes/index.tsx is affected.
+1. Create a Lovable Asset pointer from `/mnt/user-uploads/Announcement_Cards_20-2.png` to `src/assets/operator-headshot.png.asset.json` using the `lovable-assets` CLI.
+2. Import the asset pointer in `src/components/site/OperatorCanvas.tsx`.
+3. Swap the inner circular "OP" placeholder div for an `<img>` that uses the asset URL, keeping the existing `aspect-[16/9]`, `rounded-3xl`, `overflow-hidden`, and `object-cover` behavior so the portrait fills the frame.
+4. Preserve the ambient glow, match badge, and match matrix overlays unchanged.
+5. Verify the preview renders the portrait in the headshot slot without distortion or layout breakage.
