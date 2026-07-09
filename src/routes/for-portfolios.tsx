@@ -193,11 +193,6 @@ function Page() {
                   <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
                     {t.t}
                   </div>
-                  {t.featured && (
-                    <span className="text-[10px] font-medium uppercase tracking-wider text-accent">
-                      Most common
-                    </span>
-                  )}
                 </div>
                 <div className="mt-8 font-mono text-4xl text-cream tracking-tight" style={{ fontFeatureSettings: '"zero", "ss01"' }}>{t.p}</div>
                 <div className="text-xs text-stone mt-1 font-mono tracking-wide">{t.per}</div>
