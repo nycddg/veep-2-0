@@ -328,43 +328,44 @@ function Index() {
     <>
       {/* 1 — HERO */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 md:pt-20 pb-16 md:pb-24">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="space-y-9">
-              <TrustChip label="72-hour match · 10-day deploy · 30-day fit guarantee" />
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-24 md:pb-32 flex flex-col items-center text-center">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-cream mb-6">
+            The work needs<br />
+            <span className="text-accent">an owner.</span>
+          </h1>
 
-              <h1 className="text-4xl md:text-5xl xl:text-7xl text-cream">
-                The work{" "}
-                <span className="text-accent">needs an owner.</span>
-              </h1>
+          <p className="text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
+            Veep helps founder-led companies bring in vetted senior operators to own
+            critical work before the full-time executive hire makes sense.
+          </p>
 
-              <p className="text-lg text-stone max-w-xl leading-relaxed">
-                Veep helps founder-led companies bring in vetted senior operators to own
-                critical work before the full-time executive hire makes sense.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-1">
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center gap-2"
-                >
-                  Book intro call <ArrowRight size={16} />
-                </a>
-                <Link
-                  to="/"
-                  hash="how"
-                  className="text-sm text-cream/80 hover:text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60 transition pb-1"
-                >
-                  See how it works
-                </Link>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-16 text-sm font-semibold text-cream/90">
+            {["Vetted senior operators", "72-hour match", "30-day fit guarantee"].map((t) => (
+              <div key={t} className="flex items-center gap-2">
+                <Check size={18} className="text-accent" strokeWidth={2.5} />
+                {t}
               </div>
-            </div>
+            ))}
+          </div>
 
-            <div className="relative min-h-[520px] flex items-center justify-center">
-              <HeroMotif />
-            </div>
+          <OperatorCanvas />
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-20">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-10 py-4 bg-accent text-white rounded-full font-bold hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-accent/30 inline-flex items-center justify-center gap-2"
+            >
+              Book intro call <ArrowRight size={16} />
+            </a>
+            <Link
+              to="/"
+              hash="how"
+              className="px-10 py-4 bg-transparent border border-cream/20 text-cream rounded-full font-bold hover:bg-cream/5 transition-all active:scale-95 inline-flex items-center justify-center"
+            >
+              See how it works
+            </Link>
           </div>
         </div>
       </section>
