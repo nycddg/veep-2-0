@@ -43,7 +43,7 @@ export function SiteFooter() {
     <footer className="border-t border-white/10 bg-background text-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
-          <div className="md:col-span-6">
+          <div className="md:col-span-4">
             <Link to="/" className="flex items-center" aria-label="Veep home">
               <img src={wordmarkWhite.url} alt="Veep" className="h-6 w-auto" />
             </Link>
