@@ -26,7 +26,7 @@ export function OperatorCanvas() {
 
         {/* Match badge */}
         <div className="absolute -top-6 left-2 md:-left-4 z-20 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex items-center gap-3 op-float">
-          <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.4)]">
+          <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shadow-[0_0_20px_rgba(120,159,255,0.4)]">
             <Star size={18} className="text-white fill-white" />
           </div>
           <div className="text-left">
@@ -50,7 +50,7 @@ export function OperatorCanvas() {
                     className="h-full bg-accent"
                     style={{
                       width: `${row.value}%`,
-                      boxShadow: row.value === 100 ? "0 0 8px rgba(99,102,241,0.5)" : undefined,
+                      boxShadow: row.value === 100 ? "0 0 8px rgba(120,159,255,0.5)" : undefined,
                     }}
                   />
                 </div>
