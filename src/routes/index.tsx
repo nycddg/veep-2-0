@@ -677,10 +677,11 @@ function Index() {
                 <p className="mt-6 text-sm text-stone leading-relaxed">
                   <span className="text-cream">Trigger. </span>{c.trigger}
                 </p>
-                <p className="mt-3 text-sm text-stone leading-relaxed">
+                <div className="my-5 border-t border-white/10" />
+                <p className="text-sm text-stone leading-relaxed">
                   <span className="text-cream">Outcome. </span>{c.outcome}
                 </p>
-                <div className="mt-auto pt-6 border-t border-white/10 font-serif text-2xl text-cream tracking-tight">
+                <div className="mt-auto pt-6 font-serif text-2xl text-cream tracking-tight">
                   {c.metric}
                 </div>
               </div>
