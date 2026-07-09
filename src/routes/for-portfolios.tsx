@@ -5,7 +5,7 @@ import { FooterCTA } from "@/components/site/FooterCTA";
 const problems = [
   {
     t: "Pre-close needs arrive before the team is ready.",
-    d: "Diligence, modeling, operating plans, leadership assessment, and value-creation planning all need experienced judgment before the deal closes. The internal team is stretched, and the same few trusted people get called again.",
+    d: "Diligence, modeling, operating plans, team assessments, and value-creation planning all need to get done before the deal closes. The internal team is stretched, and the same few trusted people get called again.",
   },
   {
     t: "Post-close work moves faster than staffing.",
@@ -16,8 +16,8 @@ const problems = [
     d: "A CFO leaves mid-fundraise. A COO exits after close. A revenue leader misses the plan. Search may be running, but the seat still needs coverage now.",
   },
   {
-    t: "Smaller firms rely on the same informal roster.",
-    d: "Many small and mid-size firms go back to the same people every time they buy a company. Those people may be good, but they know there is stronger talent available. They just do not have the time to source, vet, and maintain a deeper roster that may or may not be deployed.",
+    t: "Relying on the same informal roster.",
+    d: "Many firms rely on the same familiar operators every time they buy a company. Those people may be effective, but the firm knows stronger or better-fit talent is out there. They just do not have the time to grow and maintain a roster that may never get used.",
   },
 ];
 
