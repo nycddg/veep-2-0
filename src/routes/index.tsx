@@ -50,7 +50,7 @@ const heroOperators = [
   {
     name: "Victoria Kasumu",
     role: "People Operating Partner",
-    chips: ["Ex-Zocdoc", "Tech/SaaS"],
+    chips: ["Ex-Zocdoc", "TECH"],
     tilt: 2,
     translateY: 0,
     photoUrl:
@@ -92,7 +92,7 @@ const spotlightOperators = [
     priorCompanies: ["Zocdoc", "Pager Health"],
     summary:
       "Seasoned people leader who builds growth-focused operations by aligning talent, culture, and business goals. At David Zwirner, hired 50+ employees in 90 days while reducing redundancy 30% and increasing retention 15%.",
-    chips: ["Hospitality", "Tech/SaaS", "Healthcare"],
+    chips: ["Hospitality", "TECH", "Healthcare"],
     photoUrl: victoriaKasumuHeadshot.url,
   },
 ];
