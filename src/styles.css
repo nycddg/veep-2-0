@@ -61,7 +61,7 @@
 :root {
   --radius: 0.5rem;
 
-  /* Premium managed-marketplace palette — deep navy #050810 canvas, indigo accent. */
+  /* Premium managed-marketplace palette — deep navy #050810 canvas, bright blue accent. */
   --background: oklch(0.115 0.03 265);        /* deep navy ≈ #050810 */
   --foreground: oklch(0.96 0 0);              /* off-white */
 
@@ -72,16 +72,16 @@
   --stone-soft: oklch(0.55 0.03 255);         /* tertiary / mono labels — dim blue-gray */
   --rule: oklch(1 0 0 / 0.10);                /* faint ruled-grid lines */
 
-  /* Accent kept but retired from chrome — reserved for status */
-  --forest: oklch(0.68 0.18 275);             /* indigo #6366f1 */
+  /* Accent — bright blue primary, warm coral for featured/urgent signals */
+  --forest: #789fff;                          /* bright blue */
   --forest-deep: oklch(0.205 0.05 265);       /* navy inset panel */
   --forest-foreground: oklch(0.98 0 0);
 
   /* Illustration spectrum (never on chrome, only inside SVG illustrations) */
   --accent-mint: oklch(0.82 0.14 175);
   --accent-cyan: oklch(0.80 0.10 220);
-  --accent-gold: oklch(0.68 0.18 275);        /* remapped to indigo */
-  --accent-coral: oklch(0.72 0.16 25);
+  --accent-gold: #789fff;                     /* remapped to bright blue */
+  --accent-coral: #ec6b66;                    /* warm coral for featured signals */
 
   --card: oklch(1 0 0 / 0.04);                /* glass card over navy canvas */
   --card-foreground: var(--cream);
