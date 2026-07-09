@@ -58,8 +58,8 @@ const tiers = [
 const notIncluded = [
   { t: "Placement fees", d: "Calls with a Veep founder and operator matching are free." },
   { t: "Setup or onboarding fees", d: "Contracting, access, and onboarding are managed at no extra cost." },
-  { t: "Long-term lock-in", d: "Most engagements can start focused, continue, pause, or scale as the work changes." },
-  { t: "Hourly billing surprises", d: "Every engagement is scoped around the work. You know the number before you sign." },
+  { t: "Long-term lock-in", d: "Start focused and continue, pause, or scale as the work changes." },
+  { t: "Hourly billing surprises", d: "Scoped around the work. You know the number before you sign." },
 ];
 
 const faqs = [
