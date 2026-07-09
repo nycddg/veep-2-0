@@ -400,7 +400,7 @@ function Index() {
         <div className="mx-auto max-w-[55.2rem] px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
-            An invite-only network of operating partners ready to own the work that cannot wait. Founders and CEOs hire us to solve their biggest challenges across finance, GTM, operations, product, people, fundraising, and strategy.
+            An invite-only network of operating partners ready to own the work that can't wait. Founders and CEOs hire us to solve their biggest challenges across finance, GTM, operations, product, people, fundraising, and strategy.
           </p>
           <p className="mt-4 text-sm text-stone">
             Built for companies with real revenue and growing complexity, before the
