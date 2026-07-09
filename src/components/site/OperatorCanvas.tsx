@@ -2,7 +2,7 @@ import { Star } from "lucide-react";
 
 const MATRIX = [
   { label: "Functional Depth", value: 97 },
-  { label: "Business Model", value: 95 },
+  { label: "Business Model Familiarity", value: 95 },
   { label: "Industry Expertise", value: 98 },
   { label: "Life Stage Experience", value: 100 },
 ];
