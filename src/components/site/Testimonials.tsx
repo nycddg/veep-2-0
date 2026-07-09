@@ -8,7 +8,7 @@ const quotes = [
   },
   {
     quote:
-      "\"As a founder raising capital, I couldn\u2019t have asked for a better partner.\u00a0\nI never felt alone.\"",
+      "\"As a founder raising capital, I couldn’t have asked for a better partner. I never felt alone.\"",
     name: "Daniel Walsh",
     role: "Founder & CEO, VeroSkills",
     initials: "DW",
