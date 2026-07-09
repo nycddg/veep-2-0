@@ -799,7 +799,7 @@ function Index() {
       <section id="faq" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
-            <SectionEyebrow>FAQ</SectionEyebrow>
+            <SectionEyebrow>MINI FAQ</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Straight answers.
             </h2>
