@@ -19,13 +19,13 @@ const heroOperators = [
   { name: "Vanessa Kwan", role: "Senior Finance Operator", chips: ["Ex-Goldman", "Consumer"], tilt: 3, translateY: -32 },
   { name: "Kostja Mirkovic", role: "Senior GTM Operator", chips: ["Ex-LinkedIn", "B2B SaaS"], tilt: -4, translateY: 48 },
   { name: "Laura Merling", role: "Senior Operations Operator", chips: ["Ex-Google", "Mobility"], tilt: 2, translateY: 0 },
-];
+] as const;
 
 const spotlightOperators = [
   {
     name: "Jian Yang",
     role: "Senior Finance Operator",
-    priorSeat: "Former VP Finance, Industrious (acq. by CBRE)",
+    priorCompanies: ["Industrious", "CBRE"],
     outcomes: [
       "Led $80M Series C readiness",
       "Built FP&A for 40+ locations",
@@ -36,7 +36,7 @@ const spotlightOperators = [
   {
     name: "Vanessa Kwan",
     role: "Senior Finance Operator",
-    priorSeat: "Former CFO, DTC brand (Ex-Goldman Sachs)",
+    priorCompanies: ["Goldman Sachs", "DTC brand"],
     outcomes: [
       "Raised $45M across Series A–C",
       "Improved gross margin +12 pts",
@@ -47,7 +47,7 @@ const spotlightOperators = [
   {
     name: "Kostja Mirkovic",
     role: "Senior GTM Operator",
-    priorSeat: "Former Head of Sales, LinkedIn Talent Solutions",
+    priorCompanies: ["LinkedIn", "Talent Solutions"],
     outcomes: [
       "Scaled ARR from $8M → $32M",
       "Built enterprise motion from zero",
@@ -58,7 +58,7 @@ const spotlightOperators = [
   {
     name: "Laura Merling",
     role: "Senior Operations Operator",
-    priorSeat: "Former COO, mobility startup (Ex-Google)",
+    priorCompanies: ["Google", "Mobility startup"],
     outcomes: [
       "Cut ops cost per unit by 28%",
       "Stood up 3 new markets in 6 mo",
