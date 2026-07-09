@@ -134,7 +134,7 @@ function Page() {
                   {t.p} <span className="text-stone">{t.per}</span>
                 </div>
                 <p className="mt-5 text-sm text-cream/90 leading-relaxed min-h-[3.75rem]">{t.best}</p>
-                <ul className="mt-6 space-y-2.5 text-sm text-stone">
+                <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-start gap-2.5">
                       <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 mt-2" />

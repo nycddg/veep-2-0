@@ -30,13 +30,13 @@ export function SiteHeader() {
           <img src={wordmarkWhite.url} alt="Veep" className="h-5 w-auto" />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-0.5">
+        <nav className="hidden lg:flex items-center gap-0.5" aria-label="Primary">
           {nav.filter((n) => n.kind === "hash").map((n) => (
             <Link
               key={(n as { hash: string }).hash}
               to="/"
               hash={(n as { hash: string }).hash}
-              className="px-3 py-2 text-sm text-cream/80 hover:text-cream transition"
+              className="px-3 py-2 text-sm text-cream/85 hover:text-cream transition"
             >
               {n.label}
             </Link>
@@ -46,8 +46,8 @@ export function SiteHeader() {
             <Link
               key={(n as { to: "/pricing" | "/faq" | "/join" | "/about" }).to}
               to={(n as { to: "/pricing" | "/faq" | "/join" | "/about" }).to}
-              className="px-3 py-2 text-sm text-cream/80 hover:text-cream transition"
-              activeProps={{ className: "px-3 py-2 text-sm text-cream" }}
+              className="px-3 py-2 text-sm text-cream/85 hover:text-cream transition"
+              activeProps={{ className: "px-3 py-2 text-sm text-cream border-b border-accent" }}
             >
               {n.label}
             </Link>
