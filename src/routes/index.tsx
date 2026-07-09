@@ -514,7 +514,7 @@ function Index() {
           </div>
 
           <p className="mt-10 text-left text-sm text-stone-soft">
-            A few of the 150+ operators in our invite-only network.
+            Just a few of the 150+ operators in our invite-only network.
           </p>
 
           {/* Network impact */}
