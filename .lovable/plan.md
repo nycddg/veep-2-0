@@ -1,36 +1,30 @@
-## Problem
-The current collapsible summary in `OperatorProofCard.tsx` keeps a fixed 42px height in both collapsed and expanded states. When expanded, the full text is hidden inside a scrollable 2-line window, so the user does not see the complete summary. The container also appears to shrink vertically, which tightens the space between the summary and the industry chips below.
-
 ## Goal
-Make the expanded state reveal the full summary text while keeping the collapsed state compact and uniform. Preserve comfortable spacing between the summary and the chips.
+Make the operator profile cards stay at a fixed maximum height so the container never shifts when "Read more" is clicked; only the summary text should toggle between 2-line clamp and full text. Also widen the cards by 5%.
 
 ## What will change
-- File: `src/components/site/OperatorProofCard.tsx`
-- Scope: spotlight variant summary block only
+- `src/components/site/OperatorProofCard.tsx` — fixed-height summary block
+- `src/components/site/primitives.tsx` — add a `maxWidth` option to `Section`
+- `src/routes/index.tsx` — use the wider section for the operator spotlight
 
 ## Implementation details
 
-### 1. Expand to full text
-- Replace the fixed `h-[42px]` in the expanded state with an auto-height or large max-height so the full summary is visible.
-- Keep the collapsed state at 2 lines (`line-clamp-2`) with a fixed max-height of 42px so all cards remain the same size by default.
-- Use a `max-height` transition so the expansion feels smooth:
-  - collapsed: `max-h-[42px] line-clamp-2 overflow-hidden`
-  - expanded: `max-h-[200px] overflow-hidden` (or `max-h-none` if a transition is not needed)
+### 1. Fixed maximum-height summary container
+- All current operator summaries expand to about 127px. Set the summary container to a fixed `h-[150px]` so it can hold the longest text with a small buffer.
+- Collapsed state: `line-clamp-2` to hide the rest of the text.
+- Expanded state: no line clamp, so the full text is visible inside the same 150px container.
+- Because the container height is fixed, the card body will already be at its maximum size and will not shift when toggling.
+- Remove the height transition (since the container doesn't change size); keep a subtle opacity/fade transition on the text if desired.
 
-### 2. Prevent container shrink
-- Ensure the collapsed summary always occupies the same 42px, even if the text is shorter than 2 lines, by setting `min-h-[42px]` together with `max-h-[42px]` in the collapsed state.
-- This keeps the card caption rhythm consistent across all operator cards.
+### 2. Preserve spacing and chips position
+- Keep the `figcaption` flex column and `mt-auto` chips so the industry tags stay anchored at the bottom.
+- Keep a small padding buffer (`pb-2`) below the summary/button group to maintain breathing room.
 
-### 3. Maintain spacing between summary and chips
-- Add a top margin (`mt-3`) to the summary wrapper so the gap between the summary/button group and the chips is preserved even when the chips are pushed down by `mt-auto`.
-- Alternatively, wrap the chips in a `mt-auto` container that still respects the existing `gap-4` in `figcaption`.
+### 3. Widen the cards by 5%
+- Add a `maxWidth` prop to the `Section` primitive. Default remains `max-w-7xl` (80rem / 1280px); add a `wide` option that uses `max-w-[84rem]` (1344px, ~5% wider).
+- Apply `maxWidth="wide"` to the operator spotlight section in `src/routes/index.tsx` so the four-column grid expands by ~5% and each card becomes ~5% wider.
 
-### 4. Smooth transition
-- Keep `transition-all duration-300` on the summary wrapper so the height and clamp changes animate smoothly.
-- Use a CSS custom property or inline style if needed for a precise `max-height` animation.
-
-### 5. Verify
-- Confirm on the homepage operator spotlight that all cards initially show the same 2-line height.
-- Click each "Read more" to confirm the full summary appears and the card grows smoothly.
-- Confirm clicking "Show less" returns the card to the 2-line collapsed state with no layout shift.
-- Run a production build and typecheck to confirm no errors.
+### 4. Verify
+- Confirm all four cards render at the same height and do not shift when clicking "Read more" / "Show less".
+- Confirm the full summary text appears when expanded and the 2-line clamp appears when collapsed.
+- Confirm the operator spotlight grid is visibly wider than the surrounding sections.
+- Run production build and typecheck.

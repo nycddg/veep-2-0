@@ -485,7 +485,8 @@ function Index() {
       {/* 5 — BENEFITS */}
       {/* 4.5 — OPERATORS SPOTLIGHT */}
       <section id="operators" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
+
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Operator spotlight</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
@@ -498,7 +499,7 @@ function Index() {
               generalists, no career consultants.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0">
             {spotlightOperators.map((op) => (
               <OperatorProofCard
                 key={op.name}
