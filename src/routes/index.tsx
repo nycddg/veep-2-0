@@ -217,10 +217,6 @@ const networkImpact = [
   { figure: "$2B+", label: "Cost savings delivered", detail: "Across transformation, product redesign, and operational efficiency initiatives at global enterprises." },
   { figure: "$1B+", label: "Capital raised", detail: "Venture funding, structured finance, SPACs, and instruments like securitized bonds." },
   { figure: "$3B+", label: "Revenue opportunity created", detail: "Through new business lines, go-to-market strategy, and product commercialization." },
-  { figure: "$24B", label: "M&A integrations led", detail: "Some of the largest and most complex transactions across aerospace, tech, and services." },
-  { figure: "10x+", label: "Revenue scaling enabled", detail: "Systems, teams, and strategies behind hypergrowth companies." },
-  { figure: "75+", label: "Global brands transformed", detail: "From luxury and retail to SaaS and fintech — growth, repositioning, and innovation." },
-  { figure: "1,000+", label: "Team members led & scaled", detail: "Across global organizations, from startups to Fortune 50 enterprises." },
   { figure: "100+", label: "Products & platforms launched", detail: "From AI and SaaS to consumer and enterprise solutions." },
 ];
 

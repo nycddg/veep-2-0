@@ -1,15 +1,15 @@
-## Remove border from operator headshot container
+Plan: Reduce the network impact stats section from 8 items to 4, keeping only the requested highlights.
 
-The selected `<img>` element in `OperatorCanvas.tsx` does not have a border itself. The visible border comes from its parent container on line 19, which currently includes `border border-white/10`.
+What will change:
+- Edit the `networkImpact` array in `src/routes/index.tsx` (currently 8 items) to retain only:
+  - Cost savings delivered — $2B+
+  - Capital raised — $1B+
+  - Revenue opportunity created — $3B+
+  - Products & platforms launched — 100+
+- All existing labels, figures, and detail text remain unchanged.
+- The existing grid layout uses `grid-cols-2 lg:grid-cols-4`, so 4 items will display cleanly on both mobile and desktop with no layout changes needed.
+- The footer line "Aggregated outcomes across our operator roster." stays as-is.
 
-### Change
-In `src/components/site/OperatorCanvas.tsx`, remove `border border-white/10` from the headshot container `div` on line 19. The remaining classes will be:
-
-```
-relative z-10 mx-auto w-full aspect-[16/9] max-w-2xl rounded-3xl bg-gradient-to-br from-[#1a1c2e] to-[#0a0c16] overflow-hidden shadow-2xl
-```
-
-This keeps the rounded corners, gradient background, and shadow; only the faint white border is removed.
-
-### Verification
-After the edit, run `bun run build` to confirm no type or build errors.
+What will not change:
+- No styling, component structure, or page layout changes.
+- No other sections of the homepage are affected.
