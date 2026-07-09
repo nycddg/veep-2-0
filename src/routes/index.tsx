@@ -124,9 +124,9 @@ const alternatives = [
 
 const benefits = [
   { t: "Own the work", d: "Operators step in to take responsibility for critical work, not advise from the sidelines." },
-  { t: "Deploy in under 10 days", d: "Shortlist in 72 hours. Onboarded and in the work inside 10 days." },
+  { t: "Deploy in under 10 days", d: "Algorithmic matching. Shortlist in 72 hours. Onboarded and in the work inside 10 days." },
   { t: "Senior-only roster", d: "150+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
-  { t: "No permanent commitment", d: "Senior ownership without a full-time hire — engagements start focused and can pause, extend, or scale with the work." },
+  { t: "No permanent commitment", d: "Senior ownership without the commit — engagements can pause, extend, or scale with the work." },
   { t: "Clean handoff", d: "When the work lands or a permanent hire arrives, you get documentation, context, and continuity." },
   { t: "30-day fit guarantee", d: "If the operator isn't the right fit, we swap them or you walk — no fee owed for the remaining term." },
 ];
@@ -469,7 +469,7 @@ function Index() {
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
                 ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
-                ["Priced to scope", "Advisory, Sprint, Operator, Pod, or Operator in the Loop — structured around the work, not hourly browsing."],
+                ["Priced to scope", "Advisory, Sprint, Operator, or Pod structured around the work, not hourly browsing."],
                 ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
               ].map(([t, d]) => (
                 <div key={t} className="border-t border-white/10 pt-5 first:border-0 first:pt-0">
