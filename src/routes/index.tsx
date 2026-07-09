@@ -509,6 +509,7 @@ function Index() {
                 priorCompanies={op.priorCompanies}
                 summary={op.summary}
                 chips={op.chips}
+                photoUrl={op.photoUrl}
               />
             ))}
           </div>
