@@ -12,7 +12,7 @@ const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
       { kind: "hash", hash: "how", label: "How it works" },
       { kind: "hash", hash: "offer", label: "Engagements" },
       { kind: "hash", hash: "proof", label: "Proof" },
-      { kind: "hash", hash: "faq", label: "FAQ on this page" },
+      { kind: "hash", hash: "faq", label: "Mini FAQ" },
     ],
   },
   {
