@@ -1,6 +1,9 @@
+import { useState } from "react";
+
 function initials(name: string) {
   return name.split(" ").filter(Boolean).slice(0, 2).map((s) => s[0]).join("");
 }
+
 
 type OperatorProofCardProps = {
   name: string;
