@@ -68,7 +68,7 @@ function Page() {
         eyebrow="About Veep"
         title="Born from the inside."
         accent="Built for what's next."
-        sub="After decades inside high-growth startups, private companies, and public institutions, we saw the same pattern — companies moving slower, execution getting lost, senior operators stuck advising instead of owning. Veep is the answer."
+        sub={"After decades inside high-growth startups and large institutions, we kept seeing the same pattern: critical work slowed down, ownership got blurry, and the default answer was to add more headcount.\\n\\n\\nVeep was built for a different path."}
         secondaryLabel="See how it works"
         secondaryTo="/how-it-works"
       />
