@@ -513,7 +513,7 @@ function Index() {
             ))}
           </div>
 
-          <p className="mt-10 text-center text-sm text-stone-soft">
+          <p className="mt-10 text-left text-sm text-stone-soft">
             A few of the 150+ operators in our invite-only network.
           </p>
 
