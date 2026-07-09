@@ -65,7 +65,7 @@ export function Section({
 
   const maxWidthCls =
     maxWidth === "wide"
-      ? "max-w-[84rem]"
+      ? "max-w-[81.5rem]"
       : maxWidth === "full"
       ? "max-w-none"
       : "max-w-7xl";
