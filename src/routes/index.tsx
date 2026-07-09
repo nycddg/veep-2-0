@@ -485,7 +485,7 @@ function Index() {
       {/* 5 — BENEFITS */}
       {/* 4.5 — OPERATORS SPOTLIGHT */}
       <section id="operators" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
-        <div className="mx-auto max-w-[81.5rem] px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
 
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Operator spotlight</SectionEyebrow>
