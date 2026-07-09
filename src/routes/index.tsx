@@ -19,7 +19,7 @@ const heroOperators = [
   { name: "Vanessa Kwan", role: "Senior Finance Operator", chips: ["Ex-Goldman", "Consumer"], tilt: 3, translateY: -32 },
   { name: "Kostja Mirkovic", role: "Senior GTM Operator", chips: ["Ex-LinkedIn", "B2B SaaS"], tilt: -4, translateY: 48 },
   { name: "Laura Merling", role: "Senior Operations Operator", chips: ["Ex-Google", "Mobility"], tilt: 2, translateY: 0 },
-] as const;
+];
 
 const spotlightOperators = [
   {
@@ -480,7 +480,7 @@ function Index() {
                 key={op.name}
                 name={op.name}
                 role={op.role}
-                priorSeat={op.priorSeat}
+                priorCompanies={op.priorCompanies}
                 outcomes={op.outcomes}
                 chips={op.chips}
               />
