@@ -1,46 +1,53 @@
-## Add Google Analytics 4 + Vector to the site
+# Add blue-accent emphasis to remaining headlines
 
-Both tags need to load on every page across all environments. TanStack Start injects `<head>` tags via the root route's `head()`, so both scripts belong in `src/routes/__root.tsx` — no `index.html` edits, no extra dependencies.
+I audited every section headline (h1/h2/h3) across all route files and shared section components for the `<span className="text-accent">…</span>` tail pattern. 12 places are missing it. Plan below fixes each, matching the existing pattern where the last 2–5 words of the headline are wrapped in the accent span.
 
-### Changes
+## Route-level fixes
 
-**`src/routes/__root.tsx`** — extend the existing `head()` return:
+**`src/routes/index.tsx`**
+- L753: "Stabilize the operational gaps transactions create." → accent tail `transactions create.`
 
-1. Add the GA4 loader to `scripts`:
-   ```ts
-   { src: "https://www.googletagmanager.com/gtag/js?id=G-W4CC5NJ1H8", async: true },
-   {
-     children: `
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-       gtag('config', 'G-W4CC5NJ1H8');
-     `,
-   },
-   ```
+**`src/routes/pricing.tsx`**
+- L170: "The price you see is the price you pay." → accent `the price you pay.`
+- L192: "The right operating partners, ready when the portfolio needs them." → accent `when the portfolio needs them.`
+- L223: "Straight answers to the questions we get most." → accent `the questions we get most.`
 
-2. Add the Vector pixel to `scripts` (inline, using the snippet you provided, minus the JSX wrapper):
-   ```ts
-   {
-     children: `
-       !function(e,r){try{if(e.vector)return void console.log("Vector snippet included more than once.");var t={};t.q=t.q||[];for(var o=["load","identify","on"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c<o.length;c++){var a=o[c];t[a]=n(a)}if(e.vector=t,!t.loaded){var i=r.createElement("script");i.type="text/javascript",i.async=!0,i.src="https://cdn.vector.co/pixel.js";var l=r.getElementsByTagName("script")[0];l.parentNode.insertBefore(i,l),t.loaded=!0}}catch(e){console.error("Error loading Vector:",e)}}(window,document);
-       vector.load("1fe348f4-6e5d-49a9-a481-c29fc08010f3");
-     `,
-   },
-   ```
+**`src/routes/for-portfolios.tsx`**
+- L135: "Portfolio Capacity Audit" → accent `Capacity Audit`
+- L188: "Roster Development and Management" → accent `and Management`
 
-Both are appended alongside the existing JSON-LD `application/ld+json` script. The root shell already renders `<Scripts />` in `<body>`, so TanStack emits them correctly for SSR + hydration.
+## Shared component fixes
 
-### SPA pageview tracking
+These render on multiple pages, so a single edit fixes site-wide.
 
-GA4's `config` call auto-tracks the initial pageview. Client-side route changes in TanStack Router don't fire a fresh page load, so I'll also add a small subscription in `RootComponent` that calls `gtag('event', 'page_view', { page_path, page_location, page_title })` whenever the router's location changes (via `useRouter().subscribe('onResolved', ...)`). Vector's pixel handles SPA navigation on its own — no extra wiring.
+- **`StatsBand.tsx` L24** — "The system of action for senior operators." → accent `for senior operators.`
+- **`TriggerBento.tsx` L31** — "Built for the moments that create urgency." → accent `that create urgency.`
+- **`CaseSwitcher.tsx` L37** — "One operator. One outcome. One number that matters." → accent `One number that matters.`
+- **`AudienceTabs.tsx` L155** — "One platform. Two ways to buy." → accent `Two ways to buy.`
+- **`CompareTable.tsx` L31** — "Better. Faster. Cheaper. Really." Renders on a light/cream background with `text-ink`. Options:
+  1. Skip (accent-blue on cream may clash with the section's warm palette), or
+  2. Add accent `Cheaper. Really.` and rely on existing `text-accent` token which already has adequate contrast on cream.
+  Recommend option 2 — will verify visually after edit.
 
-### Out of scope
+## FooterCTA (special case)
 
-- No consent banner / cookie gating (you didn't ask for one; add later if EU traffic requires it).
-- No custom events beyond pageviews.
-- No env-based gating since you chose "All environments."
+**`FooterCTA.tsx` L12** — the `headline` prop is typed `string`, so callers can't inject a `<span>`. Two options:
 
-### Verification
+- **A (recommended):** widen `headline: string` → `headline: ReactNode`, then update the 3 call sites to pass `<>Make your next big <span className="text-accent">move.</span></>` etc. Consistent with the rest of the site.
+- **B:** leave FooterCTA alone (headlines stay unaccented in the footer band).
 
-After build: load the site, confirm in DevTools Network that `gtag/js?id=G-W4CC5NJ1H8` and `cdn.vector.co/pixel.js` both load, and that a `collect` request fires on navigation between routes.
+Recommend A. Call sites to update: `pricing.tsx`, `about.tsx`, plus the default in `FooterCTA` itself; I'll grep for others during implementation.
+
+## AudienceTabs panel titles (optional stretch)
+
+`AudienceTabs.tsx` L198 renders 6 panel titles from a plain-string data array. Adding accents requires changing the `title` field to `ReactNode`. Not included by default — happy to add if you want the panel headings accented too.
+
+## Not changing
+
+- PageHero-driven hero headlines — all already use the `accent` prop.
+- Small utility labels ("Application received.", "Send us a message.", "Straight answers." FAQ label on index L801) — too short for a tail split.
+- Redirect stub routes (services.*, compare.*, operators, insights, proof, etc.) — no markup.
+
+## Verification
+
+After edits, load `/`, `/pricing`, `/for-portfolios`, `/about` in Playwright and screenshot each section headline to confirm the blue tail renders and CompareTable's cream section still reads well.
