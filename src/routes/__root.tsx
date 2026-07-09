@@ -88,24 +88,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Veep — Senior operators for work that can't wait" },
+      { title: "Senior operators for work that can't wait | Veep" },
       {
         name: "description",
         content:
-          "Vetted senior operators embed inside founder-led companies to own critical work. Matched in 72 hours. Deployed in under 10 days.",
+          "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
       },
       { name: "author", content: "Veep" },
       { property: "og:site_name", content: "Veep" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Veep — Senior operators for work that can't wait" },
-      { name: "twitter:description", content: "Vetted senior operators embed inside founder-led companies to own critical work. Matched in 72 hours." },
+      { name: "twitter:title", content: "Senior operators for work that can't wait | Veep" },
+      { name: "twitter:description", content: "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee." },
       { name: "theme-color", content: "#0b1220" },
       { name: "format-detection", content: "telephone=no" },
+      { property: "og:title", content: "Senior operators for work that can't wait | Veep" },
+      { property: "og:description", content: "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CplJMIYweyNlP3tFRxmgvRkw5P52/social-images/social-1783620615204-navyondarkblue_square.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CplJMIYweyNlP3tFRxmgvRkw5P52/social-images/social-1783620615204-navyondarkblue_square.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

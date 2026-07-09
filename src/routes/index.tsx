@@ -292,17 +292,17 @@ const serviceSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Because a job always needs to be done. — Veep" },
+      { title: "Senior operators for work that can't wait | Veep" },
       {
         name: "description",
         content:
           "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
       },
-      { property: "og:title", content: "Because a job always needs to be done. — Veep" },
+      { property: "og:title", content: "Senior operators for work that can't wait | Veep" },
       {
         property: "og:description",
         content:
-          "Senior operators to own critical work before the full-time executive hire makes sense — matched in 72 hours, deployed in under 10 days.",
+          "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
