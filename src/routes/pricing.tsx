@@ -113,9 +113,9 @@ function Page() {
       />
 
       {/* Four tiers — data cards, no big containers, hierarchy earned by type + left rule. */}
-      <section className="bg-surface-band py-16 md:py-24">
+      <section className="bg-surface-band py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:divide-x lg:divide-white/10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:divide-x lg:divide-white/10">
             {tiers.map((t) => (
               <div
                 key={t.t}
@@ -154,16 +154,16 @@ function Page() {
               </div>
             ))}
           </div>
-          <p className="mt-12 text-sm text-stone">
+          <p className="mt-14 text-sm text-cream/70">
             All engagements carry a 30-day fit guarantee · Response within 1 business day
           </p>
         </div>
       </section>
 
       {/* What's not included */}
-      <section className="bg-surface-band py-20 md:py-24 border-t border-white/10">
+      <section className="bg-surface-band py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12">
+          <div className="max-w-2xl mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
               What we don't charge for
             </div>
@@ -171,11 +171,11 @@ function Page() {
               The price you see is the price you pay.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
             {notIncluded.map((n) => (
-              <div key={n.t} className="border-t border-white/10 pt-5">
+              <div key={n.t} className="border-t border-white/10 pt-6">
                 <div className="text-lg text-cream">{n.t}</div>
-                <p className="mt-3 text-sm text-stone leading-relaxed">{n.d}</p>
+                <p className="mt-3 text-sm text-cream/75 leading-relaxed">{n.d}</p>
               </div>
             ))}
           </div>
@@ -183,7 +183,7 @@ function Page() {
       </section>
 
       {/* Portfolio callout */}
-      <section className="py-20 md:py-24">
+      <section className="py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="border-l-2 border-accent pl-6 md:pl-10">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
@@ -192,7 +192,7 @@ function Page() {
             <h3 className="mt-5 text-2xl md:text-3xl text-cream">
               Executive Roster for PE, family offices, holdcos, and multi-company founders.
             </h3>
-            <p className="mt-5 text-stone leading-relaxed max-w-2xl">
+            <p className="mt-5 text-cream/80 leading-relaxed max-w-2xl">
               Annual executive-capacity partnership for recurring leadership gaps and
               value-creation work. Roster includes priority operator matching, quarterly
               capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits,
@@ -212,9 +212,9 @@ function Page() {
       </section>
 
       {/* Pricing FAQ */}
-      <section className="bg-surface-raised py-20 md:py-24">
+      <section className="bg-surface-raised py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12">
+          <div className="max-w-2xl mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
               Pricing FAQ
             </div>
@@ -222,11 +222,11 @@ function Page() {
               Straight answers to the questions we get most.
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
             {faqs.map((f) => (
-              <div key={f.q} className="border-t border-white/10 pt-5">
+              <div key={f.q} className="border-t border-white/10 pt-6">
                 <div className="text-lg text-cream leading-snug">{f.q}</div>
-                <p className="mt-3 text-sm text-stone leading-relaxed">{f.a}</p>
+                <p className="mt-3 text-sm text-cream/80 leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>
