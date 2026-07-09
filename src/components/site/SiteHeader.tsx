@@ -4,21 +4,16 @@ import { Menu, X } from "lucide-react";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import { BOOKING_URL } from "@/lib/booking";
 
-// Anchor links on /, plus two standalone routes (/pricing, /faq).
-type NavItem =
-  | { kind: "hash"; hash: string; label: string }
-  | { kind: "route"; to: "/pricing" | "/faq" | "/join" | "/about"; label: string };
+type NavItem = {
+  to: "/pricing" | "/about" | "/join" | "/faq";
+  label: string;
+};
 
 const nav: readonly NavItem[] = [
-  { kind: "hash", hash: "overview", label: "Overview" },
-  { kind: "hash", hash: "operators", label: "Operators" },
-  { kind: "hash", hash: "benefits", label: "Benefits" },
-  { kind: "hash", hash: "how", label: "How it works" },
-  { kind: "hash", hash: "proof", label: "Proof" },
-  { kind: "route", to: "/pricing", label: "Pricing" },
-  { kind: "route", to: "/faq", label: "FAQ" },
-  { kind: "route", to: "/about", label: "About" },
-  { kind: "route", to: "/join", label: "Join" },
+  { to: "/pricing", label: "Pricing" },
+  { to: "/about", label: "About" },
+  { to: "/join", label: "Join" },
+  { to: "/faq", label: "FAQ" },
 ];
 
 export function SiteHeader() {
