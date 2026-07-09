@@ -363,7 +363,7 @@ function Index() {
             <div className="relative min-h-[520px] flex items-center justify-center">
               <div className="relative grid grid-cols-2 gap-4 w-full max-w-lg">
                 {heroOperators.map((op) => (
-                  <OperatorProofCard key={op.name} {...op} />
+                  <OperatorProofCard key={op.name} variant="compact" {...op} />
                 ))}
               </div>
             </div>
