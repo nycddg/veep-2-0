@@ -10,6 +10,7 @@ import { StepFlow } from "@/components/site/StepFlow";
 import { Check } from "lucide-react";
 import { ObjectionList } from "@/components/site/ObjectionList";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import heroImage from "@/assets/Announcement_Cards_20.png.asset.json";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Content
