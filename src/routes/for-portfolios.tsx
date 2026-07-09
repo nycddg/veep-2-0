@@ -4,25 +4,30 @@ import { FooterCTA } from "@/components/site/FooterCTA";
 
 const problems = [
   {
-    t: "Unplanned executive transitions",
-    d: "A CFO leaves a portco mid-fundraise. A COO exits weeks before an integration. The search runs; the seat still needs an owner.",
+    t: "Pre-close needs arrive before the team is ready.",
+    d: "Diligence, modeling, operating plans, leadership assessment, and value-creation planning all need experienced judgment before the deal closes. The internal team is stretched, and the same few trusted people get called again.",
   },
   {
-    t: "Value creation stalls between board meetings",
-    d: "The 100-day plan is clear on the slide. Nobody in the company has capacity to actually own it end-to-end.",
+    t: "Post-close work moves faster than staffing.",
+    d: "The deal closes. The 100-day plan starts. Reporting, integration, finance, GTM, operations, and people priorities all need owners. The company may not yet have the right leaders in place.",
   },
   {
-    t: "Every portco rebuilds the same roster",
-    d: "Each company runs its own operator search from scratch — different sources, different quality bars, no leverage across the portfolio.",
+    t: "Executive transitions create immediate gaps.",
+    d: "A CFO leaves mid-fundraise. A COO exits after close. A revenue leader misses the plan. Search may be running, but the seat still needs coverage now.",
+  },
+  {
+    t: "Smaller firms rely on the same informal roster.",
+    d: "Many smaller PE firms, holdcos, family offices, and independent sponsors go back to the same people every time they buy a company. Those people may be good, but the firm knows there is stronger talent available. They just do not have the time to source, vet, and maintain a deeper roster that may or may not be deployed.",
   },
 ];
 
 const auditDeliverables = [
-  "Portfolio-wide leadership risk map",
-  "Function coverage assessment across finance, GTM, ops, product, and people",
-  "Upcoming capital and event triggers (fundraise, integration, exit, transition)",
-  "Recommended roster structure per company",
+  "Portfolio-wide leadership and operator gap map",
+  "Function coverage assessment across finance, GTM, operations, product, and people",
+  "Upcoming transaction and event triggers, including diligence, close, integration, fundraise, exit, leadership transition, and value-creation work",
+  "Recommended roster structure by company and function",
   "Emergency coverage path for interim vacancies",
+  "Priority shortlists for likely operator needs",
 ];
 
 const tiers = [
@@ -30,12 +35,13 @@ const tiers = [
     t: "Portfolio Roster",
     p: "$75k",
     per: "/ year · usage billed separately",
-    best: "Investors, family offices, holdcos, and independent sponsors.",
+    best: "Built for private equity firms, family offices, holding companies, and independent sponsors that engage in frequent transactions or manage recurring operator needs across multiple companies.",
     items: [
       "Portfolio-wide intake and capacity map",
-      "Quarterly capacity review",
+      "Quarterly portfolio capacity review",
       "Priority operator matching across portcos",
-      "Emergency Operator / Pod coverage SLA",
+      "Pre-vetted roster across finance, GTM, operations, product, and people",
+      "Emergency Operator or Pod coverage SLA",
       "Included diagnostics and shortlists",
       "Executive Capacity MSA signed once",
       "Preferred engagement rates on every SOW",
@@ -45,15 +51,15 @@ const tiers = [
 ];
 
 const steps = [
-  { n: "01", t: "Capacity Audit", d: "2–3 weeks. We map the portfolio, flag the seats most at risk, and recommend a roster shape per company." },
-  { n: "02", t: "MSA signed once", d: "Master terms, rate card, IP, and confidentiality — pre-approved so every portco can activate without redoing paper." },
-  { n: "03", t: "SOW per engagement", d: "When a company needs an owner, we scope, match in 72 hours, and deploy in under 10 days under the MSA." },
-  { n: "04", t: "Quarterly review", d: "We revisit the map with the operating team — what shifted, what's coming, what to pre-position." },
+  { n: "01", t: "Capacity Audit", d: "Over 2 to 3 weeks, we map the portfolio, flag the seats and functions most exposed to transaction volatility, and recommend the right roster shape by company." },
+  { n: "02", t: "MSA signed once", d: "Master terms, rate card, IP, confidentiality, and engagement structure are pre-approved so portcos can activate quickly without redoing paper." },
+  { n: "03", t: "SOW per engagement", d: "When a company needs an owner, we scope the work, match in 72 hours, and deploy in under 10 days under the MSA." },
+  { n: "04", t: "Quarterly review", d: "We revisit the portfolio map with your team: what changed, what transactions are coming, where leadership risk is rising, and what operator capacity should be pre-positioned." },
 ];
 
 const included = [
-  { t: "In the roster", d: "Access, planning, quarterly review, emergency coverage SLA, preferred rates, and included diagnostics." },
-  { t: "Billed by SOW", d: "Advisory, Sprint, Operator, and Pod engagements are scoped and billed per company at preferred roster rates." },
+  { t: "In the roster", d: "Priority access, portfolio planning, quarterly reviews, emergency coverage SLA, preferred rates, and included diagnostics." },
+  { t: "Billed by SOW", d: "Advisory, Sprint, Operator in the Loop, Operator, and Pod engagements are scoped and billed per company at preferred roster rates." },
 ];
 
 export const Route = createFileRoute("/for-portfolios")({
@@ -82,9 +88,8 @@ function Page() {
     <>
       <PageHero
         eyebrow="For Portfolios"
-        title="An executive roster,"
-        accent="on retainer."
-        sub="Priority access to vetted senior operators across every portco, ready the moment critical work needs an owner. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
+        title="Your operating partner function, ready when the portfolio needs it."
+        sub="Veep gives private equity firms, family offices, holding companies, and independent sponsors priority access to a vetted roster of senior operators across finance, GTM, operations, product, and people. Use us before a transaction, after close, during integration, or whenever a portco needs senior ownership before the full-time hire is ready, willing, or able to happen. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
       />
 
       {/* Problem */}
@@ -95,8 +100,8 @@ function Page() {
               Where portfolios lose time
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
-              The seat is open.{" "}
-              <span className="text-accent">The work is not.</span>
+              Transactions create volatility.{" "}
+              <span className="text-accent">The work still needs an owner.</span>
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
@@ -118,12 +123,10 @@ function Page() {
               Start here
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
-              Executive Capacity Audit.
+              Portfolio Capacity Audit.
             </h2>
             <p className="mt-6 text-cream/80 leading-relaxed">
-              Before you retain the roster, we run a portfolio-wide leadership map: which
-              companies need what, which upcoming events will create urgency in the next
-              6–12 months, and where a Veep operator would move the number.
+              Before you retain the roster, we map where transactions and operating priorities are likely to create staffing volatility across the portfolio. We identify which companies need what, which upcoming events could create urgency in the next 6 to 12 months, and where a Veep operator would help stabilize execution.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 border-t border-white/10 pt-10">
@@ -146,15 +149,13 @@ function Page() {
                 Portfolio Executive Roster
               </div>
               <p className="mt-4 text-sm text-cream/80 leading-relaxed">
-                An annual capacity partnership. Priority access, quarterly planning,
-                emergency coverage SLA, and preferred commercial terms. Operator
-                deployments billed separately per SOW under a Master Services Agreement.
+                A retained operating partner function for firms that do not want to build one internally. Veep gives your firm priority access to vetted senior operators who can support transactions, integrations, interim gaps, and value-creation work across the portfolio.
               </p>
               <ul className="mt-6 space-y-2 text-sm text-cream/85">
                 {[
                   "Annual roster: $75k",
                   "Usage billed separately at preferred rates",
-                  "MSA activated once, SOWs per role",
+                  "MSA activated once, SOWs per engagement",
                 ].map((x) => (
                   <li key={x} className="flex items-baseline gap-3">
                     <span className="inline-block h-1 w-1 rounded-full bg-accent-gold shrink-0 translate-y-[-2px]" />
@@ -172,11 +173,10 @@ function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
-              Roster models
+              Roster model
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
-              Retain exactly as much capacity{" "}
-              <span className="text-accent">as the portfolio needs.</span>
+              Portfolio Roster
             </h2>
           </div>
           <div className="max-w-2xl mx-auto">
@@ -210,8 +210,7 @@ function Page() {
             ))}
           </div>
           <p className="mt-12 text-sm text-cream/75 text-center max-w-2xl mx-auto">
-            Engagements convert cleanly into Advisory, Sprint, Operator, or Pod work at
-            preferred roster rates.
+            Engagements convert cleanly into Advisory, Sprint, Operator in the Loop, Operator, or Pod work at preferred roster rates.
           </p>
         </div>
       </section>
@@ -264,8 +263,8 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline="Map your portfolio's executive capacity."
-        sub="Book a 30-minute call to walk through the audit and roster. We'll tell you directly whether Veep is the right partner for your portfolio."
+        headline="Stabilize the operator gaps across your portfolio."
+        sub="Book a 30-minute call to walk through the audit and roster model. We will tell you directly whether Veep is the right operating partner function for your firm."
       />
     </>
   );
