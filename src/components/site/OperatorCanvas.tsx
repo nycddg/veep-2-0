@@ -21,7 +21,6 @@ export function OperatorCanvas() {
             src={headshotAsset.url}
             alt="Vetted operator headshot"
             className="w-full h-full object-cover object-bottom"
-            style={{ clipPath: "inset(0 0 7% 0)" }}
           />
         </div>
 
