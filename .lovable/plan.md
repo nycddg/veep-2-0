@@ -1,7 +1,21 @@
-Replace the "OP" placeholder in the OperatorCanvas headshot slot with the uploaded portrait image.
+Style the single Portfolio Roster card on `/for-portfolios` as a centered featured card.
 
-1. Create a Lovable Asset pointer from `/mnt/user-uploads/Announcement_Cards_20-2.png` to `src/assets/operator-headshot.png.asset.json` using the `lovable-assets` CLI.
-2. Import the asset pointer in `src/components/site/OperatorCanvas.tsx`.
-3. Swap the inner circular "OP" placeholder div for an `<img>` that uses the asset URL, keeping the existing `aspect-[16/9]`, `rounded-3xl`, `overflow-hidden`, and `object-cover` behavior so the portrait fills the frame.
-4. Preserve the ambient glow, match badge, and match matrix overlays unchanged.
-5. Verify the preview renders the portrait in the headshot slot without distortion or layout breakage.
+Current state
+- The `Roster models` section uses a 4-column grid with vertical dividers and a single `Portfolio Roster` card.
+- With only one card, it sits left-aligned and looks like an unfinished version of the `/pricing` cards.
+- User confirmed they want a **centered featured card** with a border/background, rather than the divider layout.
+
+Plan
+1. Replace the 4-column divider grid with a single centered card container.
+2. Give the card a visible border and subtle background (`glass-card` or equivalent `bg-card border border-white/10 rounded-3xl p-8 md:p-10`) so it reads as a deliberate featured card.
+3. Keep the same information hierarchy from `/pricing`:
+   - Title (`Portfolio Roster`)
+   - Price (`$75k / year · usage billed separately`)
+   - Best-for line
+   - Bullet list
+   - "See engagement pricing →" link
+4. Center the card horizontally and limit its max-width (`max-w-2xl mx-auto` or similar) so it does not stretch awkwardly on wide screens.
+5. Preserve the section header and the guarantee text below the card.
+6. Verify with a screenshot of the section to confirm the card is centered, has a visible border/background, and maintains the pricing-page hierarchy.
+
+File to edit: `src/routes/for-portfolios.tsx` (lines ~182–216).
