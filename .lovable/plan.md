@@ -1,21 +1,16 @@
-Style the single Portfolio Roster card on `/for-portfolios` as a centered featured card.
+Apply the Veep color palette as a whole-site accent swap, keeping the dark navy canvas and updating the accent system to use the new palette.
 
 Current state
-- The `Roster models` section uses a 4-column grid with vertical dividers and a single `Portfolio Roster` card.
-- With only one card, it sits left-aligned and looks like an unfinished version of the `/pricing` cards.
-- User confirmed they want a **centered featured card** with a border/background, rather than the divider layout.
+- The site uses a deep navy canvas (`#050810`) with an indigo accent (`#6366f1` / `forest`) for hero tail phrases, links, bullets, badges, and CTA emphasis.
+- The user provided a palette with a brighter blue (`#789fff`), coral (`#ec6b66`), peach (`#f09172`), and lighter tones.
+- User confirmed they want a whole-site accent swap.
 
 Plan
-1. Replace the 4-column divider grid with a single centered card container.
-2. Give the card a visible border and subtle background (`glass-card` or equivalent `bg-card border border-white/10 rounded-3xl p-8 md:p-10`) so it reads as a deliberate featured card.
-3. Keep the same information hierarchy from `/pricing`:
-   - Title (`Portfolio Roster`)
-   - Price (`$75k / year · usage billed separately`)
-   - Best-for line
-   - Bullet list
-   - "See engagement pricing →" link
-4. Center the card horizontally and limit its max-width (`max-w-2xl mx-auto` or similar) so it does not stretch awkwardly on wide screens.
-5. Preserve the section header and the guarantee text below the card.
-6. Verify with a screenshot of the section to confirm the card is centered, has a visible border/background, and maintains the pricing-page hierarchy.
+1. Update the primary accent color in `src/styles.css` from the current indigo to the brighter blue `#789fff` (mapped as `oklch` or hex in the `--forest` / `--accent` tokens). This affects hero tail phrases, section eyebrows, links, bullets, and labels.
+2. Add a secondary accent token for the warm coral `#ec6b66` or peach `#f09172` and use it sparingly for high-priority signals: the "Most common" / "Most requested" badge on pricing/service cards, guarantee labels, and other urgency states.
+3. Keep the dark navy background; do not move to a light theme. The light blues and grays in the uploaded palette are not needed for the dark theme.
+4. Audit all components and routes that reference the current accent (`text-accent`, `bg-accent`, `border-accent`, `bg-forest`, etc.) and update them to use the new tokens consistently.
+5. Verify the change across the homepage, pricing, services, and for-portfolios pages to ensure the new blue reads cleanly and the coral accent adds warmth without clashing.
+6. Run the build and capture homepage + pricing screenshots to confirm the palette swap is applied consistently.
 
-File to edit: `src/routes/for-portfolios.tsx` (lines ~182–216).
+Files to edit: `src/styles.css` for tokens; any route or component using the accent color (e.g., `src/components/site/EngagementTile.tsx`, `src/routes/pricing.tsx`, `src/routes/for-portfolios.tsx`, `src/components/site/primitives.tsx`, etc.).
