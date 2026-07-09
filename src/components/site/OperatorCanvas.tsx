@@ -27,8 +27,8 @@ export function OperatorCanvas() {
             <Star size={18} className="text-white fill-white" />
           </div>
           <div className="text-left">
-            <p className="text-[10px] uppercase tracking-[0.12em] text-accent font-black">Operator Found</p>
-            <p className="text-sm text-cream font-bold">95% Match Rate</p>
+            <p className="text-[10px] uppercase tracking-[0.12em] text-accent font-black">MATCH HISTORY</p>
+            <p className="text-sm text-cream font-bold">95% Match Success Rate</p>
           </div>
         </div>
 
