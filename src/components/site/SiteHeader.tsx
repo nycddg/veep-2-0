@@ -4,16 +4,21 @@ import { Menu, X } from "lucide-react";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import { BOOKING_URL } from "@/lib/booking";
 
-type NavItem = {
-  to: "/pricing" | "/about" | "/join" | "/faq";
-  label: string;
-};
+// Anchor links on /, plus two standalone routes (/pricing, /faq).
+type NavItem =
+  | { kind: "hash"; hash: string; label: string }
+  | { kind: "route"; to: "/pricing" | "/faq" | "/join" | "/about"; label: string };
 
 const nav: readonly NavItem[] = [
-  { to: "/pricing", label: "Pricing" },
-  { to: "/about", label: "About" },
-  { to: "/join", label: "Join" },
-  { to: "/faq", label: "FAQ" },
+  { kind: "hash", hash: "overview", label: "Overview" },
+  { kind: "hash", hash: "operators", label: "Operators" },
+  { kind: "hash", hash: "benefits", label: "Benefits" },
+  { kind: "hash", hash: "how", label: "How it works" },
+  { kind: "hash", hash: "proof", label: "Proof" },
+  { kind: "route", to: "/pricing", label: "Pricing" },
+  { kind: "route", to: "/faq", label: "FAQ" },
+  { kind: "route", to: "/about", label: "About" },
+  { kind: "route", to: "/join", label: "Join" },
 ];
 
 export function SiteHeader() {
@@ -26,10 +31,21 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-0.5">
-          {nav.map((n) => (
+          {nav.filter((n) => n.kind === "hash").map((n) => (
             <Link
-              key={n.to}
-              to={n.to}
+              key={(n as { hash: string }).hash}
+              to="/"
+              hash={(n as { hash: string }).hash}
+              className="px-3 py-2 text-sm text-cream/80 hover:text-cream transition"
+            >
+              {n.label}
+            </Link>
+          ))}
+          <span aria-hidden className="mx-3 h-4 w-px bg-white/15" />
+          {nav.filter((n) => n.kind === "route").map((n) => (
+            <Link
+              key={(n as { to: "/pricing" | "/faq" | "/join" | "/about" }).to}
+              to={(n as { to: "/pricing" | "/faq" | "/join" | "/about" }).to}
               className="px-3 py-2 text-sm text-cream/80 hover:text-cream transition"
               activeProps={{ className: "px-3 py-2 text-sm text-cream" }}
             >
@@ -62,16 +78,28 @@ export function SiteHeader() {
       {open && (
         <div className="lg:hidden border-t border-white/8 bg-background">
           <div className="px-4 py-4 space-y-0.5">
-            {nav.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                onClick={() => setOpen(false)}
-                className="block px-3 py-3 text-base text-cream rounded-md hover:bg-white/5"
-              >
-                {n.label}
-              </Link>
-            ))}
+            {nav.map((n) =>
+              n.kind === "hash" ? (
+                <Link
+                  key={n.hash}
+                  to="/"
+                  hash={n.hash}
+                  onClick={() => setOpen(false)}
+                  className="block px-3 py-3 text-base text-cream rounded-md hover:bg-white/5"
+                >
+                  {n.label}
+                </Link>
+              ) : (
+                <Link
+                  key={n.to}
+                  to={n.to}
+                  onClick={() => setOpen(false)}
+                  className="block px-3 py-3 text-base text-cream rounded-md hover:bg-white/5"
+                >
+                  {n.label}
+                </Link>
+              ),
+            )}
             <div className="pt-4">
               <a
                 href={BOOKING_URL}
