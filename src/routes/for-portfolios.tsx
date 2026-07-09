@@ -186,7 +186,7 @@ function Page() {
               Roster model
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
-              Roster Development <span className="text-accent">and Management</span>
+              Portfolio <span className="text-accent">Program</span>
             </h2>
           </div>
           <div className="max-w-2xl mx-auto">
