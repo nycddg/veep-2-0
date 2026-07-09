@@ -104,7 +104,7 @@ function Page() {
               <span className="text-accent">The work still needs an owner.</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
             {problems.map((p) => (
               <div key={p.t}>
                 <div className="text-lg sm:text-xl text-cream tracking-tight leading-snug">{p.t}</div>
