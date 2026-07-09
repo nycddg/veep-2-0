@@ -45,10 +45,17 @@ export async function getFormMediaUploadUrl(
   return data.uploadUrl;
 }
 
+export type WixUploadedFile = {
+  id: string;
+  displayName: string;
+  mediaType: string;
+  url: string;
+};
+
 export async function uploadFileToWix(
   uploadUrl: string,
   file: File,
-): Promise<void> {
+): Promise<WixUploadedFile> {
   const response = await fetch(uploadUrl, {
     method: "PUT",
     body: file,
@@ -60,18 +67,12 @@ export async function uploadFileToWix(
     const text = await response.text();
     throw new Error(`Wix file upload failed [${response.status}]: ${text}`);
   }
+  const data = (await response.json()) as { file: WixUploadedFile };
+  return data.file;
 }
 
-type SubmissionFieldValue =
-  | { stringValue: string }
-  | { numberValue: number }
-  | { boolValue: boolean }
-  | { listValue: { values: SubmissionFieldValue[] } }
-  | { nullValue: null }
-  | { structValue: Record<string, unknown> };
-
 export async function createWixFormSubmission(
-  fields: Record<string, SubmissionFieldValue>,
+  fields: Record<string, unknown>,
 ) {
   return wixFetch("/form-submission-service/v4/submissions", {
     method: "POST",
