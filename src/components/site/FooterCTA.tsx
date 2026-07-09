@@ -1,11 +1,17 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import type { ReactNode } from "react";
 import { BOOKING_URL } from "@/lib/booking";
 
 export function FooterCTA({
-  headline = "Make your next big move.",
+  headline = (
+    <>
+      Make your next{" "}
+      <span className="text-accent">big move.</span>
+    </>
+  ),
   sub = "Book a 30-minute call with a Veep founder. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
-}: { headline?: string; sub?: string }) {
+}: { headline?: ReactNode; sub?: string }) {
   return (
     <section className="py-20 md:py-28 border-t border-white/10 relative overflow-hidden">
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
