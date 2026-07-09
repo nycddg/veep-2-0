@@ -60,7 +60,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["UGE International", "CBRE"],
     summary:
-      "Jian has led finance and capital strategy across four continents, raising $300M+ through Series B/C, venture debt, and a SPAC IPO on the Toronto Venture Exchange. He steps into founder-led companies that need institutional-grade finance and capital-raising capability without the full-time CFO overhead.",
+      "Jian has led finance and capital strategy across four continents, raising $300M+ through Series B/C, venture debt, and a SPAC IPO on the Toronto Venture Exchange. He gives founder-led companies institutional-grade finance and capital-raising capability without the full-time CFO overhead.",
     chips: ["Real Estate", "Finance", "Tech"],
     photoUrl:
       "https://static.wixstatic.com/media/5084f0_6f67c526803546fa8695a282e5b1c292~mv2.jpg/v1/crop/x_0,y_278,w_1132,h_1133/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(12)_edited.jpg",
@@ -70,7 +70,7 @@ const spotlightOperators = [
     role: "Marketing Operating Partner",
     priorCompanies: ["Morning Brew", "The Guardian"],
     summary:
-      "Erika has built growth engines for media and consumer brands, most recently driving 550% user growth and a 30% engagement lift at The Voice in five months. She helps leadership teams turn audience and attention into revenue, not just metrics.",
+      "Erika builds growth engines for media and consumer brands. Most recently she drove 550% user growth and a 30% engagement lift at The Voice in five months, doubled CTR at Morning Brew, and unlocked new ad revenue streams. She helps founder-led teams turn audience and attention into revenue, not just metrics.",
     chips: ["New Media", "Consumer", "GenAI"],
     photoUrl:
       "https://static.wixstatic.com/media/5084f0_9ee6e722e8564a30a97f2c7ba2767e8b~mv2.png/v1/crop/x_115,y_307,w_938,h_940/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(13).png",
@@ -80,7 +80,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["Fullscreen", "Nifty's"],
     summary:
-      "Elaine has led $120M+ in exit value across Web3, media, and tech transactions, including Nifty's→Moonpay and P3→Deluxe. She builds the finance infrastructure, reporting discipline, and operational rigor that make companies acquirable and scalable.",
+      "Elaine has led $120M+ in exit value across Web3, media, and tech transactions, including Nifty's→Moonpay, P3→Deluxe, and Seibo→4Wall. She builds the finance infrastructure, reporting discipline, and operational rigor that produce 98% EBITDA improvement and make companies acquirable and scalable.",
     chips: ["Tech", "Web3", "Media"],
     photoUrl:
       "https://static.wixstatic.com/media/5084f0_1ae2bc09c75742eea3b45aa72d11aeee~mv2.png/v1/crop/x_0,y_283,w_1152,h_1151/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(72).png",
@@ -90,7 +90,7 @@ const spotlightOperators = [
     role: "People Operating Partner",
     priorCompanies: ["Zocdoc", "Pager Health"],
     summary:
-      "Victoria has scaled people operations from startup to operating scale, growing Zocdoc from roughly 50 to 700+ employees while maintaining high retention and engagement. She designs people infrastructure that keeps pace with revenue rather than slowing it down.",
+      "Victoria scales people operations from startup to operating scale. She grew Zocdoc from roughly 50 to 700+ employees while maintaining high retention and engagement, and later enabled 40% team growth at Pager Health. She designs people infrastructure that keeps pace with revenue rather than slowing it down.",
     chips: ["Hospitality", "Tech/SaaS", "Healthcare"],
     photoUrl:
       "https://static.wixstatic.com/media/5084f0_c97a4bd1542f40d6b6a86c2bf84410d4~mv2.png/v1/crop/x_0,y_144,w_1152,h_1152/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(15).png",
