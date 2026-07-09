@@ -8,7 +8,7 @@ const quotes = [
   },
   {
     quote:
-      "As a founder raising capital, I couldn\u2019t have asked for a better partner. I never felt alone.",
+      "As a founder raising capital, I couldn\u2019t have asked for a better partner.\u00a0\nI never felt alone.",
     name: "Daniel Walsh",
     role: "Founder & CEO, VeroSkills",
     initials: "DW",
@@ -46,7 +46,7 @@ export function Testimonials() {
           {supporting.map((q) => (
             <figure key={q.name}>
               <blockquote className="font-sans text-xl md:text-2xl leading-snug text-cream/90 tracking-tight text-pretty">
-                “{q.quote}”
+                \u201C{q.quote}\u201D
               </blockquote>
               <figcaption className="mt-5 font-mono text-[11px] uppercase tracking-[0.16em] text-stone-soft">
                 {q.name} — {q.role}
