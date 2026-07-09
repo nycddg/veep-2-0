@@ -349,19 +349,19 @@ function Index() {
 
           <OperatorCanvas />
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-20">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center gap-5 mt-20">
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-4 bg-accent text-white rounded-full font-bold hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-accent/30 inline-flex items-center justify-center gap-2"
+              className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center gap-2"
             >
               Book intro call <ArrowRight size={16} />
             </a>
             <Link
               to="/"
               hash="how"
-              className="px-10 py-4 bg-transparent border border-cream/20 text-cream rounded-full font-bold hover:bg-cream/5 transition-all active:scale-95 inline-flex items-center justify-center"
+              className="text-sm text-cream/80 hover:text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60 transition pb-1"
             >
               See how it works
             </Link>
