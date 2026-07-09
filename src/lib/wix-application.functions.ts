@@ -44,16 +44,8 @@ function base64ToFile(payload: { name: string; type: string; data: string }): Fi
   return new File([bytes], payload.name, { type: payload.type });
 }
 
-function toListValue(values: string[]): { listValue: { values: { stringValue: string }[] } } {
-  return {
-    listValue: {
-      values: values.map((v) => ({ stringValue: v })),
-    },
-  };
-}
-
-function toStringValue(value: string | undefined): { stringValue: string } | { nullValue: null } {
-  return value ? { stringValue: value } : { nullValue: null };
+function toStringValue(value: string | undefined): string | null {
+  return value || null;
 }
 
 export const submitApplication = createServerFn({ method: "POST" })
@@ -71,26 +63,33 @@ export const submitApplication = createServerFn({ method: "POST" })
     }
 
     const uploadUrl = await getFormMediaUploadUrl(file.name, file.type);
-    await uploadFileToWix(uploadUrl, file);
+    const uploadedFile = await uploadFileToWix(uploadUrl, file);
 
     const mappedRole = roleToWix[data.role] || data.role;
     const mappedSource = sourceToWix[data.source || ""] || "Other";
 
-    const submissions = {
-      [WIX_FORM_FIELDS.firstName]: { stringValue: data.firstName },
-      [WIX_FORM_FIELDS.lastName]: { stringValue: data.lastName },
-      [WIX_FORM_FIELDS.email]: { stringValue: data.email },
-      [WIX_FORM_FIELDS.linkedIn]: { stringValue: data.linkedIn },
+    const submissions: Record<string, unknown> = {
+      [WIX_FORM_FIELDS.firstName]: data.firstName,
+      [WIX_FORM_FIELDS.lastName]: data.lastName,
+      [WIX_FORM_FIELDS.email]: data.email,
+      [WIX_FORM_FIELDS.linkedIn]: data.linkedIn,
       [WIX_FORM_FIELDS.website]: toStringValue(data.website || undefined),
-      [WIX_FORM_FIELDS.role]: { stringValue: mappedRole },
+      [WIX_FORM_FIELDS.role]: mappedRole,
       [WIX_FORM_FIELDS.fractionalExperience]: toStringValue(data.fractionalExperience),
-      [WIX_FORM_FIELDS.companyTypes]: toListValue(data.companyTypes.map(normalizeCompanyType)),
-      [WIX_FORM_FIELDS.growthStages]: toListValue(data.growthStages),
-      [WIX_FORM_FIELDS.functions]: toListValue(data.functions.map(normalizeFunction)),
+      [WIX_FORM_FIELDS.companyTypes]: data.companyTypes.map(normalizeCompanyType),
+      [WIX_FORM_FIELDS.growthStages]: data.growthStages,
+      [WIX_FORM_FIELDS.functions]: data.functions.map(normalizeFunction),
       [WIX_FORM_FIELDS.industries]: toStringValue(data.industries || undefined),
       [WIX_FORM_FIELDS.notes]: toStringValue(data.notes || undefined),
-      [WIX_FORM_FIELDS.source]: { stringValue: mappedSource },
-      [WIX_FORM_FIELDS.resume]: { stringValue: uploadUrl },
+      [WIX_FORM_FIELDS.source]: mappedSource,
+      [WIX_FORM_FIELDS.resume]: [
+        {
+          fileId: uploadedFile.id,
+          displayName: uploadedFile.displayName,
+          fileType: uploadedFile.mediaType,
+          url: uploadedFile.url,
+        },
+      ],
     };
 
     await createWixFormSubmission(submissions);
