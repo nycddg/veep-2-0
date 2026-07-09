@@ -1,16 +1,38 @@
-Apply the Veep color palette as a whole-site accent swap, keeping the dark navy canvas and updating the accent system to use the new palette.
+## Update operator spotlight cards with real profiles
 
-Current state
-- The site uses a deep navy canvas (`#050810`) with an indigo accent (`#6366f1` / `forest`) for hero tail phrases, links, bullets, badges, and CTA emphasis.
-- The user provided a palette with a brighter blue (`#789fff`), coral (`#ec6b66`), peach (`#f09172`), and lighter tones.
-- User confirmed they want a whole-site accent swap.
+Pull data from the four veep.work profiles into `spotlightOperators` in `src/routes/index.tsx`, and pass the Wix-hosted headshot URLs into `OperatorProofCard` (it already supports `photoUrl`).
 
-Plan
-1. Update the primary accent color in `src/styles.css` from the current indigo to the brighter blue `#789fff` (mapped as `oklch` or hex in the `--forest` / `--accent` tokens). This affects hero tail phrases, section eyebrows, links, bullets, and labels.
-2. Add a secondary accent token for the warm coral `#ec6b66` or peach `#f09172` and use it sparingly for high-priority signals: the "Most common" / "Most requested" badge on pricing/service cards, guarantee labels, and other urgency states.
-3. Keep the dark navy background; do not move to a light theme. The light blues and grays in the uploaded palette are not needed for the dark theme.
-4. Audit all components and routes that reference the current accent (`text-accent`, `bg-accent`, `border-accent`, `bg-forest`, etc.) and update them to use the new tokens consistently.
-5. Verify the change across the homepage, pricing, services, and for-portfolios pages to ensure the new blue reads cleanly and the coral accent adds warmth without clashing.
-6. Run the build and capture homepage + pricing screenshots to confirm the palette swap is applied consistently.
+### New card content
 
-Files to edit: `src/styles.css` for tokens; any route or component using the accent color (e.g., `src/components/site/EngagementTile.tsx`, `src/routes/pricing.tsx`, `src/routes/for-portfolios.tsx`, `src/components/site/primitives.tsx`, etc.).
+**Jian Yang** — Finance Operating Partner
+- Prior: UGE International · CBRE
+- Outcomes: Raised $300M+ in capital (Series B/C, venture debt, SPAC IPO) · Led UGE through SPAC IPO on Toronto Venture Exchange · Ran finance teams across 4 continents
+- Chips: Real Estate, Finance, Tech
+- Photo: `https://static.wixstatic.com/media/5084f0_6f67c526803546fa8695a282e5b1c292~mv2.jpg/v1/crop/x_0,y_278,w_1132,h_1133/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(12)_edited.jpg`
+
+**Erika Velazquez** — Marketing Operating Partner
+- Prior: Morning Brew · The Guardian
+- Outcomes: Drove 550% user growth + 30% engagement lift at The Voice in 5 months · 2x CTR and new ad revenue streams at Morning Brew · 5x increase in deal size
+- Chips: New Media, Consumer, GenAI
+- Photo: `https://static.wixstatic.com/media/5084f0_9ee6e722e8564a30a97f2c7ba2767e8b~mv2.png/v1/crop/x_115,y_307,w_938,h_940/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(13).png`
+
+**Elaine Bogart** — Finance Operating Partner
+- Prior: Fullscreen · Nifty's
+- Outcomes: Led $120M+ in exit value (Nifty's→Moonpay, P3→Deluxe, Seibo→4Wall) · Built finance infra for 10x revenue growth at Fullscreen · 98% EBITDA improvement at Mojix
+- Chips: Tech, Web3, Media
+- Photo: `https://static.wixstatic.com/media/5084f0_1ae2bc09c75742eea3b45aa72d11aeee~mv2.png/v1/crop/x_0,y_283,w_1152,h_1151/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(72).png`
+
+**Victoria Kasumu** — People Operating Partner
+- Prior: Zocdoc · Pager Health
+- Outcomes: Scaled Zocdoc from ~50 to 700+ with high retention · Raised eNPS +30 points at a leading SaaS company · Enabled 40% team growth at Pager Health
+- Chips: Hospitality, Tech/SaaS, Healthcare
+- Photo: `https://static.wixstatic.com/media/5084f0_c97a4bd1542f40d6b6a86c2bf84410d4~mv2.png/v1/crop/x_0,y_144,w_1152,h_1152/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(15).png`
+
+### Also update
+
+- `heroOperators` array (the compact hero collage) to the same four people with matching photos, so the hero and spotlight sections stay consistent.
+
+### Files touched
+- `src/routes/index.tsx` — replace `spotlightOperators` and `heroOperators` array contents; add `photoUrl` field on each.
+
+No component changes needed — `OperatorProofCard` already renders `photoUrl` in both `spotlight` and `compact` variants.

@@ -16,56 +16,96 @@ import { FooterCTA } from "@/components/site/FooterCTA";
 // ─────────────────────────────────────────────────────────────────────────────
 
 const heroOperators = [
-  { name: "Jian Yang", role: "Senior Finance Operator", chips: ["Ex-Industrious", "Real Estate"], tilt: -2, translateY: 16 },
-  { name: "Vanessa Kwan", role: "Senior Finance Operator", chips: ["Ex-Goldman", "Consumer"], tilt: 3, translateY: -32 },
-  { name: "Kostja Mirkovic", role: "Senior GTM Operator", chips: ["Ex-LinkedIn", "B2B SaaS"], tilt: -4, translateY: 48 },
-  { name: "Laura Merling", role: "Senior Operations Operator", chips: ["Ex-Google", "Mobility"], tilt: 2, translateY: 0 },
+  {
+    name: "Jian Yang",
+    role: "Finance Operating Partner",
+    chips: ["Ex-UGE", "Real Estate"],
+    tilt: -2,
+    translateY: 16,
+    photoUrl:
+      "https://static.wixstatic.com/media/5084f0_6f67c526803546fa8695a282e5b1c292~mv2.jpg/v1/crop/x_0,y_278,w_1132,h_1133/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(12)_edited.jpg",
+  },
+  {
+    name: "Erika Velazquez",
+    role: "Marketing Operating Partner",
+    chips: ["Ex-Morning Brew", "New Media"],
+    tilt: 3,
+    translateY: -32,
+    photoUrl:
+      "https://static.wixstatic.com/media/5084f0_9ee6e722e8564a30a97f2c7ba2767e8b~mv2.png/v1/crop/x_115,y_307,w_938,h_940/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(13).png",
+  },
+  {
+    name: "Elaine Bogart",
+    role: "Finance Operating Partner",
+    chips: ["Ex-Fullscreen", "Web3"],
+    tilt: -4,
+    translateY: 48,
+    photoUrl:
+      "https://static.wixstatic.com/media/5084f0_1ae2bc09c75742eea3b45aa72d11aeee~mv2.png/v1/crop/x_0,y_283,w_1152,h_1151/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(72).png",
+  },
+  {
+    name: "Victoria Kasumu",
+    role: "People Operating Partner",
+    chips: ["Ex-Zocdoc", "Tech/SaaS"],
+    tilt: 2,
+    translateY: 0,
+    photoUrl:
+      "https://static.wixstatic.com/media/5084f0_c97a4bd1542f40d6b6a86c2bf84410d4~mv2.png/v1/crop/x_0,y_144,w_1152,h_1152/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(15).png",
+  },
 ];
 
 const spotlightOperators = [
   {
     name: "Jian Yang",
-    role: "Senior Finance Operator",
-    priorCompanies: ["Industrious", "CBRE"],
+    role: "Finance Operating Partner",
+    priorCompanies: ["UGE International", "CBRE"],
     outcomes: [
-      "Led $80M Series C readiness",
-      "Built FP&A for 40+ locations",
-      "Ran diligence through acquisition",
+      "Raised $300M+ in capital across Series B/C, venture debt, and SPAC IPO",
+      "Led UGE International through SPAC IPO on the Toronto Venture Exchange",
+      "Ran finance teams and operational transitions across 4 continents",
     ],
-    chips: ["Real Estate", "Consumer", "M&A"],
+    chips: ["Real Estate", "Finance", "Tech"],
+    photoUrl:
+      "https://static.wixstatic.com/media/5084f0_6f67c526803546fa8695a282e5b1c292~mv2.jpg/v1/crop/x_0,y_278,w_1132,h_1133/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(12)_edited.jpg",
   },
   {
-    name: "Vanessa Kwan",
-    role: "Senior Finance Operator",
-    priorCompanies: ["Goldman Sachs", "DTC brand"],
+    name: "Erika Velazquez",
+    role: "Marketing Operating Partner",
+    priorCompanies: ["Morning Brew", "The Guardian"],
     outcomes: [
-      "Raised $45M across Series A–C",
-      "Improved gross margin +12 pts",
-      "Owned board reporting cadence",
+      "Drove 550% user growth and 30% engagement lift at The Voice in 5 months",
+      "Doubled CTR and unlocked new ad revenue streams at Morning Brew",
+      "5x increase in average deal size through repositioning",
     ],
-    chips: ["Consumer", "DTC", "Fundraising"],
+    chips: ["New Media", "Consumer", "GenAI"],
+    photoUrl:
+      "https://static.wixstatic.com/media/5084f0_9ee6e722e8564a30a97f2c7ba2767e8b~mv2.png/v1/crop/x_115,y_307,w_938,h_940/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(13).png",
   },
   {
-    name: "Kostja Mirkovic",
-    role: "Senior GTM Operator",
-    priorCompanies: ["LinkedIn", "Talent Solutions"],
+    name: "Elaine Bogart",
+    role: "Finance Operating Partner",
+    priorCompanies: ["Fullscreen", "Nifty's"],
     outcomes: [
-      "Scaled ARR from $8M → $32M",
-      "Built enterprise motion from zero",
-      "Rebuilt comp + territory model",
+      "Led $120M+ in exit value (Nifty's→Moonpay, P3→Deluxe, Seibo→4Wall)",
+      "Built finance infrastructure at Fullscreen for 10x revenue growth",
+      "98% EBITDA improvement and 2 years of runway secured at Mojix",
     ],
-    chips: ["B2B SaaS", "Enterprise", "GTM Reset"],
+    chips: ["Tech", "Web3", "Media"],
+    photoUrl:
+      "https://static.wixstatic.com/media/5084f0_1ae2bc09c75742eea3b45aa72d11aeee~mv2.png/v1/crop/x_0,y_283,w_1152,h_1151/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(72).png",
   },
   {
-    name: "Laura Merling",
-    role: "Senior Operations Operator",
-    priorCompanies: ["Google", "Mobility startup"],
+    name: "Victoria Kasumu",
+    role: "People Operating Partner",
+    priorCompanies: ["Zocdoc", "Pager Health"],
     outcomes: [
-      "Cut ops cost per unit by 28%",
-      "Stood up 3 new markets in 6 mo",
-      "Hired + onboarded full ops org",
+      "Scaled Zocdoc from ~50 to 700+ while maintaining high retention",
+      "Raised eNPS by 30 points at a leading SaaS company",
+      "Enabled 40% team growth and 15% engagement lift at Pager Health",
     ],
-    chips: ["Mobility", "Operations", "Scaling"],
+    chips: ["Hospitality", "Tech/SaaS", "Healthcare"],
+    photoUrl:
+      "https://static.wixstatic.com/media/5084f0_c97a4bd1542f40d6b6a86c2bf84410d4~mv2.png/v1/crop/x_0,y_144,w_1152,h_1152/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(15).png",
   },
 ];
 
