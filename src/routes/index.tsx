@@ -731,19 +731,19 @@ function Index() {
             </h2>
           </div>
 
-          <div className="rounded-3xl border border-white/10 overflow-hidden divide-y divide-white/10">
-            <div className="hidden md:grid grid-cols-3 bg-white/[0.03]">
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Dimension</div>
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">The old way</div>
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-accent">Veep</div>
+          <div className="border-t border-white/10 divide-y divide-white/10">
+            <div className="hidden md:grid grid-cols-3">
+              <div className="py-4 font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft">Dimension</div>
+              <div className="py-4 px-5 font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft">The old way</div>
+              <div className="py-4 px-5 font-mono text-[10px] uppercase tracking-[0.14em] text-accent">Veep</div>
             </div>
             {differentiators.map((r) => (
-              <div key={r.dim} className="grid md:grid-cols-3 gap-y-2 gap-x-0 p-5 md:p-0">
-                <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">
+              <div key={r.dim} className="grid md:grid-cols-3 gap-y-2 py-6 md:py-6">
+                <div className="md:pr-5 font-mono text-[11px] uppercase tracking-[0.14em] text-stone-soft self-start">
                   {r.dim}
                 </div>
-                <div className="md:p-5 text-sm text-stone leading-relaxed">{r.old}</div>
-                <div className="md:p-5 text-sm text-cream leading-relaxed md:bg-accent/[0.06]">
+                <div className="md:px-5 text-sm text-stone leading-relaxed">{r.old}</div>
+                <div className="md:px-5 text-sm text-cream leading-relaxed">
                   {r.veep}
                 </div>
               </div>
