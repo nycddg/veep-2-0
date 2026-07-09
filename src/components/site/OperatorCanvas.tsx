@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import headshotAsset from "@/assets/operator-headshot.png.asset.json";
 
 const MATRIX = [
   { label: "Functional Depth", value: 97 },
@@ -15,10 +16,12 @@ export function OperatorCanvas() {
 
       <div className="relative">
         {/* Headshot slot */}
-        <div className="relative z-10 mx-auto w-full aspect-[16/9] max-w-2xl rounded-3xl bg-gradient-to-br from-[#1a1c2e] to-[#0a0c16] border border-white/10 overflow-hidden flex items-center justify-center shadow-2xl">
-          <div className="w-32 h-32 rounded-full bg-accent/5 flex items-center justify-center border border-accent/30 shadow-[0_0_60px_rgba(99,102,241,0.15)]">
-            <span className="text-accent text-4xl font-extrabold tracking-tighter">OP</span>
-          </div>
+        <div className="relative z-10 mx-auto w-full aspect-[16/9] max-w-2xl rounded-3xl bg-gradient-to-br from-[#1a1c2e] to-[#0a0c16] border border-white/10 overflow-hidden shadow-2xl">
+          <img
+            src={headshotAsset.url}
+            alt="Vetted operator headshot"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Match badge */}
