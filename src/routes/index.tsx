@@ -424,23 +424,39 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-5 md:gap-6">
-            {problems.map((p) => (
-              <div key={p.t} className="glass-card rounded-3xl p-7">
-                <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
-                <p className="mt-4 text-sm text-stone leading-relaxed">{p.d}</p>
+          <div className="border-t border-white/10">
+            {problems.map((p, i) => (
+              <div
+                key={p.t}
+                className="grid grid-cols-[auto_1fr] md:grid-cols-[5rem_1fr_1fr] gap-x-6 md:gap-x-10 gap-y-3 py-8 md:py-10 border-b border-white/10"
+              >
+                <span className="font-mono text-[10px] tracking-[0.14em] text-accent pt-2">
+                  0{i + 1}
+                </span>
+                <h3 className="text-2xl md:text-3xl text-cream tracking-tight leading-[1.15] col-span-1">
+                  {p.t}
+                </h3>
+                <p className="text-sm md:text-base text-stone leading-relaxed max-w-prose col-start-2 md:col-start-3 md:pl-0 md:mt-1">
+                  {p.d}
+                </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-14 md:mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
-            {alternatives.map((a) => (
-              <div key={a.t} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-                <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Instead of</div>
-                <div className="mt-3 font-serif text-xl text-cream/85 tracking-tight">{a.t}</div>
-                <p className="mt-3 text-sm text-stone leading-relaxed">{a.d}</p>
-              </div>
-            ))}
+          <div className="mt-20 md:mt-24">
+            <div className="mb-8 font-mono text-[10px] tracking-[0.14em] uppercase text-stone-soft">
+              Instead of
+            </div>
+            <div className="grid md:grid-cols-3 md:divide-x divide-y md:divide-y-0 divide-white/10 border-t border-b md:border-b-0 border-white/10">
+              {alternatives.map((a) => (
+                <div key={a.t} className="py-7 md:py-8 md:px-8 md:first:pl-0 md:last:pr-0">
+                  <div className="text-lg md:text-xl text-cream/90 tracking-tight leading-tight">
+                    {a.t}
+                  </div>
+                  <p className="mt-3 text-sm text-stone leading-relaxed">{a.d}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -466,16 +482,16 @@ function Index() {
                 documentation, not dependency.
               </p>
             </div>
-            <div className="glass-card rounded-3xl p-10 space-y-6">
-              <div className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent">The Veep model</div>
+            <div className="lg:pl-10 lg:border-l lg:border-white/10 space-y-2">
+              <div className="font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-accent pb-2">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
                 ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
                 ["Priced to scope", "Advisory, Sprint, Operator, Pod, or Operator in the Loop — structured around the work, not hourly browsing."],
                 ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
               ].map(([t, d]) => (
-                <div key={t} className="border-t border-white/10 pt-5 first:border-0 first:pt-0">
-                  <div className="font-serif text-xl text-cream tracking-tight">{t}</div>
+                <div key={t} className="border-t border-white/10 pt-5 pb-5">
+                  <div className="text-lg md:text-xl text-cream tracking-tight">{t}</div>
                   <p className="mt-2 text-sm text-stone leading-relaxed">{d}</p>
                 </div>
               ))}
@@ -518,58 +534,40 @@ function Index() {
             Just a few of the 150+ operators in our invite-only network.
           </p>
 
-          {/* Network impact */}
-          <div className="mt-16">
-            <div className="flex items-center gap-4 mb-10">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-accent/20" />
+          {/* Network impact — editorial ledger, no card */}
+          <div className="mt-24 md:mt-28">
+            <div className="flex items-baseline justify-between gap-6 mb-8 border-b border-white/10 pb-4">
               <SectionEyebrow>Network impact</SectionEyebrow>
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-accent/20" />
+              <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-stone-soft">
+                Aggregated across roster
+              </span>
             </div>
 
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-secondary">
-              {/* Subtle dot grid */}
-              <div
-                className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                style={{
-                  backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-                  backgroundSize: "20px 20px",
-                }}
-              />
-
-              <div className="relative grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-white/5">
-                {networkImpact.map((m, i) => (
+            <div className="grid md:grid-cols-2">
+              {networkImpact.map((m, i) => (
+                <div
+                  key={m.label}
+                  className={`grid grid-cols-[8rem_1fr] md:grid-cols-[10rem_1fr] gap-x-6 py-6 md:py-7 border-b border-white/10 ${
+                    i % 2 === 0 ? "md:pr-10 md:border-r md:border-white/10" : "md:pl-10"
+                  }`}
+                >
                   <div
-                    key={m.label}
-                    className="p-7 md:p-10 flex flex-col gap-3 group transition-colors duration-300 hover:bg-white/[0.015]"
+                    className="font-mono text-3xl md:text-4xl text-cream tracking-tight leading-none tabular-nums"
+                    style={{ fontFeatureSettings: '"zero", "ss01"' }}
                   >
-                    <div className="flex items-center gap-2.5">
-                      <div className="relative">
-                        {i === 0 && (
-                          <div className="absolute inset-0 animate-ping rounded-full bg-accent/40" />
-                        )}
-                        <div className="relative w-2 h-2 rounded-full bg-accent" />
-                      </div>
-                      <span className="font-mono text-[10px] text-stone-soft uppercase tracking-[0.14em] font-medium">
-                        {m.label}
-                      </span>
+                    {m.figure}
+                  </div>
+                  <div>
+                    <div className="text-sm md:text-base text-cream tracking-tight leading-tight">
+                      {m.label}
                     </div>
-                    <div className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-none">
-                      {m.figure}
-                    </div>
-                    <p className="text-xs text-stone leading-relaxed">
+                    <p className="mt-1.5 text-xs md:text-[13px] text-stone leading-relaxed">
                       {m.detail}
                     </p>
                   </div>
-                ))}
-              </div>
-
-              {/* Scan line */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.07] to-transparent h-20 -top-20 animate-scan pointer-events-none" />
+                </div>
+              ))}
             </div>
-
-            <p className="mt-4 text-sm text-stone">
-              Aggregated outcomes across our operator roster.
-            </p>
           </div>
 
           <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
@@ -598,16 +596,21 @@ function Index() {
               <span className="text-accent">before the executive hire.</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-10 lg:gap-x-12 border-t border-white/10">
             {benefits.map((b, i) => (
-              <div key={b.t} className="glass-card rounded-3xl p-7">
-                <div className="font-mono text-[10px] tracking-[0.12em] text-accent">
+              <div
+                key={b.t}
+                className="py-7 md:py-8 border-b border-white/10 grid grid-cols-[auto_1fr] gap-x-5"
+              >
+                <span className="font-mono text-[10px] tracking-[0.14em] text-accent pt-1.5">
                   0{i + 1}
+                </span>
+                <div>
+                  <div className="text-lg md:text-xl text-cream tracking-tight leading-tight">
+                    {b.t}
+                  </div>
+                  <p className="mt-2.5 text-sm text-stone leading-relaxed max-w-prose">{b.d}</p>
                 </div>
-                <div className="mt-5 font-serif text-2xl text-cream tracking-tight leading-tight">
-                  {b.t}
-                </div>
-                <p className="mt-3 text-sm text-stone leading-relaxed">{b.d}</p>
               </div>
             ))}
           </div>
@@ -635,9 +638,11 @@ function Index() {
               See full pricing →
             </Link>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 sm:divide-x divide-y sm:divide-y-0 lg:divide-y-0 divide-white/10 border-t border-b border-white/10">
             {engagements.map((e) => (
-              <EngagementTile key={e.name} {...e} />
+              <div key={e.name} className="sm:px-6 lg:px-8 sm:first:pl-0 sm:last:pr-0 lg:first:pl-0 lg:last:pr-0">
+                <EngagementTile {...e} />
+              </div>
             ))}
           </div>
         </div>
@@ -668,20 +673,23 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 md:divide-x divide-y md:divide-y-0 divide-white/10 border-t border-b md:border-b-0 border-white/10">
             {cases.map((c) => (
-              <div key={c.tag} className="glass-card rounded-3xl p-7 flex flex-col">
-                <span className="text-[10px] font-medium tracking-[0.12em] uppercase text-accent">
+              <div key={c.tag} className="flex flex-col py-8 md:py-10 md:px-8 md:first:pl-0 md:last:pr-0">
+                <span className="font-mono text-[10px] font-medium tracking-[0.14em] uppercase text-accent">
                   {c.tag}
                 </span>
-                <p className="mt-6 text-sm text-stone leading-relaxed">
+                <p className="mt-7 text-sm text-stone leading-relaxed">
                   <span className="text-cream">Trigger. </span>{c.trigger}
                 </p>
-                <div className="my-5 border-t border-white/10" />
+                <div className="my-6 border-t border-white/10" />
                 <p className="text-sm text-stone leading-relaxed">
                   <span className="text-cream">Outcome. </span>{c.outcome}
                 </p>
-                <div className="mt-auto pt-6 font-serif text-2xl text-cream tracking-tight">
+                <div
+                  className="mt-auto pt-10 font-mono text-3xl md:text-4xl text-cream tracking-tight tabular-nums"
+                  style={{ fontFeatureSettings: '"zero", "ss01"' }}
+                >
                   {c.metric}
                 </div>
               </div>
@@ -725,19 +733,19 @@ function Index() {
             </h2>
           </div>
 
-          <div className="rounded-3xl border border-white/10 overflow-hidden divide-y divide-white/10">
-            <div className="hidden md:grid grid-cols-3 bg-white/[0.03]">
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Dimension</div>
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">The old way</div>
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-accent">Veep</div>
+          <div className="border-t border-white/10 divide-y divide-white/10">
+            <div className="hidden md:grid grid-cols-3">
+              <div className="py-4 font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft">Dimension</div>
+              <div className="py-4 px-5 font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft">The old way</div>
+              <div className="py-4 px-5 font-mono text-[10px] uppercase tracking-[0.14em] text-accent">Veep</div>
             </div>
             {differentiators.map((r) => (
-              <div key={r.dim} className="grid md:grid-cols-3 gap-y-2 gap-x-0 p-5 md:p-0">
-                <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">
+              <div key={r.dim} className="grid md:grid-cols-3 gap-y-2 py-6 md:py-6">
+                <div className="md:pr-5 font-mono text-[11px] uppercase tracking-[0.14em] text-stone-soft self-start">
                   {r.dim}
                 </div>
-                <div className="md:p-5 text-sm text-stone leading-relaxed">{r.old}</div>
-                <div className="md:p-5 text-sm text-cream leading-relaxed md:bg-accent/[0.06]">
+                <div className="md:px-5 text-sm text-stone leading-relaxed">{r.old}</div>
+                <div className="md:px-5 text-sm text-cream leading-relaxed">
                   {r.veep}
                 </div>
               </div>
@@ -749,10 +757,10 @@ function Index() {
       {/* 10 — FOR PORTFOLIOS (secondary audience band) */}
       <section id="portfolios" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="glass-card rounded-3xl p-8 md:p-14 grid lg:grid-cols-5 gap-8 md:gap-10 items-center">
+          <div className="border-t border-b border-white/10 py-14 md:py-20 grid lg:grid-cols-5 gap-10 md:gap-14 items-start">
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>For PE, VC, and family-office portfolios</SectionEyebrow>
-              <h2 className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-cream tracking-tight leading-[1.05]">
                 One roster. Every portco. Ready when the work needs an owner.
               </h2>
               <p className="text-stone leading-relaxed">
@@ -761,7 +769,7 @@ function Index() {
                 priority stalls.
               </p>
             </div>
-            <div className="lg:col-span-2 flex flex-col lg:items-end gap-4">
+            <div className="lg:col-span-2 flex flex-col lg:items-end gap-4 lg:pt-2">
               <Link
                 to="/for-portfolios"
                 className="w-full sm:w-auto text-center rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition min-h-11 inline-flex items-center justify-center"

@@ -1,106 +1,74 @@
-# Production polish — phased launch cleanup
+# Editorial redesign — remove the AI-bento feel
 
-A three-phase pass. You review after each phase before I start the next. No brand redesign, no new decorative ideas, no copy rewrites (only fixing awkward line breaks and clipped text).
+## Direction
 
-Note on system tokens up front: current `--stone-soft` is `oklch(0.55 0.03 255)` on a `oklch(0.115)` navy background — that fails WCAG AA at small sizes. That's the root cause of the "faint labels / tiny low-contrast text" complaint. Phase 1 fixes it at the token level so every page benefits without hunting per-component.
+Keep the dark navy canvas, IBM Plex system, copy, page structure, and offer intact. Remove the reflex of wrapping every content unit in a rounded, faintly-bordered card. Move weight to typography, rules, alignment, and negative space. Introduce section-to-section rhythm variation so the page stops feeling like a stack of identical bento tiles.
 
----
+## Global token/system changes (`src/styles.css`)
 
-## Phase 1 — Foundations (site-wide primitives)
+- Reduce global radius: `--radius: 0.5rem` → `0.25rem`. Kill pillowy corners on everything derived from it (buttons stay pill via explicit `rounded-full`; big panels become near-square).
+- Retire `glass-card` as the default container. Keep the utility available but stop using it for content blocks — reserve for one or two deliberate emphasis moments (final CTA, one operator spotlight).
+- Add two new editorial utilities:
+  - `.rule-row` — top hairline + generous vertical padding, no background, no border on sides.
+  - `.col-rule` — vertical hairline between columns (used to replace card grids with divided columns).
+- Slightly stronger `--rule` opacity so hairlines can carry structure without needing a box around them.
 
-Ship first, review, then move on. Low regression risk, highest impact.
+## Homepage (`src/routes/index.tsx`) — section by section
 
-**1. Typography discipline (src/styles.css)**
-- Cap all heading weights at 500; `strong`/`b` already 500. Sweep components with `rg` for `font-bold`, `font-semibold` (700/600), and `font-extrabold` — downgrade to `font-medium` (500) or remove entirely; keep 600 only for the single strongest CTA label.
-- Normalize eyebrow tracking from `0.14em` → `0.12em` where currently `0.14` (mono-label utility) so small caps read cleanly at 11px.
-- Add a shared `.body-copy` scale? No — keep utility classes, but tighten `text-sm` body usage: audit for `text-stone` on `text-xs` (drop to labels only).
-- Fix hero headline balance: `text-wrap: balance` is already global; verify no route overrides it.
+1. **Problems ("Critical work with no clear owner", etc.)** — Currently a 2×2 card grid. Replace with a numbered editorial list: `01 / 02 / 03 / 04` mono index at left, headline in Plex Sans display size, sub in stone, hairline between rows. No card, no border box.
 
-**2. Contrast tokens (src/styles.css)**
-- Raise `--stone` from `oklch(0.72 …)` → `oklch(0.78 …)` (secondary body).
-- Raise `--stone-soft` from `oklch(0.55 …)` → `oklch(0.66 …)` (labels/meta) — clears AA at 12px.
-- Raise `--rule` from `10%` white → `12%` for card borders that currently disappear on some monitors.
-- Verify `text-cream/70`, `text-cream/80`, `text-white/60` usages; replace `/60` on body text with `/80` or `text-stone`.
+2. **"Instead of" alternatives** — Replace three cards with a three-column split divided by vertical hairlines (`col-rule`), left-aligned, no backgrounds. Section itself sits under a `rule-row` top hairline with a mono eyebrow.
 
-**3. Focus + interaction states (src/styles.css + primitives)**
-- Add a global visible focus ring utility (`focus-visible:ring-2 ring-accent ring-offset-2 ring-offset-background`) applied to every `<a>`, `<button>` primitive. Currently only some CTAs have it.
-- Standardize link underline offset + decoration color across `PageHero`, `FooterCTA`, `SiteFooter`, pricing, portfolio "See scope →" links — all use `underline-offset-8 decoration-white/20 hover:decoration-white/60`.
+3. **Operator spotlight (`OperatorProofCard` spotlight variant)** — Keep the portrait, but drop the ringed card chrome. Portraits become full-bleed rectangles with a hairline caption block underneath (name, role, prior companies in mono, summary as pretty-wrapped paragraph). One spotlight can retain a subtle container as the deliberate emphasis moment.
 
-**4. CTA system (new file: src/components/site/cta.tsx or inline into primitives)**
-Extract the two variants already duplicated across `PageHero`, `FooterCTA`, `SiteHeader`, index, pricing:
-- `PrimaryCTA` — cream pill, ink text, arrow icon, 44px min-height.
-- `SecondaryCTA` — underline link, cream/80 → cream hover.
-- Replace inline copies in `PageHero`, `FooterCTA`, `SiteHeader`, `index.tsx`, `pricing.tsx`, `for-portfolios.tsx`. One component, one hover/focus behavior.
+4. **Stats / Network Impact** — Replace the even bento grid with an asymmetric editorial table: figure in large mono display, label + detail in a two-column row with a top hairline. 4 rows × 2 columns on desktop, stacked on mobile. No card backgrounds.
 
-**5. Site header + footer polish**
-- Header: bump nav link size from `text-sm text-stone` → `text-sm text-cream/85`; increase gap between hash nav and route nav; ensure active route uses `text-cream` (already does). Ensure mobile menu tap targets ≥ 44px.
-- Footer: raise column-title contrast (currently `text-stone-soft` at 11px — worst offender); increase link contrast from `text-cream/85` → `text-cream/90`; tighten column gap on desktop, ensure email link stays the visual anchor.
-- Hide the Lovable badge via `set_badge_visibility(hide_badge: true)`.
+5. **Benefits (6 items)** — Convert from grid-of-cards to a two-column list of hairline rows. Each row: small mono index, bold title line, stone sub. Removes the "SaaS feature grid" look entirely.
 
-**6. Card system audit (components/site/*)**
-- Normalize `EngagementTile`, `OperatorProofCard`, pricing tier cards, FAQ items, portfolio cards to one padding scale (`p-6` inside; `pt-7 pb-6 px-6` for tall cards).
-- Normalize border color to `border-white/10` (via `--rule` bump above) and hover to `hover:border-white/25`.
-- Remove any card that mixes `bg-white/5` with a border ring (redundant); pick one.
+6. **Engagements / Pricing preview (`EngagementTile`)** — Rewrite as a restrained pricing table: name (left), price (mono, tabular), best-when (paragraph), link. Vertical hairlines divide columns on desktop; horizontal hairlines stack on mobile. "Featured" indicated only by a mono `MOST COMMON` micro-label above the name — no colored box.
 
----
+7. **How it works (`StepFlow`)** — Currently four boxed panels separated by a background rule. Replace with a horizontal editorial process: mono step number, title, description; separated by vertical hairlines on desktop, stacked hairline rows on mobile. No box backgrounds.
 
-## Phase 2 — Homepage + Pricing
+8. **Proof cases (`cases` array)** — Convert the three proof cards into three tall editorial columns divided by vertical rules: mono tag on top, trigger paragraph, outcome paragraph separated by a hairline, metric in large mono display at bottom. Keep the equal-spacing divider learning from the prior turn but applied without a card shell.
 
-**Homepage (src/routes/index.tsx)**
-- Hero: verify tail-phrase accent, tighten sub max-width, confirm CTAs use new `PrimaryCTA`/`SecondaryCTA`.
-- Logo wall: raise opacity if currently `<70%`.
-- Operator canvas / floating headshots: verify alignment on 1280 / 1024 / 768 / mobile; fix any headshot that overflows on tablet.
-- Problem grid, benefits grid, process, proof, comparison, FAQ: reduce section vertical padding where it exceeds `py-28` without hierarchical reason; add rhythm variance (alternate `py-20` / `py-28`) so the page doesn't feel like N identical card grids.
-- Comparison table: mobile behavior — verify no horizontal scroll trap; if too wide, stack rows as cards under `md:`.
-- Final CTA: use shared `FooterCTA`.
+9. **Comparison / differentiators** — Present as a real editorial table: dimension in mono left column, Veep column, Old-way column, hairlines between rows. Header row uses eyebrow micro-caps.
 
-**Pricing (src/routes/pricing.tsx)**
-- Tighten tier columns: align price rows to a single baseline (`min-h-` on the price block), bullets share a top position across all four columns.
-- "Most common" chip: keep coral but reduce size and move above the tier name for scan order.
-- "What we don't charge for": switch from 4-col compressed grid to 2×2 on md; more line-height in body.
-- Pricing FAQ: current 3-col grid crowds long questions — switch to 2-col on md, 1-col mobile with more spacing.
-- Portfolio callout: strengthen left-rule and confirm CTA visibility.
+10. **FAQ** — Replace 2-column card grid with a single-column editorial Q&A: hairline between items, question in Plex Sans display size, answer indented under it. Optionally use a `<details>` for progressive disclosure without any card chrome.
 
----
+11. **Final CTA (`FooterCTA`)** — This is one of the few places a deliberate container earns its keep. Keep an emphasis block but square it off (radius from token), remove faint ring, use a strong background contrast + tight typographic composition (headline left, CTA right — asymmetric, not centered).
 
-## Phase 3 — Portfolio, FAQ page, mobile pass, hygiene
+## Shared components touched
 
-**Portfolio (src/routes/for-portfolios.tsx)**
-- Bring hero into parity with homepage hero (spacing, tail accent, CTA pair).
-- Roster card: it's a single tier — reframe as a two-column layout (left: what's in the roster; right: what's billed by SOW) so it doesn't feel sparse.
-- "How it works" 4-step + "What the retainer covers" 2-card: unify card treatment with Phase 1 card system.
-- Final CTA: portfolio-specific copy in `FooterCTA` (already accepts headline/sub props).
+- `src/components/site/OperatorProofCard.tsx` — spotlight variant: remove `rounded-lg bg-white/[0.02] ring-1 ring-white/8` chrome; caption sits on a top hairline.
+- `src/components/site/StepFlow.tsx` — remove `bg-white/10 rounded-3xl overflow-hidden border` wrapper; adopt hairline dividers.
+- `src/components/site/EngagementTile.tsx` — rebuilt as a table row (see #6).
+- `src/components/site/ObjectionList.tsx` — remove `glass-card rounded-3xl` grid; convert to hairline Q&A list.
+- `src/components/site/StatsBand.tsx` — audit and reshape to match #4.
+- `src/components/site/CompareTable.tsx` — audit; ensure it's a true editorial table (no rounded panels).
+- `src/components/site/FooterCTA.tsx` — asymmetric composition (see #11).
+- `src/components/site/Testimonials.tsx` — already de-carded in the last turn; keep, verify radius/hairline consistent with the new system.
+- `src/components/site/PageHero.tsx` — verify hero uses left-aligned or intentionally-composed layout, not a centered card.
 
-**FAQ page (src/routes/faq.tsx)**
-- Audit for clipped answers, ensure category headings use eyebrow style consistently, add more vertical breathing between items.
+## Secondary pages
 
-**Mobile pass (all pages, viewport 375 & 414)**
-- Hero: reduce top padding from `pt-24` → `pt-14` on mobile; ensure headline doesn't wrap awkwardly (add `text-balance` fallback where missing).
-- CTA stack: primary + secondary should stack full-width on mobile with `w-full sm:w-auto` on the pill.
-- Pricing tiers: single column, ensure "Most common" chip stays with its tier.
-- Comparison table: stacked card layout if not already.
-- Footer: single column, larger tap targets, email link 18px+.
-- Verify no `overflow-x` from illustrations or floating operator cards.
+Apply the same rules to the pages that reuse the bento vocabulary: `pricing.tsx`, `services.tsx` and its children, `how-it-works.tsx`, `proof.tsx`, `compare.tsx` (+ children), `for-companies.tsx`, `for-portfolios.tsx`, `faq.tsx`, `about.tsx`. Same moves each time: swap card grids for hairline rows / divided columns / editorial tables; reduce radius; keep a container only where emphasis earns it.
 
-**Production hygiene**
-- Metadata sweep: every route has unique `title`, `description`, `og:title`, `og:description`, self-referential `canonical` + `og:url`.
-- Verify all in-page `#hash` anchors resolve to real section IDs; verify all `<Link to>` routes exist.
-- Remove dead imports and any unused components surfaced during the pass.
-- Confirm no console errors on `/`, `/pricing`, `/for-portfolios`, `/faq`, `/services*`, `/about`, `/contact`.
-- Hide Lovable badge (done in Phase 1) and confirm publish visibility.
+## Guardrails
 
----
+- No copy changes.
+- No brand/color changes beyond radius and rule strength.
+- No layout that hurts scannability — every list still reads top-to-bottom, tables still align on the same baseline.
+- Keep exactly one or two "hero moment" containers per page (final CTA, one spotlight) so contrast against the newly card-less sections is visible.
+- Mobile: all divided-column layouts collapse to hairline-stacked rows.
 
-## Technical section
+## Technical notes
 
-- **Token changes** land in `src/styles.css` under `:root` — no `@theme` shape changes, so Tailwind utilities regenerate automatically.
-- **CTA extraction** creates `src/components/site/cta.tsx` exporting `PrimaryCTA` and `SecondaryLink`, then replaces inline copies in ~6 files via targeted patches (not full rewrites).
-- **Card system** uses existing tokens; changes are className normalizations, no new utilities except one optional `@utility card-surface` if repetition warrants it.
-- **Badge**: `publish_settings--set_badge_visibility({hide_badge: true})` — requires Pro plan; if it fails I'll surface the error and leave it for you.
-- **Verification** per phase: `bun run build` for typecheck + a Playwright pass at 1280 / 768 / 375 capturing home, pricing, portfolio, FAQ; I diff screenshots against current state and flag anything I regressed.
+- Radius change is a single token edit; everything derived (`rounded-md`, `rounded-lg`, `rounded-xl`, `rounded-2xl`, `rounded-3xl`) still renders — just tighter. `rounded-full` (pills, avatars) is unaffected.
+- Vertical column rules use `divide-x divide-white/10` on the grid parent — no per-child border management.
+- Editorial tables use CSS grid with `grid-cols-[auto_1fr_1fr]` and `border-t border-white/10` on rows, avoiding real `<table>` layout issues while keeping semantics via `role="table"` where useful.
 
-## What I will NOT touch (unless you say so)
-- Operator headshots (recently cropped).
-- Route structure, URLs, copy direction.
-- Illustration components (`OperatorCanvas`, `HeroMotif`) beyond alignment/overflow fixes.
-- Backend, auth, or any server code.
+## Out of scope
+
+- Header/nav restyle.
+- Motion/animation additions.
+- Any content, offer, or route changes.
