@@ -13,7 +13,7 @@ const objections = [
   },
   {
     q: "Can I trust the operator?",
-    a: "Every operator is vetted and senior. Veep operators are former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders who have owned real outcomes before.",
+    a: "Every operator is vetted and senior. Veep operators are former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders who've owned real outcomes before.",
   },
   {
     q: "What if it is not a fit?",
