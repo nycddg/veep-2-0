@@ -48,19 +48,7 @@ export function HeroMotif() {
           }}
         />
 
-        {/* Corner meta */}
-        <div className="absolute top-5 left-5 font-mono text-[10px] tracking-[0.12em] uppercase text-cream/40">
-          Ownership · Signal
-        </div>
-        <div className="absolute top-5 right-5 flex items-center gap-2 font-mono text-[10px] tracking-[0.12em] uppercase text-cream/40">
-          <span className="h-1.5 w-1.5 rounded-full bg-accent motif-pulse" />
-          Active
-        </div>
-        <div className="absolute bottom-5 left-5 right-5 flex justify-between font-mono text-[10px] tracking-[0.12em] uppercase text-cream/30">
-          <span>Streams → Owner → Output</span>
-          <span>V-03</span>
-        </div>
-
+        {/* SVG graphic */}
         <svg
           viewBox={`0 0 ${VB} ${VB}`}
           className="absolute inset-0 h-full w-full"
