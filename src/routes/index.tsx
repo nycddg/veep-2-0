@@ -73,7 +73,7 @@ const spotlightOperators = [
     role: "Marketing Operating Partner",
     priorCompanies: ["MORNING BREW", "THE NEW REPUBLIC"],
     summary:
-      "Story-driven marketer with deep expertise in brand strategy, product marketing, and audience growth. Specializes in launching, scaling, and repositioning for impact. At Morning Brew, developed a new newsletter ad product that doubled the average click-through rate.",
+      "Story-driven marketer with deep expertise in brand strategy, product marketing, and audience growth. Specializes in launching and repositioning for impact. At Morning Brew, developed a new newsletter ad product that doubled the average CTR.",
     chips: ["New Media", "Consumer", "GenAI"],
     photoUrl: erikaVelazquezHeadshot.url,
   },
@@ -82,7 +82,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["Fullscreen", "Nifty's"],
     summary:
-      "Powerhouse CFO with 15+ years of experience leading financial transformation, operational scaling, and strategic exits across SaaS, Web3, and new media. At Mojix, drove a +98% EBITDA turnaround and completed a successful international spin-off and sale.",
+      "Powerhouse CFO with 15+ years of experience leading financial transformation and strategic exits across SaaS, Web3, and new media. At Mojix, drove a +98% EBITDA turnaround and completed a successful international sale.",
     chips: ["Tech", "Web3", "Media"],
     photoUrl: elaineBogartHeadshot.url,
   },
@@ -91,7 +91,7 @@ const spotlightOperators = [
     role: "People Operating Partner",
     priorCompanies: ["Zocdoc", "Pager Health"],
     summary:
-      "Seasoned people leader and strategic partner who builds growth-driven operations by aligning talent, culture, and business goals. At David Zwirner, hired 50+ employees in 90 days while reducing redundancy 30% and increasing retention 15%.",
+      "Seasoned people leader who builds growth-focused operations by aligning talent, culture, and business goals. At David Zwirner, hired 50+ employees in 90 days while reducing redundancy 30% and increasing retention 15%.",
     chips: ["Hospitality", "Tech/SaaS", "Healthcare"],
     photoUrl: victoriaKasumuHeadshot.url,
   },
@@ -119,7 +119,7 @@ const problems = [
 const alternatives = [
   { t: "Retained search", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you." },
   { t: "Consulting firms", d: "Recommendations without ownership. The work still lands back on your team." },
-  { t: "Marketplaces and freelancers", d: "Profiles to browse. Variable quality. More decisions for the founder." },
+  { t: "Marketplaces and freelancers", d: "Profiles to browse. Variable quality. More decisions and oversight for the founder." },
 ];
 
 const benefits = [
@@ -459,7 +459,7 @@ function Index() {
                 Tell us what's stuck: a fundraise, GTM reset, margin issue, leadership
                 gap, or a strategic decision that keeps coming back to you. We define the
                 work, recommend the right level of support (Advisory, Sprint, Operator,
-                or Pod), and match the operator to the job.
+                or Pod), and match operators to the job.
               </p>
               <p className="mt-4 text-stone text-base md:text-lg leading-relaxed">
                 When the work lands or the permanent hire arrives, we hand off with
@@ -470,7 +470,7 @@ function Index() {
               <div className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
-                ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, product leaders, people leaders, and chiefs of staff."],
+                ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
                 ["Priced to scope", "Advisory, Sprint, Operator, Pod, or Operator in the Loop — structured around the work, not hourly browsing."],
                 ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
               ].map(([t, d]) => (
@@ -574,7 +574,7 @@ function Index() {
 
           <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
             <p className="text-sm text-stone">
-              150+ vetted senior operators · avg. 18 yrs experience · every operator has held the seat.
+              150+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
             </p>
             <a
               href={BOOKING_URL}
