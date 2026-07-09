@@ -1,26 +1,19 @@
-Plan: Update the barcode motif in `src/components/site/HeroMotif.tsx`.
+Tune `src/components/site/HeroMotif.tsx` so the barcode feels uniform-with-personality rather than a spectrum:
 
-1. Increase line count
-   - `LINES` from 32 → 48.
-   - Keep `VB = 480` and `SIDE_PAD = 40`, so spacing lands between the previous 80-line and 32-line densities.
+**Line heights — tighten the variation**
+- Raise `BAND_MIN` from `0.18 * VB` to about `0.62 * VB` and lower `BAND_MAX` from `0.78 * VB` to about `0.74 * VB`, so every line occupies most of the vertical band and only nudges up/down.
+- Simplify `heightAt(i)` to a single low-amplitude noise (one sine + a small secondary term) so heights drift ±~6% around the midpoint instead of swinging like an EQ meter.
 
-2. Keep the ramp-up plateau stroke-weight profile
-   - Left 60% (`t = 0 → 0.6`): thin weight (`MIN_W = 0.6`).
-   - Middle 20% (`t = 0.6 → 0.8`): ramp up and plateau at the thick weight (`MAX_W = 6.5`).
-   - Right 20% (`t = 0.8 → 1.0`): ramp back down to thin and stay thin.
-   - The same smoothstep envelope from the current file stays in place.
+**Gradient — more opaque edges**
+- Keep the `userSpaceOnUse` linear gradient spanning the tallest line, but change the stop profile so the navy fade only happens in the outer ~15% of each end:
+  - 0%: `#050810`
+  - 15%: `#6366f1` (indigo already visible near the tip)
+  - 50%: `#6366f1` (indigo core unchanged)
+  - 85%: `#6366f1`
+  - 100%: `#050810`
+- Net effect: line ends read as solid indigo with just a soft feather into the navy, instead of long fades that made short lines nearly disappear.
 
-3. Replace the solid cream stroke with a vertical gradient
-   - Add a single `<linearGradient>` in `<defs>` with `gradientUnits="objectBoundingBox"`, running from the top of each line to the bottom.
-   - Stop 0%: the page background color (`var(--background)` / `#050810`).
-   - Stop 50%: the cream foreground color (`var(--cream)` / `#F5F1EA`) for the highest contrast at the center of each line.
-   - Stop 100%: the background color again, so each line fades into the background at its ends.
-   - Each line uses `stroke="url(#lineGradient)"` instead of the solid cream stroke.
+**Keep untouched**
+- `LINES = 48`, `SIDE_PAD`, `COL_GAP`, ramp-up-plateau stroke-width envelope (`envelopeAt`), `strokeLinecap="round"`, indigo `#6366f1` accent, navy `#050810` background.
 
-4. Remove the per-line opacity envelope
-   - The gradient itself now handles the fade, so the `MIN_OP`/`MAX_OP` opacity ramp is dropped and all lines render at full opacity.
-   - Stroke width remains the only variable driven by the ramp-up plateau envelope.
-
-5. No other files or dependencies change.
-
-Expected result: a 48-line barcode with a single thick cluster on the right, where every line is brightest in its vertical center and softly dissolves into the deep navy background at the top and bottom.
+No other files change.

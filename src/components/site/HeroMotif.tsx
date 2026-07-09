@@ -11,8 +11,8 @@ const USABLE_W = VB - SIDE_PAD * 2;
 const COL_GAP = USABLE_W / (LINES - 1);
 const START_X = SIDE_PAD;
 
-const BAND_MAX = VB * 0.78;
-const BAND_MIN = VB * 0.18;
+const BAND_MAX = VB * 0.74;
+const BAND_MIN = VB * 0.62;
 const MAX_W = 6.5;
 const MIN_W = 0.6;
 
@@ -30,12 +30,11 @@ function envelopeAt(i: number) {
   return 0;
 }
 
-// Pseudo-random but stable per index — evokes a sound-wave / frequency spectrum.
+// Low-amplitude drift — mostly uniform lines with just enough variation for personality.
 function heightAt(i: number) {
-  const a = Math.sin(i * 1.7) * 0.5 + 0.5;
-  const b = Math.sin(i * 0.53 + 1.3) * 0.5 + 0.5;
-  const c = Math.sin(i * 0.27 + 2.1) * 0.5 + 0.5;
-  const n = a * 0.55 + b * 0.3 + c * 0.15; // 0..1
+  const a = Math.sin(i * 0.9 + 0.4) * 0.5 + 0.5;
+  const b = Math.sin(i * 0.31 + 1.7) * 0.5 + 0.5;
+  const n = a * 0.75 + b * 0.25; // 0..1
   return BAND_MIN + (BAND_MAX - BAND_MIN) * n;
 }
 
@@ -67,7 +66,9 @@ export function HeroMotif() {
               y2={CY + BAND_MAX / 2}
             >
               <stop offset="0%" stopColor="#050810" />
+              <stop offset="15%" stopColor="#6366f1" />
               <stop offset="50%" stopColor="#6366f1" />
+              <stop offset="85%" stopColor="#6366f1" />
               <stop offset="100%" stopColor="#050810" />
             </linearGradient>
           </defs>
