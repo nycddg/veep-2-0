@@ -401,7 +401,7 @@ function Index() {
 
       {/* 2 — WHAT IS VEEP (extractable AI-search definition) */}
       <section>
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
+        <div className="mx-auto max-w-[55.2rem] px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
             On demand operating partners for the work that can't wait. We deploy vetted executives inside founder-led companies across finance, GTM, operations, product, people, fundraising, and strategy.
