@@ -1,87 +1,38 @@
-## Goal
+# Migrate `/join` from veep.work
 
-Move from stripe-of-cards pacing to editorial pacing driven by background tone. Give the site rhythm using 3 dark tones instead of decoration.
+Bring the "Join Veep" operator-application flow into this site, translated into Veep's current editorial dark-tone system (no bento cards, hairline dividers, mono eyebrows, `PageHero` treatment).
 
-## Tone system (add to `src/styles.css`)
+## New routes
 
-Define three semantic surface tokens, all dark, all AA-safe with existing `--cream` / `--stone`:
+1. **`src/routes/join.tsx`** — operator application page (primary migration target).
+   - `PageHero` — eyebrow "Join Veep", title "Step into the future of" / accent "executive leadership.", sub rewritten to match site voice (top ~1% of independent operators; embed, build, deliver; matched in 72 hours; deployed in under 10 days).
+   - Section 1 "Who we're looking for" — editorial two-column split on `bg-surface-raised` with hairline `border-t border-white/10` rows. Bullets adapted from source: prior founder / C-suite / GM / SVP experience; interested in interim, fractional, or advisory engagements; track record in fast-paced environments; strong references; fractional experience a plus, not required.
+   - Section 2 "Apply" — form on ink surface, same field styling as `contact.tsx` (reuse `Field` + `inputCls`; do not re-import from contact — inline them to keep routes independent). Fields (grouped, progressive `<details>` for optional):
+     - Required: First name, Last name, Work email, LinkedIn URL, Resume (file input), Highest executive role held (select: CEO/Founder, President/COO, CFO, CRO/CMO, CPO/CTO, GM/SVP, Other).
+     - Optional details: Personal site, Fractional/interim experience (Yes/No), Company types (checkbox group: Bootstrapped, VC-backed, PE-backed, Private, Public, Family-owned, Non-profit), Growth stages (Seed, Series A, Series B–C, Series D+, IPO, Buyout, Other), Functional expertise (CEO/GM, Strategy & Ops, Finance, People, GTM, Sales/Marketing/Revenue, Product, Operations, Other), Industry experience (text), Anything else (textarea), How did you hear of us (text).
+     - Submit → local `useState` success card (same pattern as contact).
+   - `head()`: unique title/description/og — "Join Veep — Apply to the operator roster".
 
-- `--surface-ink` — current `--background` (deep navy #050810). Hero, operator/proof, final CTA, footer.
-- `--surface-raised` — subtly lifted blue-black (~+3–4% L, same hue). Problem/urgency, benefits, FAQ.
-- `--surface-band` — charcoal-navy (slightly warmer/darker chroma shift). Pricing, roster, comparison bands.
+2. **Nav & footer wiring**
+   - `src/components/site/SiteHeader.tsx`: add `{ kind: "route", to: "/join", label: "Join" }` after FAQ in the right-side route group (both desktop + mobile nav). Extend the `to` union type.
+   - `src/components/site/SiteFooter.tsx`: add a new "For operators" column (or append to Details) with `Join Veep → /join`. Extend `FooterLink` `to` union.
 
-Expose as Tailwind utilities via `@theme inline` (`--color-surface-ink`, `--color-surface-raised`, `--color-surface-band`) so sections can use `bg-surface-raised` etc. Add a `@utility section-band` that also sets `color-scheme: dark` and a hairline `box-shadow: inset 0 1px 0 var(--color-rule)` for optional soft top separation without a hard border.
+3. **Copy consistency pass**
+   - Replace source's marketing tone ("top 1%", "powerful peer network") with Veep phrasing already used on site: "senior operators", "work that can't wait", "matched in 72 hours, deployed in under 10 days", "30-day fit guarantee" where relevant.
+   - Mono eyebrows (`font-mono text-[10px] uppercase tracking-[0.12em] text-accent`), numbered `01/02/03` list markers like contact page.
 
-Rule of use: no more than 3–4 tones total; never alternate mechanically; a band only appears when it separates a narrative chapter.
+## Visual rules (match existing site)
+- No new bento/rounded cards for the criteria list — use `border-t border-white/10` row separators on `bg-surface-raised`.
+- Form stays in a single restrained container (mirror contact.tsx `glass-card` since that pattern is still used for the form itself).
+- No new colors, tokens, or fonts.
+- No backend — form submit is client-only success state, matching contact.tsx.
 
-## Band assignment
+## Out of scope
+- No new server function, no file upload backend, no email integration.
+- No changes to other pages beyond header/footer nav additions.
+- No route-tree hand-edits (`routeTree.gen.ts` regenerates).
 
-Homepage (`src/routes/index.tsx`):
-- Hero + overview → ink
-- `#problem` → raised
-- `#solution` → ink (continues problem→solution as one chapter with just a hairline)
-- `#operators` (operator spotlight) → ink
-- `#benefits` → raised
-- `#offer` (pricing preview) → band
-- `#how` → raised
-- `#proof` → ink
-- `#vs` (comparison) → band
-- `#portfolios` → raised
-- final CTA + footer → ink
-- `#faq` → raised
-
-Pricing (`src/routes/pricing.tsx`):
-- Hero → ink
-- Tier section → band
-- Add-ons / comparison → band (continuous, hairline only)
-- Pricing FAQ → raised
-- Final CTA → ink
-
-Portfolios (`src/routes/for-portfolios.tsx`):
-- Hero → ink
-- Audit → raised
-- Process → ink
-- Retainer → band
-- Proof → ink
-- CTA → ink
-
-FAQ (`src/routes/faq.tsx`): Hero ink, list raised.
-Proof / How-it-works / Compare: apply the same 3-tone logic (ink for narrative + proof, raised for problem/steps, band for comparison tables).
-
-## Card removal (where band now carries structure)
-
-For each section receiving a tonal band, drop the outer `glass-card` / `rounded-3xl` / bordered panel and let type + rules carry it:
-
-- Homepage `#problem` (TriggerBento wrapper) → editorial rows on `bg-surface-raised`, hairline dividers instead of card grid.
-- `#benefits` grid → 2-col editorial list, no card borders.
-- `#offer` pricing preview → band with rule-separated tiers, no card chrome around each tier.
-- `#how` (StepFlow) → numbered rows separated by hairlines on the band.
-- `#vs` comparison → full-width band, borderless table with `ruled-top` / `ruled-bottom` rules only.
-- `#portfolios` → editorial split, no card container.
-- `#faq` items → rules only (they mostly are already).
-- Pricing tier cards → keep the featured tier as a subtle raised panel for hierarchy, strip chrome from the two flanking tiers so the band does the framing.
-- Pricing add-ons / portfolio audit / retainer / process → convert card grids to editorial rows.
-
-Keep card containers only where they encode real UI meaning (Testimonials quote panels, OperatorProofCard glass panel — the branded spotlight).
-
-## Section transitions
-
-- Between two same-tone sections: keep the existing `border-t border-white/10` hairline.
-- Between different tones: drop the hairline (the tone change is the separator), or use the `section-band` inset hairline for the softer case.
-- No gradient overlays, no glows, no blurred blobs added — this is tonal only.
-
-## Implementation order
-
-1. Add tokens + `section-band` utility in `src/styles.css`.
-2. Homepage: swap section `className`s to the new tone map, remove redundant card wrappers section-by-section.
-3. Pricing page: apply band + strip flanking tier chrome.
-4. Portfolios page: apply band map + convert audit/process/retainer grids to editorial rows.
-5. FAQ, Proof, How-it-works, Compare: apply band map (mostly className swaps).
-6. Visual check: run Playwright on `/`, `/pricing`, `/for-portfolios`, `/faq` at 1280×1800; confirm no more than 3 tones visible, contrast holds, no striped feel.
-
-## Guardrails
-
-- No new colors beyond the 3 surface tokens.
-- No changes to copy, illustrations, or component logic.
-- OperatorProofCard, Testimonials quote panels, featured pricing tier, header, and footer chrome unchanged.
-- All text stays on `--cream` / `--stone` — verify AA on `--surface-raised` and `--surface-band` before shipping.
+## Files touched
+- add `src/routes/join.tsx`
+- edit `src/components/site/SiteHeader.tsx`
+- edit `src/components/site/SiteFooter.tsx`
