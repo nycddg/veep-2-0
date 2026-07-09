@@ -93,9 +93,9 @@ function Page() {
       />
 
       {/* Problem */}
-      <section className="bg-surface-raised py-20 md:py-28">
+      <section className="bg-surface-raised py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12 md:mb-14">
+          <div className="max-w-3xl mb-14 md:mb-16">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Where portfolios lose time
             </div>
@@ -104,11 +104,21 @@ function Page() {
               <span className="text-accent">The work still needs an owner.</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
-            {problems.map((p) => (
-              <div key={p.t}>
-                <div className="text-lg sm:text-xl text-cream tracking-tight leading-snug">{p.t}</div>
-                <p className="mt-4 text-sm text-cream/75 leading-relaxed">{p.d}</p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-6 md:gap-8">
+            {problems.map((p, i) => (
+              <div
+                key={p.t}
+                className="bg-card rounded-2xl border border-white/10 p-6 md:p-8"
+              >
+                <div className="font-mono text-[11px] tracking-[0.14em] text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div className="mt-4 text-xl md:text-2xl text-cream tracking-tight leading-snug">
+                  {p.t}
+                </div>
+                <p className="mt-5 text-base text-cream/70 leading-relaxed">
+                  {p.d}
+                </p>
               </div>
             ))}
           </div>
