@@ -89,6 +89,9 @@ export function HeroMotif() {
               ["--dx" as string]: `${startDx}px`,
               ["--dy" as string]: `${startDy}px`,
               animationDelay: `${b.delay}s`,
+              // Base transform so bars sit at source before their delay elapses
+              // (avoids reliance on animation-fill-mode:backwards edge cases).
+              transform: `translate(${b.sx}px, ${b.sy}px) rotate(${b.sr}deg)`,
             };
             return (
               <g key={i} className="motif-bar" style={style}>
