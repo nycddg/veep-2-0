@@ -450,8 +450,7 @@ function Index() {
             <div>
               <SectionEyebrow>What we do</SectionEyebrow>
               <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
-                Senior operators to own the work{" "}
-                <span className="text-accent">that can't wait.</span>
+                Built for the{"\u00a0"}<span className="text-accent">job to be done.</span>
               </h2>
               <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
                 Tell us what's in the way, not moving, or unfortunately coming back to
