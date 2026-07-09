@@ -4,10 +4,11 @@ import { BOOKING_URL } from "@/lib/booking";
 import { LogoWall } from "@/components/site/LogoWall";
 import { Testimonials } from "@/components/site/Testimonials";
 import { OperatorProofCard } from "@/components/site/OperatorProofCard";
-import { HeroMotif } from "@/components/site/HeroMotif";
+import { OperatorCanvas } from "@/components/site/OperatorCanvas";
 import { EngagementTile } from "@/components/site/EngagementTile";
 import { StepFlow } from "@/components/site/StepFlow";
 import { TrustChip } from "@/components/site/TrustChip";
+import { Check } from "lucide-react";
 import { ObjectionList } from "@/components/site/ObjectionList";
 import { FooterCTA } from "@/components/site/FooterCTA";
 
