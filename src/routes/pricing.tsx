@@ -190,14 +190,16 @@ function Page() {
               Portfolios
             </div>
             <h3 className="mt-5 text-2xl md:text-3xl text-cream">
-              Executive Roster for PE, family offices, holdcos, and multi-company founders.
+              The right operating partners, ready when the portfolio needs them.
             </h3>
             <p className="mt-5 text-cream/80 leading-relaxed max-w-2xl">
-              Annual executive-capacity partnership for recurring leadership gaps and
-              value-creation work. Roster includes priority operator matching, quarterly
-              capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits,
-              and preferred commercial terms. Roster is $75k/year — operator deployments
-              are billed separately by SOW at preferred rates.
+              Built for PE firms, family offices, holdcos, and multi-company
+              founders that need senior operating support across recurring
+              leadership gaps, transaction moments, and value-creation work.&nbsp;Your
+              roster includes priority operator matching, quarterly capacity
+              planning, emergency CFO, COO, GTM, and operator coverage, capacity
+              audits, and preferred commercial terms for&nbsp;$75k/annually. Operator
+              deployments are scoped separately by SOW at preferred rates.
             </p>
             <div className="mt-6">
               <Link
