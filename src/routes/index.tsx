@@ -10,7 +10,6 @@ import { StepFlow } from "@/components/site/StepFlow";
 import { Check } from "lucide-react";
 import { ObjectionList } from "@/components/site/ObjectionList";
 import { FooterCTA } from "@/components/site/FooterCTA";
-import heroImage from "@/assets/Announcement_Cards_20.png.asset.json";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Content
@@ -328,61 +327,44 @@ function Index() {
     <>
       {/* 1 — HERO */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-24 md:pb-32">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-cream mb-6">
-                Because the work{"\u00a0"}<span className="text-accent">needs{"\u00a0"}an owner.</span>
-              </h1>
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-24 md:pb-32 flex flex-col items-center text-center">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-cream mb-6">
+            Because the work{"\u00a0"}<span className="text-accent">needs{"\u00a0"}an owner.</span>
+          </h1>
 
-              <p className="text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
-                Vetted senior operators to own urgent priorities and high-stakes
-                decisions before you are ready, willing, or able to make the
-                full-time executive hire.
-              </p>
+          <p className="text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
+            Vetted senior operators to own urgent priorities and high-stakes
+            decisions before you are ready, willing, or able to make the
+            full-time executive hire.
+          </p>
 
-              <div className="flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-3 mb-10 text-sm font-semibold text-cream/90">
-                {["Invite-only network", "72-hour match", "30-day fit guarantee"].map((t) => (
-                  <div key={t} className="flex items-center gap-2">
-                    <Check size={18} className="text-accent" strokeWidth={2.5} />
-                    {t}
-                  </div>
-                ))}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-16 text-sm font-semibold text-cream/90">
+            {["Invite-only network", "72-hour match", "30-day fit guarantee"].map((t) => (
+              <div key={t} className="flex items-center gap-2">
+                <Check size={18} className="text-accent" strokeWidth={2.5} />
+                {t}
               </div>
-
-              <div className="flex flex-col sm:flex-row flex-wrap items-center gap-5">
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center gap-2"
-                >
-                  Book intro call <ArrowRight size={16} />
-                </a>
-                <Link
-                  to="/"
-                  hash="how"
-                  className="text-sm text-cream/80 hover:text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60 transition pb-1"
-                >
-                  See how it works
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-md aspect-[4/5] rounded-[2rem] overflow-hidden bg-accent/10">
-                <img
-                  src={heroImage.url}
-                  alt="Veep operator"
-                  className="w-full h-full object-cover object-top"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-              </div>
-            </div>
+            ))}
           </div>
 
-          <div className="mt-20">
-            <OperatorCanvas />
+          <OperatorCanvas />
+
+          <div className="flex flex-col sm:flex-row flex-wrap items-center gap-5 mt-20">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center gap-2"
+            >
+              Book intro call <ArrowRight size={16} />
+            </a>
+            <Link
+              to="/"
+              hash="how"
+              className="text-sm text-cream/80 hover:text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60 transition pb-1"
+            >
+              See how it works
+            </Link>
           </div>
         </div>
       </section>
