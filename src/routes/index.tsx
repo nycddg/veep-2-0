@@ -507,7 +507,7 @@ function Index() {
                 name={op.name}
                 role={op.role}
                 priorCompanies={op.priorCompanies}
-                outcomes={op.outcomes}
+                summary={op.summary}
                 chips={op.chips}
               />
             ))}
