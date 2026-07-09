@@ -1,42 +1,20 @@
-Replace the copy on `/for-portfolios` with the new draft provided. This is a pure content update; the existing page structure, components, and styling are preserved.
+Clean up the "Where portfolios lose time" section on `/for-portfolios` so the 2x2 grid feels intentional, breathable, and easy to scan.
 
-Scope of changes in `src/routes/for-portfolios.tsx`:
+## Current state
+- Section padding (`py-20 md:py-28`) and the header-to-grid gap (`border-t pt-10`) feel tight on the raised navy band.
+- The four problem cards sit flat against the surface with no containers, so the 2x2 blends together.
+- Card titles and descriptions use similar weights/sizes, making the hierarchy weak.
+- There are no scan aids (numbers, rules, or icons) to guide the eye across the four items.
 
-1. **Hero section**
-   - Update `PageHero` props: title becomes `Your operating partner function, ready when the portfolio needs it.` with no accent tail (the whole title is one string).
-   - Subtext becomes the full new paragraph ending with the 72-hour / 10-day / 30-day guarantee lines.
-   - Keep existing CTAs: `Book intro call` and `Request a capacity audit`.
+## Proposed changes
+1. **Increase section rhythm** — bump the section to `py-24 md:py-32` so the raised band has the same visual weight as the chapters above and below it.
+2. **Give the header more room** — widen the headline block to `max-w-3xl` and increase the margin below it to `mb-14 md:mb-16`, removing the cramped top-rule on the grid.
+3. **Containerize each problem card** — wrap each of the four items in the existing glass-card language: `bg-card rounded-2xl border border-white/10 p-6 md:p-8`. This keeps the 2x2 distinct without breaking the dark, minimal palette.
+4. **Add scannable index markers** — prepend `01`–`04` in mono-accent labels above each card title so the four problems read as a paced list, not a wall of text.
+5. **Improve typographic hierarchy** —
+   - Card titles: `text-xl md:text-2xl text-cream tracking-tight leading-snug`
+   - Descriptions: `text-base text-cream/70 leading-relaxed` with `mt-5` separation
+6. **Increase the grid gap** — move to `gap-6 md:gap-8` so the cards breathe and the 2x2 feels like four deliberate zones, not a dense masonry block.
 
-2. **"Where portfolios lose time" section**
-   - Replace the section heading: `Transactions create volatility. The work still needs an owner.`
-   - Replace the 3 `problems` array entries with the 4 new entries: pre-close needs, post-close staffing, executive transitions, and smaller firms relying on an informal roster.
-
-3. **"Start here" / Audit section**
-   - Eyebrow stays `Start here`.
-   - Heading: `Portfolio Capacity Audit.`
-   - Subtext: the new paragraph about mapping transactions and operating priorities across the portfolio.
-   - Replace `auditDeliverables` with the 6 new items (portfolio-wide leadership and operator gap map, function coverage assessment, upcoming transaction/event triggers, recommended roster structure, emergency coverage path, priority shortlists).
-   - "Then" panel: update heading to `Portfolio Executive Roster` and subtext to the new retained operating partner paragraph. Update the bullet list to the 3 new lines: `Annual roster: $75k`, `Usage billed separately at preferred rates`, `MSA activated once, SOWs per engagement`.
-
-4. **"Roster model" section**
-   - Eyebrow: `Roster model` (singular).
-   - Title: `Portfolio Roster` with no accent tail.
-   - Price: `$75k / year · usage billed separately`.
-   - Target audience text: `Built for private equity firms, family offices, holding companies, and independent sponsors that engage in frequent transactions or manage recurring operator needs across multiple companies.`
-   - Replace `tiers` items with the 7 new includes.
-   - Keep the engagement-pricing link.
-   - Update the note below the tier to include `Operator in the Loop` in the list of engagement types.
-
-5. **"How it works" section**
-   - Keep eyebrow and title.
-   - Replace `steps` array with the 4 new descriptions (capacity audit, MSA signed once, SOW per engagement, quarterly review).
-
-6. **"What the retainer covers" section**
-   - Keep eyebrow and title.
-   - Replace `included` array with the two new descriptions for "In the roster" and "Billed by SOW".
-
-7. **Footer CTA**
-   - Headline: `Stabilize the operator gaps across your portfolio.`
-   - Subtext: `Book a 30-minute call to walk through the audit and roster model. We will tell you directly whether Veep is the right operating partner function for your firm.`
-
-No new components, routes, or dependencies are required. Page metadata (`head`) stays the same unless you want it updated.
+## Outcome
+The section keeps the same content and 2-column layout, but gains clear visual grouping, better vertical rhythm, and stronger scanability. No new components or design tokens are needed — the work stays inside `src/routes/for-portfolios.tsx` using the existing `card`, `cream`, `accent`, and `font-mono` tokens.
