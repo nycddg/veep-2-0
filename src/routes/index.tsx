@@ -217,7 +217,7 @@ const networkImpact = [
   { figure: "$2B+", label: "Cost savings delivered", detail: "Across transformation, product redesign, and operational efficiency initiatives at global enterprises." },
   { figure: "$1B+", label: "Capital raised", detail: "Venture funding, structured finance, SPACs, and instruments like securitized bonds." },
   { figure: "$3B+", label: "NEW REVENUE GENERATED", detail: "Through new business lines, go-to-market strategy, and product commercialization." },
-  { figure: "100+", label: "PRODUCTS LAUNCHED", detail: "From AI and SaaS to consumer and enterprise solutions." },
+  { figure: "20+", label: "EXITS & ACQUISITIONS", detail: "Including strategic sales, integrations, and post-merger transformations." },
 ];
 
 const faqs = [
