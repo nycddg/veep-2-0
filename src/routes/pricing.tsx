@@ -126,7 +126,7 @@ function Page() {
                 <div className="flex items-baseline gap-3">
                   <div className="text-2xl text-cream">{t.t}</div>
                   {t.featured && (
-                    <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-accent">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-accent-coral">
                       Most common
                     </span>
                   )}

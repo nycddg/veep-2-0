@@ -66,9 +66,9 @@ export function HeroMotif() {
               y2={CY + BAND_MAX / 2}
             >
               <stop offset="0%" stopColor="#050810" />
-              <stop offset="15%" stopColor="#6366f1" />
-              <stop offset="50%" stopColor="#6366f1" />
-              <stop offset="85%" stopColor="#6366f1" />
+              <stop offset="15%" stopColor="#789fff" />
+              <stop offset="50%" stopColor="#789fff" />
+              <stop offset="85%" stopColor="#789fff" />
               <stop offset="100%" stopColor="#050810" />
             </linearGradient>
           </defs>
