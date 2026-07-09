@@ -82,7 +82,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["Fullscreen", "Nifty's"],
     summary:
-      "Powerhouse CFO with 15+ years of experience leading financial transformation, operational scaling, and strategic exits across SaaS, Web3, new media, and the creator economy. At Mojix, drove a +98% EBITDA turnaround, restructured global teams, and completed a successful international spin-off and sale.",
+      "Powerhouse CFO with 15+ years of experience leading financial transformation, operational scaling, and strategic exits across SaaS, Web3, and new media. At Mojix, drove a +98% EBITDA turnaround and completed a successful international spin-off and sale.",
     chips: ["Tech", "Web3", "Media"],
     photoUrl: elaineBogartHeadshot.url,
   },
