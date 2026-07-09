@@ -16,9 +16,9 @@ const nav: readonly NavItem[] = [
   { kind: "hash", hash: "how", label: "How it works" },
   { kind: "hash", hash: "proof", label: "Proof" },
   { kind: "route", to: "/pricing", label: "Pricing" },
-  { kind: "route", to: "/faq", label: "FAQ" },
   { kind: "route", to: "/about", label: "About" },
   { kind: "route", to: "/join", label: "Join" },
+  { kind: "route", to: "/faq", label: "FAQ" },
 ];
 
 export function SiteHeader() {
