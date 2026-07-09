@@ -3,7 +3,7 @@ import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 
 type FooterLink =
   | { kind: "hash"; hash: string; label: string }
-  | { kind: "route"; to: "/pricing" | "/faq" | "/contact"; label: string };
+  | { kind: "route"; to: "/pricing" | "/faq" | "/contact" | "/privacy" | "/terms"; label: string };
 
 const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
   {
@@ -21,6 +21,13 @@ const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
       { kind: "route", to: "/pricing", label: "Pricing" },
       { kind: "route", to: "/faq", label: "Full FAQ" },
       { kind: "route", to: "/contact", label: "Contact" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { kind: "route", to: "/privacy", label: "Privacy Policy" },
+      { kind: "route", to: "/terms", label: "Terms of Service" },
     ],
   },
 ];
