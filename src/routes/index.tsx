@@ -154,7 +154,7 @@ const engagements = [
   {
     name: "Pod",
     price: "From $30k / mo",
-    bestWhen: "A lead operator plus specialist support for cross-functional work — GTM + RevOps, finance + operations, AI transformation, new market launch, or operating reset.",
+    bestWhen: "A lead operator plus specialist support for cross-functional work — GTM + RevOps, AI transformation, new market launch, or operating reset.",
     to: "/pricing" as const,
   },
 ];
@@ -178,7 +178,7 @@ const differentiators = [
   {
     dim: "Seniority",
     veep: "Vetted senior operators only",
-    old: "Variable — junior consultants, unknown freelancers, or mismatched candidates",
+    old: "Variable; junior consultants for leverage or unvetted freelancers",
   },
   {
     dim: "Exit",
@@ -201,7 +201,7 @@ const cases = [
   },
   {
     tag: "SOFTWARE STUDIO · GROWTH OPERATING PARTNER",
-    trigger: "An $8M dev shop was stuck firefighting, with inconsistent project profitability and no scalable path into AI.",
+    trigger: "An $8M product development studio was stuck firefighting, with inconsistent project profitability and no scalable path into AI.",
     outcome: "Installed standardized project scoping and staffing, built an AI GTM and delivery framework, and hired a Director of AI.",
     metric: "Project margins up 25%",
   },
@@ -296,13 +296,13 @@ const serviceSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The Work Needs an Owner — Veep" },
+      { title: "Because a job always needs to be done. — Veep" },
       {
         name: "description",
         content:
           "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
       },
-      { property: "og:title", content: "The Work Needs an Owner — Veep" },
+      { property: "og:title", content: "Because a job always needs to be done. — Veep" },
       {
         property: "og:description",
         content:
@@ -357,7 +357,7 @@ function Index() {
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
           <h1 className="text-[2.5rem] leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream mb-6">
-            Because the work{"\u00a0"}<span className="text-accent">needs{"\u00a0"}an owner.</span>
+            Because a job always{"\u00a0"}<span className="text-accent">needs{"\u00a0"}to be done.</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
@@ -404,7 +404,7 @@ function Index() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
-            On demand operating partners for the job to be done. We deploy vetted executives inside founder-led companies across finance, GTM, operations, product, people, fundraising, and strategy.
+            On demand operating partners for the work that can't wait. We deploy vetted executives inside founder-led companies across finance, GTM, operations, product, people, fundraising, and strategy.
           </p>
           <p className="mt-4 text-sm text-stone">
             Built for companies with real revenue and growing complexity, before the
