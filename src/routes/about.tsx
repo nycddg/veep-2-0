@@ -35,11 +35,11 @@ const principles: readonly { title: string; body: string }[] = [
   },
   {
     title: "Flexible terms",
-    body: "Interim, fractional, or project-based. Scoped to the initiative, not to a five-year plan.",
+    body: "Scoped to the initiative, not to a five-year plan.",
   },
   {
     title: "30-day fit guarantee",
-    body: "If the match isn't right in the first month, we replace the operator. No renegotiation.",
+    body: "If the match isn't right, we replace the operator for free or you can walk.",
   },
 ];
 
@@ -47,17 +47,17 @@ const founders: readonly { name: string; role: string; bio: string }[] = [
   {
     name: "Dave Garcia",
     role: "Co-Founder",
-    bio: "Launched products, led pivots, landed exits. Now helping operators move faster with Veep.",
+    bio: "Launched products, led pivots, landed exits. Now helping founders move faster with Veep.",
   },
   {
     name: "Jian Yang",
     role: "Co-Founder",
-    bio: "Raised big, scaled fast, exited right. Now helping operators do the same, smarter.",
+    bio: "Raised big, scaled fast, exited right. Now helping founders do the same, smarter.",
   },
   {
     name: "Mark Newhouse",
     role: "Co-Founder",
-    bio: "Built brands, transformed orgs, sold startups. Now building alongside operators at Veep.",
+    bio: "Built brands, transformed orgs, sold startups. Now building alongside founders at Veep.",
   },
 ];
 
