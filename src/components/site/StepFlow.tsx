@@ -1,7 +1,7 @@
 const steps = [
   { n: "01", t: "Diagnose", d: "30-minute call to clarify the priority, urgency, current owner, and the outcome that needs to move." },
   { n: "02", t: "Scope", d: "We define the work and recommend the right structure: Advisory, Sprint, Operator, or Pod." },
-  { n: "03", t: "Match", d: "One or two senior operators shortlisted against the work, company stage, function, and industry." },
+  { n: "03", t: "Match", d: "A senior operator shortlisted against the work, company stage, function, and industry." },
   { n: "04", t: "Deploy in <10 days", d: "Contracts, onboarding, and working rhythm set. The operator starts owning the work." },
 ];
 
