@@ -147,7 +147,7 @@ export function HeroMotif() {
         .motif-bar {
           transform-box: fill-box;
           transform-origin: 0 0;
-          animation: motifBar ${CYCLE}s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+          animation: motifBar ${CYCLE}s cubic-bezier(0.22, 0.61, 0.36, 1) infinite both;
         }
         @keyframes motifPulse {
           0%, 100% { opacity: 0.5; }
