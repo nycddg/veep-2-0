@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Check } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
+import { submitApplication } from "@/lib/wix-application.functions";
 
 export const Route = createFileRoute("/join")({
   head: () => ({
@@ -76,8 +77,75 @@ const functions = [
   "Other",
 ];
 
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string;
+      const base64 = result.split(",")[1] ?? "";
+      resolve(base64);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+function getAllValues(formData: FormData, name: string): string[] {
+  return formData.getAll(name).map((v) => String(v));
+}
+
 function Page() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      const resumeFile = formData.get("resume") as File;
+
+      if (!resumeFile || resumeFile.size === 0) {
+        throw new Error("Please upload a resume.");
+      }
+
+      const resume = {
+        name: resumeFile.name,
+        type: resumeFile.type,
+        data: await fileToBase64(resumeFile),
+      };
+
+      await submitApplication({
+        data: {
+          firstName: String(formData.get("first_name") ?? ""),
+          lastName: String(formData.get("last_name") ?? ""),
+          email: String(formData.get("email") ?? ""),
+          linkedIn: String(formData.get("linkedin") ?? ""),
+          website: String(formData.get("website") ?? ""),
+          role: String(formData.get("role") ?? ""),
+          fractionalExperience: String(formData.get("fractional") ?? ""),
+          companyTypes: getAllValues(formData, "company_types"),
+          growthStages: getAllValues(formData, "growth_stages"),
+          functions: getAllValues(formData, "functions"),
+          industries: String(formData.get("industries") ?? ""),
+          notes: String(formData.get("notes") ?? ""),
+          source: String(formData.get("source") ?? ""),
+          resume,
+        },
+      });
+
+      setSubmitted(true);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -178,10 +246,7 @@ function Page() {
                 </div>
               ) : (
                 <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setSubmitted(true);
-                  }}
+                  onSubmit={handleSubmit}
                   className="glass-card rounded-3xl p-6 sm:p-8 grid gap-5"
                 >
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -255,11 +320,25 @@ function Page() {
                     </div>
                   </details>
 
+                  {error && (
+                    <p className="text-sm text-red-400 bg-red-500/10 rounded-xl px-4 py-3">
+                      {error}
+                    </p>
+                  )}
+
                   <button
                     type="submit"
-                    className="mt-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)] min-h-11"
+                    disabled={loading}
+                    className="mt-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)] min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                   >
-                    Submit application
+                    {loading ? (
+                      <>
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Submitting…
+                      </>
+                    ) : (
+                      "Submit application"
+                    )}
                   </button>
                   <p className="text-xs text-cream/65">
                     By submitting you agree to be contacted by Veep about your
