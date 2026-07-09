@@ -28,24 +28,24 @@ export function SiteHeader() {
           <img src={wordmarkWhite.url} alt="Veep" className="h-5 w-auto" />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-0.5">
           {nav.filter((n) => n.kind === "hash").map((n) => (
             <Link
               key={(n as { hash: string }).hash}
               to="/"
               hash={(n as { hash: string }).hash}
-              className="px-3 py-1.5 text-sm text-stone hover:text-cream transition"
+              className="px-3 py-2 text-sm text-cream/80 hover:text-cream transition"
             >
               {n.label}
             </Link>
           ))}
-          <span aria-hidden className="mx-2 h-4 w-px bg-white/10" />
+          <span aria-hidden className="mx-3 h-4 w-px bg-white/15" />
           {nav.filter((n) => n.kind === "route").map((n) => (
             <Link
               key={(n as { to: "/pricing" | "/faq" }).to}
               to={(n as { to: "/pricing" | "/faq" }).to}
-              className="px-3 py-1.5 text-sm text-stone hover:text-cream transition"
-              activeProps={{ className: "px-3 py-1.5 text-sm text-cream" }}
+              className="px-3 py-2 text-sm text-cream/80 hover:text-cream transition"
+              activeProps={{ className: "px-3 py-2 text-sm text-cream" }}
             >
               {n.label}
             </Link>
@@ -64,9 +64,10 @@ export function SiteHeader() {
         </div>
 
         <button
-          className="lg:hidden p-2 -mr-2 text-cream"
+          className="lg:hidden p-3 -mr-2 min-h-11 min-w-11 text-cream"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -74,7 +75,7 @@ export function SiteHeader() {
 
       {open && (
         <div className="lg:hidden border-t border-white/8 bg-background">
-          <div className="px-4 py-4 space-y-1">
+          <div className="px-4 py-4 space-y-0.5">
             {nav.map((n) =>
               n.kind === "hash" ? (
                 <Link
@@ -82,7 +83,7 @@ export function SiteHeader() {
                   to="/"
                   hash={n.hash}
                   onClick={() => setOpen(false)}
-                  className="block px-3 py-2 text-sm text-cream rounded-md hover:bg-white/5"
+                  className="block px-3 py-3 text-base text-cream rounded-md hover:bg-white/5"
                 >
                   {n.label}
                 </Link>
@@ -91,19 +92,19 @@ export function SiteHeader() {
                   key={n.to}
                   to={n.to}
                   onClick={() => setOpen(false)}
-                  className="block px-3 py-2 text-sm text-cream rounded-md hover:bg-white/5"
+                  className="block px-3 py-3 text-base text-cream rounded-md hover:bg-white/5"
                 >
                   {n.label}
                 </Link>
               ),
             )}
-            <div className="pt-3">
+            <div className="pt-4">
               <a
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="block rounded-full bg-cream px-4 py-2 text-sm text-center font-medium text-ink"
+                className="block rounded-full bg-cream px-4 py-3 text-sm text-center font-medium text-ink"
               >
                 Book intro call
               </a>
