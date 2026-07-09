@@ -39,7 +39,7 @@ const principles: readonly { title: string; body: string }[] = [
   },
   {
     title: "30-day fit guarantee",
-    body: "If the match isn't right, we replace the operator for free or you can walk.",
+    body: "30 days to prove it. If the operator is not right, we swap them or you walk.",
   },
 ];
 
