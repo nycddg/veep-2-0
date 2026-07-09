@@ -1,8 +1,8 @@
 // Hero visual — Barcode.
-// Uniform-height vertical lines spread horizontally; stroke weight ramps
-// thin → thick → thin across the width via a cosine envelope.
+// 32 vertical lines across the panel; stroke weight stays thin for 60%,
+// ramps up to a short plateau in the next 20%, then returns to thin.
 
-const LINES = 80;
+const LINES = 32;
 const VB = 480;
 const CY = VB / 2;
 const SIDE_PAD = 40;
@@ -16,10 +16,18 @@ const MIN_W = 0.6;
 const MAX_OP = 0.9;
 const MIN_OP = 0.35;
 
-// Cosine falloff from center: 1 at middle, 0 at edges.
+function smoothstep(t: number) {
+  const s = Math.max(0, Math.min(1, t));
+  return s * s * (3 - 2 * s);
+}
+
 function envelopeAt(i: number) {
-  const t = (i - (LINES - 1) / 2) / ((LINES - 1) / 2); // -1..1
-  return Math.cos((t * Math.PI) / 2);                  // 0..1..0
+  const t = i / (LINES - 1);
+  if (t < 0.6) return 0;
+  if (t < 0.7) return smoothstep((t - 0.6) / 0.1);
+  if (t < 0.8) return 1;
+  if (t < 0.85) return 1 - smoothstep((t - 0.8) / 0.05);
+  return 0;
 }
 
 const cols = Array.from({ length: LINES }, (_, i) => {
@@ -59,7 +67,6 @@ export function HeroMotif() {
           })}
         </svg>
       </div>
-
     </div>
   );
 }
