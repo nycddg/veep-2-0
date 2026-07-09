@@ -26,21 +26,10 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-0.5">
-          {nav.filter((n) => n.kind === "hash").map((n) => (
+          {nav.map((n) => (
             <Link
-              key={(n as { hash: string }).hash}
-              to="/"
-              hash={(n as { hash: string }).hash}
-              className="px-3 py-2 text-sm text-cream/80 hover:text-cream transition"
-            >
-              {n.label}
-            </Link>
-          ))}
-          <span aria-hidden className="mx-3 h-4 w-px bg-white/15" />
-          {nav.filter((n) => n.kind === "route").map((n) => (
-            <Link
-              key={(n as { to: "/pricing" | "/faq" | "/join" | "/about" }).to}
-              to={(n as { to: "/pricing" | "/faq" | "/join" | "/about" }).to}
+              key={n.to}
+              to={n.to}
               className="px-3 py-2 text-sm text-cream/80 hover:text-cream transition"
               activeProps={{ className: "px-3 py-2 text-sm text-cream" }}
             >
