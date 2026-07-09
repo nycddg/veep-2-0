@@ -10,6 +10,8 @@ type OperatorProofCardProps = {
   priorCompanies?: string[];
   /** Deprecated: free-text sentence. Prefer priorCompanies. */
   priorSeat?: string;
+  summary?: string;
+  /** Deprecated: use summary. */
   outcomes?: string[];
   /** "spotlight" = full editorial portrait card. "compact" = small hero collage card. */
   variant?: "spotlight" | "compact";
