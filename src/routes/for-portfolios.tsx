@@ -32,7 +32,7 @@ const auditDeliverables = [
 
 const tiers = [
   {
-    t: "Portfolio Roster",
+    t: "Roster Development and Management",
     p: "$75k",
     per: "/ year · usage billed separately",
     best: "Built for private equity firms, family offices, holding companies, and independent sponsors that engage in frequent transactions or manage recurring operator needs across multiple companies.",
@@ -176,7 +176,7 @@ function Page() {
               Roster model
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
-              Portfolio Roster
+              Roster Development and Management
             </h2>
           </div>
           <div className="max-w-2xl mx-auto">
@@ -210,7 +210,7 @@ function Page() {
             ))}
           </div>
           <p className="mt-12 text-sm text-cream/75 text-center max-w-2xl mx-auto">
-            Engagements convert cleanly into Advisory, Sprint, Operator in the Loop, Operator, or Pod work at preferred roster rates.
+            Engagements convert cleanly into Advisory, Sprint, Operator, or Pod work at preferred roster rates.
           </p>
         </div>
       </section>
@@ -224,7 +224,7 @@ function Page() {
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
               One agreement.{" "}
-              <span className="text-accent">Every portco activated.</span>
+              <span className="text-accent">Every portfolio company activated.</span>
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
