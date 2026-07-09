@@ -225,7 +225,7 @@ function Page() {
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-cream/60 leading-relaxed max-w-xs">
+              <p className="text-xs text-cream/75 leading-relaxed max-w-xs">
                 Roster spots are limited. We respond to every serious
                 application within one business week.
               </p>
@@ -340,7 +340,7 @@ function Page() {
                       "Submit application"
                     )}
                   </button>
-                  <p className="text-xs text-cream/65">
+                  <p className="text-xs text-cream/75">
                     By submitting you agree to be contacted by Veep about your
                     application.
                   </p>
