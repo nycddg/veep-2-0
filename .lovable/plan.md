@@ -1,47 +1,46 @@
+## Add Google Analytics 4 + Vector to the site
 
-# Launch-polish pass
+Both tags need to load on every page across all environments. TanStack Start injects `<head>` tags via the root route's `head()`, so both scripts belong in `src/routes/__root.tsx` — no `index.html` edits, no extra dependencies.
 
-Scope: tighten what exists. No redesign, no new decorative ideas, no copy rewrites, no new sections. Preserve dark editorial voice, no italics, weights 400/500 only (600 already capped in `styles.css`).
+### Changes
 
-## 1. Global system pass (`src/styles.css`, `SiteHeader`, `SiteFooter`, `PageHero`, `primitives`)
+**`src/routes/__root.tsx`** — extend the existing `head()` return:
 
-- Confirm the weight ceiling: `styles.css` already remaps `font-bold/extrabold/black/semibold` to 500. Sweep routes for stray inline `font-weight`/`fontWeight: 700` and remove.
-- Contrast: promote body copy that currently uses `text-cream/60`, `text-cream/65`, `text-stone-soft`, or `text-muted-foreground/50` in card descriptions, FAQ answers, footer copy, and pricing meta to `text-cream/80` (body) or `text-stone` (secondary). Keep `stone-soft` only for mono eyebrows/indices.
-- Eyebrows: cap tracking at `0.12em` (already the token). Remove ad-hoc `tracking-[0.18em]`/`0.2em` where readability drops below ~11px.
-- Focus ring: already global; audit custom `<button>`/`<a>` that override with `outline-none` and restore.
-- Card system: single glass shape — `bg-card rounded-2xl border border-white/10 p-6 md:p-8`. Normalize any card using `rounded-xl`, `rounded-3xl`, `p-4`, or bespoke borders.
-- Section rhythm: standard `py-24 md:py-32`, container `max-w-6xl px-6`, header block `max-w-3xl mb-14 md:mb-16`, grid `gap-6 md:gap-8`. Apply across home, pricing, portfolio, about, join, services, compare, faq, proof.
+1. Add the GA4 loader to `scripts`:
+   ```ts
+   { src: "https://www.googletagmanager.com/gtag/js?id=G-W4CC5NJ1H8", async: true },
+   {
+     children: `
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-W4CC5NJ1H8');
+     `,
+   },
+   ```
 
-## 2. Per-page audit (only what needs a tweak)
+2. Add the Vector pixel to `scripts` (inline, using the snippet you provided, minus the JSX wrapper):
+   ```ts
+   {
+     children: `
+       !function(e,r){try{if(e.vector)return void console.log("Vector snippet included more than once.");var t={};t.q=t.q||[];for(var o=["load","identify","on"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c<o.length;c++){var a=o[c];t[a]=n(a)}if(e.vector=t,!t.loaded){var i=r.createElement("script");i.type="text/javascript",i.async=!0,i.src="https://cdn.vector.co/pixel.js";var l=r.getElementsByTagName("script")[0];l.parentNode.insertBefore(i,l),t.loaded=!0}}catch(e){console.error("Error loading Vector:",e)}}(window,document);
+       vector.load("1fe348f4-6e5d-49a9-a481-c29fc08010f3");
+     `,
+   },
+   ```
 
-- **Homepage (`index.tsx`)** — tighten hero vertical space on desktop, fix mobile headline wraps (add `text-balance`/`sm:` breakpoints), align floating operator/match-card so it doesn't overlap CTA on md, normalize problem grid + stats band + benefits grid + comparison + FAQ + final CTA to the global rhythm.
-- **Pricing (`pricing.tsx`)** — normalize card padding + height (`flex flex-col h-full`), align price rows, tighten feature list line-height, ensure primary CTA is same button on every tier, mobile: stack cards with equal spacing, no horizontal scroll.
-- **Portfolio (`for-portfolios.tsx`)** — already partially cleaned; sweep remaining sections (Roster Development, Capacity Audit, engagement types, final CTA) to the same card + rhythm rules.
-- **FAQ (`faq.tsx` + inline FAQ sections)** — one accordion style, `py-5` per item, `text-cream` question / `text-cream/80` answer, no divider stack + border-card duplication.
-- **Footer (`SiteFooter.tsx`)** — group links into clear columns, `text-cream/70` links with `hover:text-cream`, bump email visibility, align legal row, remove Lovable badge for production.
-- **About (`about.tsx`)** and **Join (`join.tsx`)** — apply global rhythm + card + contrast rules; fix any mobile-only wrap issues.
-- **Nav (`SiteHeader.tsx`)** — increase link size from ~12px mono to 14px sans, clearer active state (accent underline), mobile menu tap targets ≥ 44px, sticky background solidified for legibility.
+Both are appended alongside the existing JSON-LD `application/ld+json` script. The root shell already renders `<Scripts />` in `<body>`, so TanStack emits them correctly for SSR + hydration.
 
-## 3. Responsive polish
+### SPA pageview tracking
 
-- Audit each route at mobile (375), tablet (768), desktop (1280) via Playwright screenshots.
-- Fix: hero heights capped on mobile, CTA stacks full-width, cards single-column with `gap-4`, comparison + pricing tables switch to stacked card view under `md`, no `overflow-x`.
+GA4's `config` call auto-tracks the initial pageview. Client-side route changes in TanStack Router don't fire a fresh page load, so I'll also add a small subscription in `RootComponent` that calls `gtag('event', 'page_view', { page_path, page_location, page_title })` whenever the router's location changes (via `useRouter().subscribe('onResolved', ...)`). Vector's pixel handles SPA navigation on its own — no extra wiring.
 
-## 4. Hygiene
+### Out of scope
 
-- Remove unused imports/components flagged during the sweep.
-- Verify every nav + CTA route resolves (no dead `#` anchors used as primary nav).
-- Head metadata: confirm every route has real title/description/og and no "Lovable App" defaults.
-- Remove Lovable badge (publish setting) before launch.
+- No consent banner / cookie gating (you didn't ask for one; add later if EU traffic requires it).
+- No custom events beyond pageviews.
+- No env-based gating since you chose "All environments."
 
-## Technical notes
+### Verification
 
-- Edits are almost entirely Tailwind class swaps + small structural wrappers; no new dependencies, no new routes, no component API changes.
-- Verification: `tsgo` typecheck + Playwright screenshots at 3 breakpoints for home, pricing, for-portfolios, about, join, faq.
-- Out of scope: copy rewrites, brand color changes, new illustrations, new sections, animation redesign.
-
-## Deliverables
-
-- Updated route files under `src/routes/` and shared components under `src/components/site/`.
-- No changes to `styles.css` tokens (system is already correct); only usage cleanup in components.
-- Screenshot set confirming before/after on the audited pages.
+After build: load the site, confirm in DevTools Network that `gtag/js?id=G-W4CC5NJ1H8` and `cdn.vector.co/pixel.js` both load, and that a `collect` request fires on navigation between routes.

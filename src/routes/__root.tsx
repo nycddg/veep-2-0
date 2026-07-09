@@ -14,6 +14,20 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
 
+const GA_MEASUREMENT_ID = "G-W4CC5NJ1H8";
+
+const gaInitScript = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');
+`;
+
+const vectorScript = `
+!function(e,r){try{if(e.vector)return void console.log("Vector snippet included more than once.");var t={};t.q=t.q||[];for(var o=["load","identify","on"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c<o.length;c++){var a=o[c];t[a]=n(a)}if(e.vector=t,!t.loaded){var i=r.createElement("script");i.type="text/javascript",i.async=!0,i.src="https://cdn.vector.co/pixel.js";var l=r.getElementsByTagName("script")[0];l.parentNode.insertBefore(i,l),t.loaded=!0}}catch(e){console.error("Error loading Vector:",e)}}(window,document);
+vector.load("1fe348f4-6e5d-49a9-a481-c29fc08010f3");
+`;
+
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -116,7 +130,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
       },
     ],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(orgSchema) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(orgSchema) },
+      { src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`, async: true },
+      { children: gaInitScript },
+      { children: vectorScript },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -140,6 +159,20 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+
+  useEffect(() => {
+    const unsub = router.subscribe("onResolved", ({ toLocation }) => {
+      const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+      if (typeof gtag !== "function") return;
+      gtag("event", "page_view", {
+        page_path: toLocation.pathname + toLocation.searchStr,
+        page_location: window.location.href,
+        page_title: document.title,
+      });
+    });
+    return () => unsub();
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>
