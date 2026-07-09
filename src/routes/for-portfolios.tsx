@@ -163,7 +163,7 @@ function Page() {
               </p>
               <ul className="mt-6 space-y-2 text-sm text-cream/85">
                 {[
-                  "Roster development and management: $75k",
+                  "Portfolio Program: $75k",
                   "Usage billed separately at preferred rates",
                   "MSA activated once, SOWs per engagement",
                 ].map((x) => (
