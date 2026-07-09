@@ -424,19 +424,19 @@ function Index() {
             </h2>
           </div>
 
-          <div className="border-t border-white/10">
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
             {problems.map((p, i) => (
               <div
                 key={p.t}
-                className="grid grid-cols-[auto_1fr] md:grid-cols-[5rem_1fr_1fr] gap-x-6 md:gap-x-10 gap-y-3 py-8 md:py-10 border-b border-white/10"
+                className="rounded-[var(--radius)] bg-white/[0.02] ring-1 ring-white/10 p-6 md:p-8 flex flex-col"
               >
-                <span className="font-mono text-[10px] tracking-[0.14em] text-accent pt-2">
+                <span className="font-mono text-[10px] tracking-[0.14em] text-accent">
                   0{i + 1}
                 </span>
-                <h3 className="text-2xl md:text-3xl text-cream tracking-tight leading-[1.15] col-span-1">
+                <h3 className="mt-5 text-2xl md:text-3xl text-cream tracking-tight leading-[1.15]">
                   {p.t}
                 </h3>
-                <p className="text-sm md:text-base text-stone leading-relaxed max-w-prose col-start-2 md:col-start-3 md:pl-0 md:mt-1">
+                <p className="mt-4 text-sm md:text-base text-stone leading-relaxed max-w-prose">
                   {p.d}
                 </p>
               </div>
@@ -543,13 +543,11 @@ function Index() {
               </span>
             </div>
 
-            <div className="grid md:grid-cols-2">
-              {networkImpact.map((m, i) => (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+              {networkImpact.map((m) => (
                 <div
                   key={m.label}
-                  className={`grid grid-cols-[8rem_1fr] md:grid-cols-[10rem_1fr] gap-x-6 py-6 md:py-7 border-b border-white/10 ${
-                    i % 2 === 0 ? "md:pr-10 md:border-r md:border-white/10" : "md:pl-10"
-                  }`}
+                  className="rounded-[var(--radius)] bg-white/[0.02] ring-1 ring-white/10 p-6 md:p-8 flex flex-col"
                 >
                   <div
                     className="font-mono text-3xl md:text-4xl text-cream tracking-tight leading-none tabular-nums"
@@ -557,14 +555,12 @@ function Index() {
                   >
                     {m.figure}
                   </div>
-                  <div>
-                    <div className="text-sm md:text-base text-cream tracking-tight leading-tight">
-                      {m.label}
-                    </div>
-                    <p className="mt-1.5 text-xs md:text-[13px] text-stone leading-relaxed">
-                      {m.detail}
-                    </p>
+                  <div className="mt-5 text-sm md:text-base text-cream tracking-tight leading-tight">
+                    {m.label}
                   </div>
+                  <p className="mt-2 text-xs md:text-[13px] text-stone leading-relaxed">
+                    {m.detail}
+                  </p>
                 </div>
               ))}
             </div>
@@ -596,21 +592,19 @@ function Index() {
               <span className="text-accent">before the executive hire.</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-10 lg:gap-x-12 border-t border-white/10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {benefits.map((b, i) => (
               <div
                 key={b.t}
-                className="py-7 md:py-8 border-b border-white/10 grid grid-cols-[auto_1fr] gap-x-5"
+                className="rounded-[var(--radius)] bg-white/[0.02] ring-1 ring-white/10 p-6 md:p-8 flex flex-col"
               >
-                <span className="font-mono text-[10px] tracking-[0.14em] text-accent pt-1.5">
+                <span className="font-mono text-[10px] tracking-[0.14em] text-accent">
                   0{i + 1}
                 </span>
-                <div>
-                  <div className="text-lg md:text-xl text-cream tracking-tight leading-tight">
-                    {b.t}
-                  </div>
-                  <p className="mt-2.5 text-sm text-stone leading-relaxed max-w-prose">{b.d}</p>
+                <div className="mt-5 text-lg md:text-xl text-cream tracking-tight leading-tight">
+                  {b.t}
                 </div>
+                <p className="mt-3 text-sm text-stone leading-relaxed max-w-prose">{b.d}</p>
               </div>
             ))}
           </div>
@@ -673,9 +667,12 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 md:divide-x divide-y md:divide-y-0 divide-white/10 border-t border-b md:border-b-0 border-white/10">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-5">
             {cases.map((c) => (
-              <div key={c.tag} className="flex flex-col py-8 md:py-10 md:px-8 md:first:pl-0 md:last:pr-0">
+              <div
+                key={c.tag}
+                className="flex flex-col rounded-[var(--radius)] bg-white/[0.02] ring-1 ring-white/10 p-6 md:p-8"
+              >
                 <span className="font-mono text-[10px] font-medium tracking-[0.14em] uppercase text-accent">
                   {c.tag}
                 </span>
