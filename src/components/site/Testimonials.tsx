@@ -1,14 +1,14 @@
 const quotes = [
   {
     quote:
-      "I cannot recommend this team more highly. They think, act, and engage like co-founders.",
+      "\"I cannot recommend this team more highly. They think, act, and engage like co-founders.\"",
     name: "Jerry Kolber",
     role: "Founder & CEO, Atomic Audio",
     initials: "JK",
   },
   {
     quote:
-      "As a founder raising capital, I couldn\u2019t have asked for a better partner.\u00a0\nI never felt alone.",
+      "\"As a founder raising capital, I couldn\u2019t have asked for a better partner.\u00a0\nI never felt alone.\"",
     name: "Daniel Walsh",
     role: "Founder & CEO, VeroSkills",
     initials: "DW",
