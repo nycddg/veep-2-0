@@ -79,14 +79,14 @@ function Page() {
         sub="If the answer is not here, book a 30-minute call with a Veep founder. We will help clarify the work, the right level of support, and whether Veep is the right fit."
       />
 
-      <section className="py-24 md:py-32">
+      <section className="py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-14">
           {groups.map((g) => (
             <div key={g.label}>
               <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent mb-6">
                 {g.label}
               </div>
-              <div className="divide-y divide-white/8 border-y border-white/8">
+              <div className="divide-y divide-white/10 border-y border-white/10">
                 {g.items.map((qa) => (
                   <Accordion key={qa.q} q={qa.q} a={qa.a} />
                 ))}
@@ -104,21 +104,22 @@ function Page() {
 function Accordion({ q, a }: QA) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="py-2">
+    <div className="py-1">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full flex items-start justify-between gap-6 py-4 text-left"
+        aria-expanded={open}
+        className="w-full flex items-start justify-between gap-4 sm:gap-6 py-5 text-left min-h-11 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 rounded-sm transition-colors"
       >
-        <span className="font-serif text-lg md:text-xl text-cream tracking-tight leading-snug">
+        <span className="text-base sm:text-lg md:text-xl text-cream tracking-tight leading-snug">
           {q}
         </span>
         <ChevronDown
           size={18}
-          className={`text-stone shrink-0 mt-1.5 transition-transform ${open ? "rotate-180 text-accent" : ""}`}
+          className={`text-cream/70 shrink-0 mt-1.5 transition-transform ${open ? "rotate-180 text-accent" : ""}`}
         />
       </button>
       {open && (
-        <p className="pb-5 pr-10 text-sm text-stone leading-relaxed">{a}</p>
+        <p className="pb-6 pr-6 sm:pr-10 text-sm sm:text-[15px] text-cream/80 leading-relaxed max-w-3xl">{a}</p>
       )}
     </div>
   );
