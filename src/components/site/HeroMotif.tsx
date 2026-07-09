@@ -11,7 +11,8 @@ const USABLE_W = VB - SIDE_PAD * 2;
 const COL_GAP = USABLE_W / (LINES - 1);
 const START_X = SIDE_PAD;
 
-const BAND_H = VB * 0.7;
+const BAND_MAX = VB * 0.78;
+const BAND_MIN = VB * 0.18;
 const MAX_W = 6.5;
 const MIN_W = 0.6;
 
@@ -29,11 +30,21 @@ function envelopeAt(i: number) {
   return 0;
 }
 
+// Pseudo-random but stable per index — evokes a sound-wave / frequency spectrum.
+function heightAt(i: number) {
+  const a = Math.sin(i * 1.7) * 0.5 + 0.5;
+  const b = Math.sin(i * 0.53 + 1.3) * 0.5 + 0.5;
+  const c = Math.sin(i * 0.27 + 2.1) * 0.5 + 0.5;
+  const n = a * 0.55 + b * 0.3 + c * 0.15; // 0..1
+  return BAND_MIN + (BAND_MAX - BAND_MIN) * n;
+}
+
 const cols = Array.from({ length: LINES }, (_, i) => {
   const env = envelopeAt(i);
   return {
     x: START_X + i * COL_GAP,
     w: MIN_W + (MAX_W - MIN_W) * env,
+    h: heightAt(i),
   };
 });
 
@@ -51,18 +62,18 @@ export function HeroMotif() {
               id="lineGradient"
               gradientUnits="userSpaceOnUse"
               x1="0"
-              y1={CY - BAND_H / 2}
+              y1={CY - BAND_MAX / 2}
               x2="0"
-              y2={CY + BAND_H / 2}
+              y2={CY + BAND_MAX / 2}
             >
-              <stop offset="0%" stopColor="var(--background, #050810)" />
-              <stop offset="50%" stopColor="var(--cream, #F5F1EA)" />
-              <stop offset="100%" stopColor="var(--background, #050810)" />
+              <stop offset="0%" stopColor="#050810" />
+              <stop offset="50%" stopColor="#6366f1" />
+              <stop offset="100%" stopColor="#050810" />
             </linearGradient>
           </defs>
           {cols.map((c, i) => {
-            const y1 = CY - BAND_H / 2;
-            const y2 = CY + BAND_H / 2;
+            const y1 = CY - c.h / 2;
+            const y2 = CY + c.h / 2;
             return (
               <line
                 key={i}
@@ -72,7 +83,7 @@ export function HeroMotif() {
                 y2={y2}
                 stroke="url(#lineGradient)"
                 strokeWidth={c.w}
-                strokeLinecap="butt"
+                strokeLinecap="round"
               />
             );
           })}
