@@ -134,11 +134,11 @@ export function OperatorProofCard({
         )}
 
         {(summary || (outcomes && outcomes.length > 0)) && (
-          <div className="flex flex-col gap-1.5 pb-2">
+          <div className="flex h-[176px] flex-col gap-1.5 overflow-hidden pb-2">
             <div
               id={summaryId}
-              className={`text-[13px] text-stone leading-relaxed text-pretty h-[150px] overflow-hidden transition-opacity duration-300 ${
-                expanded ? "" : "line-clamp-2"
+              className={`text-[13px] text-stone leading-relaxed text-pretty overflow-hidden transition-[max-height] duration-300 ease-out ${
+                expanded ? "max-h-[150px]" : "line-clamp-2 max-h-[42px]"
               }`}
             >
               {summary || outcomes?.join(" ")}
