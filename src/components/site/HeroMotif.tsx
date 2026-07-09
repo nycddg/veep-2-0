@@ -38,17 +38,7 @@ const cols = Array.from({ length: LINES }, (_, i) => {
 export function HeroMotif() {
   return (
     <div className="relative aspect-square w-full max-w-[520px] mx-auto">
-      <div className="absolute inset-0 rounded-sm border border-white/10 bg-white/[0.015] overflow-hidden">
-        {/* Subtle dot grid */}
-        <div
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
-          style={{
-            backgroundImage: "radial-gradient(#F5F1EA 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        />
-
-        {/* SVG graphic */}
+      <div className="absolute inset-0 overflow-hidden">
         <svg
           viewBox={`0 0 ${VB} ${VB}`}
           className="absolute inset-0 h-full w-full"
