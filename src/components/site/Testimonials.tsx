@@ -22,12 +22,12 @@ export function Testimonials() {
     <div className="max-w-5xl mx-auto">
       <div className="text-center">
         <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
-          Verified \u2014 Founder testimonials
+          Verified — Founder testimonials
         </div>
 
         <figure className="mt-10">
           <blockquote className="font-sans font-medium text-3xl md:text-5xl leading-[1.2] text-cream tracking-tight text-balance">
-            \u201C{hero.quote}\u201D
+            “{hero.quote}”
           </blockquote>
           <figcaption className="mt-10 flex items-center justify-center gap-4">
             <div className="h-11 w-11 rounded-full bg-white/5 ring-1 ring-white/20 grid place-items-center text-cream text-sm">
@@ -46,10 +46,10 @@ export function Testimonials() {
           {supporting.map((q) => (
             <figure key={q.name}>
               <blockquote className="font-sans text-xl md:text-2xl leading-snug text-cream/90 tracking-tight text-pretty">
-                \u201C{q.quote}\u201D
+                “{q.quote}”
               </blockquote>
               <figcaption className="mt-5 font-mono text-[11px] uppercase tracking-[0.16em] text-stone-soft">
-                {q.name} \u2014 {q.role}
+                {q.name} — {q.role}
               </figcaption>
             </figure>
           ))}
