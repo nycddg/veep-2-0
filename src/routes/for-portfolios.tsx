@@ -32,7 +32,7 @@ const auditDeliverables = [
 
 const tiers = [
   {
-    t: "Roster Development and Management",
+    t: "Portfolio Program",
     p: "$75k",
     per: "/ year · usage billed separately",
     best: "Built for private equity firms, family offices, holding companies, and independent sponsors that engage in frequent transactions or manage recurring operator needs across multiple companies.",
@@ -163,7 +163,7 @@ function Page() {
               </p>
               <ul className="mt-6 space-y-2 text-sm text-cream/85">
                 {[
-                  "Roster development and management: $75k",
+                  "Portfolio Program: $75k",
                   "Usage billed separately at preferred rates",
                   "MSA activated once, SOWs per engagement",
                 ].map((x) => (
@@ -186,7 +186,7 @@ function Page() {
               Roster model
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
-              Roster Development <span className="text-accent">and Management</span>
+              Portfolio <span className="text-accent">Program</span>
             </h2>
           </div>
           <div className="max-w-2xl mx-auto">
