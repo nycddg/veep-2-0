@@ -209,15 +209,9 @@ function Page() {
               </div>
             ))}
           </div>
-          <p className="mt-14 text-sm text-stone">
+          <p className="mt-12 text-sm text-stone">
             Engagements convert cleanly into Advisory, Sprint, Operator, or Pod work at
-            preferred roster rates.{" "}
-            <Link
-              to="/pricing"
-              className="text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70"
-            >
-              See engagement pricing →
-            </Link>
+            preferred roster rates.
           </p>
         </div>
       </section>
