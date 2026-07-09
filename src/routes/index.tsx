@@ -329,17 +329,18 @@ function Index() {
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-24 md:pb-32 flex flex-col items-center text-center">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-cream mb-6">
-            The work needs<br />
+            Because the work needs<br />
             <span className="text-accent">an owner.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
-            Veep helps founder-led companies bring in vetted senior operators to own
-            critical work before the full-time executive hire makes sense.
+            Vetted senior operators to own urgent priorities and high-stakes
+            decisions before you are ready, willing, or able to make the
+            full-time executive hire.
           </p>
 
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-16 text-sm font-semibold text-cream/90">
-            {["Vetted senior operators", "72-hour match", "30-day fit guarantee"].map((t) => (
+            {["Invite-only network", "72-hour match", "30-day fit guarantee"].map((t) => (
               <div key={t} className="flex items-center gap-2">
                 <Check size={18} className="text-accent" strokeWidth={2.5} />
                 {t}
