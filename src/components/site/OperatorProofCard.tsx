@@ -126,17 +126,10 @@ export function OperatorProofCard({
           </div>
         )}
 
-        {outcomes && outcomes.length > 0 && (
-          <ul className="space-y-1.5">
-            {outcomes.map((o) => (
-              <li
-                key={o}
-                className="text-[13px] text-stone leading-relaxed text-pretty"
-              >
-                {o.replace(/\.$/, "")}.
-              </li>
-            ))}
-          </ul>
+        {(summary || (outcomes && outcomes.length > 0)) && (
+          <p className="text-[13px] text-stone leading-relaxed text-pretty">
+            {summary || outcomes?.join(" ")}
+          </p>
         )}
 
         {chips.length > 0 && (
