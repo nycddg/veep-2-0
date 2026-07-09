@@ -179,23 +179,16 @@ function Page() {
               <span className="text-accent">as the portfolio needs.</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-1 gap-4 max-w-2xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:divide-x lg:divide-white/10">
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className={`rounded-3xl p-7 flex flex-col ${
-                  t.featured
-                    ? "glass-card ring-1 ring-accent/40 shadow-[0_0_80px_-30px_hsl(from_var(--accent)_h_s_l_/_0.4)]"
-                    : "border border-white/8 bg-white/[0.02]"
-                }`}
+                className="flex flex-col lg:px-6 lg:first:pl-0 lg:last:pr-0"
               >
-                <div className="flex items-center justify-between">
-                  <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
-                    {t.t}
-                  </div>
+                <div className="text-2xl text-cream">{t.t}</div>
+                <div className="mt-2 font-mono text-sm text-cream tabular-nums">
+                  {t.p} <span className="text-stone-soft">{t.per}</span>
                 </div>
-                <div className="mt-8 font-mono text-4xl text-cream tracking-tight" style={{ fontFeatureSettings: '"zero", "ss01"' }}>{t.p}</div>
-                <div className="text-xs text-stone mt-1 font-mono tracking-wide">{t.per}</div>
                 <p className="mt-5 text-sm text-cream/85 leading-relaxed">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-stone">
                   {t.items.map((i) => (
@@ -205,6 +198,14 @@ function Page() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-6 pt-4">
+                  <Link
+                    to="/pricing"
+                    className="text-xs text-cream/80 hover:text-cream underline underline-offset-4 decoration-white/20 hover:decoration-white/60 transition"
+                  >
+                    See engagement pricing →
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
