@@ -400,7 +400,7 @@ function Index() {
       <LogoWall />
 
       {/* 2 — WHAT IS VEEP (extractable AI-search definition) */}
-      <section className="border-b border-white/10">
+      <section>
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
@@ -414,7 +414,7 @@ function Index() {
       </section>
 
       {/* 3 — PROBLEM */}
-      <section id="problem" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <section id="problem" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12 md:mb-14">
             <SectionEyebrow>The moment you're in</SectionEyebrow>
@@ -424,29 +424,31 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-5 md:gap-6">
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-10 md:gap-x-14 border-t border-white/10">
             {problems.map((p) => (
-              <div key={p.t} className="glass-card rounded-3xl p-7">
+              <div key={p.t} className="pt-8 md:pt-10">
                 <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
-                <p className="mt-4 text-sm text-stone leading-relaxed">{p.d}</p>
+                <p className="mt-4 text-sm text-stone leading-relaxed max-w-md">{p.d}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-14 md:mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
-            {alternatives.map((a) => (
-              <div key={a.t} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-                <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Instead of</div>
-                <div className="mt-3 font-serif text-xl text-cream/85 tracking-tight">{a.t}</div>
-                <p className="mt-3 text-sm text-stone leading-relaxed">{a.d}</p>
-              </div>
-            ))}
+          <div className="mt-16 md:mt-20 border-t border-white/10 pt-10">
+            <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft mb-8">Instead of</div>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-10">
+              {alternatives.map((a) => (
+                <div key={a.t}>
+                  <div className="font-serif text-xl text-cream/90 tracking-tight">{a.t}</div>
+                  <p className="mt-3 text-sm text-stone leading-relaxed">{a.d}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* 4 — SOLUTION */}
-      <section id="solution" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <section id="solution" className="py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
@@ -466,7 +468,7 @@ function Index() {
                 documentation, not dependency.
               </p>
             </div>
-            <div className="glass-card rounded-3xl p-10 space-y-6">
+            <div className="space-y-6 lg:border-l lg:border-white/10 lg:pl-10">
               <div className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
@@ -589,7 +591,7 @@ function Index() {
       </section>
 
       {/* 5 — BENEFITS */}
-      <section id="benefits" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <section id="benefits" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
@@ -598,13 +600,13 @@ function Index() {
               <span className="text-accent">before the executive hire.</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 border-t border-white/10 pt-10">
             {benefits.map((b, i) => (
-              <div key={b.t} className="glass-card rounded-3xl p-7">
-                <div className="font-mono text-[10px] tracking-[0.12em] text-accent">
+              <div key={b.t}>
+                <div className="font-mono text-[10px] tracking-[0.14em] text-accent">
                   0{i + 1}
                 </div>
-                <div className="mt-5 font-serif text-2xl text-cream tracking-tight leading-tight">
+                <div className="mt-4 font-serif text-2xl text-cream tracking-tight leading-tight">
                   {b.t}
                 </div>
                 <p className="mt-3 text-sm text-stone leading-relaxed">{b.d}</p>
@@ -618,7 +620,7 @@ function Index() {
       </section>
 
       {/* 6 — OFFER / ENGAGEMENTS */}
-      <section id="offer" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <section id="offer" className="bg-surface-band py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
             <div className="max-w-2xl">
@@ -644,7 +646,7 @@ function Index() {
       </section>
 
       {/* 7 — HOW IT WORKS */}
-      <section id="how" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <section id="how" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>How it works</SectionEyebrow>
@@ -658,7 +660,7 @@ function Index() {
       </section>
 
       {/* 8 — PROOF */}
-      <section id="proof" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <section id="proof" className="py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
@@ -668,10 +670,10 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-10 border-t border-white/10">
             {cases.map((c) => (
-              <div key={c.tag} className="glass-card rounded-3xl p-7 flex flex-col">
-                <span className="text-[10px] font-medium tracking-[0.12em] uppercase text-accent">
+              <div key={c.tag} className="pt-8 flex flex-col">
+                <span className="text-[10px] font-medium tracking-[0.14em] uppercase text-accent">
                   {c.tag}
                 </span>
                 <p className="mt-6 text-sm text-stone leading-relaxed">
@@ -715,7 +717,7 @@ function Index() {
       </section>
 
       {/* 9 — DIFFERENTIATION */}
-      <section id="vs" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <section id="vs" className="bg-surface-band py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
@@ -725,8 +727,8 @@ function Index() {
             </h2>
           </div>
 
-          <div className="rounded-3xl border border-white/10 overflow-hidden divide-y divide-white/10">
-            <div className="hidden md:grid grid-cols-3 bg-white/[0.03]">
+          <div className="border-y border-white/10 divide-y divide-white/10">
+            <div className="hidden md:grid grid-cols-3">
               <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Dimension</div>
               <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">The old way</div>
               <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-accent">Veep</div>
@@ -747,9 +749,9 @@ function Index() {
       </section>
 
       {/* 10 — FOR PORTFOLIOS (secondary audience band) */}
-      <section id="portfolios" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <section id="portfolios" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="glass-card rounded-3xl p-8 md:p-14 grid lg:grid-cols-5 gap-8 md:gap-10 items-center">
+          <div className="grid lg:grid-cols-5 gap-8 md:gap-10 items-center border-t border-white/10 pt-12 md:pt-16">
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>For PE, VC, and family-office portfolios</SectionEyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
@@ -781,7 +783,7 @@ function Index() {
       </section>
 
       {/* 11 — OBJECTIONS */}
-      <section className="py-20 md:py-28 border-t border-white/10">
+      <section className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Before you book</SectionEyebrow>
@@ -798,7 +800,7 @@ function Index() {
       </section>
 
       {/* 12 — FAQ */}
-      <section id="faq" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <section id="faq" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>FAQ</SectionEyebrow>
