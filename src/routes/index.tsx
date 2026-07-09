@@ -424,23 +424,39 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-5 md:gap-6">
-            {problems.map((p) => (
-              <div key={p.t} className="glass-card rounded-3xl p-7">
-                <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
-                <p className="mt-4 text-sm text-stone leading-relaxed">{p.d}</p>
+          <div className="border-t border-white/10">
+            {problems.map((p, i) => (
+              <div
+                key={p.t}
+                className="grid grid-cols-[auto_1fr] md:grid-cols-[5rem_1fr_1fr] gap-x-6 md:gap-x-10 gap-y-3 py-8 md:py-10 border-b border-white/10"
+              >
+                <span className="font-mono text-[10px] tracking-[0.14em] text-accent pt-2">
+                  0{i + 1}
+                </span>
+                <h3 className="text-2xl md:text-3xl text-cream tracking-tight leading-[1.15] col-span-1">
+                  {p.t}
+                </h3>
+                <p className="text-sm md:text-base text-stone leading-relaxed max-w-prose col-start-2 md:col-start-3 md:pl-0 md:mt-1">
+                  {p.d}
+                </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-14 md:mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
-            {alternatives.map((a) => (
-              <div key={a.t} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-                <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Instead of</div>
-                <div className="mt-3 font-serif text-xl text-cream/85 tracking-tight">{a.t}</div>
-                <p className="mt-3 text-sm text-stone leading-relaxed">{a.d}</p>
-              </div>
-            ))}
+          <div className="mt-20 md:mt-24">
+            <div className="mb-8 font-mono text-[10px] tracking-[0.14em] uppercase text-stone-soft">
+              Instead of
+            </div>
+            <div className="grid md:grid-cols-3 md:divide-x divide-y md:divide-y-0 divide-white/10 border-t border-b md:border-b-0 border-white/10">
+              {alternatives.map((a) => (
+                <div key={a.t} className="py-7 md:py-8 md:px-8 md:first:pl-0 md:last:pr-0">
+                  <div className="text-lg md:text-xl text-cream/90 tracking-tight leading-tight">
+                    {a.t}
+                  </div>
+                  <p className="mt-3 text-sm text-stone leading-relaxed">{a.d}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -466,16 +482,16 @@ function Index() {
                 documentation, not dependency.
               </p>
             </div>
-            <div className="glass-card rounded-3xl p-10 space-y-6">
-              <div className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent">The Veep model</div>
+            <div className="lg:pl-10 lg:border-l lg:border-white/10 space-y-2">
+              <div className="font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-accent pb-2">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
                 ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
                 ["Priced to scope", "Advisory, Sprint, Operator, Pod, or Operator in the Loop — structured around the work, not hourly browsing."],
                 ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
               ].map(([t, d]) => (
-                <div key={t} className="border-t border-white/10 pt-5 first:border-0 first:pt-0">
-                  <div className="font-serif text-xl text-cream tracking-tight">{t}</div>
+                <div key={t} className="border-t border-white/10 pt-5 pb-5">
+                  <div className="text-lg md:text-xl text-cream tracking-tight">{t}</div>
                   <p className="mt-2 text-sm text-stone leading-relaxed">{d}</p>
                 </div>
               ))}
