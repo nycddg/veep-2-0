@@ -414,9 +414,9 @@ function Index() {
       </section>
 
       {/* 3 — PROBLEM */}
-      <section id="problem" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+      <section id="problem" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14">
+          <div className="max-w-3xl mb-12 md:mb-14">
             <SectionEyebrow>The moment you're in</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Your business is too important{" "}
@@ -424,7 +424,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-5 md:gap-6">
             {problems.map((p) => (
               <div key={p.t} className="glass-card rounded-3xl p-7">
                 <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
@@ -433,12 +433,12 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-16 grid md:grid-cols-3 gap-6">
+          <div className="mt-14 md:mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
             {alternatives.map((a) => (
-              <div key={a.t} className="rounded-3xl border border-white/8 bg-white/[0.02] p-6">
-                <div className="text-[10px] uppercase tracking-[0.12em] text-stone-soft">Instead of</div>
-                <div className="mt-3 font-serif text-xl text-stone tracking-tight">{a.t}</div>
-                <p className="mt-3 text-sm text-stone-soft leading-relaxed">{a.d}</p>
+              <div key={a.t} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
+                <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Instead of</div>
+                <div className="mt-3 font-serif text-xl text-cream/85 tracking-tight">{a.t}</div>
+                <p className="mt-3 text-sm text-stone leading-relaxed">{a.d}</p>
               </div>
             ))}
           </div>
@@ -446,28 +446,28 @@ function Index() {
       </section>
 
       {/* 4 — SOLUTION */}
-      <section id="solution" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+      <section id="solution" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
               <SectionEyebrow>What we do</SectionEyebrow>
               <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
                 Senior operators to own the work{" "}
                 <span className="text-accent">that can't wait.</span>
               </h2>
-              <p className="mt-8 text-stone text-lg leading-relaxed">
+              <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
                 Tell us what's stuck: a fundraise, GTM reset, margin issue, leadership
                 gap, or a strategic decision that keeps coming back to you. We define the
                 work, recommend the right level of support (Advisory, Sprint, Operator,
                 or Pod), and match the operator to the job.
               </p>
-              <p className="mt-4 text-stone text-lg leading-relaxed">
+              <p className="mt-4 text-stone text-base md:text-lg leading-relaxed">
                 When the work lands or the permanent hire arrives, we hand off with
                 documentation, not dependency.
               </p>
             </div>
             <div className="glass-card rounded-3xl p-10 space-y-6">
-              <div className="text-[10px] uppercase tracking-[0.12em] text-accent">The Veep model</div>
+              <div className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
                 ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, product leaders, people leaders, and chiefs of staff."],
@@ -486,21 +486,21 @@ function Index() {
 
       {/* 5 — BENEFITS */}
       {/* 4.5 — OPERATORS SPOTLIGHT */}
-      <section id="operators" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+      <section id="operators" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Operator spotlight</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Operators who've held the seat{" "}
               <span className="text-accent">and delivered.</span>
             </h2>
-            <p className="mt-8 text-stone text-lg leading-relaxed">
+            <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
               Every Veep operator has held the role they're deployed into, at a
               comparable-stage company, with outcomes we can reference. No juniors, no
               generalists, no career consultants.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {spotlightOperators.map((op) => (
               <OperatorProofCard
                 key={op.name}
@@ -514,7 +514,7 @@ function Index() {
             ))}
           </div>
 
-          <p className="mt-10 text-left text-sm text-stone-soft">
+          <p className="mt-8 text-left text-sm text-stone">
             Just a few of the 150+ operators in our invite-only network.
           </p>
 
@@ -549,14 +549,14 @@ function Index() {
                         )}
                         <div className="relative w-2 h-2 rounded-full bg-accent" />
                       </div>
-                      <span className="text-[10px] text-stone-soft uppercase tracking-widest font-medium">
+                      <span className="font-mono text-[10px] text-stone-soft uppercase tracking-[0.14em] font-medium">
                         {m.label}
                       </span>
                     </div>
                     <div className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-none">
                       {m.figure}
                     </div>
-                    <p className="text-xs text-stone-soft leading-relaxed">
+                    <p className="text-xs text-stone leading-relaxed">
                       {m.detail}
                     </p>
                   </div>
@@ -567,20 +567,20 @@ function Index() {
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.07] to-transparent h-20 -top-20 animate-scan pointer-events-none" />
             </div>
 
-            <p className="mt-4 text-sm text-stone-soft">
+            <p className="mt-4 text-sm text-stone">
               Aggregated outcomes across our operator roster.
             </p>
           </div>
 
           <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
-            <p className="text-sm text-stone-soft">
+            <p className="text-sm text-stone">
               150+ vetted senior operators · avg. 18 yrs experience · every operator has held the seat.
             </p>
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60 transition"
+              className="inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
             >
               Meet operators for your work <ArrowRight size={14} />
             </a>
@@ -589,16 +589,16 @@ function Index() {
       </section>
 
       {/* 5 — BENEFITS */}
-      <section id="benefits" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+      <section id="benefits" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Executive capacity,{" "}
               <span className="text-accent">before the executive hire.</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {benefits.map((b, i) => (
               <div key={b.t} className="glass-card rounded-3xl p-7">
                 <div className="font-mono text-[10px] tracking-[0.12em] text-accent">
@@ -618,9 +618,9 @@ function Index() {
       </section>
 
       {/* 6 — OFFER / ENGAGEMENTS */}
-      <section id="offer" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+      <section id="offer" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
               <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
@@ -630,12 +630,12 @@ function Index() {
             </div>
             <Link
               to="/pricing"
-              className="text-sm text-cream/80 hover:text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60 transition pb-1"
+              className="text-sm text-cream/90 hover:text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition pb-1"
             >
               See full pricing →
             </Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {engagements.map((e) => (
               <EngagementTile key={e.name} {...e} />
             ))}
@@ -644,9 +644,9 @@ function Index() {
       </section>
 
       {/* 7 — HOW IT WORKS */}
-      <section id="how" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+      <section id="how" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>How it works</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               From first call to operator in the seat{" "}
@@ -658,9 +658,9 @@ function Index() {
       </section>
 
       {/* 8 — PROOF */}
-      <section id="proof" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+      <section id="proof" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-16">
+          <div className="max-w-2xl mb-12 md:mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               What senior operators change in the{" "}
@@ -668,7 +668,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {cases.map((c) => (
               <div key={c.tag} className="glass-card rounded-3xl p-7 flex flex-col">
                 <span className="text-[10px] font-medium tracking-[0.12em] uppercase text-accent">
@@ -680,14 +680,14 @@ function Index() {
                 <p className="mt-3 text-sm text-stone leading-relaxed">
                   <span className="text-cream">Outcome. </span>{c.outcome}
                 </p>
-                <div className="mt-8 pt-6 border-t border-white/10 font-serif text-2xl text-cream tracking-tight">
+                <div className="mt-auto pt-6 border-t border-white/10 font-serif text-2xl text-cream tracking-tight">
                   {c.metric}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10">
+          <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10">
             {[
               { k: "150+", v: "vetted operators" },
               { k: "72h", v: "to shortlist" },
@@ -696,14 +696,14 @@ function Index() {
             ].map((s) => (
               <div key={s.k}>
                 <div className="font-mono text-4xl md:text-5xl text-cream tracking-tight" style={{ fontFeatureSettings: '"zero", "ss01"' }}>{s.k}</div>
-                <div className="mt-2 text-[11px] font-medium tracking-[0.12em] uppercase text-stone-soft">
+                <div className="mt-2 font-mono text-[11px] font-medium tracking-[0.12em] uppercase text-stone-soft">
                   {s.v}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-20">
+          <div className="mt-16 md:mt-20">
             <Testimonials />
           </div>
 
@@ -714,9 +714,9 @@ function Index() {
       </section>
 
       {/* 9 — DIFFERENTIATION */}
-      <section id="vs" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+      <section id="vs" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               How Veep compares{" "}
@@ -726,17 +726,17 @@ function Index() {
 
           <div className="rounded-3xl border border-white/10 overflow-hidden divide-y divide-white/10">
             <div className="hidden md:grid grid-cols-3 bg-white/[0.03]">
-              <div className="p-5 text-[10px] uppercase tracking-[0.12em] text-stone-soft">Dimension</div>
-              <div className="p-5 text-[10px] uppercase tracking-[0.12em] text-stone-soft">The old way</div>
-              <div className="p-5 text-[10px] uppercase tracking-[0.12em] text-accent">Veep</div>
+              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Dimension</div>
+              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">The old way</div>
+              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-accent">Veep</div>
             </div>
             {differentiators.map((r) => (
-              <div key={r.dim} className="grid md:grid-cols-3 gap-2 md:gap-0 p-5 md:p-0">
-                <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.14em] text-stone-soft">
+              <div key={r.dim} className="grid md:grid-cols-3 gap-y-2 gap-x-0 p-5 md:p-0">
+                <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">
                   {r.dim}
                 </div>
                 <div className="md:p-5 text-sm text-stone leading-relaxed">{r.old}</div>
-                <div className="md:p-5 text-sm text-cream leading-relaxed md:bg-accent/[0.04]">
+                <div className="md:p-5 text-sm text-cream leading-relaxed md:bg-accent/[0.06]">
                   {r.veep}
                 </div>
               </div>
@@ -746,9 +746,9 @@ function Index() {
       </section>
 
       {/* 10 — FOR PORTFOLIOS (secondary audience band) */}
-      <section id="portfolios" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+      <section id="portfolios" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="glass-card rounded-3xl p-10 md:p-14 grid lg:grid-cols-5 gap-10 items-center">
+          <div className="glass-card rounded-3xl p-8 md:p-14 grid lg:grid-cols-5 gap-8 md:gap-10 items-center">
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>For PE, VC, and family-office portfolios</SectionEyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
@@ -760,17 +760,17 @@ function Index() {
                 priority stalls.
               </p>
             </div>
-            <div className="lg:col-span-2 flex flex-col lg:items-end gap-3">
+            <div className="lg:col-span-2 flex flex-col lg:items-end gap-4">
               <Link
                 to="/for-portfolios"
-                className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 transition"
+                className="w-full sm:w-auto text-center rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition min-h-11 inline-flex items-center justify-center"
               >
                 See how the roster works
               </Link>
               <Link
                 to="/contact"
                 search={{ intent: "audit" }}
-                className="text-sm text-cream/80 hover:text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60"
+                className="text-sm text-cream/85 hover:text-cream underline underline-offset-8 decoration-white/25 hover:decoration-white/60"
               >
                 Request a capacity audit →
               </Link>
@@ -780,9 +780,9 @@ function Index() {
       </section>
 
       {/* 11 — OBJECTIONS */}
-      <section className="py-24 md:py-32 border-t border-white/10">
+      <section className="py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Before you book</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               The questions founders ask{" "}
@@ -797,9 +797,9 @@ function Index() {
       </section>
 
       {/* 12 — FAQ */}
-      <section id="faq" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
+      <section id="faq" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>FAQ</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Straight answers.
@@ -807,18 +807,18 @@ function Index() {
           </div>
           <div className="divide-y divide-white/10 border-y border-white/10">
             {faqs.map((f) => (
-              <details key={f.q} className="group py-6">
-                <summary className="cursor-pointer flex items-start justify-between gap-6 text-cream">
-                  <span className="font-serif text-xl tracking-tight">{f.q}</span>
+              <details key={f.q} className="group py-6 md:py-7">
+                <summary className="cursor-pointer flex items-start justify-between gap-6 text-cream list-none [&::-webkit-details-marker]:hidden hover:text-cream transition">
+                  <span className="font-serif text-lg md:text-xl tracking-tight">{f.q}</span>
                   <span className="text-accent text-xl leading-none pt-1 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-4 text-stone leading-relaxed text-sm max-w-3xl">{f.a}</p>
+                <p className="mt-4 text-stone leading-relaxed text-sm md:text-base max-w-3xl">{f.a}</p>
               </details>
             ))}
           </div>
           <div className="mt-8 text-sm text-stone">
             More detail on the{" "}
-            <Link to="/faq" className="text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70">
+            <Link to="/faq" className="text-cream underline underline-offset-4 decoration-white/40 hover:decoration-white">
               full FAQ page
             </Link>.
           </div>
