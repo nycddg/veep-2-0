@@ -9,9 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProofRouteImport } from './routes/proof'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as OperatorsRouteImport } from './routes/operators'
@@ -32,6 +34,11 @@ import { Route as ServicesAiOperatorsRouteImport } from './routes/services.ai-op
 import { Route as CompareVsExecutiveSearchRouteImport } from './routes/compare.vs-executive-search'
 import { Route as CompareVsConsultantsRouteImport } from './routes/compare.vs-consultants'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -45,6 +52,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const ProofRoute = ProofRouteImport.update({
   id: '/proof',
   path: '/proof',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingRoute = PricingRouteImport.update({
@@ -157,9 +169,11 @@ export interface FileRoutesByFullPath {
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/proof': typeof ProofRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
@@ -181,8 +195,10 @@ export interface FileRoutesByTo {
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/proof': typeof ProofRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
@@ -205,9 +221,11 @@ export interface FileRoutesById {
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/proof': typeof ProofRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
@@ -231,9 +249,11 @@ export interface FileRouteTypes {
     | '/operators'
     | '/partners'
     | '/pricing'
+    | '/privacy'
     | '/proof'
     | '/services'
     | '/sitemap.xml'
+    | '/terms'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
     | '/services/ai-operators'
@@ -255,8 +275,10 @@ export interface FileRouteTypes {
     | '/operators'
     | '/partners'
     | '/pricing'
+    | '/privacy'
     | '/proof'
     | '/sitemap.xml'
+    | '/terms'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
     | '/services/ai-operators'
@@ -278,9 +300,11 @@ export interface FileRouteTypes {
     | '/operators'
     | '/partners'
     | '/pricing'
+    | '/privacy'
     | '/proof'
     | '/services'
     | '/sitemap.xml'
+    | '/terms'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
     | '/services/ai-operators'
@@ -303,13 +327,22 @@ export interface RootRouteChildren {
   OperatorsRoute: typeof OperatorsRoute
   PartnersRoute: typeof PartnersRoute
   PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProofRoute: typeof ProofRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -329,6 +362,13 @@ declare module '@tanstack/react-router' {
       path: '/proof'
       fullPath: '/proof'
       preLoaderRoute: typeof ProofRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -513,9 +553,11 @@ const rootRouteChildren: RootRouteChildren = {
   OperatorsRoute: OperatorsRoute,
   PartnersRoute: PartnersRoute,
   PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
   ProofRoute: ProofRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
