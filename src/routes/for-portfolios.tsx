@@ -32,7 +32,7 @@ const auditDeliverables = [
 
 const tiers = [
   {
-    t: "Roster Development and Management",
+    t: "Portfolio Program",
     p: "$75k",
     per: "/ year · usage billed separately",
     best: "Built for private equity firms, family offices, holding companies, and independent sponsors that engage in frequent transactions or manage recurring operator needs across multiple companies.",
