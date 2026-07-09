@@ -58,7 +58,7 @@ const spotlightOperators = [
   {
     name: "Jian Yang",
     role: "Finance Operating Partner",
-    priorCompanies: ["UGE International", "CBRE"],
+    priorCompanies: ["INDUSTRIOUS", "OPENCARE"],
     summary:
       "Jian has led finance and capital strategy across four continents, raising $300M+ through Series B/C, venture debt, and a SPAC IPO on the Toronto Venture Exchange. He gives founder-led companies institutional-grade finance and capital-raising capability without the full-time CFO overhead.",
     chips: ["Real Estate", "Finance", "Tech"],
@@ -68,7 +68,7 @@ const spotlightOperators = [
   {
     name: "Erika Velazquez",
     role: "Marketing Operating Partner",
-    priorCompanies: ["Morning Brew", "The Guardian"],
+    priorCompanies: ["MORNING BREW", "THE NEW REPUBLIC"],
     summary:
       "Erika builds growth engines for media and consumer brands. Most recently she drove 550% user growth and a 30% engagement lift at The Voice in five months, doubled CTR at Morning Brew, and unlocked new ad revenue streams. She helps founder-led teams turn audience and attention into revenue, not just metrics.",
     chips: ["New Media", "Consumer", "GenAI"],
