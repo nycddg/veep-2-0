@@ -20,7 +20,7 @@ export function OperatorCanvas() {
           <img
             src={headshotAsset.url}
             alt="Vetted operator headshot"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-bottom"
           />
         </div>
 
