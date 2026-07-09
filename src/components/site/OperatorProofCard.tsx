@@ -26,6 +26,7 @@ export function OperatorProofCard({
   photoUrl,
   priorCompanies,
   priorSeat,
+  summary,
   outcomes,
   variant = "spotlight",
   tilt = 0,
