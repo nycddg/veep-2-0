@@ -18,16 +18,16 @@ const logos = [
 export function LogoWall() {
   return (
     <section className="border-y border-white/10 bg-background overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-        <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent text-center">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-14">
+        <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent text-center">
           operators who built the companies you admire
         </div>
-        <div className="mt-8 relative overflow-hidden">
+        <div className="mt-7 relative overflow-hidden">
           <div className="flex marquee whitespace-nowrap gap-16 items-center">
             {[...logos, ...logos].map((l, i) => (
               <span
                 key={`${l}-${i}`}
-                className="text-lg md:text-xl tracking-tight text-cream/50 font-light shrink-0"
+                className="text-lg md:text-xl tracking-tight text-cream/75 shrink-0"
               >
                 {l}
               </span>

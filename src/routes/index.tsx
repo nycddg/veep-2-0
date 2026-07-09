@@ -355,18 +355,18 @@ function Index() {
     <>
       {/* 1 — HERO */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
-        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-24 md:pb-32 flex flex-col items-center text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.98] text-cream mb-6">
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
+          <h1 className="text-[2.5rem] leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream mb-6">
             Because the work{"\u00a0"}<span className="text-accent">needs{"\u00a0"}an owner.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
+          <p className="text-base sm:text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
             Vetted senior operators to own urgent priorities and high-stakes
             decisions before you are ready, willing, or able to make the
             full-time executive hire.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-16 text-sm text-cream/90">
+          <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
             {["Invite-only network", "72-hour match", "30-day fit guarantee"].map((t) => (
               <div key={t} className="flex items-center gap-2">
                 <Check size={18} className="text-accent" strokeWidth={2.5} />
@@ -377,19 +377,19 @@ function Index() {
 
           <OperatorCanvas />
 
-          <div className="flex flex-col sm:flex-row flex-wrap items-center gap-5 mt-20">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-5 mt-24 md:mt-20 w-full">
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center gap-2"
+              className="w-full sm:w-auto justify-center rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center gap-2 min-h-11"
             >
               Book intro call <ArrowRight size={16} />
             </a>
             <Link
               to="/"
               hash="how"
-              className="text-sm text-cream/80 hover:text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60 transition pb-1"
+              className="text-sm text-cream/85 hover:text-cream underline underline-offset-8 decoration-white/25 hover:decoration-white/60 transition pb-1"
             >
               See how it works
             </Link>
