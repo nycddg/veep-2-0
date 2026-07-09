@@ -117,7 +117,7 @@ export function OperatorProofCard({
 
         {companies.length > 0 && (
           <div className="border-t border-white/10 pt-3">
-            <div className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-cream/70 leading-relaxed">
+            <div className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-cream/70 leading-relaxed">
               {companies.join("  ·  ")}
             </div>
           </div>

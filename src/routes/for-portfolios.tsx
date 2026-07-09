@@ -83,7 +83,7 @@ function Page() {
       <PageHero
         eyebrow="For Portfolios"
         title="An executive roster,"
-        italic="on retainer."
+        accent="on retainer."
         sub="Priority access to vetted senior operators across every portco, ready the moment critical work needs an owner. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
       />
 
@@ -91,7 +91,7 @@ function Page() {
       <section className="py-24 md:py-32 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
-            <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Where portfolios lose time
             </div>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
@@ -114,7 +114,7 @@ function Page() {
       <section className="py-24 md:py-32 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
-            <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Start here
             </div>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
@@ -139,7 +139,7 @@ function Page() {
               </ul>
             </div>
             <div className="glass-card rounded-3xl p-8">
-              <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+              <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
                 Then
               </div>
               <div className="mt-4 font-serif text-2xl text-cream tracking-tight">
@@ -171,7 +171,7 @@ function Page() {
       <section className="py-24 md:py-32 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
-            <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Roster models
             </div>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
@@ -190,7 +190,7 @@ function Page() {
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+                  <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
                     {t.t}
                   </div>
                   {t.featured && (
@@ -230,7 +230,7 @@ function Page() {
       <section className="py-24 md:py-32 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
-            <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               How it works
             </div>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
@@ -254,7 +254,7 @@ function Page() {
       <section className="py-24 md:py-32 border-t border-white/10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
-            <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               What the retainer covers
             </div>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">

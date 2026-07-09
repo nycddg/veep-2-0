@@ -75,7 +75,7 @@ function Page() {
       <PageHero
         eyebrow="FAQ"
         title="Straight answers"
-        italic="on cost, timing, and fit."
+        accent="on cost, timing, and fit."
         sub="If the answer is not here, book a 30-minute call with a Veep founder. We will help clarify the work, the right level of support, and whether Veep is the right fit."
       />
 
@@ -83,7 +83,7 @@ function Page() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-14">
           {groups.map((g) => (
             <div key={g.label}>
-              <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent mb-6">
+              <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent mb-6">
                 {g.label}
               </div>
               <div className="divide-y divide-white/8 border-y border-white/8">

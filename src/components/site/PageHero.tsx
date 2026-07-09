@@ -6,12 +6,13 @@ import { TrustChip } from "./TrustChip";
 
 /**
  * PageHero — editorial dark-navy hero shared across every interior route.
- * Locked to the homepage aesthetic: Playfair headline with italic accent,
- * cream pill primary CTA with soft glow, ghost link secondary. No mono chrome.
+ * IBM Plex Sans headline with an indigo-accent tail phrase (no italics),
+ * cream pill primary CTA, ghost link secondary. No mono chrome.
  */
 export function PageHero({
   eyebrow,
   title,
+  accent,
   italic,
   sub,
   children,
@@ -22,6 +23,9 @@ export function PageHero({
 }: {
   eyebrow: string;
   title: string;
+  /** Indigo tail phrase appended after the title. */
+  accent?: string;
+  /** @deprecated Use `accent`. Kept for backward compatibility. */
   italic?: string;
   sub: string;
   children?: ReactNode;
@@ -33,6 +37,7 @@ export function PageHero({
   index?: string | number;
   category?: string;
 }) {
+  const tail = accent ?? italic;
   return (
     <section className="relative overflow-hidden border-b border-white/10">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-16 md:pb-24">
@@ -46,10 +51,10 @@ export function PageHero({
           )}
           <h1 className="text-4xl md:text-5xl xl:text-6xl text-cream">
             {title}
-            {italic && (
+            {tail && (
               <>
                 {" "}
-                <span className="text-accent">{italic}</span>
+                <span className="text-accent">{tail}</span>
               </>
             )}
           </h1>
