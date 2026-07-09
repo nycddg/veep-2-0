@@ -79,7 +79,7 @@ function Page() {
         sub="If the answer is not here, book a 30-minute call with a Veep founder. We will help clarify the work, the right level of support, and whether Veep is the right fit."
       />
 
-      <section className="py-20 md:py-28">
+      <section className="bg-surface-raised py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-14">
           {groups.map((g) => (
             <div key={g.label}>
