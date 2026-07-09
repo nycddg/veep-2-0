@@ -489,7 +489,7 @@ function Index() {
       <section id="operators" className="py-24 md:py-32 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
-            <SectionEyebrow>Operators</SectionEyebrow>
+            <SectionEyebrow>Operator spotlight</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
               Operators who've held the seat{" "}
               <span className="text-accent">and delivered.</span>
@@ -512,6 +512,10 @@ function Index() {
               />
             ))}
           </div>
+
+          <p className="mt-10 text-center text-sm text-stone-soft">
+            A few of the 150+ operators in our invite-only network.
+          </p>
 
           {/* Network impact */}
           <div className="mt-16">
