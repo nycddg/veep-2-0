@@ -47,7 +47,14 @@ export function HeroMotif() {
           aria-hidden
         >
           <defs>
-            <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient
+              id="lineGradient"
+              gradientUnits="userSpaceOnUse"
+              x1="0"
+              y1={CY - BAND_H / 2}
+              x2="0"
+              y2={CY + BAND_H / 2}
+            >
               <stop offset="0%" stopColor="var(--background, #050810)" />
               <stop offset="50%" stopColor="var(--cream, #F5F1EA)" />
               <stop offset="100%" stopColor="var(--background, #050810)" />
