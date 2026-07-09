@@ -7,7 +7,7 @@ import { BOOKING_URL } from "@/lib/booking";
 // Anchor links on /, plus two standalone routes (/pricing, /faq).
 type NavItem =
   | { kind: "hash"; hash: string; label: string }
-  | { kind: "route"; to: "/pricing" | "/faq"; label: string };
+  | { kind: "route"; to: "/pricing" | "/faq" | "/join"; label: string };
 
 const nav: readonly NavItem[] = [
   { kind: "hash", hash: "overview", label: "Overview" },
@@ -17,6 +17,7 @@ const nav: readonly NavItem[] = [
   { kind: "hash", hash: "proof", label: "Proof" },
   { kind: "route", to: "/pricing", label: "Pricing" },
   { kind: "route", to: "/faq", label: "FAQ" },
+  { kind: "route", to: "/join", label: "Join" },
 ];
 
 export function SiteHeader() {
@@ -42,8 +43,8 @@ export function SiteHeader() {
           <span aria-hidden className="mx-3 h-4 w-px bg-white/15" />
           {nav.filter((n) => n.kind === "route").map((n) => (
             <Link
-              key={(n as { to: "/pricing" | "/faq" }).to}
-              to={(n as { to: "/pricing" | "/faq" }).to}
+              key={(n as { to: "/pricing" | "/faq" | "/join" }).to}
+              to={(n as { to: "/pricing" | "/faq" | "/join" }).to}
               className="px-3 py-2 text-sm text-cream/80 hover:text-cream transition"
               activeProps={{ className: "px-3 py-2 text-sm text-cream" }}
             >

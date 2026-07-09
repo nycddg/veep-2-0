@@ -17,6 +17,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as OperatorsRouteImport } from './routes/operators'
+import { Route as JoinRouteImport } from './routes/join'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as ForPortfoliosRouteImport } from './routes/for-portfolios'
@@ -72,6 +73,11 @@ const PartnersRoute = PartnersRouteImport.update({
 const OperatorsRoute = OperatorsRouteImport.update({
   id: '/operators',
   path: '/operators',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InsightsRoute = InsightsRouteImport.update({
@@ -166,6 +172,7 @@ export interface FileRoutesByFullPath {
   '/for-portfolios': typeof ForPortfoliosRoute
   '/how-it-works': typeof HowItWorksRoute
   '/insights': typeof InsightsRoute
+  '/join': typeof JoinRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
@@ -192,6 +199,7 @@ export interface FileRoutesByTo {
   '/for-portfolios': typeof ForPortfoliosRoute
   '/how-it-works': typeof HowItWorksRoute
   '/insights': typeof InsightsRoute
+  '/join': typeof JoinRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
@@ -218,6 +226,7 @@ export interface FileRoutesById {
   '/for-portfolios': typeof ForPortfoliosRoute
   '/how-it-works': typeof HowItWorksRoute
   '/insights': typeof InsightsRoute
+  '/join': typeof JoinRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
@@ -246,6 +255,7 @@ export interface FileRouteTypes {
     | '/for-portfolios'
     | '/how-it-works'
     | '/insights'
+    | '/join'
     | '/operators'
     | '/partners'
     | '/pricing'
@@ -272,6 +282,7 @@ export interface FileRouteTypes {
     | '/for-portfolios'
     | '/how-it-works'
     | '/insights'
+    | '/join'
     | '/operators'
     | '/partners'
     | '/pricing'
@@ -297,6 +308,7 @@ export interface FileRouteTypes {
     | '/for-portfolios'
     | '/how-it-works'
     | '/insights'
+    | '/join'
     | '/operators'
     | '/partners'
     | '/pricing'
@@ -324,6 +336,7 @@ export interface RootRouteChildren {
   ForPortfoliosRoute: typeof ForPortfoliosRoute
   HowItWorksRoute: typeof HowItWorksRoute
   InsightsRoute: typeof InsightsRoute
+  JoinRoute: typeof JoinRoute
   OperatorsRoute: typeof OperatorsRoute
   PartnersRoute: typeof PartnersRoute
   PricingRoute: typeof PricingRoute
@@ -390,6 +403,13 @@ declare module '@tanstack/react-router' {
       path: '/operators'
       fullPath: '/operators'
       preLoaderRoute: typeof OperatorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/insights': {
@@ -550,6 +570,7 @@ const rootRouteChildren: RootRouteChildren = {
   ForPortfoliosRoute: ForPortfoliosRoute,
   HowItWorksRoute: HowItWorksRoute,
   InsightsRoute: InsightsRoute,
+  JoinRoute: JoinRoute,
   OperatorsRoute: OperatorsRoute,
   PartnersRoute: PartnersRoute,
   PricingRoute: PricingRoute,
