@@ -54,6 +54,10 @@
   --color-accent-coral: var(--accent-coral);
   --color-accent-cyan: var(--accent-cyan);
 
+  --color-surface-ink: var(--surface-ink);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-band: var(--surface-band);
+
   --shadow-elegant: 0 1px 0 oklch(1 0 0 / 0.04), 0 24px 60px -30px oklch(0 0 0 / 0.60);
   --shadow-float: 0 20px 48px -20px oklch(0 0 0 / 0.55);
 }
@@ -64,6 +68,13 @@
   /* Premium managed-marketplace palette — deep navy #050810 canvas, bright blue accent. */
   --background: oklch(0.115 0.03 265);        /* deep navy ≈ #050810 */
   --foreground: oklch(0.96 0 0);              /* off-white */
+
+  /* Editorial tonal bands — 3 dark surfaces used to pace the page.
+     ink = base canvas, raised = subtly lifted blue-black,
+     band = charcoal-navy for pricing / comparison chapters. */
+  --surface-ink: oklch(0.115 0.03 265);
+  --surface-raised: oklch(0.155 0.028 262);
+  --surface-band: oklch(0.185 0.022 258);
 
   /* Semantic surface + text roles */
   --ink: oklch(0.115 0.03 265);               /* darkest navy for inverted pills */
