@@ -134,13 +134,13 @@ export function OperatorProofCard({
         )}
 
         {(summary || (outcomes && outcomes.length > 0)) && (
-          <div className="flex flex-col gap-1.5">
+          <div className="flex flex-col gap-1.5 pb-2">
             <div
               id={summaryId}
-              className={`text-[13px] text-stone leading-relaxed text-pretty transition-all duration-300 ${
+              className={`text-[13px] text-stone leading-relaxed text-pretty transition-all duration-300 overflow-hidden ${
                 expanded
-                  ? "h-[42px] overflow-y-auto"
-                  : "h-[42px] line-clamp-2 overflow-hidden"
+                  ? "max-h-[200px]"
+                  : "max-h-[42px] min-h-[42px] line-clamp-2"
               }`}
             >
               {summary || outcomes?.join(" ")}
@@ -156,6 +156,7 @@ export function OperatorProofCard({
             </button>
           </div>
         )}
+
 
 
         {chips.length > 0 && (
