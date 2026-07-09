@@ -328,7 +328,7 @@ function Index() {
       {/* 1 — HERO */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-24 md:pb-32 flex flex-col items-center text-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-cream mb-6">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-cream mb-6">
             The work needs<br />
             <span className="text-accent">an owner.</span>
           </h1>
