@@ -109,7 +109,7 @@ function Page() {
         eyebrow="Pricing"
         title="Priced to the work."
         accent="Not the hour."
-        sub="Every engagement is scoped to the work, urgency, and level of ownership required. Clear ranges. No hourly billing. No lock-in by default."
+        sub="Every engagement is scoped to the work, urgency, and level of ownership required. Transparent rates. No hourly billing. No lock-in by default."
       />
 
       {/* Four tiers — data cards, no big containers, hierarchy earned by type + left rule. */}
