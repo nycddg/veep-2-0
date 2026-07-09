@@ -89,7 +89,7 @@ function Page() {
       <PageHero
         eyebrow="For Portfolios"
         title="Your operating partner function, ready when the portfolio needs it."
-        sub="Veep gives private equity firms, family offices, holding companies, and independent sponsors priority access to a vetted roster of senior operators across finance, GTM, operations, product, and people. Use us before a transaction, after close, during integration, or whenever a portco needs senior ownership before the full-time hire is ready, willing, or able to happen. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
+        sub="Access a vetted roster of senior operators across finance, GTM, operations, product, and people. Use us before a transaction, after close, during integration, or whenever a portfolio company needs senior ownership. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
       />
 
       {/* Problem */}
