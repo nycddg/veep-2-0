@@ -752,13 +752,14 @@ function Index() {
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>For PE, VC, and family-office portfolios</SectionEyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
-                One roster. Every portco. Ready when the work needs an owner.
+                Stabilize the operational gaps transactions create.
               </h2>
               <p className="text-stone leading-relaxed">
-                We map executive-capacity gaps across the portfolio and deploy vetted
-                senior operators when a leadership seat opens or a value-creation
-                priority stalls.
+                Veep gives private equity firms, family offices, holding companies, and independent sponsors priority access to a vetted roster of senior operators across finance, GTM, operations, product, and people.&nbsp;Use us before a transaction, after close, during integration, or whenever a portfolio company needs senior ownership .
               </p>
+              <div className="text-stone leading-relaxed">
+                Transactions create volatility before close, after close, and during integration. Leadership seats open. Finance, GTM, operations, and people priorities shift. The plan is clear, but the company often lacks the senior capacity to own the work.&nbsp;Veep gives transaction-active firms a retained roster of vetted senior operators, ready to support diligence, transition, integration, value creation, and interim leadership needs across the portfolio.
+              </div>
             </div>
             <div className="lg:col-span-2 flex flex-col lg:items-end gap-4">
               <Link
