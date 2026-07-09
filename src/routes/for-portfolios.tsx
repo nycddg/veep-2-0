@@ -83,7 +83,7 @@ function Page() {
       <PageHero
         eyebrow="For Portfolios"
         title="An executive roster,"
-        italic="on retainer."
+        accent="on retainer."
         sub="Priority access to vetted senior operators across every portco, ready the moment critical work needs an owner. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
       />
 

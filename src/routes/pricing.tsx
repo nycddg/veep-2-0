@@ -108,7 +108,7 @@ function Page() {
       <PageHero
         eyebrow="Pricing"
         title="Priced to the work."
-        italic="Not the hour."
+        accent="Not the hour."
         sub="Every engagement is scoped to the work, urgency, and level of ownership required. Clear ranges. No hourly billing. No lock-in by default."
       />
 

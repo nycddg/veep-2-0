@@ -75,7 +75,7 @@ function Page() {
       <PageHero
         eyebrow="FAQ"
         title="Straight answers"
-        italic="on cost, timing, and fit."
+        accent="on cost, timing, and fit."
         sub="If the answer is not here, book a 30-minute call with a Veep founder. We will help clarify the work, the right level of support, and whether Veep is the right fit."
       />
 

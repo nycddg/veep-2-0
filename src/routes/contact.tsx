@@ -45,7 +45,7 @@ function Page() {
       <PageHero
         eyebrow={isAudit ? "Capacity audit" : "Discovery call"}
         title={isAudit ? "Map the portfolio's" : "What critical initiative"}
-        italic={isAudit ? "executive risk." : "doesn't have an owner?"}
+        accent={isAudit ? "executive risk." : "doesn't have an owner?"}
         sub={
           isAudit
             ? "A structured audit of leadership risk across your portfolio, with a recommended roster structure per company. Delivered in 2–3 weeks."
