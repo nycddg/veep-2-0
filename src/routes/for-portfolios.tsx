@@ -179,11 +179,11 @@ function Page() {
               <span className="text-accent">as the portfolio needs.</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:divide-x lg:divide-white/10">
+          <div className="max-w-2xl mx-auto">
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="flex flex-col lg:px-6 lg:first:pl-0 lg:last:pr-0"
+                className="rounded-3xl border border-white/10 bg-card p-8 md:p-10"
               >
                 <div className="text-2xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
