@@ -86,7 +86,7 @@ export const submitApplication = createServerFn({ method: "POST" })
         {
           fileId: uploadedFile.id,
           displayName: uploadedFile.displayName,
-          fileType: uploadedFile.mediaType,
+          fileType: file.type,
           url: uploadedFile.url,
         },
       ],
@@ -96,3 +96,4 @@ export const submitApplication = createServerFn({ method: "POST" })
 
     return { success: true };
   });
+
