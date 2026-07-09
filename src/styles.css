@@ -68,9 +68,9 @@
   /* Semantic surface + text roles */
   --ink: oklch(0.115 0.03 265);               /* darkest navy for inverted pills */
   --cream: oklch(0.98 0 0);                   /* off-white for text on dark, and light pills */
-  --stone: oklch(0.72 0.02 250);              /* secondary text — soft blue-gray */
-  --stone-soft: oklch(0.55 0.03 255);         /* tertiary / mono labels — dim blue-gray */
-  --rule: oklch(1 0 0 / 0.10);                /* faint ruled-grid lines */
+  --stone: oklch(0.80 0.02 250);              /* secondary body text — soft blue-gray, AA on navy */
+  --stone-soft: oklch(0.68 0.03 255);         /* tertiary / mono labels — clears AA at 12px on navy */
+  --rule: oklch(1 0 0 / 0.12);                /* faint ruled-grid lines, just visible on OLED */
 
   /* Accent — bright blue primary, warm coral for featured/urgent signals */
   --forest: #789fff;                          /* bright blue */
@@ -158,6 +158,20 @@
 
   /* Cap emphasis at 500 — no browser 700 defaults. */
   strong, b { font-weight: 500; }
+
+  /* Global font-weight ceiling: no element should render heavier than 600.
+     Utility classes above this (font-bold=700, font-extrabold=800, font-black=900)
+     get pulled back to the design ceiling so a stray class can't break the system. */
+  .font-bold, .font-extrabold, .font-black { font-weight: 500; }
+  .font-semibold { font-weight: 500; }
+
+  /* Consistent keyboard focus for every interactive element. */
+  a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
+  input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 
   /* Italics kept as normal weight; do NOT globally recolor emphasis.
      Accent color is applied explicitly where it belongs (hero tail phrase),

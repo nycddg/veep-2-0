@@ -41,31 +41,31 @@ export function SiteFooter() {
             <Link to="/" className="flex items-center" aria-label="Veep home">
               <img src={wordmarkWhite.url} alt="Veep" className="h-6 w-auto" />
             </Link>
-            <p className="mt-5 text-sm text-stone max-w-sm leading-relaxed">
+            <p className="mt-5 text-sm text-cream/85 max-w-sm leading-relaxed">
               Senior operators to own the work that can't wait. Matched in 72
               hours. Deployed in under 10 days.
             </p>
             <a
               href="mailto:hey@veep.work"
-              className="mt-6 inline-block text-lg text-cream hover:text-accent underline underline-offset-8 decoration-white/20 hover:decoration-accent transition"
+              className="mt-6 inline-block text-lg text-cream hover:text-accent underline underline-offset-8 decoration-white/25 hover:decoration-accent transition"
             >
               hey@veep.work
             </a>
           </div>
           {cols.map((c) => (
             <div key={c.title} className="md:col-span-2">
-              <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-stone-soft font-mono">
+              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-cream/70 font-mono">
                 {c.title}
               </div>
               <ul className="mt-4 space-y-2.5">
                 {c.links.map((l) => (
                   <li key={l.label}>
                     {l.kind === "hash" ? (
-                      <Link to="/" hash={l.hash} className="text-sm text-cream/85 hover:text-cream transition">
+                      <Link to="/" hash={l.hash} className="text-sm text-cream/90 hover:text-cream transition">
                         {l.label}
                       </Link>
                     ) : (
-                      <Link to={l.to} className="text-sm text-cream/85 hover:text-cream transition">
+                      <Link to={l.to} className="text-sm text-cream/90 hover:text-cream transition">
                         {l.label}
                       </Link>
                     )}
@@ -75,7 +75,7 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-stone-soft">
+        <div className="mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-cream/60">
           <div>© {new Date().getFullYear()}&nbsp;The Veep Group, LLC. All rights reserved.</div>
           <div>Senior operators for work that can't wait.</div>
         </div>

@@ -356,7 +356,7 @@ function Index() {
       {/* 1 — HERO */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-24 md:pb-32 flex flex-col items-center text-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-cream mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.98] text-cream mb-6">
             Because the work{"\u00a0"}<span className="text-accent">needs{"\u00a0"}an owner.</span>
           </h1>
 
@@ -366,7 +366,7 @@ function Index() {
             full-time executive hire.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-16 text-sm font-semibold text-cream/90">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-16 text-sm text-cream/90">
             {["Invite-only network", "72-hour match", "30-day fit guarantee"].map((t) => (
               <div key={t} className="flex items-center gap-2">
                 <Check size={18} className="text-accent" strokeWidth={2.5} />

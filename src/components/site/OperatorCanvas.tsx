@@ -30,18 +30,18 @@ export function OperatorCanvas() {
             <Star size={18} className="text-white fill-white" />
           </div>
           <div className="text-left">
-            <p className="text-[10px] uppercase tracking-[0.12em] text-accent font-black">MATCH HISTORY</p>
-            <p className="text-sm text-cream font-bold">95% Match Success Rate</p>
+            <p className="text-[10px] uppercase tracking-[0.12em] text-accent font-medium">MATCH HISTORY</p>
+            <p className="text-sm text-cream font-medium">95% Match Success Rate</p>
           </div>
         </div>
 
         {/* Match matrix */}
         <div className="absolute -bottom-10 right-0 md:-right-6 z-20 bg-[#0a0c16]/80 backdrop-blur-3xl border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_rgba(0,0,0,0.7)] w-[260px] md:w-[280px] op-float-delayed">
-          <p className="text-[10px] text-cream/60 mb-5 font-bold uppercase tracking-[0.2em]">Match Matrix</p>
+          <p className="text-[10px] text-cream/80 mb-5 font-medium uppercase tracking-[0.16em]">Match Matrix</p>
           <div className="space-y-4">
             {MATRIX.map((row) => (
               <div key={row.label}>
-                <div className="flex justify-between text-[11px] text-cream mb-1.5 font-semibold">
+                <div className="flex justify-between text-[11px] text-cream mb-1.5 font-medium">
                   <span>{row.label}</span>
                   <span>{row.value}%</span>
                 </div>
