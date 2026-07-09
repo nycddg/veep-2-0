@@ -80,7 +80,7 @@ export function HeroMotif() {
 
           {BARS.map((b, i) => {
             const startDy = b.dy;
-            const startDx = DEST_X;
+            const startDx = DEST_X + DEST_W / 2;
             const style: React.CSSProperties = {
               // custom props consumed by keyframes
               ["--sx" as string]: `${b.sx}px`,
@@ -92,9 +92,8 @@ export function HeroMotif() {
             };
             return (
               <g key={i} className="motif-bar" style={style}>
-                {/* Bar rect anchored at its own origin (0,0) */}
                 <rect
-                  x={0}
+                  x={-b.w / 2}
                   y={-BAR_H / 2}
                   width={b.w}
                   height={BAR_H}
@@ -102,7 +101,6 @@ export function HeroMotif() {
                   fill="#F5F1EA"
                   fillOpacity="0.85"
                 />
-                {/* Destination bars render fixed width for alignment; scale x to DEST_W when settled */}
               </g>
             );
           })}
@@ -111,7 +109,7 @@ export function HeroMotif() {
           {BARS.map((b, i) => (
             <rect
               key={`ghost-${i}`}
-              x={DEST_X}
+              x={DEST_X - DEST_W / 2 + DEST_W / 2}
               y={b.dy - BAR_H / 2}
               width={DEST_W}
               height={BAR_H}
