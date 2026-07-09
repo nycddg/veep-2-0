@@ -763,7 +763,7 @@ function Index() {
                 to="/for-portfolios"
                 className="w-full sm:w-auto text-center rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition min-h-11 inline-flex items-center justify-center"
               >
-                See how the roster works
+                See how portfolio rosters work
               </Link>
               <Link
                 to="/contact"
