@@ -25,7 +25,7 @@ const spotlightOperators = [
   {
     name: "Jian Yang",
     role: "Senior Finance Operator",
-    priorSeat: "Former VP Finance, Industrious (acq. by CBRE)",
+    priorCompanies: ["Industrious", "CBRE"],
     outcomes: [
       "Led $80M Series C readiness",
       "Built FP&A for 40+ locations",
@@ -36,7 +36,7 @@ const spotlightOperators = [
   {
     name: "Vanessa Kwan",
     role: "Senior Finance Operator",
-    priorSeat: "Former CFO, DTC brand (Ex-Goldman Sachs)",
+    priorCompanies: ["Goldman Sachs", "DTC brand"],
     outcomes: [
       "Raised $45M across Series A–C",
       "Improved gross margin +12 pts",
@@ -47,7 +47,7 @@ const spotlightOperators = [
   {
     name: "Kostja Mirkovic",
     role: "Senior GTM Operator",
-    priorSeat: "Former Head of Sales, LinkedIn Talent Solutions",
+    priorCompanies: ["LinkedIn", "Talent Solutions"],
     outcomes: [
       "Scaled ARR from $8M → $32M",
       "Built enterprise motion from zero",
@@ -58,7 +58,7 @@ const spotlightOperators = [
   {
     name: "Laura Merling",
     role: "Senior Operations Operator",
-    priorSeat: "Former COO, mobility startup (Ex-Google)",
+    priorCompanies: ["Google", "Mobility startup"],
     outcomes: [
       "Cut ops cost per unit by 28%",
       "Stood up 3 new markets in 6 mo",
@@ -363,7 +363,7 @@ function Index() {
             <div className="relative min-h-[520px] flex items-center justify-center">
               <div className="relative grid grid-cols-2 gap-4 w-full max-w-lg">
                 {heroOperators.map((op) => (
-                  <OperatorProofCard key={op.name} {...op} />
+                  <OperatorProofCard key={op.name} variant="compact" {...op} />
                 ))}
               </div>
             </div>
@@ -480,7 +480,7 @@ function Index() {
                 key={op.name}
                 name={op.name}
                 role={op.role}
-                priorSeat={op.priorSeat}
+                priorCompanies={op.priorCompanies}
                 outcomes={op.outcomes}
                 chips={op.chips}
               />
