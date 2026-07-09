@@ -17,7 +17,7 @@ const problems = [
   },
   {
     t: "Smaller firms rely on the same informal roster.",
-    d: "Many smaller PE firms, holdcos, family offices, and independent sponsors go back to the same people every time they buy a company. Those people may be good, but the firm knows there is stronger talent available. They just do not have the time to source, vet, and maintain a deeper roster that may or may not be deployed.",
+    d: "Many small and mid-size firms go back to the same people every time they buy a company. Those people may be good, but they know there is stronger talent available. They just do not have the time to source, vet, and maintain a deeper roster that may or may not be deployed.",
   },
 ];
 
