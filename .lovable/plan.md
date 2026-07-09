@@ -1,30 +1,42 @@
-## Goal
-Make the operator profile cards stay at a fixed maximum height so the container never shifts when "Read more" is clicked; only the summary text should toggle between 2-line clamp and full text. Also widen the cards by 5%.
+Replace the copy on `/for-portfolios` with the new draft provided. This is a pure content update; the existing page structure, components, and styling are preserved.
 
-## What will change
-- `src/components/site/OperatorProofCard.tsx` — fixed-height summary block
-- `src/components/site/primitives.tsx` — add a `maxWidth` option to `Section`
-- `src/routes/index.tsx` — use the wider section for the operator spotlight
+Scope of changes in `src/routes/for-portfolios.tsx`:
 
-## Implementation details
+1. **Hero section**
+   - Update `PageHero` props: title becomes `Your operating partner function, ready when the portfolio needs it.` with no accent tail (the whole title is one string).
+   - Subtext becomes the full new paragraph ending with the 72-hour / 10-day / 30-day guarantee lines.
+   - Keep existing CTAs: `Book intro call` and `Request a capacity audit`.
 
-### 1. Fixed maximum-height summary container
-- All current operator summaries expand to about 127px. Set the summary container to a fixed `h-[150px]` so it can hold the longest text with a small buffer.
-- Collapsed state: `line-clamp-2` to hide the rest of the text.
-- Expanded state: no line clamp, so the full text is visible inside the same 150px container.
-- Because the container height is fixed, the card body will already be at its maximum size and will not shift when toggling.
-- Remove the height transition (since the container doesn't change size); keep a subtle opacity/fade transition on the text if desired.
+2. **"Where portfolios lose time" section**
+   - Replace the section heading: `Transactions create volatility. The work still needs an owner.`
+   - Replace the 3 `problems` array entries with the 4 new entries: pre-close needs, post-close staffing, executive transitions, and smaller firms relying on an informal roster.
 
-### 2. Preserve spacing and chips position
-- Keep the `figcaption` flex column and `mt-auto` chips so the industry tags stay anchored at the bottom.
-- Keep a small padding buffer (`pb-2`) below the summary/button group to maintain breathing room.
+3. **"Start here" / Audit section**
+   - Eyebrow stays `Start here`.
+   - Heading: `Portfolio Capacity Audit.`
+   - Subtext: the new paragraph about mapping transactions and operating priorities across the portfolio.
+   - Replace `auditDeliverables` with the 6 new items (portfolio-wide leadership and operator gap map, function coverage assessment, upcoming transaction/event triggers, recommended roster structure, emergency coverage path, priority shortlists).
+   - "Then" panel: update heading to `Portfolio Executive Roster` and subtext to the new retained operating partner paragraph. Update the bullet list to the 3 new lines: `Annual roster: $75k`, `Usage billed separately at preferred rates`, `MSA activated once, SOWs per engagement`.
 
-### 3. Widen the cards by 5%
-- Add a `maxWidth` prop to the `Section` primitive. Default remains `max-w-7xl` (80rem / 1280px); add a `wide` option that uses `max-w-[84rem]` (1344px, ~5% wider).
-- Apply `maxWidth="wide"` to the operator spotlight section in `src/routes/index.tsx` so the four-column grid expands by ~5% and each card becomes ~5% wider.
+4. **"Roster model" section**
+   - Eyebrow: `Roster model` (singular).
+   - Title: `Portfolio Roster` with no accent tail.
+   - Price: `$75k / year · usage billed separately`.
+   - Target audience text: `Built for private equity firms, family offices, holding companies, and independent sponsors that engage in frequent transactions or manage recurring operator needs across multiple companies.`
+   - Replace `tiers` items with the 7 new includes.
+   - Keep the engagement-pricing link.
+   - Update the note below the tier to include `Operator in the Loop` in the list of engagement types.
 
-### 4. Verify
-- Confirm all four cards render at the same height and do not shift when clicking "Read more" / "Show less".
-- Confirm the full summary text appears when expanded and the 2-line clamp appears when collapsed.
-- Confirm the operator spotlight grid is visibly wider than the surrounding sections.
-- Run production build and typecheck.
+5. **"How it works" section**
+   - Keep eyebrow and title.
+   - Replace `steps` array with the 4 new descriptions (capacity audit, MSA signed once, SOW per engagement, quarterly review).
+
+6. **"What the retainer covers" section**
+   - Keep eyebrow and title.
+   - Replace `included` array with the two new descriptions for "In the roster" and "Billed by SOW".
+
+7. **Footer CTA**
+   - Headline: `Stabilize the operator gaps across your portfolio.`
+   - Subtext: `Book a 30-minute call to walk through the audit and roster model. We will tell you directly whether Veep is the right operating partner function for your firm.`
+
+No new components, routes, or dependencies are required. Page metadata (`head`) stays the same unless you want it updated.
