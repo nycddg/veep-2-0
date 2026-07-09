@@ -16,7 +16,7 @@ export function OperatorCanvas() {
 
       <div className="relative">
         {/* Headshot slot */}
-        <div className="relative z-10 mx-auto w-full aspect-[16/9] max-w-2xl rounded-3xl bg-gradient-to-br from-[#1a1c2e] to-[#0a0c16] border border-white/10 overflow-hidden shadow-2xl">
+        <div className="relative z-10 mx-auto w-full aspect-[16/9] max-w-2xl rounded-3xl bg-gradient-to-br from-[#1a1c2e] to-[#0a0c16] overflow-hidden shadow-2xl">
           <img
             src={headshotAsset.url}
             alt="Vetted operator headshot"
