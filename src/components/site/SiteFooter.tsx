@@ -39,10 +39,10 @@ export function SiteFooter() {
               hours. Deployed in under 10 days.
             </p>
             <a
-              href="mailto:hello@veep.co"
+              href="mailto:hey@veep.work"
               className="mt-6 inline-block text-lg text-cream hover:text-accent underline underline-offset-8 decoration-white/20 hover:decoration-accent transition"
             >
-              hello@veep.co
+              hey@veep.work
             </a>
           </div>
           {cols.map((c) => (
@@ -69,7 +69,7 @@ export function SiteFooter() {
           ))}
         </div>
         <div className="mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-stone-soft">
-          <div>© {new Date().getFullYear()} Veep. All rights reserved.</div>
+          <div>© {new Date().getFullYear()}&nbsp;The Veep Group, LLC. All rights reserved.</div>
           <div>Senior operators for work that can't wait.</div>
         </div>
       </div>
