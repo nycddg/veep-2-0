@@ -197,7 +197,7 @@ function Page() {
               >
                 <div className="text-xl sm:text-2xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
-                  {t.p} <span className="text-cream/60">{t.per}</span>
+                  {t.p} <span className="text-cream/70">{t.per}</span>
                 </div>
                 <p className="mt-5 text-sm text-cream/85 leading-relaxed">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-cream/80">

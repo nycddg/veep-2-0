@@ -82,7 +82,7 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-cream/60">
+        <div className="mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-cream/70">
           <div>© {new Date().getFullYear()}&nbsp;The Veep Group, LLC. All rights reserved.</div>
           <div>Senior operators for work that can't wait.</div>
         </div>

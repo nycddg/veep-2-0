@@ -156,7 +156,7 @@ function Page() {
                   >
                     {isAudit ? "Request the audit" : "Book the call"}
                   </button>
-                  <p className="text-xs text-cream/65">
+                  <p className="text-xs text-cream/75">
                     By submitting you agree to be contacted by Veep about your inquiry.
                   </p>
                 </form>

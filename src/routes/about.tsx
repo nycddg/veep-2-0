@@ -134,7 +134,7 @@ function Page() {
                     <div className="text-cream text-lg tracking-tight">
                       {p.title}
                     </div>
-                    <p className="mt-2 text-cream/75 text-sm leading-relaxed">
+                    <p className="mt-2 text-cream/80 text-sm leading-relaxed">
                       {p.body}
                     </p>
                   </div>
@@ -164,13 +164,13 @@ function Page() {
           <div className="mt-14 grid md:grid-cols-3 gap-10 md:gap-8">
             {founders.map((f) => (
               <div key={f.name} className="border-t border-white/10 pt-6">
-                <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-cream/60">
+                <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-cream/70">
                   {f.role}
                 </div>
                 <div className="mt-3 text-2xl text-cream tracking-tight">
                   {f.name}
                 </div>
-                <p className="mt-3 text-cream/75 text-sm leading-relaxed">
+                <p className="mt-3 text-cream/80 text-sm leading-relaxed">
                   {f.bio}
                 </p>
               </div>
