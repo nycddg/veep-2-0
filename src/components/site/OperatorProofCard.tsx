@@ -1,6 +1,9 @@
+import { useState } from "react";
+
 function initials(name: string) {
   return name.split(" ").filter(Boolean).slice(0, 2).map((s) => s[0]).join("");
 }
+
 
 type OperatorProofCardProps = {
   name: string;
@@ -80,8 +83,12 @@ export function OperatorProofCard({
       ? [priorSeat]
       : [];
 
+  const [expanded, setExpanded] = useState(false);
+  const summaryId = `operator-summary-${name.toLowerCase().replace(/\s+/g, "-")}`;
+
   return (
     <figure className="group flex flex-col overflow-hidden rounded-lg bg-white/[0.02] ring-1 ring-white/8 transition-colors hover:ring-white/15">
+
       {/* Portrait */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-accent/10">
         {photoUrl ? (
@@ -127,10 +134,29 @@ export function OperatorProofCard({
         )}
 
         {(summary || (outcomes && outcomes.length > 0)) && (
-          <p className="text-[13px] text-stone leading-relaxed text-pretty">
-            {summary || outcomes?.join(" ")}
-          </p>
+          <div className="flex flex-col gap-1.5">
+            <div
+              id={summaryId}
+              className={`text-[13px] text-stone leading-relaxed text-pretty transition-all duration-300 ${
+                expanded
+                  ? "h-[42px] overflow-y-auto"
+                  : "h-[42px] line-clamp-2 overflow-hidden"
+              }`}
+            >
+              {summary || outcomes?.join(" ")}
+            </div>
+            <button
+              type="button"
+              onClick={() => setExpanded((v) => !v)}
+              aria-expanded={expanded}
+              aria-controls={summaryId}
+              className="self-start text-[11px] font-medium text-accent hover:opacity-80 transition"
+            >
+              {expanded ? "Show less" : "Read more"}
+            </button>
+          </div>
         )}
+
 
         {chips.length > 0 && (
           <div className="mt-auto flex flex-wrap gap-x-3 gap-y-1 pt-1">
