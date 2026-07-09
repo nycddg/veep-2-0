@@ -18,16 +18,17 @@ type Bar = {
 const BAR_H = 10;
 const DEST_X = 240;
 const DEST_W = 140;
-const CYCLE = 9; // seconds
+const CYCLE = 12; // seconds
 
-// Six bars, staggered. Each spends most of cycle either at source or dest.
+// Six bars, staggered. Source positions spread across the left pile so bars
+// sit distinctly; rotations are around each bar's own center.
 const BARS: Bar[] = [
-  { sx: 40,  sy: 340, sr: -6, w: 150, dy: 100, delay: 0.0 },
-  { sx: 55,  sy: 320, sr:  4, w: 130, dy: 122, delay: 0.9 },
-  { sx: 30,  sy: 298, sr: -3, w: 160, dy: 144, delay: 1.8 },
-  { sx: 60,  sy: 276, sr:  7, w: 120, dy: 166, delay: 2.7 },
-  { sx: 45,  sy: 254, sr: -5, w: 140, dy: 188, delay: 3.6 },
-  { sx: 50,  sy: 232, sr:  3, w: 130, dy: 210, delay: 4.5 },
+  { sx: 70,  sy: 372, sr: -8, w: 150, dy: 100, delay: 0.0 },
+  { sx: 95,  sy: 340, sr:  5, w: 130, dy: 122, delay: 1.6 },
+  { sx: 60,  sy: 310, sr: -3, w: 160, dy: 144, delay: 3.2 },
+  { sx: 105, sy: 280, sr:  9, w: 120, dy: 166, delay: 4.8 },
+  { sx: 75,  sy: 250, sr: -6, w: 140, dy: 188, delay: 6.4 },
+  { sx: 90,  sy: 220, sr:  4, w: 130, dy: 210, delay: 8.0 },
 ];
 
 export function HeroMotif() {
