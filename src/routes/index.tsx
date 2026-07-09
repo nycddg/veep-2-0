@@ -638,9 +638,11 @@ function Index() {
               See full pricing →
             </Link>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 sm:divide-x divide-y sm:divide-y-0 lg:divide-y-0 divide-white/10 border-t border-b border-white/10">
             {engagements.map((e) => (
-              <EngagementTile key={e.name} {...e} />
+              <div key={e.name} className="sm:px-6 lg:px-8 sm:first:pl-0 sm:last:pr-0 lg:first:pl-0 lg:last:pr-0">
+                <EngagementTile {...e} />
+              </div>
             ))}
           </div>
         </div>
