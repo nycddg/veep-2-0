@@ -62,28 +62,16 @@ export function SiteHeader() {
       {open && (
         <div className="lg:hidden border-t border-white/8 bg-background">
           <div className="px-4 py-4 space-y-0.5">
-            {nav.map((n) =>
-              n.kind === "hash" ? (
-                <Link
-                  key={n.hash}
-                  to="/"
-                  hash={n.hash}
-                  onClick={() => setOpen(false)}
-                  className="block px-3 py-3 text-base text-cream rounded-md hover:bg-white/5"
-                >
-                  {n.label}
-                </Link>
-              ) : (
-                <Link
-                  key={n.to}
-                  to={n.to}
-                  onClick={() => setOpen(false)}
-                  className="block px-3 py-3 text-base text-cream rounded-md hover:bg-white/5"
-                >
-                  {n.label}
-                </Link>
-              ),
-            )}
+            {nav.map((n) => (
+              <Link
+                key={n.to}
+                to={n.to}
+                onClick={() => setOpen(false)}
+                className="block px-3 py-3 text-base text-cream rounded-md hover:bg-white/5"
+              >
+                {n.label}
+              </Link>
+            ))}
             <div className="pt-4">
               <a
                 href={BOOKING_URL}
