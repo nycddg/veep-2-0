@@ -329,8 +329,7 @@ function Index() {
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-24 md:pb-32 flex flex-col items-center text-center">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-cream mb-6">
-            Because the work{"\u00a0"}needs{"\u00a0"}<br />
-            <span className="text-accent">an owner.</span>
+            Because the work{"\u00a0"}<span className="text-accent">needs{"\u00a0"}an owner.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
