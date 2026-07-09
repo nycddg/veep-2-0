@@ -499,7 +499,7 @@ function Index() {
               generalists, no career consultants.
             </p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0">
             {spotlightOperators.map((op) => (
               <OperatorProofCard
                 key={op.name}
