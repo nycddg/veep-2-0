@@ -60,7 +60,7 @@ function Page() {
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             {/* Left: promise */}
             <div className="lg:col-span-2 space-y-8">
-              <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+              <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
                 What happens next
               </div>
               <ul className="space-y-4">
@@ -88,7 +88,7 @@ function Page() {
               </ul>
               {preselected && (
                 <div className="rounded-2xl border border-accent/30 bg-accent/5 p-4">
-                  <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+                  <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
                     Outcome
                   </div>
                   <div className="mt-2 text-cream font-medium">{preselected}</div>
@@ -175,7 +175,7 @@ const inputCls =
 function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="text-[10px] uppercase tracking-[0.18em] text-stone-soft">
+      <span className="text-[10px] uppercase tracking-[0.12em] text-stone-soft">
         {label}{required && " *"}
       </span>
       <div className="mt-2">{children}</div>

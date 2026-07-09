@@ -75,7 +75,7 @@ export function Section({
  */
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+    <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
       {children}
     </div>
   );

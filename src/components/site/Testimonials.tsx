@@ -21,7 +21,7 @@ export function Testimonials() {
   return (
     <div className="max-w-5xl mx-auto">
       <div className="text-center">
-        <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+        <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
           Verified — Founder testimonials
         </div>
 
@@ -48,7 +48,7 @@ export function Testimonials() {
               <blockquote className="font-sans text-xl md:text-2xl leading-snug text-cream/90 tracking-tight text-pretty whitespace-pre-line">
                 {q.quote}
               </blockquote>
-              <figcaption className="mt-5 font-mono text-[11px] uppercase tracking-[0.16em] text-stone-soft">
+              <figcaption className="mt-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">
                 {q.name} — {q.role}
               </figcaption>
             </figure>
