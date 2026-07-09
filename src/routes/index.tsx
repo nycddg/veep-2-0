@@ -454,14 +454,14 @@ function Index() {
                 <span className="text-accent">that can't wait.</span>
               </h2>
               <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
-                Tell us what's stuck: a fundraise, GTM reset, margin issue, leadership
-                gap, or a strategic decision that keeps coming back to you. We define the
-                work, recommend the right level of support (Advisory, Sprint, Operator,
-                or Pod), and match operators to the job.
+                Tell us what's in the way, not moving, or unfortunately coming back to
+                you to solve. We shape the work and define the outcomes, recommend the
+                right level of support (Advisory, Sprint, Operator, or Pod), and match
+                operators to the job.
               </p>
               <p className="mt-4 text-stone text-base md:text-lg leading-relaxed">
                 When the work lands or the permanent hire arrives, we hand off with
-                documentation, not dependency.
+                results and documentation, not ongoing dependency.
               </p>
             </div>
             <div className="space-y-6 lg:border-l lg:border-white/10 lg:pl-10">
@@ -469,7 +469,7 @@ function Index() {
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
                 ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
-                ["Priced to scope", "Advisory, Sprint, Operator, or Pod structured around the work, not hourly browsing."],
+                ["Priced to scope", "Advisory, Sprint, Operator, or Pod structured around the work and outcomes."],
                 ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
               ].map(([t, d]) => (
                 <div key={t} className="border-t border-white/10 pt-5 first:border-0 first:pt-0">
