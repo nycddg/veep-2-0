@@ -362,8 +362,8 @@ function Index() {
 
           <p className="text-base sm:text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
             Vetted senior operators to own urgent priorities and high-stakes
-            decisions before you are ready, willing, or able to make the
-            full-time executive hire.
+            decisions before you are ready, willing, or able to make
+            full-time hires.
           </p>
 
           <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
@@ -404,7 +404,7 @@ function Index() {
         <div className="mx-auto max-w-[55.2rem] px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
-            On demand operating partners for the work that can't wait. We deploy vetted executives inside founder-led companies across finance, GTM, operations, product, people, fundraising, and strategy.
+            An invite-only network of operating partners, available on demand for the work that can't wait. Founders and CEOs hire us to solve their biggest challenges across finance, GTM, operations, product, people, fundraising, and strategy.
           </p>
           <p className="mt-4 text-sm text-stone">
             Built for companies with real revenue and growing complexity, before the
