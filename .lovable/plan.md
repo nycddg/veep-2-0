@@ -1,31 +1,36 @@
+## Problem
+The current collapsible summary in `OperatorProofCard.tsx` keeps a fixed 42px height in both collapsed and expanded states. When expanded, the full text is hidden inside a scrollable 2-line window, so the user does not see the complete summary. The container also appears to shrink vertically, which tightens the space between the summary and the industry chips below.
+
 ## Goal
-Make the operator summary paragraph in `OperatorProofCard` collapsible by default, keep the card container at a fixed size, and let users expand the full text. Apply this to every spotlight profile card on the site.
+Make the expanded state reveal the full summary text while keeping the collapsed state compact and uniform. Preserve comfortable spacing between the summary and the chips.
 
 ## What will change
 - File: `src/components/site/OperatorProofCard.tsx`
-- Scope: spotlight variant only (compact cards have no summary text)
-- No data or route changes needed; all profile cards use this single component.
+- Scope: spotlight variant summary block only
 
 ## Implementation details
 
-### 1. Collapsible summary container
-- Wrap the existing summary paragraph in a fixed-height container (e.g., `h-12` equivalent to 2 lines at `text-[13px]` leading).
-- Collapsed state: truncate the text to 2 lines using `line-clamp-2`.
-- Expanded state: keep the same container height but switch to `overflow-y-auto` so the full summary scrolls inside the fixed card area.
+### 1. Expand to full text
+- Replace the fixed `h-[42px]` in the expanded state with an auto-height or large max-height so the full summary is visible.
+- Keep the collapsed state at 2 lines (`line-clamp-2`) with a fixed max-height of 42px so all cards remain the same size by default.
+- Use a `max-height` transition so the expansion feels smooth:
+  - collapsed: `max-h-[42px] line-clamp-2 overflow-hidden`
+  - expanded: `max-h-[200px] overflow-hidden` (or `max-h-none` if a transition is not needed)
 
-### 2. Toggle control
-- Add a small text button below the summary area: collapsed = "Read more", expanded = "Show less".
-- Track expansion with local React state (`expanded`, default `false`).
-- Include `aria-expanded` and `aria-controls` on the button for accessibility.
-- Keep button focus styles consistent with the global focus ring already defined in `src/styles.css`.
+### 2. Prevent container shrink
+- Ensure the collapsed summary always occupies the same 42px, even if the text is shorter than 2 lines, by setting `min-h-[42px]` together with `max-h-[42px]` in the collapsed state.
+- This keeps the card caption rhythm consistent across all operator cards.
 
-### 3. Preserve card layout
-- Keep the existing `figcaption` flex column structure so the chips remain anchored at the bottom with `mt-auto`.
-- The summary container height is fixed, so all cards in the grid row stay the same height by default.
-- Add a subtle transition (`transition-all duration-300`) on the text clamp/overflow properties so the toggle feels smooth.
+### 3. Maintain spacing between summary and chips
+- Add a top margin (`mt-3`) to the summary wrapper so the gap between the summary/button group and the chips is preserved even when the chips are pushed down by `mt-auto`.
+- Alternatively, wrap the chips in a `mt-auto` container that still respects the existing `gap-4` in `figcaption`.
 
-### 4. Verify behavior
-- Confirm on the homepage `/` operator spotlight section that all four cards render with the same collapsed height.
-- Click each "Read more" button to confirm the full summary appears and scrolls within the fixed container.
-- Confirm "Show less" returns the card to the 2-line collapsed state.
-- Run a build/typecheck to ensure no TypeScript or JSX errors were introduced.
+### 4. Smooth transition
+- Keep `transition-all duration-300` on the summary wrapper so the height and clamp changes animate smoothly.
+- Use a CSS custom property or inline style if needed for a precise `max-height` animation.
+
+### 5. Verify
+- Confirm on the homepage operator spotlight that all cards initially show the same 2-line height.
+- Click each "Read more" to confirm the full summary appears and the card grows smoothly.
+- Confirm clicking "Show less" returns the card to the 2-line collapsed state with no layout shift.
+- Run a production build and typecheck to confirm no errors.
