@@ -83,7 +83,9 @@ export function OperatorProofCard({
       ? [priorSeat]
       : [];
 
-  return (
+  const [expanded, setExpanded] = useState(false);
+  const summaryId = `operator-summary-${name.toLowerCase().replace(/\s+/g, "-")}`;
+
     <figure className="group flex flex-col overflow-hidden rounded-lg bg-white/[0.02] ring-1 ring-white/8 transition-colors hover:ring-white/15">
       {/* Portrait */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-accent/10">
