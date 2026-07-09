@@ -88,22 +88,22 @@ function Page() {
       />
 
       {/* Problem */}
-      <section className="py-24 md:py-32 border-t border-white/10">
+      <section className="py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Where portfolios lose time
             </div>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
               The seat is open.{" "}
               <span className="text-accent">The work is not.</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {problems.map((p) => (
-              <div key={p.t} className="rounded-3xl border border-white/8 bg-white/[0.02] p-7">
-                <div className="font-serif text-xl text-cream tracking-tight leading-snug">{p.t}</div>
-                <p className="mt-4 text-sm text-stone leading-relaxed">{p.d}</p>
+              <div key={p.t} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-7">
+                <div className="text-lg sm:text-xl text-cream tracking-tight leading-snug">{p.t}</div>
+                <p className="mt-4 text-sm text-cream/75 leading-relaxed">{p.d}</p>
               </div>
             ))}
           </div>
@@ -111,24 +111,24 @@ function Page() {
       </section>
 
       {/* Capacity Audit entry point */}
-      <section className="py-24 md:py-32 border-t border-white/10">
+      <section className="py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Start here
             </div>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
               Executive Capacity Audit.
             </h2>
-            <p className="mt-6 text-stone leading-relaxed">
+            <p className="mt-6 text-cream/80 leading-relaxed">
               Before you retain the roster, we run a portfolio-wide leadership map: which
               companies need what, which upcoming events will create urgency in the next
               6–12 months, and where a Veep operator would move the number.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="rounded-3xl border border-white/8 bg-white/[0.02] p-8">
-              <div className="font-serif text-2xl text-cream tracking-tight">What you get</div>
+            <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-8">
+              <div className="text-xl sm:text-2xl text-cream tracking-tight">What you get</div>
               <ul className="mt-6 space-y-3 text-sm text-cream/85">
                 {auditDeliverables.map((d) => (
                   <li key={d} className="flex items-baseline gap-3">
@@ -138,14 +138,14 @@ function Page() {
                 ))}
               </ul>
             </div>
-            <div className="glass-card rounded-3xl p-8">
+            <div className="glass-card rounded-3xl p-6 sm:p-8">
               <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
                 Then
               </div>
-              <div className="mt-4 font-serif text-2xl text-cream tracking-tight">
+              <div className="mt-4 text-xl sm:text-2xl text-cream tracking-tight">
                 Portfolio Executive Roster
               </div>
-              <p className="mt-4 text-sm text-stone leading-relaxed">
+              <p className="mt-4 text-sm text-cream/80 leading-relaxed">
                 An annual capacity partnership. Priority access, quarterly planning,
                 emergency coverage SLA, and preferred commercial terms. Operator
                 deployments billed separately per SOW under a Master Services Agreement.
@@ -168,13 +168,13 @@ function Page() {
       </section>
 
       {/* Roster tiers */}
-      <section className="py-24 md:py-32 border-t border-white/10">
+      <section className="py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Roster models
             </div>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
               Retain exactly as much capacity{" "}
               <span className="text-accent">as the portfolio needs.</span>
             </h2>
@@ -183,14 +183,14 @@ function Page() {
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="rounded-3xl border border-white/10 bg-card p-8 md:p-10"
+                className="rounded-3xl border border-white/10 bg-card p-6 sm:p-8 md:p-10"
               >
-                <div className="text-2xl text-cream">{t.t}</div>
+                <div className="text-xl sm:text-2xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
-                  {t.p} <span className="text-stone-soft">{t.per}</span>
+                  {t.p} <span className="text-cream/60">{t.per}</span>
                 </div>
                 <p className="mt-5 text-sm text-cream/85 leading-relaxed">{t.best}</p>
-                <ul className="mt-6 space-y-2.5 text-sm text-stone">
+                <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-baseline gap-2.5">
                       <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 translate-y-[-2px]" />
@@ -201,7 +201,7 @@ function Page() {
                 <div className="mt-6 pt-4">
                   <Link
                     to="/pricing"
-                    className="text-xs text-cream/80 hover:text-cream underline underline-offset-4 decoration-white/20 hover:decoration-white/60 transition"
+                    className="text-xs text-cream/85 hover:text-cream underline underline-offset-4 decoration-white/25 hover:decoration-white/70 transition"
                   >
                     See engagement pricing →
                   </Link>
@@ -209,7 +209,7 @@ function Page() {
               </div>
             ))}
           </div>
-          <p className="mt-12 text-sm text-stone">
+          <p className="mt-12 text-sm text-cream/75 text-center max-w-2xl mx-auto">
             Engagements convert cleanly into Advisory, Sprint, Operator, or Pod work at
             preferred roster rates.
           </p>
@@ -217,23 +217,23 @@ function Page() {
       </section>
 
       {/* How it works */}
-      <section className="py-24 md:py-32 border-t border-white/10">
+      <section className="py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               How it works
             </div>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
               One agreement.{" "}
               <span className="text-accent">Every portco activated.</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
             {steps.map((s) => (
-              <div key={s.n} className="rounded-3xl border border-white/8 bg-white/[0.02] p-7">
-                <div className="font-mono text-[11px] tracking-[0.14em] text-stone-soft">{s.n}</div>
-                <div className="mt-4 font-serif text-xl text-cream tracking-tight">{s.t}</div>
-                <p className="mt-3 text-sm text-stone leading-relaxed">{s.d}</p>
+              <div key={s.n} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-7">
+                <div className="font-mono text-[11px] tracking-[0.14em] text-cream/60">{s.n}</div>
+                <div className="mt-4 text-lg sm:text-xl text-cream tracking-tight">{s.t}</div>
+                <p className="mt-3 text-sm text-cream/75 leading-relaxed">{s.d}</p>
               </div>
             ))}
           </div>
@@ -241,22 +241,22 @@ function Page() {
       </section>
 
       {/* Included vs. billed */}
-      <section className="py-24 md:py-32 border-t border-white/10">
+      <section className="py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               What the retainer covers
             </div>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
               Roster access is retained.{" "}
               <span className="text-accent">Operator work is scoped.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             {included.map((i) => (
-              <div key={i.t} className="rounded-3xl border border-white/8 bg-white/[0.02] p-7">
-                <div className="font-serif text-xl text-cream tracking-tight">{i.t}</div>
-                <p className="mt-3 text-sm text-stone leading-relaxed">{i.d}</p>
+              <div key={i.t} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-7">
+                <div className="text-lg sm:text-xl text-cream tracking-tight">{i.t}</div>
+                <p className="mt-3 text-sm text-cream/75 leading-relaxed">{i.d}</p>
               </div>
             ))}
           </div>

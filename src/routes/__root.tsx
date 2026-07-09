@@ -98,6 +98,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Veep" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Veep — Senior operators for work that can't wait" },
+      { name: "twitter:description", content: "Vetted senior operators embed inside founder-led companies to own critical work. Matched in 72 hours." },
+      { name: "theme-color", content: "#0b1220" },
+      { name: "format-detection", content: "telephone=no" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
