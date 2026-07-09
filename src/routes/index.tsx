@@ -194,19 +194,19 @@ const differentiators = [
 
 const cases = [
   {
-    tag: "B2B SaaS · Seed Sprint",
+    tag: "B2B SAAS · FINANCE OPERATING PARTNER",
     trigger: "CEO was preparing for a first institutional round without a financial model, investor materials, or fundraising experience.",
     outcome: "Built a 3-year model, diligence-ready CAC/LTV dashboards, and coached the CEO through term sheets and investor meetings.",
     metric: "$6M raised in 6 weeks",
   },
   {
-    tag: "Software Studio · Operations Operator",
+    tag: "SOFTWARE STUDIO · GROWTH OPERATING PARTNER",
     trigger: "An $8M dev shop was stuck firefighting, with inconsistent project profitability and no scalable path into AI.",
     outcome: "Installed standardized project scoping and staffing, built an AI GTM and delivery framework, and hired a Director of AI.",
     metric: "Project margins up 25%",
   },
   {
-    tag: "Podcast Publisher · Business Operator",
+    tag: "PODCAST PUBLISHER · BUSINESS OPERATING PARTNER",
     trigger: "A profitable, bootstrapped publisher with millions in revenue had never raised outside capital and had no financial model or growth plan.",
     outcome: "Built the company's first financial model, defined use of proceeds, and sourced investors representing over a third of the round.",
     metric: "Sourced 35% of capital",
