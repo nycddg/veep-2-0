@@ -4,6 +4,7 @@ import { BOOKING_URL } from "@/lib/booking";
 import { LogoWall } from "@/components/site/LogoWall";
 import { Testimonials } from "@/components/site/Testimonials";
 import { OperatorProofCard } from "@/components/site/OperatorProofCard";
+import { HeroMotif } from "@/components/site/HeroMotif";
 import { EngagementTile } from "@/components/site/EngagementTile";
 import { StepFlow } from "@/components/site/StepFlow";
 import { TrustChip } from "@/components/site/TrustChip";
