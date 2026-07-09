@@ -1,49 +1,47 @@
-# Hero visual — motion graphic replacement
+# Hero visual — line-based motif (3 options)
 
-Kill the floating operator profile cards on the homepage hero. They read as a marketplace/roster. Replace the right-side visual with a single, restrained abstract motion piece that represents the offer: **senior operator → owns the work → hands back stronger.**
+Replace the current motion piece with a still (or barely-breathing) **line composition**, inspired by the Attio "Universal Context" mark and the three geometric line studies. Palette stays locked: cream lines on the navy hero, single indigo accent, no new colors, no italics. Left column (eyebrow, headline, subhead, CTAs) untouched — only the right visual swaps.
 
-Left column (eyebrow, headline, subhead, CTAs) stays exactly as-is. Only the right visual changes. All motion is looping, subtle, editorial — never SaaS-cheerful, never decorative.
+All three sit inside a bordered panel matching the site's card language, respect `prefers-reduced-motion`, and are pure inline SVG — no libraries, no images.
 
-## Pick one of three directions
+---
 
-### Option A — "Ownership loop"
+### Option A — Lens
 
-A single indigo dot enters from outside the frame, snaps onto a faint node in a sparse constellation of scattered dots (representing the founder's org), and a soft ring pulses outward. Thin connective lines draw themselves between the dot and 3–4 neighbors as the dot settles. Then the whole cluster stabilizes and holds. Loop restarts every ~7s.
+Horizontal hairlines stacked vertically. Line length grows from a single short stroke at top, expanding to the widest line at center, then contracting back to a single stroke at bottom — a lens/almond silhouette (the Attio composition, restrained). All strokes cream at low opacity; the center 3–4 lines fade to indigo. Barely-perceptible drift: individual lines gently shift ±2px horizontally on a slow 8s loop.
 
-- **Says:** one operator drops in, takes ownership, integrates, stabilizes the system.
-- **Feels:** precise, quiet, systems-minded. Closest to Linear / Stripe / Vercel motion register.
-- **Build:** pure SVG + Framer Motion, ~120 LOC, no assets.
+- **Reads as:** many streams of work converging into a single point of ownership, then flowing back out.
+- **Density:** ~28 lines. Editorial and calm.
 
-### Option B — "The gap closes"
+### Option B — From noise to order
 
-Two horizontal rules sit apart with a visible gap between them, labeled in mono: `NOW` above, `EXECUTIVE HIRE` below. A short indigo bar slides in and bridges the gap. A thin progress line traces left-to-right through the bar. When it completes, the bar dissolves and the two rules re-separate — loop.
+Two halves of the panel. Left half: short horizontal lines at irregular x-positions and varied widths — the "unowned work" as scattered strokes. Right half: the same line count aligned to a clean flush-left grid, uniform gap, uniform stroke — the "owned system." A thin vertical indigo cursor line sits at the midpoint (static). A subtle 6s sweep animates a faint highlight from left to right.
 
-- **Says:** we fill the interim between now and the full-time hire.
-- **Feels:** editorial, diagrammatic, closest to FT / Stripe Press. Most literal to the pitch.
-- **Build:** SVG + Framer Motion, ~100 LOC, no assets.
+- **Reads as:** an operator steps in and the mess resolves into a system.
+- **Density:** ~14 lines per side. Diagrammatic, closest in meaning to the pitch.
 
-### Option C — "Weight lifts"
+### Option C — Signal
 
-A stack of ~6 thin horizontal bars of varying widths (the "work") sits heavy at the bottom of the frame. One bar at a time floats up, rotates a few degrees, and settles into a clean aligned column on the right — the "owned" pile. The unowned stack shrinks; the owned column grows. When empty, it resets.
+Vertical hairlines evenly spaced across the panel (the third reference — vertical bar block). Line heights vary in a slow sinusoidal envelope so the top and bottom edges form soft opposing curves (like a compressed waveform). One line in the middle is indigo and slightly taller. Optional very slow 12s breathing on line heights (±3%). Everything else static.
 
-- **Says:** work gets picked up, owned, organized. Load moves off the founder.
-- **Feels:** physical, tactile, a little more warm/human than A or B without being cute.
-- **Build:** SVG + Framer Motion with staggered springs, ~140 LOC, no assets.
+- **Reads as:** a steady operational pulse with a single owner at its center.
+- **Density:** ~48 vertical lines. Most abstract, most graphic.
 
-## Shared constraints (all three)
+---
 
-- Palette: existing navy background, cream strokes at low opacity, single indigo accent — no new colors.
-- Motion: slow, deliberate, one focal event at a time. No parallax, no particles, no glow.
-- Respects `prefers-reduced-motion` → renders the final state as a still.
-- Contained inside a bordered panel matching the site's existing card language (thin cream/10 border, subtle inner grid dot pattern already used elsewhere).
-- No text labels inside the graphic except Option B's two mono rules.
+## Shared constraints
 
-## Files touched on implementation
+- Pure inline SVG, ~80–130 LOC, no new deps.
+- Cream `#F5F1EA` strokes at 0.2–0.4 opacity; indigo `#6366F1` accent used on 1–4 lines max.
+- Contained in the same bordered panel used in the current motif (`border-white/10`, subtle dot-grid background) with the mono corner labels kept.
+- Motion is optional and very slow (8–12s loops) or off entirely; `prefers-reduced-motion` → completely static.
+- No text inside the graphic beyond the existing corner meta.
 
-- `src/components/site/HomeHero.tsx` (or wherever the hero visual lives) — remove profile card block, drop in `<HeroMotif />`.
-- `src/components/site/HeroMotif.tsx` — new component containing the chosen SVG + Framer Motion animation.
-- No CSS token changes. No new deps (framer-motion already in the project).
+## Files
 
-**Reply with A, B, or C** and I'll build it.  
+- `src/components/site/HeroMotif.tsx` — rewritten as the chosen line composition.
+- No other files touched.
+
+**Reply A, B, or C and I'll build it.**  
   
-A
+**A**
