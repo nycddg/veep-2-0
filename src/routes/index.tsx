@@ -728,13 +728,13 @@ function Index() {
           </div>
 
           <div className="border-y border-white/10 divide-y divide-white/10">
-            <div className="hidden md:grid grid-cols-3">
+            <div className="hidden md:grid md:grid-cols-[1fr_1.5fr_1.5fr]">
               <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Dimension</div>
               <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">The old way</div>
               <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-accent">Veep</div>
             </div>
             {differentiators.map((r) => (
-              <div key={r.dim} className="grid md:grid-cols-3 gap-y-2 gap-x-0 p-5 md:p-0">
+              <div key={r.dim} className="grid md:grid-cols-[1fr_1.5fr_1.5fr] gap-y-2 gap-x-0 p-5 md:p-0">
                 <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">
                   {r.dim}
                 </div>
