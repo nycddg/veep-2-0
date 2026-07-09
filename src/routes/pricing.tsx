@@ -115,39 +115,38 @@ function Page() {
       {/* Four tiers — data cards, no big containers, hierarchy earned by type + left rule. */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:divide-x lg:divide-white/10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:divide-x lg:divide-white/10">
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className={`flex flex-col lg:px-6 lg:first:pl-0 lg:last:pr-0 ${
-                  t.featured ? "" : ""
-                }`}
+                className="flex flex-col lg:px-6 lg:first:pl-0 lg:last:pr-0"
               >
-                <div className="flex items-baseline gap-3">
-                  <div className="text-2xl text-cream">{t.t}</div>
+                {/* Fixed-height label slot so all four tiers align on the "Most common" baseline. */}
+                <div className="h-4 mb-2">
                   {t.featured && (
-                    <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-accent-coral">
+                    <span className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent-coral">
                       Most common
                     </span>
                   )}
                 </div>
+                <div className="text-2xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
-                  {t.p} <span className="text-stone-soft">{t.per}</span>
+                  {t.p} <span className="text-stone">{t.per}</span>
                 </div>
-                <p className="mt-5 text-sm text-cream/85 leading-relaxed">{t.best}</p>
+                <p className="mt-5 text-sm text-cream/90 leading-relaxed min-h-[3.75rem]">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-stone">
                   {t.items.map((i) => (
-                    <li key={i} className="flex items-baseline gap-2.5">
-                      <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 translate-y-[-2px]" />
+                    <li key={i} className="flex items-start gap-2.5">
+                      <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 mt-2" />
                       <span>{i}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 pt-4">
+                <div className="mt-auto pt-6">
                   <Link
                     to="/services"
                     hash={t.t.toLowerCase()}
-                    className="text-xs text-cream/80 hover:text-cream underline underline-offset-4 decoration-white/20 hover:decoration-white/60 transition"
+                    className="text-xs text-cream/90 hover:text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70 transition"
                   >
                     See scope →
                   </Link>
@@ -162,7 +161,7 @@ function Page() {
       </section>
 
       {/* What's not included */}
-      <section className="py-20 md:py-28 border-t border-white/10">
+      <section className="py-20 md:py-24 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
@@ -172,7 +171,7 @@ function Page() {
               The price you see is the price you pay.
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
             {notIncluded.map((n) => (
               <div key={n.t} className="border-t border-white/10 pt-5">
                 <div className="text-lg text-cream">{n.t}</div>
@@ -184,16 +183,16 @@ function Page() {
       </section>
 
       {/* Portfolio callout */}
-      <section className="py-20 md:py-28 border-t border-white/10">
+      <section className="py-20 md:py-24 border-t border-white/10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="border-l-2 border-accent pl-8 md:pl-10">
+          <div className="border-l-2 border-accent pl-6 md:pl-10">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
               Portfolios
             </div>
             <h3 className="mt-5 text-2xl md:text-3xl text-cream">
               Executive Roster for PE, family offices, holdcos, and multi-company founders.
             </h3>
-            <p className="mt-5 text-stone leading-relaxed">
+            <p className="mt-5 text-stone leading-relaxed max-w-2xl">
               Annual executive-capacity partnership for recurring leadership gaps and
               value-creation work. Roster includes priority operator matching, quarterly
               capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits,
@@ -203,7 +202,7 @@ function Page() {
             <div className="mt-6">
               <Link
                 to="/for-portfolios"
-                className="text-sm text-cream/90 hover:text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60"
+                className="text-sm text-cream hover:text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
               >
                 See how the roster works →
               </Link>
@@ -213,7 +212,7 @@ function Page() {
       </section>
 
       {/* Pricing FAQ */}
-      <section className="py-20 md:py-28 border-t border-white/10">
+      <section className="py-20 md:py-24 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
@@ -223,7 +222,7 @@ function Page() {
               Straight answers to the questions we get most.
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-x-8 gap-y-10">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
             {faqs.map((f) => (
               <div key={f.q} className="border-t border-white/10 pt-5">
                 <div className="text-lg text-cream leading-snug">{f.q}</div>
@@ -234,7 +233,7 @@ function Page() {
           <div className="mt-8">
             <Link
               to="/faq"
-              className="text-sm text-cream/80 hover:text-cream underline underline-offset-8 decoration-white/20 hover:decoration-white/60"
+              className="text-sm text-cream/90 hover:text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
             >
               See the full FAQ →
             </Link>
