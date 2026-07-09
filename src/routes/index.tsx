@@ -10,6 +10,10 @@ import { StepFlow } from "@/components/site/StepFlow";
 import { Check } from "lucide-react";
 import { ObjectionList } from "@/components/site/ObjectionList";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import jianYangHeadshot from "@/assets/operator-jian-yang.png.asset.json";
+import erikaVelazquezHeadshot from "@/assets/operator-erika-velazquez.png.asset.json";
+import elaineBogartHeadshot from "@/assets/operator-elaine-bogart.png.asset.json";
+import victoriaKasumuHeadshot from "@/assets/operator-victoria-kasumu.png.asset.json";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Content
@@ -62,8 +66,7 @@ const spotlightOperators = [
     summary:
       "Strategic finance leader and entrepreneur with a record of scaling fast-growing firms, optimizing financial operations, and securing funding. At Industrious, secured $140M+ in equity funding and restructured financial operations for rapid scale.",
     chips: ["Real Estate", "Finance", "Tech"],
-    photoUrl:
-      "https://static.wixstatic.com/media/5084f0_6f67c526803546fa8695a282e5b1c292~mv2.jpg/v1/crop/x_0,y_278,w_1132,h_1133/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(12)_edited.jpg",
+    photoUrl: jianYangHeadshot.url,
   },
   {
     name: "Erika Velazquez",
@@ -72,8 +75,7 @@ const spotlightOperators = [
     summary:
       "Story-driven marketer with deep expertise in brand strategy, product marketing, and audience growth. Specializes in launching, scaling, and repositioning for impact. At Morning Brew, developed a new newsletter ad product that doubled the average click-through rate.",
     chips: ["New Media", "Consumer", "GenAI"],
-    photoUrl:
-      "https://static.wixstatic.com/media/5084f0_9ee6e722e8564a30a97f2c7ba2767e8b~mv2.png/v1/crop/x_115,y_307,w_938,h_940/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(13).png",
+    photoUrl: erikaVelazquezHeadshot.url,
   },
   {
     name: "Elaine Bogart",
@@ -82,8 +84,7 @@ const spotlightOperators = [
     summary:
       "Powerhouse CFO with 15+ years of experience leading financial transformation, operational scaling, and strategic exits across SaaS, Web3, new media, and the creator economy. At Mojix, drove a +98% EBITDA turnaround, restructured global teams, and completed a successful international spin-off and sale.",
     chips: ["Tech", "Web3", "Media"],
-    photoUrl:
-      "https://static.wixstatic.com/media/5084f0_1ae2bc09c75742eea3b45aa72d11aeee~mv2.png/v1/crop/x_0,y_283,w_1152,h_1151/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(72).png",
+    photoUrl: elaineBogartHeadshot.url,
   },
   {
     name: "Victoria Kasumu",
@@ -92,8 +93,7 @@ const spotlightOperators = [
     summary:
       "Seasoned people leader and strategic partner who builds growth-driven operations by aligning talent, culture, and business goals. At David Zwirner, hired 50+ employees in 90 days while reducing redundancy 30% and increasing retention 15%.",
     chips: ["Hospitality", "Tech/SaaS", "Healthcare"],
-    photoUrl:
-      "https://static.wixstatic.com/media/5084f0_c97a4bd1542f40d6b6a86c2bf84410d4~mv2.png/v1/crop/x_0,y_144,w_1152,h_1152/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(15).png",
+    photoUrl: victoriaKasumuHeadshot.url,
   },
 ];
 
