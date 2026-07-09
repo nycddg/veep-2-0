@@ -19,6 +19,7 @@ export function Section({
   bare = false,
   density = "default",
   divider = false,
+  maxWidth = "7xl",
 }: {
   children: ReactNode;
   className?: string;
@@ -28,6 +29,7 @@ export function Section({
   bare?: boolean;
   density?: "default" | "dense" | "spacious" | "hero";
   divider?: boolean;
+  maxWidth?: "7xl" | "wide" | "full";
 }) {
   const toneCls =
     tone === "light"
@@ -61,14 +63,22 @@ export function Section({
       : "border-t border-white/10"
     : "";
 
+  const maxWidthCls =
+    maxWidth === "wide"
+      ? "max-w-[84rem]"
+      : maxWidth === "full"
+      ? "max-w-none"
+      : "max-w-7xl";
+
   return (
     <section className={`${toneCls} ${borderCls} ${className}`}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className={`mx-auto ${maxWidthCls} px-4 sm:px-6 lg:px-8`}>
         <div className={bare ? "" : padCls}>{children}</div>
       </div>
     </section>
   );
 }
+
 
 /**
  * Eyebrow — indigo micro-caps marker matching the homepage section headers.
