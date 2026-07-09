@@ -156,7 +156,7 @@ function Page() {
             ))}
           </div>
           <p className="mt-12 text-sm text-stone">
-            All engagements carry a 30-day fit guarantee · Response within 1 business day · No pitch deck required.
+            All engagements carry a 30-day fit guarantee · Response within 1 business day
           </p>
         </div>
       </section>
