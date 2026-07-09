@@ -113,7 +113,7 @@ function Page() {
       />
 
       {/* Four tiers — data cards, no big containers, hierarchy earned by type + left rule. */}
-      <section className="py-16 md:py-24">
+      <section className="bg-surface-band py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:divide-x lg:divide-white/10">
             {tiers.map((t) => (
@@ -161,7 +161,7 @@ function Page() {
       </section>
 
       {/* What's not included */}
-      <section className="py-20 md:py-24 border-t border-white/10">
+      <section className="bg-surface-band py-20 md:py-24 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
@@ -183,7 +183,7 @@ function Page() {
       </section>
 
       {/* Portfolio callout */}
-      <section className="py-20 md:py-24 border-t border-white/10">
+      <section className="py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="border-l-2 border-accent pl-6 md:pl-10">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
@@ -212,7 +212,7 @@ function Page() {
       </section>
 
       {/* Pricing FAQ */}
-      <section className="py-20 md:py-24 border-t border-white/10">
+      <section className="bg-surface-raised py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
