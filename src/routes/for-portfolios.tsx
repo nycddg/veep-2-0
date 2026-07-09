@@ -88,7 +88,7 @@ function Page() {
       />
 
       {/* Problem */}
-      <section className="py-20 md:py-28 border-t border-white/10">
+      <section className="bg-surface-raised py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
@@ -99,9 +99,9 @@ function Page() {
               <span className="text-accent">The work is not.</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
             {problems.map((p) => (
-              <div key={p.t} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-7">
+              <div key={p.t}>
                 <div className="text-lg sm:text-xl text-cream tracking-tight leading-snug">{p.t}</div>
                 <p className="mt-4 text-sm text-cream/75 leading-relaxed">{p.d}</p>
               </div>
@@ -111,7 +111,7 @@ function Page() {
       </section>
 
       {/* Capacity Audit entry point */}
-      <section className="py-20 md:py-28 border-t border-white/10">
+      <section className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
@@ -126,8 +126,8 @@ function Page() {
               6–12 months, and where a Veep operator would move the number.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-8">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 border-t border-white/10 pt-10">
+            <div>
               <div className="text-xl sm:text-2xl text-cream tracking-tight">What you get</div>
               <ul className="mt-6 space-y-3 text-sm text-cream/85">
                 {auditDeliverables.map((d) => (
@@ -138,7 +138,7 @@ function Page() {
                 ))}
               </ul>
             </div>
-            <div className="glass-card rounded-3xl p-6 sm:p-8">
+            <div className="md:border-l md:border-white/10 md:pl-12">
               <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
                 Then
               </div>
@@ -168,7 +168,7 @@ function Page() {
       </section>
 
       {/* Roster tiers */}
-      <section className="py-20 md:py-28 border-t border-white/10">
+      <section className="bg-surface-band py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
@@ -217,7 +217,7 @@ function Page() {
       </section>
 
       {/* How it works */}
-      <section className="py-20 md:py-28 border-t border-white/10">
+      <section className="bg-surface-band py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
@@ -228,10 +228,10 @@ function Page() {
               <span className="text-accent">Every portco activated.</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
             {steps.map((s) => (
-              <div key={s.n} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-7">
-                <div className="font-mono text-[11px] tracking-[0.14em] text-cream/60">{s.n}</div>
+              <div key={s.n}>
+                <div className="font-mono text-[11px] tracking-[0.14em] text-accent">{s.n}</div>
                 <div className="mt-4 text-lg sm:text-xl text-cream tracking-tight">{s.t}</div>
                 <p className="mt-3 text-sm text-cream/75 leading-relaxed">{s.d}</p>
               </div>
@@ -241,7 +241,7 @@ function Page() {
       </section>
 
       {/* Included vs. billed */}
-      <section className="py-20 md:py-28 border-t border-white/10">
+      <section className="py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
@@ -252,9 +252,9 @@ function Page() {
               <span className="text-accent">Operator work is scoped.</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 border-t border-white/10 pt-10">
             {included.map((i) => (
-              <div key={i.t} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-7">
+              <div key={i.t}>
                 <div className="text-lg sm:text-xl text-cream tracking-tight">{i.t}</div>
                 <p className="mt-3 text-sm text-cream/75 leading-relaxed">{i.d}</p>
               </div>
