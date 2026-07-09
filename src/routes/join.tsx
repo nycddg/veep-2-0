@@ -143,7 +143,7 @@ function Page() {
               <ul className="space-y-4">
                 {[
                   "We review every application personally",
-                  "Intro conversation with a Veep partner",
+                  "Intro conversation with a Veep founder",
                   "References and roster onboarding",
                   "Matched to engagements as they come in",
                 ].map((i, idx) => (
@@ -173,7 +173,7 @@ function Page() {
                     Application received.
                   </h3>
                   <p className="mt-3 text-cream/80 text-sm">
-                    A Veep partner will review it and be in touch.
+                    A Veep founder will review it and be in touch.
                   </p>
                 </div>
               ) : (
