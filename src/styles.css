@@ -59,7 +59,7 @@
 }
 
 :root {
-  --radius: 0.25rem;
+  --radius: 0.5rem;
 
   /* Premium managed-marketplace palette — deep navy #050810 canvas, bright blue accent. */
   --background: oklch(0.115 0.03 265);        /* deep navy ≈ #050810 */
@@ -70,7 +70,7 @@
   --cream: oklch(0.98 0 0);                   /* off-white for text on dark, and light pills */
   --stone: oklch(0.80 0.02 250);              /* secondary body text — soft blue-gray, AA on navy */
   --stone-soft: oklch(0.68 0.03 255);         /* tertiary / mono labels — clears AA at 12px on navy */
-  --rule: oklch(1 0 0 / 0.16);                /* editorial hairlines — carry structure without a box */
+  --rule: oklch(1 0 0 / 0.12);                /* faint ruled-grid lines, just visible on OLED */
 
   /* Accent — bright blue primary, warm coral for featured/urgent signals */
   --forest: #789fff;                          /* bright blue */

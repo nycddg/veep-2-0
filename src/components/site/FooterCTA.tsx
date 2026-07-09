@@ -7,17 +7,15 @@ export function FooterCTA({
   sub = "Book a 30-minute call with a Veep founder. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
 }: { headline?: string; sub?: string }) {
   return (
-    <section className="py-24 md:py-32 border-t border-white/10 relative overflow-hidden">
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
-        <div className="lg:col-span-7">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl text-cream text-balance leading-[1.02] tracking-tight">
-            {headline}
-          </h2>
-          <p className="mt-6 text-cream/80 text-base sm:text-lg max-w-xl leading-relaxed">
-            {sub}
-          </p>
-        </div>
-        <div className="lg:col-span-5 flex flex-col sm:flex-row sm:flex-wrap lg:justify-end lg:items-center gap-4 sm:gap-5">
+    <section className="py-20 md:py-28 border-t border-white/10 relative overflow-hidden">
+      <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl text-cream text-balance leading-[1.1]">
+          {headline}
+        </h2>
+        <p className="mt-5 text-cream/80 text-base sm:text-lg max-w-xl leading-relaxed">
+          {sub}
+        </p>
+        <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5">
           <a
             href={BOOKING_URL}
             target="_blank"

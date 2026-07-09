@@ -81,7 +81,7 @@ export function OperatorProofCard({
       : [];
 
   return (
-    <figure className="group flex flex-col">
+    <figure className="group flex flex-col overflow-hidden rounded-lg bg-white/[0.02] ring-1 ring-white/8 transition-colors hover:ring-white/15">
       {/* Portrait */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-accent/10">
         {photoUrl ? (
@@ -110,7 +110,7 @@ export function OperatorProofCard({
       </div>
 
       {/* Caption */}
-      <figcaption className="flex flex-1 flex-col gap-4 pt-5 border-t border-white/10 mt-0">
+      <figcaption className="flex flex-1 flex-col gap-4 p-5">
         <div>
           <h3 className="font-sans text-lg text-cream tracking-tight leading-tight text-balance">
             {name}
@@ -119,8 +119,10 @@ export function OperatorProofCard({
         </div>
 
         {companies.length > 0 && (
-          <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-cream/70 leading-relaxed">
-            {companies.join("  ·  ")}
+          <div className="border-t border-white/10 pt-3">
+            <div className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-cream/70 leading-relaxed">
+              {companies.join("  ·  ")}
+            </div>
           </div>
         )}
 

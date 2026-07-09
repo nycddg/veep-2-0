@@ -27,23 +27,13 @@ const objections = [
 
 export function ObjectionList() {
   return (
-    <div className="grid md:grid-cols-2 md:gap-x-12 border-t border-white/10">
-      {objections.map((o, i) => (
-        <div
-          key={o.q}
-          className={`py-7 md:py-8 grid grid-cols-[auto_1fr] gap-x-5 border-b border-white/10 md:border-b-0 ${
-            i >= 2 ? "md:border-t md:border-white/10" : ""
-          } ${i >= 4 ? "md:border-t md:border-white/10" : ""}`}
-        >
-          <span className="font-mono text-[10px] tracking-[0.14em] text-stone-soft pt-1.5">
-            {String(i + 1).padStart(2, "0")}
-          </span>
-          <div>
-            <h3 className="text-lg md:text-xl text-cream tracking-tight leading-snug">
-              {o.q}
-            </h3>
-            <p className="mt-3 text-sm text-stone leading-relaxed max-w-prose">{o.a}</p>
-          </div>
+    <div className="grid md:grid-cols-2 gap-6">
+      {objections.map((o) => (
+        <div key={o.q} className="glass-card rounded-3xl p-7">
+          <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">
+            {o.q}
+          </h3>
+          <p className="mt-4 text-sm text-stone leading-relaxed">{o.a}</p>
         </div>
       ))}
     </div>
