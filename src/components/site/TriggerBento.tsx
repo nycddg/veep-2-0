@@ -29,7 +29,8 @@ export function TriggerBento() {
       <div className="max-w-2xl">
         <Eyebrow>Pivotal moments</Eyebrow>
         <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05] text-cream">
-          Built for the moments that create urgency.
+          Built for the moments{" "}
+          <span className="text-accent">that create urgency.</span>
         </h2>
         <p className="mt-6 text-stone max-w-lg">
           Companies come to Veep when the work is urgent, a full-time hire is too

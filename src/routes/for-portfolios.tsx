@@ -133,7 +133,7 @@ function Page() {
               Start here
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
-              Portfolio Capacity Audit
+              Portfolio <span className="text-accent">Capacity Audit</span>
             </h2>
             <p className="mt-6 text-cream/80 leading-relaxed">
               Before you retain the roster, we map where transactions and operating priorities are likely to create staffing volatility across the portfolio. We identify which companies need what, which upcoming events could create urgency in the next 6 to 12 months, and where a Veep operator would help stabilize execution.
@@ -186,7 +186,7 @@ function Page() {
               Roster model
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
-              Roster Development and Management
+              Roster Development <span className="text-accent">and Management</span>
             </h2>
           </div>
           <div className="max-w-2xl mx-auto">
@@ -273,7 +273,12 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline="Stabilize the operator gaps across your portfolio."
+        headline={
+          <>
+            Stabilize the operator gaps{" "}
+            <span className="text-accent">across your portfolio.</span>
+          </>
+        }
         sub="Book a 30-minute call to walk through the audit and roster model. We will tell you directly whether Veep is the right operating partner function for your firm."
       />
     </>

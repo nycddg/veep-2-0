@@ -180,7 +180,12 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline="Your next big move starts here."
+        headline={
+          <>
+            Your next big move{" "}
+            <span className="text-accent">starts here.</span>
+          </>
+        }
         sub="Book a call to explore how Veep can help. If it's a fit, we'll scope the engagement and match you with a Veep within 72 hours."
       />
     </>

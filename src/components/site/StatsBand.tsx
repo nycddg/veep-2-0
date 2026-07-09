@@ -22,7 +22,8 @@ export function StatsBand() {
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-6">
               <h2 className="text-4xl md:text-5xl leading-[1.05] text-cream tracking-tight">
-                The system of action for senior operators.
+                The system of action{" "}
+                <span className="text-accent">for senior operators.</span>
               </h2>
               <p className="mt-6 text-stone max-w-lg">
                 Veep operators lead through growth, transformation, fundraising, and
