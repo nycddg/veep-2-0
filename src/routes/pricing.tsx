@@ -13,7 +13,7 @@ const tiers = [
       "Fundraise strategy",
       "Executive decisions",
       "Strategic tradeoffs",
-      "Month-to-month",
+      "Includes six one hour sessions",
     ],
   },
   {
@@ -35,8 +35,8 @@ const tiers = [
     best: "Ongoing senior ownership before the full-time hire makes sense.",
     items: [
       "Finance, GTM, operations, product, or people",
-      "Owns cadence and reporting",
-      "Function buildout or leadership gap",
+      "Build or reset a function",
+      "Resolve leadership gaps",
       "Typically 3–12 months",
     ],
     featured: true,
