@@ -44,48 +44,12 @@ function MeetVeepPage() {
   return (
     <section className="relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <div className="lg:col-span-7 space-y-7">
-            <h1 className="text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05]">
-              The work needs an owner.
-            </h1>
-            <div className="space-y-4 text-base sm:text-lg text-cream/80 max-w-2xl leading-relaxed">
-              <p>
-                Your company may not be ready, willing, or able to make the
-                full-time executive hire. But the fundraise, GTM reset, margin
-                issue, leadership gap, or operating priority still needs to move.
-              </p>
-              <p>
-                Veep matches founder-led companies with vetted senior operators
-                for the job to be done — so critical work gets owned before the
-                permanent hire is in place.
-              </p>
-            </div>
+        <div className="flex flex-col gap-7 lg:grid lg:grid-cols-12 lg:gap-x-16 lg:gap-y-7 lg:items-start">
+          <h1 className="order-1 lg:col-span-7 text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05]">
+            The work needs an owner.
+          </h1>
 
-            <ul className="rounded-2xl border border-white/10 bg-white/[0.03] divide-y divide-white/10 max-w-xl">
-              {BULLETS.map((b) => (
-                <li key={b} className="flex items-center gap-3 px-5 py-4">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-accent/40 text-accent">
-                    <Check size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-sm sm:text-base text-cream/90">{b}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="pt-1">
-              <a
-                href={FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center justify-center gap-2 min-h-11"
-              >
-                Meet Veep <ArrowRight size={16} />
-              </a>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5">
+          <div className="order-2 lg:col-span-5 lg:row-span-4">
             <div className="relative mx-auto max-w-md">
               <div
                 aria-hidden
@@ -98,6 +62,41 @@ function MeetVeepPage() {
                 loading="eager"
               />
             </div>
+          </div>
+
+          <div className="order-3 lg:col-span-7 space-y-4 text-base sm:text-lg text-cream/80 max-w-2xl leading-relaxed">
+            <p>
+              Your company may not be ready, willing, or able to make the
+              full-time executive hire. But the fundraise, GTM reset, margin
+              issue, leadership gap, or operating priority still needs to move.
+            </p>
+            <p>
+              Veep matches founder-led companies with vetted senior operators
+              for the job to be done \u2014 so critical work gets owned before the
+              permanent hire is in place.
+            </p>
+          </div>
+
+          <ul className="order-4 lg:col-span-7 rounded-2xl border border-white/10 bg-white/[0.03] divide-y divide-white/10 max-w-xl">
+            {BULLETS.map((b) => (
+              <li key={b} className="flex items-center gap-3 px-5 py-4">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-accent/40 text-accent">
+                  <Check size={14} strokeWidth={2.5} />
+                </span>
+                <span className="text-sm sm:text-base text-cream/90">{b}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="order-5 lg:col-span-7 pt-1">
+            <a
+              href={FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center justify-center gap-2 min-h-11"
+            >
+              Meet Veep <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </div>
