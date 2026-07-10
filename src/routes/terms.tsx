@@ -196,7 +196,7 @@ function TermsPage() {
                 <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
                   04
                 </span>
-                <h2 className="text-2xl md:text-3xl text-cream">Privacy</h2>
+                <h2 className="text-2xl md:text-3xl text-cream allow-wrap">Privacy</h2>
               </div>
               <div className="mt-5">
                 <p className="text-stone text-base leading-relaxed">
@@ -218,7 +218,7 @@ function TermsPage() {
                 <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
                   17
                 </span>
-                <h2 className="text-2xl md:text-3xl text-cream">Questions?</h2>
+                <h2 className="text-2xl md:text-3xl text-cream allow-wrap">Questions?</h2>
               </div>
               <div className="mt-5 text-stone text-base leading-relaxed">
                 <p>
@@ -246,7 +246,7 @@ function SectionBlock({ n, title, blocks }: { n: string; title: string; blocks: 
         <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
           {n}
         </span>
-        <h2 className="text-2xl md:text-3xl text-cream">{title}</h2>
+        <h2 className="text-2xl md:text-3xl text-cream allow-wrap">{title}</h2>
       </div>
       <div className="mt-5 space-y-5">
         {blocks.map((b, i) =>
