@@ -167,8 +167,7 @@ function Page() {
               What we don't charge for
             </div>
             <h2 className="mt-5 text-3xl md:text-4xl text-cream allow-wrap">
-              The price you see is{" "}
-              <span className="text-accent">the price you pay.</span>
+              The price you see is the price you pay.
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
@@ -190,8 +189,7 @@ function Page() {
               Portfolios
             </div>
             <h3 className="mt-5 text-2xl md:text-3xl text-cream">
-              The right operating partners, ready{" "}
-              <span className="text-accent">when the portfolio needs them.</span>
+              The right operating partners, ready when the portfolio needs them.
             </h3>
             <p className="mt-5 text-cream/80 leading-relaxed max-w-2xl">
               Built for PE firms, family offices, holdcos, and multi-company
@@ -222,8 +220,7 @@ function Page() {
               Pricing FAQ
             </div>
             <h2 className="mt-5 text-3xl md:text-4xl text-cream allow-wrap">
-              Straight answers to{" "}
-              <span className="text-accent">the questions we get most.</span>
+              Straight answers to the questions we get most.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
@@ -246,12 +243,7 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline={
-          <>
-            Make your next{" "}
-            <span className="text-accent">big move.</span>
-          </>
-        }
+        headline={<>Make your next big move.</>}
         sub="Book a 30-minute call with a Veep founder. We'll clarify the work, recommend the right model, and tell you directly if Veep isn't the answer."
       />
     </>
