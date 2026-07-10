@@ -72,7 +72,7 @@ function MeetVeepPage() {
             </p>
             <p>
               Veep matches founder-led companies with vetted senior operators
-              for the job to be done \u2014 so critical work gets owned before the
+              for the job to be done. Critical work gets owned before the
               permanent hire is in place.
             </p>
           </div>
