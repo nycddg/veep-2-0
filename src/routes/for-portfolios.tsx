@@ -65,20 +65,20 @@ const included = [
 export const Route = createFileRoute("/for-portfolios")({
   head: () => ({
     meta: [
-      { title: "For Portfolios — Executive Capacity Partnership | Veep" },
+      { title: "For Portfolios — On-call senior operators for the work that can't wait | Veep" },
       {
         name: "description",
         content:
-          "An annual executive roster for PE, VC, family offices, and holdcos. Priority access to vetted senior operators, quarterly capacity planning, emergency coverage — matched in 72 hours.",
+          "A retained Portfolio Roster for PE firms, family offices, holdcos, and multi-company founders. Priority access to vetted senior operators for diligence, transition, integration, value creation, and interim leadership — matched in 72 hours.",
       },
-      { property: "og:title", content: "For Portfolios — Veep Executive Roster" },
+      { property: "og:title", content: "For Portfolios — Veep Portfolio Roster" },
       {
         property: "og:description",
-        content: "Portfolio-wide executive capacity, on retainer. Ready when the work needs an owner.",
+        content: "On-call senior operators for the work that can't wait. Retained capacity across your portfolio.",
       },
-      { property: "og:url", content: "/for-portfolios" },
+      { property: "og:url", content: "https://www.veep.work/for-portfolios" },
     ],
-    links: [{ rel: "canonical", href: "/for-portfolios" }],
+    links: [{ rel: "canonical", href: "https://www.veep.work/for-portfolios" }],
   }),
   component: Page,
 });
