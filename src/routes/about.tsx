@@ -115,8 +115,7 @@ function Page() {
               </h2>
               <p className="text-cream/80 text-sm leading-relaxed max-w-md">
                 Decades of lessons, one roster. The future belongs to leaner
-                teams, faster decisions, and operators trusted to lead — not
-                just advise.
+                teams, faster decisions, and hands-on operators trusted to lead.
               </p>
             </div>
             <ul className="lg:col-span-8">
