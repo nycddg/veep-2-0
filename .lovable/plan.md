@@ -1,36 +1,26 @@
-## SEO audit — current state
+# Add 8 new operators to the roster spotlight
 
-Root `__root.tsx` has solid sitewide defaults (title, description, OG/Twitter card + image, Organization JSON-LD, GA). Nine routes have their own `head()`: `/`, `/about`, `/pricing`, `/for-portfolios`, `/contact`, `/join`, `/faq`, `/privacy`, `/terms`.
+Append 8 new operator profiles to the `spotlightOperators` array in `src/routes/index.tsx`, keeping the exact same card design, data shape, and copy treatment (uppercase past companies, short chips, summary sentence). The existing 4 operators (Jian, Erika, Elaine, Victoria) stay unchanged and remain first in the rail.
 
-Three concrete gaps to fix:
+## New operators (in order)
 
-### 1. Copy drift in existing head() blocks
+1. Vanessa Kwan — Finance Operating Partner — BDG MEDIA · GOLDMAN SACHS — Digital Media / Luxury Retail / Consumer
+2. Alasdair Lloyd-Jones — Growth Operating Partner — SET CREATIVE (WPP) · DAVID YURMAN — Consumer Retail / Tech / Automotive
+3. Alan Poussaint — Finance Operating Partner — ROCKET INTERNET · KIXIE — Tech / SaaS / Private Capital
+4. Jennifer Kasper — Marketing Operating Partner — LVMH · MACY'S — Retail / Fashion / Beauty
+5. Sean Park — People Operating Partner — ACTIVANT CAPITAL · EY — Growth Equity / Professional Services / Mission-Driven
+6. Jonathan Levinson — Finance Operating Partner — KIDS MADE MODERN · YELLOWHEART — E-Commerce / SaaS / Manufacturing
+7. Miguel Ferreyra de Bone — Finance & Strategy Operating Partner — TASTE OF BELGIUM · FARNSWORTH CANNABIS — Consumer / Luxury / Finance
+8. Jessica Davila — People Operating Partner — TASKRABBIT · BREAD — Marketplace / Fintech / Consumer
 
-Recent chat edits renamed "Portfolio Executive Roster" → "Portfolio Roster", but `for-portfolios.tsx` head still reads:
+Summaries used verbatim from the message.
 
-- title: *"For Portfolios — Executive Capacity Partnership | Veep"*
-- og:title: *"For Portfolios — Veep Executive Roster"*
-- description mentions "quarterly capacity planning, emergency coverage" — no longer on-page
+## Assets
 
-Update to reflect the current "Portfolio Roster / on-call operators" positioning.
+Upload the 8 uploaded headshots via `lovable-assets create` from `/mnt/user-uploads/{vanessa,alasdair,alan,jennifer,sean,johnathan,miguel,jessica}.png`, writing pointers to `src/assets/operator-<slug>.png.asset.json`. Import each pointer at the top of `src/routes/index.tsx` and reference `.url` on the new entries.
 
-### 2. Canonical + og:url are relative
+## Out of scope
 
-All nine `head()` blocks use `href: "/faq"`, `content: "/about"`, etc. Crawlers need absolute URLs. Switch to `https://www.veep.work<path>` (the sitemap's target domain, confirmed in project URLs).
-
-### 3. Sitemap is stale
-
-`src/routes/sitemap[.]xml.ts` has `BASE_URL = ""` and only 4 entries (`/`, `/pricing`, `/faq`, `/contact`). Update to:
-
-- `BASE_URL = "https://www.veep.work"`
-- Add the other real public routes with head(): `/about`, `/for-portfolios`, `/join`, `/privacy`, `/terms`
-
-### Out of scope (calling out, not fixing)
-
-~55 route files have no `head()` — most are drafts / unlinked (`copy-of-*`, `index-legacy`, `index[.]html`, individual operator profile pages like `alasdairlloydjones`, `davegarcia`, plus `home`, `en`, `sg`, `meetveep`, etc.). Adding SEO to all of them is a much larger content exercise (needs per-page titles/descriptions you'd want to write yourself), and several look like they should be deleted rather than indexed.
-
-**Question before I build:** should I also add `head()` + sitemap entries for the linked-but-uncovered active pages (`/how-it-works`, `/for-companies`, `/services`, `/roster`, `/sprints`, `/blog`, `/get-started`)? Or keep this pass tight to fixing the three items above and handle the rest in a follow-up?
-
-add: add `head()` + sitemap entries for the linked-but-uncovered active pages (`/how-it-works`, `/for-companies`, `/services`, `/roster`, `/sprints`, `/blog`, `/get-started`)
-
-&nbsp;
+- No changes to `heroOperators` (hero collage stays as-is with the original 4).
+- No changes to the `OperatorSpotlightRail` component itself.
+- No SEO/copy changes elsewhere.
