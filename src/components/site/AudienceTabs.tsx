@@ -153,8 +153,7 @@ export function AudienceTabs() {
         <div className="max-w-2xl">
           <Eyebrow>How Veep engages</Eyebrow>
           <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05] text-cream">
-            One platform.{" "}
-            <span className="text-accent">Two ways to buy.</span>
+            One platform. Two ways to buy.
           </h2>
           <p className="mt-6 text-stone max-w-lg">
             Individual companies buy engagements against a specific business
