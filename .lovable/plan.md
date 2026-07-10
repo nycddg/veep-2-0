@@ -1,26 +1,37 @@
-# Add 8 new operators to the roster spotlight
+## Goal
+Replace the current `/meetveep` redirect with a real campaign landing page that mirrors the Wix version, keeping it hidden from primary nav and the footer so it can be linked from ads and campaigns.
 
-Append 8 new operator profiles to the `spotlightOperators` array in `src/routes/index.tsx`, keeping the exact same card design, data shape, and copy treatment (uppercase past companies, short chips, summary sentence). The existing 4 operators (Jian, Erika, Elaine, Victoria) stay unchanged and remain first in the rail.
+## Scope
 
-## New operators (in order)
+**1. Route: `src/routes/meetveep.tsx`**
+- Remove the existing `redirect` to `/`.
+- Build a single-section page using the existing dark-navy design tokens (`bg-background`, `text-cream`, `accent`) and typography already used across the site — no new tokens or fonts.
+- Wrap content in the standard `<main>` container width used elsewhere (`max-w-7xl px-4 sm:px-6 lg:px-8`).
+- Route stays under the shared `__root.tsx` shell, so it inherits `SiteHeader` and `SiteFooter` automatically (per user answer). No changes to nav/footer files.
+- Add route-specific `head()` with title, description, `og:title`, `og:description`, `twitter:card` — and `robots: noindex, nofollow` so campaign traffic isn't indexed.
 
-1. Vanessa Kwan — Finance Operating Partner — BDG MEDIA · GOLDMAN SACHS — Digital Media / Luxury Retail / Consumer
-2. Alasdair Lloyd-Jones — Growth Operating Partner — SET CREATIVE (WPP) · DAVID YURMAN — Consumer Retail / Tech / Automotive
-3. Alan Poussaint — Finance Operating Partner — ROCKET INTERNET · KIXIE — Tech / SaaS / Private Capital
-4. Jennifer Kasper — Marketing Operating Partner — LVMH · MACY'S — Retail / Fashion / Beauty
-5. Sean Park — People Operating Partner — ACTIVANT CAPITAL · EY — Growth Equity / Professional Services / Mission-Driven
-6. Jonathan Levinson — Finance Operating Partner — KIDS MADE MODERN · YELLOWHEART — E-Commerce / SaaS / Manufacturing
-7. Miguel Ferreyra de Bone — Finance & Strategy Operating Partner — TASTE OF BELGIUM · FARNSWORTH CANNABIS — Consumer / Luxury / Finance
-8. Jessica Davila — People Operating Partner — TASKRABBIT · BREAD — Marketplace / Fintech / Consumer
+**2. Content (verbatim from Wix)**
+- H1: "The fastest way to add firepower to your team."
+- Sub-copy: "When you're scaling fast, you can't afford slow hires or bad fits. Veep connects you with proven independent operators, from former founders to C-suite leaders, who embed quickly and get to work immediately. Meet the senior operators trusted by top founders to lead critical functions and drive real results. Fast."
+- Bulleted checklist (reuse a check icon from `lucide-react`, matching accent color):
+  - Onboarded in under a week
+  - Save 40–80% vs. firms or full-time hires
+  - Flexible terms: fractional, interim, or project-based
+  - Risk-free 30-day guarantee
+- Primary CTA button: "Meet Veep" → `https://forms.gle/LE2pMAsCW3kWsKes7` (opens in new tab, `rel="noopener noreferrer"`). Style matches the cream pill CTA used in `PageHero` / `SiteHeader`.
 
-Summaries used verbatim from the message.
+**3. Hero image**
+- Reuse `src/assets/operator-erika-velazquez.png.asset.json` (matches the Wix hero subject/pose closely). Displayed on the right on desktop, stacked below copy on mobile. Simple rounded framing consistent with existing operator imagery — no coral blob recreation.
 
-## Assets
+**4. Discoverability**
+- Do NOT add links in `SiteHeader.tsx` or `SiteFooter.tsx`.
+- Add `/meetveep` to `src/routes/sitemap[.]xml.ts`? No — keep it out of the sitemap so it's campaign-only.
+- `robots: noindex, nofollow` meta as noted above.
 
-Upload the 8 uploaded headshots via `lovable-assets create` from `/mnt/user-uploads/{vanessa,alasdair,alan,jennifer,sean,johnathan,miguel,jessica}.png`, writing pointers to `src/assets/operator-<slug>.png.asset.json`. Import each pointer at the top of `src/routes/index.tsx` and reference `.url` on the new entries.
+## Files touched
+- `src/routes/meetveep.tsx` — replace redirect with full page component + `head()`.
 
-## Out of scope
-
-- No changes to `heroOperators` (hero collage stays as-is with the original 4).
-- No changes to the `OperatorSpotlightRail` component itself.
-- No SEO/copy changes elsewhere.
+## Non-goals
+- No changes to global nav, footer, sitemap, or other routes.
+- No new components, assets, or design tokens.
+- No form/analytics wiring beyond the outbound Google Form link (GA pageview fires via existing router subscription in `__root.tsx`).
