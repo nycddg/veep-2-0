@@ -10,6 +10,7 @@ import { StepFlow } from "@/components/site/StepFlow";
 import { Check } from "lucide-react";
 import { ObjectionList } from "@/components/site/ObjectionList";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import { Reveal } from "@/components/site/Reveal";
 import jianYangHeadshot from "@/assets/operator-jian-yang.png.asset.json";
 import erikaVelazquezHeadshot from "@/assets/operator-erika-velazquez.png.asset.json";
 import elaineBogartHeadshot from "@/assets/operator-elaine-bogart.png.asset.json";
