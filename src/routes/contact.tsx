@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { z } from "zod";
 import { PageHero } from "@/components/site/PageHero";
 import { Check, Loader2 } from "lucide-react";
+import { submitContactInquiry } from "@/lib/wix-contact.functions";
 
 const searchSchema = z.object({
   intent: z.string().catch("call"),
@@ -74,9 +75,18 @@ function Page() {
     submittingRef.current = true;
     setLoading(true);
     try {
-      // TODO: wire to submission destination (email, CRM, or Wix inquiry form).
-      // Kept as a no-op so the confirmation state renders without silently dropping data.
-      await new Promise((r) => setTimeout(r, 400));
+      await submitContactInquiry({
+        data: {
+          name: parsed.data.name,
+          email: parsed.data.email,
+          message: parsed.data.context,
+          company: parsed.data.company ?? "",
+          role: parsed.data.role ?? "",
+          timing: parsed.data.timing ?? "",
+          intent: isAudit ? "audit" : "call",
+          outcome: preselected ?? "",
+        },
+      });
       setSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
