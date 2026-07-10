@@ -1,53 +1,47 @@
-# Add blue-accent emphasis to remaining headlines
+# Operator Spotlight — Flagship Carousel
 
-I audited every section headline (h1/h2/h3) across all route files and shared section components for the `<span className="text-accent">…</span>` tail pattern. 12 places are missing it. Plan below fixes each, matching the existing pattern where the last 2–5 words of the headline are wrapped in the accent span.
+Turn the current 4-up grid into a horizontal snap-scroll rail of image-forward cards. Portrait stays clearly visible in the default state; hover reveals a personal-summary panel from the bottom.
 
-## Route-level fixes
+## Scope
 
-**`src/routes/index.tsx`**
-- L753: "Stabilize the operational gaps transactions create." → accent tail `transactions create.`
+Files changed:
+- `src/components/site/OperatorSpotlightCard.tsx` — new component (image-forward variant)
+- `src/components/site/OperatorSpotlightRail.tsx` — new carousel wrapper (scroll rail + progress bar + prev/next arrows)
+- `src/routes/index.tsx` — swap the current `grid` + `OperatorProofCard` block for `<OperatorSpotlightRail operators={spotlightOperators} />`
 
-**`src/routes/pricing.tsx`**
-- L170: "The price you see is the price you pay." → accent `the price you pay.`
-- L192: "The right operating partners, ready when the portfolio needs them." → accent `when the portfolio needs them.`
-- L223: "Straight answers to the questions we get most." → accent `the questions we get most.`
+The existing `OperatorProofCard` component stays in place (still used elsewhere via the `variant="compact"` prop and by any other callers). No data-shape changes to `spotlightOperators`.
 
-**`src/routes/for-portfolios.tsx`**
-- L135: "Portfolio Capacity Audit" → accent `Capacity Audit`
-- L188: "Roster Development and Management" → accent `and Management`
+## Card design (based on selected direction)
 
-## Shared component fixes
+Fixed-size card: `w-[340px] aspect-[3/4]`, `bg-[#0a0f1d]`, thin `border border-white/5` (coral border for the one operator marked featured).
 
-These render on multiple pages, so a single edit fixes site-wide.
+Layers (bottom → top):
+1. Portrait image — grayscale, `brightness-90` default → `grayscale-0 brightness-100 scale-105` on hover, 500ms ease.
+2. Blue tint — `bg-accent/10 mix-blend-overlay`, fades to transparent on hover.
+3. Corner legibility gradient — `bg-gradient-to-tr from-transparent via-transparent to-black/30`, only in top-right quadrant, fades on hover. Keeps the face fully visible; only tints behind the meta text.
+4. Meta (top-right, `z-10`): name (Plex Sans 20px, cream, subtle `drop-shadow-md`), role (Plex Mono 10px, accent color), prior companies (Plex Mono 10px, cream/60) stacked right-aligned.
+5. Summary panel (bottom, hidden by default): `translate-y-full` → `translate-y-0` on hover, 500ms ease-out. `bg-background/95 backdrop-blur-md`, top border in accent color, summary text + small "Read more" affordance.
 
-- **`StatsBand.tsx` L24** — "The system of action for senior operators." → accent `for senior operators.`
-- **`TriggerBento.tsx` L31** — "Built for the moments that create urgency." → accent `that create urgency.`
-- **`CaseSwitcher.tsx` L37** — "One operator. One outcome. One number that matters." → accent `One number that matters.`
-- **`AudienceTabs.tsx` L155** — "One platform. Two ways to buy." → accent `Two ways to buy.`
-- **`CompareTable.tsx` L31** — "Better. Faster. Cheaper. Really." Renders on a light/cream background with `text-ink`. Options:
-  1. Skip (accent-blue on cream may clash with the section's warm palette), or
-  2. Add accent `Cheaper. Really.` and rely on existing `text-accent` token which already has adequate contrast on cream.
-  Recommend option 2 — will verify visually after edit.
+Accessibility: entire card is focusable; `group-focus-within` mirrors hover so keyboard users get the reveal too. Portrait `alt={name}`.
 
-## FooterCTA (special case)
+## Rail wrapper
 
-**`FooterCTA.tsx` L12** — the `headline` prop is typed `string`, so callers can't inject a `<span>`. Two options:
+- `flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 scroll-smooth no-scrollbar` — 3–4 cards visible at desktop widths, remaining operators reveal via horizontal scroll/drag.
+- No-scrollbar utility already exists in code base pattern; add inline `<style>` block for `.no-scrollbar` if not present globally.
+- Progress + controls row (from v2), placed below the rail:
+  - Left: mono counter `01 // NN` + a `h-px flex-1 bg-white/10` track with an inner `bg-accent/60` fill; width computed from `scrollLeft / (scrollWidth - clientWidth)` via a scroll listener.
+  - Right: two 32px circular icon buttons (`border border-white/10`, hover `border-accent/40 text-accent`) that call `scrollBy({ left: ±cardWidth, behavior: "smooth" })`.
+- Uses `useRef` for the scroll container and `useState` for the progress percentage + current index.
 
-- **A (recommended):** widen `headline: string` → `headline: ReactNode`, then update the 3 call sites to pass `<>Make your next big <span className="text-accent">move.</span></>` etc. Consistent with the rest of the site.
-- **B:** leave FooterCTA alone (headlines stay unaccented in the footer band).
+## Technical notes
 
-Recommend A. Call sites to update: `pricing.tsx`, `about.tsx`, plus the default in `FooterCTA` itself; I'll grep for others during implementation.
+- Client-only interactivity (scroll listener, refs) — component uses `useState`/`useEffect`/`useRef`, no server-side concerns.
+- No new dependencies. Pure Tailwind + React.
+- Coral featured accent: add optional `featured?: boolean` prop; today it's off — hook is there for later. (No data change now.)
+- Section wrapper, eyebrow, headline, and lead paragraph in `index.tsx` are unchanged.
 
-## AudienceTabs panel titles (optional stretch)
+## Out of scope
 
-`AudienceTabs.tsx` L198 renders 6 panel titles from a plain-string data array. Adding accents requires changing the `title` field to `ReactNode`. Not included by default — happy to add if you want the panel headings accented too.
-
-## Not changing
-
-- PageHero-driven hero headlines — all already use the `accent` prop.
-- Small utility labels ("Application received.", "Send us a message.", "Straight answers." FAQ label on index L801) — too short for a tail split.
-- Redirect stub routes (services.*, compare.*, operators, insights, proof, etc.) — no markup.
-
-## Verification
-
-After edits, load `/`, `/pricing`, `/for-portfolios`, `/about` in Playwright and screenshot each section headline to confirm the blue tail renders and CompareTable's cream section still reads well.
+- No changes to operator data, photos, or the network-impact block below.
+- No changes to `OperatorProofCard` (still used by hero collage compact variant).
+- No mobile-specific redesign beyond the fact that snap-scroll works naturally on touch; card width stays 340px so mobile shows ~1 card + peek.
