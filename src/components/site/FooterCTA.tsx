@@ -15,7 +15,7 @@ export function FooterCTA({
   return (
     <section className="py-20 md:py-28 border-t border-white/10 relative overflow-hidden">
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl text-cream text-balance leading-[1.1]">
+        <h2 className="text-3xl md:text-4xl text-cream text-balance leading-[1.1] allow-wrap">
           {headline}
         </h2>
         <p className="mt-5 text-cream/80 text-base sm:text-lg max-w-xl leading-relaxed">

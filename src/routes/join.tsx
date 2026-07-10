@@ -167,7 +167,7 @@ function Page() {
               <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
                 Who we're looking for
               </div>
-              <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight">
+              <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
                 A curated roster of{" "}
                 <span className="text-accent">business builders.</span>
               </h2>

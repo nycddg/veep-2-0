@@ -186,7 +186,7 @@ function PrivacyPage() {
                   <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
                     {s.n}
                   </span>
-                  <h2 className="text-2xl md:text-3xl text-cream">{s.title}</h2>
+                  <h2 className="text-2xl md:text-3xl text-cream allow-wrap">{s.title}</h2>
                 </div>
                 <div className="mt-5 space-y-5">
                   {s.blocks.map((b, i) => {
@@ -221,7 +221,7 @@ function PrivacyPage() {
                 <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
                   12
                 </span>
-                <h2 className="text-2xl md:text-3xl text-cream">Contact us</h2>
+                <h2 className="text-2xl md:text-3xl text-cream allow-wrap">Contact us</h2>
               </div>
               <div className="mt-5 space-y-3 text-stone text-base leading-relaxed">
                 <p>If you have any questions or concerns about this Privacy Policy or your data, please contact us:</p>

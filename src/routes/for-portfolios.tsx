@@ -99,7 +99,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Where portfolios lose time
             </div>
-            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
               Transactions create volatility.{" "}
               <span className="text-accent">The work still needs an owner.</span>
             </h2>
@@ -132,7 +132,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Start here
             </div>
-            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
               Portfolio <span className="text-accent">Capacity Audit</span>
             </h2>
             <p className="mt-6 text-cream/80 leading-relaxed">
@@ -185,7 +185,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Roster model
             </div>
-            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
               Portfolio <span className="text-accent">Program</span>
             </h2>
           </div>
@@ -232,7 +232,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               How it works
             </div>
-            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
               One agreement.{" "}
               <span className="text-accent">Every portfolio company activated.</span>
             </h2>
@@ -256,7 +256,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               What the retainer covers
             </div>
-            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
               Roster access is retained.{" "}
               <span className="text-accent">Operator work is scoped.</span>
             </h2>
