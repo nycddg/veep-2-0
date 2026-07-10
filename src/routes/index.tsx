@@ -130,6 +130,7 @@ const spotlightOperators = [
       "Finance-trained operator who builds CFO-grade systems for founder-led companies without full-time executive overhead. His experience spans private capital allocation, revenue-tech operations at Kixie, and fractional CFO delivery through Apex CFO AI.",
     chips: ["Tech", "SaaS", "Private Capital"],
     photoUrl: alanPoussaintHeadshot.url,
+    photoPosition: "center 15%",
   },
   {
     name: "Jennifer Kasper",
