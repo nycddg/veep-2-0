@@ -69,7 +69,7 @@ const faqs = [
   },
   {
     q: "Can I convert between models mid-term?",
-    a: "Yes. Many engagements change shape as the work becomes clearer. Advisory can become a Sprint. A Sprint can become an Operator engagement. Operator work can expand into a Pod.&nbsp;",
+    a: "Yes. Many engagements change shape as the work becomes clearer. Advisory can become a Sprint. A Sprint can become an Operator engagement. Operator work can expand into a Pod.",
   },
   {
     q: "How does the 30-day fit guarantee work?",
