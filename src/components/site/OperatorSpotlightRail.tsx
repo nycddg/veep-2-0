@@ -82,13 +82,13 @@ function OperatorCard({ op }: { op: Operator }) {
           op.featured ? "border-[color:var(--color-accent-coral)]/40" : "border-accent/30"
         }`}
       >
-        <p className="font-sans text-cream text-sm leading-relaxed">{op.summary}</p>
+        <p className="font-sans text-ink text-sm leading-relaxed">{op.summary}</p>
         {op.chips.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1">
             {op.chips.map((c) => (
               <span
                 key={c}
-                className="font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft"
+                className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/70"
               >
                 {c}
               </span>
