@@ -149,6 +149,7 @@ const spotlightOperators = [
       "People strategy leader who turns org design, leadership, and talent systems into business growth levers. As CPO at Activant Capital, served as interim CHRO on a portfolio path to a $2B exit; previously scaled an EY HR tech platform from $0 to $65M+ in global revenue.",
     chips: ["Growth Equity", "Professional Services", "Mission-Driven"],
     photoUrl: seanParkHeadshot.url,
+    photoPosition: "center 15%",
   },
   {
     name: "Jonathan Levinson",
@@ -158,6 +159,7 @@ const spotlightOperators = [
       "Finance and operations leader with 25+ years turning founder assumptions into investor-ready plans and operating discipline. Scaled Made Modern revenue 40x into a $13M manufacturing business and has led or supported $65M+ in M&A and fundraising transactions.",
     chips: ["E-Commerce", "SaaS", "Manufacturing"],
     photoUrl: jonathanLevinsonHeadshot.url,
+    photoPosition: "center 15%",
   },
   {
     name: "Miguel Ferreyra de Bone",
@@ -167,6 +169,7 @@ const spotlightOperators = [
       "CEO/CFO operator with a record of building and transforming companies across finance, strategy, operations, GTM, and product. Brings board-level judgment and hands-on operating experience across consumer, luxury, product, and transformation work.",
     chips: ["Consumer", "Luxury", "Finance"],
     photoUrl: miguelFerreyraHeadshot.url,
+    photoPosition: "center 15%",
   },
   {
     name: "Jessica Davila",
@@ -176,6 +179,7 @@ const spotlightOperators = [
       "People strategy leader with a record of guiding companies through scale, acquisition, and leadership change. At TaskRabbit, rebuilt people strategy while scaling from 250 to 500 employees across 9 countries; later helped guide Bread from Series C through enterprise scale and acquisition.",
     chips: ["Marketplace", "Fintech", "Consumer"],
     photoUrl: jessicaDavilaHeadshot.url,
+    photoPosition: "center 15%",
   },
 ];
 
