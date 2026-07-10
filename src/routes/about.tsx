@@ -66,8 +66,7 @@ function Page() {
     <>
       <PageHero
         eyebrow="About Veep"
-        title="Born from the inside."
-        accent="Built for what's next."
+        title="Born from the inside. Built for what's next."
         sub="After decades inside high-growth startups and large institutions, we kept seeing the same pattern: critical work slowed down, ownership got blurry, and the default answer was to add more headcount. Veep was built for a different path."
         secondaryLabel="See how it works"
         secondaryTo="/how-it-works"

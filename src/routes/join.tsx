@@ -151,8 +151,7 @@ function Page() {
     <>
       <PageHero
         eyebrow="Join Veep"
-        title="Step into the future of"
-        accent="executive leadership."
+        title="Step into the future of executive leadership."
         sub="Veep represents a small roster of senior operators who embed, build, and deliver. If you're ready to own the work that can't wait — interim, fractional, or advisory — for high-growth companies, we want to meet you."
         primaryLabel="Apply below"
         secondaryLabel="See how it works"

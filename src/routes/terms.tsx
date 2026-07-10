@@ -163,8 +163,7 @@ function TermsPage() {
     <>
       <PageHero
         eyebrow="Legal"
-        title="Terms of"
-        accent="Service."
+        title="Terms of Service."
         sub="These Terms govern your access to and use of The Veep Group, LLC's platform, website, and related services. Please read them carefully."
         primaryLabel="Book intro call"
         secondaryLabel="Contact us"
