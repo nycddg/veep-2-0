@@ -245,6 +245,115 @@
   border-bottom: 1px solid var(--color-rule);
 }
 
+/* ─── Motion system ─────────────────────────────────────────────────────────
+   One easing curve, three durations, small transform distances.
+   Applied via utility classes so animations stay consistent everywhere.
+   All motion is disabled under prefers-reduced-motion (see block below). */
+:root {
+  --dur-micro: 140ms;
+  --dur-hover: 200ms;
+  --dur-enter: 420ms;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes motion-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Section / element entrance — fade + 8px rise. */
+@utility motion-fade-up {
+  animation: motion-fade-up var(--dur-enter) var(--ease-standard) both;
+}
+
+/* In-view reveal — starts hidden, animates when [data-in="true"] is set. */
+@utility motion-reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--dur-enter) var(--ease-standard),
+              transform var(--dur-enter) var(--ease-standard);
+  will-change: opacity, transform;
+}
+.motion-reveal[data-in="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Interactive card / tile — small lift + border/shadow polish. */
+@utility motion-hover-lift {
+  transition: transform var(--dur-hover) var(--ease-standard),
+              box-shadow var(--dur-hover) var(--ease-standard),
+              border-color var(--dur-hover) var(--ease-standard),
+              background-color var(--dur-hover) var(--ease-standard);
+}
+.motion-hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Nav / footer text link polish. */
+@utility motion-link {
+  transition: color var(--dur-hover) var(--ease-standard),
+              text-decoration-color var(--dur-hover) var(--ease-standard),
+              text-underline-offset var(--dur-hover) var(--ease-standard),
+              opacity var(--dur-hover) var(--ease-standard);
+}
+
+/* Arrow icon inside a `group` CTA — 2px slide on group hover/focus. */
+@utility motion-arrow {
+  transition: transform var(--dur-hover) var(--ease-standard);
+}
+.group:hover .motion-arrow,
+.group:focus-visible .motion-arrow,
+.group:focus-within .motion-arrow {
+  transform: translateX(2px);
+}
+
+/* Primary pill — subtle lift + shadow on hover. */
+@utility motion-cta {
+  transition: background-color var(--dur-hover) var(--ease-standard),
+              box-shadow var(--dur-hover) var(--ease-standard),
+              transform var(--dur-hover) var(--ease-standard);
+}
+.motion-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.6);
+}
+
+/* Smooth focus ring for form controls (border + ring). */
+@utility motion-field {
+  transition: border-color var(--dur-hover) var(--ease-standard),
+              box-shadow var(--dur-hover) var(--ease-standard),
+              background-color var(--dur-hover) var(--ease-standard);
+}
+
+/* Accordion body — grid-rows animation avoids max-height jank. */
+@utility motion-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-hover) var(--ease-standard);
+}
+.motion-collapse[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+.motion-collapse > * {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Reduced-motion — strip transforms & long transitions, keep opacity fades tiny. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-reveal { opacity: 1 !important; transform: none !important; }
+  .motion-hover-lift:hover,
+  .motion-cta:hover { transform: none !important; }
+  .op-float, .op-float-delayed { animation: none !important; }
+}
+
 @utility marquee {
   animation: marquee 60s linear infinite;
 }
