@@ -24,7 +24,7 @@ const nav: readonly NavItem[] = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 bg-background/85 backdrop-blur border-b border-white/8">
+    <header className="sticky top-0 z-40 bg-background/85 backdrop-blur border-b border-white/8 transition-colors duration-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-6">
         <Link to="/" className="flex items-center" aria-label="Veep home">
           <img src={wordmarkWhite.url} alt="Veep" className="h-5 w-auto" />
@@ -36,7 +36,7 @@ export function SiteHeader() {
               key={(n as { hash: string }).hash}
               to="/"
               hash={(n as { hash: string }).hash}
-              className="px-3 py-2 text-sm text-cream/85 hover:text-cream transition"
+              className="motion-link px-3 py-2 text-sm text-cream/85 hover:text-cream"
             >
               {n.label}
             </Link>
@@ -46,8 +46,8 @@ export function SiteHeader() {
             <Link
               key={(n as { to: "/pricing" | "/faq" | "/join" | "/about" }).to}
               to={(n as { to: "/pricing" | "/faq" | "/join" | "/about" }).to}
-              className="px-3 py-2 text-sm text-cream/85 hover:text-cream transition"
-              activeProps={{ className: "px-3 py-2 text-sm text-cream border-b border-accent" }}
+              className="motion-link px-3 py-2 text-sm text-cream/85 hover:text-cream"
+              activeProps={{ className: "motion-link px-3 py-2 text-sm text-cream border-b border-accent" }}
             >
               {n.label}
             </Link>
@@ -59,7 +59,7 @@ export function SiteHeader() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-cream px-4 py-1.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition"
+            className="motion-cta rounded-full bg-cream px-4 py-1.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Book intro call
           </a>
