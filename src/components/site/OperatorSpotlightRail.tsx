@@ -34,7 +34,11 @@ function OperatorCard({ op }: { op: Operator }) {
             src={op.photoUrl}
             alt={op.name}
             className="w-full h-full object-cover brightness-90 transition-all duration-500 group-hover:brightness-100 group-focus-within:brightness-100"
-            style={{ objectPosition: op.photoPosition ?? "top" }}
+            style={{
+              objectPosition: op.photoPosition ?? "top",
+              transform: op.photoScale ? `scale(${op.photoScale})` : undefined,
+              transformOrigin: op.photoScale ? "top center" : undefined,
+            }}
           />
         ) : (
           <div className="w-full h-full grid place-items-center bg-accent/10 text-accent/70 font-mono text-5xl">
