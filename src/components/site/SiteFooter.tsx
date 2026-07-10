@@ -46,7 +46,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-5">
           <div className="md:col-span-4">
             <Link to="/" className="flex items-center" aria-label="Veep home">
-              <img src={wordmarkWhite.url} alt="Veep" className="h-6 w-auto" />
+              <img src={wordmarkWhite.url} alt="Veep" loading="lazy" decoding="async" className="h-6 w-auto" />
             </Link>
             <p className="mt-5 text-sm text-cream/85 max-w-[20.4rem] leading-relaxed whitespace-pre-line">
               Senior operators to own the work that can't wait.
