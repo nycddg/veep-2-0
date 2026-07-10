@@ -33,7 +33,7 @@ const criteria: readonly { title: string; body: string }[] = [
   },
   {
     title: "Built for high impact",
-    body: "You’re motivated by hands-on work, not management. You want to work with high-growth companies, own meaningful initiatives, win, and move on to the next challenge.\u00a0Prior consulting or fractional experience is a plus, but not required.",
+    body: "You're motivated by hands-on work, not management. You want to work with high-growth companies, own meaningful initiatives, win, and move on to the next challenge.\u00a0Prior consulting or fractional experience is a plus, but not required.",
   },
   {
     title: "Track record in fast-paced environments",
