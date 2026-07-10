@@ -4,6 +4,7 @@ import { BOOKING_URL } from "@/lib/booking";
 import { LogoWall } from "@/components/site/LogoWall";
 import { Testimonials } from "@/components/site/Testimonials";
 import { OperatorProofCard } from "@/components/site/OperatorProofCard";
+import { OperatorSpotlightRail } from "@/components/site/OperatorSpotlightRail";
 import { OperatorCanvas } from "@/components/site/OperatorCanvas";
 import { EngagementTile } from "@/components/site/EngagementTile";
 import { StepFlow } from "@/components/site/StepFlow";
@@ -498,19 +499,7 @@ function Index() {
               generalists, no career consultants.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0">
-            {spotlightOperators.map((op) => (
-              <OperatorProofCard
-                key={op.name}
-                name={op.name}
-                role={op.role}
-                priorCompanies={op.priorCompanies}
-                summary={op.summary}
-                chips={op.chips}
-                photoUrl={op.photoUrl}
-              />
-            ))}
-          </div>
+          <OperatorSpotlightRail operators={spotlightOperators} />
 
           <p className="mt-8 text-left text-sm text-stone">
             Just a few of the 150+ operators in our invite-only network.
