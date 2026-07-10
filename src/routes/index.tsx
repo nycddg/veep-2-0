@@ -111,6 +111,7 @@ const spotlightOperators = [
       "Strategic finance and operations leader with 15+ years across investment banking, luxury retail, and digital media. At BDG Media, rose from Director to EVP Head of Finance and redesigned seller commissions, improving gross margins by 4 points.",
     chips: ["Digital Media", "Luxury Retail", "Consumer"],
     photoUrl: vanessaKwanHeadshot.url,
+    photoPosition: "center 15%",
   },
   {
     name: "Alasdair Lloyd-Jones",
