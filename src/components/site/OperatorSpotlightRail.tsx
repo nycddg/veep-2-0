@@ -31,7 +31,7 @@ function OperatorCard({ op }: { op: Operator }) {
           <img
             src={op.photoUrl}
             alt={op.name}
-            className="w-full h-full object-cover object-top grayscale brightness-90 transition-all duration-500 group-hover:grayscale-0 group-hover:brightness-100 group-focus-within:grayscale-0 group-focus-within:brightness-100"
+            className="w-full h-full object-cover object-top brightness-90 transition-all duration-500 group-hover:brightness-100 group-focus-within:brightness-100"
           />
         ) : (
           <div className="w-full h-full grid place-items-center bg-accent/10 text-accent/70 font-mono text-5xl">
@@ -46,9 +46,6 @@ function OperatorCard({ op }: { op: Operator }) {
           op.featured ? "bg-[color:var(--color-accent-coral)]/10" : "bg-accent/10"
         }`}
       />
-
-      {/* Corner legibility gradient — top-right only, keeps face clear */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-cream/20 transition-opacity duration-500 group-hover:opacity-0 group-focus-within:opacity-0" />
 
       {/* Meta — top left */}
       <div className="absolute top-5 left-5 text-left z-10 max-w-[75%]">
