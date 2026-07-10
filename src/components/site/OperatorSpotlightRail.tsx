@@ -50,8 +50,8 @@ function OperatorCard({ op }: { op: Operator }) {
       {/* Corner legibility gradient — top-right only, keeps face clear */}
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-cream/20 transition-opacity duration-500 group-hover:opacity-0 group-focus-within:opacity-0" />
 
-      {/* Meta — top right */}
-      <div className="absolute top-5 right-5 text-right z-10 max-w-[75%]">
+      {/* Meta — top left */}
+      <div className="absolute top-5 left-5 text-left z-10 max-w-[75%]">
         <h3
           className="font-sans font-medium text-ink text-lg sm:text-xl leading-tight tracking-tight"
         >
