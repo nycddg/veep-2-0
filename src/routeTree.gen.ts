@@ -9,22 +9,61 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WebinarRouteImport } from './routes/webinar'
+import { Route as VictoriakasumuRouteImport } from './routes/victoriakasumu'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as SubscribeRouteImport } from './routes/subscribe'
+import { Route as SprintsRouteImport } from './routes/sprints'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SgRouteImport } from './routes/sg'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ServiceRouteImport } from './routes/service'
+import { Route as SeanparkRouteImport } from './routes/seanpark'
+import { Route as ScaleDiagnosticRouteImport } from './routes/scale-diagnostic'
+import { Route as RosterRouteImport } from './routes/roster'
 import { Route as ProofRouteImport } from './routes/proof'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as OperatorsRouteImport } from './routes/operators'
+import { Route as OperatingpartnersRouteImport } from './routes/operatingpartners'
+import { Route as OfficehoursRouteImport } from './routes/officehours'
+import { Route as MunawarahmedRouteImport } from './routes/munawarahmed'
+import { Route as MemberdashboardRouteImport } from './routes/memberdashboard'
+import { Route as MeetveepRouteImport } from './routes/meetveep'
+import { Route as MarknewhouseRouteImport } from './routes/marknewhouse'
+import { Route as LauramerlingRouteImport } from './routes/lauramerling'
 import { Route as JoinRouteImport } from './routes/join'
+import { Route as JianyangRouteImport } from './routes/jianyang'
+import { Route as JenniferkasperRouteImport } from './routes/jenniferkasper'
 import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as IndexDothtmlRouteImport } from './routes/index[.]html'
+import { Route as IndexLegacyRouteImport } from './routes/index-legacy'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as HomeRouteImport } from './routes/home'
+import { Route as GetStartedRouteImport } from './routes/get-started'
+import { Route as FundraisingRouteImport } from './routes/fundraising'
+import { Route as FractionalRouteImport } from './routes/fractional'
 import { Route as ForPortfoliosRouteImport } from './routes/for-portfolios'
 import { Route as ForCompaniesRouteImport } from './routes/for-companies'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ErikavelazquezRouteImport } from './routes/erikavelazquez'
+import { Route as EnRouteImport } from './routes/en'
+import { Route as ElainebogartRouteImport } from './routes/elainebogart'
+import { Route as DavegarciaRouteImport } from './routes/davegarcia'
+import { Route as CopyrightRouteImport } from './routes/copyright'
+import { Route as CopyOfScaleDiagnosticRouteImport } from './routes/copy-of-scale-diagnostic'
+import { Route as CopyOfMarkNewhouseProfilePageRouteImport } from './routes/copy-of-mark-newhouse-profile-page'
+import { Route as CopyOfFractionalRouteImport } from './routes/copy-of-fractional'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CompareRouteImport } from './routes/compare'
+import { Route as BusinessosRouteImport } from './routes/businessos'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AndrewsilverRouteImport } from './routes/andrewsilver'
+import { Route as AlasdairlloydjonesRouteImport } from './routes/alasdairlloydjones'
+import { Route as AgenciesRouteImport } from './routes/agencies'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
@@ -32,12 +71,38 @@ import { Route as ServicesInterimRouteImport } from './routes/services.interim'
 import { Route as ServicesFractionalCfoRouteImport } from './routes/services.fractional-cfo'
 import { Route as ServicesExecutiveBenchRouteImport } from './routes/services.executive-bench'
 import { Route as ServicesAiOperatorsRouteImport } from './routes/services.ai-operators'
+import { Route as PostSplatRouteImport } from './routes/post.$'
 import { Route as CompareVsExecutiveSearchRouteImport } from './routes/compare.vs-executive-search'
 import { Route as CompareVsConsultantsRouteImport } from './routes/compare.vs-consultants'
 
+const WebinarRoute = WebinarRouteImport.update({
+  id: '/webinar',
+  path: '/webinar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VictoriakasumuRoute = VictoriakasumuRouteImport.update({
+  id: '/victoriakasumu',
+  path: '/victoriakasumu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SubscribeRoute = SubscribeRouteImport.update({
+  id: '/subscribe',
+  path: '/subscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SprintsRoute = SprintsRouteImport.update({
+  id: '/sprints',
+  path: '/sprints',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -45,9 +110,34 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SgRoute = SgRouteImport.update({
+  id: '/sg',
+  path: '/sg',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceRoute = ServiceRouteImport.update({
+  id: '/service',
+  path: '/service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeanparkRoute = SeanparkRouteImport.update({
+  id: '/seanpark',
+  path: '/seanpark',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScaleDiagnosticRoute = ScaleDiagnosticRouteImport.update({
+  id: '/scale-diagnostic',
+  path: '/scale-diagnostic',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RosterRoute = RosterRouteImport.update({
+  id: '/roster',
+  path: '/roster',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProofRoute = ProofRouteImport.update({
@@ -75,9 +165,54 @@ const OperatorsRoute = OperatorsRouteImport.update({
   path: '/operators',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OperatingpartnersRoute = OperatingpartnersRouteImport.update({
+  id: '/operatingpartners',
+  path: '/operatingpartners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfficehoursRoute = OfficehoursRouteImport.update({
+  id: '/officehours',
+  path: '/officehours',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MunawarahmedRoute = MunawarahmedRouteImport.update({
+  id: '/munawarahmed',
+  path: '/munawarahmed',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MemberdashboardRoute = MemberdashboardRouteImport.update({
+  id: '/memberdashboard',
+  path: '/memberdashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MeetveepRoute = MeetveepRouteImport.update({
+  id: '/meetveep',
+  path: '/meetveep',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarknewhouseRoute = MarknewhouseRouteImport.update({
+  id: '/marknewhouse',
+  path: '/marknewhouse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LauramerlingRoute = LauramerlingRouteImport.update({
+  id: '/lauramerling',
+  path: '/lauramerling',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JoinRoute = JoinRouteImport.update({
   id: '/join',
   path: '/join',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JianyangRoute = JianyangRouteImport.update({
+  id: '/jianyang',
+  path: '/jianyang',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JenniferkasperRoute = JenniferkasperRouteImport.update({
+  id: '/jenniferkasper',
+  path: '/jenniferkasper',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InsightsRoute = InsightsRouteImport.update({
@@ -85,9 +220,39 @@ const InsightsRoute = InsightsRouteImport.update({
   path: '/insights',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IndexDothtmlRoute = IndexDothtmlRouteImport.update({
+  id: '/index.html',
+  path: '/index.html',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexLegacyRoute = IndexLegacyRouteImport.update({
+  id: '/index-legacy',
+  path: '/index-legacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
   id: '/how-it-works',
   path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetStartedRoute = GetStartedRouteImport.update({
+  id: '/get-started',
+  path: '/get-started',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FundraisingRoute = FundraisingRouteImport.update({
+  id: '/fundraising',
+  path: '/fundraising',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FractionalRoute = FractionalRouteImport.update({
+  id: '/fractional',
+  path: '/fractional',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ForPortfoliosRoute = ForPortfoliosRouteImport.update({
@@ -105,6 +270,47 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ErikavelazquezRoute = ErikavelazquezRouteImport.update({
+  id: '/erikavelazquez',
+  path: '/erikavelazquez',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnRoute = EnRouteImport.update({
+  id: '/en',
+  path: '/en',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ElainebogartRoute = ElainebogartRouteImport.update({
+  id: '/elainebogart',
+  path: '/elainebogart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DavegarciaRoute = DavegarciaRouteImport.update({
+  id: '/davegarcia',
+  path: '/davegarcia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CopyrightRoute = CopyrightRouteImport.update({
+  id: '/copyright',
+  path: '/copyright',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CopyOfScaleDiagnosticRoute = CopyOfScaleDiagnosticRouteImport.update({
+  id: '/copy-of-scale-diagnostic',
+  path: '/copy-of-scale-diagnostic',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CopyOfMarkNewhouseProfilePageRoute =
+  CopyOfMarkNewhouseProfilePageRouteImport.update({
+    id: '/copy-of-mark-newhouse-profile-page',
+    path: '/copy-of-mark-newhouse-profile-page',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CopyOfFractionalRoute = CopyOfFractionalRouteImport.update({
+  id: '/copy-of-fractional',
+  path: '/copy-of-fractional',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -113,6 +319,36 @@ const ContactRoute = ContactRouteImport.update({
 const CompareRoute = CompareRouteImport.update({
   id: '/compare',
   path: '/compare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessosRoute = BusinessosRouteImport.update({
+  id: '/businessos',
+  path: '/businessos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AndrewsilverRoute = AndrewsilverRouteImport.update({
+  id: '/andrewsilver',
+  path: '/andrewsilver',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlasdairlloydjonesRoute = AlasdairlloydjonesRouteImport.update({
+  id: '/alasdairlloydjones',
+  path: '/alasdairlloydjones',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgenciesRoute = AgenciesRouteImport.update({
+  id: '/agencies',
+  path: '/agencies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -150,6 +386,11 @@ const ServicesAiOperatorsRoute = ServicesAiOperatorsRouteImport.update({
   path: '/ai-operators',
   getParentRoute: () => ServicesRoute,
 } as any)
+const PostSplatRoute = PostSplatRouteImport.update({
+  id: '/post/$',
+  path: '/post/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CompareVsExecutiveSearchRoute =
   CompareVsExecutiveSearchRouteImport.update({
     id: '/vs-executive-search',
@@ -165,24 +406,64 @@ const CompareVsConsultantsRoute = CompareVsConsultantsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/agencies': typeof AgenciesRoute
+  '/alasdairlloydjones': typeof AlasdairlloydjonesRoute
+  '/andrewsilver': typeof AndrewsilverRoute
+  '/blog': typeof BlogRoute
+  '/book': typeof BookRoute
+  '/businessos': typeof BusinessosRoute
   '/compare': typeof CompareRouteWithChildren
   '/contact': typeof ContactRoute
+  '/copy-of-fractional': typeof CopyOfFractionalRoute
+  '/copy-of-mark-newhouse-profile-page': typeof CopyOfMarkNewhouseProfilePageRoute
+  '/copy-of-scale-diagnostic': typeof CopyOfScaleDiagnosticRoute
+  '/copyright': typeof CopyrightRoute
+  '/davegarcia': typeof DavegarciaRoute
+  '/elainebogart': typeof ElainebogartRoute
+  '/en': typeof EnRoute
+  '/erikavelazquez': typeof ErikavelazquezRoute
   '/faq': typeof FaqRoute
   '/for-companies': typeof ForCompaniesRoute
   '/for-portfolios': typeof ForPortfoliosRoute
+  '/fractional': typeof FractionalRoute
+  '/fundraising': typeof FundraisingRoute
+  '/get-started': typeof GetStartedRoute
+  '/home': typeof HomeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/index-legacy': typeof IndexLegacyRoute
+  '/index.html': typeof IndexDothtmlRoute
   '/insights': typeof InsightsRoute
+  '/jenniferkasper': typeof JenniferkasperRoute
+  '/jianyang': typeof JianyangRoute
   '/join': typeof JoinRoute
+  '/lauramerling': typeof LauramerlingRoute
+  '/marknewhouse': typeof MarknewhouseRoute
+  '/meetveep': typeof MeetveepRoute
+  '/memberdashboard': typeof MemberdashboardRoute
+  '/munawarahmed': typeof MunawarahmedRoute
+  '/officehours': typeof OfficehoursRoute
+  '/operatingpartners': typeof OperatingpartnersRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/proof': typeof ProofRoute
+  '/roster': typeof RosterRoute
+  '/scale-diagnostic': typeof ScaleDiagnosticRoute
+  '/seanpark': typeof SeanparkRoute
+  '/service': typeof ServiceRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sg': typeof SgRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sprints': typeof SprintsRoute
+  '/subscribe': typeof SubscribeRoute
+  '/team': typeof TeamRoute
   '/terms': typeof TermsRoute
+  '/victoriakasumu': typeof VictoriakasumuRoute
+  '/webinar': typeof WebinarRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
+  '/post/$': typeof PostSplatRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
   '/services/executive-bench': typeof ServicesExecutiveBenchRoute
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
@@ -192,23 +473,63 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/agencies': typeof AgenciesRoute
+  '/alasdairlloydjones': typeof AlasdairlloydjonesRoute
+  '/andrewsilver': typeof AndrewsilverRoute
+  '/blog': typeof BlogRoute
+  '/book': typeof BookRoute
+  '/businessos': typeof BusinessosRoute
   '/compare': typeof CompareRouteWithChildren
   '/contact': typeof ContactRoute
+  '/copy-of-fractional': typeof CopyOfFractionalRoute
+  '/copy-of-mark-newhouse-profile-page': typeof CopyOfMarkNewhouseProfilePageRoute
+  '/copy-of-scale-diagnostic': typeof CopyOfScaleDiagnosticRoute
+  '/copyright': typeof CopyrightRoute
+  '/davegarcia': typeof DavegarciaRoute
+  '/elainebogart': typeof ElainebogartRoute
+  '/en': typeof EnRoute
+  '/erikavelazquez': typeof ErikavelazquezRoute
   '/faq': typeof FaqRoute
   '/for-companies': typeof ForCompaniesRoute
   '/for-portfolios': typeof ForPortfoliosRoute
+  '/fractional': typeof FractionalRoute
+  '/fundraising': typeof FundraisingRoute
+  '/get-started': typeof GetStartedRoute
+  '/home': typeof HomeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/index-legacy': typeof IndexLegacyRoute
+  '/index.html': typeof IndexDothtmlRoute
   '/insights': typeof InsightsRoute
+  '/jenniferkasper': typeof JenniferkasperRoute
+  '/jianyang': typeof JianyangRoute
   '/join': typeof JoinRoute
+  '/lauramerling': typeof LauramerlingRoute
+  '/marknewhouse': typeof MarknewhouseRoute
+  '/meetveep': typeof MeetveepRoute
+  '/memberdashboard': typeof MemberdashboardRoute
+  '/munawarahmed': typeof MunawarahmedRoute
+  '/officehours': typeof OfficehoursRoute
+  '/operatingpartners': typeof OperatingpartnersRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/proof': typeof ProofRoute
+  '/roster': typeof RosterRoute
+  '/scale-diagnostic': typeof ScaleDiagnosticRoute
+  '/seanpark': typeof SeanparkRoute
+  '/service': typeof ServiceRoute
+  '/sg': typeof SgRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sprints': typeof SprintsRoute
+  '/subscribe': typeof SubscribeRoute
+  '/team': typeof TeamRoute
   '/terms': typeof TermsRoute
+  '/victoriakasumu': typeof VictoriakasumuRoute
+  '/webinar': typeof WebinarRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
+  '/post/$': typeof PostSplatRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
   '/services/executive-bench': typeof ServicesExecutiveBenchRoute
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
@@ -219,24 +540,64 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/agencies': typeof AgenciesRoute
+  '/alasdairlloydjones': typeof AlasdairlloydjonesRoute
+  '/andrewsilver': typeof AndrewsilverRoute
+  '/blog': typeof BlogRoute
+  '/book': typeof BookRoute
+  '/businessos': typeof BusinessosRoute
   '/compare': typeof CompareRouteWithChildren
   '/contact': typeof ContactRoute
+  '/copy-of-fractional': typeof CopyOfFractionalRoute
+  '/copy-of-mark-newhouse-profile-page': typeof CopyOfMarkNewhouseProfilePageRoute
+  '/copy-of-scale-diagnostic': typeof CopyOfScaleDiagnosticRoute
+  '/copyright': typeof CopyrightRoute
+  '/davegarcia': typeof DavegarciaRoute
+  '/elainebogart': typeof ElainebogartRoute
+  '/en': typeof EnRoute
+  '/erikavelazquez': typeof ErikavelazquezRoute
   '/faq': typeof FaqRoute
   '/for-companies': typeof ForCompaniesRoute
   '/for-portfolios': typeof ForPortfoliosRoute
+  '/fractional': typeof FractionalRoute
+  '/fundraising': typeof FundraisingRoute
+  '/get-started': typeof GetStartedRoute
+  '/home': typeof HomeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/index-legacy': typeof IndexLegacyRoute
+  '/index.html': typeof IndexDothtmlRoute
   '/insights': typeof InsightsRoute
+  '/jenniferkasper': typeof JenniferkasperRoute
+  '/jianyang': typeof JianyangRoute
   '/join': typeof JoinRoute
+  '/lauramerling': typeof LauramerlingRoute
+  '/marknewhouse': typeof MarknewhouseRoute
+  '/meetveep': typeof MeetveepRoute
+  '/memberdashboard': typeof MemberdashboardRoute
+  '/munawarahmed': typeof MunawarahmedRoute
+  '/officehours': typeof OfficehoursRoute
+  '/operatingpartners': typeof OperatingpartnersRoute
   '/operators': typeof OperatorsRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/proof': typeof ProofRoute
+  '/roster': typeof RosterRoute
+  '/scale-diagnostic': typeof ScaleDiagnosticRoute
+  '/seanpark': typeof SeanparkRoute
+  '/service': typeof ServiceRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sg': typeof SgRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sprints': typeof SprintsRoute
+  '/subscribe': typeof SubscribeRoute
+  '/team': typeof TeamRoute
   '/terms': typeof TermsRoute
+  '/victoriakasumu': typeof VictoriakasumuRoute
+  '/webinar': typeof WebinarRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
+  '/post/$': typeof PostSplatRoute
   '/services/ai-operators': typeof ServicesAiOperatorsRoute
   '/services/executive-bench': typeof ServicesExecutiveBenchRoute
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
@@ -248,24 +609,64 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/agencies'
+    | '/alasdairlloydjones'
+    | '/andrewsilver'
+    | '/blog'
+    | '/book'
+    | '/businessos'
     | '/compare'
     | '/contact'
+    | '/copy-of-fractional'
+    | '/copy-of-mark-newhouse-profile-page'
+    | '/copy-of-scale-diagnostic'
+    | '/copyright'
+    | '/davegarcia'
+    | '/elainebogart'
+    | '/en'
+    | '/erikavelazquez'
     | '/faq'
     | '/for-companies'
     | '/for-portfolios'
+    | '/fractional'
+    | '/fundraising'
+    | '/get-started'
+    | '/home'
     | '/how-it-works'
+    | '/index-legacy'
+    | '/index.html'
     | '/insights'
+    | '/jenniferkasper'
+    | '/jianyang'
     | '/join'
+    | '/lauramerling'
+    | '/marknewhouse'
+    | '/meetveep'
+    | '/memberdashboard'
+    | '/munawarahmed'
+    | '/officehours'
+    | '/operatingpartners'
     | '/operators'
     | '/partners'
     | '/pricing'
     | '/privacy'
     | '/proof'
+    | '/roster'
+    | '/scale-diagnostic'
+    | '/seanpark'
+    | '/service'
     | '/services'
+    | '/sg'
     | '/sitemap.xml'
+    | '/sprints'
+    | '/subscribe'
+    | '/team'
     | '/terms'
+    | '/victoriakasumu'
+    | '/webinar'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
+    | '/post/$'
     | '/services/ai-operators'
     | '/services/executive-bench'
     | '/services/fractional-cfo'
@@ -275,23 +676,63 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/agencies'
+    | '/alasdairlloydjones'
+    | '/andrewsilver'
+    | '/blog'
+    | '/book'
+    | '/businessos'
     | '/compare'
     | '/contact'
+    | '/copy-of-fractional'
+    | '/copy-of-mark-newhouse-profile-page'
+    | '/copy-of-scale-diagnostic'
+    | '/copyright'
+    | '/davegarcia'
+    | '/elainebogart'
+    | '/en'
+    | '/erikavelazquez'
     | '/faq'
     | '/for-companies'
     | '/for-portfolios'
+    | '/fractional'
+    | '/fundraising'
+    | '/get-started'
+    | '/home'
     | '/how-it-works'
+    | '/index-legacy'
+    | '/index.html'
     | '/insights'
+    | '/jenniferkasper'
+    | '/jianyang'
     | '/join'
+    | '/lauramerling'
+    | '/marknewhouse'
+    | '/meetveep'
+    | '/memberdashboard'
+    | '/munawarahmed'
+    | '/officehours'
+    | '/operatingpartners'
     | '/operators'
     | '/partners'
     | '/pricing'
     | '/privacy'
     | '/proof'
+    | '/roster'
+    | '/scale-diagnostic'
+    | '/seanpark'
+    | '/service'
+    | '/sg'
     | '/sitemap.xml'
+    | '/sprints'
+    | '/subscribe'
+    | '/team'
     | '/terms'
+    | '/victoriakasumu'
+    | '/webinar'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
+    | '/post/$'
     | '/services/ai-operators'
     | '/services/executive-bench'
     | '/services/fractional-cfo'
@@ -301,24 +742,64 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/agencies'
+    | '/alasdairlloydjones'
+    | '/andrewsilver'
+    | '/blog'
+    | '/book'
+    | '/businessos'
     | '/compare'
     | '/contact'
+    | '/copy-of-fractional'
+    | '/copy-of-mark-newhouse-profile-page'
+    | '/copy-of-scale-diagnostic'
+    | '/copyright'
+    | '/davegarcia'
+    | '/elainebogart'
+    | '/en'
+    | '/erikavelazquez'
     | '/faq'
     | '/for-companies'
     | '/for-portfolios'
+    | '/fractional'
+    | '/fundraising'
+    | '/get-started'
+    | '/home'
     | '/how-it-works'
+    | '/index-legacy'
+    | '/index.html'
     | '/insights'
+    | '/jenniferkasper'
+    | '/jianyang'
     | '/join'
+    | '/lauramerling'
+    | '/marknewhouse'
+    | '/meetveep'
+    | '/memberdashboard'
+    | '/munawarahmed'
+    | '/officehours'
+    | '/operatingpartners'
     | '/operators'
     | '/partners'
     | '/pricing'
     | '/privacy'
     | '/proof'
+    | '/roster'
+    | '/scale-diagnostic'
+    | '/seanpark'
+    | '/service'
     | '/services'
+    | '/sg'
     | '/sitemap.xml'
+    | '/sprints'
+    | '/subscribe'
+    | '/team'
     | '/terms'
+    | '/victoriakasumu'
+    | '/webinar'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
+    | '/post/$'
     | '/services/ai-operators'
     | '/services/executive-bench'
     | '/services/fractional-cfo'
@@ -329,31 +810,106 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AgenciesRoute: typeof AgenciesRoute
+  AlasdairlloydjonesRoute: typeof AlasdairlloydjonesRoute
+  AndrewsilverRoute: typeof AndrewsilverRoute
+  BlogRoute: typeof BlogRoute
+  BookRoute: typeof BookRoute
+  BusinessosRoute: typeof BusinessosRoute
   CompareRoute: typeof CompareRouteWithChildren
   ContactRoute: typeof ContactRoute
+  CopyOfFractionalRoute: typeof CopyOfFractionalRoute
+  CopyOfMarkNewhouseProfilePageRoute: typeof CopyOfMarkNewhouseProfilePageRoute
+  CopyOfScaleDiagnosticRoute: typeof CopyOfScaleDiagnosticRoute
+  CopyrightRoute: typeof CopyrightRoute
+  DavegarciaRoute: typeof DavegarciaRoute
+  ElainebogartRoute: typeof ElainebogartRoute
+  EnRoute: typeof EnRoute
+  ErikavelazquezRoute: typeof ErikavelazquezRoute
   FaqRoute: typeof FaqRoute
   ForCompaniesRoute: typeof ForCompaniesRoute
   ForPortfoliosRoute: typeof ForPortfoliosRoute
+  FractionalRoute: typeof FractionalRoute
+  FundraisingRoute: typeof FundraisingRoute
+  GetStartedRoute: typeof GetStartedRoute
+  HomeRoute: typeof HomeRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  IndexLegacyRoute: typeof IndexLegacyRoute
+  IndexDothtmlRoute: typeof IndexDothtmlRoute
   InsightsRoute: typeof InsightsRoute
+  JenniferkasperRoute: typeof JenniferkasperRoute
+  JianyangRoute: typeof JianyangRoute
   JoinRoute: typeof JoinRoute
+  LauramerlingRoute: typeof LauramerlingRoute
+  MarknewhouseRoute: typeof MarknewhouseRoute
+  MeetveepRoute: typeof MeetveepRoute
+  MemberdashboardRoute: typeof MemberdashboardRoute
+  MunawarahmedRoute: typeof MunawarahmedRoute
+  OfficehoursRoute: typeof OfficehoursRoute
+  OperatingpartnersRoute: typeof OperatingpartnersRoute
   OperatorsRoute: typeof OperatorsRoute
   PartnersRoute: typeof PartnersRoute
   PricingRoute: typeof PricingRoute
   PrivacyRoute: typeof PrivacyRoute
   ProofRoute: typeof ProofRoute
+  RosterRoute: typeof RosterRoute
+  ScaleDiagnosticRoute: typeof ScaleDiagnosticRoute
+  SeanparkRoute: typeof SeanparkRoute
+  ServiceRoute: typeof ServiceRoute
   ServicesRoute: typeof ServicesRouteWithChildren
+  SgRoute: typeof SgRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SprintsRoute: typeof SprintsRoute
+  SubscribeRoute: typeof SubscribeRoute
+  TeamRoute: typeof TeamRoute
   TermsRoute: typeof TermsRoute
+  VictoriakasumuRoute: typeof VictoriakasumuRoute
+  WebinarRoute: typeof WebinarRoute
+  PostSplatRoute: typeof PostSplatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/webinar': {
+      id: '/webinar'
+      path: '/webinar'
+      fullPath: '/webinar'
+      preLoaderRoute: typeof WebinarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/victoriakasumu': {
+      id: '/victoriakasumu'
+      path: '/victoriakasumu'
+      fullPath: '/victoriakasumu'
+      preLoaderRoute: typeof VictoriakasumuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/subscribe': {
+      id: '/subscribe'
+      path: '/subscribe'
+      fullPath: '/subscribe'
+      preLoaderRoute: typeof SubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sprints': {
+      id: '/sprints'
+      path: '/sprints'
+      fullPath: '/sprints'
+      preLoaderRoute: typeof SprintsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -363,11 +919,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sg': {
+      id: '/sg'
+      path: '/sg'
+      fullPath: '/sg'
+      preLoaderRoute: typeof SgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service': {
+      id: '/service'
+      path: '/service'
+      fullPath: '/service'
+      preLoaderRoute: typeof ServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seanpark': {
+      id: '/seanpark'
+      path: '/seanpark'
+      fullPath: '/seanpark'
+      preLoaderRoute: typeof SeanparkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scale-diagnostic': {
+      id: '/scale-diagnostic'
+      path: '/scale-diagnostic'
+      fullPath: '/scale-diagnostic'
+      preLoaderRoute: typeof ScaleDiagnosticRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roster': {
+      id: '/roster'
+      path: '/roster'
+      fullPath: '/roster'
+      preLoaderRoute: typeof RosterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/proof': {
@@ -405,11 +996,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OperatorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/operatingpartners': {
+      id: '/operatingpartners'
+      path: '/operatingpartners'
+      fullPath: '/operatingpartners'
+      preLoaderRoute: typeof OperatingpartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/officehours': {
+      id: '/officehours'
+      path: '/officehours'
+      fullPath: '/officehours'
+      preLoaderRoute: typeof OfficehoursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/munawarahmed': {
+      id: '/munawarahmed'
+      path: '/munawarahmed'
+      fullPath: '/munawarahmed'
+      preLoaderRoute: typeof MunawarahmedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/memberdashboard': {
+      id: '/memberdashboard'
+      path: '/memberdashboard'
+      fullPath: '/memberdashboard'
+      preLoaderRoute: typeof MemberdashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/meetveep': {
+      id: '/meetveep'
+      path: '/meetveep'
+      fullPath: '/meetveep'
+      preLoaderRoute: typeof MeetveepRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marknewhouse': {
+      id: '/marknewhouse'
+      path: '/marknewhouse'
+      fullPath: '/marknewhouse'
+      preLoaderRoute: typeof MarknewhouseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lauramerling': {
+      id: '/lauramerling'
+      path: '/lauramerling'
+      fullPath: '/lauramerling'
+      preLoaderRoute: typeof LauramerlingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/join': {
       id: '/join'
       path: '/join'
       fullPath: '/join'
       preLoaderRoute: typeof JoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jianyang': {
+      id: '/jianyang'
+      path: '/jianyang'
+      fullPath: '/jianyang'
+      preLoaderRoute: typeof JianyangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jenniferkasper': {
+      id: '/jenniferkasper'
+      path: '/jenniferkasper'
+      fullPath: '/jenniferkasper'
+      preLoaderRoute: typeof JenniferkasperRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/insights': {
@@ -419,11 +1073,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/index.html': {
+      id: '/index.html'
+      path: '/index.html'
+      fullPath: '/index.html'
+      preLoaderRoute: typeof IndexDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/index-legacy': {
+      id: '/index-legacy'
+      path: '/index-legacy'
+      fullPath: '/index-legacy'
+      preLoaderRoute: typeof IndexLegacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/how-it-works': {
       id: '/how-it-works'
       path: '/how-it-works'
       fullPath: '/how-it-works'
       preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-started': {
+      id: '/get-started'
+      path: '/get-started'
+      fullPath: '/get-started'
+      preLoaderRoute: typeof GetStartedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fundraising': {
+      id: '/fundraising'
+      path: '/fundraising'
+      fullPath: '/fundraising'
+      preLoaderRoute: typeof FundraisingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fractional': {
+      id: '/fractional'
+      path: '/fractional'
+      fullPath: '/fractional'
+      preLoaderRoute: typeof FractionalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/for-portfolios': {
@@ -447,6 +1143,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/erikavelazquez': {
+      id: '/erikavelazquez'
+      path: '/erikavelazquez'
+      fullPath: '/erikavelazquez'
+      preLoaderRoute: typeof ErikavelazquezRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en': {
+      id: '/en'
+      path: '/en'
+      fullPath: '/en'
+      preLoaderRoute: typeof EnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/elainebogart': {
+      id: '/elainebogart'
+      path: '/elainebogart'
+      fullPath: '/elainebogart'
+      preLoaderRoute: typeof ElainebogartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/davegarcia': {
+      id: '/davegarcia'
+      path: '/davegarcia'
+      fullPath: '/davegarcia'
+      preLoaderRoute: typeof DavegarciaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/copyright': {
+      id: '/copyright'
+      path: '/copyright'
+      fullPath: '/copyright'
+      preLoaderRoute: typeof CopyrightRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/copy-of-scale-diagnostic': {
+      id: '/copy-of-scale-diagnostic'
+      path: '/copy-of-scale-diagnostic'
+      fullPath: '/copy-of-scale-diagnostic'
+      preLoaderRoute: typeof CopyOfScaleDiagnosticRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/copy-of-mark-newhouse-profile-page': {
+      id: '/copy-of-mark-newhouse-profile-page'
+      path: '/copy-of-mark-newhouse-profile-page'
+      fullPath: '/copy-of-mark-newhouse-profile-page'
+      preLoaderRoute: typeof CopyOfMarkNewhouseProfilePageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/copy-of-fractional': {
+      id: '/copy-of-fractional'
+      path: '/copy-of-fractional'
+      fullPath: '/copy-of-fractional'
+      preLoaderRoute: typeof CopyOfFractionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -459,6 +1211,48 @@ declare module '@tanstack/react-router' {
       path: '/compare'
       fullPath: '/compare'
       preLoaderRoute: typeof CompareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/businessos': {
+      id: '/businessos'
+      path: '/businessos'
+      fullPath: '/businessos'
+      preLoaderRoute: typeof BusinessosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/andrewsilver': {
+      id: '/andrewsilver'
+      path: '/andrewsilver'
+      fullPath: '/andrewsilver'
+      preLoaderRoute: typeof AndrewsilverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alasdairlloydjones': {
+      id: '/alasdairlloydjones'
+      path: '/alasdairlloydjones'
+      fullPath: '/alasdairlloydjones'
+      preLoaderRoute: typeof AlasdairlloydjonesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agencies': {
+      id: '/agencies'
+      path: '/agencies'
+      fullPath: '/agencies'
+      preLoaderRoute: typeof AgenciesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -509,6 +1303,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/services/ai-operators'
       preLoaderRoute: typeof ServicesAiOperatorsRouteImport
       parentRoute: typeof ServicesRoute
+    }
+    '/post/$': {
+      id: '/post/$'
+      path: '/post/$'
+      fullPath: '/post/$'
+      preLoaderRoute: typeof PostSplatRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/compare/vs-executive-search': {
       id: '/compare/vs-executive-search'
@@ -563,23 +1364,73 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AgenciesRoute: AgenciesRoute,
+  AlasdairlloydjonesRoute: AlasdairlloydjonesRoute,
+  AndrewsilverRoute: AndrewsilverRoute,
+  BlogRoute: BlogRoute,
+  BookRoute: BookRoute,
+  BusinessosRoute: BusinessosRoute,
   CompareRoute: CompareRouteWithChildren,
   ContactRoute: ContactRoute,
+  CopyOfFractionalRoute: CopyOfFractionalRoute,
+  CopyOfMarkNewhouseProfilePageRoute: CopyOfMarkNewhouseProfilePageRoute,
+  CopyOfScaleDiagnosticRoute: CopyOfScaleDiagnosticRoute,
+  CopyrightRoute: CopyrightRoute,
+  DavegarciaRoute: DavegarciaRoute,
+  ElainebogartRoute: ElainebogartRoute,
+  EnRoute: EnRoute,
+  ErikavelazquezRoute: ErikavelazquezRoute,
   FaqRoute: FaqRoute,
   ForCompaniesRoute: ForCompaniesRoute,
   ForPortfoliosRoute: ForPortfoliosRoute,
+  FractionalRoute: FractionalRoute,
+  FundraisingRoute: FundraisingRoute,
+  GetStartedRoute: GetStartedRoute,
+  HomeRoute: HomeRoute,
   HowItWorksRoute: HowItWorksRoute,
+  IndexLegacyRoute: IndexLegacyRoute,
+  IndexDothtmlRoute: IndexDothtmlRoute,
   InsightsRoute: InsightsRoute,
+  JenniferkasperRoute: JenniferkasperRoute,
+  JianyangRoute: JianyangRoute,
   JoinRoute: JoinRoute,
+  LauramerlingRoute: LauramerlingRoute,
+  MarknewhouseRoute: MarknewhouseRoute,
+  MeetveepRoute: MeetveepRoute,
+  MemberdashboardRoute: MemberdashboardRoute,
+  MunawarahmedRoute: MunawarahmedRoute,
+  OfficehoursRoute: OfficehoursRoute,
+  OperatingpartnersRoute: OperatingpartnersRoute,
   OperatorsRoute: OperatorsRoute,
   PartnersRoute: PartnersRoute,
   PricingRoute: PricingRoute,
   PrivacyRoute: PrivacyRoute,
   ProofRoute: ProofRoute,
+  RosterRoute: RosterRoute,
+  ScaleDiagnosticRoute: ScaleDiagnosticRoute,
+  SeanparkRoute: SeanparkRoute,
+  ServiceRoute: ServiceRoute,
   ServicesRoute: ServicesRouteWithChildren,
+  SgRoute: SgRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SprintsRoute: SprintsRoute,
+  SubscribeRoute: SubscribeRoute,
+  TeamRoute: TeamRoute,
   TermsRoute: TermsRoute,
+  VictoriakasumuRoute: VictoriakasumuRoute,
+  WebinarRoute: WebinarRoute,
+  PostSplatRoute: PostSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
