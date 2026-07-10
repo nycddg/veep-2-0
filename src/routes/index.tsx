@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { BOOKING_URL } from "@/lib/booking";
 import { LogoWall } from "@/components/site/LogoWall";
 import { Testimonials } from "@/components/site/Testimonials";
-import { OperatorProofCard } from "@/components/site/OperatorProofCard";
 import { OperatorSpotlightRail } from "@/components/site/OperatorSpotlightRail";
 import { OperatorCanvas } from "@/components/site/OperatorCanvas";
 import { EngagementTile } from "@/components/site/EngagementTile";
