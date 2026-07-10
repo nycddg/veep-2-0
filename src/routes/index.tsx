@@ -128,7 +128,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["ROCKET INTERNET", "KIXIE"],
     summary:
-      "Builds CFO-grade systems for founder-led companies. His experience spans private capital allocation, revenue-tech operations at Kixie, and fractional CFO delivery through Apex CFO AI.",
+      "Transaction-ready finance operator with PE roots and marketplace scale; former Principal at Lincolnshire Management ($1.8B AUM), then CFO of Rocket Internet portfolio company during the build of Indonesia’s largest e-commerce platform.\u00a0",
     chips: ["Tech", "SaaS", "Private Capital"],
     photoUrl: alanPoussaintHeadshot.url,
     photoPosition: "center 15%",
