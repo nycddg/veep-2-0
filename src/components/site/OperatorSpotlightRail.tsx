@@ -20,7 +20,7 @@ function OperatorCard({ op }: { op: Operator }) {
   return (
     <article
       tabIndex={0}
-      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-sm bg-[#0a0f1d] cursor-pointer transition-colors duration-300 border ${
+      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-2xl bg-[#0a0f1d] cursor-pointer transition-colors duration-300 border ${
         op.featured ? "border-[color:var(--color-accent-coral)]/40" : "border-white/5 hover:border-white/15"
       } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
       aria-label={`${op.name}, ${op.role}`}
@@ -48,32 +48,28 @@ function OperatorCard({ op }: { op: Operator }) {
       />
 
       {/* Corner legibility gradient — top-right only, keeps face clear */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-black/40 transition-opacity duration-500 group-hover:opacity-0 group-focus-within:opacity-0" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-cream/20 transition-opacity duration-500 group-hover:opacity-0 group-focus-within:opacity-0" />
 
       {/* Meta — top right */}
       <div className="absolute top-5 right-5 text-right z-10 max-w-[75%]">
         <h3
-          className="font-sans font-medium text-cream text-lg sm:text-xl leading-tight tracking-tight"
-          style={{ textShadow: "0 1px 8px rgba(5,8,16,0.55)" }}
+          className="font-sans font-medium text-ink text-lg sm:text-xl leading-tight tracking-tight"
         >
           {op.name}
         </h3>
         <div
-          className={`font-mono text-[10px] uppercase tracking-[0.14em] mt-1 ${
-            op.featured ? "text-[color:var(--color-accent-coral)]" : "text-accent"
-          }`}
+          className="font-mono text-[10px] uppercase tracking-[0.14em] mt-1 text-ink/80"
         >
           {op.role}
         </div>
         {op.priorCompanies && op.priorCompanies.length > 0 && (
           <div
-            className="font-mono text-[10px] text-cream/70 mt-2 leading-relaxed uppercase tracking-[0.1em]"
-            style={{ textShadow: "0 1px 6px rgba(5,8,16,0.6)" }}
+            className="font-mono text-[10px] text-ink/70 mt-2 leading-relaxed uppercase tracking-[0.1em]"
           >
             {op.priorCompanies.map((c, i) => (
               <span key={c}>
                 {i > 0 && <br />}
-                Ex-{c}
+                {c}
               </span>
             ))}
           </div>
@@ -82,7 +78,7 @@ function OperatorCard({ op }: { op: Operator }) {
 
       {/* Slide-up summary */}
       <div
-        className={`absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-500 ease-out bg-background/95 backdrop-blur-md p-6 border-t z-20 ${
+        className={`absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-500 ease-out bg-background/30 backdrop-blur-md p-6 border-t z-20 ${
           op.featured ? "border-[color:var(--color-accent-coral)]/40" : "border-accent/30"
         }`}
       >
