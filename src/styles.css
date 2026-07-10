@@ -162,6 +162,7 @@
   }
 
   h2 { letter-spacing: -0.028em; line-height: 1.06; white-space: nowrap !important; }
+  h2.allow-wrap { white-space: normal !important; text-wrap: balance; }
   h3 { letter-spacing: -0.018em; line-height: 1.18; }
   h4 { letter-spacing: -0.012em; line-height: 1.25; }
 
