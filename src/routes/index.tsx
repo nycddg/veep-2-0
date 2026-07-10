@@ -571,7 +571,7 @@ function Index() {
 
       {/* 5 — BENEFITS */}
       {/* 4.5 — OPERATORS SPOTLIGHT */}
-      <section id="operators" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <Reveal as="section" id="operators" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
 
           <div className="max-w-2xl mb-12 md:mb-14">
@@ -659,10 +659,10 @@ function Index() {
             </a>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* 5 — BENEFITS */}
-      <section id="benefits" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="benefits" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
@@ -687,7 +687,7 @@ function Index() {
             <InlineCTA />
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* 6 — OFFER / ENGAGEMENTS */}
       <section id="offer" className="bg-surface-band py-20 md:py-28 scroll-mt-20">
@@ -728,7 +728,7 @@ function Index() {
       </section>
 
       {/* 8 — PROOF */}
-      <section id="proof" className="py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="proof" className="py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
@@ -781,10 +781,10 @@ function Index() {
             <InlineCTA />
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* 9 — DIFFERENTIATION */}
-      <section id="vs" className="bg-surface-band py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="vs" className="bg-surface-band py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
@@ -812,10 +812,10 @@ function Index() {
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* 10 — FOR PORTFOLIOS (secondary audience band) */}
-      <section id="portfolios" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="portfolios" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 md:gap-10 items-center border-t border-white/10 pt-12 md:pt-16">
             <div className="lg:col-span-3 space-y-5">
@@ -844,7 +844,7 @@ function Index() {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* 11 — OBJECTIONS */}
       <section className="py-20 md:py-28">
