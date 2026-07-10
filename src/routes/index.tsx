@@ -414,7 +414,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12 md:mb-14">
             <SectionEyebrow>The moment you're in</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               Your business is too important{" "}
               <span className="text-accent">for ownerless work.</span>
             </h2>
@@ -449,7 +449,7 @@ function Index() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
               <SectionEyebrow>What we do</SectionEyebrow>
-              <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+              <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
                 Built for the{"\u00a0"}<span className="text-accent">job to be done.</span>
               </h2>
               <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
@@ -488,7 +488,7 @@ function Index() {
 
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Operator spotlight</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               Operators who've held the seat{" "}
               <span className="text-accent">and delivered.</span>
             </h2>
@@ -579,7 +579,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               Executive capacity,{" "}
               <span className="text-accent">before the executive hire.</span>
             </h2>
@@ -609,7 +609,7 @@ function Index() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
-              <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+              <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
                 Pick the level of support{" "}
                 <span className="text-accent">the work needs.</span>
               </h2>
@@ -634,7 +634,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>How it works</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               From first call to operator in the seat{" "}
               <span className="text-accent">in under 10 days.</span>
             </h2>
@@ -648,7 +648,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               What senior operators change in the{" "}
               <span className="text-accent">first 90 days.</span>
             </h2>
@@ -705,7 +705,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               How Veep compares{" "}
               <span className="text-accent">to the alternatives.</span>
             </h2>
@@ -738,7 +738,7 @@ function Index() {
           <div className="grid lg:grid-cols-5 gap-8 md:gap-10 items-center border-t border-white/10 pt-12 md:pt-16">
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>For PE, VC, and family-office portfolios</SectionEyebrow>
-              <h2 className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
+              <h2 className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] allow-wrap">
                 Stabilize the operational gaps{" "}
                 <span className="text-accent">transactions create.</span>
               </h2>
@@ -770,7 +770,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Before you book</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               The questions founders ask{" "}
               <span className="text-accent">on the first call.</span>
             </h2>
@@ -787,7 +787,7 @@ function Index() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>MINI FAQ</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05]">
+            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               Straight answers.
             </h2>
           </div>

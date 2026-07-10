@@ -111,7 +111,7 @@ function Page() {
               <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
                 What we believe
               </div>
-              <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight">
+              <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
                 Built the hard way.{" "}
                 <span className="text-accent">Rebuilt the smart way.</span>
               </h2>
@@ -152,7 +152,7 @@ function Page() {
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
               Founding team
             </div>
-            <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight">
+            <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
               Founders first.{" "}
               <span className="text-accent">Operators always.</span>
             </h2>
