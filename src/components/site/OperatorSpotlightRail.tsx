@@ -33,6 +33,8 @@ function OperatorCard({ op }: { op: Operator }) {
           <img
             src={op.photoUrl}
             alt={op.name}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover brightness-90 transition-all duration-500 group-hover:brightness-100 group-focus-within:brightness-100"
             style={{
               objectPosition: op.photoPosition ?? "top",
