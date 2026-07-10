@@ -78,7 +78,7 @@ function OperatorCard({ op }: { op: Operator }) {
 
       {/* Slide-up summary */}
       <div
-        className={`absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-500 ease-out bg-background/95 backdrop-blur-md p-6 border-t z-20 ${
+        className={`absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-500 ease-out bg-background/30 backdrop-blur-md p-6 border-t z-20 ${
           op.featured ? "border-[color:var(--color-accent-coral)]/40" : "border-accent/30"
         }`}
       >
