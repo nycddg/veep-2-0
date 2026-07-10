@@ -32,7 +32,7 @@ const auditDeliverables = [
 
 const tiers = [
   {
-    t: "Portfolio Program",
+    t: "Portfolio Roster",
     p: "$75k",
     per: "/ year · usage billed separately",
     best: "Built for private equity firms, family offices, holding companies, and independent sponsors that engage in frequent transactions or manage recurring operator needs across multiple companies.",
@@ -155,7 +155,7 @@ function Page() {
                 Then
               </div>
               <div className="mt-4 text-xl sm:text-2xl text-cream tracking-tight">
-                Portfolio Executive Roster
+                Portfolio Roster
               </div>
               <p className="mt-4 text-sm text-cream/80 leading-relaxed">
                 A retained operating partner function for firms that do not want to build one internally. Veep gives your firm priority access to vetted senior operators who can support transactions, integrations, interim gaps, and value-creation work across the portfolio.
@@ -185,7 +185,7 @@ function Page() {
               Roster model
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
-              Portfolio Program
+              On call operators for the work that can't wait.
             </h2>
           </div>
           <div className="max-w-2xl mx-auto">
