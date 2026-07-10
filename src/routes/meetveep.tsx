@@ -47,20 +47,18 @@ function MeetVeepPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <div className="lg:col-span-7 space-y-7">
             <h1 className="text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05]">
-              The fastest way to add firepower to your team.
+              The work needs an owner.
             </h1>
             <div className="space-y-4 text-base sm:text-lg text-cream/80 max-w-2xl leading-relaxed">
               <p>
-                When you're scaling fast, you can't afford slow hires or bad fits.
+                Your company may not be ready, willing, or able to make the
+                full-time executive hire. But the fundraise, GTM reset, margin
+                issue, leadership gap, or operating priority still needs to move.
               </p>
               <p>
-                Veep connects you with proven independent operators, from former
-                founders to C-suite leaders, who embed quickly and get to work
-                immediately.
-              </p>
-              <p>
-                Meet the senior operators trusted by top founders to lead critical
-                functions and drive real results. Fast.
+                Veep matches founder-led companies with vetted senior operators
+                for the job to be done — so critical work gets owned before the
+                permanent hire is in place.
               </p>
             </div>
 
