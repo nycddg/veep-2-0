@@ -125,7 +125,7 @@ const alternatives = [
 const benefits = [
   { t: "Own the work", d: "Operators step in to take responsibility for critical work, not advise from the sidelines." },
   { t: "Deploy in under 10 days", d: "Algorithmic matching. Shortlist in 72 hours. Onboarded and in the work inside 10 days." },
-  { t: "Senior-only roster", d: "150+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
+  { t: "Senior-only roster", d: "75+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
   { t: "No permanent commitment", d: "Senior ownership without the commit — engagements can pause, extend, or scale with the work." },
   { t: "Clean handoff", d: "When the work lands or a permanent hire arrives, you get documentation, context, and continuity." },
   { t: "30-day fit guarantee", d: "If the operator isn't the right fit, we swap them or you walk — no fee owed for the remaining term." },
@@ -499,7 +499,7 @@ function Index() {
           <OperatorSpotlightRail operators={spotlightOperators} />
 
           <p className="mt-8 text-left text-sm text-stone">
-            Just a few of the 150+ operators in our invite-only network.
+            Just a few of the 75+ operators in our invite-only network.
           </p>
 
           {/* Network impact */}
@@ -558,7 +558,7 @@ function Index() {
 
           <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
             <p className="text-sm text-stone">
-              150+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
+              75+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
             </p>
             <a
               href={BOOKING_URL}
@@ -670,7 +670,7 @@ function Index() {
 
           <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10">
             {[
-              { k: "150+", v: "vetted operators" },
+              { k: "75+", v: "vetted operators" },
               { k: "72h", v: "to shortlist" },
               { k: "<10d", v: "to deploy" },
               { k: "30d", v: "fit guarantee" },
