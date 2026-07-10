@@ -49,7 +49,7 @@ export function SiteFooter() {
               <img src={wordmarkWhite.url} alt="Veep" className="h-6 w-auto" />
             </Link>
             <p className="mt-5 text-sm text-cream/85 max-w-sm leading-relaxed whitespace-pre-line">
-              Senior operators to own the work that can't wait.&nbsp;
+              Senior operators to own the work that can't wait.
               Matched in 72 hours. Deployed in under 10 days.
             </p>
             <a
