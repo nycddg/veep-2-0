@@ -128,7 +128,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["ROCKET INTERNET", "KIXIE"],
     summary:
-      "Finance-trained operator who builds CFO-grade systems for founder-led companies without full-time executive overhead. His experience spans private capital allocation, revenue-tech operations at Kixie, and fractional CFO delivery through Apex CFO AI.",
+      "Builds CFO-grade systems for founder-led companies. His experience spans private capital allocation, revenue-tech operations at Kixie, and fractional CFO delivery through Apex CFO AI.",
     chips: ["Tech", "SaaS", "Private Capital"],
     photoUrl: alanPoussaintHeadshot.url,
     photoPosition: "center 15%",
@@ -139,7 +139,7 @@ const spotlightOperators = [
     role: "Growth Operating Partner",
     priorCompanies: ["LVMH", "MACY'S"],
     summary:
-      "Omnichannel marketing leader with deep experience across global retail, beauty, fashion, media, and customer strategy. As SVP of Media at LVMH, unified group media strategy across 75+ Maisons and built cross-brand agency models.",
+      "Senior marketing leader with deep experience across global retail, beauty, fashion, media, and customer strategy. At at LVMH, unified group media strategy across 75+ Maisons and built cross-brand agency models.",
     chips: ["Retail", "Fashion", "Beauty"],
     photoUrl: jenniferKasperHeadshot.url,
   },
@@ -148,8 +148,8 @@ const spotlightOperators = [
     role: "People Operating Partner",
     priorCompanies: ["ACTIVANT CAPITAL", "EY"],
     summary:
-      "People strategy leader who turns org design, leadership, and talent systems into business growth levers. As CPO at Activant Capital, served as interim CHRO on a portfolio path to a $2B exit; previously scaled an EY HR tech platform from $0 to $65M+ in global revenue.",
-    chips: ["Growth Equity", "Professional Services", "Mission-Driven"],
+      "People strategy leader who turns org design, leadership, and talent systems into business growth levers. As CPO at Activant Capital, led portfolio talent strategy and served as interim CHRO on a portfolio path to a $2B exit.",
+    chips: ["Growth Equity", "PRO SERVICES", "TECH"],
     photoUrl: seanParkHeadshot.url,
     photoPosition: "center 15%",
     photoScale: 1.03,
@@ -159,7 +159,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["KIDS MADE MODERN", "YELLOWHEART"],
     summary:
-      "Finance and operations leader with 25+ years turning founder assumptions into investor-ready plans and operating discipline. Scaled Made Modern revenue 40x into a $13M manufacturing business and has led or supported $65M+ in M&A and fundraising transactions.",
+      "Finance and operations leader with 25+ years turning founder assumptions into investor-ready plans and operating discipline. Has led or supported $65M+ in M&A and fundraising transactions.",
     chips: ["E-Commerce", "SaaS", "Manufacturing"],
     photoUrl: jonathanLevinsonHeadshot.url,
     photoPosition: "center 15%",
@@ -170,7 +170,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["TASTE OF BELGIUM", "FARNSWORTH CANNABIS"],
     summary:
-      "CEO/CFO operator with a record of building and transforming companies across finance, strategy, operations, GTM, and product. Brings board-level judgment and hands-on operating experience across consumer, luxury, product, and transformation work.",
+      "Seasoned operator with a track record of building and transforming companies across finance, strategy, operations, GTM, and product. Brings board-level judgment and hands-on operating experience across consumer, luxury, and finance.\u00a0",
     chips: ["Consumer", "Luxury", "Finance"],
     photoUrl: miguelFerreyraHeadshot.url,
     photoPosition: "center 15%",
@@ -181,7 +181,7 @@ const spotlightOperators = [
     role: "People Operating Partner",
     priorCompanies: ["TASKRABBIT", "BREAD"],
     summary:
-      "People strategy leader with a record of guiding companies through scale, acquisition, and leadership change. At TaskRabbit, rebuilt people strategy while scaling from 250 to 500 employees across 9 countries; later helped guide Bread from Series C through enterprise scale and acquisition.",
+      "People strategy leader with a record of guiding companies through scale, acquisition, and leadership change. At TaskRabbit, rebuilt people strategy while scaling from 250 to 500 employees across 9 countries.",
     chips: ["Marketplace", "Fintech", "Consumer"],
     photoUrl: jessicaDavilaHeadshot.url,
     photoPosition: "center 15%",
