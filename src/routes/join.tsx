@@ -32,8 +32,8 @@ const criteria: readonly { title: string; body: string }[] = [
     body: "Prior seat as a founder, CEO, GM, or C-suite / SVP leader. You've owned outcomes end-to-end, not advised from the sidelines.",
   },
   {
-    title: "Built for interim and fractional work",
-    body: "You want to embed in high-growth companies for the initiatives that can't wait — interim, fractional, or advisory. Prior fractional work is a plus, not required.",
+    title: "Built for high impact",
+    body: "You’re motivated by hands-on work, not management. You want to work with high-growth companies, own meaningful initiatives, win, and move on to the next challenge.\u00a0Prior consulting or fractional experience is a plus, but not required.",
   },
   {
     title: "Track record in fast-paced environments",
@@ -151,8 +151,8 @@ function Page() {
     <>
       <PageHero
         eyebrow="Join Veep"
-        title="Step into the future of executive leadership."
-        sub="Veep represents a small roster of senior operators who embed, build, and deliver. If you're ready to own the work that can't wait — interim, fractional, or advisory — for high-growth companies, we want to meet you."
+        title="Join the operators companies call when the work cannot wait."
+        sub="Veep represents a small roster of senior operators who embed, build, and deliver. If you're ready to own the work that can't wait for high-growth companies, we want to meet you."
         primaryLabel="Apply below"
         secondaryLabel="See how it works"
         secondaryTo="/how-it-works"
