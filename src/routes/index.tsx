@@ -34,8 +34,7 @@ const heroOperators = [
     chips: ["Ex-UGE", "Real Estate"],
     tilt: -2,
     translateY: 16,
-    photoUrl:
-      "https://static.wixstatic.com/media/5084f0_6f67c526803546fa8695a282e5b1c292~mv2.jpg/v1/crop/x_0,y_278,w_1132,h_1133/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(12)_edited.jpg",
+    photoUrl: jianYangHeadshot.url,
   },
   {
     name: "Erika Velazquez",
@@ -43,8 +42,7 @@ const heroOperators = [
     chips: ["Ex-Morning Brew", "New Media"],
     tilt: 3,
     translateY: -32,
-    photoUrl:
-      "https://static.wixstatic.com/media/5084f0_9ee6e722e8564a30a97f2c7ba2767e8b~mv2.png/v1/crop/x_115,y_307,w_938,h_940/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(13).png",
+    photoUrl: erikaVelazquezHeadshot.url,
   },
   {
     name: "Elaine Bogart",
@@ -52,8 +50,7 @@ const heroOperators = [
     chips: ["Ex-Fullscreen", "Web3"],
     tilt: -4,
     translateY: 48,
-    photoUrl:
-      "https://static.wixstatic.com/media/5084f0_1ae2bc09c75742eea3b45aa72d11aeee~mv2.png/v1/crop/x_0,y_283,w_1152,h_1151/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(72).png",
+    photoUrl: elaineBogartHeadshot.url,
   },
   {
     name: "Victoria Kasumu",
@@ -61,8 +58,7 @@ const heroOperators = [
     chips: ["Ex-Zocdoc", "TECH"],
     tilt: 2,
     translateY: 0,
-    photoUrl:
-      "https://static.wixstatic.com/media/5084f0_c97a4bd1542f40d6b6a86c2bf84410d4~mv2.png/v1/crop/x_0,y_144,w_1152,h_1152/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/Untitled%20design%20(15).png",
+    photoUrl: victoriaKasumuHeadshot.url,
   },
 ];
 
