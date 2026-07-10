@@ -5,10 +5,7 @@ import { BOOKING_URL } from "@/lib/booking";
 
 export function FooterCTA({
   headline = (
-    <>
-      Make your next{" "}
-      <span className="text-accent">big move.</span>
-    </>
+    <>Make your next big move.</>
   ),
   sub = "Book a 30-minute call with a Veep founder. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
 }: { headline?: ReactNode; sub?: string }) {

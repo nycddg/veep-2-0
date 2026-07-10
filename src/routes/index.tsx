@@ -353,7 +353,7 @@ function Index() {
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
           <h1 className="text-[2.5rem] leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream mb-6">
-            Because a job{"\u00a0"}always{" "}<span className="text-accent">needs{"\u00a0"}to be done.</span>
+            Because a job{"\u00a0"}always{" "}needs{"\u00a0"}to be done.
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
@@ -415,8 +415,7 @@ function Index() {
           <div className="max-w-3xl mb-12 md:mb-14">
             <SectionEyebrow>The moment you're in</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-              Your business is too important{" "}
-              <span className="text-accent">for ownerless work.</span>
+              Your business is too important for ownerless work.
             </h2>
           </div>
 
@@ -450,7 +449,7 @@ function Index() {
             <div>
               <SectionEyebrow>What we do</SectionEyebrow>
               <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-                Built for the{"\u00a0"}<span className="text-accent">job to be done.</span>
+                Built for the{"\u00a0"}job to be done.
               </h2>
               <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
                 Tell us what's in the way, not moving, or unfortunately coming back to
@@ -489,8 +488,7 @@ function Index() {
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Operator spotlight</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-              Operators who've held the seat{" "}
-              <span className="text-accent">and delivered.</span>
+              Operators who've held the seat and delivered.
             </h2>
             <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
               Every Veep operator has held the role they're deployed into, at a
@@ -580,8 +578,7 @@ function Index() {
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-              Executive capacity,{" "}
-              <span className="text-accent">before the executive hire.</span>
+              Executive capacity, before the executive hire.
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 border-t border-white/10 pt-10">
@@ -610,8 +607,7 @@ function Index() {
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
               <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-                Pick the level of support{" "}
-                <span className="text-accent">the work needs.</span>
+                Pick the level of support the work needs.
               </h2>
             </div>
             <Link
@@ -635,8 +631,7 @@ function Index() {
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>How it works</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-              From first call to operator in the seat{" "}
-              <span className="text-accent">in under 10 days.</span>
+              From first call to operator in the seat in under 10 days.
             </h2>
           </div>
           <StepFlow />
@@ -649,8 +644,7 @@ function Index() {
           <div className="max-w-2xl mb-12 md:mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-              What senior operators change in the{" "}
-              <span className="text-accent">first 90 days.</span>
+              What senior operators change in the first 90 days.
             </h2>
           </div>
 
@@ -706,8 +700,7 @@ function Index() {
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-              How Veep compares{" "}
-              <span className="text-accent">to the alternatives.</span>
+              How Veep compares to the alternatives.
             </h2>
           </div>
 
@@ -739,8 +732,7 @@ function Index() {
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>For PE, VC, and family-office portfolios</SectionEyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] allow-wrap">
-                Stabilize the operational gaps{" "}
-                <span className="text-accent">transactions create.</span>
+                Stabilize the operational gaps transactions create.
               </h2>
               <p className="text-stone leading-relaxed">
                 Transactions create volatility before close, after close, and during integration. Leadership seats open. Finance, GTM, operations, and people priorities shift. The plan is clear, but the company often lacks the senior capacity to own the work. Veep gives transaction-active firms a retained roster of vetted senior operators, ready to support diligence, transition, integration, value creation, and interim leadership needs across the portfolio.
@@ -771,8 +763,7 @@ function Index() {
           <div className="max-w-2xl mb-12 md:mb-14">
             <SectionEyebrow>Before you book</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-              The questions founders ask{" "}
-              <span className="text-accent">on the first call.</span>
+              The questions founders ask on the first call.
             </h2>
           </div>
           <ObjectionList />

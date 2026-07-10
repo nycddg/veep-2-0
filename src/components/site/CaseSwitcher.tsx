@@ -35,8 +35,7 @@ export function CaseSwitcher() {
         <div className="max-w-2xl">
           <Eyebrow>Engagement patterns</Eyebrow>
           <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05] text-cream">
-            One operator. One outcome.{" "}
-            <span className="text-accent">One number that matters.</span>
+            One operator. One outcome. One number that matters.
           </h2>
         </div>
         <div className="inline-flex flex-wrap gap-1 self-start border border-white/10 rounded-md p-1 bg-white/[0.03]">

@@ -151,8 +151,7 @@ function Page() {
     <>
       <PageHero
         eyebrow="Join Veep"
-        title="Step into the future of"
-        accent="executive leadership."
+        title="Step into the future of executive leadership."
         sub="Veep represents a small roster of senior operators who embed, build, and deliver. If you're ready to own the work that can't wait — interim, fractional, or advisory — for high-growth companies, we want to meet you."
         primaryLabel="Apply below"
         secondaryLabel="See how it works"
@@ -168,8 +167,7 @@ function Page() {
                 Who we're looking for
               </div>
               <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
-                A curated roster of{" "}
-                <span className="text-accent">business builders.</span>
+                A curated roster of business builders.
               </h2>
               <p className="text-cream/80 text-sm leading-relaxed max-w-md">
                 We stay small on purpose. Every operator on the roster has run

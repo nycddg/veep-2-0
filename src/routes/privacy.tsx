@@ -156,8 +156,7 @@ function PrivacyPage() {
     <>
       <PageHero
         eyebrow="Legal"
-        title="Privacy"
-        accent="Policy."
+        title="Privacy Policy."
         sub="How The Veep Group, LLC collects, uses, shares, and protects your information when you use veep.work and the Veep platform."
         primaryLabel="Book intro call"
         secondaryLabel="Contact us"

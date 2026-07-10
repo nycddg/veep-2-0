@@ -29,8 +29,7 @@ export function CompareTable() {
           / How we stack up
         </div>
         <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05] text-ink tracking-tight">
-          Better. Faster.{" "}
-          <span className="text-accent">Cheaper. Really.</span>
+          Better. Faster. Cheaper. Really.
         </h2>
         <p className="mt-6 text-ink/70 max-w-xl">
           Executive hiring, consulting, and freelancers each solve one slice.

@@ -6,14 +6,11 @@ import { TrustChip } from "./TrustChip";
 
 /**
  * PageHero — editorial dark-navy hero shared across every interior route.
- * IBM Plex Sans headline with an indigo-accent tail phrase (no italics),
- * cream pill primary CTA, ghost link secondary. No mono chrome.
+ * Cream pill primary CTA, ghost link secondary. No mono chrome.
  */
 export function PageHero({
   eyebrow,
   title,
-  accent,
-  italic,
   sub,
   children,
   chip,
@@ -23,10 +20,6 @@ export function PageHero({
 }: {
   eyebrow: string;
   title: ReactNode;
-  /** Indigo tail phrase appended after the title. */
-  accent?: string;
-  /** @deprecated Use `accent`. Kept for backward compatibility. */
-  italic?: string;
   sub: string;
   children?: ReactNode;
   chip?: string;
@@ -37,7 +30,6 @@ export function PageHero({
   index?: string | number;
   category?: string;
 }) {
-  const tail = accent ?? italic;
   return (
     <section className="relative overflow-hidden border-b border-white/10">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-16 md:pb-24">
@@ -51,12 +43,6 @@ export function PageHero({
           )}
           <h1 className="text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05]">
             {title}
-            {tail && (
-              <>
-                {" "}
-                <span className="text-accent">{tail}</span>
-              </>
-            )}
           </h1>
           <p className="text-base sm:text-lg text-cream/80 max-w-2xl leading-relaxed">
             {sub}

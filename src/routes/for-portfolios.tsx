@@ -88,7 +88,7 @@ function Page() {
     <>
       <PageHero
         eyebrow="For Portfolios"
-        title={<>The <span className="text-accent">right operating partners</span>, ready when the portfolio needs them.</>}
+        title="The right operating partners, ready when the portfolio needs them."
         sub="Access a vetted roster of senior operators across finance, GTM, operations, product, and people. Use us before a transaction, after close, during integration, or whenever a portfolio company needs senior ownership. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
       />
 
@@ -100,8 +100,7 @@ function Page() {
               Where portfolios lose time
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
-              Transactions create volatility.{" "}
-              <span className="text-accent">The work still needs an owner.</span>
+              Transactions create volatility. The work still needs an owner.
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-6 md:gap-8">
@@ -133,7 +132,7 @@ function Page() {
               Start here
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
-              Portfolio <span className="text-accent">Capacity Audit</span>
+              Portfolio Capacity Audit
             </h2>
             <p className="mt-6 text-cream/80 leading-relaxed">
               Before you retain the roster, we map where transactions and operating priorities are likely to create staffing volatility across the portfolio. We identify which companies need what, which upcoming events could create urgency in the next 6 to 12 months, and where a Veep operator would help stabilize execution.
@@ -186,7 +185,7 @@ function Page() {
               Roster model
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
-              Portfolio <span className="text-accent">Program</span>
+              Portfolio Program
             </h2>
           </div>
           <div className="max-w-2xl mx-auto">
@@ -233,8 +232,7 @@ function Page() {
               How it works
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
-              One agreement.{" "}
-              <span className="text-accent">Every portfolio company activated.</span>
+              One agreement. Every portfolio company activated.
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
@@ -257,8 +255,7 @@ function Page() {
               What the retainer covers
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
-              Roster access is retained.{" "}
-              <span className="text-accent">Operator work is scoped.</span>
+              Roster access is retained. Operator work is scoped.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 border-t border-white/10 pt-10">
@@ -273,12 +270,7 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline={
-          <>
-            Stabilize the operator gaps{" "}
-            <span className="text-accent">across your portfolio.</span>
-          </>
-        }
+        headline={<>Stabilize the operator gaps across your portfolio.</>}
         sub="Book a 30-minute call to walk through the audit and roster model. We will tell you directly whether Veep is the right operating partner function for your firm."
       />
     </>
