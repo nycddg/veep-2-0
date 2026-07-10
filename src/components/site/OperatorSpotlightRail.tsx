@@ -53,27 +53,23 @@ function OperatorCard({ op }: { op: Operator }) {
       {/* Meta — top right */}
       <div className="absolute top-5 right-5 text-right z-10 max-w-[75%]">
         <h3
-          className="font-sans font-medium text-cream text-lg sm:text-xl leading-tight tracking-tight"
-          style={{ textShadow: "0 1px 8px rgba(5,8,16,0.55)" }}
+          className="font-sans font-medium text-ink text-lg sm:text-xl leading-tight tracking-tight"
         >
           {op.name}
         </h3>
         <div
-          className={`font-mono text-[10px] uppercase tracking-[0.14em] mt-1 ${
-            op.featured ? "text-[color:var(--color-accent-coral)]" : "text-accent"
-          }`}
+          className="font-mono text-[10px] uppercase tracking-[0.14em] mt-1 text-ink/80"
         >
           {op.role}
         </div>
         {op.priorCompanies && op.priorCompanies.length > 0 && (
           <div
-            className="font-mono text-[10px] text-cream/70 mt-2 leading-relaxed uppercase tracking-[0.1em]"
-            style={{ textShadow: "0 1px 6px rgba(5,8,16,0.6)" }}
+            className="font-mono text-[10px] text-ink/70 mt-2 leading-relaxed uppercase tracking-[0.1em]"
           >
             {op.priorCompanies.map((c, i) => (
               <span key={c}>
                 {i > 0 && <br />}
-                Ex-{c}
+                {c}
               </span>
             ))}
           </div>
