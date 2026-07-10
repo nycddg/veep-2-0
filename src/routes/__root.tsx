@@ -34,7 +34,7 @@ const orgSchema = {
   name: "Veep",
   description:
     "Veep places vetted senior operators inside founder-led companies to own critical work. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
-  url: "/",
+  url: "https://www.veep.work",
   logo: "/favicon.ico",
   email: "hello@veep.co",
   slogan: "Senior operators for work that can't wait.",

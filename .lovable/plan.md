@@ -1,29 +1,36 @@
-## Goal
-Fix h2 overlaps caused by the global `white-space: nowrap !important` on h2 by allowing specific h2s to wrap to 2 lines where they currently overflow their container or overlap adjacent content.
+## SEO audit — current state
 
-## Approach
+Root `__root.tsx` has solid sitewide defaults (title, description, OG/Twitter card + image, Organization JSON-LD, GA). Nine routes have their own `head()`: `/`, `/about`, `/pricing`, `/for-portfolios`, `/contact`, `/join`, `/faq`, `/privacy`, `/terms`.
 
-1. **Add an opt-out utility class** in `src/styles.css`:
-   ```css
-   h2.allow-wrap { white-space: normal !important; }
-   ```
-   This lets us keep the global one-line default while surgically reverting individual h2s to wrapping — cleaner than editing the global rule or hunting per-page overrides.
+Three concrete gaps to fix:
 
-2. **Audit every route** with Playwright at desktop (1280) and mobile (375) widths:
-   - Navigate each route in `src/routes/` (home, services + subroutes, pricing, for-companies, for-portfolios, about, contact, faq, how-it-works, insights, join, operators, partners, proof, roster, compare + subroutes, privacy, terms, plus operator profile pages).
-   - For every `h2`, measure `scrollWidth > clientWidth` (overflow) OR compare `getBoundingClientRect()` against its parent/siblings to detect overlap with neighboring content (e.g. accent text, adjacent columns, images).
-   - Screenshot each flagged section for visual confirmation.
+### 1. Copy drift in existing head() blocks
 
-3. **Apply `className="... allow-wrap"`** to each h2 identified as overflowing/overlapping, in its source file. Preserve all existing classes and structure.
+Recent chat edits renamed "Portfolio Executive Roster" → "Portfolio Roster", but `for-portfolios.tsx` head still reads:
 
-4. **Re-run the audit** after edits to confirm no remaining overlaps and that non-flagged h2s still render on one line as intended.
+- title: *"For Portfolios — Executive Capacity Partnership | Veep"*
+- og:title: *"For Portfolios — Veep Executive Roster"*
+- description mentions "quarterly capacity planning, emergency coverage" — no longer on-page
 
-## Scope
-- Only h2 elements. Hero h1 and other headings untouched.
-- Only presentation change (className additions + one CSS rule). No copy, layout, or component structure changes.
-- Both desktop and mobile viewports checked; an h2 flagged at either width gets the opt-out class (single class works for both).
+Update to reflect the current "Portfolio Roster / on-call operators" positioning.
 
-## Deliverable
-- 1 CSS addition in `src/styles.css`.
-- `className` edits across the route/component files whose h2s overflow.
-- Short summary listing which pages/sections were reverted to 2 lines.
+### 2. Canonical + og:url are relative
+
+All nine `head()` blocks use `href: "/faq"`, `content: "/about"`, etc. Crawlers need absolute URLs. Switch to `https://www.veep.work<path>` (the sitemap's target domain, confirmed in project URLs).
+
+### 3. Sitemap is stale
+
+`src/routes/sitemap[.]xml.ts` has `BASE_URL = ""` and only 4 entries (`/`, `/pricing`, `/faq`, `/contact`). Update to:
+
+- `BASE_URL = "https://www.veep.work"`
+- Add the other real public routes with head(): `/about`, `/for-portfolios`, `/join`, `/privacy`, `/terms`
+
+### Out of scope (calling out, not fixing)
+
+~55 route files have no `head()` — most are drafts / unlinked (`copy-of-*`, `index-legacy`, `index[.]html`, individual operator profile pages like `alasdairlloydjones`, `davegarcia`, plus `home`, `en`, `sg`, `meetveep`, etc.). Adding SEO to all of them is a much larger content exercise (needs per-page titles/descriptions you'd want to write yourself), and several look like they should be deleted rather than indexed.
+
+**Question before I build:** should I also add `head()` + sitemap entries for the linked-but-uncovered active pages (`/how-it-works`, `/for-companies`, `/services`, `/roster`, `/sprints`, `/blog`, `/get-started`)? Or keep this pass tight to fixing the three items above and handle the rest in a follow-up?
+
+add: add `head()` + sitemap entries for the linked-but-uncovered active pages (`/how-it-works`, `/for-companies`, `/services`, `/roster`, `/sprints`, `/blog`, `/get-started`)
+
+&nbsp;

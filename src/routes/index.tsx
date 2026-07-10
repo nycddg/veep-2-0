@@ -304,10 +304,10 @@ export const Route = createFileRoute("/")({
         content:
           "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://www.veep.work/" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://www.veep.work/" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
       { type: "application/ld+json", children: JSON.stringify(serviceSchema) },

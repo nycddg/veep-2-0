@@ -19,9 +19,9 @@ export const Route = createFileRoute("/join")({
         content:
           "Senior operators who embed, build, and deliver. Apply to the roster.",
       },
-      { property: "og:url", content: "/join" },
+      { property: "og:url", content: "https://www.veep.work/join" },
     ],
-    links: [{ rel: "canonical", href: "/join" }],
+    links: [{ rel: "canonical", href: "https://www.veep.work/join" }],
   }),
   component: Page,
 });
