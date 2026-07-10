@@ -112,6 +112,7 @@ const spotlightOperators = [
     chips: ["Digital Media", "Luxury Retail", "Consumer"],
     photoUrl: vanessaKwanHeadshot.url,
     photoPosition: "center 15%",
+    photoScale: 1.03,
   },
   {
     name: "Alasdair Lloyd-Jones",
