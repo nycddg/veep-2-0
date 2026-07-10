@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { z } from "zod";
 import { PageHero } from "@/components/site/PageHero";
-import { Check } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 
 const searchSchema = z.object({
   intent: z.string().catch("call"),
@@ -39,6 +39,52 @@ function Page() {
   const isAudit = intent === "audit";
   const preselected = outcome ? outcomeLabels[outcome] ?? outcome : undefined;
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const submittingRef = useRef(false);
+
+  const contactSchema = z.object({
+    name: z.string().trim().min(1, "Please enter your name.").max(100),
+    email: z.string().trim().email("Please enter a valid email.").max(255),
+    context: z.string().trim().min(1, "Please describe the initiative.").max(2000),
+    company: z.string().trim().max(200).optional(),
+    role: z.string().trim().max(200).optional(),
+    timing: z.string().trim().max(50).optional(),
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (submittingRef.current) return;
+    setError(null);
+
+    const fd = new FormData(e.currentTarget);
+    const parsed = contactSchema.safeParse({
+      name: fd.get("name"),
+      email: fd.get("email"),
+      context: fd.get("context"),
+      company: fd.get("company") ?? undefined,
+      role: fd.get("role") ?? undefined,
+      timing: fd.get("timing") ?? undefined,
+    });
+    if (!parsed.success) {
+      setError(parsed.error.issues[0]?.message ?? "Please check the form and try again.");
+      return;
+    }
+
+    submittingRef.current = true;
+    setLoading(true);
+    try {
+      // TODO: wire to submission destination (email, CRM, or Wix inquiry form).
+      // Kept as a no-op so the confirmation state renders without silently dropping data.
+      await new Promise((r) => setTimeout(r, 400));
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      submittingRef.current = false;
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -111,12 +157,13 @@ function Page() {
                 </div>
               ) : (
                 <form
-                  onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+                  onSubmit={handleSubmit}
+                  noValidate
                   className="glass-card rounded-3xl p-6 sm:p-8 grid gap-5"
                 >
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <Field label="Name" required><input required name="name" className={inputCls} /></Field>
-                    <Field label="Work email" required><input required type="email" name="email" className={inputCls} /></Field>
+                    <Field label="Name" required><input required name="name" maxLength={100} autoComplete="name" className={inputCls} /></Field>
+                    <Field label="Work email" required><input required type="email" name="email" maxLength={255} autoComplete="email" className={inputCls} /></Field>
                   </div>
                   <Field
                     label={isAudit ? "Portfolio size or context" : "What's the biggest initiative without an owner?"}
@@ -126,6 +173,7 @@ function Page() {
                       required
                       name="context"
                       rows={5}
+                      maxLength={2000}
                       defaultValue={preselected ? `Interested in: ${preselected}\n\n` : ""}
                       className={inputCls}
                     />
@@ -136,8 +184,8 @@ function Page() {
                     </summary>
                     <div className="mt-4 grid gap-4">
                       <div className="grid sm:grid-cols-2 gap-4">
-                        <Field label="Company"><input name="company" className={inputCls} /></Field>
-                        <Field label="Role"><input name="role" className={inputCls} /></Field>
+                        <Field label="Company"><input name="company" maxLength={200} autoComplete="organization" className={inputCls} /></Field>
+                        <Field label="Role"><input name="role" maxLength={200} autoComplete="organization-title" className={inputCls} /></Field>
                       </div>
                       <Field label="Timing">
                         <select name="timing" className={inputCls} defaultValue="now">
@@ -149,11 +197,21 @@ function Page() {
                       </Field>
                     </div>
                   </details>
+                  {error && (
+                    <p role="alert" className="text-sm text-red-400 bg-red-500/10 rounded-xl px-4 py-3">
+                      {error}
+                    </p>
+                  )}
                   <button
                     type="submit"
-                    className="mt-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)] min-h-11"
+                    disabled={loading}
+                    className="mt-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)] min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                   >
-                    {isAudit ? "Request the audit" : "Book the call"}
+                    {loading ? (
+                      <><Loader2 className="h-4 w-4 animate-spin" />Sending…</>
+                    ) : (
+                      isAudit ? "Request the audit" : "Book the call"
+                    )}
                   </button>
                   <p className="text-xs text-cream/75">
                     By submitting you agree to be contacted by Veep about your inquiry.
