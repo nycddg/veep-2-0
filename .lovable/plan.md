@@ -1,47 +1,78 @@
-# Operator Spotlight — Flagship Carousel
 
-Turn the current 4-up grid into a horizontal snap-scroll rail of image-forward cards. Portrait stays clearly visible in the default state; hover reveals a personal-summary panel from the bottom.
+## Audit of current live Lovable routes
 
-## Scope
+From `src/routes/`, these routes exist and MUST be preserved:
 
-Files changed:
-- `src/components/site/OperatorSpotlightCard.tsx` — new component (image-forward variant)
-- `src/components/site/OperatorSpotlightRail.tsx` — new carousel wrapper (scroll rail + progress bar + prev/next arrows)
-- `src/routes/index.tsx` — swap the current `grid` + `OperatorProofCard` block for `<OperatorSpotlightRail operators={spotlightOperators} />`
+**Real pages:** `/`, `/about`, `/compare`, `/compare/vs-consultants`, `/compare/vs-executive-search`, `/contact`, `/faq`, `/for-companies`, `/for-portfolios`, `/join`, `/pricing`, `/privacy`, `/terms`, `/sitemap.xml`
 
-The existing `OperatorProofCard` component stays in place (still used elsewhere via the `variant="compact"` prop and by any other callers). No data-shape changes to `spotlightOperators`.
+**Already-existing in-app redirects (keep as-is):** `/how-it-works`, `/insights`, `/operators`, `/partners`, `/proof`, `/services`, `/services/ai-operators`, `/services/executive-bench`, `/services/fractional-cfo`, `/services/interim`
 
-## Card design (based on selected direction)
+Note: there is no `/portfolio` route — the closest is `/for-portfolios`. No `/blog` route.
 
-Fixed-size card: `w-[340px] aspect-[3/4]`, `bg-[#0a0f1d]`, thin `border border-white/5` (coral border for the one operator marked featured).
+## Candidate classification
 
-Layers (bottom → top):
-1. Portrait image — grayscale, `brightness-90` default → `grayscale-0 brightness-100 scale-105` on hover, 500ms ease.
-2. Blue tint — `bg-accent/10 mix-blend-overlay`, fades to transparent on hover.
-3. Corner legibility gradient — `bg-gradient-to-tr from-transparent via-transparent to-black/30`, only in top-right quadrant, fades on hover. Keeps the face fully visible; only tints behind the meta text.
-4. Meta (top-right, `z-10`): name (Plex Sans 20px, cream, subtle `drop-shadow-md`), role (Plex Mono 10px, accent color), prior companies (Plex Mono 10px, cream/60) stacked right-aligned.
-5. Summary panel (bottom, hidden by default): `translate-y-full` → `translate-y-0` on hover, 500ms ease-out. `bg-background/95 backdrop-blur-md`, top border in accent color, summary text + small "Read more" affordance.
+**Preserve (already live, do NOT redirect):**
+`/about`, `/join`, `/privacy`, `/terms`, `/contact`, `/services`
 
-Accessibility: entire card is focusable; `group-focus-within` mirrors hover so keyboard users get the reveal too. Portrait `alt={name}`.
+**Redirect to `/` (legacy Wix, not part of current site):**
 
-## Rail wrapper
+Static: `/agencies`, `/alasdairlloydjones`, `/copy-of-scale-diagnostic`, `/andrewsilver`, `/blog`, `/businessos`, `/copy-of-fractional`, `/copyright`, `/davegarcia`, `/elainebogart`, `/erikavelazquez`, `/fractional`, `/fundraising`, `/home`, `/jenniferkasper`, `/jianyang`, `/lauramerling`, `/marknewhouse`, `/meetveep`, `/memberdashboard`, `/munawarahmed`, `/officehours`, `/operatingpartners`, `/scale-diagnostic`, `/seanpark`, `/sprints`, `/subscribe`, `/victoriakasumu`, `/webinar`, `/copy-of-mark-newhouse-profile-page`, `/index`, `/index.html`, `/service`, `/roster`, `/team`, `/get-started`, `/book`, `/en`, `/sg`
 
-- `flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 scroll-smooth no-scrollbar` — 3–4 cards visible at desktop widths, remaining operators reveal via horizontal scroll/drag.
-- No-scrollbar utility already exists in code base pattern; add inline `<style>` block for `.no-scrollbar` if not present globally.
-- Progress + controls row (from v2), placed below the rail:
-  - Left: mono counter `01 // NN` + a `h-px flex-1 bg-white/10` track with an inner `bg-accent/60` fill; width computed from `scrollLeft / (scrollWidth - clientWidth)` via a scroll listener.
-  - Right: two 32px circular icon buttons (`border border-white/10`, hover `border-accent/40 text-accent`) that call `scrollBy({ left: ±cardWidth, behavior: "smooth" })`.
-- Uses `useRef` for the scroll container and `useState` for the progress percentage + current index.
+Blog splat: `/post/*` (covers the four listed posts plus any others)
 
-## Technical notes
+## Implementation
 
-- Client-only interactivity (scroll listener, refs) — component uses `useState`/`useEffect`/`useRef`, no server-side concerns.
-- No new dependencies. Pure Tailwind + React.
-- Coral featured accent: add optional `featured?: boolean` prop; today it's off — hook is there for later. (No data change now.)
-- Section wrapper, eyebrow, headline, and lead paragraph in `index.tsx` are unchanged.
+Follow the existing project pattern (see `src/routes/insights.tsx`): a route file that throws `redirect({ to: "/" })` inside `beforeLoad`. This runs on the server for direct visits AND on the client for internal navigation, so it works on the veep.work custom domain, not just via internal `<Link>` clicks. `redirect()` in TanStack Router issues a real HTTP redirect (SSR) / `router.navigate({ replace: true })` equivalent (client) — history is not trapped.
 
-## Out of scope
+### Files to add
 
-- No changes to operator data, photos, or the network-impact block below.
-- No changes to `OperatorProofCard` (still used by hero collage compact variant).
-- No mobile-specific redesign beyond the fact that snap-scroll works naturally on touch; card width stays 340px so mobile shows ~1 card + peek.
+One tiny route file per legacy path, each of the form:
+
+```tsx
+// src/routes/agencies.tsx
+import { createFileRoute, redirect } from "@tanstack/react-router";
+export const Route = createFileRoute("/agencies")({
+  beforeLoad: () => { throw redirect({ to: "/" }); },
+});
+```
+
+Full list (~40 files):
+
+```
+agencies.tsx, alasdairlloydjones.tsx, copy-of-scale-diagnostic.tsx,
+andrewsilver.tsx, blog.tsx, businessos.tsx, copy-of-fractional.tsx,
+copyright.tsx, davegarcia.tsx, elainebogart.tsx, erikavelazquez.tsx,
+fractional.tsx, fundraising.tsx, home.tsx, jenniferkasper.tsx,
+jianyang.tsx, lauramerling.tsx, marknewhouse.tsx, meetveep.tsx,
+memberdashboard.tsx, munawarahmed.tsx, officehours.tsx,
+operatingpartners.tsx, scale-diagnostic.tsx, seanpark.tsx,
+sprints.tsx, subscribe.tsx, victoriakasumu.tsx, webinar.tsx,
+copy-of-mark-newhouse-profile-page.tsx, index-legacy.tsx (path "/index"),
+index-html.tsx (path via `index[.]html.tsx`), service.tsx, roster.tsx,
+team.tsx, get-started.tsx, book.tsx, en.tsx, sg.tsx,
+post.$.tsx (splat: catches /post/anything)
+```
+
+### Trailing slash / case handling
+
+TanStack Router normalizes trailing slashes by default, so `/blog/` matches the `/blog` route. Wix URLs are lowercase; no case variants needed. No extra work required.
+
+### Catch-all fallback
+
+**Not adding a global catch-all splat.** The root route already has a `notFoundComponent` (custom 404 with a "Back to Veep" CTA), which is the right behavior for typos and unknown URLs — a blanket redirect to `/` would hide real 404s and hurt SEO. The explicit legacy list above covers every Wix path the user provided.
+
+## Report the plan will produce after build
+
+1. **Preserved live routes:** `/`, `/about`, `/contact`, `/join`, `/pricing`, `/privacy`, `/terms`, `/services*`, `/faq`, `/compare*`, `/for-companies`, `/for-portfolios`, plus existing anchor redirects.
+2. **Redirected legacy paths:** the ~40 files listed above, all → `/` (replace).
+3. **Skipped (already live):** `/about`, `/join`, `/privacy`, `/terms`, `/contact`, `/services`.
+4. **Catch-all fallback:** intentionally not added, to preserve the existing 404 page for genuine typos.
+
+## Verification
+
+After the files are created, hit each of these on the preview and note the final URL:
+
+- `/about`, `/pricing` → stay (200)
+- `/blog`, `/fractional`, `/operatingpartners`, `/scale-diagnostic`, `/sprints`, `/webinar` → `/`
+- `/post/understanding-fractional-cfo-pricing-insights`, `/post/advantages-of-hiring-fractional-executives` → `/`
+- `/portfolio` → 404 (route was never valid; not in Wix candidate list either)
