@@ -32,7 +32,7 @@ const tiers = [
     t: "Operator",
     p: "From $15k",
     per: "per month",
-    best: "Ongoing senior ownership before the full-time hire makes sense.",
+    best: "Ongoing senior ownership for your most critical initiatives.",
     items: [
       "Finance, GTM, operations, product, or people",
       "Build or reset a function",
@@ -69,7 +69,7 @@ const faqs = [
   },
   {
     q: "Can I convert between models mid-term?",
-    a: "Yes. Many engagements change shape as the work becomes clearer. Advisory can become a Sprint. A Sprint can become an Operator engagement. Operator work can expand into a Pod. Interim coverage can step down into fractional support after a permanent hire lands.",
+    a: "Yes. Many engagements change shape as the work becomes clearer. Advisory can become a Sprint. A Sprint can become an Operator engagement. Operator work can expand into a Pod.&nbsp;",
   },
   {
     q: "How does the 30-day fit guarantee work?",
@@ -194,11 +194,11 @@ function Page() {
             <p className="mt-5 text-cream/80 leading-relaxed max-w-2xl">
               Built for PE firms, family offices, holdcos, and multi-company
               founders that need senior operating support across recurring
-              leadership gaps, transaction moments, and value-creation work.&nbsp;Your
-              roster includes priority operator matching, quarterly capacity
-              planning, emergency CFO, COO, GTM, and operator coverage, capacity
-              audits, and preferred commercial terms for&nbsp;$75k/annually. Operator
-              deployments are scoped separately by SOW at preferred rates.
+              leadership gaps, transaction moments, and value-creation work.&nbsp;Portfolio
+              Rosters include priority operator matching, quarterly capacity
+              planning, preferred commercial terms, as well as emergency CFO,
+              COO, and operator coverage for&nbsp;$75k/annually. Operator engagements
+              are scoped separately by SOW at preferred rates.
             </p>
             <div className="mt-6">
               <Link
