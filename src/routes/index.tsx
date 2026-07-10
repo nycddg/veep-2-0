@@ -112,6 +112,7 @@ const spotlightOperators = [
     chips: ["Digital Media", "Luxury Retail", "Consumer"],
     photoUrl: vanessaKwanHeadshot.url,
     photoPosition: "center 15%",
+    photoScale: 1.03,
   },
   {
     name: "Alasdair Lloyd-Jones",
@@ -131,6 +132,7 @@ const spotlightOperators = [
     chips: ["Tech", "SaaS", "Private Capital"],
     photoUrl: alanPoussaintHeadshot.url,
     photoPosition: "center 15%",
+    photoScale: 1.03,
   },
   {
     name: "Jennifer Kasper",
@@ -150,6 +152,7 @@ const spotlightOperators = [
     chips: ["Growth Equity", "Professional Services", "Mission-Driven"],
     photoUrl: seanParkHeadshot.url,
     photoPosition: "center 15%",
+    photoScale: 1.03,
   },
   {
     name: "Jonathan Levinson",
@@ -160,6 +163,7 @@ const spotlightOperators = [
     chips: ["E-Commerce", "SaaS", "Manufacturing"],
     photoUrl: jonathanLevinsonHeadshot.url,
     photoPosition: "center 15%",
+    photoScale: 1.03,
   },
   {
     name: "Miguel Ferreyra de Bone",
@@ -170,6 +174,7 @@ const spotlightOperators = [
     chips: ["Consumer", "Luxury", "Finance"],
     photoUrl: miguelFerreyraHeadshot.url,
     photoPosition: "center 15%",
+    photoScale: 1.03,
   },
   {
     name: "Jessica Davila",
@@ -180,6 +185,7 @@ const spotlightOperators = [
     chips: ["Marketplace", "Fintech", "Consumer"],
     photoUrl: jessicaDavilaHeadshot.url,
     photoPosition: "center 15%",
+    photoScale: 1.03,
   },
 ];
 
