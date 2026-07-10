@@ -78,17 +78,17 @@ function OperatorCard({ op }: { op: Operator }) {
 
       {/* Slide-up summary */}
       <div
-        className={`absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-500 ease-out bg-background/30 backdrop-blur-md p-6 border-t z-20 ${
+        className={`absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-500 ease-out bg-background/60 backdrop-blur-md p-6 border-t z-20 ${
           op.featured ? "border-[color:var(--color-accent-coral)]/40" : "border-accent/30"
         }`}
       >
-        <p className="font-sans text-ink text-sm leading-relaxed">{op.summary}</p>
+        <p className="font-sans text-cream text-sm leading-relaxed">{op.summary}</p>
         {op.chips.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1">
             {op.chips.map((c) => (
               <span
                 key={c}
-                className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/70"
+                className="font-mono text-[10px] uppercase tracking-[0.14em] text-cream/70"
               >
                 {c}
               </span>
