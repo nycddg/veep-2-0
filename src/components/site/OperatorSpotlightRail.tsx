@@ -8,6 +8,7 @@ type Operator = {
   summary?: string;
   chips: string[];
   photoUrl?: string;
+  photoPosition?: string;
   featured?: boolean;
 };
 
@@ -31,7 +32,8 @@ function OperatorCard({ op }: { op: Operator }) {
           <img
             src={op.photoUrl}
             alt={op.name}
-            className="w-full h-full object-cover object-top brightness-90 transition-all duration-500 group-hover:brightness-100 group-focus-within:brightness-100"
+            className="w-full h-full object-cover brightness-90 transition-all duration-500 group-hover:brightness-100 group-focus-within:brightness-100"
+            style={{ objectPosition: op.photoPosition ?? "top" }}
           />
         ) : (
           <div className="w-full h-full grid place-items-center bg-accent/10 text-accent/70 font-mono text-5xl">
