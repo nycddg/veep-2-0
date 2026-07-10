@@ -14,6 +14,14 @@ import jianYangHeadshot from "@/assets/operator-jian-yang.png.asset.json";
 import erikaVelazquezHeadshot from "@/assets/operator-erika-velazquez.png.asset.json";
 import elaineBogartHeadshot from "@/assets/operator-elaine-bogart.png.asset.json";
 import victoriaKasumuHeadshot from "@/assets/operator-victoria-kasumu.png.asset.json";
+import vanessaKwanHeadshot from "@/assets/operator-vanessa-kwan.png.asset.json";
+import alasdairLloydJonesHeadshot from "@/assets/operator-alasdair-lloyd-jones.png.asset.json";
+import alanPoussaintHeadshot from "@/assets/operator-alan-poussaint.png.asset.json";
+import jenniferKasperHeadshot from "@/assets/operator-jennifer-kasper.png.asset.json";
+import seanParkHeadshot from "@/assets/operator-sean-park.png.asset.json";
+import jonathanLevinsonHeadshot from "@/assets/operator-jonathan-levinson.png.asset.json";
+import miguelFerreyraHeadshot from "@/assets/operator-miguel-ferreyra-de-bone.png.asset.json";
+import jessicaDavilaHeadshot from "@/assets/operator-jessica-davila.png.asset.json";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Content
@@ -94,6 +102,78 @@ const spotlightOperators = [
       "Seasoned people leader who builds growth-focused operations by aligning talent, culture, and business goals. At David Zwirner, hired 50+ employees in 90 days while reducing redundancy 30% and increasing retention 15%.",
     chips: ["Hospitality", "TECH", "Healthcare"],
     photoUrl: victoriaKasumuHeadshot.url,
+  },
+  {
+    name: "Vanessa Kwan",
+    role: "Finance Operating Partner",
+    priorCompanies: ["BDG MEDIA", "GOLDMAN SACHS"],
+    summary:
+      "Strategic finance and operations leader with 15+ years across investment banking, luxury retail, and digital media. At BDG Media, rose from Director to EVP Head of Finance and redesigned seller commissions, improving gross margins by 4 points.",
+    chips: ["Digital Media", "Luxury Retail", "Consumer"],
+    photoUrl: vanessaKwanHeadshot.url,
+  },
+  {
+    name: "Alasdair Lloyd-Jones",
+    role: "Growth Operating Partner",
+    priorCompanies: ["SET CREATIVE (WPP)", "DAVID YURMAN"],
+    summary:
+      "Global brand strategist and creative operator with a record of scaling consumer brands and leading high-impact transformation. As CEO of SET Creative, scaled revenue 5x and led the firm through a successful sale to WPP.",
+    chips: ["Consumer Retail", "Tech", "Automotive"],
+    photoUrl: alasdairLloydJonesHeadshot.url,
+  },
+  {
+    name: "Alan Poussaint",
+    role: "Finance Operating Partner",
+    priorCompanies: ["ROCKET INTERNET", "KIXIE"],
+    summary:
+      "Finance-trained operator who builds CFO-grade systems for founder-led companies without full-time executive overhead. His experience spans private capital allocation, revenue-tech operations at Kixie, and fractional CFO delivery through Apex CFO AI.",
+    chips: ["Tech", "SaaS", "Private Capital"],
+    photoUrl: alanPoussaintHeadshot.url,
+  },
+  {
+    name: "Jennifer Kasper",
+    role: "Marketing Operating Partner",
+    priorCompanies: ["LVMH", "MACY'S"],
+    summary:
+      "Omnichannel marketing leader with deep experience across global retail, beauty, fashion, media, and customer strategy. As SVP of Media at LVMH, unified group media strategy across 75+ Maisons and built cross-brand agency models.",
+    chips: ["Retail", "Fashion", "Beauty"],
+    photoUrl: jenniferKasperHeadshot.url,
+  },
+  {
+    name: "Sean Park",
+    role: "People Operating Partner",
+    priorCompanies: ["ACTIVANT CAPITAL", "EY"],
+    summary:
+      "People strategy leader who turns org design, leadership, and talent systems into business growth levers. As CPO at Activant Capital, served as interim CHRO on a portfolio path to a $2B exit; previously scaled an EY HR tech platform from $0 to $65M+ in global revenue.",
+    chips: ["Growth Equity", "Professional Services", "Mission-Driven"],
+    photoUrl: seanParkHeadshot.url,
+  },
+  {
+    name: "Jonathan Levinson",
+    role: "Finance Operating Partner",
+    priorCompanies: ["KIDS MADE MODERN", "YELLOWHEART"],
+    summary:
+      "Finance and operations leader with 25+ years turning founder assumptions into investor-ready plans and operating discipline. Scaled Made Modern revenue 40x into a $13M manufacturing business and has led or supported $65M+ in M&A and fundraising transactions.",
+    chips: ["E-Commerce", "SaaS", "Manufacturing"],
+    photoUrl: jonathanLevinsonHeadshot.url,
+  },
+  {
+    name: "Miguel Ferreyra de Bone",
+    role: "Finance & Strategy Operating Partner",
+    priorCompanies: ["TASTE OF BELGIUM", "FARNSWORTH CANNABIS"],
+    summary:
+      "CEO/CFO operator with a record of building and transforming companies across finance, strategy, operations, GTM, and product. Brings board-level judgment and hands-on operating experience across consumer, luxury, product, and transformation work.",
+    chips: ["Consumer", "Luxury", "Finance"],
+    photoUrl: miguelFerreyraHeadshot.url,
+  },
+  {
+    name: "Jessica Davila",
+    role: "People Operating Partner",
+    priorCompanies: ["TASKRABBIT", "BREAD"],
+    summary:
+      "People strategy leader with a record of guiding companies through scale, acquisition, and leadership change. At TaskRabbit, rebuilt people strategy while scaling from 250 to 500 employees across 9 countries; later helped guide Bread from Series C through enterprise scale and acquisition.",
+    chips: ["Marketplace", "Fintech", "Consumer"],
+    photoUrl: jessicaDavilaHeadshot.url,
   },
 ];
 
