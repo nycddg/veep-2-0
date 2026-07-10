@@ -20,7 +20,7 @@ function OperatorCard({ op }: { op: Operator }) {
   return (
     <article
       tabIndex={0}
-      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-sm bg-[#0a0f1d] cursor-pointer transition-colors duration-300 border ${
+      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-2xl bg-[#0a0f1d] cursor-pointer transition-colors duration-300 border ${
         op.featured ? "border-[color:var(--color-accent-coral)]/40" : "border-white/5 hover:border-white/15"
       } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
       aria-label={`${op.name}, ${op.role}`}
