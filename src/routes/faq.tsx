@@ -114,12 +114,20 @@ function Accordion({ q, a }: QA) {
         </span>
         <ChevronDown
           size={18}
-          className={`text-cream/70 shrink-0 mt-1.5 transition-transform ${open ? "rotate-180 text-accent" : ""}`}
+          className={`text-cream/70 shrink-0 mt-1.5 transition-[transform,color] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? "rotate-180 text-accent" : ""}`}
         />
       </button>
-      {open && (
-        <p className="pb-6 pr-6 sm:pr-10 text-sm sm:text-[15px] text-cream/80 leading-relaxed max-w-3xl">{a}</p>
-      )}
+      <div className="motion-collapse" data-open={open ? "true" : "false"}>
+        <div>
+          <p
+            className={`pb-6 pr-6 sm:pr-10 text-sm sm:text-[15px] text-cream/80 leading-relaxed max-w-3xl transition-opacity duration-200 ${
+              open ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {a}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -52,10 +52,10 @@ export function SiteFooter() {
               Senior operators to own the work that can't wait.
               Matched in 72 hours. Deployed in under 10 days.
             </p>
-            <a
-              href="mailto:hey@veep.work"
-              className="mt-6 inline-block text-lg text-cream hover:text-accent underline underline-offset-8 decoration-white/25 hover:decoration-accent transition"
-            >
+              <a
+                href="mailto:hey@veep.work"
+                className="motion-link mt-6 inline-block text-lg text-cream hover:text-accent underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-accent"
+              >
               hey@veep.work
             </a>
           </div>
@@ -67,12 +67,12 @@ export function SiteFooter() {
               <ul className="mt-4 space-y-2.5">
                 {c.links.map((l) => (
                   <li key={l.label}>
-                    {l.kind === "hash" ? (
-                      <Link to="/" hash={l.hash} className="text-sm text-cream/90 hover:text-cream transition">
+                     {l.kind === "hash" ? (
+                      <Link to="/" hash={l.hash} className="motion-link text-sm text-cream/90 hover:text-cream">
                         {l.label}
                       </Link>
                     ) : (
-                      <Link to={l.to} className="text-sm text-cream/90 hover:text-cream transition">
+                      <Link to={l.to} className="motion-link text-sm text-cream/90 hover:text-cream">
                         {l.label}
                       </Link>
                     )}

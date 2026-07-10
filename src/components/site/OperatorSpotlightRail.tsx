@@ -175,17 +175,17 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
             type="button"
             onClick={() => scrollByCard(-1)}
             aria-label="Previous operator"
-            className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent hover:border-accent/40 transition-colors"
+            className="group w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent hover:border-accent/40 transition-colors duration-200"
           >
-            <ArrowLeft size={15} />
+            <ArrowLeft size={15} className="motion-arrow" />
           </button>
           <button
             type="button"
             onClick={() => scrollByCard(1)}
             aria-label="Next operator"
-            className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent hover:border-accent/40 transition-colors"
+            className="group w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent hover:border-accent/40 transition-colors duration-200"
           >
-            <ArrowRight size={15} />
+            <ArrowRight size={15} className="motion-arrow" />
           </button>
         </div>
       </div>
