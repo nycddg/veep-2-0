@@ -167,8 +167,7 @@ function Page() {
                 Who we're looking for
               </div>
               <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
-                A curated roster of{" "}
-                <span className="text-accent">business builders.</span>
+                A curated roster of business builders.
               </h2>
               <p className="text-cream/80 text-sm leading-relaxed max-w-md">
                 We stay small on purpose. Every operator on the roster has run
