@@ -128,7 +128,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["ROCKET INTERNET", "KIXIE"],
     summary:
-      "Transaction-ready finance operator with PE roots and marketplace scale; former Principal at Lincolnshire Management ($1.8B AUM), then CFO of Rocket Internet portfolio company during the build of Indonesia’s largest e-commerce platform.\u00a0",
+      "Transaction-ready finance operator with PE roots and marketplace scale; former Principal at Lincolnshire Management ($1.8B AUM), then CFO of a Rocket Internet portfolio company during the build of Indonesia’s largest e-commerce platform.\u00a0",
     chips: ["Tech", "SaaS", "Private Capital"],
     photoUrl: alanPoussaintHeadshot.url,
     photoPosition: "center 15%",
@@ -139,7 +139,7 @@ const spotlightOperators = [
     role: "Growth Operating Partner",
     priorCompanies: ["LVMH", "MACY'S"],
     summary:
-      "Senior marketing leader with deep experience across global retail, beauty, fashion, media, and customer strategy. At at LVMH, unified group media strategy across 75+ Maisons and built cross-brand agency models.",
+      "Senior marketing leader with deep experience across global retail, beauty, fashion, media, and customer strategy. At LVMH, unified group media strategy across 75+ Maisons and built cross-brand agency models.",
     chips: ["Retail", "Fashion", "Beauty"],
     photoUrl: jenniferKasperHeadshot.url,
   },
@@ -308,8 +308,8 @@ const cases = [
 const networkImpact = [
   { figure: "$2B+", label: "Cost savings delivered", detail: "Across transformation, product redesign, and operational efficiency initiatives at global enterprises." },
   { figure: "$1B+", label: "Capital raised", detail: "Venture funding, structured finance, SPACs, and instruments like securitized bonds." },
-  { figure: "$3B+", label: "NEW REVENUE GENERATED", detail: "Through new business lines, go-to-market strategy, and product commercialization." },
-  { figure: "20+", label: "EXITS & ACQUISITIONS", detail: "Including strategic sales, integrations, and post-merger transformations." },
+  { figure: "$3B+", label: "New revenue generated", detail: "Through new business lines, go-to-market strategy, and product commercialization." },
+  { figure: "20+", label: "Exits & acquisitions", detail: "Including strategic sales, integrations, and post-merger transformations." },
 ];
 
 const faqs = [
