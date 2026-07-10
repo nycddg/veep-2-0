@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Check, Loader2 } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { submitApplication } from "@/lib/wix-application.functions";
@@ -98,9 +98,12 @@ function Page() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const submittingRef = useRef(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     setLoading(true);
     setError(null);
 
@@ -111,6 +114,22 @@ function Page() {
 
       if (!resumeFile || resumeFile.size === 0) {
         throw new Error("Please upload a resume.");
+      }
+      if (resumeFile.size > 10 * 1024 * 1024) {
+        throw new Error("Resume must be smaller than 10 MB.");
+      }
+      const allowedTypes = [
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      ];
+      if (!allowedTypes.includes(resumeFile.type)) {
+        throw new Error("Resume must be a PDF, DOC, or DOCX file.");
+      }
+
+      const linkedIn = String(formData.get("linkedin") ?? "");
+      if (!/linkedin\.com\//i.test(linkedIn)) {
+        throw new Error("Please enter a valid LinkedIn profile URL.");
       }
 
       const resume = {
@@ -143,6 +162,7 @@ function Page() {
       const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
       setError(message);
     } finally {
+      submittingRef.current = false;
       setLoading(false);
     }
   };
