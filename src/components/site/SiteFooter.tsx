@@ -43,7 +43,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-background text-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-5">
           <div className="md:col-span-4">
             <Link to="/" className="flex items-center" aria-label="Veep home">
               <img src={wordmarkWhite.url} alt="Veep" className="h-6 w-auto" />
@@ -59,8 +59,8 @@ export function SiteFooter() {
               hey@veep.work
             </a>
           </div>
-          {cols.map((c) => (
-            <div key={c.title} className="md:col-span-2">
+          {cols.map((c, i) => (
+            <div key={c.title} className={`md:col-span-2 ${i === 0 ? 'md:pl-6 lg:pl-8' : ''}`}>
               <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-cream/70 font-mono">
                 {c.title}
               </div>
