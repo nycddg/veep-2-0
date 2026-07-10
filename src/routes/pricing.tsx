@@ -197,7 +197,7 @@ function Page() {
               leadership gaps, transaction moments, and value-creation work.&nbsp;Portfolio
               Rosters include priority operator matching, quarterly capacity
               planning, preferred commercial terms, as well as emergency CFO,
-              COO, and operator coverage for&nbsp;$75k/annually. Operator engagements
+              COO, and operator coverage for&nbsp;$75k annually. Operator engagements
               are scoped separately by SOW at preferred rates.
             </p>
             <div className="mt-6">
