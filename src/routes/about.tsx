@@ -111,8 +111,7 @@ function Page() {
                 What we believe
               </div>
               <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
-                Built the hard way.{" "}
-                <span className="text-accent">Rebuilt the smart way.</span>
+                Built the hard way. Rebuilt the smart way.
               </h2>
               <p className="text-cream/80 text-sm leading-relaxed max-w-md">
                 Decades of lessons, one roster. The future belongs to leaner
@@ -152,8 +151,7 @@ function Page() {
               Founding team
             </div>
             <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
-              Founders first.{" "}
-              <span className="text-accent">Operators always.</span>
+              Founders first. Operators always.
             </h2>
             <p className="text-cream/80 text-sm leading-relaxed">
               A founding team shaped by firsthand experience building, scaling,
@@ -179,12 +177,7 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline={
-          <>
-            Your next big move{" "}
-            <span className="text-accent">starts here.</span>
-          </>
-        }
+        headline={<>Your next big move starts here.</>}
         sub="Book a call to explore how Veep can help. If it's a fit, we'll scope the engagement and match you with a Veep within 72 hours."
       />
     </>
