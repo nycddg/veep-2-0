@@ -151,7 +151,7 @@ function Page() {
     <>
       <PageHero
         eyebrow="Join Veep"
-        title="Join the operators companies call when the work cannot wait."
+        title="An invite-only network on call for the work that cannot wait."
         sub="Veep represents a small roster of senior operators who embed, build, and deliver. If you're ready to own the work that can't wait for high-growth companies, we want to meet you."
         primaryLabel="Apply below"
         secondaryLabel="See how it works"
