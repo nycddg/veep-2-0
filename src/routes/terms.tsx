@@ -151,9 +151,9 @@ export const Route = createFileRoute("/terms")({
       { property: "og:title", content: "Terms of Service | Veep" },
       { property: "og:description", content: "The Terms of Service that govern access to and use of The Veep Group, LLC's platform, website, and related services." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/terms" },
+      { property: "og:url", content: "https://www.veep.work/terms" },
     ],
-    links: [{ rel: "canonical", href: "/terms" }],
+    links: [{ rel: "canonical", href: "https://www.veep.work/terms" }],
   }),
   component: TermsPage,
 });

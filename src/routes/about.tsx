@@ -17,9 +17,9 @@ export const Route = createFileRoute("/about")({
         content:
           "Born from the inside. Built for what's next. Senior operators for the work that can't wait.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://www.veep.work/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://www.veep.work/about" }],
   }),
   component: Page,
 });
