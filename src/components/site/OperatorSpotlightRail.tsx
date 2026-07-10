@@ -9,6 +9,7 @@ type Operator = {
   chips: string[];
   photoUrl?: string;
   photoPosition?: string;
+  photoScale?: number;
   featured?: boolean;
 };
 
