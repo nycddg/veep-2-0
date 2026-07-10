@@ -132,7 +132,7 @@ const spotlightOperators = [
   },
   {
     name: "Jennifer Kasper",
-    role: "Marketing Operating Partner",
+    role: "Growth Operating Partner",
     priorCompanies: ["LVMH", "MACY'S"],
     summary:
       "Omnichannel marketing leader with deep experience across global retail, beauty, fashion, media, and customer strategy. As SVP of Media at LVMH, unified group media strategy across 75+ Maisons and built cross-brand agency models.",
@@ -159,7 +159,7 @@ const spotlightOperators = [
   },
   {
     name: "Miguel Ferreyra de Bone",
-    role: "Finance & Strategy Operating Partner",
+    role: "Finance Operating Partner",
     priorCompanies: ["TASTE OF BELGIUM", "FARNSWORTH CANNABIS"],
     summary:
       "CEO/CFO operator with a record of building and transforming companies across finance, strategy, operations, GTM, and product. Brings board-level judgment and hands-on operating experience across consumer, luxury, product, and transformation work.",
