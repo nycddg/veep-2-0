@@ -89,7 +89,8 @@ function Page() {
       });
       setSubmitted(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      console.error("Contact form submission failed:", err);
+      setError("Something went wrong sending your message. Please email hey@veep.work or try again.");
     } finally {
       submittingRef.current = false;
       setLoading(false);

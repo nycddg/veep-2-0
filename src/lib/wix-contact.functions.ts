@@ -4,6 +4,7 @@ import { createWixFormSubmission } from "./wix.server";
 import { WIX_FORM_FIELDS } from "./wix-config";
 
 const NA = "N/A";
+const NA_URL = "https://veep.work/na";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1).max(200),
@@ -46,7 +47,7 @@ export const submitContactInquiry = createServerFn({ method: "POST" })
       [WIX_FORM_FIELDS.firstName]: first,
       [WIX_FORM_FIELDS.lastName]: last,
       [WIX_FORM_FIELDS.email]: data.email,
-      [WIX_FORM_FIELDS.linkedIn]: NA,
+      [WIX_FORM_FIELDS.linkedIn]: NA_URL,
       [WIX_FORM_FIELDS.role]: NA,
       [WIX_FORM_FIELDS.industries]: data.company || NA,
       [WIX_FORM_FIELDS.notes]: notes,
