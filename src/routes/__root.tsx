@@ -113,8 +113,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "format-detection", content: "telephone=no" },
       { property: "og:title", content: "Senior operators for work that can't wait | Veep" },
       { property: "og:description", content: "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CplJMIYweyNlP3tFRxmgvRkw5P52/social-images/social-1783620615204-navyondarkblue_square.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CplJMIYweyNlP3tFRxmgvRkw5P52/social-images/social-1783620615204-navyondarkblue_square.webp" },
+      { property: "og:image", content: "/social-og.webp" },
+      { name: "twitter:image", content: "/social-og.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
