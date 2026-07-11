@@ -1,30 +1,30 @@
+## Goal
+Fix the currently-broken Wix contact submission, and stop showing raw provider errors to visitors. Keep Wix as the destination.
 
-# Fix: Reveal sections stuck at opacity 0
+## Why the form is failing
+Live test result: Wix returns `400 FORMAT_ERROR` on the hidden `linked_in` field — "must match format url". Our server function sends the literal string `"N/A"` for `linked_in`, which fails Wix's URL validator. Every real submission is being rejected the same way.
 
-## Root cause
+## Changes
 
-`Reveal` uses `useInView` with `threshold: 0.12` and `rootMargin: "0px 0px -8% 0px"`. On tall sections (>viewport) the intersection ratio can climb slowly, and with the `-8%` bottom margin the observer often doesn't fire the initial "already in view" callback either. Result: `data-in` stays `"false"` forever, CSS keeps opacity at 0, sections look black.
+### 1. `src/lib/wix-contact.functions.ts` — send URL-valid placeholders for URL-typed fields
+- Introduce a `NA_URL` constant set to `https://veep.work/na` (valid URL, unmistakably a placeholder, on our own domain).
+- Use `NA_URL` for `WIX_FORM_FIELDS.linkedIn` instead of `NA`.
+- Keep `NA` ("N/A") for plain-text fields (role, industries, last name fallback, etc.).
+- No other logic changes; subject/routing inside Wix stays as it is today.
 
-## Fix (minimal, no scope change)
-
-Rewrite `src/components/site/Reveal.tsx` so it can never leave a section invisible:
-
-1. **Synchronous first-paint check** — on mount, immediately measure the element's `getBoundingClientRect()`. If any part is already in the viewport (or above it), set `inView = true` right away. No black flash for above-fold or already-scrolled-past content.
-2. **Looser observer** — use `threshold: 0` and `rootMargin: "0px 0px -5% 0px"` so any intersection at all triggers the reveal.
-3. **Safety timeout** — `setTimeout(() => setInView(true), 600ms)` as a hard fallback so nothing ever stays hidden, even if IO misbehaves or is missing.
-4. **Reduced-motion / no-IO** — if `prefers-reduced-motion: reduce` or `IntersectionObserver` is undefined, set `inView = true` immediately.
-5. Cancel timers / disconnect observer on unmount.
-
-CSS in `src/styles.css` stays as-is — `.motion-reveal[data-in="true"] { opacity: 1; transform: none; }` is correct; only the trigger is broken.
-
-## No other changes
-
-- No changes to `useInView.ts` (it's used only by `Reveal`, but I'll keep the hook and just bypass its logic in `Reveal` for the safety guarantees above).
-- No changes to which sections are wrapped, to CSS tokens, or to any other motion utilities. CTA lift, arrow slide, nav link polish, FAQ collapse, header transition all continue to work.
+### 2. `src/routes/contact.tsx` — hide raw provider errors from the visitor
+- In the `catch` block of `handleSubmit`, stop surfacing `err.message` (which today can contain the full Wix JSON dump).
+- Always show a single friendly line to the user: *"Something went wrong sending your message. Please email hey@veep.work or try again."*
+- Still `console.error` the real error server-response for debugging in the browser console / logs.
 
 ## Verification
+After the edits:
+1. Re-run the Playwright submission against the preview build with real-looking values.
+2. Confirm the server function returns `{ success: true }` (200 body from `/_serverFn/...` no longer contains `Wix API error`).
+3. Confirm the success card ("Thanks — we'll be in touch.") renders.
+4. Force a failure (e.g. temporarily bad payload) and confirm the visitor sees the friendly line, not JSON.
 
-After the edit I'll run a preview snippet that:
-- Reads `data-in` on all 5 `.motion-reveal` sections immediately and after 700ms
-- Scrolls the page and reads again
-- Confirms every section reaches `data-in="true"` and `opacity: 1`
+## Out of scope (deferred)
+- Switching delivery to email-to-hey@veep.work (Cloud + domain setup) — not doing this per your choice.
+- Any changes to the Wix form schema itself.
+- Any change to the subject line or Wix-side routing (Wix owns that; our submission tags it via the `[Capacity audit request]` / `[Discovery call request]` prefix already in the notes body).
