@@ -43,18 +43,40 @@ export const submitContactInquiry = createServerFn({ method: "POST" })
       .filter((line) => line !== null)
       .join("\n");
 
-    const submissions: Record<string, unknown> = {
-      [WIX_FORM_FIELDS.firstName]: first,
-      [WIX_FORM_FIELDS.lastName]: last,
-      [WIX_FORM_FIELDS.email]: data.email,
-      [WIX_FORM_FIELDS.linkedIn]: NA_URL,
-      [WIX_FORM_FIELDS.role]: NA,
-      [WIX_FORM_FIELDS.industries]: data.company || NA,
-      [WIX_FORM_FIELDS.notes]: notes,
-      [WIX_FORM_FIELDS.source]: "Website contact form",
-    };
+    const isAudit = data.intent === "audit";
+    const formId = isAudit ? WIX_FORM_ID_CAPACITY_AUDIT : WIX_FORM_ID_DISCOVERY;
 
-    const formId = data.intent === "audit" ? WIX_FORM_ID_CAPACITY_AUDIT : WIX_FORM_ID_DISCOVERY;
+    // The Capacity audit form has its own 5-field schema (name, work_email,
+    // whats_the_biggest_initiative_without_an_owner, role, timing) — no
+    // company / linkedin / notes fields. Fold company + outcome + intent tag
+    // into the initiative body so nothing is lost.
+    const submissions: Record<string, unknown> = isAudit
+      ? {
+          name: data.name,
+          work_email: data.email,
+          whats_the_biggest_initiative_without_an_owner: [
+            `[${intentLabel}]`,
+            data.outcome ? `Outcome interest: ${data.outcome}` : null,
+            "",
+            data.message,
+            data.company ? `\nCompany: ${data.company}` : null,
+          ]
+            .filter((line) => line !== null)
+            .join("\n"),
+          role: data.role || NA,
+          timing: data.timing || NA,
+        }
+      : {
+          [WIX_FORM_FIELDS.firstName]: first,
+          [WIX_FORM_FIELDS.lastName]: last,
+          [WIX_FORM_FIELDS.email]: data.email,
+          [WIX_FORM_FIELDS.linkedIn]: NA_URL,
+          [WIX_FORM_FIELDS.role]: NA,
+          [WIX_FORM_FIELDS.industries]: data.company || NA,
+          [WIX_FORM_FIELDS.notes]: notes,
+          [WIX_FORM_FIELDS.source]: "Website contact form",
+        };
+
     await createWixFormSubmission(formId, submissions);
 
     return { success: true };
