@@ -3,7 +3,8 @@
 // and the "Veep" site form built to receive operator applications.
 
 export const WIX_SITE_ID = "be946f00-502a-4e63-9689-3a0444bfa798";
-export const WIX_FORM_ID = "1e2587ad-fa62-41e6-9f29-022c5d96cd60";
+export const WIX_FORM_ID_DISCOVERY = "1e2587ad-fa62-41e6-9f29-022c5d96cd60";
+export const WIX_FORM_ID_CAPACITY_AUDIT = "965b9c55-4b47-4d28-ac77-c2f5101c051c";
 
 // Field target keys discovered from the Wix form schema.
 export const WIX_FORM_FIELDS = {
