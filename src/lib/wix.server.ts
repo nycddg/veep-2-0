@@ -1,4 +1,4 @@
-import { WIX_FORM_ID, WIX_SITE_ID } from "./wix-config";
+import { WIX_FORM_ID_DISCOVERY, WIX_SITE_ID } from "./wix-config";
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/wix";
 
@@ -37,7 +37,7 @@ export async function getFormMediaUploadUrl(
   const data = (await wixFetch("/form-submission-service/v4/submissions/media-upload-url", {
     method: "POST",
     body: JSON.stringify({
-      formId: WIX_FORM_ID,
+      formId: WIX_FORM_ID_DISCOVERY,
       filename,
       mimeType,
     }),
@@ -72,13 +72,14 @@ export async function uploadFileToWix(
 }
 
 export async function createWixFormSubmission(
+  formId: string,
   fields: Record<string, unknown>,
 ) {
   return wixFetch("/form-submission-service/v4/submissions", {
     method: "POST",
     body: JSON.stringify({
       submission: {
-        formId: WIX_FORM_ID,
+        formId,
         submissions: fields,
       },
     }),

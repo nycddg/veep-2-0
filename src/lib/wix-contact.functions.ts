@@ -1,7 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { createWixFormSubmission } from "./wix.server";
-import { WIX_FORM_FIELDS } from "./wix-config";
+import { WIX_FORM_FIELDS, WIX_FORM_ID_CAPACITY_AUDIT, WIX_FORM_ID_DISCOVERY } from "./wix-config";
 
 const NA = "N/A";
 const NA_URL = "https://veep.work/na";
@@ -54,7 +54,8 @@ export const submitContactInquiry = createServerFn({ method: "POST" })
       [WIX_FORM_FIELDS.source]: "Website contact form",
     };
 
-    await createWixFormSubmission(submissions);
+    const formId = data.intent === "audit" ? WIX_FORM_ID_CAPACITY_AUDIT : WIX_FORM_ID_DISCOVERY;
+    await createWixFormSubmission(formId, submissions);
 
     return { success: true };
   });
