@@ -11,6 +11,7 @@ import {
   roleToWix,
   sourceToWix,
   WIX_FORM_FIELDS,
+  WIX_FORM_ID_DISCOVERY,
 } from "./wix-config";
 
 const MAX_RESUME_SIZE = 10 * 1024 * 1024; // 10 MB
@@ -92,7 +93,7 @@ export const submitApplication = createServerFn({ method: "POST" })
       ],
     };
 
-    await createWixFormSubmission(submissions);
+    await createWixFormSubmission(WIX_FORM_ID_DISCOVERY, submissions);
 
     return { success: true };
   });
