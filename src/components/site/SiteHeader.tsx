@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import { BOOKING_URL } from "@/lib/booking";
+import { ThemeToggle } from "./ThemeToggle";
 
 // Anchor links on /, plus two standalone routes (/pricing, /faq).
 type NavItem =
@@ -55,6 +56,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
+          <ThemeToggle />
           <a
             href={BOOKING_URL}
             target="_blank"
@@ -65,14 +67,17 @@ export function SiteHeader() {
           </a>
         </div>
 
-        <button
+        <div className="lg:hidden flex items-center gap-1">
+          <ThemeToggle />
+          <button
           className="lg:hidden p-3 -mr-2 min-h-11 min-w-11 text-cream"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
           aria-expanded={open}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+          </button>
+        </div>
       </div>
 
       {open && (
