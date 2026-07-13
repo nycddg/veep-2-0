@@ -128,6 +128,62 @@
   --sidebar-ring: var(--forest);
 }
 
+/* ─── Light mode ────────────────────────────────────────────────────────────
+   Palette flip only. All semantic tokens invert so components using
+   text-cream / bg-background / border-border / etc. render dark-on-light.
+   Brand accents (blue + coral) stay the same for continuity. */
+html.light {
+  --background: oklch(0.985 0.003 90);       /* warm off-white canvas */
+  --foreground: oklch(0.18 0.03 265);        /* deep navy ink */
+
+  --surface-ink: oklch(0.985 0.003 90);
+  --surface-raised: oklch(0.965 0.005 85);
+  --surface-band: oklch(0.945 0.006 80);
+
+  --ink: oklch(0.98 0 0);                     /* was navy; now cream so inverted pills flip */
+  --cream: oklch(0.18 0.03 265);              /* was cream; now navy ink so text-cream reads on light */
+  --stone: oklch(0.42 0.02 260);              /* body secondary on light */
+  --stone-soft: oklch(0.52 0.025 258);        /* tertiary / mono labels */
+  --rule: oklch(0 0 0 / 0.10);
+
+  --forest-deep: oklch(0.92 0.02 260);
+  --forest-foreground: oklch(0.18 0.03 265);
+
+  --card: oklch(0 0 0 / 0.035);
+  --card-foreground: var(--cream);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--cream);
+  --primary: var(--cream);
+  --primary-foreground: var(--ink);
+  --secondary: oklch(0 0 0 / 0.04);
+  --secondary-foreground: var(--cream);
+  --muted: oklch(0 0 0 / 0.04);
+  --muted-foreground: var(--stone);
+  --border: oklch(0 0 0 / 0.10);
+  --input: oklch(0 0 0 / 0.14);
+
+  --shadow-elegant: 0 1px 0 oklch(0 0 0 / 0.04), 0 24px 60px -30px oklch(0 0 0 / 0.18);
+  --shadow-float: 0 20px 48px -20px oklch(0 0 0 / 0.16);
+}
+
+/* Raw white/black opacity utilities used across components — invert under light. */
+html.light .bg-black\/80 { background-color: rgb(255 255 255 / 0.80); }
+html.light .bg-white\/5  { background-color: rgb(0 0 0 / 0.05); }
+html.light .bg-white\/10 { background-color: rgb(0 0 0 / 0.05); }
+html.light .bg-white\/15 { background-color: rgb(0 0 0 / 0.08); }
+html.light .border-white\/5  { border-color: rgb(0 0 0 / 0.06); }
+html.light .border-white\/8  { border-color: rgb(0 0 0 / 0.08); }
+html.light .border-white\/10 { border-color: rgb(0 0 0 / 0.10); }
+html.light .border-white\/12 { border-color: rgb(0 0 0 / 0.12); }
+html.light .border-white\/15 { border-color: rgb(0 0 0 / 0.14); }
+html.light .border-white\/25 { border-color: rgb(0 0 0 / 0.20); }
+html.light .divide-white\/5  > :not([hidden]) ~ :not([hidden]) { border-color: rgb(0 0 0 / 0.06); }
+html.light .divide-white\/8  > :not([hidden]) ~ :not([hidden]) { border-color: rgb(0 0 0 / 0.08); }
+html.light .divide-white\/10 > :not([hidden]) ~ :not([hidden]) { border-color: rgb(0 0 0 / 0.10); }
+html.light .ring-white\/8  { --tw-ring-color: rgb(0 0 0 / 0.10); }
+html.light .ring-white\/15 { --tw-ring-color: rgb(0 0 0 / 0.14); }
+html.light .ring-white\/20 { --tw-ring-color: rgb(0 0 0 / 0.18); }
+
 @layer base {
   * {
     border-color: var(--color-border);
