@@ -28,7 +28,7 @@ export function OperatorCanvas() {
         </div>
 
         {/* Match badge — hidden on small screens to keep hero uncluttered */}
-        <div className="hidden sm:flex absolute -top-6 left-2 md:-left-4 z-20 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] items-center gap-3 op-float">
+        <div className="hidden sm:flex absolute -top-6 left-2 md:-left-4 z-20 bg-background/85 light:bg-white/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] items-center gap-3 op-float">
           <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shadow-[0_0_20px_rgba(120,159,255,0.4)]">
             <Star size={18} className="text-white fill-white" />
           </div>
@@ -39,16 +39,16 @@ export function OperatorCanvas() {
         </div>
 
         {/* Match matrix — hidden on small screens */}
-        <div className="hidden sm:block absolute -bottom-10 right-0 md:-right-6 z-20 bg-[#0a0c16]/80 backdrop-blur-3xl border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_rgba(0,0,0,0.7)] w-[260px] md:w-[280px] op-float-delayed">
-          <p className="text-[10px] text-cream/80 mb-5 font-medium uppercase tracking-[0.16em]">Match Matrix</p>
+        <div className="hidden sm:block absolute -bottom-10 right-0 md:-right-6 z-20 bg-[#0a0c16]/90 backdrop-blur-3xl border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_rgba(0,0,0,0.7)] w-[260px] md:w-[280px] op-float-delayed">
+          <p className="text-[10px] text-white/80 mb-5 font-medium uppercase tracking-[0.16em]">Match Matrix</p>
           <div className="space-y-4">
             {MATRIX.map((row) => (
               <div key={row.label}>
-                <div className="flex justify-between text-[11px] text-cream mb-1.5 font-medium">
+                <div className="flex justify-between text-[11px] text-white mb-1.5 font-medium">
                   <span>{row.label}</span>
                   <span>{row.value}%</span>
                 </div>
-                <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                <div className="h-1 w-full bg-white/15 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-accent"
                     style={{
