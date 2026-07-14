@@ -229,11 +229,11 @@ function Page() {
       {/* How it works */}
       <section className="bg-surface-band py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12 md:mb-14">
+          <div className="max-w-5xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               How it works
             </div>
-            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
               One agreement. Every portfolio company activated.
             </h2>
           </div>
