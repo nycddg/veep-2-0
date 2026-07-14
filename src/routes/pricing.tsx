@@ -90,7 +90,7 @@ const faqSchema = {
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — Priced to the Work, Not the Hour | Veep" },
+      { title: "Pricing | Veep" },
       { name: "description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
       { property: "og:title", content: "Pricing — Priced to the work, not the hour | Veep" },
       { property: "og:description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
@@ -194,11 +194,12 @@ function Page() {
             <p className="mt-5 text-cream/80 leading-relaxed max-w-2xl">
               Built for PE firms, family offices, holdcos, and multi-company
               founders that need senior operating support across recurring
-              leadership gaps, transaction moments, and value-creation work.&nbsp;Portfolio
-              Rosters include priority operator matching, quarterly capacity
-              planning, preferred commercial terms, as well as emergency CFO,
-              COO, and operator coverage for&nbsp;$75k annually. Operator engagements
-              are scoped separately by SOW at preferred rates.
+              leadership gaps, transaction moments, and value-creation work.
+              Portfolio Rosters include priority operator matching, quarterly
+              capacity planning, preferred commercial terms, as well as
+              emergency CFO, COO, and operator coverage for {"$75k"} annually.
+              Operator engagements are scoped separately by SOW at preferred
+              rates.
             </p>
             <div className="mt-6">
               <Link
