@@ -129,11 +129,11 @@ function Page() {
       {/* Capacity Audit entry point */}
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12 md:mb-14">
+          <div className="max-w-5xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Start here
             </div>
-            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
               Portfolio Capacity Audit
             </h2>
             <p className="mt-6 text-cream/80 leading-relaxed">
