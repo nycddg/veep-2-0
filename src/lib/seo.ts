@@ -3,7 +3,7 @@
 // crawlers require it. The CDN path is stable and immutable per asset_id.
 export const SITE_URL = "https://www.veep.work";
 export const OG_IMAGE_URL =
-  "https://www.veep.work/__l5e/assets-v1/e5c54d77-82cf-42d7-899c-aca636ee09d6/og-card.jpg";
+  "https://www.veep.work/__l5e/assets-v1/ddadb273-aca7-4108-b8a0-7a1791f0303f/og-card.jpg";
 export const OG_IMAGE_ALT = "Veep — senior operators for work that can't wait";
 
 export function ogImageMeta() {
