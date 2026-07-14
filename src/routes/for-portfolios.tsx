@@ -272,7 +272,11 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline={<>Stabilize the operator gaps across your portfolio.</>}
+        headline={<>
+          Stabilize the operator gaps
+          <br />
+          across your portfolio.
+        </>}
         sub="Book a 30-minute call to walk through the audit and roster model. We will tell you directly whether Veep is the right operating partner function for your firm."
       />
     </>
