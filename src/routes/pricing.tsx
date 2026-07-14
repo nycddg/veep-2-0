@@ -218,11 +218,11 @@ function Page() {
       {/* Pricing FAQ */}
       <section className="bg-surface-raised py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-5xl mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
               Pricing FAQ
             </div>
-            <h2 className="mt-5 text-3xl md:text-4xl text-cream allow-wrap">
+            <h2 className="mt-5 text-3xl text-cream">
               Straight answers to the questions we get most.
             </h2>
           </div>
