@@ -219,7 +219,7 @@ function Page() {
                     </label>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <Field label="Name" required error={errors.name}>
+                    <Field label="Name" required error={errors.name} errorId="err-name">
                       <input
                         required
                         name="name"
@@ -230,7 +230,7 @@ function Page() {
                         className={inputCls}
                       />
                     </Field>
-                    <Field label="Work email" required error={errors.email}>
+                    <Field label="Work email" required error={errors.email} errorId="err-email">
                       <input
                         required
                         type="email"
@@ -247,6 +247,7 @@ function Page() {
                     label={isAudit ? "Portfolio size or context" : "What's the biggest initiative without an owner?"}
                     required
                     error={errors.context}
+                    errorId="err-context"
                   >
                     <textarea
                       required
@@ -318,17 +319,15 @@ function Field({
   label,
   required,
   error,
+  errorId,
   children,
 }: {
   label: string;
   required?: boolean;
   error?: string;
+  errorId?: string;
   children: React.ReactNode;
 }) {
-  // Derive the error id from the label so it can be tied via aria-describedby.
-  const errId = error
-    ? `err-${label.toLowerCase().split(/\s+/)[0].replace(/[^a-z]/g, "")}`
-    : undefined;
   return (
     <label className="block">
       <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-cream/70">
@@ -336,7 +335,7 @@ function Field({
       </span>
       <div className="mt-2">{children}</div>
       {error && (
-        <p id={errId} className="mt-1.5 text-xs text-red-400">
+        <p id={errorId} className="mt-1.5 text-xs text-red-400">
           {error}
         </p>
       )}
