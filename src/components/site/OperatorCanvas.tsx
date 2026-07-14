@@ -38,17 +38,17 @@ export function OperatorCanvas() {
           </div>
         </div>
 
-        {/* Match matrix — hidden on small screens */}
-        <div className="hidden sm:block absolute -bottom-10 right-0 md:-right-6 z-20 bg-[color:var(--surface-raised)]/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_rgba(0,0,0,0.7)] w-[260px] md:w-[280px] op-float-delayed">
-          <p className="text-[10px] text-cream/80 mb-5 font-medium uppercase tracking-[0.16em]">Match Matrix</p>
+        {/* Match matrix — hidden on small screens; dark card in both modes */}
+        <div className="hidden sm:block absolute -bottom-10 right-0 md:-right-6 z-20 bg-[oklch(0.16_0.028_262)]/95 backdrop-blur-3xl border border-[oklch(1_0_0/0.10)] rounded-2xl p-6 shadow-[0_30px_60px_rgba(0,0,0,0.7)] w-[260px] md:w-[280px] op-float-delayed">
+          <p className="text-[10px] text-white/80 mb-5 font-medium uppercase tracking-[0.16em]">Match Matrix</p>
           <div className="space-y-4">
             {MATRIX.map((row) => (
               <div key={row.label}>
-                <div className="flex justify-between text-[11px] text-cream mb-1.5 font-medium">
+                <div className="flex justify-between text-[11px] text-white mb-1.5 font-medium">
                   <span>{row.label}</span>
                   <span>{row.value}%</span>
                 </div>
-                <div className="h-1 w-full bg-white/15 rounded-full overflow-hidden">
+                <div className="h-1 w-full bg-[oklch(1_0_0/0.15)] rounded-full overflow-hidden">
                   <div
                     className="h-full bg-accent"
                     style={{
