@@ -1,53 +1,28 @@
-# Production launch pass — remaining work
+# Rebuild social share card with real veep wordmark
 
-Decisions from you:
-1. Keep `/services*`, `/contact`, `/meetveep`, `/for-portfolios`, `/compare*` all live.
-2. Redirect all 12 operator profile routes to `/#operators` (operator spotlight anchor).
-3. Harden `/contact` form to the same standard as `/join`.
-4. Generate one dark editorial `og:image` sitewide.
+The current og-card renders "veep" as AI-generated typography. Replace it with a deterministic composite of the actual `veep-wordmark-white.png` asset on a canvas that matches the site palette. No AI generation — Python + PIL only, so the logo is pixel-identical to the on-site wordmark.
 
-## 1. Route cleanup
+## Composition
 
-- Point 12 operator profile files (`alasdairlloydjones`, `andrewsilver`, `davegarcia`, `elainebogart`, `erikavelazquez`, `jenniferkasper`, `jianyang`, `lauramerling`, `marknewhouse`, `munawarahmed`, `seanpark`, `victoriakasumu`) at `redirect({ to: "/", hash: "operators" })` instead of bare `/`.
-- Delete stale files with no purpose: `copy-of-fractional`, `copy-of-mark-newhouse-profile-page`, `copy-of-scale-diagnostic`, `memberdashboard`, `copyright`, `index-legacy`, `index[.]html`. (If any of these already contain a redirect, keep the redirect; only remove true dead files.)
-- Leave `/services*` outlets and existing sub-redirects as-is (Pricing "See scope" links continue to work via existing `/services/*` → `/#offer|portfolios` redirects).
-- Confirm sitemap already reflects live routes; no change needed unless a route is removed.
+- **Canvas**: 1200×630, solid `#050810` (site `--background` / navy canvas).
+- **Wordmark**: `src/assets/veep-wordmark-white.png` (cream-white on transparent), downloaded from CDN, scaled to ~360px wide, centered slightly above middle.
+- **Divider**: 1px, ~360px wide, in bright-blue accent `#789fff` at 45% alpha, ~28px below the wordmark.
+- **Tagline**: "Senior operators for work that can't wait" in IBM Plex Sans 22px, cream `#F5F1E8` at 90%, centered under the rule. Fetch IBM Plex Sans TTF from Google Fonts if not present locally; fall back to DejaVu Sans if the fetch fails.
+- **Corner mark**: bottom-left `veep.work` in IBM Plex Mono 16px cream at 70%, plus a tiny coral dot `#ec6b66` — matches the current corner mark style.
 
-## 2. Contact form hardening
+## Steps
 
-`src/routes/contact.tsx` — it already has zod validation, submit guard, loading/error/success states, and dup-submit ref. Remaining gaps to close:
-- Add `aria-invalid` and field-level error placement (currently one top-level error).
-- Add `name` field autofocus, `noValidate` retained, honeypot field to reduce spam.
-- Add explicit success-state focus management (move focus to confirmation heading).
-- Extract shared zod schema so validation runs the same way `/join` does.
-
-## 3. Social share image
-
-- Generate a single 1200×630 dark editorial card: cream wordmark "Veep" on `#0f0f0f`, small tagline "Senior operators for work that can't wait", IBM Plex Sans, minimal grid motif — matches current dark editorial system, no new brand.
-- Save to `src/assets/og-card.jpg.asset.json` via `imagegen` + `lovable-assets`.
-- Wire absolute CDN URL into `og:image` and `twitter:image` on leaf routes only: `/`, `/pricing`, `/about`, `/join`, `/faq`, `/contact`, `/for-portfolios`, `/meetveep`, `/privacy`, `/terms`, `/compare*`. Not on `__root.tsx`.
-- Add `twitter:card = summary_large_image` alongside.
-
-## 4. Metadata sweep (leaf routes)
-
-For each of the routes above, verify `head()` has: `title`, `description`, `og:title`, `og:description`, `og:url` (self-referencing absolute), `og:image`, `twitter:card`, `twitter:image`, and a `<link rel="canonical">` pointing at itself. Titles already normalized last turn; fill gaps only.
-
-## 5. Copy + a11y polish (restrained)
-
-- Grep `src/` for `&nbsp;`, `&amp;`, doubled spaces — fix any residuals.
-- FAQ accordion: verify `aria-expanded`, keyboard (Enter/Space), focus-visible ring.
-- Footer: confirm dynamic © year, mailto, parity across pages.
-- Bump `text-cream/60` → `/75` where WCAG contrast fails on small text.
-- Lazy-load below-fold operator headshots (`loading="lazy" decoding="async"`).
-
-## 6. Live-domain verification
-
-Curl `https://veep.work/`, `www.veep.work/`, `/pricing`, `/about`, `/join`, `/faq`, `/privacy`, `/terms`, `/contact`, `/sitemap.xml`, `/robots.txt`, plus one legacy (`/blog`) and one operator-profile (`/seanpark`) → confirm 200/301 as expected and no Wix artifacts.
-
-## 7. Final report
-
-Deliver a summary listing: routes preserved, routes redirected, stale files removed, contact form fixes, og:image URL, metadata gaps closed, copy/a11y fixes, live-domain results, remaining risks.
+1. Download `veep-wordmark-white.png` from its CDN URL to `/tmp/`.
+2. Download IBM Plex Sans + Mono TTFs from Google Fonts to `/tmp/` (small, one-time; ignore failure and fall back to DejaVu).
+3. Run a short Python script to composite the canvas and save `/tmp/og-card.jpg` (JPEG, quality 92, no chroma subsampling).
+4. Delete the current `src/assets/og-card.jpg.asset.json`'s CDN object with `lovable-assets delete --file`, then `lovable-assets create --file /tmp/og-card.jpg --filename og-card.jpg > src/assets/og-card.jpg.asset.json`.
+5. Update `OG_IMAGE_URL` in `src/lib/seo.ts` to the new absolute CDN URL from the pointer.
+6. Verify homepage HTML still references the new URL via curl.
 
 ## Out of scope
 
-No redesign, no new brand system, no color/font changes, no new sections, no /services page rewrite.
+No route or metadata changes beyond the URL string. No design changes to the wordmark itself. Not touching the operator or contact-form work from the previous pass.
+
+## Note
+
+Social platforms cache previews — LinkedIn/Twitter/Slack won't show the new card until re-scraped in their link debuggers.
