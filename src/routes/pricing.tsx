@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import { ogImageMeta } from "@/lib/seo";
 
 const tiers = [
   {
@@ -95,6 +96,7 @@ export const Route = createFileRoute("/pricing")({
       { property: "og:title", content: "Pricing — Priced to the work, not the hour | Veep" },
       { property: "og:description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
       { property: "og:url", content: "https://www.veep.work/pricing" },
+      ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/pricing" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(faqSchema) }],

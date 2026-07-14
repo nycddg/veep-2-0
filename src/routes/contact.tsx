@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { z } from "zod";
 import { PageHero } from "@/components/site/PageHero";
 import { Check, Loader2 } from "lucide-react";
 import { submitContactInquiry } from "@/lib/wix-contact.functions";
+import { ogImageMeta } from "@/lib/seo";
 
 const searchSchema = z.object({
   intent: z.string().catch("call"),
@@ -18,6 +19,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact — Veep" },
       { property: "og:description", content: "Tell us the moment. We'll match a senior operator who can start in under 10 days." },
       { property: "og:url", content: "https://www.veep.work/contact" },
+      ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/contact" }],
   }),
@@ -41,8 +43,14 @@ function Page() {
   const preselected = outcome ? outcomeLabels[outcome] ?? outcome : undefined;
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const submittingRef = useRef(false);
+  const successHeadingRef = useRef<HTMLHeadingElement | null>(null);
+
+  useEffect(() => {
+    if (submitted) successHeadingRef.current?.focus();
+  }, [submitted]);
 
   const contactSchema = z.object({
     name: z.string().trim().min(1, "Please enter your name.").max(100),
@@ -56,9 +64,15 @@ function Page() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (submittingRef.current) return;
-    setError(null);
+    setErrors({});
+    setSubmitError(null);
 
     const fd = new FormData(e.currentTarget);
+    // Honeypot: real users leave this blank. Bots fill every field.
+    if ((fd.get("company_website") as string)?.trim()) {
+      setSubmitted(true);
+      return;
+    }
     const parsed = contactSchema.safeParse({
       name: fd.get("name"),
       email: fd.get("email"),
@@ -68,7 +82,18 @@ function Page() {
       timing: fd.get("timing") ?? undefined,
     });
     if (!parsed.success) {
-      setError(parsed.error.issues[0]?.message ?? "Please check the form and try again.");
+      const fieldErrors: Record<string, string> = {};
+      for (const issue of parsed.error.issues) {
+        const key = String(issue.path[0] ?? "form");
+        if (!fieldErrors[key]) fieldErrors[key] = issue.message;
+      }
+      setErrors(fieldErrors);
+      // Focus the first invalid field for keyboard/screen-reader users.
+      const firstKey = Object.keys(fieldErrors)[0];
+      if (firstKey) {
+        const el = e.currentTarget.elements.namedItem(firstKey) as HTMLElement | null;
+        el?.focus();
+      }
       return;
     }
 
@@ -90,7 +115,7 @@ function Page() {
       setSubmitted(true);
     } catch (err) {
       console.error("Contact form submission failed:", err);
-      setError("Something went wrong sending your message. Please email hey@veep.work or try again.");
+      setSubmitError("Something went wrong sending your message. Please email hey@veep.work or try again.");
     } finally {
       submittingRef.current = false;
       setLoading(false);
@@ -155,11 +180,19 @@ function Page() {
             {/* Right: form */}
             <div className="lg:col-span-3">
               {submitted ? (
-                <div className="glass-card rounded-3xl p-8 sm:p-10 text-center">
+                <div
+                  className="glass-card rounded-3xl p-8 sm:p-10 text-center"
+                  role="status"
+                  aria-live="polite"
+                >
                   <div className="mx-auto h-12 w-12 rounded-full bg-accent/15 grid place-items-center text-accent">
                     <Check strokeWidth={3} />
                   </div>
-                  <h3 className="mt-6 text-2xl text-cream tracking-tight">
+                  <h3
+                    ref={successHeadingRef}
+                    tabIndex={-1}
+                    className="mt-6 text-2xl text-cream tracking-tight focus:outline-none"
+                  >
                     Thanks — we'll be in touch.
                   </h3>
                   <p className="mt-3 text-cream/80 text-sm">
@@ -170,15 +203,51 @@ function Page() {
                 <form
                   onSubmit={handleSubmit}
                   noValidate
+                  aria-describedby={submitError ? "contact-form-error" : undefined}
                   className="glass-card rounded-3xl p-6 sm:p-8 grid gap-5"
                 >
+                  {/* Honeypot — hidden from users and screen readers */}
+                  <div aria-hidden="true" className="hidden">
+                    <label>
+                      Company website
+                      <input
+                        type="text"
+                        name="company_website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </label>
+                  </div>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <Field label="Name" required><input required name="name" maxLength={100} autoComplete="name" className={inputCls} /></Field>
-                    <Field label="Work email" required><input required type="email" name="email" maxLength={255} autoComplete="email" className={inputCls} /></Field>
+                    <Field label="Name" required error={errors.name} errorId="err-name">
+                      <input
+                        required
+                        name="name"
+                        maxLength={100}
+                        autoComplete="name"
+                        aria-invalid={errors.name ? true : undefined}
+                        aria-describedby={errors.name ? "err-name" : undefined}
+                        className={inputCls}
+                      />
+                    </Field>
+                    <Field label="Work email" required error={errors.email} errorId="err-email">
+                      <input
+                        required
+                        type="email"
+                        name="email"
+                        maxLength={255}
+                        autoComplete="email"
+                        aria-invalid={errors.email ? true : undefined}
+                        aria-describedby={errors.email ? "err-email" : undefined}
+                        className={inputCls}
+                      />
+                    </Field>
                   </div>
                   <Field
                     label={isAudit ? "Portfolio size or context" : "What's the biggest initiative without an owner?"}
                     required
+                    error={errors.context}
+                    errorId="err-context"
                   >
                     <textarea
                       required
@@ -186,6 +255,8 @@ function Page() {
                       rows={5}
                       maxLength={2000}
                       defaultValue={preselected ? `Interested in: ${preselected}\n\n` : ""}
+                      aria-invalid={errors.context ? true : undefined}
+                      aria-describedby={errors.context ? "err-context" : undefined}
                       className={inputCls}
                     />
                   </Field>
@@ -208,9 +279,13 @@ function Page() {
                       </Field>
                     </div>
                   </details>
-                  {error && (
-                    <p role="alert" className="text-sm text-red-400 bg-red-500/10 rounded-xl px-4 py-3">
-                      {error}
+                  {submitError && (
+                    <p
+                      id="contact-form-error"
+                      role="alert"
+                      className="text-sm text-red-400 bg-red-500/10 rounded-xl px-4 py-3"
+                    >
+                      {submitError}
                     </p>
                   )}
                   <button
@@ -240,13 +315,30 @@ function Page() {
 const inputCls =
   "w-full rounded-xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
 
-function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
+function Field({
+  label,
+  required,
+  error,
+  errorId,
+  children,
+}: {
+  label: string;
+  required?: boolean;
+  error?: string;
+  errorId?: string;
+  children: React.ReactNode;
+}) {
   return (
     <label className="block">
       <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-cream/70">
         {label}{required && " *"}
       </span>
       <div className="mt-2">{children}</div>
+      {error && (
+        <p id={errorId} className="mt-1.5 text-xs text-red-400">
+          {error}
+        </p>
+      )}
     </label>
   );
 }

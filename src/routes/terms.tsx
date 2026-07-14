@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import { ogImageMeta } from "@/lib/seo";
 
 type Block =
   | { kind: "p"; text: string }
@@ -152,6 +153,7 @@ export const Route = createFileRoute("/terms")({
       { property: "og:description", content: "The Terms of Service that govern access to and use of The Veep Group, LLC's platform, website, and related services." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.veep.work/terms" },
+      ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/terms" }],
   }),

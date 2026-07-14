@@ -3,6 +3,7 @@ import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { ChevronDown } from "lucide-react";
+import { ogImageMeta } from "@/lib/seo";
 
 type QA = { q: string; a: string };
 
@@ -62,6 +63,7 @@ export const Route = createFileRoute("/faq")({
       { property: "og:title", content: "FAQ — Straight answers on cost, timing & fit | Veep" },
       { property: "og:description", content: "Pricing, timing, operator vetting, the 30-day fit guarantee, and how Veep's Executive Roster works for portfolios." },
       { property: "og:url", content: "https://www.veep.work/faq" },
+      ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/faq" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(faqSchema) }],

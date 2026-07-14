@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import { ogImageMeta } from "@/lib/seo";
 
 const problems = [
   {
@@ -77,6 +78,7 @@ export const Route = createFileRoute("/for-portfolios")({
         content: "On-call senior operators for the work that can't wait. Retained capacity across your portfolio.",
       },
       { property: "og:url", content: "https://www.veep.work/for-portfolios" },
+      ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/for-portfolios" }],
   }),

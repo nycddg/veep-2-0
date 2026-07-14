@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import { ogImageMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -18,6 +19,7 @@ export const Route = createFileRoute("/about")({
           "Born from the inside. Built for what's next. Meet the founders and principles behind Veep's senior operator model.",
       },
       { property: "og:url", content: "https://www.veep.work/about" },
+      ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/about" }],
   }),
