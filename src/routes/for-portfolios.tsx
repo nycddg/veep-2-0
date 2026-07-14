@@ -97,11 +97,11 @@ function Page() {
       {/* Problem */}
       <section className="bg-surface-raised py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14 md:mb-16">
+          <div className="max-w-5xl mb-14 md:mb-16">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Where portfolios lose time
             </div>
-            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
               Transactions create volatility. The work still needs an owner.
             </h2>
           </div>
@@ -182,11 +182,11 @@ function Page() {
       {/* Roster tiers */}
       <section className="bg-surface-band py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12 md:mb-14">
+          <div className="max-w-5xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
               Roster model
             </div>
-            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
+            <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
               On call operators for the work that can't wait.
             </h2>
           </div>
