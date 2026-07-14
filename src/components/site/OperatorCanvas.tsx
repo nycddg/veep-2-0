@@ -44,7 +44,7 @@ export function OperatorCanvas() {
           <div className="space-y-4">
             {MATRIX.map((row) => (
               <div key={row.label}>
-                <div className="flex justify-between text-[11px] text-white mb-1.5 font-medium">
+                <div className="flex justify-between text-[11px] text-cream mb-1.5 font-medium">
                   <span>{row.label}</span>
                   <span>{row.value}%</span>
                 </div>
