@@ -16,7 +16,7 @@ export function OperatorCanvas() {
 
       <div className="relative">
         {/* Headshot slot */}
-        <div className="relative z-10 mx-auto w-full aspect-[16/9] max-w-2xl rounded-3xl bg-gradient-to-br from-[#1a1c2e] to-[#0a0c16] overflow-hidden shadow-2xl">
+        <div className="relative z-10 mx-auto w-full aspect-[16/9] max-w-2xl rounded-3xl bg-[color:var(--surface-raised)] overflow-hidden shadow-2xl">
           <img
             src={headshotAsset.url}
             alt="Vetted operator headshot"
@@ -39,7 +39,7 @@ export function OperatorCanvas() {
         </div>
 
         {/* Match matrix — hidden on small screens */}
-        <div className="hidden sm:block absolute -bottom-10 right-0 md:-right-6 z-20 bg-[#0a0c16]/90 backdrop-blur-3xl border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_rgba(0,0,0,0.7)] w-[260px] md:w-[280px] op-float-delayed">
+        <div className="hidden sm:block absolute -bottom-10 right-0 md:-right-6 z-20 bg-[color:var(--surface-raised)]/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_rgba(0,0,0,0.7)] w-[260px] md:w-[280px] op-float-delayed">
           <p className="text-[10px] text-white/80 mb-5 font-medium uppercase tracking-[0.16em]">Match Matrix</p>
           <div className="space-y-4">
             {MATRIX.map((row) => (
