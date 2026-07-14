@@ -59,8 +59,8 @@ export const Route = createFileRoute("/faq")({
     meta: [
       { title: "FAQ — Straight Answers on Cost, Timing & Fit | Veep" },
       { name: "description", content: "How Veep engagements work: pricing, timing, operator vetting, fit guarantee, and how the Executive Roster for portfolios works." },
-      { property: "og:title", content: "FAQ — Veep" },
-      { property: "og:description", content: "Straight answers on cost, timing, and fit." },
+      { property: "og:title", content: "FAQ — Straight answers on cost, timing & fit | Veep" },
+      { property: "og:description", content: "Pricing, timing, operator vetting, the 30-day fit guarantee, and how Veep's Executive Roster works for portfolios." },
       { property: "og:url", content: "https://www.veep.work/faq" },
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/faq" }],
