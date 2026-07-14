@@ -22,8 +22,8 @@ function OperatorCard({ op }: { op: Operator }) {
   return (
     <article
       tabIndex={0}
-      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-2xl bg-[#0a0f1d] cursor-pointer transition-colors duration-300 border ${
-        op.featured ? "border-[color:var(--color-accent-coral)]/40" : "border-white/5 hover:border-white/15"
+      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-2xl bg-[#0a0f1d] cursor-pointer transition-colors duration-300 ${
+        op.featured ? "ring-1 ring-inset ring-[color:var(--color-accent-coral)]/40" : ""
       } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
       aria-label={`${op.name}, ${op.role}`}
     >
@@ -59,18 +59,18 @@ function OperatorCard({ op }: { op: Operator }) {
       {/* Meta — top left */}
       <div className="absolute top-5 left-5 text-left z-10 max-w-[75%]">
         <h3
-          className="font-sans font-medium text-ink text-lg sm:text-xl leading-tight tracking-tight"
+          className="font-sans font-medium text-ink light:text-[color:var(--foreground)] text-lg sm:text-xl leading-tight tracking-tight"
         >
           {op.name}
         </h3>
         <div
-          className="font-mono text-[10px] uppercase tracking-[0.14em] mt-1 text-ink/80"
+          className="font-mono text-[10px] uppercase tracking-[0.14em] mt-1 text-ink/80 light:text-[color:var(--foreground)]/80"
         >
           {op.role}
         </div>
         {op.priorCompanies && op.priorCompanies.length > 0 && (
           <div
-            className="font-mono text-[10px] text-ink/70 mt-2 leading-relaxed uppercase tracking-[0.1em]"
+            className="font-mono text-[10px] text-ink/70 light:text-[color:var(--foreground)]/70 mt-2 leading-relaxed uppercase tracking-[0.1em]"
           >
             {op.priorCompanies.map((c, i) => (
               <span key={c}>
