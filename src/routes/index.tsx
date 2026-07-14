@@ -732,7 +732,7 @@ function Index() {
       {/* 8 — PROOF */}
       <Reveal as="section" id="proof" className="py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12 md:mb-16">
+          <div className="max-w-5xl mb-12 md:mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               What senior operators change in the first 90 days.
@@ -820,7 +820,7 @@ function Index() {
       <Reveal as="section" id="portfolios" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 md:gap-10 items-center border-t border-white/10 pt-12 md:pt-16">
-            <div className="lg:col-span-3 space-y-5">
+            <div className="lg:col-span-4 space-y-5">
               <SectionEyebrow>For PE, VC, and family-office portfolios</SectionEyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] allow-wrap">
                 Stabilize the operational gaps transactions create.
@@ -829,7 +829,7 @@ function Index() {
                 Transactions create volatility before close, after close, and during integration. Leadership seats open. The plan is clear, but the company often lacks the senior capacity to own the work. Veep gives transaction-active firms a retained roster of vetted operators, ready to support diligence, transition, integration, value creation, and interim leadership needs across the portfolio.
               </p>
             </div>
-            <div className="lg:col-span-2 flex flex-col lg:items-end gap-4">
+            <div className="lg:col-span-1 flex flex-col lg:items-end gap-4">
               <Link
                 to="/for-portfolios"
                 className="w-full sm:w-auto text-center rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition min-h-11 inline-flex items-center justify-center"
@@ -866,7 +866,7 @@ function Index() {
 
       {/* 12 — FAQ */}
       <section id="faq" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>MINI FAQ</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
