@@ -40,7 +40,7 @@ export function OperatorCanvas() {
 
         {/* Match matrix — hidden on small screens */}
         <div className="hidden sm:block absolute -bottom-10 right-0 md:-right-6 z-20 bg-[color:var(--surface-raised)]/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_rgba(0,0,0,0.7)] w-[260px] md:w-[280px] op-float-delayed">
-          <p className="text-[10px] text-white/80 mb-5 font-medium uppercase tracking-[0.16em]">Match Matrix</p>
+          <p className="text-[10px] text-cream/80 mb-5 font-medium uppercase tracking-[0.16em]">Match Matrix</p>
           <div className="space-y-4">
             {MATRIX.map((row) => (
               <div key={row.label}>
