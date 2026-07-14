@@ -9,13 +9,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Veep is a small roster of senior operators who embed, build, and deliver. Matched in 72 hours. Deployed in under 10 days.",
+          "Meet the founders behind Veep and the operating principles that shape every engagement — a small roster of senior operators who embed, build, and deliver.",
       },
-      { property: "og:title", content: "About Veep" },
+      { property: "og:title", content: "About Veep — Who we are and why we built it" },
       {
         property: "og:description",
         content:
-          "Born from the inside. Built for what's next. Senior operators for the work that can't wait.",
+          "Born from the inside. Built for what's next. Meet the founders and principles behind Veep's senior operator model.",
       },
       { property: "og:url", content: "https://www.veep.work/about" },
     ],

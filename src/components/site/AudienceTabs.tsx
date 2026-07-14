@@ -209,8 +209,9 @@ export function AudienceTabs() {
               <Link
                 to={p.href}
                 className="mt-10 inline-flex items-center gap-1 text-sm text-cream border-b border-cream/40 hover:border-cream pb-0.5"
+                aria-label={`Learn more about ${p.panelTitle}`}
               >
-                Learn more <ArrowUpRight size={14} />
+                Learn more about {p.panelTitle} <ArrowUpRight size={14} />
               </Link>
             </div>
 

@@ -1,0 +1,21 @@
+# Veep
+
+> Veep places vetted senior operators inside founder-led companies to own the work that can't wait. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.
+
+Veep offers four engagement models — Advisory, Sprint, Operator, and Pod — plus an Executive Roster for PE firms, family offices, and multi-company founders. Operators include CFOs, COOs, CROs, CMOs, CTOs, CPOs, chiefs of staff, and functional experts.
+
+## Pages
+
+- [Home](/): Overview of Veep's senior operator model, how it works, and proof.
+- [About](/about): The founders behind Veep and the operating principles that shape every engagement.
+- [Pricing](/pricing): Advisory, Sprint, Operator, and Pod pricing with the 30-day fit guarantee.
+- [FAQ](/faq): Straight answers on cost, timing, operator vetting, and fit.
+- [For Portfolios](/for-portfolios): Executive Roster for PE firms, family offices, holdcos, and multi-company founders.
+- [Meet Veep](/meetveep): Book an intro call with a Veep founder.
+- [Contact](/contact): Get in touch with the Veep team.
+- [Join](/join): Apply to join the Veep operator roster.
+
+## Optional
+
+- [Privacy Policy](/privacy)
+- [Terms of Service](/terms)

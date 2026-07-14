@@ -98,24 +98,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Senior operators for work that can't wait | Veep" },
-      {
-        name: "description",
-        content:
-          "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
-      },
       { name: "author", content: "Veep" },
       { property: "og:site_name", content: "Veep" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Senior operators for work that can't wait | Veep" },
-      { name: "twitter:description", content: "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee." },
       { name: "theme-color", content: "#0b1220" },
       { name: "format-detection", content: "telephone=no" },
-      { property: "og:title", content: "Senior operators for work that can't wait | Veep" },
-      { property: "og:description", content: "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee." },
-      { property: "og:image", content: "/social-og.webp" },
-      { name: "twitter:image", content: "/social-og.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

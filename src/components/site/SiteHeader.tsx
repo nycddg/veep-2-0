@@ -29,8 +29,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 bg-background/85 backdrop-blur border-b border-white/8 transition-colors duration-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-6">
         <Link to="/" className="flex items-center" aria-label="Veep home">
-          <img src={wordmarkWhite.url} alt="Veep" className="h-5 w-auto block light:hidden" />
-          <img src={wordmarkNavy.url} alt="Veep" className="h-5 w-auto hidden light:block" />
+        <img src={wordmarkWhite.url} alt="Veep wordmark" className="h-5 w-auto block light:hidden" />
+        <img src={wordmarkNavy.url} alt="Veep wordmark" className="h-5 w-auto hidden light:block" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-0.5" aria-label="Primary">
