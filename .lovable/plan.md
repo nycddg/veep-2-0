@@ -1,28 +1,26 @@
-# Rebuild social share card with real veep wordmark
+# Mobile CTAs — intrinsic width, not full-bleed
 
-The current og-card renders "veep" as AI-generated typography. Replace it with a deterministic composite of the actual `veep-wordmark-white.png` asset on a canvas that matches the site palette. No AI generation — Python + PIL only, so the logo is pixel-identical to the on-site wordmark.
+Buttons currently stretch edge-to-edge on mobile in two ways:
+1. Their containers use `flex-col` (default `align-items: stretch`), which stretches child anchors/links to the container width.
+2. A few anchors explicitly set `w-full sm:w-auto`.
 
-## Composition
+Goal: on mobile, CTA buttons render at their natural pill width (matching desktop), while keeping the stacked vertical layout. Desktop is unchanged.
 
-- **Canvas**: 1200×630, solid `#050810` (site `--background` / navy canvas).
-- **Wordmark**: `src/assets/veep-wordmark-white.png` (cream-white on transparent), downloaded from CDN, scaled to ~360px wide, centered slightly above middle.
-- **Divider**: 1px, ~360px wide, in bright-blue accent `#789fff` at 45% alpha, ~28px below the wordmark.
-- **Tagline**: "Senior operators for work that can't wait" in IBM Plex Sans 22px, cream `#F5F1E8` at 90%, centered under the rule. Fetch IBM Plex Sans TTF from Google Fonts if not present locally; fall back to DejaVu Sans if the fetch fails.
-- **Corner mark**: bottom-left `veep.work` in IBM Plex Mono 16px cream at 70%, plus a tiny coral dot `#ec6b66` — matches the current corner mark style.
+## Changes
 
-## Steps
+**`src/components/site/PageHero.tsx`** (shared hero on most interior routes)
+- CTA row: change `items-stretch sm:items-center` → `items-start sm:items-center`.
 
-1. Download `veep-wordmark-white.png` from its CDN URL to `/tmp/`.
-2. Download IBM Plex Sans + Mono TTFs from Google Fonts to `/tmp/` (small, one-time; ignore failure and fall back to DejaVu).
-3. Run a short Python script to composite the canvas and save `/tmp/og-card.jpg` (JPEG, quality 92, no chroma subsampling).
-4. Delete the current `src/assets/og-card.jpg.asset.json`'s CDN object with `lovable-assets delete --file`, then `lovable-assets create --file /tmp/og-card.jpg --filename og-card.jpg > src/assets/og-card.jpg.asset.json`.
-5. Update `OG_IMAGE_URL` in `src/lib/seo.ts` to the new absolute CDN URL from the pointer.
-6. Verify homepage HTML still references the new URL via curl.
+**`src/components/site/FooterCTA.tsx`** (footer CTA on every page)
+- CTA row: add `items-start` for mobile alongside the existing `sm:items-center`.
+
+**`src/routes/index.tsx`** (home hero + closing CTA)
+- Line 472 primary CTA: drop `w-full sm:w-auto justify-center`; keep `inline-flex items-center` so pill sizes to content.
+- Line 835 closing CTA: drop `w-full sm:w-auto`; keep `inline-flex items-center justify-center` so pill sizes to content.
+
+No other live route defines its own CTA row — they all go through `PageHero` or `FooterCTA`, so those two edits cover the rest of the site.
 
 ## Out of scope
-
-No route or metadata changes beyond the URL string. No design changes to the wordmark itself. Not touching the operator or contact-form work from the previous pass.
-
-## Note
-
-Social platforms cache previews — LinkedIn/Twitter/Slack won't show the new card until re-scraped in their link debuggers.
+- Desktop layout, spacing, typography.
+- Secondary "underline" text links (already intrinsic-width).
+- Full-width UI primitives (`progress`, `slider`, `avatar`) — unrelated.
