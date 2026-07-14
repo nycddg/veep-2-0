@@ -18,7 +18,7 @@ export function FooterCTA({
         <p className="mt-5 text-cream/80 text-base sm:text-lg max-w-xl leading-relaxed">
           {sub}
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5">
+        <div className="mt-8 flex flex-col items-start sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5">
           <a
             href={BOOKING_URL}
             target="_blank"

@@ -47,7 +47,7 @@ export function PageHero({
           <p className="text-base sm:text-lg text-cream/80 max-w-2xl leading-relaxed">
             {sub}
           </p>
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 pt-1">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 pt-1">
             <a
               href={BOOKING_URL}
               target="_blank"
