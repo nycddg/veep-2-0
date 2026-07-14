@@ -11,6 +11,7 @@ import { Check } from "lucide-react";
 import { ObjectionList } from "@/components/site/ObjectionList";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { Reveal } from "@/components/site/Reveal";
+import { ogImageMeta } from "@/lib/seo";
 import jianYangHeadshot from "@/assets/operator-jian-yang.png.asset.json";
 import erikaVelazquezHeadshot from "@/assets/operator-erika-velazquez.png.asset.json";
 import elaineBogartHeadshot from "@/assets/operator-elaine-bogart.png.asset.json";
@@ -395,6 +396,7 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: "https://www.veep.work/" },
       { property: "og:type", content: "website" },
+      ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/" }],
     scripts: [

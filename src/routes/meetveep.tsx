@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import erikaHeadshot from "@/assets/operator-erika-velazquez.png.asset.json";
+import { ogImageMeta } from "@/lib/seo";
 
 const FORM_URL = "https://forms.gle/LE2pMAsCW3kWsKes7";
 
@@ -35,6 +36,7 @@ export const Route = createFileRoute("/meetveep")({
         content:
           "Proven independent operators \u2014 former founders and C-suite leaders \u2014 who embed quickly and drive real results. Fast.",
       },
+      ...ogImageMeta(),
     ],
   }),
   component: MeetVeepPage,

@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { Check, Loader2 } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { submitApplication } from "@/lib/wix-application.functions";
+import { ogImageMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/join")({
   head: () => ({
@@ -20,6 +21,7 @@ export const Route = createFileRoute("/join")({
           "Senior operators who embed, build, and deliver. Apply to the roster.",
       },
       { property: "og:url", content: "https://www.veep.work/join" },
+      ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/join" }],
   }),

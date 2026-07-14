@@ -4,6 +4,7 @@ import { z } from "zod";
 import { PageHero } from "@/components/site/PageHero";
 import { Check, Loader2 } from "lucide-react";
 import { submitContactInquiry } from "@/lib/wix-contact.functions";
+import { ogImageMeta } from "@/lib/seo";
 
 const searchSchema = z.object({
   intent: z.string().catch("call"),
@@ -18,6 +19,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact — Veep" },
       { property: "og:description", content: "Tell us the moment. We'll match a senior operator who can start in under 10 days." },
       { property: "og:url", content: "https://www.veep.work/contact" },
+      ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/contact" }],
   }),

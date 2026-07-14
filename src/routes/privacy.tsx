@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import { ogImageMeta } from "@/lib/seo";
 
 type Block =
   | { kind: "p"; text: string }
@@ -145,6 +146,7 @@ export const Route = createFileRoute("/privacy")({
       { property: "og:description", content: "How The Veep Group, LLC collects, uses, shares, and protects your information across veep.work and the Veep platform." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.veep.work/privacy" },
+      ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/privacy" }],
   }),
