@@ -5,7 +5,7 @@ import { FooterCTA } from "@/components/site/FooterCTA";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Veep — Senior operators for work that can't wait" },
+      { title: "About | Veep" },
       {
         name: "description",
         content:

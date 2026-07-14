@@ -381,7 +381,7 @@ const serviceSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Senior operators for work that can't wait | Veep" },
+      { title: "Veep | Senior Operators for Work That Can't Wait" },
       {
         name: "description",
         content:

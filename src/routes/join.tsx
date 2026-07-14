@@ -7,7 +7,7 @@ import { submitApplication } from "@/lib/wix-application.functions";
 export const Route = createFileRoute("/join")({
   head: () => ({
     meta: [
-      { title: "Join Veep — Apply to the operator roster" },
+      { title: "Join Veep | Operator Network" },
       {
         name: "description",
         content:

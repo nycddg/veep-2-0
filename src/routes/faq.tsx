@@ -57,7 +57,7 @@ const faqSchema = {
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Straight Answers on Cost, Timing & Fit | Veep" },
+      { title: "FAQ | Veep" },
       { name: "description", content: "How Veep engagements work: pricing, timing, operator vetting, fit guarantee, and how the Executive Roster for portfolios works." },
       { property: "og:title", content: "FAQ — Straight answers on cost, timing & fit | Veep" },
       { property: "og:description", content: "Pricing, timing, operator vetting, the 30-day fit guarantee, and how Veep's Executive Roster works for portfolios." },
