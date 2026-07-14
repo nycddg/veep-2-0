@@ -173,15 +173,30 @@ html.light {
 
 /* Raw white/black opacity utilities used across components — invert under light. */
 html.light .bg-black\/80 { background-color: rgb(255 255 255 / 0.80); }
+html.light .bg-white\/3  { background-color: rgb(10 19 48 / 0.04); }
+html.light .bg-white\/4  { background-color: rgb(10 19 48 / 0.04); }
 html.light .bg-white\/5  { background-color: rgb(0 0 0 / 0.05); }
+html.light .bg-white\/6  { background-color: rgb(10 19 48 / 0.06); }
 html.light .bg-white\/10 { background-color: rgb(0 0 0 / 0.05); }
 html.light .bg-white\/15 { background-color: rgb(0 0 0 / 0.08); }
+html.light .bg-white\/20 { background-color: rgb(10 19 48 / 0.10); }
+html.light .bg-white\/25 { background-color: rgb(10 19 48 / 0.12); }
+html.light .bg-white\/30 { background-color: rgb(10 19 48 / 0.14); }
+html.light .bg-white\/40 { background-color: rgb(10 19 48 / 0.18); }
+html.light .bg-white\/50 { background-color: rgb(10 19 48 / 0.22); }
+html.light .bg-white\/60 { background-color: rgb(10 19 48 / 0.28); }
+html.light .bg-white\/70 { background-color: rgb(10 19 48 / 0.35); }
+html.light .bg-white\/80 { background-color: rgb(10 19 48 / 0.45); }
+html.light .bg-white\/90 { background-color: rgb(10 19 48 / 0.55); }
 html.light .border-white\/5  { border-color: rgb(0 0 0 / 0.06); }
 html.light .border-white\/8  { border-color: rgb(0 0 0 / 0.08); }
 html.light .border-white\/10 { border-color: rgb(0 0 0 / 0.10); }
 html.light .border-white\/12 { border-color: rgb(0 0 0 / 0.12); }
 html.light .border-white\/15 { border-color: rgb(0 0 0 / 0.14); }
+html.light .border-white\/20 { border-color: rgb(10 19 48 / 0.18); }
 html.light .border-white\/25 { border-color: rgb(0 0 0 / 0.20); }
+html.light .border-white\/30 { border-color: rgb(10 19 48 / 0.22); }
+html.light .border-white\/40 { border-color: rgb(10 19 48 / 0.28); }
 html.light .divide-white\/5  > :not([hidden]) ~ :not([hidden]) { border-color: rgb(0 0 0 / 0.06); }
 html.light .divide-white\/8  > :not([hidden]) ~ :not([hidden]) { border-color: rgb(0 0 0 / 0.08); }
 html.light .divide-white\/10 > :not([hidden]) ~ :not([hidden]) { border-color: rgb(0 0 0 / 0.10); }
@@ -276,6 +291,16 @@ html.light .divide-white\/8  > * { border-color: rgb(10 19 48 / 0.14); }
   background: color-mix(in srgb, white 4%, transparent);
   border: 1px solid color-mix(in srgb, white 10%, transparent);
   backdrop-filter: blur(24px) saturate(140%);
+}
+
+/* Light-mode glass-card: white-on-white is invisible on the cream canvas,
+   so flip to ink-tinted panels that read against the warm off-white. */
+html.light .glass-card {
+  background: color-mix(in srgb, #0a1330 3%, transparent);
+  border: 1px solid color-mix(in srgb, #0a1330 12%, transparent);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.6) inset,
+              0 12px 32px -20px rgb(10 19 48 / 0.18);
+  backdrop-filter: none;
 }
 
 
