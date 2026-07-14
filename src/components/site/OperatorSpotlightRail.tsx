@@ -22,7 +22,7 @@ function OperatorCard({ op }: { op: Operator }) {
   return (
     <article
       tabIndex={0}
-      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-2xl bg-[#0a0f1d] cursor-pointer transition-colors duration-300 ${
+      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-2xl bg-[color:var(--surface-raised)] cursor-pointer transition-colors duration-300 ${
         op.featured ? "ring-1 ring-inset ring-[color:var(--color-accent-coral)]/40" : ""
       } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
       aria-label={`${op.name}, ${op.role}`}
