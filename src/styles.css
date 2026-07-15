@@ -384,7 +384,7 @@ html.light .glass-card {
               background-color var(--dur-hover) var(--ease-standard);
 }
 .motion-hover-lift:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 /* Nav / footer text link polish. */
@@ -423,6 +423,43 @@ html.light .glass-card {
               background-color var(--dur-hover) var(--ease-standard);
 }
 
+/* Editorial underline — grows left→right on hover/focus. Used on nav + inline
+   text links. Uses background-image so it stays crisp and animates cheaply. */
+@utility motion-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size var(--dur-hover) var(--ease-standard),
+              color var(--dur-hover) var(--ease-standard);
+  padding-bottom: 2px;
+}
+.motion-underline:hover,
+.motion-underline:focus-visible,
+.group:hover .motion-underline,
+.group:focus-visible .motion-underline {
+  background-size: 100% 1px;
+}
+
+/* Interactive image tile — restrained 1.02 scale on group hover/focus. */
+@utility motion-image-tilt {
+  transition: transform 320ms var(--ease-standard),
+              filter var(--dur-hover) var(--ease-standard);
+  will-change: transform;
+}
+.group:hover .motion-image-tilt,
+.group:focus-visible .motion-image-tilt,
+.group:focus-within .motion-image-tilt {
+  transform: scale(1.02);
+}
+
+/* Header scroll state — subtle border + backdrop crossfade. */
+@utility motion-header {
+  transition: background-color var(--dur-hover) var(--ease-standard),
+              border-color var(--dur-hover) var(--ease-standard),
+              backdrop-filter var(--dur-hover) var(--ease-standard);
+}
+
 /* Accordion body — grid-rows animation avoids max-height jank. */
 @utility motion-collapse {
   display: grid;
@@ -449,6 +486,11 @@ html.light .glass-card {
   .motion-hover-lift:hover,
   .motion-cta:hover { transform: none !important; }
   .op-float, .op-float-delayed { animation: none !important; }
+  .motion-image-tilt,
+  .group:hover .motion-image-tilt,
+  .group:focus-visible .motion-image-tilt,
+  .group:focus-within .motion-image-tilt { transform: none !important; }
+  .motion-underline { background-size: 0 0 !important; padding-bottom: 0 !important; }
 }
 
 @utility marquee {
