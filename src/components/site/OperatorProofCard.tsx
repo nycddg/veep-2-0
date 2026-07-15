@@ -100,7 +100,7 @@ export function OperatorProofCard({
               alt={name}
               loading="lazy"
               decoding="async"
-              className="absolute inset-0 h-full w-full object-cover object-top grayscale contrast-[1.05]"
+              className="motion-image-tilt absolute inset-0 h-full w-full object-cover object-top grayscale contrast-[1.05]"
             />
             <div
               aria-hidden

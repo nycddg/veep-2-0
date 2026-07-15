@@ -1,20 +1,12 @@
 import type { ReactNode, ElementType, CSSProperties } from "react";
+import { useInView } from "./useInView";
 
 /**
  * Reveal — restrained one-shot viewport entrance.
- * Fades + rises 8px when the element first enters the viewport.
- *
- * Robust trigger: synchronously reveals elements already in (or above) the
- * viewport on mount, uses a loose IntersectionObserver for below-fold entry,
- * and hard-fails to visible after 600ms so nothing ever stays hidden.
- * Fully disabled under prefers-reduced-motion.
- */
-/**
- * Reveal — restrained CSS-only mount entrance.
- * Fades in and rises 8px on first paint. Fully bypassed under
- * prefers-reduced-motion via the global reduced-motion guard in styles.css.
- * No scroll observer — the animation is subtle enough to feel intentional
- * even for sections already scrolled into view.
+ * Uses motion-reveal (opacity + 8px rise) toggled via IntersectionObserver.
+ * Elements above/near the viewport on mount reveal immediately; below-fold
+ * elements reveal as they enter. Fully bypassed under prefers-reduced-motion
+ * (motion-reveal collapses to no-op via the global guard in styles.css).
  */
 export function Reveal({
   as: Tag = "div",
@@ -30,10 +22,19 @@ export function Reveal({
   style?: CSSProperties;
   children: ReactNode;
 } & Record<string, unknown>) {
+  const [ref, inView] = useInView<HTMLElement>({
+    threshold: 0.12,
+    rootMargin: "-8% 0px",
+  });
+  const mergedStyle: CSSProperties | undefined = delay
+    ? { ...style, transitionDelay: `${delay}ms` }
+    : style;
   return (
     <Tag
-      className={`motion-fade-up ${className}`.trim()}
-      style={delay ? { ...style, animationDelay: `${delay}ms` } : style}
+      ref={ref}
+      data-in={inView ? "true" : "false"}
+      className={`motion-reveal ${className}`.trim()}
+      style={mergedStyle}
       {...rest}
     >
       {children}

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
@@ -25,8 +25,19 @@ const nav: readonly NavItem[] = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
-    <header className="sticky top-0 z-40 bg-background/85 backdrop-blur border-b border-white/8 transition-colors duration-200">
+    <header
+      className={`motion-header sticky top-0 z-40 backdrop-blur border-b ${
+        scrolled ? "bg-background/90 border-white/10" : "bg-background/70 border-transparent"
+      }`}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-6">
         <Link to="/" className="flex items-center" aria-label="Veep home">
         <img src={wordmarkWhite.url} alt="Veep wordmark" className="h-5 w-auto block light:hidden" />
