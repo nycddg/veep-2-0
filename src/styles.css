@@ -366,7 +366,7 @@ html.light .glass-card {
 /* In-view reveal — starts hidden, animates when [data-in="true"] is set. */
 @utility motion-reveal {
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(12px);
   transition: opacity var(--dur-enter) var(--ease-standard),
               transform var(--dur-enter) var(--ease-standard);
   will-change: opacity, transform;
