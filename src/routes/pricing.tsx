@@ -122,15 +122,14 @@ function Page() {
                 key={t.t}
                 className="flex flex-col lg:px-6 lg:first:pl-0 lg:last:pr-0"
               >
-                {/* Fixed-height label slot so all four tiers align on the "Most common" baseline. */}
-                <div className="h-4 mb-2">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-2xl text-cream">{t.t}</span>
                   {t.featured && (
                     <span className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent-coral">
                       Most common
                     </span>
                   )}
                 </div>
-                <div className="text-2xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
                   {t.p} <span className="text-stone">{t.per}</span>
                 </div>
