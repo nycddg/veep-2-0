@@ -32,7 +32,7 @@ export function TriggerBento() {
           Built for the moments that create urgency.
         </h2>
         <p className="mt-6 text-stone max-w-lg">
-          Companies come to Veep when the work is urgent, a full-time hire is too
+          Companies come to Veep when the work is urgent, a permanent hire is too
           slow, or consulting advice is not enough.
         </p>
       </div>

@@ -194,7 +194,7 @@ const problems = [
   },
   {
     t: "The hire can come later. The work cannot.",
-    d: "A full-time executive may be the right answer eventually. The search takes months, the role may still be undefined, and the business needs movement now.",
+    d: "A permanent hire may be the right answer eventually. The search takes months, the role may still be undefined, and the business needs movement now.",
   },
   {
     t: "The founder is still in the middle.",
@@ -313,7 +313,7 @@ const networkImpact = [
 const faqs = [
   {
     q: "What is a Veep operator?",
-    a: "A Veep operator is a vetted senior operator who steps into your business to own critical work before a full-time executive hire makes sense. Depending on the need, that operator may be a CFO, COO, CRO, CMO, CTO, product leader, people leader, chief of staff, or functional expert.",
+    a: "A Veep operator is a vetted senior operator who steps into your business to own critical work before a permanent executive hire makes sense. Depending on the need, that operator may be a CFO, COO, CRO, CMO, CTO, product leader, people leader, chief of staff, or functional expert.",
   },
   {
     q: "How fast can a Veep operator start?",
@@ -450,7 +450,7 @@ function Index() {
           <p className="text-base sm:text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
             Vetted senior operators to own urgent priorities and high-stakes
             decisions before you are ready, willing, or able to make
-            full-time hires.
+            permanent hires.
           </p>
 
           <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
@@ -495,7 +495,7 @@ function Index() {
           </p>
           <p className="mt-4 text-sm text-stone">
             Built for companies with real revenue and growing complexity, before the
-            full-time executive hire makes sense.
+            permanent executive hire makes sense.
           </p>
         </div>
       </section>
