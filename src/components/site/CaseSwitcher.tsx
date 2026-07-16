@@ -22,7 +22,7 @@ const cases = [
     tab: "CFO transition",
     metric: "Zero board slippage during a 6-month search",
     peak: 0.78,
-    body: "Interim CFO owned the seat while the full-time search ran, stabilized the finance team, and helped define what the permanent hire should own.",
+    body: "Interim CFO owned the seat while the search ran, stabilized the finance team, and helped define what the permanent hire should own.",
   },
 ];
 

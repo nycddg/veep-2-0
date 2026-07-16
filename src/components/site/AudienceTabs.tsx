@@ -26,7 +26,7 @@ const companiesPillars: Pillar[] = [
       "CFO, COO, CTO, CRO, CMO, or CPO — any C-suite role",
       "Capital, growth, or operating inflection points",
       "Board and investor reporting cadence",
-      "Function scoping before a full-time hire",
+      "Function scoping before a permanent hire",
     ],
     href: "/services/fractional-cfo",
     panelTitle: "Fractional C-Suite",
@@ -46,7 +46,7 @@ const companiesPillars: Pillar[] = [
     bullets: [
       "Full ownership of a function during transition",
       "Preserves the permanent search",
-      "Clarifies what the full-time hire should own",
+      "Clarifies what the permanent hire should own",
       "Stabilizes the team and the board narrative",
     ],
     href: "/services/interim",

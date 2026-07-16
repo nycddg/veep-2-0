@@ -7,7 +7,7 @@ const FORM_URL = "https://forms.gle/LE2pMAsCW3kWsKes7";
 
 const BULLETS = [
   "Onboarded in under a week",
-  "Save 40\u201380% vs. firms or full-time hires",
+  "Save 40\u201380% vs. firms or permanent hires",
   "Flexible terms: fractional, interim, or project-based",
   "Risk-free 30-day guarantee",
 ];
@@ -69,7 +69,7 @@ function MeetVeepPage() {
           <div className="order-3 lg:col-span-7 space-y-4 text-base sm:text-lg text-cream/80 max-w-2xl leading-relaxed">
             <p>
               Your company may not be ready, willing, or able to make the
-              full-time executive hire. But the fundraise, GTM reset, margin
+              permanent executive hire. But the fundraise, GTM reset, margin
               issue, leadership gap, or operating priority still needs to move.
             </p>
             <p>
