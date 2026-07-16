@@ -1,47 +1,57 @@
-# Replace "full-time hires" → "permanent hires"
+# Full site copy export
 
-## Straight swaps (no grammar issue)
+Compile all user-facing copy from the site into a single Markdown file delivered as a downloadable artifact at `/mnt/documents/veep-site-copy.md`.
 
-- `src/routes/about.tsx:35` — "Save 40–80% vs. firms or full-time hires" → "…permanent hires"
-- `src/routes/meetveep.tsx:10` — same line → "…permanent hires"
-- `src/routes/index.tsx:453` — "full-time hires." → "permanent hires."
-- `src/routes/faq.tsx:43` — "before a full-time hire makes sense" → "before a permanent hire makes sense"
-- `src/components/site/AudienceTabs.tsx:29` — "Function scoping before a full-time hire" → "…before a permanent hire"
-- `src/components/site/AudienceTabs.tsx:49` — "Clarifies what the full-time hire should own" → "…the permanent hire should own"
-- `src/components/site/TriggerBento.tsx:35` — "a full-time hire is too…" → "a permanent hire is too…"
+## Scope — pages to include
 
-## Extending the swap to "full-time executive hire" (same concept)
+Primary marketing/site routes:
+- Home (`/`)
+- About (`/about`)
+- Pricing (`/pricing`)
+- FAQ (`/faq`)
+- For Portfolios (`/for-portfolios`)
+- Meet Veep (`/meetveep`)
+- Contact (`/contact`)
+- Join (`/join`)
+- Privacy (`/privacy`)
+- Terms (`/terms`)
 
-- `src/routes/index.tsx:316` — "before a full-time executive hire makes sense" → "before a permanent executive hire makes sense"
-- `src/routes/index.tsx:498` — "full-time executive hire makes sense" → "permanent executive hire makes sense"
-- `src/routes/meetveep.tsx:72` — "full-time executive hire" → "permanent executive hire"
+Shared chrome (extracted once):
+- Site header nav labels
+- Site footer
+- Footer CTA block
 
-Proceeding with the above unless you object.
+## Structure of the output file
 
-## Needs your approval (copy/grammar judgment)
+```
+# Veep — Site Copy
 
-1. `**src/routes/faq.tsx:16` and `src/routes/index.tsx:332**` (identical sentence):
-  > "Search is for permanent hiring. Veep is for critical work that needs senior ownership before the **full-time hire** makes sense."
-  >  Direct swap creates "permanent hiring… permanent hire" repetition in adjacent sentences. Options:
-  - **A.** Swap anyway: "…before the permanent hire makes sense."
-  - **B.** Rephrase second sentence: "…before that permanent hire makes sense."
-  - **C.** Leave the second instance as-is (only "hires" plural is in scope).
-2. `**src/routes/index.tsx:197**`:
-  > "A **full-time executive** may be the right answer eventually…"
-  >  Here "full-time" modifies the person, not "hire". "A permanent executive" reads oddly. Options:
-  - **A.** Leave as-is (out of scope).
-  - **B.** "A permanent executive hire may be the right answer eventually…"
-  - **C.** "A full-time executive hire may be the right answer eventually…" (keep, minor tweak).
-3. `**src/components/site/CaseSwitcher.tsx:25**`:
-  > "Interim CFO owned the seat while the **full-time search** ran…"
-  >  "Full-time search" = the search for the permanent hire. Options:
-  - **A.** Leave as-is (different phrase, arguably out of scope).
-  - **B.** "…while the permanent search ran…"
+## Global
+### Header nav
+### Footer
 
-Tell me A/B/C for each and I'll implement in one pass.  
-  
-1. leave as is  
-2. "a permanent hire"  
-3. "while the search ran" 
+## Page: Home  (/)
+- Meta title / description
+- Section-by-section copy in reading order (eyebrow, headline, sub, bullets, CTAs)
 
-&nbsp;
+## Page: About  (/about)
+…etc per page
+```
+
+Each page section preserves:
+- Meta title + description (from `head()`)
+- Eyebrows, headlines, subheads, body paragraphs
+- List items, tile copy, CTA button labels
+- Testimonial quotes / attributions where present
+
+## Out of scope (unless you say otherwise)
+
+- Legacy / duplicate routes (`index-legacy`, `copy-of-*`, `home.tsx`, `en.tsx`, `sg.tsx`, per-operator profile pages, `businessos`, `fractional`, `services.*`, `compare.*`, `blog`, `post.$`, etc.) — the `llms.txt` canonical page list drives inclusion.
+- Auto-generated files (routeTree, sitemap).
+- Code/props, class names, image URLs.
+
+## Deliverable
+
+One file: `/mnt/documents/veep-site-copy.md`, surfaced via `<presentation-artifact>`.
+
+Tell me if you want additional routes (e.g. operator profile pages, service sub-pages, or legacy pages) included before I build it.
