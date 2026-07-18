@@ -261,9 +261,9 @@ const differentiators = [
     old: "Recommendations, candidates, tools, or hourly help",
   },
   {
-    dim: "Outcomes when you need them",
-    veep: "Now",
-    old: "After the search, after the deck, or variable quality",
+    dim: "OUTCOMES",
+    veep: "High quality work immediately\u00a0\u00a0",
+    old: "After the search, after the deck, or with variable quality",
   },
   {
     dim: "Cost",
@@ -678,7 +678,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-              Six reasons to believe. Plus the practical terms.
+              Senior ownership on your terms.\u00a0
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 border-t border-white/10 pt-10">
@@ -707,7 +707,7 @@ function Index() {
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
               <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-                Four engagement shapes. Same promise.
+                Four engagement shapes. One promise.
               </h2>
             </div>
             <Link
