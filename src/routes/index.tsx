@@ -208,7 +208,7 @@ const problems = [
 
 const alternatives = [
   { t: "Full-time hire", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you, and the work waits for the search to finish." },
-  { t: "Consulting firms", d: "Recommendations without ownership. Decks, frameworks, and steering committees. The work still lands back on your team." },
+  { t: "Consulting firms", d: "Smart recommendations. Then they hand you a deck and the work still lands on you or your team." },
   { t: "Freelancers and advisors", d: "Profiles to browse. Variable seniority. More decisions and oversight for the founder, not fewer." },
 ];
 
