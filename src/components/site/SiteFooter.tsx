@@ -51,7 +51,7 @@ export function SiteFooter() {
               <img src={wordmarkNavy.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto hidden light:block" />
             </Link>
             <p className="mt-5 text-sm text-cream/85 max-w-[20.4rem] leading-relaxed whitespace-pre-line">
-              Senior operators to own the work that can't wait.
+              Vetted senior operators who step in to own critical work, now.
               Matched in 72 hours. Deployed in under 10 days.
             </p>
               <a
@@ -86,7 +86,7 @@ export function SiteFooter() {
         </div>
         <div className="mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-cream/70">
           <div>© {new Date().getFullYear()}&nbsp;The Veep Group, LLC. All rights reserved.</div>
-          <div>Senior operators for work that can't wait.</div>
+          <div>Critical work, owned.</div>
         </div>
       </div>
     </footer>

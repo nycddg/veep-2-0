@@ -14,7 +14,7 @@ const sections: Section[] = [
     n: "01",
     title: "Overview of our service",
     blocks: [
-      { kind: "p", text: "Veep is a managed marketplace platform (\"Platform\") that connects businesses (each, a \"Client\") with vetted consultants (each, an \"Operating Partner\") for fractional, advisory, or project-based executive services (\"Project Services\")." },
+      { kind: "p", text: "Veep is a managed platform (\"Platform\") that connects businesses (each, a \"Client\") with vetted senior operators (each, an \"Operating Partner\") for advisory, project-based, and ongoing executive operating services (\"Project Services\")." },
       { kind: "p", text: "Depending on how you use the Platform, you may enter into additional agreements with Veep:" },
       { kind: "ul", items: [
         "Consultant Contract (if you are an Operating Partner)",

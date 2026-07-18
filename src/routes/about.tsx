@@ -80,11 +80,11 @@ function Page() {
           {[
             {
               eyebrow: "The problem",
-              body: "Operators felt stuck inside bloated orgs. Companies struggled to find senior talent that could lead fast and deliver with focus. The market rewarded process over ownership.",
+              body: "Operators felt stuck inside bloated orgs. Companies struggled to find senior capacity that could lead fast and deliver with focus. The market rewarded process over ownership. Ownerless work kept landing on founders.",
             },
             {
               eyebrow: "Meet Veep",
-              body: "Companies get flexible, high-impact operators who own outcomes. Operators get the freedom and focus to lead. Matched in 72 hours. Deployed in under 10 days.",
+              body: "Companies get high-impact operators who own outcomes. Operators get the freedom and focus to lead. Matched in 72 hours. Deployed in under 10 days. Veep delivers on-demand operating capacity.",
             },
           ].map((row) => (
             <div
@@ -178,7 +178,7 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline={<>Your next big move starts here.</>}
+        headline={<>Tell us what cannot wait.</>}
         sub="Book a call to explore how Veep can help. If it's a fit, we'll scope the engagement and match you with a Veep within 72 hours."
       />
     </>

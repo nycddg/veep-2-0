@@ -193,11 +193,11 @@ const problems = [
     d: "A fundraise, GTM reset, operating issue, margin problem, or leadership gap keeps coming back to the founder. The team is busy, but the priority is still stuck.",
   },
   {
-    t: "The hire can come later. The work cannot.",
+    t: "The work cannot wait for a perfect org chart.",
     d: "A permanent hire may be the right answer eventually. The search takes months, the role may still be undefined, and the business needs movement now.",
   },
   {
-    t: "The founder is still in the middle.",
+    t: "You are stuck in the middle.",
     d: "Sales decisions, finance questions, operational escalations, people issues, and strategic initiatives keep landing on the CEO's desk.",
   },
   {
@@ -207,9 +207,9 @@ const problems = [
 ];
 
 const alternatives = [
-  { t: "Retained search", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you." },
-  { t: "Consulting firms", d: "Recommendations without ownership. The work still lands back on your team." },
-  { t: "Marketplaces and freelancers", d: "Profiles to browse. Variable quality. More decisions and oversight for the founder." },
+  { t: "Full-time hire", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you, and the work waits for the search to finish." },
+  { t: "Consulting firms", d: "Recommendations without ownership. Decks, frameworks, and steering committees. The work still lands back on your team." },
+  { t: "Freelancers and advisors", d: "Profiles to browse. Variable seniority. More decisions and oversight for the founder, not fewer." },
 ];
 
 const benefits = [
@@ -225,26 +225,26 @@ const engagements = [
   {
     name: "Advisory",
     price: "From $3k / mo",
-    bestWhen: "Senior judgment for high-stakes decisions — board prep, fundraising, transactions, executive issues, and strategic tradeoffs.",
+    bestWhen: "Senior judgment and direction for high-stakes decisions — board and investor prep, fundraise strategy, executive decisions, and strategic tradeoffs. Not full ownership of execution.",
     to: "/pricing" as const,
   },
   {
     name: "Sprint",
     price: "From $25k / scope",
-    bestWhen: "One urgent priority with a clear owner and endpoint — fundraise readiness, GTM reset, margin improvement, operating cadence, or transaction prep.",
+    bestWhen: "Time-boxed. Clear scope. Clear outcome. Fast start — GTM reset, fundraise, margin work, diligence, or transaction prep across 4–12 weeks.",
     to: "/pricing" as const,
   },
   {
     name: "Operator",
     price: "From $15k / mo",
-    bestWhen: "Ongoing senior ownership without a permanent executive hire. Best when a function, initiative, or leadership gap needs consistent operating support.",
+    bestWhen: "Embedded senior ownership of critical work across finance, GTM, operations, product, or people. Build or reset a function, resolve leadership gaps — typically 3–12 months.",
     to: "/pricing" as const,
     featured: true,
   },
   {
     name: "Pod",
     price: "From $30k / mo",
-    bestWhen: "A lead operator plus specialist support for cross-functional work — GTM + RevOps, AI transformation, new market launch, or operating reset.",
+    bestWhen: "Multiple operators coordinated against a larger work program — GTM + RevOps, finance + ops, AI initiatives, or an operating reset across the company.",
     to: "/pricing" as const,
   },
 ];
@@ -259,6 +259,11 @@ const differentiators = [
     dim: "Ownership",
     veep: "Senior operator owns the work",
     old: "Recommendations, candidates, tools, or hourly help",
+  },
+  {
+    dim: "Outcomes when you need them",
+    veep: "Now",
+    old: "After the search, after the deck, or variable quality",
   },
   {
     dim: "Cost",
@@ -388,7 +393,7 @@ export const Route = createFileRoute("/")({
         content:
           "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
       },
-      { property: "og:title", content: "Senior operators for work that can't wait | Veep" },
+      { property: "og:title", content: "Critical work, owned. | Veep" },
       {
         property: "og:description",
         content:
@@ -491,11 +496,11 @@ function Index() {
         <div className="mx-auto max-w-[55.2rem] px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
-            An invite-only network of operating partners ready to own the work that can't wait. Founders and CEOs hire us to solve their biggest challenges across finance, GTM, operations, product, people, fundraising, and strategy.
+            An invite-only network of operating partners ready to own the work that can't wait. Founders, CEOs, and investment firms hire Veep when important work has no owner across finance, GTM, operations, product, people, fundraising, and strategy.
           </p>
           <p className="mt-4 text-sm text-stone">
-            Built for companies with real revenue and growing complexity, before the
-            permanent executive hire makes sense.
+            Built for companies with real revenue and growing complexity, when permanent
+            headcount is the wrong answer for the work that needs to move now.
           </p>
         </div>
       </section>
@@ -529,6 +534,9 @@ function Index() {
                 </div>
               ))}
             </div>
+            <p className="mt-12 md:mt-14 font-serif text-lg md:text-xl text-cream/90 leading-snug max-w-3xl">
+              Three options. None of them get you the outcomes you need, when you need them&nbsp;— now. But Veep does.
+            </p>
           </div>
         </div>
       </section>
@@ -543,14 +551,16 @@ function Index() {
                 Built for the{"\u00a0"}job to be done.
               </h2>
               <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
-                Tell us what's in the way, not moving, or unfortunately coming back to
-                you to solve. We shape the work and define the outcomes, recommend the
-                right level of support (Advisory, Sprint, Operator, or Pod), and match
-                operators to the job.
+                Tell us what's in the way, not moving, or landing back on you to solve.
+                We shape the work and define the outcomes, recommend the right level of
+                support (Advisory, Sprint, Operator, or Pod), and match operators to the job.
               </p>
               <p className="mt-4 text-stone text-base md:text-lg leading-relaxed">
                 When the work lands or the permanent hire arrives, we hand off with
                 results and documentation, not ongoing dependency.
+              </p>
+              <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.14em] text-accent">
+                Vetted senior operators who step in to own critical work, now.
               </p>
             </div>
             <div className="space-y-6 lg:border-l lg:border-white/10 lg:pl-10">
@@ -669,7 +679,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-              Executive capacity, before the executive hire.
+              Six reasons to believe. Plus the practical terms.
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 border-t border-white/10 pt-10">
@@ -698,7 +708,7 @@ function Index() {
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
               <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-                Pick the level of support the work needs.
+                Four engagement shapes. Same promise.
               </h2>
             </div>
             <Link
@@ -713,6 +723,9 @@ function Index() {
               <EngagementTile key={e.name} {...e} />
             ))}
           </div>
+          <p className="mt-10 text-sm text-stone max-w-3xl">
+            Lead with the work. Choose the shape after the work is clear.
+          </p>
         </div>
       </section>
 
@@ -813,6 +826,9 @@ function Index() {
               </div>
             ))}
           </div>
+          <p className="mt-12 md:mt-14 font-serif text-lg md:text-xl text-cream/90 leading-snug max-w-3xl">
+            Three options. None of them get you the outcomes you need, when you need them&nbsp;— now. But Veep does.
+          </p>
         </div>
       </Reveal>
 
@@ -821,9 +837,9 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 md:gap-10 items-center border-t border-white/10 pt-12 md:pt-16">
             <div className="lg:col-span-3 space-y-5">
-              <SectionEyebrow>For PE, VC, and family-office portfolios</SectionEyebrow>
+              <SectionEyebrow>For PE, VC, family offices, and holding companies</SectionEyebrow>
               <h2 className="font-serif text-3xl text-cream tracking-tight leading-[1.1] allow-wrap">
-                Stabilize the operational gaps transactions create.
+                Portfolio companies don't pause for a search.
               </h2>
               <p className="text-stone leading-relaxed">
                 Transactions create volatility before close, after close, and during integration. Leadership seats open. The plan is clear, but the company often lacks the senior capacity to own the work. Veep gives transaction-active firms a retained roster of vetted operators, ready to support diligence, transition, integration, value creation, and interim leadership needs across the portfolio.
