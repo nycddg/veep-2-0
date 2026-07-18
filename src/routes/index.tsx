@@ -707,7 +707,7 @@ function Index() {
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
               <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-                Four engagement shapes. Same promise.
+                Four engagement shapes. One promise.
               </h2>
             </div>
             <Link
