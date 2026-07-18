@@ -208,7 +208,7 @@ const problems = [
 
 const alternatives = [
   { t: "Full-time hire", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you, and the work waits for the search to finish." },
-  { t: "Consulting firms", d: "Recommendations without ownership. Decks, frameworks, and steering committees. The work still lands back on your team." },
+  { t: "Consulting firms", d: "Smart recommendations. Then they hand you a deck and the work still lands on you or your team." },
   { t: "Freelancers and advisors", d: "Profiles to browse. Variable seniority. More decisions and oversight for the founder, not fewer." },
 ];
 
@@ -218,7 +218,7 @@ const benefits = [
   { t: "Senior-only roster", d: "75+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
   { t: "No permanent commitment", d: "Senior ownership without the commit — engagements can pause, extend, or scale with the work." },
   { t: "Clean handoff", d: "When the work lands or a permanent hire arrives, you get documentation, context, and continuity." },
-  { t: "30-day fit guarantee", d: "If the operator isn't the right fit, we swap them or you walk — no fee owed for the remaining term." },
+  { t: "30-day fit guarantee", d: "If the operator isn't the right fit, we swap them or you walk — exit the agreement with no penalties." },
 ];
 
 const engagements = [
@@ -499,8 +499,7 @@ function Index() {
             An invite-only network of operating partners ready to own the work that can't wait. Founders, CEOs, and investment firms hire Veep when important work has no owner across finance, GTM, operations, product, people, fundraising, and strategy.
           </p>
           <p className="mt-4 text-sm text-stone">
-            Built for companies with real revenue and growing complexity, when permanent
-            headcount is the wrong answer for the work that needs to move now.
+            Built for companies with real revenue and growing complexity that need a critical outcome now.
           </p>
         </div>
       </section>
