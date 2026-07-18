@@ -261,9 +261,9 @@ const differentiators = [
     old: "Recommendations, candidates, tools, or hourly help",
   },
   {
-    dim: "Outcomes when you need them",
-    veep: "Now",
-    old: "After the search, after the deck, or variable quality",
+    dim: "OUTCOMES",
+    veep: "High quality work immediately\u00a0\u00a0",
+    old: "After the search, after the deck, or with variable quality",
   },
   {
     dim: "Cost",
