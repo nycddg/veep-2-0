@@ -193,11 +193,11 @@ const problems = [
     d: "A fundraise, GTM reset, operating issue, margin problem, or leadership gap keeps coming back to the founder. The team is busy, but the priority is still stuck.",
   },
   {
-    t: "The hire can come later. The work cannot.",
+    t: "The work cannot wait for a perfect org chart.",
     d: "A permanent hire may be the right answer eventually. The search takes months, the role may still be undefined, and the business needs movement now.",
   },
   {
-    t: "The founder is still in the middle.",
+    t: "You are stuck in the middle.",
     d: "Sales decisions, finance questions, operational escalations, people issues, and strategic initiatives keep landing on the CEO's desk.",
   },
   {
@@ -207,9 +207,9 @@ const problems = [
 ];
 
 const alternatives = [
-  { t: "Retained search", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you." },
-  { t: "Consulting firms", d: "Recommendations without ownership. The work still lands back on your team." },
-  { t: "Marketplaces and freelancers", d: "Profiles to browse. Variable quality. More decisions and oversight for the founder." },
+  { t: "Full-time hire", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you, and the work waits for the search to finish." },
+  { t: "Consulting firms", d: "Recommendations without ownership. Decks, frameworks, and steering committees. The work still lands back on your team." },
+  { t: "Freelancers and advisors", d: "Profiles to browse. Variable seniority. More decisions and oversight for the founder, not fewer." },
 ];
 
 const benefits = [
@@ -225,26 +225,26 @@ const engagements = [
   {
     name: "Advisory",
     price: "From $3k / mo",
-    bestWhen: "Senior judgment for high-stakes decisions — board prep, fundraising, transactions, executive issues, and strategic tradeoffs.",
+    bestWhen: "Senior judgment and direction for high-stakes decisions — board and investor prep, fundraise strategy, executive decisions, and strategic tradeoffs. Not full ownership of execution.",
     to: "/pricing" as const,
   },
   {
     name: "Sprint",
     price: "From $25k / scope",
-    bestWhen: "One urgent priority with a clear owner and endpoint — fundraise readiness, GTM reset, margin improvement, operating cadence, or transaction prep.",
+    bestWhen: "Time-boxed. Clear scope. Clear outcome. Fast start — GTM reset, fundraise, margin work, diligence, or transaction prep across 4–12 weeks.",
     to: "/pricing" as const,
   },
   {
     name: "Operator",
     price: "From $15k / mo",
-    bestWhen: "Ongoing senior ownership without a permanent executive hire. Best when a function, initiative, or leadership gap needs consistent operating support.",
+    bestWhen: "Embedded senior ownership of critical work across finance, GTM, operations, product, or people. Build or reset a function, resolve leadership gaps — typically 3–12 months.",
     to: "/pricing" as const,
     featured: true,
   },
   {
     name: "Pod",
     price: "From $30k / mo",
-    bestWhen: "A lead operator plus specialist support for cross-functional work — GTM + RevOps, AI transformation, new market launch, or operating reset.",
+    bestWhen: "Multiple operators coordinated against a larger work program — GTM + RevOps, finance + ops, AI initiatives, or an operating reset across the company.",
     to: "/pricing" as const,
   },
 ];
@@ -259,6 +259,11 @@ const differentiators = [
     dim: "Ownership",
     veep: "Senior operator owns the work",
     old: "Recommendations, candidates, tools, or hourly help",
+  },
+  {
+    dim: "Outcomes when you need them",
+    veep: "Now",
+    old: "After the search, after the deck, or variable quality",
   },
   {
     dim: "Cost",
