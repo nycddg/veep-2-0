@@ -218,7 +218,7 @@ const benefits = [
   { t: "Senior-only roster", d: "75+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
   { t: "No permanent commitment", d: "Senior ownership without the commit — engagements can pause, extend, or scale with the work." },
   { t: "Clean handoff", d: "When the work lands or a permanent hire arrives, you get documentation, context, and continuity." },
-  { t: "30-day fit guarantee", d: "If the operator isn't the right fit, we swap them or you walk — no fee owed for the remaining term." },
+  { t: "30-day fit guarantee", d: "If the operator isn't the right fit, we swap them or you walk — exit the agreement with no penalties." },
 ];
 
 const engagements = [
