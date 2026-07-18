@@ -6,35 +6,35 @@ import { ogImageMeta } from "@/lib/seo";
 const FORM_URL = "https://forms.gle/LE2pMAsCW3kWsKes7";
 
 const BULLETS = [
-  "Onboarded in under a week",
+  "Deployed in under 10 days",
   "Save 40\u201380% vs. firms or permanent hires",
-  "Flexible terms: fractional, interim, or project-based",
-  "Risk-free 30-day guarantee",
+  "Flexible terms: scoped to the work (advisory, project, or ongoing)",
+  "30-day fit guarantee",
 ];
 
 export const Route = createFileRoute("/meetveep")({
   head: () => ({
     meta: [
-      { title: "Meet Veep \u2014 the fastest way to add firepower to your team" },
+      { title: "Meet Veep. senior operators for work that can't wait" },
       {
         name: "description",
         content:
-          "Veep connects founder-led companies with proven senior operators who embed quickly and get to work. Onboarded in under a week, 30-day guarantee.",
+          "Veep connects founder-led companies with vetted senior operators who step in to own critical work, now. Deployed in under 10 days. 30-day fit guarantee.",
       },
       { name: "robots", content: "noindex, nofollow" },
-      { property: "og:title", content: "Meet Veep \u2014 the fastest way to add firepower to your team" },
+      { property: "og:title", content: "Meet Veep. senior operators for work that can't wait" },
       {
         property: "og:description",
         content:
-          "Proven independent operators \u2014 former founders and C-suite leaders \u2014 who embed quickly and drive real results. Fast.",
+          "Vetted senior operators who step in to own critical work, now. Deployed in under 10 days. 30-day fit guarantee.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Meet Veep \u2014 the fastest way to add firepower to your team" },
+      { name: "twitter:title", content: "Meet Veep. senior operators for work that can't wait" },
       {
         name: "twitter:description",
         content:
-          "Proven independent operators \u2014 former founders and C-suite leaders \u2014 who embed quickly and drive real results. Fast.",
+          "Vetted senior operators who step in to own critical work, now. Deployed in under 10 days. 30-day fit guarantee.",
       },
       ...ogImageMeta(),
     ],
@@ -69,13 +69,16 @@ function MeetVeepPage() {
           <div className="order-3 lg:col-span-7 space-y-4 text-base sm:text-lg text-cream/80 max-w-2xl leading-relaxed">
             <p>
               Your company may not be ready, willing, or able to make the
-              permanent executive hire. But the fundraise, GTM reset, margin
+              permanent executive hire. The fundraise, GTM reset, margin
               issue, leadership gap, or operating priority still needs to move.
             </p>
             <p>
               Veep matches founder-led companies with vetted senior operators
-              for the job to be done. Critical work gets owned before the
+              for the job to be done. Critical work gets owned before a
               permanent hire is in place.
+            </p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-accent pt-2">
+              Vetted senior operators who step in to own critical work, now.
             </p>
           </div>
 
