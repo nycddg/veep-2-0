@@ -826,6 +826,9 @@ function Index() {
               </div>
             ))}
           </div>
+          <p className="mt-12 md:mt-14 font-serif text-lg md:text-xl text-cream/90 leading-snug max-w-3xl">
+            Three options. None of them get you the outcomes you need, when you need them&nbsp;— now. But Veep does.
+          </p>
         </div>
       </Reveal>
 
@@ -834,9 +837,9 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 md:gap-10 items-center border-t border-white/10 pt-12 md:pt-16">
             <div className="lg:col-span-3 space-y-5">
-              <SectionEyebrow>For PE, VC, and family-office portfolios</SectionEyebrow>
+              <SectionEyebrow>For PE, VC, family offices, and holding companies</SectionEyebrow>
               <h2 className="font-serif text-3xl text-cream tracking-tight leading-[1.1] allow-wrap">
-                Stabilize the operational gaps transactions create.
+                Portfolio companies don't pause for a search.
               </h2>
               <p className="text-stone leading-relaxed">
                 Transactions create volatility before close, after close, and during integration. Leadership seats open. The plan is clear, but the company often lacks the senior capacity to own the work. Veep gives transaction-active firms a retained roster of vetted operators, ready to support diligence, transition, integration, value creation, and interim leadership needs across the portfolio.
