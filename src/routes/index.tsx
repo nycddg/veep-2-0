@@ -393,7 +393,7 @@ export const Route = createFileRoute("/")({
         content:
           "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
       },
-      { property: "og:title", content: "Senior operators for work that can't wait | Veep" },
+      { property: "og:title", content: "Critical work, owned. | Veep" },
       {
         property: "og:description",
         content:
@@ -496,11 +496,11 @@ function Index() {
         <div className="mx-auto max-w-[55.2rem] px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
-            An invite-only network of operating partners ready to own the work that can't wait. Founders and CEOs hire us to solve their biggest challenges across finance, GTM, operations, product, people, fundraising, and strategy.
+            An invite-only network of operating partners ready to own the work that can't wait. Founders, CEOs, and investment firms hire Veep when important work has no owner across finance, GTM, operations, product, people, fundraising, and strategy.
           </p>
           <p className="mt-4 text-sm text-stone">
-            Built for companies with real revenue and growing complexity, before the
-            permanent executive hire makes sense.
+            Built for companies with real revenue and growing complexity, when permanent
+            headcount is the wrong answer for the work that needs to move now.
           </p>
         </div>
       </section>
@@ -534,6 +534,9 @@ function Index() {
                 </div>
               ))}
             </div>
+            <p className="mt-12 md:mt-14 font-serif text-lg md:text-xl text-cream/90 leading-snug max-w-3xl">
+              Three options. None of them get you the outcomes you need, when you need them&nbsp;— now. But Veep does.
+            </p>
           </div>
         </div>
       </section>
@@ -548,14 +551,16 @@ function Index() {
                 Built for the{"\u00a0"}job to be done.
               </h2>
               <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
-                Tell us what's in the way, not moving, or unfortunately coming back to
-                you to solve. We shape the work and define the outcomes, recommend the
-                right level of support (Advisory, Sprint, Operator, or Pod), and match
-                operators to the job.
+                Tell us what's in the way, not moving, or landing back on you to solve.
+                We shape the work and define the outcomes, recommend the right level of
+                support (Advisory, Sprint, Operator, or Pod), and match operators to the job.
               </p>
               <p className="mt-4 text-stone text-base md:text-lg leading-relaxed">
                 When the work lands or the permanent hire arrives, we hand off with
                 results and documentation, not ongoing dependency.
+              </p>
+              <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.14em] text-accent">
+                Vetted senior operators who step in to own critical work, now.
               </p>
             </div>
             <div className="space-y-6 lg:border-l lg:border-white/10 lg:pl-10">
@@ -674,7 +679,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-              Executive capacity, before the executive hire.
+              Six reasons to believe. Plus the practical terms.
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 border-t border-white/10 pt-10">
@@ -703,7 +708,7 @@ function Index() {
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
               <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-                Pick the level of support the work needs.
+                Four engagement shapes. Same promise.
               </h2>
             </div>
             <Link
@@ -718,6 +723,9 @@ function Index() {
               <EngagementTile key={e.name} {...e} />
             ))}
           </div>
+          <p className="mt-10 text-sm text-stone max-w-3xl">
+            Lead with the work. Choose the shape after the work is clear.
+          </p>
         </div>
       </section>
 
