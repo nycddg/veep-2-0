@@ -13,7 +13,7 @@ const groups: { label: string; items: QA[] }[] = [
     items: [
       { q: "How fast can a Veep operator start?", a: "Most engagements begin in under 10 days from the call with a Veep founder. Urgent leadership-gap or interim coverage can move faster when the work cannot wait." },
       { q: "How is Veep different from a consultant?", a: "A consultant recommends. A Veep operator owns. Our operators step into the work, set the rhythm, build the materials, make decisions with the team, and move the priority forward." },
-      { q: "How is Veep different from executive search?", a: "Search is for permanent hiring. Veep is for critical work that needs senior ownership before the full-time hire makes sense. We help the work move now while the permanent hiring decision stays open." },
+      { q: "How is Veep different from executive search?", a: "Search is for permanent hiring. Veep is for critical work that needs senior ownership now, while the permanent hiring decision stays open." },
       { q: "Remote or on-site?", a: "Both. Most Advisory, Sprint, and Operator engagements are remote with on-site presence for key moments: board meetings, offsites, integrations, planning sessions, and major operating milestones. Interim or high-intensity engagements may include regular on-site time." },
       { q: "Can Veep run interim coverage while we search for a permanent hire?", a: "Yes. It is one of the most common use cases. A Veep operator can cover the leadership gap, stabilize the function, preserve momentum, and help define what the permanent role should actually become." },
     ],
@@ -39,8 +39,8 @@ const groups: { label: string; items: QA[] }[] = [
   {
     label: "Portfolios & partnerships",
     items: [
-      { q: "How does the Executive Roster work for portfolios?", a: "PE firms, family offices, holdcos, independent sponsors, search funds, and multi-company founders can retain Veep as an executive-capacity partner. The Roster typically includes priority matching, quarterly capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits, and preferred commercial terms. Annual Roster pricing is $75k/year, with operator deployments billed separately by SOW." },
-      { q: "Do you have a referral program?", a: "Yes. We share economics with accountants, lenders, search firms, M&A advisors, attorneys, investors, and other partners who send us the right work. The best referrals are companies with critical work that needs senior ownership before a permanent hire makes sense." },
+      { q: "How does the Executive Roster work for portfolios?", a: "PE firms, family offices, holding companies, independent sponsors, search funds, and multi-company founders can retain Veep as an operating-capacity partner. The Roster typically includes priority matching, quarterly capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits, and preferred commercial terms. Annual Roster pricing is $75k/year, with operator deployments billed separately by SOW." },
+      { q: "Do you have a referral program?", a: "Yes. We share economics with accountants, lenders, search firms, M&A advisors, attorneys, investors, and other partners who send us the right work. The best referrals are companies with critical work that needs senior ownership now." },
     ],
   },
 ];
