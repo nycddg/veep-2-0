@@ -499,8 +499,7 @@ function Index() {
             An invite-only network of operating partners ready to own the work that can't wait. Founders, CEOs, and investment firms hire Veep when important work has no owner across finance, GTM, operations, product, people, fundraising, and strategy.
           </p>
           <p className="mt-4 text-sm text-stone">
-            Built for companies with real revenue and growing complexity, when permanent
-            headcount is the wrong answer for the work that needs to move now.
+            Built for companies with real revenue and growing complexity that need a critical outcome now.
           </p>
         </div>
       </section>
