@@ -678,7 +678,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
             <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
-              Six reasons to believe. Plus the practical terms.
+              Senior ownership on your terms.\u00a0
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 border-t border-white/10 pt-10">
