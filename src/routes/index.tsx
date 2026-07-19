@@ -533,7 +533,7 @@ function Index() {
                 </div>
               ))}
             </div>
-            <p className="mt-12 md:mt-14 font-serif text-lg md:text-xl text-cream/90 leading-snug max-w-3xl">
+            <p className="mt-12 md:mt-14 font-serif text-lg md:text-xl text-cream/90 leading-snug max-w-5xl md:whitespace-nowrap">
               Three options. None of them get you the outcomes you need, when you need them&nbsp;— now. But Veep does.
             </p>
           </div>
@@ -825,7 +825,7 @@ function Index() {
               </div>
             ))}
           </div>
-          <p className="mt-12 md:mt-14 font-serif text-lg md:text-xl text-cream/90 leading-snug max-w-3xl">
+          <p className="mt-12 md:mt-14 font-serif text-lg md:text-xl text-cream/90 leading-snug max-w-5xl md:whitespace-nowrap">
             Three options. None of them get you the outcomes you need, when you need them&nbsp;— now. But Veep does.
           </p>
         </div>
