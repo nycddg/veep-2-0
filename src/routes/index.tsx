@@ -533,7 +533,7 @@ function Index() {
                 </div>
               ))}
             </div>
-            <p className="mt-12 md:mt-14 font-serif text-lg md:text-xl text-cream/90 leading-snug max-w-5xl md:whitespace-nowrap">
+            <p className="mt-12 md:mt-14 mx-auto text-center font-serif text-lg md:text-xl text-cream/90 leading-snug max-w-5xl md:whitespace-nowrap">
               Three options. None of them get you the outcomes you need, when you need them&nbsp;— now. Only Veep does.
             </p>
           </div>
