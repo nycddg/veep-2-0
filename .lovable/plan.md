@@ -1,97 +1,108 @@
-# Site copy v5 — drop-in plan
 
-Pure copy replacement across live pages and shared chrome. No structural rewrites. Two items need a design decision (flagged at bottom); everything else is straight text swap.
+# Production Cleanup & Live-Site Audit — veep.work
 
-## Files changed
+A scoped, restrained pass. No redesign. No new decorative effects. No brand-direction changes. Fix only what's genuinely broken, inconsistent, or launch-blocking.
 
-### Shared chrome
+## Phase 1 — Route inventory & redirect audit
 
-- `**src/components/site/SiteFooter.tsx**`
-  - Tagline: → "Vetted senior operators who step in to own critical work, now. Matched in 72 hours. Deployed in under 10 days."
-  - Sign-off (bottom-right small line): "Senior operators for work that can't wait." → **"Critical work, owned."**
-- `**src/components/site/FooterCTA.tsx**` — no change; default already matches v5.
+Enumerate every file in `src/routes/`, classify as: **live page**, **legacy redirect**, **anchor redirect**, or **stale/orphan**.
 
-### Home (`src/routes/index.tsx`)
+Preserve as live: `/`, `/pricing`, `/about`, `/join`, `/faq`, `/privacy`, `/terms`, `/contact`, `/meetveep`, `/for-portfolios`.
 
-- **Meta**: og:title → "Critical work, owned. | Veep"
-- **Section 2 "What Veep is"**: rewrite both paragraphs per v5 (adds "investment firms", removes "before the permanent executive hire makes sense", adds "when permanent headcount is the wrong answer for the work that needs to move now").
-- **Section 3 problems array**: retitle item 2 → "The work cannot wait for a perfect org chart." + updated body; retitle item 3 → "You are stuck in the middle." Update supporting copy.
-- **Alternatives array ("Instead of")**: replace titles/bodies with v5: **Full-time hire** / **Consulting firms** / **Freelancers and advisors**.
-- **Add close line** under alternatives grid: *"Three options. None of them get you the outcomes you need, when you need them..now. But Veep does."*
-- **Section 4 "What we do"** intro: swap "unfortunately coming back to you to solve" → "landing back on you to solve"; append product-line strapline: *"Vetted senior operators who step in to own critical work, now."*
-- **Benefits H2**: "Executive capacity, before the executive hire." → **"Four reasons to believe. Plus the practical terms."** (Note: v5 heading says "four" but there are still 6 numbered items. Keeping the 6 items — heading is v5's own wording.)
-- **Engagements H2**: "Pick the level of support the work needs." → **"Four engagement shapes. Same promise."** Expand each engagement `bestWhen` to v5 fuller descriptions. Add a caption line under the 4 tiles: *"Lead with the work. Choose the shape after the work is clear."*
-- **Differentiators (compare table)**: add 7th row **"Outcomes when you need them"** — Veep: "Now" / Old: "After the search, after the deck, or variable quality" (inserted between Ownership and Cost).
-- **Add closing line under compare table**: same "Three options…" close.
-- **New band between compare table and objections — "For portfolios"** (flagged, see below).
+Verify each of these redirect files still points somewhere sensible (spot-check ~30 legacy Wix routes like `/blog`, `/team`, `/agencies`, operator slugs, `/services/*`, `/compare/*`, `/en`, `/sg`, `/copy-of-*`, `/memberdashboard`, `/insights`, `/officehours`, `/operatingpartners`, `/partners`, `/fractional`, `/fundraising`, `/get-started`, `/how-it-works`, `/operators`, `/for-companies`, `/copyright`, `/post/*`, `/index-legacy`).
 
-### About (`src/routes/about.tsx`)
+Flag any orphaned files (e.g. `index-legacy.tsx` — confirm intent, likely delete or convert to redirect).
 
-- "The problem" body: append "Ownerless work kept landing on founders."
-- "Meet Veep" body: swap to v5 (remove "flexible,"; append "Veep delivers on-demand operating capacity.").
-- FooterCTA `headline` prop: "Your next big move starts here." → **"Tell us what cannot wait."** (sub already matches v5).
+Confirm `sitemap.xml` matches the live set (currently correct — 10 entries).
 
-### Pricing (`src/routes/pricing.tsx`)
+## Phase 2 — Header/nav on subpages
 
-- FooterCTA `headline`: "Make your next big move." → **"Tell us what cannot wait."** (sub already matches v5).
-- Everything else already matches.
+`SiteHeader` renders 5 hash links (Overview / Operators / Benefits / How it works / Proof) that all point to `/#hash`. On subpages these work via TanStack `Link to="/" hash=`. Verify scroll target IDs exist on the homepage for each. Fix any that silently fail.
 
-### FAQ (`src/routes/faq.tsx`)
+## Phase 3 — Copy & HTML-artifact scrub
 
-- Engagement Q "How is Veep different from executive search?": drop "before the full-time hire makes sense" phrasing; use v5 wording.
-- Portfolios Q "How does the Executive Roster work…": swap "holdcos" → "holding companies", "executive-capacity" → "operating-capacity".
-- Referral Q: "before a permanent hire makes sense" → "companies with critical work that needs senior ownership now."
+Grep the whole repo for:
+- literal `&nbsp;`, `&amp;`, `&#`, stray HTML entities in JSX text
+- double spaces in JSX string literals
+- `--` where an em dash was intended
+- `spellcheck-` fragments
+- broken apostrophes (`&#39;`, straight quotes where curly were used inconsistently)
 
-### Contact (`src/routes/contact.tsx`)
+Fix in place without changing meaning.
 
-- Default (call) H1: "What critical initiative doesn't have an owner?" → **"What critical work doesn't have an owner?"**
-- Audit H1 already matches.
+## Phase 4 — Visual polish (restrained)
 
-### Join (`src/routes/join.tsx`)
+Only fix clear inconsistencies. Targets:
+- footer spacing across pages (`SiteFooter` is shared — spot check container padding on mobile)
+- CTA label consistency: canonical set = "Book intro call", "Request a capacity audit", "See how it works", "See full pricing", "Apply below", "Submit application". Rename outliers.
+- CTA button treatment: primary = cream pill; secondary = underlined link. Flag hand-rolled variants.
+- Weak text: any `text-white/40` or lower on small copy → bump to `/60` minimum.
+- Mobile: audit `PageHero`, `FooterCTA`, pricing tier grid, operator rail for wrap/overflow.
+- Awkward line breaks on section headers at md/lg widths (already partially addressed in previous passes).
 
-- Meta description updated to v5 wording ("Apply to Veep's invite-only network…").
-- Criterion #2 body: "not management" → "not management theater"; "fractional experience" → "fractional or interim experience".
+Explicitly out of scope: adding cards, gradients, glows, glass, new decorative art.
 
-### Meet Veep (`src/routes/meetveep.tsx`)
+## Phase 5 — Page QA passes
 
-- Meta title/description/OG per v5.
-- Body paragraphs updated to v5 ("Your company may not be ready, willing, or able…" / "Veep matches founder-led companies…").
-- Insert a "Product line" strapline above the bullets: *"Vetted senior operators who step in to own critical work, now."*
-- Bullets updated to v5 exact wording:
-  - "Deployed in under 10 days"
-  - "Save 40–80% vs. firms or permanent hires"
-  - "Flexible terms: scoped to the work (advisory, project, or ongoing)"
-  - "30-day fit guarantee"
+**Home (`/`)**: verify each of the 15 sections listed renders, has correct anchor ID, and no console errors. Check operator carousel controls, comparison table on mobile (horizontal scroll or stack), mini FAQ accordion.
 
-### Privacy (`src/routes/privacy.tsx`)
+**Pricing**: verify tier alignment, "See scope" behavior, portfolio callout link, pricing FAQ (already scrubbed for `&nbsp;` in prior pass — reverify).
 
-- Section 01 body: rewrite per v5 ("invite-only network that connects businesses ('Clients') with vetted senior operators ('Operating Partners') for advisory, project, and ongoing operating engagements").
+**About**: hierarchy, founder card spacing, CTA copy.
 
-### Terms (`src/routes/terms.tsx`)
+**Join**: form audit — required fields, email/LinkedIn regex, resume file type/size, focus rings, error/success/failure states, honeypot, duplicate-submit guard, submission destination (Wix Application server fn), consent language.
 
-- Section 01 body: "managed marketplace platform" → "managed platform"; "vetted consultants" → "vetted senior operators"; "fractional, advisory, or project-based executive services" → "advisory, project-based, and ongoing executive operating services".
+**FAQ**: accordion keyboard access, group spacing, long-answer readability.
 
-### Not touching (v5 has no changes, or purely off-nav)
+**Privacy/Terms**: verify live, readable, no legacy marketplace/consultant language.
 
-- `AudienceTabs.tsx`, `TriggerBento.tsx`, `CaseSwitcher.tsx`, `CompareTable.tsx`, `StatsBand.tsx` — belong to legacy off-nav routes (`/service`, `/en`, etc.) not in v5 nav; leaving unchanged.
-- `Testimonials.tsx`, `ObjectionList.tsx`, `OperatorSpotlightRail` operator data, `PageHero`, `EngagementTile` — copy already matches v5.
-- Operator profile microcopy in `heroOperators` / `spotlightOperators` arrays — v5 unchanged.
+**Contact**: reverify hardening from prior pass (aria-invalid, focus mgmt, honeypot).
+
+## Phase 6 — Footer
+
+Verify: logo → `/`, email `mailto:`, every column link resolves, copyright year = 2026, mobile spacing.
+
+## Phase 7 — SEO & metadata
+
+Per-route confirm: `title`, `description`, `og:title`, `og:description`, `og:url`, `canonical` (leaf only), `og:image` via `ogImageMeta()`. Titles match user's spec:
+- Home: `Veep | Senior Operators for Work That Can't Wait`
+- Pricing: `Pricing | Veep`
+- About: `About | Veep`
+- Join: `Join Veep | Operator Network`
+- FAQ: `FAQ | Veep`
+
+Verify `robots.txt`, `sitemap.xml`, favicon, single H1 per page, heading hierarchy, meaningful alt text.
+
+Run `seo_chat--trigger_scan` at end.
+
+## Phase 8 — A11y
+
+Check color contrast on `text-cream/60` and lower against `--bg`. Verify focus rings present on all interactive elements. Icon-only buttons have `aria-label` (spot check `SiteHeader` menu button, `ThemeToggle`, carousel controls). Accordion uses proper ARIA (shadcn primitive — already correct).
+
+## Phase 9 — Perf & console
+
+Load each page in preview, capture console errors/warnings, network 404s. Verify below-fold images use `loading="lazy"`. Check for layout shift on hero.
+
+## Phase 10 — Final report
+
+Deliver a structured report covering: routes found, preserved, redirected, intentionally not redirected, broken links fixed, form issues fixed, SEO items completed, remaining launch risks.
 
 ---
 
-## 🎨 Design decisions needed (flagging before build)
+## Technical notes
 
-1. **New "For portfolios" band on the home page** (v5 Section 11, between compare table and "Before you book"). v5 wants:
-  > Eyebrow: "For PE, VC, family offices, and holding companies"
-  > H2: "Portfolio companies don't pause for a search."
-  > Body paragraph + two CTAs: "See how portfolio rosters work" · "Request a capacity audit →"
-   **Options**: (a) match the existing Pricing-page "Portfolios callout" treatment (left navy rule, quiet band) — safest and consistent; (b) build a new dedicated band with more visual weight (image, stats, or split layout). **Default to (a)** unless you want (b).
-2. **v5 Benefits heading says "Four reasons"** but the on-page grid has **six** benefits. Two paths:
-  - (a) Use v5's heading verbatim ("Four reasons to believe…") and accept the mismatch, or
-  - (b) Rephrase heading to "Six reasons to believe. Plus the practical terms." to match the grid count.
-   **Recommend (b)** — cleaner. Confirm which.
+- Route tree lives in `src/routes/`; `routeTree.gen.ts` is generated.
+- Shared metadata helper is `src/lib/seo.ts` (`ogImageMeta()`).
+- Form submission uses `src/lib/wix-application.functions.ts` and `wix-contact.functions.ts`.
+- Theme tokens in `src/styles.css` — do not add new ones.
+- No new dependencies. No new components unless replacing a broken one.
 
-Everything else is a straight text swap with zero structural or design impact. Once you answer the two flags I'll implement in one pass.  
-  
-1. a match existing  
-2. b. six reasons
+## Estimated scope
+
+~15–25 file edits across routes, `SiteHeader`, `SiteFooter`, `PageHero`, form primitives, and metadata blocks. No schema, no server-function changes unless a form bug is found.
+
+## Confirmation needed before build
+
+1. **`index-legacy.tsx`** — delete, or leave as-is?
+2. **Wix form submission** — do you want me to actually submit test payloads through Playwright, or only static/code review?
+3. **Console/network audit** — run Playwright against every live route (adds time), or spot-check homepage + join only?
