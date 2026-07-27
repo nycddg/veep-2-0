@@ -95,7 +95,7 @@ const portfoliosPillars: Pillar[] = [
       "Preferred commercial terms on engagements",
     ],
     href: "/services/executive-bench",
-    panelTitle: "Portfolio Executive Roster",
+    panelTitle: "Portfolio Roster",
     panelRows: [
       { k: "Response SLA", v: "5 business days" },
       { k: "Included", v: "Diagnostics + planning" },

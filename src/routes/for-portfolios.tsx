@@ -66,7 +66,7 @@ const included = [
 export const Route = createFileRoute("/for-portfolios")({
   head: () => ({
     meta: [
-      { title: "For Portfolios — On-call senior operators for the work that can't wait | Veep" },
+      { title: "For Portfolios | Veep Portfolio Roster" },
       {
         name: "description",
         content:
@@ -164,7 +164,7 @@ function Page() {
               </p>
               <ul className="mt-6 space-y-2 text-sm text-cream/85">
                 {[
-                  "Portfolio Program: $75k",
+                  "Portfolio Roster: $75k",
                   "Usage billed separately at preferred rates",
                   "MSA activated once, SOWs per engagement",
                 ].map((x) => (
@@ -187,7 +187,7 @@ function Page() {
               Roster model
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
-              On call operators for the work that can't wait.
+              On-call operators for the work that can't wait.
             </h2>
           </div>
           <div className="max-w-2xl mx-auto">

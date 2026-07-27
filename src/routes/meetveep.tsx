@@ -15,14 +15,14 @@ const BULLETS = [
 export const Route = createFileRoute("/meetveep")({
   head: () => ({
     meta: [
-      { title: "Meet Veep. senior operators for work that can't wait" },
+      { title: "Meet Veep | Senior Operators for Work That Can't Wait" },
       {
         name: "description",
         content:
           "Veep connects founder-led companies with vetted senior operators who step in to own critical work, now. Deployed in under 10 days. 30-day fit guarantee.",
       },
       { name: "robots", content: "noindex, nofollow" },
-      { property: "og:title", content: "Meet Veep. senior operators for work that can't wait" },
+      { property: "og:title", content: "Meet Veep | Senior Operators for Work That Can't Wait" },
       {
         property: "og:description",
         content:
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/meetveep")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Meet Veep. senior operators for work that can't wait" },
+      { name: "twitter:title", content: "Meet Veep | Senior Operators for Work That Can't Wait" },
       {
         name: "twitter:description",
         content:

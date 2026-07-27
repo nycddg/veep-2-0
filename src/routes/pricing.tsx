@@ -14,7 +14,7 @@ const tiers = [
       "Fundraise strategy",
       "Executive decisions",
       "Strategic tradeoffs",
-      "Includes six one hour sessions",
+      "Includes six one-hour sessions",
     ],
   },
   {
@@ -126,7 +126,7 @@ function Page() {
                   <span className="text-2xl text-cream">{t.t}</span>
                   {t.featured && (
                     <span className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent-coral">
-                      Most common
+                      Most requested
                     </span>
                   )}
                 </div>

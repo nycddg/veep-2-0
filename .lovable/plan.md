@@ -1,108 +1,58 @@
+## Goal
 
-# Production Cleanup & Live-Site Audit — veep.work
+A launch-polish pass over the live site. No redesign, no rewrite, no new claims. Verify first, fix only what is actually loose, faint, inconsistent, or broken, then report.
 
-A scoped, restrained pass. No redesign. No new decorative effects. No brand-direction changes. Fix only what's genuinely broken, inconsistent, or launch-blocking.
+## What I already confirmed (pre-plan reads)
 
-## Phase 1 — Route inventory & redirect audit
+- Global type guards exist in `src/styles.css`: `font-bold/extrabold/black` and `font-semibold` are all clamped to weight 500, and `em, i, .italic` are forced to `font-style: normal`. So no 700–900 weights and no italics ship today.
+- `/privacy` and `/terms` already carry title, description, `og:title`, `og:description`, `og:type`, `og:url`, and canonical.
+- Legacy Wix-era routes (`/home`, `/agencies`, `/officehours`, `/memberdashboard`, `/copy-of-*`, `/index-legacy`, operator-name routes, `/services.*`) all resolve to redirects into `/` or a homepage anchor.
 
-Enumerate every file in `src/routes/`, classify as: **live page**, **legacy redirect**, **anchor redirect**, or **stale/orphan**.
+Everything else below is unverified and will be checked before it is changed.
 
-Preserve as live: `/`, `/pricing`, `/about`, `/join`, `/faq`, `/privacy`, `/terms`, `/contact`, `/meetveep`, `/for-portfolios`.
+## Approach
 
-Verify each of these redirect files still points somewhere sensible (spot-check ~30 legacy Wix routes like `/blog`, `/team`, `/agencies`, operator slugs, `/services/*`, `/compare/*`, `/en`, `/sg`, `/copy-of-*`, `/memberdashboard`, `/insights`, `/officehours`, `/operatingpartners`, `/partners`, `/fractional`, `/fundraising`, `/get-started`, `/how-it-works`, `/operators`, `/for-companies`, `/copyright`, `/post/*`, `/index-legacy`).
+Each phase = audit with real signals (route crawl, DOM/computed-style reads, headless browser at 3 viewports), then a narrow set of edits. Nothing gets "fixed" that a check didn't flag.
 
-Flag any orphaned files (e.g. `index-legacy.tsx` — confirm intent, likely delete or convert to redirect).
+### Phase 1 — Route + link crawl
+Enumerate routes from `src/routeTree.gen.ts`. Request each: expect 200 for live pages, correct redirect target for legacy ones. Extract every `<a href>` / `<Link to>` in the codebase and confirm each target exists. Confirm homepage-anchor links from subpages route to `/#anchor` and land. Confirm no Wix URLs remain anywhere.
 
-Confirm `sitemap.xml` matches the live set (currently correct — 10 entries).
+### Phase 2 — Copy proofread
+Dump all user-facing strings per page and read them end to end: typos, grammar, punctuation, capitalization consistency, doubled/missing spaces, raw entities, apostrophe/quote characters, hyphen vs en-dash vs em-dash, service naming, CTA label collisions, unfinished-sounding lines. Includes nav, buttons, form labels, validation and success messages, FAQ answers, footer, legal pages, and all metadata strings. Fixes are corrections only — no new claims, metrics, names, or guarantees.
 
-## Phase 2 — Header/nav on subpages
+### Phase 3 — Typography
+Sample computed styles for headings, body, eyebrow/mono labels, small print, and footer at desktop and mobile. Flag: inconsistent leading/tracking for the same role, over-tracked mono labels, body or footer text below comfortable contrast on the dark canvas, headline wraps that break at bad points, cramped multiline headings. Fix by normalizing to the existing scale — no new type styles.
 
-`SiteHeader` renders 5 hash links (Overview / Operators / Benefits / How it works / Proof) that all point to `/#hash`. On subpages these work via TanStack `Link to="/" hash=`. Verify scroll target IDs exist on the homepage for each. Fix any that silently fail.
+### Phase 4 — Spacing, alignment, and edge discipline
+Screenshot each page at desktop/tablet/mobile. Compare section vertical rhythm, container max-widths, grid gaps, card padding, radii, and border/divider treatment across pages. Tighten outliers to the dominant existing value. No new decorative elements.
 
-## Phase 3 — Copy & HTML-artifact scrub
+### Phase 5 — Component consistency
+Normalize nav + active states, primary/secondary buttons and their CTA arrows, text links, cards and rows, pricing columns, FAQ accordions, and every form control (input, select, checkbox, radio, file upload, error and success blocks), plus footer link groups — so repeated components share one set of tokens and behaviors.
 
-Grep the whole repo for:
-- literal `&nbsp;`, `&amp;`, `&#`, stray HTML entities in JSX text
-- double spaces in JSX string literals
-- `--` where an em dash was intended
-- `spellcheck-` fragments
-- broken apostrophes (`&#39;`, straight quotes where curly were used inconsistently)
+### Phase 6 — Interaction and motion
+Check hover, focus-visible, active, disabled, and loading states on every interactive element. Confirm nothing non-interactive looks clickable and vice versa. Confirm transitions are short and don't shift layout, and that `prefers-reduced-motion` disables/reduces the reveal and tilt effects.
 
-Fix in place without changing meaning.
+### Phase 7 — Forms (`/contact`, `/join`)
+Drive both forms headlessly: empty submit, invalid email, invalid LinkedIn URL, oversized/wrong-type resume, valid submit. Verify required-field marking, inline error text, loading state, duplicate-submit lock, success state, keyboard-only completion, visible focus, and mobile layout. Confirm submissions still reach the existing destination.
 
-## Phase 4 — Visual polish (restrained)
+### Phase 8 — SEO and metadata
+Per live route, assert title, description, canonical, `og:title`/`og:description`/`og:image`/`og:type`/`og:url`, twitter tags, favicon, exactly one `<h1>`, and sane heading order. Confirm redirect-only routes stay out of the sitemap, sitemap covers every indexable page, and `robots.txt` doesn't block anything live.
 
-Only fix clear inconsistencies. Targets:
-- footer spacing across pages (`SiteFooter` is shared — spot check container padding on mobile)
-- CTA label consistency: canonical set = "Book intro call", "Request a capacity audit", "See how it works", "See full pricing", "Apply below", "Submit application". Rename outliers.
-- CTA button treatment: primary = cream pill; secondary = underlined link. Flag hand-rolled variants.
-- Weak text: any `text-white/40` or lower on small copy → bump to `/60` minimum.
-- Mobile: audit `PageHero`, `FooterCTA`, pricing tier grid, operator rail for wrap/overflow.
-- Awkward line breaks on section headers at md/lg widths (already partially addressed in previous passes).
+### Phase 9 — Accessibility
+Contrast-check text, buttons, links, and borders in both themes. Verify keyboard order and visible focus, form label association, aria on accordions and icon-only controls, image alt text, and ≥44px tap targets on mobile.
 
-Explicitly out of scope: adding cards, gradients, glows, glass, new decorative art.
+### Phase 10 — Performance and hygiene
+Collect console errors/warnings, failed asset requests, and oversized images. Remove unused imports and dead components. Confirm images have dimensions or aspect wrappers so nothing shifts on load. Check the build for warnings.
 
-## Phase 5 — Page QA passes
+### Phase 11 — Responsive
+Sweep 390 / 768 / 1440 / 1920 for horizontal overflow, headline wraps, CTA stacking, pricing and comparison table readability, footer layout, nav behavior, clipped content, and oversized mobile gaps.
 
-**Home (`/`)**: verify each of the 15 sections listed renders, has correct anchor ID, and no console errors. Check operator carousel controls, comparison table on mobile (horizontal scroll or stack), mini FAQ accordion.
-
-**Pricing**: verify tier alignment, "See scope" behavior, portfolio callout link, pricing FAQ (already scrubbed for `&nbsp;` in prior pass — reverify).
-
-**About**: hierarchy, founder card spacing, CTA copy.
-
-**Join**: form audit — required fields, email/LinkedIn regex, resume file type/size, focus rings, error/success/failure states, honeypot, duplicate-submit guard, submission destination (Wix Application server fn), consent language.
-
-**FAQ**: accordion keyboard access, group spacing, long-answer readability.
-
-**Privacy/Terms**: verify live, readable, no legacy marketplace/consultant language.
-
-**Contact**: reverify hardening from prior pass (aria-invalid, focus mgmt, honeypot).
-
-## Phase 6 — Footer
-
-Verify: logo → `/`, email `mailto:`, every column link resolves, copyright year = 2026, mobile spacing.
-
-## Phase 7 — SEO & metadata
-
-Per-route confirm: `title`, `description`, `og:title`, `og:description`, `og:url`, `canonical` (leaf only), `og:image` via `ogImageMeta()`. Titles match user's spec:
-- Home: `Veep | Senior Operators for Work That Can't Wait`
-- Pricing: `Pricing | Veep`
-- About: `About | Veep`
-- Join: `Join Veep | Operator Network`
-- FAQ: `FAQ | Veep`
-
-Verify `robots.txt`, `sitemap.xml`, favicon, single H1 per page, heading hierarchy, meaningful alt text.
-
-Run `seo_chat--trigger_scan` at end.
-
-## Phase 8 — A11y
-
-Check color contrast on `text-cream/60` and lower against `--bg`. Verify focus rings present on all interactive elements. Icon-only buttons have `aria-label` (spot check `SiteHeader` menu button, `ThemeToggle`, carousel controls). Accordion uses proper ARIA (shadcn primitive — already correct).
-
-## Phase 9 — Perf & console
-
-Load each page in preview, capture console errors/warnings, network 404s. Verify below-fold images use `loading="lazy"`. Check for layout shift on hero.
-
-## Phase 10 — Final report
-
-Deliver a structured report covering: routes found, preserved, redirected, intentionally not redirected, broken links fixed, form issues fixed, SEO items completed, remaining launch risks.
-
----
+### Phase 12 — Report
+Report by category: pages audited; copy fixes; design polish; routing/link fixes; form fixes; SEO fixes; a11y fixes; performance fixes; remaining launch risks.
 
 ## Technical notes
 
-- Route tree lives in `src/routes/`; `routeTree.gen.ts` is generated.
-- Shared metadata helper is `src/lib/seo.ts` (`ogImageMeta()`).
-- Form submission uses `src/lib/wix-application.functions.ts` and `wix-contact.functions.ts`.
-- Theme tokens in `src/styles.css` — do not add new ones.
-- No new dependencies. No new components unless replacing a broken one.
-
-## Estimated scope
-
-~15–25 file edits across routes, `SiteHeader`, `SiteFooter`, `PageHero`, form primitives, and metadata blocks. No schema, no server-function changes unless a form bug is found.
-
-## Confirmation needed before build
-
-1. **`index-legacy.tsx`** — delete, or leave as-is?
-2. **Wix form submission** — do you want me to actually submit test payloads through Playwright, or only static/code review?
-3. **Console/network audit** — run Playwright against every live route (adds time), or spot-check homepage + join only?
+- Verification uses headless Chromium against the running dev server plus direct HTTP checks, not eyeballing source.
+- All color/spacing changes go through existing semantic tokens in `src/styles.css`; no hardcoded hex or `text-white`/`bg-black` utilities.
+- `src/routeTree.gen.ts` is generated and will not be edited.
+- Expectation setting: several earlier passes already covered metadata, redirects, mobile CTA sizing, light-mode contrast, and `&nbsp;` artifacts. This pass may confirm large parts are already clean — I'll report that honestly rather than churn files to look busy.

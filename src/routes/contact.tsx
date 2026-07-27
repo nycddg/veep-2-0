@@ -7,7 +7,9 @@ import { submitContactInquiry } from "@/lib/wix-contact.functions";
 import { ogImageMeta } from "@/lib/seo";
 
 const searchSchema = z.object({
-  intent: z.string().catch("call"),
+  // Optional so the canonical /contact URL does not 307-redirect to add a
+  // default search param. Absent intent is treated as "call".
+  intent: z.string().optional(),
   outcome: z.string().optional(),
 });
 
