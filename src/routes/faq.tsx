@@ -39,7 +39,7 @@ const groups: { label: string; items: QA[] }[] = [
   {
     label: "Portfolios & partnerships",
     items: [
-      { q: "How does the Executive Roster work for portfolios?", a: "PE firms, family offices, holding companies, independent sponsors, search funds, and multi-company founders can retain Veep as an operating-capacity partner. The Roster typically includes priority matching, quarterly capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits, and preferred commercial terms. Annual Roster pricing is $75k/year, with operator deployments billed separately by SOW." },
+      { q: "How does the Portfolio Roster work?", a: "PE firms, family offices, holding companies, independent sponsors, search funds, and multi-company founders can retain Veep as an operating-capacity partner. The Roster typically includes priority matching, quarterly capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits, and preferred commercial terms. Annual Roster pricing is $75k/year, with operator deployments billed separately by SOW." },
       { q: "Do you have a referral program?", a: "Yes. We share economics with accountants, lenders, search firms, M&A advisors, attorneys, investors, and other partners who send us the right work. The best referrals are companies with critical work that needs senior ownership now." },
     ],
   },
@@ -59,9 +59,9 @@ export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
       { title: "FAQ | Veep" },
-      { name: "description", content: "How Veep engagements work: pricing, timing, operator vetting, fit guarantee, and how the Executive Roster for portfolios works." },
+      { name: "description", content: "How Veep engagements work: pricing, timing, operator vetting, fit guarantee, and how the Portfolio Roster works." },
       { property: "og:title", content: "FAQ — Straight answers on cost, timing & fit | Veep" },
-      { property: "og:description", content: "Pricing, timing, operator vetting, the 30-day fit guarantee, and how Veep's Executive Roster works for portfolios." },
+      { property: "og:description", content: "Pricing, timing, operator vetting, the 30-day fit guarantee, and how Veep's Portfolio Roster works for portfolios." },
       { property: "og:url", content: "https://www.veep.work/faq" },
       ...ogImageMeta(),
     ],

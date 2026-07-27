@@ -126,7 +126,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["ROCKET INTERNET", "KIXIE"],
     summary:
-      "Transaction-ready finance operator with PE roots and marketplace scale; former Principal at Lincolnshire Management ($1.8B AUM), then CFO of a Rocket Internet portfolio company during the build of Indonesia’s largest e-commerce platform.\u00a0",
+      "Transaction-ready finance operator with PE roots and marketplace scale; former Principal at Lincolnshire Management ($1.8B AUM), then CFO of a Rocket Internet portfolio company during the build of Indonesia's largest e-commerce platform.\u00a0",
     chips: ["Tech", "SaaS", "Private Capital"],
     photoUrl: alanPoussaintHeadshot.url,
     photoPosition: "center 15%",
@@ -207,7 +207,7 @@ const problems = [
 ];
 
 const alternatives = [
-  { t: "Full-time hire", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you, and the work waits for the search to finish." },
+  { t: "Permanent hire", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you, and the work waits for the search to finish." },
   { t: "Consulting firms", d: "Smart recommendations. Then they hand you a deck and the work still lands on you or your team." },
   { t: "Freelancers and advisors", d: "Profiles to browse. Variable seniority. More decisions and oversight for the founder, not fewer." },
 ];
@@ -334,7 +334,7 @@ const faqs = [
   },
   {
     q: "How is Veep different from executive search?",
-    a: "Search is for permanent hiring. Veep is for critical work that needs senior ownership before the full-time hire makes sense. The work moves now, while the permanent hiring decision stays open.",
+    a: "Search is for permanent hiring. Veep is for critical work that needs senior ownership before the permanent hire makes sense. The work moves now, while the permanent hiring decision stays open.",
   },
   {
     q: "Who is Veep for?",
