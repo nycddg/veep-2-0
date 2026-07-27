@@ -66,7 +66,7 @@ const included = [
 export const Route = createFileRoute("/for-portfolios")({
   head: () => ({
     meta: [
-      { title: "For Portfolios — On-call senior operators for the work that can't wait | Veep" },
+      { title: "For Portfolios | Veep Portfolio Roster" },
       {
         name: "description",
         content:
