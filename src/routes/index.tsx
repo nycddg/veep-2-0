@@ -403,7 +403,15 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       ...ogImageMeta(),
     ],
-    links: [{ rel: "canonical", href: "https://www.veep.work/" }],
+    links: [
+      { rel: "canonical", href: "https://www.veep.work/" },
+      {
+        rel: "preload",
+        as: "image",
+        href: heroHeadshot.url,
+        fetchpriority: "high",
+      },
+    ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
       { type: "application/ld+json", children: JSON.stringify(serviceSchema) },
