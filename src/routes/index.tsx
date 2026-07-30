@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { BOOKING_URL } from "@/lib/booking";
+import heroHeadshot from "@/assets/operator-headshot.png.asset.json";
 import { LogoWall } from "@/components/site/LogoWall";
 import { Testimonials } from "@/components/site/Testimonials";
 import { OperatorSpotlightRail } from "@/components/site/OperatorSpotlightRail";
