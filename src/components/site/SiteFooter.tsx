@@ -44,13 +44,13 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-background text-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-5">
-          <div className="md:col-span-4">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-x-6 gap-y-9 md:gap-5">
+          <div className="col-span-2 md:col-span-4">
             <Link to="/" className="flex items-center" aria-label="Veep home">
               <img src={wordmarkWhite.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto block light:hidden" />
               <img src={wordmarkNavy.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto hidden light:block" />
             </Link>
-            <p className="mt-5 text-sm text-cream/85 max-w-[20.4rem] leading-relaxed whitespace-pre-line">
+            <p className="mt-5 text-sm text-cream/85 max-w-[20.4rem] leading-relaxed">
               Vetted senior operators who step in to own critical work, now.
               Matched in 72 hours. Deployed in under 10 days.
             </p>
@@ -62,11 +62,11 @@ export function SiteFooter() {
             </a>
           </div>
           {cols.map((c, i) => (
-            <div key={c.title} className={`md:col-span-2 ${i === 0 ? 'md:pl-6 lg:pl-8' : ''}`}>
+            <div key={c.title} className={`min-w-0 md:col-span-2 ${i === 0 ? 'md:pl-6 lg:pl-8' : ''}`}>
               <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-cream/70 font-mono">
                 {c.title}
               </div>
-              <ul className="mt-4 space-y-2.5">
+              <ul className="mt-3.5 space-y-2 md:mt-4 md:space-y-2.5">
                 {c.links.map((l) => (
                   <li key={l.label}>
                      {l.kind === "hash" ? (
@@ -84,9 +84,9 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-cream/70">
-          <div>© {new Date().getFullYear()}&nbsp;The Veep Group, LLC. All rights reserved.</div>
-          <div>Senior operators for work that can't wait.</div>
+        <div className="mt-10 md:mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-3 text-xs leading-relaxed text-cream/70">
+          <div className="text-balance">© {new Date().getFullYear()}&nbsp;The Veep Group,&nbsp;LLC. All rights reserved.</div>
+          <div className="text-balance">Senior operators for work that can't&nbsp;wait.</div>
         </div>
       </div>
     </footer>
