@@ -20,6 +20,8 @@ export function OperatorCanvas() {
           <img
             src={headshotAsset.url}
             alt="Vetted operator headshot"
+            width={1344}
+            height={756}
             loading="eager"
             fetchPriority="high"
             decoding="async"
