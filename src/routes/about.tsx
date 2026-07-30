@@ -6,7 +6,7 @@ import { ogImageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About | Veep" },
+      { title: "About Veep — Our Founders and Operating Principles" },
       {
         name: "description",
         content:
