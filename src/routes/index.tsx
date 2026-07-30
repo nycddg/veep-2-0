@@ -388,13 +388,13 @@ const serviceSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Veep | Senior Operators for Work That Can't Wait" },
+      { title: "Veep — Senior Operators for Critical Work That Can't Wait" },
       {
         name: "description",
         content:
           "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
       },
-      { property: "og:title", content: "Critical work, owned. | Veep" },
+      { property: "og:title", content: "Veep — Senior Operators for Critical Work That Can't Wait" },
       {
         property: "og:description",
         content:
