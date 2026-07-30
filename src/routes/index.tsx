@@ -591,7 +591,7 @@ function Index() {
 
       {/* 5 — BENEFITS */}
       {/* 4.5 — OPERATORS SPOTLIGHT */}
-      <Reveal as="section" id="operators" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <Reveal as="section" id="operators" className="hidden md:block py-20 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
 
           <div className="max-w-5xl mb-12 md:mb-14">
@@ -751,7 +751,7 @@ function Index() {
       </section>
 
       {/* 8 — PROOF */}
-      <Reveal as="section" id="proof" className="py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="proof" className="hidden md:block py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
@@ -807,7 +807,7 @@ function Index() {
       </Reveal>
 
       {/* 9 — DIFFERENTIATION */}
-      <Reveal as="section" id="vs" className="bg-surface-band py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="vs" className="hidden md:block bg-surface-band py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
