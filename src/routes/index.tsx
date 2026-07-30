@@ -458,7 +458,7 @@ function Index() {
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
           <h1 className="text-[2.5rem] leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream mb-6">
-            Veep — Senior Operators for Critical Work That Can't Wait.
+            Because a job always needs to be done.
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
