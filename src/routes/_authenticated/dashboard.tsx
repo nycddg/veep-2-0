@@ -190,23 +190,32 @@ function Dashboard() {
 
         <div>
           <h2 className="text-xl text-cream tracking-tight">Recent wins</h2>
-          <div className="mt-5 divide-y divide-white/8 rounded-2xl border border-white/10">
-            {wins.isLoading && <p className="p-5 text-sm text-stone">Loading…</p>}
-            {!wins.isLoading && (wins.data ?? []).length === 0 && (
-              <p className="p-5 text-sm text-stone">No wins posted yet.</p>
+          <div className="mt-5 space-y-3">
+            {wins.isLoading && <p className="text-sm text-stone">Loading…</p>}
+            {!wins.isLoading && winCards.length === 0 && (
+              <p className="text-sm text-stone">No wins posted yet.</p>
             )}
-            {(wins.data ?? []).map(
-              (win: { id: string; role: string; engagement_type: string; length: string; industry?: string }) => (
-                <div key={win.id} className="p-5">
-                  <div className="text-sm text-cream">{win.role}</div>
-                  <div className="mt-1 text-xs text-stone">
-                    {win.engagement_type}
-                    {win.industry ? ` · ${win.industry}` : ""}
-                    {win.length ? ` · ${win.length}` : ""}
-                  </div>
+            {winCards.map((win) => (
+              <article
+                key={win.id}
+                className="rounded-2xl border border-white/10 bg-[color:var(--surface-raised)] p-5"
+              >
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <h3 className="min-w-0 flex-1 text-base text-cream">{win.role}</h3>
+                  <span className="shrink-0 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-[11px] uppercase tracking-[0.1em] text-accent">
+                    Closed
+                  </span>
                 </div>
-              ),
-            )}
+                {win.blurb && (
+                  <p className="mt-2 text-sm leading-relaxed text-stone">{win.blurb}</p>
+                )}
+                {win.meta && (
+                  <p className="mt-3 text-[11px] uppercase tracking-[0.1em] text-stone-soft">
+                    {win.meta}
+                  </p>
+                )}
+              </article>
+            ))}
           </div>
         </div>
       </div>
