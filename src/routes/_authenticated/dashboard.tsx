@@ -120,7 +120,7 @@ function Dashboard() {
             {!leads.isLoading && visible.length === 0 && (
               <p className="text-sm text-stone">No live leads in this stage right now.</p>
             )}
-            {visible.map((lead: Lead) => (
+            {visible.map((lead: { id: string; one_liner: string; role_needed: string; stage: string }) => (
               <article
                 key={lead.id}
                 className="rounded-2xl border border-white/10 bg-[color:var(--surface-raised)] p-5"
@@ -146,7 +146,7 @@ function Dashboard() {
             {!wins.isLoading && (wins.data ?? []).length === 0 && (
               <p className="p-5 text-sm text-stone">No wins posted yet.</p>
             )}
-            {(wins.data ?? []).map((win: Win) => (
+            {(wins.data ?? []).map((win: { id: string; role: string; engagement_type: string; length: string }) => (
               <div key={win.id} className="p-5">
                 <div className="text-sm text-cream">{win.role}</div>
                 <div className="mt-1 text-xs text-stone">
