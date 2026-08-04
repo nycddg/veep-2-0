@@ -15,6 +15,14 @@ export type SheetLead = {
   stage: string;
 };
 
+export type SheetWin = {
+  id: string;
+  role: string;
+  engagement_type: string;
+  length: string;
+  industry: string;
+};
+
 export function isSheetsConfigured(): boolean {
   return true; // public CSV endpoint needs no secrets
 }
@@ -112,9 +120,12 @@ function pick(rec: Record<string, string>, keys: string[], fallback = ""): strin
   return fallback;
 }
 
-// The Veep dashboard sheet is a single tab (gid=0) of leads/opportunities
-// exported from Copper CRM. There is no separate "Wins" tab — wins are a
-// curated list maintained as admin entries in the database.
+// The Veep dashboard sheet has two tabs:
+//   gid=0          — live leads/opportunities exported from Copper CRM
+//   gid=2126316840 — closed wins (Stage=Won)
+// Both tabs share the same column layout. No connector or API keys required.
+const WINS_GID = "2126316840";
+
 export async function fetchSheetLeads(): Promise<SheetLead[]> {
   const records = toRecords(await fetchCsv("0"));
   return records
@@ -125,5 +136,22 @@ export async function fetchSheetLeads(): Promise<SheetLead[]> {
       one_liner: pick(rec, ["blurb", "description", "one liner", "oneliner", "summary"]),
       role_needed: pick(rec, ["role needed", "role", "roleneeded"], "Senior operator"),
       stage: pick(rec, ["stage", "status"], "Scoping"),
+    }));
+}
+
+export async function fetchSheetWins(): Promise<SheetWin[]> {
+  const records = toRecords(await fetchCsv(WINS_GID));
+  return records
+    .filter(
+      (rec) =>
+        norm(pick(rec, ["stage", "status"])) === "won" &&
+        norm(pick(rec, ["show on dashboard", "show", "visible"])) === "yes",
+    )
+    .map((rec, i) => ({
+      id: `sheet-win-${pick(rec, ["opp id", "oppid", "id"], String(i))}`,
+      role: pick(rec, ["role needed", "role", "roleneeded"], "Senior operator"),
+      engagement_type: pick(rec, ["engagement", "engagement type", "engagementtype"], "—"),
+      length: pick(rec, ["term", "length", "duration"], "—"),
+      industry: pick(rec, ["industry"], ""),
     }));
 }

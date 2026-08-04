@@ -38,8 +38,10 @@ function Dashboard() {
   const leads = sheetData
     ? { data: sheetData.leads, isLoading: sheet.isLoading, error: sheet.error }
     : manualLeads;
-  // Wins are a curated list maintained as admin entries — the sheet has no wins tab.
-  const wins = manualWins;
+  // Wins come from the live Google Sheet (Wins tab) when available, else admin entries.
+  const wins = sheetData
+    ? { data: sheetData.wins, isLoading: sheet.isLoading, error: sheet.error }
+    : manualWins;
 
   async function signOut() {
     await queryClient.cancelQueries();
@@ -144,14 +146,18 @@ function Dashboard() {
             {!wins.isLoading && (wins.data ?? []).length === 0 && (
               <p className="p-5 text-sm text-stone">No wins posted yet.</p>
             )}
-            {(wins.data ?? []).map((win: { id: string; role: string; engagement_type: string; length: string }) => (
-              <div key={win.id} className="p-5">
-                <div className="text-sm text-cream">{win.role}</div>
-                <div className="mt-1 text-xs text-stone">
-                  {win.engagement_type} · {win.length}
+            {(wins.data ?? []).map(
+              (win: { id: string; role: string; engagement_type: string; length: string; industry?: string }) => (
+                <div key={win.id} className="p-5">
+                  <div className="text-sm text-cream">{win.role}</div>
+                  <div className="mt-1 text-xs text-stone">
+                    {win.engagement_type}
+                    {win.industry ? ` · ${win.industry}` : ""}
+                    {win.length ? ` · ${win.length}` : ""}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ),
+            )}
           </div>
         </div>
       </div>
