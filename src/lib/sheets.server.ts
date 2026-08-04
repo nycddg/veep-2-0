@@ -1,10 +1,11 @@
 // Google Sheets reader for the partner dashboard. Server-only.
-// Reads two tabs ("Leads" and "Wins") from the Veep dashboard sheet through
-// the Lovable connector gateway. Columns are matched by header name.
-
-const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_sheets/v4";
+// Reads two tabs ("Leads" and "Wins") from the Veep dashboard sheet via
+// Google's public CSV export URL — no connector, no API keys required.
+// The sheet must be shared as "Anyone with the link can view".
 
 export const SHEET_ID = "1Amf9zHrHhLEi-YFmRQT7EquLT1BrZcfVmRfaZ_vuTIQ";
+
+const CSV_BASE = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=`;
 
 export type SheetLead = {
   id: string;
@@ -23,30 +24,75 @@ export type SheetWin = {
 };
 
 export function isSheetsConfigured(): boolean {
-  return Boolean(process.env["LOVABLE_API_KEY"] && process.env["GOOGLE_SHEETS_API_KEY"]);
+  return true; // public CSV endpoint needs no secrets
 }
 
-async function readRange(range: string): Promise<string[][]> {
-  const lovableKey = process.env["LOVABLE_API_KEY"];
-  const connectionKey = process.env["GOOGLE_SHEETS_API_KEY"];
-  if (!lovableKey || !connectionKey) throw new Error("Google Sheets is not connected");
+/** Parses a CSV string into a 2D array of trimmed cell values. */
+function parseCsv(csv: string): string[][] {
+  const rows: string[][] = [];
+  let current: string[] = [];
+  let field = "";
+  let inQuotes = false;
 
-  const res = await fetch(
-    `${GATEWAY_URL}/spreadsheets/${SHEET_ID}/values/${range}?majorDimension=ROWS`,
-    {
-      headers: {
-        Authorization: `Bearer ${lovableKey}`,
-        "X-Connection-Api-Key": connectionKey,
-      },
-    },
-  );
+  for (let i = 0; i < csv.length; i++) {
+    const ch = csv[i];
+
+    if (inQuotes) {
+      if (ch === '"') {
+        if (csv[i + 1] === '"') {
+          field += '"';
+          i++;
+        } else {
+          inQuotes = false;
+        }
+      } else {
+        field += ch;
+      }
+      continue;
+    }
+
+    if (ch === '"') {
+      inQuotes = true;
+      continue;
+    }
+
+    if (ch === ",") {
+      current.push(field.trim());
+      field = "";
+      continue;
+    }
+
+    if (ch === "\n" || ch === "\r") {
+      // Handle \r\n
+      if (ch === "\r" && csv[i + 1] === "\n") i++;
+      current.push(field.trim());
+      field = "";
+      rows.push(current);
+      current = [];
+      continue;
+    }
+
+    field += ch;
+  }
+
+  // last field/row
+  if (field !== "" || current.length > 0) {
+    current.push(field.trim());
+    rows.push(current);
+  }
+
+  return rows;
+}
+
+async function fetchCsv(sheetName: string): Promise<string[][]> {
+  const res = await fetch(`${CSV_BASE}${encodeURIComponent(sheetName)}`);
   if (!res.ok) {
     const text = await res.text();
-    console.error(`Google Sheets request failed [${res.status}] ${range}: ${text}`);
-    throw new Error(`Google Sheets request failed [${res.status}]: ${text}`);
+    console.error(`Google Sheets CSV fetch failed [${res.status}] ${sheetName}: ${text}`);
+    throw new Error(`Google Sheets CSV fetch failed [${res.status}]: ${text}`);
   }
-  const json = (await res.json()) as { values?: string[][] };
-  return json.values ?? [];
+  const csv = await res.text();
+  return parseCsv(csv);
 }
 
 function norm(s: string): string {
@@ -75,7 +121,7 @@ function pick(rec: Record<string, string>, keys: string[], fallback = ""): strin
 }
 
 export async function fetchSheetLeads(): Promise<SheetLead[]> {
-  const records = toRecords(await readRange("Leads!A1:Z1000"));
+  const records = toRecords(await fetchCsv("Leads"));
   return records.map((rec, i) => ({
     id: `sheet-lead-${i}`,
     pseudonym: pick(rec, ["pseudonym", "name", "company"], ""),
@@ -86,7 +132,7 @@ export async function fetchSheetLeads(): Promise<SheetLead[]> {
 }
 
 export async function fetchSheetWins(): Promise<SheetWin[]> {
-  const records = toRecords(await readRange("Wins!A1:Z1000"));
+  const records = toRecords(await fetchCsv("Wins"));
   return records.map((rec, i) => ({
     id: `sheet-win-${i}`,
     role: pick(rec, ["role", "title"], "Senior operator"),
