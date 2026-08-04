@@ -22,6 +22,50 @@ export const Route = createFileRoute("/_authenticated/dashboard")({
   component: Dashboard,
 });
 
+type LeadRow = {
+  id: string;
+  role_needed?: string;
+  one_liner?: string;
+  blurb?: string;
+  stage: string;
+  func?: string;
+  industry?: string;
+  engagement_type?: string;
+};
+type WinRow = {
+  id: string;
+  role: string;
+  blurb?: string;
+  engagement_type?: string;
+  length?: string;
+  industry?: string;
+  func?: string;
+  company?: string;
+};
+type LeadCard = { id: string; role: string; blurb: string; stage: string; meta: string };
+type WinCard = { id: string; role: string; blurb: string; meta: string };
+
+function joinMeta(parts: (string | undefined)[]): string {
+  return parts.filter((p): p is string => Boolean(p)).join(" · ");
+}
+function toLeadCard(l: LeadRow): LeadCard {
+  return {
+    id: l.id,
+    role: l.role_needed ?? "Senior operator",
+    blurb: l.one_liner ?? l.blurb ?? "",
+    stage: l.stage,
+    meta: joinMeta([l.func, l.industry, l.engagement_type]),
+  };
+}
+function toWinCard(w: WinRow): WinCard {
+  return {
+    id: w.id,
+    role: w.role,
+    blurb: w.blurb ?? "",
+    meta: joinMeta([w.func, w.industry, w.engagement_type, w.company]),
+  };
+}
+
 function Dashboard() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
@@ -50,9 +94,9 @@ function Dashboard() {
     navigate({ to: "/auth", replace: true });
   }
 
-  const visible = (leads.data ?? []).filter(
-    (l: { stage: string }) => stage === "All" || l.stage === stage,
-  );
+  const leadCards = (leads.data ?? []).map((l) => toLeadCard(l as LeadRow));
+  const visible = leadCards.filter((c) => stage === "All" || c.stage === stage);
+  const winCards = (wins.data ?? []).map((w) => toWinCard(w as WinRow));
   const denied = manualLeads.error || manualWins.error;
 
   return (
@@ -120,20 +164,25 @@ function Dashboard() {
             {!leads.isLoading && visible.length === 0 && (
               <p className="text-sm text-stone">No live leads in this stage right now.</p>
             )}
-            {visible.map((lead: { id: string; one_liner: string; role_needed: string; stage: string }) => (
+            {visible.map((lead) => (
               <article
                 key={lead.id}
                 className="rounded-2xl border border-white/10 bg-[color:var(--surface-raised)] p-5"
               >
                 <div className="flex flex-wrap items-start justify-between gap-2">
-                  <h3 className="min-w-0 flex-1 text-base text-cream">{lead.one_liner}</h3>
+                  <h3 className="min-w-0 flex-1 text-base text-cream">{lead.role}</h3>
                   <span className="shrink-0 rounded-full border border-accent/40 px-2.5 py-1 text-[11px] uppercase tracking-[0.1em] text-accent">
                     {lead.stage}
                   </span>
                 </div>
-                <p className="mt-3 text-xs uppercase tracking-[0.1em] text-stone-soft">
-                  Role needed · <span className="text-cream/90">{lead.role_needed}</span>
-                </p>
+                {lead.blurb && (
+                  <p className="mt-2 text-sm leading-relaxed text-stone">{lead.blurb}</p>
+                )}
+                {lead.meta && (
+                  <p className="mt-3 text-[11px] uppercase tracking-[0.1em] text-stone-soft">
+                    {lead.meta}
+                  </p>
+                )}
               </article>
             ))}
           </div>
@@ -141,23 +190,32 @@ function Dashboard() {
 
         <div>
           <h2 className="text-xl text-cream tracking-tight">Recent wins</h2>
-          <div className="mt-5 divide-y divide-white/8 rounded-2xl border border-white/10">
-            {wins.isLoading && <p className="p-5 text-sm text-stone">Loading…</p>}
-            {!wins.isLoading && (wins.data ?? []).length === 0 && (
-              <p className="p-5 text-sm text-stone">No wins posted yet.</p>
+          <div className="mt-5 space-y-3">
+            {wins.isLoading && <p className="text-sm text-stone">Loading…</p>}
+            {!wins.isLoading && winCards.length === 0 && (
+              <p className="text-sm text-stone">No wins posted yet.</p>
             )}
-            {(wins.data ?? []).map(
-              (win: { id: string; role: string; engagement_type: string; length: string; industry?: string }) => (
-                <div key={win.id} className="p-5">
-                  <div className="text-sm text-cream">{win.role}</div>
-                  <div className="mt-1 text-xs text-stone">
-                    {win.engagement_type}
-                    {win.industry ? ` · ${win.industry}` : ""}
-                    {win.length ? ` · ${win.length}` : ""}
-                  </div>
+            {winCards.map((win) => (
+              <article
+                key={win.id}
+                className="rounded-2xl border border-white/10 bg-[color:var(--surface-raised)] p-5"
+              >
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <h3 className="min-w-0 flex-1 text-base text-cream">{win.role}</h3>
+                  <span className="shrink-0 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-[11px] uppercase tracking-[0.1em] text-accent">
+                    Closed
+                  </span>
                 </div>
-              ),
-            )}
+                {win.blurb && (
+                  <p className="mt-2 text-sm leading-relaxed text-stone">{win.blurb}</p>
+                )}
+                {win.meta && (
+                  <p className="mt-3 text-[11px] uppercase tracking-[0.1em] text-stone-soft">
+                    {win.meta}
+                  </p>
+                )}
+              </article>
+            ))}
           </div>
         </div>
       </div>

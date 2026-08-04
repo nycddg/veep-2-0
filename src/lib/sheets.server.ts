@@ -6,6 +6,7 @@
 export const SHEET_ID = "1Amf9zHrHhLEi-YFmRQT7EquLT1BrZcfVmRfaZ_vuTIQ";
 
 const CSV_BASE = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=`;
+const GID_BASE = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=`;
 
 export type SheetLead = {
   id: string;
@@ -13,14 +14,20 @@ export type SheetLead = {
   one_liner: string;
   role_needed: string;
   stage: string;
+  func: string;
+  industry: string;
+  engagement_type: string;
 };
 
 export type SheetWin = {
   id: string;
   role: string;
+  blurb: string;
   engagement_type: string;
   length: string;
   industry: string;
+  func: string;
+  company: string;
 };
 
 export function isSheetsConfigured(): boolean {
@@ -84,11 +91,14 @@ function parseCsv(csv: string): string[][] {
   return rows;
 }
 
-async function fetchCsv(sheetName: string): Promise<string[][]> {
-  const res = await fetch(`${CSV_BASE}${encodeURIComponent(sheetName)}`);
+async function fetchCsv(sheetRef: string): Promise<string[][]> {
+  const url = sheetRef.startsWith("gid:")
+    ? `${GID_BASE}${encodeURIComponent(sheetRef.slice(4))}`
+    : `${CSV_BASE}${encodeURIComponent(sheetRef)}`;
+  const res = await fetch(url);
   if (!res.ok) {
     const text = await res.text();
-    console.error(`Google Sheets CSV fetch failed [${res.status}] ${sheetName}: ${text}`);
+    console.error(`Google Sheets CSV fetch failed [${res.status}] ${sheetRef}: ${text}`);
     throw new Error(`Google Sheets CSV fetch failed [${res.status}]: ${text}`);
   }
   const csv = await res.text();
@@ -136,11 +146,14 @@ export async function fetchSheetLeads(): Promise<SheetLead[]> {
       one_liner: pick(rec, ["blurb", "description", "one liner", "oneliner", "summary"]),
       role_needed: pick(rec, ["role needed", "role", "roleneeded"], "Senior operator"),
       stage: pick(rec, ["stage", "status"], "Scoping"),
+      func: pick(rec, ["function", "func"], ""),
+      industry: pick(rec, ["industry"], ""),
+      engagement_type: pick(rec, ["engagement", "engagement type", "engagementtype"], ""),
     }));
 }
 
 export async function fetchSheetWins(): Promise<SheetWin[]> {
-  const records = toRecords(await fetchCsv(WINS_GID));
+  const records = toRecords(await fetchCsv(`gid:${WINS_GID}`));
   return records
     .filter(
       (rec) =>
@@ -150,8 +163,11 @@ export async function fetchSheetWins(): Promise<SheetWin[]> {
     .map((rec, i) => ({
       id: `sheet-win-${pick(rec, ["opp id", "oppid", "id"], String(i))}`,
       role: pick(rec, ["role needed", "role", "roleneeded"], "Senior operator"),
+      blurb: pick(rec, ["blurb", "description", "one liner", "oneliner", "summary"]),
       engagement_type: pick(rec, ["engagement", "engagement type", "engagementtype"], "—"),
       length: pick(rec, ["term", "length", "duration"], "—"),
       industry: pick(rec, ["industry"], ""),
+      func: pick(rec, ["function", "func"], ""),
+      company: pick(rec, ["company", "pseudonym", "name"], ""),
     }));
 }
