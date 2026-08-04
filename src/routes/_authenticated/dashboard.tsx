@@ -32,12 +32,13 @@ function Dashboard() {
   const copper = useCopperDashboard();
   const [stage, setStage] = useState<string>("All");
 
-  const liveFromCopper = copper.data?.configured === true;
-  const leads = liveFromCopper
-    ? { data: copper.data.leads, isLoading: copper.isLoading, error: copper.error }
+  const copperData = copper.data?.configured ? copper.data : null;
+  const liveFromCopper = copperData !== null;
+  const leads = copperData
+    ? { data: copperData.leads, isLoading: copper.isLoading, error: copper.error }
     : manualLeads;
-  const wins = liveFromCopper
-    ? { data: copper.data.wins, isLoading: copper.isLoading, error: copper.error }
+  const wins = copperData
+    ? { data: copperData.wins, isLoading: copper.isLoading, error: copper.error }
     : manualWins;
 
   async function signOut() {
