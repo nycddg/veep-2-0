@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import { supabase } from "@/integrations/supabase/client";
+import { getCopperDashboard } from "@/lib/copper.functions";
 
 export type Lead = {
   id: string;
@@ -70,5 +72,19 @@ export function useWins(includeArchived = false) {
       if (error) throw error;
       return (data ?? []) as Win[];
     },
+  });
+}
+
+/**
+ * Live read from Copper CRM. Returns configured:false until COPPER_API_KEY and
+ * COPPER_USER_EMAIL are set, so the dashboard falls back to manual entries.
+ */
+export function useCopperDashboard() {
+  const fetchCopper = useServerFn(getCopperDashboard);
+  return useQuery({
+    queryKey: ["copper-dashboard"],
+    queryFn: () => fetchCopper(),
+    staleTime: 60_000,
+    retry: false,
   });
 }

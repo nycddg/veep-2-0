@@ -2,7 +2,14 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { useIsAdmin, useLeads, useSessionUser, useWins, LEAD_STAGES } from "@/lib/partner-data";
+import {
+  useCopperDashboard,
+  useIsAdmin,
+  useLeads,
+  useSessionUser,
+  useWins,
+  LEAD_STAGES,
+} from "@/lib/partner-data";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
@@ -20,9 +27,18 @@ function Dashboard() {
   const queryClient = useQueryClient();
   const { data: user } = useSessionUser();
   const { data: isAdmin } = useIsAdmin();
-  const leads = useLeads();
-  const wins = useWins();
+  const manualLeads = useLeads();
+  const manualWins = useWins();
+  const copper = useCopperDashboard();
   const [stage, setStage] = useState<string>("All");
+
+  const liveFromCopper = copper.data?.configured === true;
+  const leads = liveFromCopper
+    ? { data: copper.data.leads, isLoading: copper.isLoading, error: copper.error }
+    : manualLeads;
+  const wins = liveFromCopper
+    ? { data: copper.data.wins, isLoading: copper.isLoading, error: copper.error }
+    : manualWins;
 
   async function signOut() {
     await queryClient.cancelQueries();
@@ -32,7 +48,7 @@ function Dashboard() {
   }
 
   const visible = (leads.data ?? []).filter((l) => stage === "All" || l.stage === stage);
-  const denied = leads.error || wins.error;
+  const denied = manualLeads.error || manualWins.error;
 
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
@@ -46,6 +62,9 @@ function Dashboard() {
           </h1>
           <p className="mt-2 text-sm text-stone">
             Signed in as {user?.email}. Confidential — for Veep operating partners only.
+          </p>
+          <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">
+            Source: {liveFromCopper ? "Copper CRM (live)" : "Veep admin entries"}
           </p>
         </div>
         <div className="flex items-center gap-2">
