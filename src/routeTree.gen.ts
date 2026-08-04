@@ -61,10 +61,12 @@ import { Route as CompareRouteImport } from './routes/compare'
 import { Route as BusinessosRouteImport } from './routes/businessos'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AndrewsilverRouteImport } from './routes/andrewsilver'
 import { Route as AlasdairlloydjonesRouteImport } from './routes/alasdairlloydjones'
 import { Route as AgenciesRouteImport } from './routes/agencies'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesInterimRouteImport } from './routes/services.interim'
@@ -74,6 +76,7 @@ import { Route as ServicesAiOperatorsRouteImport } from './routes/services.ai-op
 import { Route as PostSplatRouteImport } from './routes/post.$'
 import { Route as CompareVsExecutiveSearchRouteImport } from './routes/compare.vs-executive-search'
 import { Route as CompareVsConsultantsRouteImport } from './routes/compare.vs-consultants'
+import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 
 const WebinarRoute = WebinarRouteImport.update({
   id: '/webinar',
@@ -336,6 +339,11 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AndrewsilverRoute = AndrewsilverRouteImport.update({
   id: '/andrewsilver',
   path: '/andrewsilver',
@@ -354,6 +362,10 @@ const AgenciesRoute = AgenciesRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -402,6 +414,11 @@ const CompareVsConsultantsRoute = CompareVsConsultantsRouteImport.update({
   path: '/vs-consultants',
   getParentRoute: () => CompareRoute,
 } as any)
+const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -409,6 +426,7 @@ export interface FileRoutesByFullPath {
   '/agencies': typeof AgenciesRoute
   '/alasdairlloydjones': typeof AlasdairlloydjonesRoute
   '/andrewsilver': typeof AndrewsilverRoute
+  '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
   '/book': typeof BookRoute
   '/businessos': typeof BusinessosRoute
@@ -461,6 +479,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/victoriakasumu': typeof VictoriakasumuRoute
   '/webinar': typeof WebinarRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
   '/post/$': typeof PostSplatRoute
@@ -476,6 +495,7 @@ export interface FileRoutesByTo {
   '/agencies': typeof AgenciesRoute
   '/alasdairlloydjones': typeof AlasdairlloydjonesRoute
   '/andrewsilver': typeof AndrewsilverRoute
+  '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
   '/book': typeof BookRoute
   '/businessos': typeof BusinessosRoute
@@ -527,6 +547,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/victoriakasumu': typeof VictoriakasumuRoute
   '/webinar': typeof WebinarRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
   '/post/$': typeof PostSplatRoute
@@ -539,10 +560,12 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/agencies': typeof AgenciesRoute
   '/alasdairlloydjones': typeof AlasdairlloydjonesRoute
   '/andrewsilver': typeof AndrewsilverRoute
+  '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
   '/book': typeof BookRoute
   '/businessos': typeof BusinessosRoute
@@ -595,6 +618,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/victoriakasumu': typeof VictoriakasumuRoute
   '/webinar': typeof WebinarRoute
+  '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
   '/post/$': typeof PostSplatRoute
@@ -612,6 +636,7 @@ export interface FileRouteTypes {
     | '/agencies'
     | '/alasdairlloydjones'
     | '/andrewsilver'
+    | '/auth'
     | '/blog'
     | '/book'
     | '/businessos'
@@ -664,6 +689,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/victoriakasumu'
     | '/webinar'
+    | '/dashboard'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
     | '/post/$'
@@ -679,6 +705,7 @@ export interface FileRouteTypes {
     | '/agencies'
     | '/alasdairlloydjones'
     | '/andrewsilver'
+    | '/auth'
     | '/blog'
     | '/book'
     | '/businessos'
@@ -730,6 +757,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/victoriakasumu'
     | '/webinar'
+    | '/dashboard'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
     | '/post/$'
@@ -741,10 +769,12 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/about'
     | '/agencies'
     | '/alasdairlloydjones'
     | '/andrewsilver'
+    | '/auth'
     | '/blog'
     | '/book'
     | '/businessos'
@@ -797,6 +827,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/victoriakasumu'
     | '/webinar'
+    | '/_authenticated/dashboard'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
     | '/post/$'
@@ -809,10 +840,12 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   AgenciesRoute: typeof AgenciesRoute
   AlasdairlloydjonesRoute: typeof AlasdairlloydjonesRoute
   AndrewsilverRoute: typeof AndrewsilverRoute
+  AuthRoute: typeof AuthRoute
   BlogRoute: typeof BlogRoute
   BookRoute: typeof BookRoute
   BusinessosRoute: typeof BusinessosRoute
@@ -1234,6 +1267,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/andrewsilver': {
       id: '/andrewsilver'
       path: '/andrewsilver'
@@ -1260,6 +1300,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -1325,8 +1372,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CompareVsConsultantsRouteImport
       parentRoute: typeof CompareRoute
     }
+    '/_authenticated/dashboard': {
+      id: '/_authenticated/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface CompareRouteChildren {
   CompareVsConsultantsRoute: typeof CompareVsConsultantsRoute
@@ -1363,10 +1428,12 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AgenciesRoute: AgenciesRoute,
   AlasdairlloydjonesRoute: AlasdairlloydjonesRoute,
   AndrewsilverRoute: AndrewsilverRoute,
+  AuthRoute: AuthRoute,
   BlogRoute: BlogRoute,
   BookRoute: BookRoute,
   BusinessosRoute: BusinessosRoute,
