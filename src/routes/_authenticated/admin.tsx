@@ -95,7 +95,7 @@ function LeadsAdmin() {
     qc.invalidateQueries({ queryKey: ["leads"] });
   }
 
-  async function patch(id: string, values: Record<string, unknown>) {
+  async function patch(id: string, values: { stage?: string; archived?: boolean }) {
     await supabase.from("leads").update(values).eq("id", id);
     qc.invalidateQueries({ queryKey: ["leads"] });
   }
@@ -170,7 +170,7 @@ function WinsAdmin() {
     qc.invalidateQueries({ queryKey: ["wins"] });
   }
 
-  async function patch(id: string, values: Record<string, unknown>) {
+  async function patch(id: string, values: { archived?: boolean }) {
     await supabase.from("wins").update(values).eq("id", id);
     qc.invalidateQueries({ queryKey: ["wins"] });
   }
