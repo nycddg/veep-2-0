@@ -15,6 +15,14 @@ export type SheetLead = {
   stage: string;
 };
 
+export type SheetWin = {
+  id: string;
+  role: string;
+  engagement_type: string;
+  length: string;
+  industry: string;
+};
+
 export function isSheetsConfigured(): boolean {
   return true; // public CSV endpoint needs no secrets
 }
