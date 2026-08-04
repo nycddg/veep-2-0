@@ -94,9 +94,9 @@ function Dashboard() {
     navigate({ to: "/auth", replace: true });
   }
 
-  const visible = (leads.data ?? []).filter(
-    (l: { stage: string }) => stage === "All" || l.stage === stage,
-  );
+  const leadCards = (leads.data ?? []).map((l) => toLeadCard(l as LeadRow));
+  const visible = leadCards.filter((c) => stage === "All" || c.stage === stage);
+  const winCards = (wins.data ?? []).map((w) => toWinCard(w as WinRow));
   const denied = manualLeads.error || manualWins.error;
 
   return (
