@@ -77,6 +77,7 @@ import { Route as PostSplatRouteImport } from './routes/post.$'
 import { Route as CompareVsExecutiveSearchRouteImport } from './routes/compare.vs-executive-search'
 import { Route as CompareVsConsultantsRouteImport } from './routes/compare.vs-consultants'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 
 const WebinarRoute = WebinarRouteImport.update({
   id: '/webinar',
@@ -419,6 +420,11 @@ const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -479,6 +485,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/victoriakasumu': typeof VictoriakasumuRoute
   '/webinar': typeof WebinarRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
@@ -547,6 +554,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/victoriakasumu': typeof VictoriakasumuRoute
   '/webinar': typeof WebinarRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
@@ -618,6 +626,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/victoriakasumu': typeof VictoriakasumuRoute
   '/webinar': typeof WebinarRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
   '/compare/vs-executive-search': typeof CompareVsExecutiveSearchRoute
@@ -689,6 +698,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/victoriakasumu'
     | '/webinar'
+    | '/admin'
     | '/dashboard'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
@@ -757,6 +767,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/victoriakasumu'
     | '/webinar'
+    | '/admin'
     | '/dashboard'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
@@ -827,6 +838,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/victoriakasumu'
     | '/webinar'
+    | '/_authenticated/admin'
     | '/_authenticated/dashboard'
     | '/compare/vs-consultants'
     | '/compare/vs-executive-search'
@@ -1379,14 +1391,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedDashboardRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
   AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
   AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
 }
 
