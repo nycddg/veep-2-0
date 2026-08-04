@@ -22,6 +22,50 @@ export const Route = createFileRoute("/_authenticated/dashboard")({
   component: Dashboard,
 });
 
+type LeadRow = {
+  id: string;
+  role_needed?: string;
+  one_liner?: string;
+  blurb?: string;
+  stage: string;
+  func?: string;
+  industry?: string;
+  engagement_type?: string;
+};
+type WinRow = {
+  id: string;
+  role: string;
+  blurb?: string;
+  engagement_type?: string;
+  length?: string;
+  industry?: string;
+  func?: string;
+  company?: string;
+};
+type LeadCard = { id: string; role: string; blurb: string; stage: string; meta: string };
+type WinCard = { id: string; role: string; blurb: string; meta: string };
+
+function joinMeta(parts: (string | undefined)[]): string {
+  return parts.filter((p): p is string => Boolean(p)).join(" · ");
+}
+function toLeadCard(l: LeadRow): LeadCard {
+  return {
+    id: l.id,
+    role: l.role_needed ?? "Senior operator",
+    blurb: l.one_liner ?? l.blurb ?? "",
+    stage: l.stage,
+    meta: joinMeta([l.func, l.industry, l.engagement_type]),
+  };
+}
+function toWinCard(w: WinRow): WinCard {
+  return {
+    id: w.id,
+    role: w.role,
+    blurb: w.blurb ?? "",
+    meta: joinMeta([w.func, w.industry, w.engagement_type, w.company]),
+  };
+}
+
 function Dashboard() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
