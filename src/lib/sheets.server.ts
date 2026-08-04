@@ -147,7 +147,7 @@ export async function fetchSheetLeads(): Promise<SheetLead[]> {
 }
 
 export async function fetchSheetWins(): Promise<SheetWin[]> {
-  const records = toRecords(await fetchCsv(WINS_GID));
+  const records = toRecords(await fetchCsv(`gid:${WINS_GID}`));
   return records
     .filter(
       (rec) =>
@@ -157,8 +157,11 @@ export async function fetchSheetWins(): Promise<SheetWin[]> {
     .map((rec, i) => ({
       id: `sheet-win-${pick(rec, ["opp id", "oppid", "id"], String(i))}`,
       role: pick(rec, ["role needed", "role", "roleneeded"], "Senior operator"),
+      blurb: pick(rec, ["blurb", "description", "one liner", "oneliner", "summary"]),
       engagement_type: pick(rec, ["engagement", "engagement type", "engagementtype"], "—"),
       length: pick(rec, ["term", "length", "duration"], "—"),
       industry: pick(rec, ["industry"], ""),
+      func: pick(rec, ["function", "func"], ""),
+      company: pick(rec, ["company", "pseudonym", "name"], ""),
     }));
 }
