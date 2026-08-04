@@ -10,9 +10,6 @@ export const getSheetDashboard = createServerFn({ method: "GET" })
     if (!isMember) throw new Error("Forbidden");
 
     const sheets = await import("./sheets.server");
-    if (!sheets.isSheetsConfigured()) {
-      return { configured: false as const, leads: [], wins: [] };
-    }
 
     try {
       const [leads, wins] = await Promise.all([
