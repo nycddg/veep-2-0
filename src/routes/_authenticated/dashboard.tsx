@@ -34,12 +34,12 @@ function Dashboard() {
 
   const sheetData = sheet.data?.configured ? sheet.data : null;
   const liveFromSheet = sheetData !== null;
+  // Leads come from the live Google Sheet when available, else admin entries.
   const leads = sheetData
     ? { data: sheetData.leads, isLoading: sheet.isLoading, error: sheet.error }
     : manualLeads;
-  const wins = sheetData
-    ? { data: sheetData.wins, isLoading: sheet.isLoading, error: sheet.error }
-    : manualWins;
+  // Wins are a curated list maintained as admin entries — the sheet has no wins tab.
+  const wins = manualWins;
 
   async function signOut() {
     await queryClient.cancelQueries();
