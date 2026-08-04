@@ -120,24 +120,18 @@ function pick(rec: Record<string, string>, keys: string[], fallback = ""): strin
   return fallback;
 }
 
+// The Veep dashboard sheet is a single tab (gid=0) of leads/opportunities
+// exported from Copper CRM. There is no separate "Wins" tab — wins are a
+// curated list maintained as admin entries in the database.
 export async function fetchSheetLeads(): Promise<SheetLead[]> {
-  const records = toRecords(await fetchCsv("Leads"));
-  return records.map((rec, i) => ({
-    id: `sheet-lead-${i}`,
-    pseudonym: pick(rec, ["pseudonym", "name", "company"], ""),
-    one_liner: pick(rec, ["description", "one liner", "oneliner", "summary"]),
-    role_needed: pick(rec, ["role needed", "role", "roleneeded"], "Senior operator"),
-    stage: pick(rec, ["stage", "status"], "Scoping"),
-  }));
-}
-
-export async function fetchSheetWins(): Promise<SheetWin[]> {
-  const records = toRecords(await fetchCsv("Wins"));
-  return records.map((rec, i) => ({
-    id: `sheet-win-${i}`,
-    role: pick(rec, ["role", "title"], "Senior operator"),
-    engagement_type: pick(rec, ["engagement type", "engagement", "type"], "Engagement"),
-    length: pick(rec, ["length", "duration"], "—"),
-    happened_on: pick(rec, ["date", "happened on", "closed"], ""),
-  }));
+  const records = toRecords(await fetchCsv("0"));
+  return records
+    .filter((rec) => norm(pick(rec, ["show on dashboard", "show", "visible"])) === "yes")
+    .map((rec, i) => ({
+      id: `sheet-lead-${pick(rec, ["opp id", "oppid", "id"], String(i))}`,
+      pseudonym: pick(rec, ["company", "pseudonym", "name"], ""),
+      one_liner: pick(rec, ["blurb", "description", "one liner", "oneliner", "summary"]),
+      role_needed: pick(rec, ["role needed", "role", "roleneeded"], "Senior operator"),
+      stage: pick(rec, ["stage", "status"], "Scoping"),
+    }));
 }
