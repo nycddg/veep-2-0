@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { supabase } from "@/integrations/supabase/client";
-import { getCopperDashboard } from "@/lib/copper.functions";
+import { getSheetDashboard } from "@/lib/sheets.functions";
 
 export type Lead = {
   id: string;
@@ -76,14 +76,15 @@ export function useWins(includeArchived = false) {
 }
 
 /**
- * Live read from Copper CRM. Returns configured:false until COPPER_API_KEY and
- * COPPER_USER_EMAIL are set, so the dashboard falls back to manual entries.
+ * Live read from the Veep Google Sheet. Returns configured:false until the
+ * Google Sheets connector is linked, so the dashboard falls back to the
+ * manual admin entries.
  */
-export function useCopperDashboard() {
-  const fetchCopper = useServerFn(getCopperDashboard);
+export function useSheetDashboard() {
+  const fetchSheet = useServerFn(getSheetDashboard);
   return useQuery({
-    queryKey: ["copper-dashboard"],
-    queryFn: () => fetchCopper(),
+    queryKey: ["sheet-dashboard"],
+    queryFn: () => fetchSheet(),
     staleTime: 60_000,
     retry: false,
   });
