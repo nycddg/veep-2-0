@@ -12,10 +12,13 @@ export const getSheetDashboard = createServerFn({ method: "GET" })
     const sheets = await import("./sheets.server");
 
     try {
-      const leads = await sheets.fetchSheetLeads();
-      return { configured: true as const, leads };
+      const [leads, wins] = await Promise.all([
+        sheets.fetchSheetLeads(),
+        sheets.fetchSheetWins(),
+      ]);
+      return { configured: true as const, leads, wins };
     } catch (error) {
       console.error("Google Sheets dashboard read failed", error);
-      return { configured: false as const, leads: [] };
+      return { configured: false as const, leads: [], wins: [] };
     }
   });
