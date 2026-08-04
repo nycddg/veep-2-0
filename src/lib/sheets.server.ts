@@ -19,9 +19,12 @@ export type SheetLead = {
 export type SheetWin = {
   id: string;
   role: string;
+  blurb: string;
   engagement_type: string;
   length: string;
   industry: string;
+  func: string;
+  company: string;
 };
 
 export function isSheetsConfigured(): boolean {
