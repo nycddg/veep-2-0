@@ -146,6 +146,9 @@ export async function fetchSheetLeads(): Promise<SheetLead[]> {
       one_liner: pick(rec, ["blurb", "description", "one liner", "oneliner", "summary"]),
       role_needed: pick(rec, ["role needed", "role", "roleneeded"], "Senior operator"),
       stage: pick(rec, ["stage", "status"], "Scoping"),
+      func: pick(rec, ["function", "func"], ""),
+      industry: pick(rec, ["industry"], ""),
+      engagement_type: pick(rec, ["engagement", "engagement type", "engagementtype"], ""),
     }));
 }
 
