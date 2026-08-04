@@ -1,0 +1,139 @@
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useIsAdmin, useLeads, useSessionUser, useWins, LEAD_STAGES } from "@/lib/partner-data";
+
+export const Route = createFileRoute("/_authenticated/dashboard")({
+  head: () => ({
+    meta: [
+      { title: "Partner Dashboard — Veep" },
+      { name: "description", content: "Live leads and recent wins for Veep operating partners." },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
+  component: Dashboard,
+});
+
+function Dashboard() {
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
+  const { data: user } = useSessionUser();
+  const { data: isAdmin } = useIsAdmin();
+  const leads = useLeads();
+  const wins = useWins();
+  const [stage, setStage] = useState<string>("All");
+
+  async function signOut() {
+    await queryClient.cancelQueries();
+    queryClient.clear();
+    await supabase.auth.signOut();
+    navigate({ to: "/auth", replace: true });
+  }
+
+  const visible = (leads.data ?? []).filter((l) => stage === "All" || l.stage === stage);
+  const denied = leads.error || wins.error;
+
+  return (
+    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+            Partner dashboard
+          </div>
+          <h1 className="mt-3 text-3xl md:text-4xl text-cream tracking-tight">
+            Live leads and recent wins
+          </h1>
+          <p className="mt-2 text-sm text-stone">
+            Signed in as {user?.email}. Confidential — for Veep operating partners only.
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          {isAdmin && (
+            <Link
+              to="/admin"
+              className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-4 py-2 text-sm text-cream hover:bg-white/5"
+            >
+              Manage
+            </Link>
+          )}
+          <button
+            onClick={signOut}
+            className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-4 py-2 text-sm text-cream hover:bg-white/5"
+          >
+            Sign out
+          </button>
+        </div>
+      </div>
+
+      {denied && (
+        <p className="mt-10 text-sm text-red-400">
+          Your account doesn't have partner access yet. Contact Veep to be added.
+        </p>
+      )}
+
+      <div className="mt-12 grid gap-12 lg:grid-cols-[1.6fr_1fr]">
+        <div>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="text-xl text-cream tracking-tight">Live leads</h2>
+            <div className="flex flex-wrap gap-1.5">
+              {["All", ...LEAD_STAGES].map((s) => (
+                <button
+                  key={s}
+                  onClick={() => setStage(s)}
+                  className={`rounded-full px-3 py-1.5 text-xs ${
+                    stage === s ? "bg-cream text-ink" : "border border-white/12 text-cream/80 hover:bg-white/5"
+                  }`}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-5 space-y-3">
+            {leads.isLoading && <p className="text-sm text-stone">Loading…</p>}
+            {!leads.isLoading && visible.length === 0 && (
+              <p className="text-sm text-stone">No live leads in this stage right now.</p>
+            )}
+            {visible.map((lead) => (
+              <article
+                key={lead.id}
+                className="rounded-2xl border border-white/10 bg-[color:var(--surface-raised)] p-5"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h3 className="text-base text-cream">{lead.pseudonym}</h3>
+                  <span className="rounded-full border border-accent/40 px-2.5 py-1 text-[11px] uppercase tracking-[0.1em] text-accent">
+                    {lead.stage}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm text-cream/80">{lead.one_liner}</p>
+                <p className="mt-3 text-xs uppercase tracking-[0.1em] text-stone-soft">
+                  Role needed · <span className="text-cream/90">{lead.role_needed}</span>
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-xl text-cream tracking-tight">Recent wins</h2>
+          <div className="mt-5 divide-y divide-white/8 rounded-2xl border border-white/10">
+            {wins.isLoading && <p className="p-5 text-sm text-stone">Loading…</p>}
+            {!wins.isLoading && (wins.data ?? []).length === 0 && (
+              <p className="p-5 text-sm text-stone">No wins posted yet.</p>
+            )}
+            {(wins.data ?? []).map((win) => (
+              <div key={win.id} className="p-5">
+                <div className="text-sm text-cream">{win.role}</div>
+                <div className="mt-1 text-xs text-stone">
+                  {win.engagement_type} · {win.length}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
