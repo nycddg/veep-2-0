@@ -118,7 +118,7 @@ function Dashboard() {
             {!leads.isLoading && visible.length === 0 && (
               <p className="text-sm text-stone">No live leads in this stage right now.</p>
             )}
-            {visible.map((lead) => (
+            {visible.map((lead: Lead) => (
               <article
                 key={lead.id}
                 className="rounded-2xl border border-white/10 bg-[color:var(--surface-raised)] p-5"
@@ -144,7 +144,7 @@ function Dashboard() {
             {!wins.isLoading && (wins.data ?? []).length === 0 && (
               <p className="p-5 text-sm text-stone">No wins posted yet.</p>
             )}
-            {(wins.data ?? []).map((win) => (
+            {(wins.data ?? []).map((win: Win) => (
               <div key={win.id} className="p-5">
                 <div className="text-sm text-cream">{win.role}</div>
                 <div className="mt-1 text-xs text-stone">
