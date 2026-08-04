@@ -84,11 +84,14 @@ function parseCsv(csv: string): string[][] {
   return rows;
 }
 
-async function fetchCsv(sheetName: string): Promise<string[][]> {
-  const res = await fetch(`${CSV_BASE}${encodeURIComponent(sheetName)}`);
+async function fetchCsv(sheetRef: string): Promise<string[][]> {
+  const url = sheetRef.startsWith("gid:")
+    ? `${GID_BASE}${encodeURIComponent(sheetRef.slice(4))}`
+    : `${CSV_BASE}${encodeURIComponent(sheetRef)}`;
+  const res = await fetch(url);
   if (!res.ok) {
     const text = await res.text();
-    console.error(`Google Sheets CSV fetch failed [${res.status}] ${sheetName}: ${text}`);
+    console.error(`Google Sheets CSV fetch failed [${res.status}] ${sheetRef}: ${text}`);
     throw new Error(`Google Sheets CSV fetch failed [${res.status}]: ${text}`);
   }
   const csv = await res.text();
