@@ -9,8 +9,6 @@ import {
   useSessionUser,
   useWins,
   LEAD_STAGES,
-  type Lead,
-  type Win,
 } from "@/lib/partner-data";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
