@@ -3,7 +3,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import {
-  useCopperDashboard,
+  useSheetDashboard,
   useIsAdmin,
   useLeads,
   useSessionUser,
@@ -29,16 +29,16 @@ function Dashboard() {
   const { data: isAdmin } = useIsAdmin();
   const manualLeads = useLeads();
   const manualWins = useWins();
-  const copper = useCopperDashboard();
+  const sheet = useSheetDashboard();
   const [stage, setStage] = useState<string>("All");
 
-  const copperData = copper.data?.configured ? copper.data : null;
-  const liveFromCopper = copperData !== null;
-  const leads = copperData
-    ? { data: copperData.leads, isLoading: copper.isLoading, error: copper.error }
+  const sheetData = sheet.data?.configured ? sheet.data : null;
+  const liveFromSheet = sheetData !== null;
+  const leads = sheetData
+    ? { data: sheetData.leads, isLoading: sheet.isLoading, error: sheet.error }
     : manualLeads;
-  const wins = copperData
-    ? { data: copperData.wins, isLoading: copper.isLoading, error: copper.error }
+  const wins = sheetData
+    ? { data: sheetData.wins, isLoading: sheet.isLoading, error: sheet.error }
     : manualWins;
 
   async function signOut() {
@@ -48,7 +48,9 @@ function Dashboard() {
     navigate({ to: "/auth", replace: true });
   }
 
-  const visible = (leads.data ?? []).filter((l) => stage === "All" || l.stage === stage);
+  const visible = (leads.data ?? []).filter(
+    (l: { stage: string }) => stage === "All" || l.stage === stage,
+  );
   const denied = manualLeads.error || manualWins.error;
 
   return (
@@ -65,7 +67,7 @@ function Dashboard() {
             Signed in as {user?.email}. Confidential — for Veep operating partners only.
           </p>
           <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">
-            Source: {liveFromCopper ? "Copper CRM (live)" : "Veep admin entries"}
+            Source: {liveFromSheet ? "Google Sheet (live)" : "Veep admin entries"}
           </p>
         </div>
         <div className="flex items-center gap-2">
