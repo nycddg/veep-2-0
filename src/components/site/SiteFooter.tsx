@@ -29,6 +29,7 @@ const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
     title: "Operators",
     links: [
       { kind: "route", to: "/join", label: "Join Veep" },
+      { kind: "route", to: "/auth", label: "Partner login" },
     ],
   },
   {
