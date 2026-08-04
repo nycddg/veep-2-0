@@ -164,20 +164,25 @@ function Dashboard() {
             {!leads.isLoading && visible.length === 0 && (
               <p className="text-sm text-stone">No live leads in this stage right now.</p>
             )}
-            {visible.map((lead: { id: string; one_liner: string; role_needed: string; stage: string }) => (
+            {visible.map((lead) => (
               <article
                 key={lead.id}
                 className="rounded-2xl border border-white/10 bg-[color:var(--surface-raised)] p-5"
               >
                 <div className="flex flex-wrap items-start justify-between gap-2">
-                  <h3 className="min-w-0 flex-1 text-base text-cream">{lead.one_liner}</h3>
+                  <h3 className="min-w-0 flex-1 text-base text-cream">{lead.role}</h3>
                   <span className="shrink-0 rounded-full border border-accent/40 px-2.5 py-1 text-[11px] uppercase tracking-[0.1em] text-accent">
                     {lead.stage}
                   </span>
                 </div>
-                <p className="mt-3 text-xs uppercase tracking-[0.1em] text-stone-soft">
-                  Role needed · <span className="text-cream/90">{lead.role_needed}</span>
-                </p>
+                {lead.blurb && (
+                  <p className="mt-2 text-sm leading-relaxed text-stone">{lead.blurb}</p>
+                )}
+                {lead.meta && (
+                  <p className="mt-3 text-[11px] uppercase tracking-[0.1em] text-stone-soft">
+                    {lead.meta}
+                  </p>
+                )}
               </article>
             ))}
           </div>
