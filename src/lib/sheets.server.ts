@@ -14,6 +14,9 @@ export type SheetLead = {
   one_liner: string;
   role_needed: string;
   stage: string;
+  func: string;
+  industry: string;
+  engagement_type: string;
 };
 
 export type SheetWin = {
