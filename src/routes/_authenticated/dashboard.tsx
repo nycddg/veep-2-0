@@ -146,14 +146,18 @@ function Dashboard() {
             {!wins.isLoading && (wins.data ?? []).length === 0 && (
               <p className="p-5 text-sm text-stone">No wins posted yet.</p>
             )}
-            {(wins.data ?? []).map((win: { id: string; role: string; engagement_type: string; length: string }) => (
-              <div key={win.id} className="p-5">
-                <div className="text-sm text-cream">{win.role}</div>
-                <div className="mt-1 text-xs text-stone">
-                  {win.engagement_type} · {win.length}
+            {(wins.data ?? []).map(
+              (win: { id: string; role: string; engagement_type: string; length: string; industry?: string }) => (
+                <div key={win.id} className="p-5">
+                  <div className="text-sm text-cream">{win.role}</div>
+                  <div className="mt-1 text-xs text-stone">
+                    {win.engagement_type}
+                    {win.industry ? ` · ${win.industry}` : ""}
+                    {win.length ? ` · ${win.length}` : ""}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ),
+            )}
           </div>
         </div>
       </div>
