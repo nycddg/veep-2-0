@@ -7,12 +7,12 @@ const steps = [
 
 export function StepFlow() {
   return (
-    <div className="grid md:grid-cols-4 gap-px bg-white/10 rounded-3xl overflow-hidden border border-white/10">
+    <div className="grid md:grid-cols-4 gap-x-10 gap-y-12">
       {steps.map((s) => (
-        <div key={s.n} className="bg-background p-7 flex flex-col">
+        <div key={s.n} className="flex flex-col">
           <span className="font-mono text-[10px] tracking-[0.12em] text-accent">{s.n}</span>
-          <div className="mt-5 font-serif text-2xl text-cream tracking-tight">{s.t}</div>
-          <p className="mt-3 text-sm text-stone leading-relaxed">{s.d}</p>
+          <div className="mt-2 font-serif text-2xl text-cream tracking-tight">{s.t}</div>
+          <p className="mt-4 text-sm text-stone leading-relaxed">{s.d}</p>
         </div>
       ))}
     </div>

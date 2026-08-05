@@ -89,7 +89,7 @@ function Page() {
           ].map((row) => (
             <div
               key={row.eyebrow}
-              className="grid lg:grid-cols-12 gap-8 lg:gap-14 border-t border-white/10 pt-14 first:border-t-0 first:pt-0"
+              className="grid lg:grid-cols-12 gap-8 lg:gap-14"
             >
               <div className="lg:col-span-4">
                 <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
@@ -124,7 +124,7 @@ function Page() {
               {principles.map((p, idx) => (
                 <li
                   key={p.title}
-                  className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 border-t border-white/10 py-6 first:border-t-0 first:pt-0"
+                  className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 py-5"
                 >
                   <span className="font-mono text-sm text-accent tabular-nums pt-1">
                     {String(idx + 1).padStart(2, "0")}
@@ -161,7 +161,7 @@ function Page() {
           </div>
           <div className="mt-14 grid md:grid-cols-3 gap-10 md:gap-8">
             {founders.map((f) => (
-              <div key={f.name} className="border-t border-white/10 pt-6">
+              <div key={f.name}>
                 <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-cream/70">
                   {f.role}
                 </div>
