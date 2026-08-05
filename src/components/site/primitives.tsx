@@ -85,7 +85,7 @@ export function Section({
  */
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+    <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
       {children}
     </div>
   );
@@ -198,7 +198,7 @@ export function FloatingChip({
 }) {
   return (
     <div className={`rounded-md bg-card border border-border px-4 py-3 ${className}`}>
-      <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft">{label}</div>
+      <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-stone-soft">{label}</div>
       <div className="mt-0.5 text-sm font-medium text-cream">{value}</div>
     </div>
   );

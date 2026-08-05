@@ -143,7 +143,7 @@ function Page() {
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             {/* Left: promise */}
             <div className="lg:col-span-2 space-y-8">
-              <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
                 What happens next
               </div>
               <ul className="space-y-4">
@@ -165,13 +165,13 @@ function Page() {
                     <span className="font-mono text-sm text-accent w-6 shrink-0 tabular-nums">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-cream/85 text-sm leading-relaxed">{i}</span>
+                    <span className="text-cream/85 text-base leading-relaxed">{i}</span>
                   </li>
                 ))}
               </ul>
               {preselected && (
                 <div className="rounded-2xl border border-accent/30 bg-accent/5 p-4">
-                  <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+                  <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
                     Outcome
                   </div>
                   <div className="mt-2 text-cream font-medium">{preselected}</div>
@@ -330,7 +330,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-cream/70">
+      <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream/70">
         {label}{required && " *"}
       </span>
       <div className="mt-2">{children}</div>

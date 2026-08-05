@@ -68,7 +68,7 @@ export function OperatorProofCard({
           {chips.map((c) => (
             <span
               key={c}
-              className="text-[10px] px-2.5 py-1 bg-white/5 rounded-full border border-white/10 text-stone"
+              className="text-[11px] px-2.5 py-1 bg-white/5 rounded-full border border-white/10 text-stone"
             >
               {c}
             </span>
@@ -167,7 +167,7 @@ export function OperatorProofCard({
             {chips.map((c) => (
               <span
                 key={c}
-                className="font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft"
+                className="font-mono text-[11px] uppercase tracking-[0.14em] text-stone-soft"
               >
                 {c}
               </span>

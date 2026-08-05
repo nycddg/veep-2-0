@@ -33,7 +33,7 @@ export function ObjectionList() {
           <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">
             {o.q}
           </h3>
-          <p className="mt-2 text-sm text-stone leading-relaxed">{o.a}</p>
+          <p className="mt-2 text-base text-stone leading-relaxed">{o.a}</p>
         </div>
       ))}
     </div>

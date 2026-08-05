@@ -83,7 +83,7 @@ function AuthPage() {
 
   return (
     <section className="mx-auto flex min-h-[70vh] max-w-md flex-col justify-center px-4 py-20">
-      <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+      <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
         Partner access
       </div>
       <h1 className="mt-4 text-3xl text-cream tracking-tight">

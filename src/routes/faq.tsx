@@ -84,7 +84,7 @@ function Page() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-14">
           {groups.map((g) => (
             <div key={g.label}>
-              <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent mb-6">
+              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent mb-6">
                 {g.label}
               </div>
               <div className="divide-y divide-white/10 border-y border-white/10">
@@ -122,7 +122,7 @@ function Accordion({ q, a }: QA) {
       <div className="motion-collapse" data-open={open ? "true" : "false"}>
         <div>
           <p
-            className={`pb-6 pr-6 sm:pr-10 text-sm sm:text-[15px] text-cream/80 leading-relaxed max-w-3xl transition-opacity duration-200 ${
+            className={`pb-6 pr-6 sm:pr-10 text-base sm:text-[15px] text-cream/80 leading-relaxed max-w-3xl transition-opacity duration-200 ${
               open ? "opacity-100" : "opacity-0"
             }`}
           >

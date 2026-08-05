@@ -19,7 +19,7 @@ export function Testimonials() {
   return (
     <div className="max-w-5xl mx-auto">
       <div className="text-center">
-        <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+        <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
           FOUNDER TESTIMONIALS
         </div>
 

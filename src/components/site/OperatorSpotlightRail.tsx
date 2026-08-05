@@ -64,13 +64,13 @@ function OperatorCard({ op }: { op: Operator }) {
           {op.name}
         </h3>
         <div
-          className="font-mono text-[10px] uppercase tracking-[0.14em] mt-1 text-ink/80 light:text-[color:var(--foreground)]/80"
+          className="font-mono text-[11px] uppercase tracking-[0.14em] mt-1 text-ink/80 light:text-[color:var(--foreground)]/80"
         >
           {op.role}
         </div>
         {op.priorCompanies && op.priorCompanies.length > 0 && (
           <div
-            className="font-mono text-[10px] text-ink/70 light:text-[color:var(--foreground)]/70 mt-2 leading-relaxed uppercase tracking-[0.1em]"
+            className="font-mono text-[11px] text-ink/70 light:text-[color:var(--foreground)]/70 mt-2 leading-relaxed uppercase tracking-[0.1em]"
           >
             {op.priorCompanies.map((c, i) => (
               <span key={c}>
@@ -88,13 +88,13 @@ function OperatorCard({ op }: { op: Operator }) {
           op.featured ? "border-[color:var(--color-accent-coral)]/40" : "border-accent/30"
         }`}
       >
-        <p className="font-sans text-cream text-sm leading-relaxed">{op.summary}</p>
+        <p className="font-sans text-cream text-base leading-relaxed">{op.summary}</p>
         {op.chips.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1">
             {op.chips.map((c) => (
               <span
                 key={c}
-                className="font-mono text-[10px] uppercase tracking-[0.14em] text-cream/70"
+                className="font-mono text-[11px] uppercase tracking-[0.14em] text-cream/70"
               >
                 {c}
               </span>
@@ -160,7 +160,7 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
 
       <div className="mt-8 flex items-center justify-between gap-6">
         <div className="flex items-center gap-4 flex-1 min-w-0">
-          <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent shrink-0">
+          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-accent shrink-0">
             {current} // {total}
           </span>
           <div className="relative h-px flex-1 bg-white/10 max-w-md">

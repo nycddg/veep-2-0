@@ -25,12 +25,12 @@ export function EngagementTile({
       <div className="flex items-baseline gap-3">
         <span className="text-xl md:text-2xl text-cream">{name}</span>
         {featured && (
-          <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-accent-coral">
+          <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent-coral">
             Most requested
           </span>
         )}
       </div>
-      <p className="mt-4 text-sm text-stone leading-relaxed">{bestWhen}</p>
+      <p className="mt-4 text-base text-stone leading-relaxed">{bestWhen}</p>
       <div className="mt-6 md:mt-auto pt-4 md:pt-8 flex items-baseline justify-between gap-4">
         <span className="font-mono text-xs text-cream tabular-nums">{price}</span>
         <span className="text-xs text-cream/70 group-hover:text-cream inline-flex items-center gap-1 transition-colors duration-200">
