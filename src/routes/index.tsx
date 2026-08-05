@@ -746,17 +746,16 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-10 border-t border-white/10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-14">
             {cases.map((c) => (
-              <div key={c.tag} className="pt-8 flex flex-col">
+              <div key={c.tag} className="flex flex-col">
                 <span className="text-[10px] font-medium tracking-[0.14em] uppercase text-accent">
                   {c.tag}
                 </span>
-                <p className="mt-6 text-sm text-stone leading-relaxed">
+                <p className="mt-4 text-sm text-stone leading-relaxed">
                   <span className="text-cream">Trigger. </span>{c.trigger}
                 </p>
-                <div className="my-5 border-t border-white/10" />
-                <p className="text-sm text-stone leading-relaxed">
+                <p className="mt-4 text-sm text-stone leading-relaxed">
                   <span className="text-cream">Outcome. </span>{c.outcome}
                 </p>
                 <div className="mt-auto pt-6 font-serif text-xl text-accent tracking-tight">
