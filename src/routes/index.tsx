@@ -523,16 +523,16 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-10 md:gap-x-14 border-t border-white/10">
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-12 md:gap-x-14">
             {problems.map((p) => (
-              <div key={p.t} className="pt-8 md:pt-10">
+              <div key={p.t}>
                 <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
                 <p className="mt-4 text-sm text-stone leading-relaxed max-w-md">{p.d}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 md:mt-20 border-t border-white/10 pt-10">
+          <div className="mt-20 md:mt-24">
             <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft mb-8">Instead of</div>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-10">
               {alternatives.map((a) => (
@@ -612,8 +612,8 @@ function Index() {
           </p>
 
           {/* Network impact */}
-          <div className="mt-16">
-            <div className="border-t border-white/10 pt-6 mb-10">
+          <div className="mt-20 md:mt-24">
+            <div className="mb-10">
               <SectionEyebrow>Network impact</SectionEyebrow>
             </div>
 
@@ -651,7 +651,7 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
+          <div className="mt-20 md:mt-24 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <p className="text-sm text-stone">
               75+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
             </p>
@@ -676,7 +676,7 @@ function Index() {
               Senior ownership on your terms.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 border-t border-white/10 pt-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
             {benefits.map((b, i) => (
               <div key={b.t}>
                 <div className="font-mono text-[10px] tracking-[0.14em] text-accent">
