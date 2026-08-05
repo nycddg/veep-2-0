@@ -828,7 +828,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 md:gap-10 items-center border-t border-white/10 pt-12 md:pt-16">
             <div className="lg:col-span-3 space-y-5">
-              <SectionEyebrow>For PE, VC, family offices, and holding companies</SectionEyebrow>
+              <SectionEyebrow>FOR FUNDS</SectionEyebrow>
               <h2 className="font-serif text-3xl text-cream tracking-tight leading-[1.1] allow-wrap">
                 Portfolio companies don't pause for a search.
               </h2>
