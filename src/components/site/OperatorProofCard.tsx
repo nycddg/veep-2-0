@@ -41,8 +41,8 @@ export function OperatorProofCard({
         className="glass-card p-5 rounded-3xl shadow-2xl transition-all duration-500 hover:rotate-0 hover:translate-y-0"
         style={{ transform: `rotate(${tilt}deg) translateY(${translateY}px)` }}
       >
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-14 h-14 rounded-2xl bg-accent/10 ring-1 ring-white/15 grid place-items-center text-cream text-sm font-medium tracking-tight overflow-hidden">
+        <div className="flex items-center gap-4 mb-5">
+          <div className="w-14 h-14 rounded-2xl grid place-items-center text-cream text-sm font-medium tracking-tight overflow-hidden">
             {photoUrl ? (
               <img
                 src={photoUrl}
@@ -64,11 +64,11 @@ export function OperatorProofCard({
             </p>
           </div>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-x-3 gap-y-1">
           {chips.map((c) => (
             <span
               key={c}
-              className="text-[10px] px-2.5 py-1 bg-white/5 rounded-full border border-white/10 text-stone"
+              className="font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft"
             >
               {c}
             </span>
@@ -89,7 +89,7 @@ export function OperatorProofCard({
   const summaryId = `operator-summary-${name.toLowerCase().replace(/\s+/g, "-")}`;
 
   return (
-    <figure className="group flex flex-col overflow-hidden rounded-lg bg-white/[0.02] ring-1 ring-white/8 transition-colors hover:ring-white/15 lg:w-[95%] lg:mx-auto">
+    <figure className="group flex flex-col overflow-hidden rounded-lg bg-[color:var(--surface-raised)] transition-colors lg:w-[95%] lg:mx-auto">
 
       {/* Portrait */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-accent/10">
@@ -130,7 +130,7 @@ export function OperatorProofCard({
         </div>
 
         {companies.length > 0 && (
-          <div className="border-t border-white/10 pt-3">
+          <div>
             <div className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-cream/70 leading-relaxed">
               {companies.join("  ·  ")}
             </div>
