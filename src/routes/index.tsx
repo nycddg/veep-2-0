@@ -801,19 +801,19 @@ function Index() {
             </h2>
           </div>
 
-          <div className="border-y border-white/10 divide-y divide-white/10">
-            <div className="hidden md:grid md:grid-cols-[1fr_1.5fr_1.5fr]">
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Dimension</div>
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">The old way</div>
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-accent">Veep</div>
+          <div className="space-y-3">
+            <div className="hidden md:grid md:grid-cols-[1fr_1.5fr_1.5fr] gap-x-6">
+              <div className="px-4 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Dimension</div>
+              <div className="px-4 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">The old way</div>
+              <div className="px-4 font-mono text-[10px] uppercase tracking-[0.12em] text-accent">Veep</div>
             </div>
             {differentiators.map((r) => (
-              <div key={r.dim} className="grid md:grid-cols-[1fr_1.5fr_1.5fr] gap-y-2 gap-x-0 p-5 md:p-0">
-                <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">
+              <div key={r.dim} className="grid md:grid-cols-[1fr_1.5fr_1.5fr] gap-x-6 gap-y-2 items-stretch">
+                <div className="px-4 py-2 md:py-4 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">
                   {r.dim}
                 </div>
-                <div className="md:p-5 text-sm text-stone leading-relaxed">{r.old}</div>
-                <div className="md:p-5 text-sm text-cream leading-relaxed md:bg-accent/[0.06]">
+                <div className="px-4 py-2 md:py-4 text-sm text-stone leading-relaxed">{r.old}</div>
+                <div className="px-4 py-4 text-sm text-cream leading-relaxed bg-accent/[0.07] border-l-2 border-accent/60 rounded-r-md">
                   {r.veep}
                 </div>
               </div>
@@ -825,7 +825,7 @@ function Index() {
       {/* 10 — FOR PORTFOLIOS (secondary audience band) */}
       <Reveal as="section" id="portfolios" className="spotlight-invert py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-8 md:gap-10 items-center border-t border-white/10 pt-12 md:pt-16">
+          <div className="grid lg:grid-cols-5 gap-8 md:gap-10 items-center">
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>FOR FUNDS</SectionEyebrow>
               <h2 className="font-serif text-3xl text-cream tracking-tight leading-[1.1] allow-wrap">
