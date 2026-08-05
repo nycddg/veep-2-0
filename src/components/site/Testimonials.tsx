@@ -23,7 +23,7 @@ export function Testimonials() {
           FOUNDER TESTIMONIALS
         </div>
 
-        <div className="mt-10 md:mt-14 space-y-16 md:space-y-20">
+        <div className="mt-10 md:mt-14 space-y-24 md:space-y-32">
           {quotes.map((q, i) => (
             <figure key={q.name}>
               <blockquote className="font-sans font-medium text-3xl md:text-5xl leading-[1.2] text-cream tracking-tight text-balance">
@@ -38,10 +38,6 @@ export function Testimonials() {
                   <div className="text-xs text-stone">{q.role}</div>
                 </div>
               </figcaption>
-
-              {i < quotes.length - 1 && (
-                <div className="mt-16 md:mt-20 border-t border-white/10 max-w-3xl mx-auto" />
-              )}
             </figure>
           ))}
         </div>
