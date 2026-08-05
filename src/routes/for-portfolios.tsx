@@ -89,7 +89,7 @@ function Page() {
   return (
     <>
       <PageHero
-        eyebrow="For Portfolios"
+        eyebrow="FOR FUNDS"
         title="The right operating partners, ready when the portfolio needs them."
         sub="Access a vetted roster of senior operators across finance, GTM, operations, product, and people. Use us before a transaction, after close, during integration, or whenever a portfolio company needs senior ownership. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
       />
