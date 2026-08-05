@@ -14,7 +14,7 @@ export function OutcomeTile({
     <Link
       to="/contact"
       search={{ intent }}
-      className="group glass-card rounded-3xl p-8 flex flex-col justify-between min-h-[220px] transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.06]"
+      className="group rounded-2xl border-t border-white/10 pt-6 pb-2 flex flex-col justify-between min-h-[180px] transition-colors duration-300 hover:border-accent/40"
     >
       <div className="flex justify-between items-start">
         <h3 className="font-serif text-2xl md:text-[26px] text-cream leading-[1.1] tracking-tight max-w-[14ch]">

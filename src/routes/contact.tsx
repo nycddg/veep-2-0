@@ -183,13 +183,11 @@ function Page() {
             <div className="lg:col-span-3">
               {submitted ? (
                 <div
-                  className="glass-card rounded-3xl p-8 sm:p-10 text-center"
+                  className="py-8 sm:py-10 text-center"
                   role="status"
                   aria-live="polite"
                 >
-                  <div className="mx-auto h-12 w-12 rounded-full bg-accent/15 grid place-items-center text-accent">
-                    <Check strokeWidth={3} />
-                  </div>
+                  <Check strokeWidth={2.5} className="mx-auto h-8 w-8 text-accent" />
                   <h3
                     ref={successHeadingRef}
                     tabIndex={-1}
