@@ -85,7 +85,7 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="mt-10 md:mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-3 text-xs leading-relaxed text-cream/70">
+        <div className="mt-16 md:mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-3 text-xs leading-relaxed text-cream/70">
           <div className="text-balance">© {new Date().getFullYear()}&nbsp;The Veep Group,&nbsp;LLC. All rights reserved.</div>
           <div className="text-balance">Senior operators for work that can't&nbsp;wait.</div>
         </div>
