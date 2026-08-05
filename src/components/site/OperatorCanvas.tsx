@@ -1,4 +1,3 @@
-import { Star } from "lucide-react";
 import headshotAsset from "@/assets/operator-headshot.png.asset.json";
 
 const MATRIX = [
@@ -55,9 +54,7 @@ export function OperatorCanvas() {
       </div>
 
       <style>{`
-        @keyframes op-float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-12px) } }
         @keyframes op-float-delayed { 0%,100% { transform: translateY(0) } 50% { transform: translateY(12px) } }
-        .op-float { animation: op-float 6s ease-in-out infinite; }
         .op-float-delayed { animation: op-float-delayed 7s ease-in-out infinite; }
       `}</style>
     </div>
