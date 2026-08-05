@@ -53,7 +53,7 @@ export function SiteFooter() {
             </Link>
             <p className="mt-5 text-sm text-cream/85 max-w-[20.4rem] leading-relaxed">
               Vetted senior operators who step in to own critical work, now.
-              Matched in 72 hours. Deployed in under 10 days.
+              Matched in 72 hours. Ready to go in under 10 days.
             </p>
               <a
                 href="mailto:hey@veep.work"
