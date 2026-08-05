@@ -574,15 +574,15 @@ function Index() {
                 Vetted senior operators who step in to own critical work, now.
               </p>
             </div>
-            <div className="space-y-8 lg:border-l lg:border-white/10 lg:pl-14">
-              <div className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent">The Veep model</div>
+            <div className="divide-y divide-white/10 lg:border-l lg:border-white/10 lg:pl-14">
+              <div className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent pb-6">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
                 ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
                 ["Priced to scope", "Advisory, Sprint, Operator, or Pod structured around the work and outcomes."],
                 ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
               ].map(([t, d]) => (
-                <div key={t}>
+                <div key={t} className="py-6 last:pb-0">
                   <div className="font-serif text-xl text-cream tracking-tight">{t}</div>
                   <p className="mt-2 text-sm text-stone leading-relaxed">{d}</p>
                 </div>
