@@ -805,18 +805,18 @@ function Index() {
           </div>
 
           <div className="border-y border-white/10 divide-y divide-white/10">
-            <div className="hidden md:grid md:grid-cols-[0.75fr_2.5fr_2fr]">
-              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">Dimension</div>
-              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">The old way</div>
-              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-accent">Veep</div>
+            <div className="hidden md:grid md:grid-cols-[minmax(min-content,1fr)_minmax(min-content,1fr)_minmax(min-content,1fr)]">
+              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft md:whitespace-nowrap">Dimension</div>
+              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft md:whitespace-nowrap">The old way</div>
+              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-accent md:whitespace-nowrap">Veep</div>
             </div>
             {differentiators.map((r) => (
-              <div key={r.dim} className="grid md:grid-cols-[0.75fr_2.5fr_2fr] gap-y-2 gap-x-0 p-5 md:p-0">
-                <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">
+              <div key={r.dim} className="grid md:grid-cols-[minmax(min-content,1fr)_minmax(min-content,1fr)_minmax(min-content,1fr)] gap-y-2 gap-x-0 p-5 md:p-0">
+                <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft md:whitespace-nowrap">
                   {r.dim}
                 </div>
-                <div className="md:p-5 text-base text-stone leading-relaxed">{r.old}</div>
-                <div className="md:p-5 text-base text-cream leading-relaxed md:bg-accent/[0.06]">
+                <div className="md:p-5 text-base text-stone leading-relaxed md:whitespace-nowrap">{r.old}</div>
+                <div className="md:p-5 text-base text-cream leading-relaxed md:bg-accent/[0.06] md:whitespace-nowrap">
                   {r.veep}
                 </div>
               </div>
