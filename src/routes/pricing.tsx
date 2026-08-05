@@ -173,7 +173,7 @@ function Page() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
             {notIncluded.map((n) => (
-              <div key={n.t} className="">
+              <div key={n.t}>
                 <div className="text-lg text-cream">{n.t}</div>
                 <p className="mt-3 text-sm text-cream/75 leading-relaxed">{n.d}</p>
               </div>
@@ -227,7 +227,7 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
             {faqs.map((f) => (
-              <div key={f.q} className="">
+              <div key={f.q}>
                 <div className="text-lg text-cream leading-snug">{f.q}</div>
                 <p className="mt-3 text-sm text-cream/80 leading-relaxed">{f.a}</p>
               </div>
