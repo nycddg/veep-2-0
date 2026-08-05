@@ -879,7 +879,7 @@ function Index() {
               Straight answers.
             </h2>
           </div>
-          <div className="divide-y divide-white/10 border-y border-white/10">
+          <div className="divide-y divide-white/10">
             {faqs.map((f) => (
               <details key={f.q} className="group py-6 md:py-7">
                 <summary className="cursor-pointer flex items-start justify-between gap-6 text-cream list-none [&::-webkit-details-marker]:hidden hover:text-cream transition">
