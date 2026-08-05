@@ -108,7 +108,7 @@ function Page() {
           <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-x-12 gap-y-10">
             {problems.map((p, i) => (
               <div
-                key={p.t}              >
+                key={p.t}>
                 <div className="font-mono text-[11px] tracking-[0.14em] text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </div>
@@ -188,10 +188,10 @@ function Page() {
               On-call operators for the work that can't wait.
             </h2>
           </div>
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto space-y-14">
             {tiers.map((t) => (
               <div
-                key={t.t}              >
+                key={t.t}>
                 <div className="text-xl sm:text-2xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
                   {t.p} <span className="text-cream/70">{t.per}</span>
