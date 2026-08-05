@@ -445,7 +445,7 @@ function InlineCTA({ label = "Book intro call" }: { label?: string }) {
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+    <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
       {children}
     </div>
   );
@@ -527,13 +527,13 @@ function Index() {
             {problems.map((p) => (
               <div key={p.t}>
                 <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
-                <p className="mt-2 text-sm text-stone leading-relaxed max-w-md">{p.d}</p>
+                <p className="mt-2 text-base text-stone leading-relaxed max-w-md">{p.d}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-20 md:mt-24 border-t border-white/10 pt-12">
-            <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft mb-8">Instead of</div>
+            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-stone-soft mb-8">Instead of</div>
             <div className="grid md:grid-cols-3 gap-y-10">
               {alternatives.map((a) => (
                 <div
@@ -541,7 +541,7 @@ function Index() {
                   className="border-t border-white/10 pt-8 first:border-t-0 first:pt-0 md:border-t-0 md:pt-0 md:border-l md:border-white/10 md:pl-10 md:first:border-l-0 md:first:pl-0 md:pr-10 md:last:pr-0"
                 >
                   <div className="font-serif text-xl text-cream/90 tracking-tight">{a.t}</div>
-                  <p className="mt-2 text-sm text-stone leading-relaxed">{a.d}</p>
+                  <p className="mt-2 text-base text-stone leading-relaxed">{a.d}</p>
                 </div>
               ))}
             </div>
@@ -575,7 +575,7 @@ function Index() {
               </p>
             </div>
             <div className="divide-y divide-white/10 lg:border-l lg:border-white/10 lg:pl-14">
-              <div className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent pb-6">The Veep model</div>
+              <div className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-accent pb-6">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
                 ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
@@ -584,7 +584,7 @@ function Index() {
               ].map(([t, d]) => (
                 <div key={t} className="py-6 last:pb-0">
                   <div className="font-serif text-xl text-cream tracking-tight">{t}</div>
-                  <p className="mt-2 text-sm text-stone leading-relaxed">{d}</p>
+                  <p className="mt-2 text-base text-stone leading-relaxed">{d}</p>
                 </div>
               ))}
             </div>
@@ -634,7 +634,7 @@ function Index() {
                         )}
                         <div className="relative w-2 h-2 rounded-full bg-accent" />
                       </div>
-                      <span className="font-mono text-[10px] text-stone-soft uppercase tracking-[0.14em] font-medium">
+                      <span className="font-mono text-[11px] text-stone-soft uppercase tracking-[0.14em] font-medium">
                         {m.label}
                       </span>
                     </div>
@@ -682,13 +682,13 @@ function Index() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-14">
             {benefits.map((b, i) => (
               <div key={b.t}>
-                <div className="font-mono text-[10px] tracking-[0.14em] text-accent">
+                <div className="font-mono text-[11px] tracking-[0.14em] text-accent">
                   0{i + 1}
                 </div>
                 <div className="mt-3 font-serif text-2xl text-cream tracking-tight leading-tight">
                   {b.t}
                 </div>
-                <p className="mt-2 text-sm text-stone leading-relaxed">{b.d}</p>
+                <p className="mt-2 text-base text-stone leading-relaxed">{b.d}</p>
               </div>
             ))}
           </div>
@@ -752,13 +752,13 @@ function Index() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-14 gap-y-14">
             {cases.map((c) => (
               <div key={c.tag} className="flex flex-col rounded-2xl bg-[color:var(--surface-raised)] p-7">
-                <span className="text-[10px] font-medium tracking-[0.14em] uppercase text-accent">
+                <span className="text-[11px] font-medium tracking-[0.14em] uppercase text-accent">
                   {c.tag}
                 </span>
-                <p className="mt-6 text-sm text-stone leading-relaxed">
+                <p className="mt-6 text-base text-stone leading-relaxed">
                   <span className="text-cream">Trigger. </span>{c.trigger}
                 </p>
-                <p className="mt-4 text-sm text-stone leading-relaxed">
+                <p className="mt-4 text-base text-stone leading-relaxed">
                   <span className="text-cream">Outcome. </span>{c.outcome}
                 </p>
                 <div className="mt-auto pt-8 font-serif text-xl text-accent tracking-tight">
@@ -806,17 +806,17 @@ function Index() {
 
           <div className="border-y border-white/10 divide-y divide-white/10">
             <div className="hidden md:grid md:grid-cols-[1fr_1.5fr_1.5fr]">
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">Dimension</div>
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-stone-soft">The old way</div>
-              <div className="p-5 font-mono text-[10px] uppercase tracking-[0.12em] text-accent">Veep</div>
+              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">Dimension</div>
+              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">The old way</div>
+              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-accent">Veep</div>
             </div>
             {differentiators.map((r) => (
               <div key={r.dim} className="grid md:grid-cols-[1fr_1.5fr_1.5fr] gap-y-2 gap-x-0 p-5 md:p-0">
                 <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft">
                   {r.dim}
                 </div>
-                <div className="md:p-5 text-sm text-stone leading-relaxed">{r.old}</div>
-                <div className="md:p-5 text-sm text-cream leading-relaxed md:bg-accent/[0.06]">
+                <div className="md:p-5 text-base text-stone leading-relaxed">{r.old}</div>
+                <div className="md:p-5 text-base text-cream leading-relaxed md:bg-accent/[0.06]">
                   {r.veep}
                 </div>
               </div>
@@ -889,7 +889,7 @@ function Index() {
                   <span className="font-serif text-lg md:text-xl tracking-tight">{f.q}</span>
                   <span className="text-accent text-xl leading-none pt-1 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-4 text-stone leading-relaxed text-sm md:text-base max-w-3xl">{f.a}</p>
+                <p className="mt-4 text-stone leading-relaxed text-base md:text-base max-w-3xl">{f.a}</p>
               </details>
             ))}
           </div>

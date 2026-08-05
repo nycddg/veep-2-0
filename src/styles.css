@@ -21,6 +21,17 @@
   --font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
+  /* Type scale — rebased for readability. Body copy sits at 16px, dense
+     secondary copy at 15px, and no persistent UI text renders below 12px. */
+  --text-xs: 0.8125rem;      /* 13px */
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.9375rem;      /* 15px */
+  --text-sm--line-height: 1.6;
+  --text-base: 1rem;         /* 16px */
+  --text-base--line-height: 1.65;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.55;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

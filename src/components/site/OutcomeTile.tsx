@@ -25,7 +25,7 @@ export function OutcomeTile({
           className="text-stone-soft group-hover:text-accent transition-colors shrink-0"
         />
       </div>
-      <p className="text-sm text-stone leading-relaxed mt-8">{sub}</p>
+      <p className="text-base text-stone leading-relaxed mt-8">{sub}</p>
     </Link>
   );
 }

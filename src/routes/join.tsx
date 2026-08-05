@@ -185,13 +185,13 @@ function Page() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
             <div className="lg:col-span-4 space-y-5">
-              <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
                 Who we're looking for
               </div>
               <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
                 A curated roster of business builders.
               </h2>
-              <p className="text-cream/80 text-sm leading-relaxed max-w-md">
+              <p className="text-cream/80 text-base leading-relaxed max-w-md">
                 We stay small on purpose. Every operator on the roster has run
                 the seat before and can start inside two weeks.
               </p>
@@ -209,7 +209,7 @@ function Page() {
                     <div className="text-cream text-lg tracking-tight">
                       {c.title}
                     </div>
-                    <p className="mt-2 text-cream/75 text-sm leading-relaxed">
+                    <p className="mt-2 text-cream/75 text-base leading-relaxed">
                       {c.body}
                     </p>
                   </div>
@@ -225,7 +225,7 @@ function Page() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             <div className="lg:col-span-2 space-y-8">
-              <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
                 What happens next
               </div>
               <ul className="space-y-4">
@@ -239,7 +239,7 @@ function Page() {
                     <span className="font-mono text-sm text-accent w-6 shrink-0 tabular-nums">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-cream/85 text-sm leading-relaxed">
+                    <span className="text-cream/85 text-base leading-relaxed">
                       {i}
                     </span>
                   </li>
@@ -386,7 +386,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-cream/70">
+      <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream/70">
         {label}
         {required && " *"}
       </span>
@@ -406,7 +406,7 @@ function CheckboxGroup({
 }) {
   return (
     <div>
-      <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-cream/70">
+      <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream/70">
         {label}
       </span>
       <div className="mt-3 flex flex-wrap gap-2">

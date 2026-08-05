@@ -174,7 +174,7 @@ function TermsPage() {
 
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+          <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
             Last updated
           </div>
           <p className="mt-3 text-stone text-base">April 1, 2025</p>
@@ -194,7 +194,7 @@ function TermsPage() {
 
             <div>
               <div className="flex items-baseline gap-4">
-                <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+                <span className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
                   04
                 </span>
                 <h2 className="text-2xl md:text-3xl text-cream allow-wrap">Privacy</h2>
@@ -216,7 +216,7 @@ function TermsPage() {
 
             <div>
               <div className="flex items-baseline gap-4">
-                <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+                <span className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
                   17
                 </span>
                 <h2 className="text-2xl md:text-3xl text-cream allow-wrap">Questions?</h2>
@@ -244,7 +244,7 @@ function SectionBlock({ n, title, blocks }: { n: string; title: string; blocks: 
   return (
     <div>
       <div className="flex items-baseline gap-4">
-        <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+        <span className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
           {n}
         </span>
         <h2 className="text-2xl md:text-3xl text-cream allow-wrap">{title}</h2>

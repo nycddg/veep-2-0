@@ -125,7 +125,7 @@ function Page() {
                 <div className="flex items-baseline gap-3">
                   <span className="text-2xl text-cream">{t.t}</span>
                   {t.featured && (
-                    <span className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent-coral">
+                    <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-accent-coral">
                       Most requested
                     </span>
                   )}
@@ -133,7 +133,7 @@ function Page() {
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
                   {t.p} <span className="text-stone">{t.per}</span>
                 </div>
-                <p className="mt-4 text-sm text-cream/90 leading-relaxed lg:min-h-[3.75rem]">{t.best}</p>
+                <p className="mt-4 text-base text-cream/90 leading-relaxed lg:min-h-[3.75rem]">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-start gap-2.5">
@@ -164,7 +164,7 @@ function Page() {
       <section className="bg-surface-band py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
-            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
               What we don't charge for
             </div>
             <h2 className="mt-5 text-3xl md:text-4xl text-cream allow-wrap">
@@ -175,7 +175,7 @@ function Page() {
             {notIncluded.map((n) => (
               <div key={n.t}>
                 <div className="text-lg text-cream">{n.t}</div>
-                <p className="mt-2 text-sm text-cream/75 leading-relaxed">{n.d}</p>
+                <p className="mt-2 text-base text-cream/75 leading-relaxed">{n.d}</p>
               </div>
             ))}
           </div>
@@ -186,7 +186,7 @@ function Page() {
       <section className="spotlight-invert py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div>
-            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
               FOR FUNDS
             </div>
             <h3 className="mt-5 text-2xl md:text-3xl text-cream">
@@ -218,7 +218,7 @@ function Page() {
       <section className="bg-surface-raised py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-14">
-            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
               Pricing FAQ
             </div>
             <h2 className="mt-5 text-3xl text-cream">
@@ -229,7 +229,7 @@ function Page() {
             {faqs.map((f) => (
               <div key={f.q} className="border-t border-white/10 pt-6">
                 <div className="text-lg text-cream leading-snug">{f.q}</div>
-                <p className="mt-2 text-sm text-cream/80 leading-relaxed">{f.a}</p>
+                <p className="mt-2 text-base text-cream/80 leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>

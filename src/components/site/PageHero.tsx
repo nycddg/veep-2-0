@@ -37,7 +37,7 @@ export function PageHero({
           {chip ? (
             <TrustChip label={chip} />
           ) : (
-            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
               {eyebrow}
             </div>
           )}

@@ -51,7 +51,7 @@ export function SiteFooter() {
               <img src={wordmarkWhite.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto block light:hidden" />
               <img src={wordmarkNavy.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto hidden light:block" />
             </Link>
-            <p className="mt-5 text-sm text-cream/85 max-w-[20.4rem] leading-relaxed">
+            <p className="mt-5 text-base text-cream/85 max-w-[20.4rem] leading-relaxed">
               Vetted senior operators who step in to own critical work, now.
               Matched in 72 hours. Ready to go in under 10 days.
             </p>

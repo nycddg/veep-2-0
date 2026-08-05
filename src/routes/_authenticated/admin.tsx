@@ -49,7 +49,7 @@ function Shell({ children }: { children: React.ReactNode }) {
     <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-14 md:py-20 space-y-14">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+          <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
             Admin
           </div>
           <h1 className="mt-3 text-3xl text-cream tracking-tight">Manage the partner dashboard</h1>

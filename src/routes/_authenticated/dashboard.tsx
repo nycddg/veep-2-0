@@ -103,7 +103,7 @@ function Dashboard() {
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+          <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
             Partner dashboard
           </div>
           <h1 className="mt-3 text-3xl md:text-4xl text-cream tracking-tight">
@@ -176,7 +176,7 @@ function Dashboard() {
                   </span>
                 </div>
                 {lead.blurb && (
-                  <p className="mt-2 text-sm leading-relaxed text-stone">{lead.blurb}</p>
+                  <p className="mt-2 text-base leading-relaxed text-stone">{lead.blurb}</p>
                 )}
                 {lead.meta && (
                   <p className="mt-3 text-[11px] uppercase tracking-[0.1em] text-stone-soft">
@@ -207,7 +207,7 @@ function Dashboard() {
                   </span>
                 </div>
                 {win.blurb && (
-                  <p className="mt-2 text-sm leading-relaxed text-stone">{win.blurb}</p>
+                  <p className="mt-2 text-base leading-relaxed text-stone">{win.blurb}</p>
                 )}
                 {win.meta && (
                   <p className="mt-3 text-[11px] uppercase tracking-[0.1em] text-stone-soft">

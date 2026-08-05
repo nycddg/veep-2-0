@@ -19,7 +19,7 @@ export function Marquee() {
             <span className="text-2xl md:text-3xl tracking-tight text-cream/70 font-light">
               {l}
             </span>
-            <span className="font-mono text-[10px] tracking-widest text-stone-soft">
+            <span className="font-mono text-[11px] tracking-widest text-stone-soft">
               /{String((i % lines.length) + 1).padStart(2, "0")}
             </span>
           </div>

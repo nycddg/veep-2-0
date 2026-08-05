@@ -16,7 +16,7 @@ export function HeroVisual() {
           / POWERED BY
         </div>
         <div className="mt-3 text-3xl md:text-4xl tracking-tight text-cream">
-          Operator Roster<sup className="font-mono text-[10px] text-stone-soft ml-1">™</sup>
+          Operator Roster<sup className="font-mono text-[11px] text-stone-soft ml-1">™</sup>
         </div>
       </div>
       <GradientPyramid className="w-full h-[300px] mt-6" />

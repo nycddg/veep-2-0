@@ -98,7 +98,7 @@ function Page() {
       <section className="bg-surface-raised py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-14 md:mb-16">
-            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
               WHERE YOUR PORTFOLIOS LOSE TIME
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
@@ -127,7 +127,7 @@ function Page() {
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
-            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
               Start here
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
@@ -150,13 +150,13 @@ function Page() {
               </ul>
             </div>
             <div className="md:border-l md:border-white/10 md:pl-12">
-              <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
                 Then
               </div>
               <div className="mt-4 text-xl sm:text-2xl text-cream tracking-tight">
                 Portfolio Roster
               </div>
-              <p className="mt-4 text-sm text-cream/80 leading-relaxed">
+              <p className="mt-4 text-base text-cream/80 leading-relaxed">
                 A retained operating partner function for firms that do not want to build one internally. Veep gives your firm priority access to vetted senior operators who can support transactions, integrations, interim gaps, and value-creation work across the portfolio.
               </p>
               <ul className="mt-6 space-y-2 text-sm text-cream/85">
@@ -180,7 +180,7 @@ function Page() {
       <section className="bg-surface-band py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
-            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
               Roster model
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
@@ -197,7 +197,7 @@ function Page() {
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
                   {t.p} <span className="text-cream/70">{t.per}</span>
                 </div>
-                <p className="mt-5 text-sm text-cream/85 leading-relaxed">{t.best}</p>
+                <p className="mt-5 text-base text-cream/85 leading-relaxed">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-baseline gap-2.5">
@@ -227,7 +227,7 @@ function Page() {
       <section className="bg-surface-band py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
-            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
               How it works
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
@@ -239,7 +239,7 @@ function Page() {
               <div key={s.n}>
                 <div className="font-mono text-[11px] tracking-[0.14em] text-accent">{s.n}</div>
                 <div className="mt-3 text-lg sm:text-xl text-cream tracking-tight">{s.t}</div>
-                <p className="mt-2 text-sm text-cream/75 leading-relaxed">{s.d}</p>
+                <p className="mt-2 text-base text-cream/75 leading-relaxed">{s.d}</p>
               </div>
             ))}
           </div>
@@ -250,7 +250,7 @@ function Page() {
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
-            <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
+            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
               What the retainer covers
             </div>
             <h2 className="mt-6 text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
@@ -261,7 +261,7 @@ function Page() {
             {included.map((i) => (
               <div key={i.t}>
                 <div className="text-lg sm:text-xl text-cream tracking-tight">{i.t}</div>
-                <p className="mt-2 text-sm text-cream/75 leading-relaxed">{i.d}</p>
+                <p className="mt-2 text-base text-cream/75 leading-relaxed">{i.d}</p>
               </div>
             ))}
           </div>
