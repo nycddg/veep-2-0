@@ -621,11 +621,11 @@ function Index() {
             </div>
 
             <div className="relative">
-              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-x-14 gap-y-12">
+              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-y-10">
                 {networkImpact.map((m, i) => (
                   <div
                     key={m.label}
-                    className="flex flex-col gap-3 group"
+                    className="flex flex-col gap-3 group border-l border-white/10 pl-8 pr-8 odd:border-l-0 odd:pl-0 lg:odd:border-l lg:odd:pl-8 lg:first:border-l-0 lg:first:pl-0 last:pr-0 lg:pr-8 lg:last:pr-0"
                   >
                     <div className="flex items-center gap-2.5">
                       <div className="relative">
