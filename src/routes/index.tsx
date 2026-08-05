@@ -619,21 +619,12 @@ function Index() {
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-accent/20" />
             </div>
 
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-secondary">
-              {/* Subtle dot grid */}
-              <div
-                className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                style={{
-                  backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-                  backgroundSize: "20px 20px",
-                }}
-              />
-
-              <div className="relative grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-white/5">
+            <div className="relative">
+              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
                 {networkImpact.map((m, i) => (
                   <div
                     key={m.label}
-                    className="p-7 md:p-10 flex flex-col gap-3 group transition-colors duration-300 hover:bg-white/[0.015]"
+                    className="flex flex-col gap-3 group"
                   >
                     <div className="flex items-center gap-2.5">
                       <div className="relative">
@@ -655,9 +646,6 @@ function Index() {
                   </div>
                 ))}
               </div>
-
-              {/* Scan line */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.07] to-transparent h-20 -top-20 animate-scan pointer-events-none" />
             </div>
 
             <p className="mt-4 text-sm text-stone">

@@ -253,10 +253,8 @@ function Page() {
 
             <div className="lg:col-span-3">
               {submitted ? (
-                <div className="glass-card rounded-3xl p-8 sm:p-10 text-center">
-                  <div className="mx-auto h-12 w-12 rounded-full bg-accent/15 grid place-items-center text-accent">
-                    <Check strokeWidth={3} />
-                  </div>
+                <div className="py-8 sm:py-10 text-center">
+                  <Check strokeWidth={2.5} className="mx-auto h-8 w-8 text-accent" />
                   <h3 className="mt-6 text-2xl text-cream tracking-tight">
                     Application received.
                   </h3>
@@ -341,7 +339,7 @@ function Page() {
                   </details>
 
                   {error && (
-                    <p className="text-sm text-red-400 bg-red-500/10 rounded-xl px-4 py-3">
+                    <p className="text-sm text-red-400 border-l-2 border-red-400/50 pl-4 py-1">
                       {error}
                     </p>
                   )}
@@ -415,7 +413,7 @@ function CheckboxGroup({
         {options.map((o) => (
           <label
             key={o}
-            className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-3 py-1.5 text-xs text-cream/85 hover:border-accent/50 hover:text-cream transition cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full border border-white/12 px-3 py-1.5 text-xs text-cream/85 hover:border-accent/50 hover:text-cream transition cursor-pointer"
           >
             <input type="checkbox" name={name} value={o} className="accent-accent" />
             {o}
