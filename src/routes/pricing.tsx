@@ -123,7 +123,7 @@ function Page() {
                 className={
                   t.featured
                     ? "flex flex-col rounded-2xl bg-[color:var(--surface-raised)] border-l-2 border-accent p-7"
-                    : "flex flex-col p-7 pl-0 lg:pl-7"
+                    : "flex flex-col py-7 pr-7"
                 }
               >
                 <div className="flex items-baseline gap-3">
