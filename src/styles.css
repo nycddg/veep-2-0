@@ -215,6 +215,64 @@ html.light .lg\:divide-white\/10 > * { border-color: rgb(10 19 48 / 0.18); }
 html.light .border-white\/8  { border-color: rgb(10 19 48 / 0.14); }
 html.light .divide-white\/8  > * { border-color: rgb(10 19 48 / 0.14); }
 
+/* ─── Spotlight band ────────────────────────────────────────────────────────
+   Inverted surface used to spotlight the "For Funds" callouts. Redefines the
+   semantic tokens locally so children using text-cream / text-stone / bg-cream
+   / text-ink / accent render correctly against the flipped surface. */
+.spotlight-invert {
+  /* Dark mode → pale surface with navy type */
+  --surface-ink: oklch(0.965 0.005 85);
+  --surface-raised: oklch(0.965 0.005 85);
+  --surface-band: oklch(0.945 0.006 80);
+  --background: oklch(0.965 0.005 85);
+  --foreground: oklch(0.18 0.03 265);
+  --ink: oklch(0.98 0 0);
+  --cream: oklch(0.18 0.03 265);
+  --stone: oklch(0.42 0.02 260);
+  --stone-soft: oklch(0.52 0.025 258);
+  --rule: oklch(0 0 0 / 0.10);
+  --forest: #5b46f5;
+  --forest-deep: oklch(0.92 0.02 260);
+  --forest-foreground: oklch(0.18 0.03 265);
+  --accent-gold: #5b46f5;
+  --ring: #5b46f5;
+  background-color: var(--surface-raised);
+  color: var(--foreground);
+}
+
+.spotlight-invert .border-white\/10 { border-color: rgb(10 19 48 / 0.18); }
+.spotlight-invert .border-white\/20 { border-color: rgb(10 19 48 / 0.22); }
+.spotlight-invert .decoration-white\/25 { text-decoration-color: rgb(10 19 48 / 0.28); }
+.spotlight-invert .hover\:decoration-white\/60:hover { text-decoration-color: rgb(10 19 48 / 0.6); }
+.spotlight-invert .hover\:decoration-white\/70:hover { text-decoration-color: rgb(10 19 48 / 0.7); }
+.spotlight-invert .decoration-white\/30 { text-decoration-color: rgb(10 19 48 / 0.32); }
+
+html.light .spotlight-invert {
+  /* Light mode → deep navy surface with cream type */
+  --surface-ink: oklch(0.135 0.03 265);
+  --surface-raised: oklch(0.135 0.03 265);
+  --surface-band: oklch(0.185 0.022 258);
+  --background: oklch(0.135 0.03 265);
+  --foreground: oklch(0.98 0 0);
+  --ink: oklch(0.115 0.03 265);
+  --cream: oklch(0.98 0 0);
+  --stone: oklch(0.80 0.02 250);
+  --stone-soft: oklch(0.68 0.03 255);
+  --rule: oklch(1 0 0 / 0.10);
+  --forest: #789fff;
+  --forest-deep: oklch(0.205 0.05 265);
+  --forest-foreground: oklch(0.98 0 0);
+  --accent-gold: #789fff;
+  --ring: #789fff;
+}
+
+html.light .spotlight-invert .border-white\/10 { border-color: rgb(255 255 255 / 0.12); }
+html.light .spotlight-invert .border-white\/20 { border-color: rgb(255 255 255 / 0.20); }
+html.light .spotlight-invert .decoration-white\/25 { text-decoration-color: rgb(255 255 255 / 0.25); }
+html.light .spotlight-invert .hover\:decoration-white\/60:hover { text-decoration-color: rgb(255 255 255 / 0.6); }
+html.light .spotlight-invert .hover\:decoration-white\/70:hover { text-decoration-color: rgb(255 255 255 / 0.7); }
+html.light .spotlight-invert .decoration-white\/30 { text-decoration-color: rgb(255 255 255 / 0.3); }
+
 @layer base {
   * {
     border-color: var(--color-border);
