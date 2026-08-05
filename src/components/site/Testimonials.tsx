@@ -20,7 +20,7 @@ export function Testimonials() {
     <div className="max-w-5xl mx-auto">
       <div className="text-center">
         <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
-          Verified — Founder testimonials
+          FOUNDER TESTIMONIALS
         </div>
 
         <div className="mt-10 md:mt-14 space-y-16 md:space-y-20">
