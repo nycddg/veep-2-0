@@ -804,7 +804,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-[minmax(min-content,1fr)_minmax(min-content,1fr)_minmax(min-content,1fr)] border-y border-white/10 divide-y divide-white/10">
+          <div className="grid grid-cols-[auto_minmax(min-content,1fr)_minmax(min-content,1fr)] border-y border-white/10 divide-y divide-white/10">
             <div className="hidden md:grid md:grid-cols-subgrid md:col-span-3">
               <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft md:whitespace-nowrap">Dimension</div>
               <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft md:whitespace-nowrap">The old way</div>
