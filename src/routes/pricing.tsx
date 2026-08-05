@@ -120,7 +120,7 @@ function Page() {
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="flex flex-col lg:px-6 lg:first:pl-0 lg:last:pr-0"
+                className="flex flex-col border-t border-white/10 pt-8 first:border-t-0 first:pt-0 sm:first:border-t sm:first:pt-8 lg:border-t-0 lg:pt-0 lg:px-6 lg:first:pl-0 lg:last:pr-0"
               >
                 <div className="flex items-baseline gap-3">
                   <span className="text-2xl text-cream">{t.t}</span>
@@ -133,7 +133,7 @@ function Page() {
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
                   {t.p} <span className="text-stone">{t.per}</span>
                 </div>
-                <p className="mt-4 text-sm text-cream/90 leading-relaxed min-h-[3.75rem]">{t.best}</p>
+                <p className="mt-4 text-sm text-cream/90 leading-relaxed lg:min-h-[3.75rem]">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-start gap-2.5">
@@ -142,7 +142,7 @@ function Page() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto pt-6">
+                <div className="mt-6 lg:mt-auto pt-2 lg:pt-6">
                   <Link
                     to="/services"
                     hash={t.t.toLowerCase()}

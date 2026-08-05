@@ -538,7 +538,7 @@ function Index() {
               {alternatives.map((a) => (
                 <div
                   key={a.t}
-                  className="border-t border-white/10 pt-8 md:border-t-0 md:pt-0 md:border-l md:pl-10 md:first:border-l-0 md:first:pl-0 md:pr-10 md:last:pr-0"
+                  className="border-t border-white/10 pt-8 first:border-t-0 first:pt-0 sm:first:border-t sm:first:pt-8 md:border-t-0 md:pt-0 md:border-l md:pl-10 md:first:border-l-0 md:first:pl-0 md:pr-10 md:last:pr-0"
                 >
                   <div className="font-serif text-xl text-cream/90 tracking-tight">{a.t}</div>
                   <p className="mt-2 text-sm text-stone leading-relaxed">{a.d}</p>
