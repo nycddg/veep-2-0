@@ -523,22 +523,22 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-10 md:gap-x-14 border-t border-white/10">
+          <div className="grid sm:grid-cols-2 gap-x-14 gap-y-12 md:gap-x-20">
             {problems.map((p) => (
-              <div key={p.t} className="pt-8 md:pt-10">
+              <div key={p.t}>
                 <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
-                <p className="mt-4 text-sm text-stone leading-relaxed max-w-md">{p.d}</p>
+                <p className="mt-2 text-sm text-stone leading-relaxed max-w-md">{p.d}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 md:mt-20 border-t border-white/10 pt-10">
+          <div className="mt-20 md:mt-24 border-t border-white/10 pt-12">
             <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft mb-8">Instead of</div>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-10">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-14 gap-y-12">
               {alternatives.map((a) => (
                 <div key={a.t}>
                   <div className="font-serif text-xl text-cream/90 tracking-tight">{a.t}</div>
-                  <p className="mt-3 text-sm text-stone leading-relaxed">{a.d}</p>
+                  <p className="mt-2 text-sm text-stone leading-relaxed">{a.d}</p>
                 </div>
               ))}
             </div>
@@ -571,7 +571,7 @@ function Index() {
                 Vetted senior operators who step in to own critical work, now.
               </p>
             </div>
-            <div className="space-y-6 lg:border-l lg:border-white/10 lg:pl-10">
+            <div className="space-y-8 lg:border-l lg:border-white/10 lg:pl-14">
               <div className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
@@ -579,7 +579,7 @@ function Index() {
                 ["Priced to scope", "Advisory, Sprint, Operator, or Pod structured around the work and outcomes."],
                 ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
               ].map(([t, d]) => (
-                <div key={t} className="border-t border-white/10 pt-5 first:border-0 first:pt-0">
+                <div key={t}>
                   <div className="font-serif text-xl text-cream tracking-tight">{t}</div>
                   <p className="mt-2 text-sm text-stone leading-relaxed">{d}</p>
                 </div>
@@ -612,13 +612,13 @@ function Index() {
           </p>
 
           {/* Network impact */}
-          <div className="mt-16">
-            <div className="border-t border-white/10 pt-6 mb-10">
+          <div className="mt-20 md:mt-24">
+            <div className="border-t border-white/10 pt-8 mb-12">
               <SectionEyebrow>Network impact</SectionEyebrow>
             </div>
 
             <div className="relative">
-              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-10">
+              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-x-14 gap-y-12">
                 {networkImpact.map((m, i) => (
                   <div
                     key={m.label}
@@ -651,7 +651,7 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
+          <div className="mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
             <p className="text-sm text-stone">
               75+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
             </p>
@@ -676,20 +676,20 @@ function Index() {
               Senior ownership on your terms.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 border-t border-white/10 pt-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-14">
             {benefits.map((b, i) => (
               <div key={b.t}>
                 <div className="font-mono text-[10px] tracking-[0.14em] text-accent">
                   0{i + 1}
                 </div>
-                <div className="mt-4 font-serif text-2xl text-cream tracking-tight leading-tight">
+                <div className="mt-3 font-serif text-2xl text-cream tracking-tight leading-tight">
                   {b.t}
                 </div>
-                <p className="mt-3 text-sm text-stone leading-relaxed">{b.d}</p>
+                <p className="mt-2 text-sm text-stone leading-relaxed">{b.d}</p>
               </div>
             ))}
           </div>
-          <div className="mt-14">
+          <div className="mt-16">
             <InlineCTA />
           </div>
         </div>
@@ -746,20 +746,19 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-10 border-t border-white/10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-14 gap-y-14">
             {cases.map((c) => (
-              <div key={c.tag} className="pt-8 flex flex-col">
+              <div key={c.tag} className="flex flex-col rounded-2xl bg-[color:var(--surface-raised)] p-7">
                 <span className="text-[10px] font-medium tracking-[0.14em] uppercase text-accent">
                   {c.tag}
                 </span>
                 <p className="mt-6 text-sm text-stone leading-relaxed">
                   <span className="text-cream">Trigger. </span>{c.trigger}
                 </p>
-                <div className="my-5 border-t border-white/10" />
-                <p className="text-sm text-stone leading-relaxed">
+                <p className="mt-4 text-sm text-stone leading-relaxed">
                   <span className="text-cream">Outcome. </span>{c.outcome}
                 </p>
-                <div className="mt-auto pt-6 font-serif text-xl text-accent tracking-tight">
+                <div className="mt-auto pt-8 font-serif text-xl text-accent tracking-tight">
                   {c.metric}
                 </div>
               </div>
@@ -826,7 +825,7 @@ function Index() {
       {/* 10 — FOR PORTFOLIOS (secondary audience band) */}
       <Reveal as="section" id="portfolios" className="spotlight-invert py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-8 md:gap-10 items-center border-t border-white/10 pt-12 md:pt-16">
+          <div className="grid lg:grid-cols-5 gap-10 md:gap-14 items-center">
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>FOR FUNDS</SectionEyebrow>
               <h2 className="font-serif text-3xl text-cream tracking-tight leading-[1.1] allow-wrap">
