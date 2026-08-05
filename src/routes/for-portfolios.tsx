@@ -105,19 +105,16 @@ function Page() {
               Transactions create volatility. The work still needs an owner.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-x-12 gap-y-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-x-16 gap-y-14">
             {problems.map((p, i) => (
-              <div
-                key={p.t}
-                className="border-t border-white/10 pt-6"
-              >
+              <div key={p.t}>
                 <div className="font-mono text-[11px] tracking-[0.14em] text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <div className="mt-4 text-xl md:text-2xl text-cream tracking-tight leading-snug">
+                <div className="mt-3 text-xl md:text-2xl text-cream tracking-tight leading-snug">
                   {p.t}
                 </div>
-                <p className="mt-5 text-base text-cream/70 leading-relaxed">
+                <p className="mt-2 text-base text-cream/70 leading-relaxed">
                   {p.d}
                 </p>
               </div>
@@ -140,7 +137,7 @@ function Page() {
               Before you retain the roster, we map where transactions and operating priorities are likely to create staffing volatility across the portfolio. We identify which companies need what, which upcoming events could create urgency in the next 6 to 12 months, and where a Veep operator would help stabilize execution.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 border-t border-white/10 pt-10">
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-12 border-t border-white/10 pt-12">
             <div>
               <div className="text-xl sm:text-2xl text-cream tracking-tight">What you get</div>
               <ul className="mt-6 space-y-3 text-sm text-cream/85">
@@ -190,11 +187,11 @@ function Page() {
               On-call operators for the work that can't wait.
             </h2>
           </div>
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto space-y-4">
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="border-t border-white/10 pt-8"
+                className="rounded-2xl bg-[color:var(--surface-raised)] p-8"
               >
                 <div className="text-xl sm:text-2xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
@@ -237,12 +234,12 @@ function Page() {
               One agreement. Every portfolio company activated.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-x-14 gap-y-12 border-t border-white/10 pt-12">
             {steps.map((s) => (
               <div key={s.n}>
                 <div className="font-mono text-[11px] tracking-[0.14em] text-accent">{s.n}</div>
-                <div className="mt-4 text-lg sm:text-xl text-cream tracking-tight">{s.t}</div>
-                <p className="mt-3 text-sm text-cream/75 leading-relaxed">{s.d}</p>
+                <div className="mt-3 text-lg sm:text-xl text-cream tracking-tight">{s.t}</div>
+                <p className="mt-2 text-sm text-cream/75 leading-relaxed">{s.d}</p>
               </div>
             ))}
           </div>
@@ -260,11 +257,11 @@ function Page() {
               Roster access is retained. Operator work is scoped.
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 border-t border-white/10 pt-10">
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
             {included.map((i) => (
               <div key={i.t}>
                 <div className="text-lg sm:text-xl text-cream tracking-tight">{i.t}</div>
-                <p className="mt-3 text-sm text-cream/75 leading-relaxed">{i.d}</p>
+                <p className="mt-2 text-sm text-cream/75 leading-relaxed">{i.d}</p>
               </div>
             ))}
           </div>
