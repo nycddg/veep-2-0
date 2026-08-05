@@ -28,11 +28,11 @@ export function StatsBand() {
                 Veep operators lead through growth, transformation, fundraising, and
                 operational change. They're not learning on your business.
               </p>
-              <div className="mt-10 grid grid-cols-2 gap-x-10 gap-y-8">
+              <div className="mt-12 grid grid-cols-2 gap-x-14 gap-y-10">
                 {stats.map((s) => (
-                  <div key={s.k} className="border-t border-white/8 pt-4">
+                  <div key={s.k}>
                     <div className="text-3xl md:text-4xl text-cream leading-none tracking-tight">{s.v}</div>
-                    <div className="mt-2 text-sm text-stone">{s.k}</div>
+                    <div className="mt-1.5 text-sm text-stone">{s.k}</div>
                   </div>
                 ))}
               </div>
