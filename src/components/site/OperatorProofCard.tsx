@@ -38,11 +38,11 @@ export function OperatorProofCard({
   if (variant === "compact") {
     return (
       <div
-        className="transition-all duration-500 hover:rotate-0 hover:translate-y-0"
+        className="glass-card p-5 rounded-3xl shadow-2xl transition-all duration-500 hover:rotate-0 hover:translate-y-0"
         style={{ transform: `rotate(${tilt}deg) translateY(${translateY}px)` }}
       >
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-14 h-14 rounded-2xl bg-accent/10 grid place-items-center text-cream text-sm font-medium tracking-tight overflow-hidden">
+          <div className="w-14 h-14 rounded-2xl bg-accent/10 ring-1 ring-white/15 grid place-items-center text-cream text-sm font-medium tracking-tight overflow-hidden">
             {photoUrl ? (
               <img
                 src={photoUrl}
@@ -68,7 +68,7 @@ export function OperatorProofCard({
           {chips.map((c) => (
             <span
               key={c}
-              className="font-mono text-[10px] uppercase tracking-[0.14em] text-stone"
+              className="text-[10px] px-2.5 py-1 bg-white/5 rounded-full border border-white/10 text-stone"
             >
               {c}
             </span>
@@ -89,10 +89,10 @@ export function OperatorProofCard({
   const summaryId = `operator-summary-${name.toLowerCase().replace(/\s+/g, "-")}`;
 
   return (
-    <figure className="group flex flex-col lg:w-[95%] lg:mx-auto">
+    <figure className="group flex flex-col overflow-hidden rounded-lg bg-white/[0.02] ring-1 ring-white/8 transition-colors hover:ring-white/15 lg:w-[95%] lg:mx-auto">
 
       {/* Portrait */}
-      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg bg-accent/10">
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-accent/10">
         {photoUrl ? (
           <>
             <img
@@ -121,7 +121,7 @@ export function OperatorProofCard({
       </div>
 
       {/* Caption */}
-      <figcaption className="flex flex-1 flex-col gap-4 pt-5">
+      <figcaption className="flex flex-1 flex-col gap-4 p-5">
         <div>
           <h3 className="font-sans text-lg text-cream tracking-tight leading-tight text-balance">
             {name}

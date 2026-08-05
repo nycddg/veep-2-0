@@ -181,7 +181,7 @@ export function RatingRow() {
 /* Kept exports (unused by new marketing surfaces) so any lingering imports compile. */
 export function MockPanel({ children }: { children?: ReactNode }) {
   return (
-    <div className="relative rounded-lg bg-card p-6 md:p-8 overflow-hidden">
+    <div className="relative rounded-lg bg-card border border-border shadow-elegant p-6 md:p-8 overflow-hidden">
       <div className="relative">{children}</div>
     </div>
   );

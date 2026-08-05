@@ -105,11 +105,11 @@ function Page() {
               Transactions create volatility. The work still needs an owner.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-x-12 gap-y-10 border-t border-white/10 pt-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-6 md:gap-8">
             {problems.map((p, i) => (
               <div
                 key={p.t}
-                className=""
+                className="bg-card rounded-2xl border border-white/10 p-6 md:p-8"
               >
                 <div className="font-mono text-[11px] tracking-[0.14em] text-accent">
                   {String(i + 1).padStart(2, "0")}
@@ -194,7 +194,7 @@ function Page() {
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="border-t border-white/10 pt-8"
+                className="rounded-3xl border border-white/10 bg-card p-6 sm:p-8 md:p-10"
               >
                 <div className="text-xl sm:text-2xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">

@@ -216,7 +216,7 @@ export function AudienceTabs() {
             </div>
 
             <div className="md:col-span-7">
-              <div>
+              <div className="border border-white/10 bg-white/[0.02] rounded-md p-8">
                 <div className="flex items-center justify-between border-b border-white/8 pb-4">
                   <div className="text-cream text-sm">{p.panelTitle}</div>
                   <span className="font-mono text-[10px] tracking-widest text-stone-soft">
