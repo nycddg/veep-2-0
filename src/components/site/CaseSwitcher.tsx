@@ -52,8 +52,8 @@ export function CaseSwitcher() {
           ))}
         </div>
       </div>
-      <div className="border border-white/10 bg-white/[0.02] rounded-md">
-        <div className="grid md:grid-cols-12 gap-8 p-8 md:p-12 items-center">
+      <div className="border-t border-white/10">
+        <div className="grid md:grid-cols-12 gap-8 pt-10 md:pt-12 items-center">
           <div className="md:col-span-5">
             <div className="font-mono text-[11px] tracking-widest text-stone-soft mb-4">
               / OUTCOME · {current.tab.toUpperCase()}
