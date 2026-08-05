@@ -116,11 +116,15 @@ function Page() {
       {/* Four tiers — data cards, no big containers, hierarchy earned by type + left rule. */}
       <section className="bg-surface-band py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:divide-x lg:divide-white/10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 items-stretch">
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="flex flex-col lg:px-6 lg:first:pl-0 lg:last:pr-0"
+                className={
+                  t.featured
+                    ? "flex flex-col rounded-2xl bg-[color:var(--surface-raised)] border-l-2 border-accent p-7"
+                    : "flex flex-col p-7 pl-0 lg:pl-7"
+                }
               >
                 <div className="flex items-baseline gap-3">
                   <span className="text-2xl text-cream">{t.t}</span>
@@ -133,7 +137,7 @@ function Page() {
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
                   {t.p} <span className="text-stone">{t.per}</span>
                 </div>
-                <p className="mt-5 text-sm text-cream/90 leading-relaxed min-h-[3.75rem]">{t.best}</p>
+                <p className="mt-4 text-sm text-cream/90 leading-relaxed min-h-[3.75rem]">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-start gap-2.5">
@@ -171,11 +175,11 @@ function Page() {
               The price you see is the price you pay.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-14 gap-y-14">
             {notIncluded.map((n) => (
-              <div key={n.t} className="border-t border-white/10 pt-6">
+              <div key={n.t}>
                 <div className="text-lg text-cream">{n.t}</div>
-                <p className="mt-3 text-sm text-cream/75 leading-relaxed">{n.d}</p>
+                <p className="mt-2 text-sm text-cream/75 leading-relaxed">{n.d}</p>
               </div>
             ))}
           </div>
@@ -225,11 +229,11 @@ function Page() {
               Straight answers to the questions we get most.
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
             {faqs.map((f) => (
               <div key={f.q} className="border-t border-white/10 pt-6">
                 <div className="text-lg text-cream leading-snug">{f.q}</div>
-                <p className="mt-3 text-sm text-cream/80 leading-relaxed">{f.a}</p>
+                <p className="mt-2 text-sm text-cream/80 leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>
