@@ -27,13 +27,13 @@ const objections = [
 
 export function ObjectionList() {
   return (
-    <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 border-t border-white/10 pt-10">
+    <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
       {objections.map((o) => (
         <div key={o.q}>
           <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">
             {o.q}
           </h3>
-          <p className="mt-3 text-sm text-stone leading-relaxed">{o.a}</p>
+          <p className="mt-2 text-sm text-stone leading-relaxed">{o.a}</p>
         </div>
       ))}
     </div>
