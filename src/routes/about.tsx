@@ -161,7 +161,7 @@ function Page() {
           </div>
           <div className="mt-14 grid md:grid-cols-3 gap-10 md:gap-8">
             {founders.map((f) => (
-              <div key={f.name} >
+              <div key={f.name}>
                 <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-cream/70">
                   {f.role}
                 </div>
