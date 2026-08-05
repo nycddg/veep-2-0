@@ -534,9 +534,12 @@ function Index() {
 
           <div className="mt-20 md:mt-24 border-t border-white/10 pt-12">
             <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-stone-soft mb-8">Instead of</div>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-14 gap-y-12">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-y-10">
               {alternatives.map((a) => (
-                <div key={a.t}>
+                <div
+                  key={a.t}
+                  className="border-t border-white/10 pt-8 md:border-t-0 md:pt-0 md:border-l md:pl-10 md:first:border-l-0 md:first:pl-0 md:pr-10 md:last:pr-0"
+                >
                   <div className="font-serif text-xl text-cream/90 tracking-tight">{a.t}</div>
                   <p className="mt-2 text-sm text-stone leading-relaxed">{a.d}</p>
                 </div>
@@ -571,15 +574,15 @@ function Index() {
                 Vetted senior operators who step in to own critical work, now.
               </p>
             </div>
-            <div className="space-y-8 lg:border-l lg:border-white/10 lg:pl-14">
-              <div className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent">The Veep model</div>
+            <div className="divide-y divide-white/10 lg:border-l lg:border-white/10 lg:pl-14">
+              <div className="font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-accent pb-6">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
                 ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
                 ["Priced to scope", "Advisory, Sprint, Operator, or Pod structured around the work and outcomes."],
                 ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
               ].map(([t, d]) => (
-                <div key={t}>
+                <div key={t} className="py-6 last:pb-0">
                   <div className="font-serif text-xl text-cream tracking-tight">{t}</div>
                   <p className="mt-2 text-sm text-stone leading-relaxed">{d}</p>
                 </div>
@@ -618,11 +621,11 @@ function Index() {
             </div>
 
             <div className="relative">
-              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-x-14 gap-y-12">
+              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-y-10">
                 {networkImpact.map((m, i) => (
                   <div
                     key={m.label}
-                    className="flex flex-col gap-3 group"
+                    className="flex flex-col gap-3 group border-l border-white/10 pl-8 pr-8 odd:border-l-0 odd:pl-0 lg:odd:border-l lg:odd:pl-8 lg:first:border-l-0 lg:first:pl-0 last:pr-0 lg:pr-8 lg:last:pr-0"
                   >
                     <div className="flex items-center gap-2.5">
                       <div className="relative">
