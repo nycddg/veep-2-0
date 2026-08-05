@@ -170,7 +170,7 @@ function Page() {
                 ))}
               </ul>
               {preselected && (
-                <div className="rounded-2xl border border-accent/30 bg-accent/5 p-4">
+                <div className="border-l-2 border-accent pl-5">
                   <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
                     Outcome
                   </div>
@@ -285,7 +285,7 @@ function Page() {
                     <p
                       id="contact-form-error"
                       role="alert"
-                      className="text-sm text-red-400 bg-red-500/10 rounded-xl px-4 py-3"
+                      className="text-sm text-red-400"
                     >
                       {submitError}
                     </p>
