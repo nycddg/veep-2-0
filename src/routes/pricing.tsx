@@ -161,7 +161,7 @@ function Page() {
       </section>
 
       {/* What's not included */}
-      <section className="bg-surface-band py-20 md:py-28 border-t border-white/10">
+      <section className="bg-surface-band py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
@@ -173,7 +173,7 @@ function Page() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
             {notIncluded.map((n) => (
-              <div key={n.t} className="border-t border-white/10 pt-6">
+              <div key={n.t} className="">
                 <div className="text-lg text-cream">{n.t}</div>
                 <p className="mt-3 text-sm text-cream/75 leading-relaxed">{n.d}</p>
               </div>
@@ -227,7 +227,7 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
             {faqs.map((f) => (
-              <div key={f.q} className="border-t border-white/10 pt-6">
+              <div key={f.q} className="">
                 <div className="text-lg text-cream leading-snug">{f.q}</div>
                 <p className="mt-3 text-sm text-cream/80 leading-relaxed">{f.a}</p>
               </div>
