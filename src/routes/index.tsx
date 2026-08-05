@@ -191,11 +191,11 @@ const spotlightOperators = [
 const problems = [
   {
     t: "Critical work with no clear owner.",
-    d: "A fundraise, GTM reset, operating issue, margin problem, or leadership gap keeps coming back to the founder. The team is busy, but the priority is still stuck.",
+    d: "A fundraise, GTM reset, operating issue, or margin problem keeps coming back to you. The team is busy, but the priority is still stuck.",
   },
   {
     t: "The work cannot wait for a perfect org chart.",
-    d: "A permanent hire may be the right answer eventually. The search takes months, the role may still be undefined, and the business needs movement now.",
+    d: "A permanent hire may be the right answer, eventually. A search takes months or the role may still be undefined but the business needs to move now.",
   },
   {
     t: "You are stuck in the middle.",
