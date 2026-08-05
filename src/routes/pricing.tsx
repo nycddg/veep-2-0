@@ -185,7 +185,7 @@ function Page() {
       {/* Portfolio callout */}
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="border-l-2 border-accent pl-6 md:pl-10">
+          <div className="spotlight-invert rounded-2xl border-l-2 border-accent py-10 md:py-14 pl-6 md:pl-10 pr-6 md:pr-10">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
               FOR FUNDS
             </div>

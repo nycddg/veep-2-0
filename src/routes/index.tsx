@@ -824,7 +824,7 @@ function Index() {
       </Reveal>
 
       {/* 10 — FOR PORTFOLIOS (secondary audience band) */}
-      <Reveal as="section" id="portfolios" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="portfolios" className="spotlight-invert py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 md:gap-10 items-center border-t border-white/10 pt-12 md:pt-16">
             <div className="lg:col-span-3 space-y-5">
