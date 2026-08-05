@@ -24,7 +24,7 @@ export function Testimonials() {
         </div>
 
         <div className="mt-10 md:mt-14 space-y-24 md:space-y-32">
-          {quotes.map((q, i) => (
+          {quotes.map((q) => (
             <figure key={q.name}>
               <blockquote className="font-sans font-medium text-3xl md:text-5xl leading-[1.2] text-cream tracking-tight text-balance">
                 {q.quote}
