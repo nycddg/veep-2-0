@@ -758,7 +758,7 @@ function Index() {
                 <p className="mt-4 text-sm text-stone leading-relaxed">
                   <span className="text-cream">Outcome. </span>{c.outcome}
                 </p>
-                <div className="mt-auto pt-6 font-serif text-xl text-accent tracking-tight">
+                <div className="mt-auto pt-6 border-t border-white/10 font-serif text-xl text-accent tracking-tight">
                   {c.metric}
                 </div>
               </div>
