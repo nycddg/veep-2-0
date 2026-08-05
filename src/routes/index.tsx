@@ -613,14 +613,12 @@ function Index() {
 
           {/* Network impact */}
           <div className="mt-16">
-            <div className="flex items-center gap-4 mb-10">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-accent/20" />
+            <div className="border-t border-white/10 pt-6 mb-10">
               <SectionEyebrow>Network impact</SectionEyebrow>
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-accent/20" />
             </div>
 
             <div className="relative">
-              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
+              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-10">
                 {networkImpact.map((m, i) => (
                   <div
                     key={m.label}
@@ -648,7 +646,7 @@ function Index() {
               </div>
             </div>
 
-            <p className="mt-4 text-sm text-stone">
+            <p className="mt-12 text-sm text-stone">
               Aggregated outcomes across our operator roster.
             </p>
           </div>
