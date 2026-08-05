@@ -804,14 +804,14 @@ function Index() {
             </h2>
           </div>
 
-          <div className="border-y border-white/10 divide-y divide-white/10">
-            <div className="hidden md:grid md:grid-cols-[minmax(min-content,1fr)_minmax(min-content,1fr)_minmax(min-content,1fr)]">
+          <div className="grid grid-cols-[minmax(min-content,1fr)_minmax(min-content,1fr)_minmax(min-content,1fr)] border-y border-white/10 divide-y divide-white/10">
+            <div className="hidden md:grid md:grid-cols-subgrid md:col-span-3">
               <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft md:whitespace-nowrap">Dimension</div>
               <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft md:whitespace-nowrap">The old way</div>
               <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-accent md:whitespace-nowrap">Veep</div>
             </div>
             {differentiators.map((r) => (
-              <div key={r.dim} className="grid md:grid-cols-[minmax(min-content,1fr)_minmax(min-content,1fr)_minmax(min-content,1fr)] gap-y-2 gap-x-0 p-5 md:p-0">
+              <div key={r.dim} className="grid md:grid-cols-subgrid md:col-span-3 gap-y-2 gap-x-0 p-5 md:p-0">
                 <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft md:whitespace-nowrap">
                   {r.dim}
                 </div>
