@@ -108,7 +108,9 @@ function Page() {
           <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-x-12 gap-y-10">
             {problems.map((p, i) => (
               <div
-                key={p.t}>
+                key={p.t}
+                className="border-t border-white/10 pt-6"
+              >
                 <div className="font-mono text-[11px] tracking-[0.14em] text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </div>
@@ -138,7 +140,7 @@ function Page() {
               Before you retain the roster, we map where transactions and operating priorities are likely to create staffing volatility across the portfolio. We identify which companies need what, which upcoming events could create urgency in the next 6 to 12 months, and where a Veep operator would help stabilize execution.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 border-t border-white/10 pt-10">
             <div>
               <div className="text-xl sm:text-2xl text-cream tracking-tight">What you get</div>
               <ul className="mt-6 space-y-3 text-sm text-cream/85">
@@ -188,10 +190,12 @@ function Page() {
               On-call operators for the work that can't wait.
             </h2>
           </div>
-          <div className="max-w-2xl mx-auto space-y-14">
+          <div className="max-w-2xl mx-auto">
             {tiers.map((t) => (
               <div
-                key={t.t}>
+                key={t.t}
+                className="border-t border-white/10 pt-8"
+              >
                 <div className="text-xl sm:text-2xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
                   {t.p} <span className="text-cream/70">{t.per}</span>
@@ -223,7 +227,7 @@ function Page() {
       </section>
 
       {/* How it works */}
-      <section className="bg-surface-band py-20 md:py-28">
+      <section className="bg-surface-band py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-accent">
@@ -233,7 +237,7 @@ function Page() {
               One agreement. Every portfolio company activated.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-10 border-t border-white/10 pt-10">
             {steps.map((s) => (
               <div key={s.n}>
                 <div className="font-mono text-[11px] tracking-[0.14em] text-accent">{s.n}</div>
@@ -256,7 +260,7 @@ function Page() {
               Roster access is retained. Operator work is scoped.
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 border-t border-white/10 pt-10">
             {included.map((i) => (
               <div key={i.t}>
                 <div className="text-lg sm:text-xl text-cream tracking-tight">{i.t}</div>
