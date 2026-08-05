@@ -236,6 +236,21 @@ html.light .divide-white\/8  > * { border-color: rgb(10 19 48 / 0.14); }
   --forest-foreground: oklch(0.18 0.03 265);
   --accent-gold: #5b46f5;
   --ring: #5b46f5;
+  /* Derived tokens must be restated: their :root values already resolved. */
+  --accent: #5b46f5;
+  --accent-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.18 0.03 265);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0 0 0 / 0.04);
+  --secondary-foreground: oklch(0.18 0.03 265);
+  --muted: oklch(0 0 0 / 0.04);
+  --muted-foreground: oklch(0.42 0.02 260);
+  --card: oklch(0 0 0 / 0.035);
+  --card-foreground: oklch(0.18 0.03 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.03 265);
+  --border: oklch(0 0 0 / 0.10);
+  --input: oklch(0 0 0 / 0.14);
   background-color: var(--surface-raised);
   color: var(--foreground);
 }
@@ -264,6 +279,20 @@ html.light .spotlight-invert {
   --forest-foreground: oklch(0.98 0 0);
   --accent-gold: #789fff;
   --ring: #789fff;
+  --accent: #789fff;
+  --accent-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.98 0 0);
+  --primary-foreground: oklch(0.115 0.03 265);
+  --secondary: oklch(1 0 0 / 0.05);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(1 0 0 / 0.05);
+  --muted-foreground: oklch(0.80 0.02 250);
+  --card: oklch(1 0 0 / 0.04);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.155 0.028 262);
+  --popover-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 0.10);
+  --input: oklch(1 0 0 / 0.14);
 }
 
 html.light .spotlight-invert .border-white\/10 { border-color: rgb(255 255 255 / 0.12); }
