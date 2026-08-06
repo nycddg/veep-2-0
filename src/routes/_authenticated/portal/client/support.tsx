@@ -51,14 +51,6 @@ function Support() {
           <PrimaryButton type="submit" disabled={!message.trim()}>
             Send message
           </PrimaryButton>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-accent underline underline-offset-4"
-          >
-            Or book a call
-          </a>
         </div>
         {sent && <p className="text-base text-accent">Sent. Dana will come back to you within a business day.</p>}
       </form>
