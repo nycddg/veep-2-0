@@ -116,11 +116,11 @@ function Page() {
       {/* Four tiers — data cards, no big containers, hierarchy earned by type + left rule. */}
       <section className="bg-surface-band py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:divide-x lg:divide-white/10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 divide-y divide-white/10 sm:divide-y-0 lg:divide-x lg:divide-white/10">
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="flex flex-col border-t border-white/10 pt-8 first:border-t-0 first:pt-0 sm:first:border-t sm:first:pt-8 lg:border-t-0 lg:pt-0 lg:px-6 lg:first:pl-0 lg:last:pr-0"
+                className="flex flex-col pb-12 last:pb-0 sm:pb-0 lg:px-6 lg:first:pl-0 lg:last:pr-0"
               >
                 <div className="flex items-baseline gap-3">
                   <span className="text-2xl text-cream">{t.t}</span>
