@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { NetworkPulse } from "@/components/portal/NetworkPulse";
-import { DemoNote, Eyebrow, PageHeader, Row, Rows, Status } from "@/components/portal/ui";
+import { DemoNote, Eyebrow, PageHeader, Row, Rows, Status, Surface } from "@/components/portal/ui";
 import { fmtDate } from "@/lib/portal/dates";
 import { usePortal } from "@/lib/portal/mock-store";
 
@@ -114,11 +114,25 @@ function OperatorHome() {
             Update
           </Link>
         </div>
-        <p className="mt-3 text-base text-stone">
-          <span className="text-cream">{availability.status}</span> · {availability.daysPerWeek} days per week ·
-          earliest start {fmtDate(availability.earliestStart)}
-        </p>
-        <p className="mt-2 text-sm text-stone-soft">Last updated {fmtDate(availability.updatedAt)}.</p>
+        <Surface className="mt-5">
+          <p className="text-base text-stone">
+            <span className="inline-flex items-center gap-2 text-cream">
+              <span
+                className={`inline-block h-2.5 w-2.5 rounded-full ${
+                  availability.status === "Open"
+                    ? "bg-accent"
+                    : availability.status === "Limited"
+                      ? "bg-amber-400"
+                      : "bg-[color:var(--accent-coral)]"
+                }`}
+                aria-hidden="true"
+              />
+              {availability.status}
+            </span>
+            {" "}· {availability.daysPerWeek} days per week · earliest start {fmtDate(availability.earliestStart)}
+          </p>
+          <p className="mt-2 text-sm text-stone-soft">Last updated {fmtDate(availability.updatedAt)}.</p>
+        </Surface>
       </section>
 
       <section className="space-y-6">
