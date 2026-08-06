@@ -12,7 +12,8 @@ import {
   inputCls,
 } from "@/components/portal/ui";
 import { fmtDate } from "@/lib/portal/dates";
-import { companies, companyName, usePortal } from "@/lib/portal/mock-store";
+import { companyName, usePortal } from "@/lib/portal/mock-store";
+
 
 export const Route = createFileRoute("/_authenticated/portal/client/jobs")({
   head: () => ({
@@ -36,7 +37,7 @@ const OWNERS = [
 ];
 
 function Jobs() {
-  const { jobs, submitJob, companyId } = usePortal();
+  const { jobs, submitJob, companyId, companies } = usePortal();
   const visible = companyId === "all" ? jobs : jobs.filter((j) => j.companyId === companyId);
   const [openId, setOpenId] = useState<string | null>(null);
   const [form, setForm] = useState({
@@ -44,10 +45,11 @@ function Jobs() {
     success: "",
     ownedToday: "founder",
     urgency: URGENCY[0],
-    companyId: companies[0].id,
+    companyId: companies[0]?.id ?? "",
     constraints: "",
   });
   const [confirmed, setConfirmed] = useState(false);
+
 
   return (
     <div className="space-y-14">

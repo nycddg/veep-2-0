@@ -1,5 +1,8 @@
-import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import { rel } from "./dates";
+import { getPortalData } from "./portal.functions";
 import * as op from "./operator-seed";
 import * as cl from "./client-seed";
 import type {
@@ -20,8 +23,8 @@ import type {
 } from "./types";
 
 /**
- * Session-only demo store. Everything here is placeholder data: it resets on
- * reload and is replaced screen by screen as real sources come online.
+ * Session-only demo store. Reads live demo data from the admin-managed
+ * Lovable Cloud database on first load, then mutates locally for the session.
  */
 type State = {
   invitations: Invitation[];
@@ -37,6 +40,12 @@ type State = {
   documents: DocumentRow[];
   invoices: Invoice[];
   companyId: string | "all";
+  companies: Company[];
+};
+
+type Company = {
+  id: string;
+  name: string;
 };
 
 type Actions = {
@@ -67,8 +76,8 @@ function uid(prefix: string) {
   return `${prefix}-${Math.random().toString(36).slice(2, 9)}`;
 }
 
-export function PortalStoreProvider({ children }: { children: ReactNode }) {
-  const [state, setState] = useState<State>(() => ({
+function seedState(): State {
+  return {
     invitations: op.seedInvitations,
     assignments: op.seedAssignments,
     availability: op.seedAvailability,
@@ -82,7 +91,46 @@ export function PortalStoreProvider({ children }: { children: ReactNode }) {
     documents: cl.seedDocuments,
     invoices: cl.seedInvoices,
     companyId: "all",
-  }));
+    companies: cl.companies,
+  };
+}
+
+export function PortalStoreProvider({ children }: { children: ReactNode }) {
+  const fetchPortal = useServerFn(getPortalData);
+  const { data } = useQuery({
+    queryKey: ["portal-data"],
+    queryFn: () => fetchPortal(),
+    staleTime: 60_000,
+    retry: 1,
+  });
+  const [state, setState] = useState<State>(seedState);
+
+  useEffect(() => {
+    if (!data) return;
+    const companies = data.companies.map((c) => ({ id: c.id, name: c.name }));
+    const companyName = (id: string) => companies.find((c) => c.id === id)?.name ?? "Veep";
+
+    setState({
+      invitations: data.invitations,
+      assignments: data.assignments,
+      availability: data.availability ?? state.availability,
+      profile: data.operator ?? state.profile,
+      agreements: data.agreements,
+      payouts: data.payouts,
+      jobs: data.jobs.map((j) => ({ ...j, status: j.status as JobStatus })),
+      proposals: data.proposals,
+      engagements: data.engagements.map((e) => ({
+        ...e,
+        company: companyName(e.companyId),
+      })),
+      team: data.team,
+      documents: data.documents,
+      invoices: data.invoices,
+      companyId: state.companyId,
+      companies,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
   const value = useMemo<State & Actions>(() => {
     const patch = (fn: (s: State) => State) => setState((s) => fn(s));
@@ -187,11 +235,15 @@ export function usePortal() {
   return ctx;
 }
 
-export const companies = cl.companies;
-export const account = cl.account;
 export const networkLeads = op.networkLeads;
 export const networkWins = op.networkWins;
+export const account = cl.account;
+
+export function usePortalCompanies() {
+  return usePortal().companies;
+}
 
 export function companyName(id: string): string {
-  return companies.find((c) => c.id === id)?.name ?? "All companies";
+  return usePortalCompanies().find((c: Company) => c.id === id)?.name ?? "All companies";
 }
+
