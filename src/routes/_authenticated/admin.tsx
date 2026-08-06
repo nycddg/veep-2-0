@@ -379,14 +379,16 @@ function PortalAdmin() {
   }
 
   async function archive(table: string, id: string, archived: boolean) {
-    await supabase.from(table as never).update({ archived }).eq("id", id);
+    const client = supabase.from(table as any);
+    await client.update({ archived }).eq("id", id);
     qc.invalidateQueries({ queryKey: ["portal-admin"] });
   }
 
   async function remove(table: string, id: string) {
-    await supabase.from(table as never).delete().eq("id", id);
+    await supabase.from(table as any).delete().eq("id", id);
     qc.invalidateQueries({ queryKey: ["portal-admin"] });
   }
+
 
   const tabs: { key: Tab; label: string }[] = [
     { key: "companies", label: "Companies" },
