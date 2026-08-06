@@ -80,6 +80,7 @@ import { Route as AuthenticatedDashboardRouteImport } from './routes/_authentica
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedPortalRouteRouteImport } from './routes/_authenticated/portal/route'
 import { Route as AuthenticatedPortalIndexRouteImport } from './routes/_authenticated/portal/index'
+import { Route as AuthenticatedPortalOperatorIndexRouteImport } from './routes/_authenticated/portal/operator/index'
 
 const WebinarRoute = WebinarRouteImport.update({
   id: '/webinar',
@@ -439,6 +440,12 @@ const AuthenticatedPortalIndexRoute =
     path: '/',
     getParentRoute: () => AuthenticatedPortalRouteRoute,
   } as any)
+const AuthenticatedPortalOperatorIndexRoute =
+  AuthenticatedPortalOperatorIndexRouteImport.update({
+    id: '/operator/',
+    path: '/operator/',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -511,6 +518,7 @@ export interface FileRoutesByFullPath {
   '/services/interim': typeof ServicesInterimRoute
   '/services/': typeof ServicesIndexRoute
   '/portal/': typeof AuthenticatedPortalIndexRoute
+  '/portal/operator/': typeof AuthenticatedPortalOperatorIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -581,6 +589,7 @@ export interface FileRoutesByTo {
   '/services/interim': typeof ServicesInterimRoute
   '/services': typeof ServicesIndexRoute
   '/portal': typeof AuthenticatedPortalIndexRoute
+  '/portal/operator': typeof AuthenticatedPortalOperatorIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -655,6 +664,7 @@ export interface FileRoutesById {
   '/services/interim': typeof ServicesInterimRoute
   '/services/': typeof ServicesIndexRoute
   '/_authenticated/portal/': typeof AuthenticatedPortalIndexRoute
+  '/_authenticated/portal/operator/': typeof AuthenticatedPortalOperatorIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -729,6 +739,7 @@ export interface FileRouteTypes {
     | '/services/interim'
     | '/services/'
     | '/portal/'
+    | '/portal/operator/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -799,6 +810,7 @@ export interface FileRouteTypes {
     | '/services/interim'
     | '/services'
     | '/portal'
+    | '/portal/operator'
   id:
     | '__root__'
     | '/'
@@ -872,6 +884,7 @@ export interface FileRouteTypes {
     | '/services/interim'
     | '/services/'
     | '/_authenticated/portal/'
+    | '/_authenticated/portal/operator/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1436,16 +1449,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPortalIndexRouteImport
       parentRoute: typeof AuthenticatedPortalRouteRoute
     }
+    '/_authenticated/portal/operator/': {
+      id: '/_authenticated/portal/operator/'
+      path: '/operator'
+      fullPath: '/portal/operator/'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorIndexRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
   }
 }
 
 interface AuthenticatedPortalRouteRouteChildren {
   AuthenticatedPortalIndexRoute: typeof AuthenticatedPortalIndexRoute
+  AuthenticatedPortalOperatorIndexRoute: typeof AuthenticatedPortalOperatorIndexRoute
 }
 
 const AuthenticatedPortalRouteRouteChildren: AuthenticatedPortalRouteRouteChildren =
   {
     AuthenticatedPortalIndexRoute: AuthenticatedPortalIndexRoute,
+    AuthenticatedPortalOperatorIndexRoute:
+      AuthenticatedPortalOperatorIndexRoute,
   }
 
 const AuthenticatedPortalRouteRouteWithChildren =

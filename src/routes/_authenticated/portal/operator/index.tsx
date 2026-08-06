@@ -18,7 +18,7 @@ export const Route = createFileRoute("/_authenticated/portal/operator/")({
 });
 
 function OperatorHome() {
-  const { invitations, assignments, availability, agreements } = usePortal();
+  const { invitations, assignments, availability, agreements, profile } = usePortal();
   const open = invitations.filter((i) => i.status === "New");
   const active = assignments.filter((a) => a.state === "Active");
   const unsigned = agreements.filter((a) => a.status === "Pending signature");
@@ -27,7 +27,7 @@ function OperatorHome() {
     <div className="space-y-14">
       <PageHeader
         eyebrow="Operator portal"
-        title={`Good to see you, ${usePortal().profile.name.split(" ")[0]}.`}
+        title={`Good to see you, ${profile.name.split(" ")[0]}.`}
         intro="What needs you today, what you're running, and what the network is working on."
       />
 
