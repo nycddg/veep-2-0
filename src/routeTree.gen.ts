@@ -94,6 +94,7 @@ import { Route as AuthenticatedPortalClientProposalsRouteImport } from './routes
 import { Route as AuthenticatedPortalClientJobsRouteImport } from './routes/_authenticated/portal/client/jobs'
 import { Route as AuthenticatedPortalClientEngagementsRouteImport } from './routes/_authenticated/portal/client/engagements'
 import { Route as AuthenticatedPortalClientDocumentsRouteImport } from './routes/_authenticated/portal/client/documents'
+import { Route as AuthenticatedPortalClientBillingRouteImport } from './routes/_authenticated/portal/client/billing'
 
 const WebinarRoute = WebinarRouteImport.update({
   id: '/webinar',
@@ -537,6 +538,12 @@ const AuthenticatedPortalClientDocumentsRoute =
     path: '/client/documents',
     getParentRoute: () => AuthenticatedPortalRouteRoute,
   } as any)
+const AuthenticatedPortalClientBillingRoute =
+  AuthenticatedPortalClientBillingRouteImport.update({
+    id: '/client/billing',
+    path: '/client/billing',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -609,6 +616,7 @@ export interface FileRoutesByFullPath {
   '/services/interim': typeof ServicesInterimRoute
   '/services/': typeof ServicesIndexRoute
   '/portal/': typeof AuthenticatedPortalIndexRoute
+  '/portal/client/billing': typeof AuthenticatedPortalClientBillingRoute
   '/portal/client/documents': typeof AuthenticatedPortalClientDocumentsRoute
   '/portal/client/engagements': typeof AuthenticatedPortalClientEngagementsRoute
   '/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
@@ -693,6 +701,7 @@ export interface FileRoutesByTo {
   '/services/interim': typeof ServicesInterimRoute
   '/services': typeof ServicesIndexRoute
   '/portal': typeof AuthenticatedPortalIndexRoute
+  '/portal/client/billing': typeof AuthenticatedPortalClientBillingRoute
   '/portal/client/documents': typeof AuthenticatedPortalClientDocumentsRoute
   '/portal/client/engagements': typeof AuthenticatedPortalClientEngagementsRoute
   '/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
@@ -781,6 +790,7 @@ export interface FileRoutesById {
   '/services/interim': typeof ServicesInterimRoute
   '/services/': typeof ServicesIndexRoute
   '/_authenticated/portal/': typeof AuthenticatedPortalIndexRoute
+  '/_authenticated/portal/client/billing': typeof AuthenticatedPortalClientBillingRoute
   '/_authenticated/portal/client/documents': typeof AuthenticatedPortalClientDocumentsRoute
   '/_authenticated/portal/client/engagements': typeof AuthenticatedPortalClientEngagementsRoute
   '/_authenticated/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
@@ -869,6 +879,7 @@ export interface FileRouteTypes {
     | '/services/interim'
     | '/services/'
     | '/portal/'
+    | '/portal/client/billing'
     | '/portal/client/documents'
     | '/portal/client/engagements'
     | '/portal/client/jobs'
@@ -953,6 +964,7 @@ export interface FileRouteTypes {
     | '/services/interim'
     | '/services'
     | '/portal'
+    | '/portal/client/billing'
     | '/portal/client/documents'
     | '/portal/client/engagements'
     | '/portal/client/jobs'
@@ -1040,6 +1052,7 @@ export interface FileRouteTypes {
     | '/services/interim'
     | '/services/'
     | '/_authenticated/portal/'
+    | '/_authenticated/portal/client/billing'
     | '/_authenticated/portal/client/documents'
     | '/_authenticated/portal/client/engagements'
     | '/_authenticated/portal/client/jobs'
@@ -1716,11 +1729,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPortalClientDocumentsRouteImport
       parentRoute: typeof AuthenticatedPortalRouteRoute
     }
+    '/_authenticated/portal/client/billing': {
+      id: '/_authenticated/portal/client/billing'
+      path: '/client/billing'
+      fullPath: '/portal/client/billing'
+      preLoaderRoute: typeof AuthenticatedPortalClientBillingRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
   }
 }
 
 interface AuthenticatedPortalRouteRouteChildren {
   AuthenticatedPortalIndexRoute: typeof AuthenticatedPortalIndexRoute
+  AuthenticatedPortalClientBillingRoute: typeof AuthenticatedPortalClientBillingRoute
   AuthenticatedPortalClientDocumentsRoute: typeof AuthenticatedPortalClientDocumentsRoute
   AuthenticatedPortalClientEngagementsRoute: typeof AuthenticatedPortalClientEngagementsRoute
   AuthenticatedPortalClientJobsRoute: typeof AuthenticatedPortalClientJobsRoute
@@ -1740,6 +1761,8 @@ interface AuthenticatedPortalRouteRouteChildren {
 const AuthenticatedPortalRouteRouteChildren: AuthenticatedPortalRouteRouteChildren =
   {
     AuthenticatedPortalIndexRoute: AuthenticatedPortalIndexRoute,
+    AuthenticatedPortalClientBillingRoute:
+      AuthenticatedPortalClientBillingRoute,
     AuthenticatedPortalClientDocumentsRoute:
       AuthenticatedPortalClientDocumentsRoute,
     AuthenticatedPortalClientEngagementsRoute:
