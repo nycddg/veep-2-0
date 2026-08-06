@@ -81,6 +81,7 @@ import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/
 import { Route as AuthenticatedPortalRouteRouteImport } from './routes/_authenticated/portal/route'
 import { Route as AuthenticatedPortalIndexRouteImport } from './routes/_authenticated/portal/index'
 import { Route as AuthenticatedPortalOperatorIndexRouteImport } from './routes/_authenticated/portal/operator/index'
+import { Route as AuthenticatedPortalClientIndexRouteImport } from './routes/_authenticated/portal/client/index'
 import { Route as AuthenticatedPortalOperatorSupportRouteImport } from './routes/_authenticated/portal/operator/support'
 import { Route as AuthenticatedPortalOperatorProfileRouteImport } from './routes/_authenticated/portal/operator/profile'
 import { Route as AuthenticatedPortalOperatorPaymentsRouteImport } from './routes/_authenticated/portal/operator/payments'
@@ -453,6 +454,12 @@ const AuthenticatedPortalOperatorIndexRoute =
     path: '/operator/',
     getParentRoute: () => AuthenticatedPortalRouteRoute,
   } as any)
+const AuthenticatedPortalClientIndexRoute =
+  AuthenticatedPortalClientIndexRouteImport.update({
+    id: '/client/',
+    path: '/client/',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
 const AuthenticatedPortalOperatorSupportRoute =
   AuthenticatedPortalOperatorSupportRouteImport.update({
     id: '/operator/support',
@@ -574,6 +581,7 @@ export interface FileRoutesByFullPath {
   '/portal/operator/payments': typeof AuthenticatedPortalOperatorPaymentsRoute
   '/portal/operator/profile': typeof AuthenticatedPortalOperatorProfileRoute
   '/portal/operator/support': typeof AuthenticatedPortalOperatorSupportRoute
+  '/portal/client/': typeof AuthenticatedPortalClientIndexRoute
   '/portal/operator/': typeof AuthenticatedPortalOperatorIndexRoute
 }
 export interface FileRoutesByTo {
@@ -652,6 +660,7 @@ export interface FileRoutesByTo {
   '/portal/operator/payments': typeof AuthenticatedPortalOperatorPaymentsRoute
   '/portal/operator/profile': typeof AuthenticatedPortalOperatorProfileRoute
   '/portal/operator/support': typeof AuthenticatedPortalOperatorSupportRoute
+  '/portal/client': typeof AuthenticatedPortalClientIndexRoute
   '/portal/operator': typeof AuthenticatedPortalOperatorIndexRoute
 }
 export interface FileRoutesById {
@@ -734,6 +743,7 @@ export interface FileRoutesById {
   '/_authenticated/portal/operator/payments': typeof AuthenticatedPortalOperatorPaymentsRoute
   '/_authenticated/portal/operator/profile': typeof AuthenticatedPortalOperatorProfileRoute
   '/_authenticated/portal/operator/support': typeof AuthenticatedPortalOperatorSupportRoute
+  '/_authenticated/portal/client/': typeof AuthenticatedPortalClientIndexRoute
   '/_authenticated/portal/operator/': typeof AuthenticatedPortalOperatorIndexRoute
 }
 export interface FileRouteTypes {
@@ -816,6 +826,7 @@ export interface FileRouteTypes {
     | '/portal/operator/payments'
     | '/portal/operator/profile'
     | '/portal/operator/support'
+    | '/portal/client/'
     | '/portal/operator/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -894,6 +905,7 @@ export interface FileRouteTypes {
     | '/portal/operator/payments'
     | '/portal/operator/profile'
     | '/portal/operator/support'
+    | '/portal/client'
     | '/portal/operator'
   id:
     | '__root__'
@@ -975,6 +987,7 @@ export interface FileRouteTypes {
     | '/_authenticated/portal/operator/payments'
     | '/_authenticated/portal/operator/profile'
     | '/_authenticated/portal/operator/support'
+    | '/_authenticated/portal/client/'
     | '/_authenticated/portal/operator/'
   fileRoutesById: FileRoutesById
 }
@@ -1547,6 +1560,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPortalOperatorIndexRouteImport
       parentRoute: typeof AuthenticatedPortalRouteRoute
     }
+    '/_authenticated/portal/client/': {
+      id: '/_authenticated/portal/client/'
+      path: '/client'
+      fullPath: '/portal/client/'
+      preLoaderRoute: typeof AuthenticatedPortalClientIndexRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
     '/_authenticated/portal/operator/support': {
       id: '/_authenticated/portal/operator/support'
       path: '/operator/support'
@@ -1608,6 +1628,7 @@ interface AuthenticatedPortalRouteRouteChildren {
   AuthenticatedPortalOperatorPaymentsRoute: typeof AuthenticatedPortalOperatorPaymentsRoute
   AuthenticatedPortalOperatorProfileRoute: typeof AuthenticatedPortalOperatorProfileRoute
   AuthenticatedPortalOperatorSupportRoute: typeof AuthenticatedPortalOperatorSupportRoute
+  AuthenticatedPortalClientIndexRoute: typeof AuthenticatedPortalClientIndexRoute
   AuthenticatedPortalOperatorIndexRoute: typeof AuthenticatedPortalOperatorIndexRoute
 }
 
@@ -1628,6 +1649,7 @@ const AuthenticatedPortalRouteRouteChildren: AuthenticatedPortalRouteRouteChildr
       AuthenticatedPortalOperatorProfileRoute,
     AuthenticatedPortalOperatorSupportRoute:
       AuthenticatedPortalOperatorSupportRoute,
+    AuthenticatedPortalClientIndexRoute: AuthenticatedPortalClientIndexRoute,
     AuthenticatedPortalOperatorIndexRoute:
       AuthenticatedPortalOperatorIndexRoute,
   }
