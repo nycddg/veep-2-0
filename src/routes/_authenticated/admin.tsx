@@ -40,8 +40,10 @@ function Admin() {
       <LeadsAdmin />
       <WinsAdmin />
       <PartnersAdmin />
+      <PortalAdmin />
     </Shell>
   );
+
 }
 
 function Shell({ children }: { children: React.ReactNode }) {
