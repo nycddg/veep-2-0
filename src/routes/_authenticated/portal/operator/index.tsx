@@ -135,16 +135,6 @@ function OperatorHome() {
         </Surface>
       </section>
 
-      <section className="space-y-6">
-        <div>
-          <h2 className="text-lg tracking-tight text-cream">Network pulse</h2>
-          <p className="mt-2 max-w-prose text-base text-stone">
-            Anonymized. Industry and situation only — never a client name.
-          </p>
-        </div>
-        <NetworkPulse />
-        <DemoNote>Placeholder content — live sources connect in a later release</DemoNote>
-      </section>
     </div>
   );
 }
