@@ -31,7 +31,7 @@ function ClientHome() {
       <PageHeader
         eyebrow={`${account.name} · Client portal`}
         title="Here's where your work stands."
-        intro="What needs a decision from you, what's running, and what the network is working on."
+        intro="What needs a decision from you and what's running."
       />
 
       <section className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
