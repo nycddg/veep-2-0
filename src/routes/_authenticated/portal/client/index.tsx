@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { DemoNote, Eyebrow, PageHeader, Row, Rows, Status } from "@/components/portal/ui";
+import { Eyebrow, PageHeader, Row, Rows, Status } from "@/components/portal/ui";
 import { fmtDate, fmtMoney } from "@/lib/portal/dates";
 import { account, companyName, usePortal } from "@/lib/portal/mock-store";
 
