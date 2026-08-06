@@ -79,6 +79,7 @@ import { Route as CompareVsConsultantsRouteImport } from './routes/compare.vs-co
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedPortalRouteRouteImport } from './routes/_authenticated/portal/route'
+import { Route as AuthenticatedPortalIndexRouteImport } from './routes/_authenticated/portal/index'
 
 const WebinarRoute = WebinarRouteImport.update({
   id: '/webinar',
@@ -432,6 +433,12 @@ const AuthenticatedPortalRouteRoute =
     path: '/portal',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedPortalIndexRoute =
+  AuthenticatedPortalIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -492,7 +499,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/victoriakasumu': typeof VictoriakasumuRoute
   '/webinar': typeof WebinarRoute
-  '/portal': typeof AuthenticatedPortalRouteRoute
+  '/portal': typeof AuthenticatedPortalRouteRouteWithChildren
   '/admin': typeof AuthenticatedAdminRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
@@ -503,6 +510,7 @@ export interface FileRoutesByFullPath {
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
   '/services/interim': typeof ServicesInterimRoute
   '/services/': typeof ServicesIndexRoute
+  '/portal/': typeof AuthenticatedPortalIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -562,7 +570,6 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/victoriakasumu': typeof VictoriakasumuRoute
   '/webinar': typeof WebinarRoute
-  '/portal': typeof AuthenticatedPortalRouteRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
@@ -573,6 +580,7 @@ export interface FileRoutesByTo {
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
   '/services/interim': typeof ServicesInterimRoute
   '/services': typeof ServicesIndexRoute
+  '/portal': typeof AuthenticatedPortalIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -635,7 +643,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/victoriakasumu': typeof VictoriakasumuRoute
   '/webinar': typeof WebinarRoute
-  '/_authenticated/portal': typeof AuthenticatedPortalRouteRoute
+  '/_authenticated/portal': typeof AuthenticatedPortalRouteRouteWithChildren
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
@@ -646,6 +654,7 @@ export interface FileRoutesById {
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
   '/services/interim': typeof ServicesInterimRoute
   '/services/': typeof ServicesIndexRoute
+  '/_authenticated/portal/': typeof AuthenticatedPortalIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -719,6 +728,7 @@ export interface FileRouteTypes {
     | '/services/fractional-cfo'
     | '/services/interim'
     | '/services/'
+    | '/portal/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -778,7 +788,6 @@ export interface FileRouteTypes {
     | '/terms'
     | '/victoriakasumu'
     | '/webinar'
-    | '/portal'
     | '/admin'
     | '/dashboard'
     | '/compare/vs-consultants'
@@ -789,6 +798,7 @@ export interface FileRouteTypes {
     | '/services/fractional-cfo'
     | '/services/interim'
     | '/services'
+    | '/portal'
   id:
     | '__root__'
     | '/'
@@ -861,6 +871,7 @@ export interface FileRouteTypes {
     | '/services/fractional-cfo'
     | '/services/interim'
     | '/services/'
+    | '/_authenticated/portal/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1418,17 +1429,38 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPortalRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/portal/': {
+      id: '/_authenticated/portal/'
+      path: '/'
+      fullPath: '/portal/'
+      preLoaderRoute: typeof AuthenticatedPortalIndexRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
   }
 }
 
+interface AuthenticatedPortalRouteRouteChildren {
+  AuthenticatedPortalIndexRoute: typeof AuthenticatedPortalIndexRoute
+}
+
+const AuthenticatedPortalRouteRouteChildren: AuthenticatedPortalRouteRouteChildren =
+  {
+    AuthenticatedPortalIndexRoute: AuthenticatedPortalIndexRoute,
+  }
+
+const AuthenticatedPortalRouteRouteWithChildren =
+  AuthenticatedPortalRouteRoute._addFileChildren(
+    AuthenticatedPortalRouteRouteChildren,
+  )
+
 interface AuthenticatedRouteRouteChildren {
-  AuthenticatedPortalRouteRoute: typeof AuthenticatedPortalRouteRoute
+  AuthenticatedPortalRouteRoute: typeof AuthenticatedPortalRouteRouteWithChildren
   AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
   AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
-  AuthenticatedPortalRouteRoute: AuthenticatedPortalRouteRoute,
+  AuthenticatedPortalRouteRoute: AuthenticatedPortalRouteRouteWithChildren,
   AuthenticatedAdminRoute: AuthenticatedAdminRoute,
   AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
 }
