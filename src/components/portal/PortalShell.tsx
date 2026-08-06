@@ -6,9 +6,10 @@ import { supabase } from "@/integrations/supabase/client";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
-import { account, companies, usePortal } from "@/lib/portal/mock-store";
+import { account, usePortal } from "@/lib/portal/mock-store";
 import { NetworkPulse } from "@/components/portal/NetworkPulse";
 import { DemoNote } from "@/components/portal/ui";
+
 
 type NavLink = { to: string; label: string };
 
