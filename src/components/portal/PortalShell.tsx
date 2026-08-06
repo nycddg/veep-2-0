@@ -42,7 +42,8 @@ export function PortalShell({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const { companyId, setCompanyId } = usePortal();
+  const { companyId, setCompanyId, companies } = usePortal();
+
 
   async function signOut() {
     await queryClient.cancelQueries();
