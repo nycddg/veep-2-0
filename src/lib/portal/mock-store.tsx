@@ -111,19 +111,13 @@ export function PortalStoreProvider({ children }: { children: ReactNode }) {
     const companyName = (id: string) => companies.find((c) => c.id === id)?.name ?? "Veep";
 
     setState({
-      invitations: data.invitations.map((i) => ({
-        ...i,
-        company: companyName(i.companyId),
-      })),
-      assignments: data.assignments.map((a) => ({
-        ...a,
-        company: companyName(a.companyId),
-      })),
+      invitations: data.invitations,
+      assignments: data.assignments,
       availability: data.availability ?? state.availability,
       profile: data.operator ?? state.profile,
       agreements: data.agreements,
       payouts: data.payouts,
-      jobs: data.jobs,
+      jobs: data.jobs.map((j) => ({ ...j, status: j.status as JobStatus })),
       proposals: data.proposals,
       engagements: data.engagements.map((e) => ({
         ...e,
