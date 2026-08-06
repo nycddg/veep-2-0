@@ -82,6 +82,7 @@ import { Route as AuthenticatedPortalRouteRouteImport } from './routes/_authenti
 import { Route as AuthenticatedPortalIndexRouteImport } from './routes/_authenticated/portal/index'
 import { Route as AuthenticatedPortalOperatorIndexRouteImport } from './routes/_authenticated/portal/operator/index'
 import { Route as AuthenticatedPortalOperatorProfileRouteImport } from './routes/_authenticated/portal/operator/profile'
+import { Route as AuthenticatedPortalOperatorPaymentsRouteImport } from './routes/_authenticated/portal/operator/payments'
 import { Route as AuthenticatedPortalOperatorInvitationsRouteImport } from './routes/_authenticated/portal/operator/invitations'
 import { Route as AuthenticatedPortalOperatorAvailabilityRouteImport } from './routes/_authenticated/portal/operator/availability'
 import { Route as AuthenticatedPortalOperatorAssignmentsRouteImport } from './routes/_authenticated/portal/operator/assignments'
@@ -457,6 +458,12 @@ const AuthenticatedPortalOperatorProfileRoute =
     path: '/operator/profile',
     getParentRoute: () => AuthenticatedPortalRouteRoute,
   } as any)
+const AuthenticatedPortalOperatorPaymentsRoute =
+  AuthenticatedPortalOperatorPaymentsRouteImport.update({
+    id: '/operator/payments',
+    path: '/operator/payments',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
 const AuthenticatedPortalOperatorInvitationsRoute =
   AuthenticatedPortalOperatorInvitationsRouteImport.update({
     id: '/operator/invitations',
@@ -557,6 +564,7 @@ export interface FileRoutesByFullPath {
   '/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
   '/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
   '/portal/operator/invitations': typeof AuthenticatedPortalOperatorInvitationsRoute
+  '/portal/operator/payments': typeof AuthenticatedPortalOperatorPaymentsRoute
   '/portal/operator/profile': typeof AuthenticatedPortalOperatorProfileRoute
   '/portal/operator/': typeof AuthenticatedPortalOperatorIndexRoute
 }
@@ -633,6 +641,7 @@ export interface FileRoutesByTo {
   '/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
   '/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
   '/portal/operator/invitations': typeof AuthenticatedPortalOperatorInvitationsRoute
+  '/portal/operator/payments': typeof AuthenticatedPortalOperatorPaymentsRoute
   '/portal/operator/profile': typeof AuthenticatedPortalOperatorProfileRoute
   '/portal/operator': typeof AuthenticatedPortalOperatorIndexRoute
 }
@@ -713,6 +722,7 @@ export interface FileRoutesById {
   '/_authenticated/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
   '/_authenticated/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
   '/_authenticated/portal/operator/invitations': typeof AuthenticatedPortalOperatorInvitationsRoute
+  '/_authenticated/portal/operator/payments': typeof AuthenticatedPortalOperatorPaymentsRoute
   '/_authenticated/portal/operator/profile': typeof AuthenticatedPortalOperatorProfileRoute
   '/_authenticated/portal/operator/': typeof AuthenticatedPortalOperatorIndexRoute
 }
@@ -793,6 +803,7 @@ export interface FileRouteTypes {
     | '/portal/operator/assignments'
     | '/portal/operator/availability'
     | '/portal/operator/invitations'
+    | '/portal/operator/payments'
     | '/portal/operator/profile'
     | '/portal/operator/'
   fileRoutesByTo: FileRoutesByTo
@@ -869,6 +880,7 @@ export interface FileRouteTypes {
     | '/portal/operator/assignments'
     | '/portal/operator/availability'
     | '/portal/operator/invitations'
+    | '/portal/operator/payments'
     | '/portal/operator/profile'
     | '/portal/operator'
   id:
@@ -948,6 +960,7 @@ export interface FileRouteTypes {
     | '/_authenticated/portal/operator/assignments'
     | '/_authenticated/portal/operator/availability'
     | '/_authenticated/portal/operator/invitations'
+    | '/_authenticated/portal/operator/payments'
     | '/_authenticated/portal/operator/profile'
     | '/_authenticated/portal/operator/'
   fileRoutesById: FileRoutesById
@@ -1528,6 +1541,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPortalOperatorProfileRouteImport
       parentRoute: typeof AuthenticatedPortalRouteRoute
     }
+    '/_authenticated/portal/operator/payments': {
+      id: '/_authenticated/portal/operator/payments'
+      path: '/operator/payments'
+      fullPath: '/portal/operator/payments'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorPaymentsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
     '/_authenticated/portal/operator/invitations': {
       id: '/_authenticated/portal/operator/invitations'
       path: '/operator/invitations'
@@ -1565,6 +1585,7 @@ interface AuthenticatedPortalRouteRouteChildren {
   AuthenticatedPortalOperatorAssignmentsRoute: typeof AuthenticatedPortalOperatorAssignmentsRoute
   AuthenticatedPortalOperatorAvailabilityRoute: typeof AuthenticatedPortalOperatorAvailabilityRoute
   AuthenticatedPortalOperatorInvitationsRoute: typeof AuthenticatedPortalOperatorInvitationsRoute
+  AuthenticatedPortalOperatorPaymentsRoute: typeof AuthenticatedPortalOperatorPaymentsRoute
   AuthenticatedPortalOperatorProfileRoute: typeof AuthenticatedPortalOperatorProfileRoute
   AuthenticatedPortalOperatorIndexRoute: typeof AuthenticatedPortalOperatorIndexRoute
 }
@@ -1580,6 +1601,8 @@ const AuthenticatedPortalRouteRouteChildren: AuthenticatedPortalRouteRouteChildr
       AuthenticatedPortalOperatorAvailabilityRoute,
     AuthenticatedPortalOperatorInvitationsRoute:
       AuthenticatedPortalOperatorInvitationsRoute,
+    AuthenticatedPortalOperatorPaymentsRoute:
+      AuthenticatedPortalOperatorPaymentsRoute,
     AuthenticatedPortalOperatorProfileRoute:
       AuthenticatedPortalOperatorProfileRoute,
     AuthenticatedPortalOperatorIndexRoute:
