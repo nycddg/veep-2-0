@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { NetworkPulse } from "@/components/portal/NetworkPulse";
-import { DemoNote, Eyebrow, PageHeader, Row, Rows, Status, Surface } from "@/components/portal/ui";
+import { Eyebrow, PageHeader, Row, Rows, Status, Surface } from "@/components/portal/ui";
 import { fmtDate } from "@/lib/portal/dates";
 import { usePortal } from "@/lib/portal/mock-store";
 
@@ -135,16 +134,6 @@ function OperatorHome() {
         </Surface>
       </section>
 
-      <section className="space-y-6">
-        <div>
-          <h2 className="text-lg tracking-tight text-cream">Network pulse</h2>
-          <p className="mt-2 max-w-prose text-base text-stone">
-            Anonymized. Industry and situation only — never a client name.
-          </p>
-        </div>
-        <NetworkPulse />
-        <DemoNote>Placeholder content — live sources connect in a later release</DemoNote>
-      </section>
     </div>
   );
 }

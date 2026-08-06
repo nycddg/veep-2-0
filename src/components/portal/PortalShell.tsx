@@ -7,6 +7,8 @@ import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
 import { account, companies, usePortal } from "@/lib/portal/mock-store";
+import { NetworkPulse } from "@/components/portal/NetworkPulse";
+import { DemoNote } from "@/components/portal/ui";
 
 type NavLink = { to: string; label: string };
 
@@ -154,7 +156,21 @@ export function PortalShell({ children }: { children: React.ReactNode }) {
             )}
           </nav>
         </aside>
-        <main className="min-w-0 flex-1">{children}</main>
+        <main className="min-w-0 flex-1">
+          {children}
+          {!isClient && (
+            <section className="mt-16 space-y-6 border-t border-white/10 pt-12">
+              <div>
+                <h2 className="text-lg tracking-tight text-cream">Network pulse</h2>
+                <p className="mt-2 max-w-prose text-base text-stone">
+                  Anonymized. Industry and situation only — never a client name.
+                </p>
+              </div>
+              <NetworkPulse />
+              <DemoNote>Placeholder content — live sources connect in a later release</DemoNote>
+            </section>
+          )}
+        </main>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ function Admin() {
       <Shell>
         <p className="text-sm text-stone">
           This area is for Veep admins.{" "}
-          <Link to="/dashboard" className="text-cream underline underline-offset-4">
+          <Link to="/portal/operator" className="text-cream underline underline-offset-4">
             Back to the dashboard
           </Link>
           .
@@ -55,7 +55,7 @@ function Shell({ children }: { children: React.ReactNode }) {
           <h1 className="mt-3 text-3xl text-cream tracking-tight">Manage the partner dashboard</h1>
         </div>
         <Link
-          to="/dashboard"
+          to="/portal/operator"
           className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-4 py-2 text-sm text-cream hover:bg-white/5"
         >
           View dashboard

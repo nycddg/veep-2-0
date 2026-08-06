@@ -29,10 +29,10 @@ function AuthPage() {
   useEffect(() => {
     let active = true;
     supabase.auth.getSession().then(({ data }) => {
-      if (active && data.session) navigate({ to: "/dashboard", replace: true });
+      if (active && data.session) navigate({ to: "/portal/operator", replace: true });
     });
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
-      if (session) navigate({ to: "/dashboard", replace: true });
+      if (session) navigate({ to: "/portal/operator", replace: true });
     });
     return () => {
       active = false;
@@ -54,7 +54,7 @@ function AuthPage() {
           email: email.trim(),
           password,
           options: {
-            emailRedirectTo: `${window.location.origin}/dashboard`,
+            emailRedirectTo: `${window.location.origin}/portal/operator`,
             data: { full_name: fullName.trim() },
           },
         });
