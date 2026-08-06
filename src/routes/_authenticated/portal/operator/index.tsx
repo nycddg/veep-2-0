@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { NetworkPulse } from "@/components/portal/NetworkPulse";
-import { DemoNote, Eyebrow, PageHeader, Row, Rows, Status, Surface } from "@/components/portal/ui";
+import { Eyebrow, PageHeader, Row, Rows, Status, Surface } from "@/components/portal/ui";
 import { fmtDate } from "@/lib/portal/dates";
 import { usePortal } from "@/lib/portal/mock-store";
 
