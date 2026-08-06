@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { DemoNote, Field, PageHeader, PrimaryButton, inputCls } from "@/components/portal/ui";
-import { BOOKING_URL } from "@/lib/booking";
 
 export const Route = createFileRoute("/_authenticated/portal/client/support")({
   head: () => ({
