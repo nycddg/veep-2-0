@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { NetworkPulse } from "@/components/portal/NetworkPulse";
-import { DemoNote, Eyebrow, PageHeader, Row, Rows, Status } from "@/components/portal/ui";
+import { Eyebrow, PageHeader, Row, Rows, Status } from "@/components/portal/ui";
 import { fmtDate, fmtMoney } from "@/lib/portal/dates";
 import { account, companyName, usePortal } from "@/lib/portal/mock-store";
 
@@ -32,7 +31,7 @@ function ClientHome() {
       <PageHeader
         eyebrow={`${account.name} · Client portal`}
         title="Here's where your work stands."
-        intro="What needs a decision from you, what's running, and what the network is working on."
+        intro="What needs a decision from you and what's running."
       />
 
       <section className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -123,17 +122,6 @@ function ClientHome() {
             ))}
           </Rows>
         </div>
-      </section>
-
-      <section className="space-y-6">
-        <div>
-          <h2 className="text-lg tracking-tight text-cream">Network pulse</h2>
-          <p className="mt-2 max-w-prose text-base text-stone">
-            What Veep operators are working on across the network. Anonymized.
-          </p>
-        </div>
-        <NetworkPulse leadLimit={4} winLimit={3} />
-        <DemoNote />
       </section>
     </div>
   );
