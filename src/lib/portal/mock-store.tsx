@@ -244,5 +244,6 @@ export function usePortalCompanies() {
 }
 
 export function companyName(id: string): string {
-  return usePortalCompanies().find((c) => c.id === id)?.name ?? "All companies";
+  return usePortalCompanies().find((c: Company) => c.id === id)?.name ?? "All companies";
 }
+
