@@ -288,3 +288,226 @@ function PartnersAdmin() {
     </Card>
   );
 }
+
+type Tab = "companies" | "operators" | "clients" | "jobs" | "engagements";
+
+function PortalAdmin() {
+  const qc = useQueryClient();
+  const [tab, setTab] = useState<Tab>("companies");
+
+  const companies = useQuery({
+    queryKey: ["portal-admin", "companies"],
+    queryFn: async () => {
+      const { data, error } = await supabase.from("companies").select("*").order("name");
+      if (error) throw error;
+      return data ?? [];
+    },
+  });
+
+  const operators = useQuery({
+    queryKey: ["portal-admin", "operators"],
+    queryFn: async () => {
+      const { data, error } = await supabase.from("operators").select("*").order("name");
+      if (error) throw error;
+      return data ?? [];
+    },
+  });
+
+  const clients = useQuery({
+    queryKey: ["portal-admin", "clients"],
+    queryFn: async () => {
+      const { data, error } = await supabase.from("clients").select("*, companies(name)").order("name");
+      if (error) throw error;
+      return data ?? [];
+    },
+  });
+
+  const jobs = useQuery({
+    queryKey: ["portal-admin", "jobs"],
+    queryFn: async () => {
+      const { data, error } = await supabase.from("jobs").select("*, companies(name)").order("created_at", { ascending: false });
+      if (error) throw error;
+      return data ?? [];
+    },
+  });
+
+  const engagements = useQuery({
+    queryKey: ["portal-admin", "engagements"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("engagements")
+        .select("*, companies(name), operators(name)")
+        .order("start_date", { ascending: false });
+      if (error) throw error;
+      return data ?? [];
+    },
+  });
+
+  const [companyForm, setCompanyForm] = useState({ name: "", slug: "", plan: "", domain: "" });
+  const [operatorForm, setOperatorForm] = useState({ name: "", headline: "", photo_url: "" });
+  const [error, setError] = useState<string | null>(null);
+
+  async function addCompany(e: React.FormEvent) {
+    e.preventDefault();
+    setError(null);
+    const { error } = await supabase.from("companies").insert({
+      name: companyForm.name.trim().slice(0, 160),
+      slug: companyForm.slug.trim().slice(0, 80) || null,
+      plan: companyForm.plan.trim().slice(0, 40) || null,
+      domain: companyForm.domain.trim().slice(0, 120) || null,
+      is_demo: true,
+      source: "manual",
+    });
+    if (error) return setError(error.message);
+    setCompanyForm({ name: "", slug: "", plan: "", domain: "" });
+    qc.invalidateQueries({ queryKey: ["portal-admin"] });
+  }
+
+  async function addOperator(e: React.FormEvent) {
+    e.preventDefault();
+    setError(null);
+    const { error } = await supabase.from("operators").insert({
+      name: operatorForm.name.trim().slice(0, 160),
+      headline: operatorForm.headline.trim().slice(0, 200) || null,
+      photo_url: operatorForm.photo_url.trim().slice(0, 500) || null,
+      is_demo: true,
+      source: "manual",
+    });
+    if (error) return setError(error.message);
+    setOperatorForm({ name: "", headline: "", photo_url: "" });
+    qc.invalidateQueries({ queryKey: ["portal-admin"] });
+  }
+
+  async function archive(table: string, id: string, archived: boolean) {
+    await supabase.from(table as never).update({ archived }).eq("id", id);
+    qc.invalidateQueries({ queryKey: ["portal-admin"] });
+  }
+
+  async function remove(table: string, id: string) {
+    await supabase.from(table as never).delete().eq("id", id);
+    qc.invalidateQueries({ queryKey: ["portal-admin"] });
+  }
+
+  const tabs: { key: Tab; label: string }[] = [
+    { key: "companies", label: "Companies" },
+    { key: "operators", label: "Operators" },
+    { key: "clients", label: "Clients" },
+    { key: "jobs", label: "Jobs" },
+    { key: "engagements", label: "Engagements" },
+  ];
+
+  return (
+    <Card title="Portal data">
+      <div className="flex flex-wrap gap-2 border-b border-white/8 pb-4">
+        {tabs.map((t) => (
+          <button
+            key={t.key}
+            onClick={() => setTab(t.key)}
+            className={`rounded-full px-3 py-1.5 text-xs ${tab === t.key ? "bg-white/10 text-cream" : "text-stone hover:text-cream"}`}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+
+      {error && <p className="text-sm text-red-400">{error}</p>}
+
+      {tab === "companies" && (
+        <div className="space-y-4">
+          <form onSubmit={addCompany} className="grid gap-3 sm:grid-cols-5">
+            <input required placeholder="Company name" value={companyForm.name} onChange={(e) => setCompanyForm({ ...companyForm, name: e.target.value })} className={`${inputCls} sm:col-span-2`} />
+            <input placeholder="Slug" value={companyForm.slug} onChange={(e) => setCompanyForm({ ...companyForm, slug: e.target.value })} className={inputCls} />
+            <input placeholder="Plan" value={companyForm.plan} onChange={(e) => setCompanyForm({ ...companyForm, plan: e.target.value })} className={inputCls} />
+            <button className="min-h-11 rounded-full bg-cream px-5 text-sm font-medium text-ink">Add</button>
+          </form>
+          <div className="divide-y divide-white/8 border-t border-white/8">
+            {(companies.data ?? []).map((row) => (
+              <div key={row.id} className="flex flex-wrap items-center gap-3 py-3">
+                <div className={`min-w-0 flex-1 text-sm ${row.archived ? "text-stone-soft line-through" : "text-cream"}`}>
+                  {row.name} <span className="text-stone-soft">· {row.plan ?? "—"}</span>
+                </div>
+                <button onClick={() => archive("companies", row.id, !row.archived)} className="text-xs text-cream/80 underline underline-offset-4">
+                  {row.archived ? "Restore" : "Archive"}
+                </button>
+                <button onClick={() => remove("companies", row.id)} className="text-xs text-red-400 underline underline-offset-4">Delete</button>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {tab === "operators" && (
+        <div className="space-y-4">
+          <form onSubmit={addOperator} className="grid gap-3 sm:grid-cols-4">
+            <input required placeholder="Operator name" value={operatorForm.name} onChange={(e) => setOperatorForm({ ...operatorForm, name: e.target.value })} className={inputCls} />
+            <input placeholder="Headline" value={operatorForm.headline} onChange={(e) => setOperatorForm({ ...operatorForm, headline: e.target.value })} className={inputCls} />
+            <input placeholder="Photo URL" value={operatorForm.photo_url} onChange={(e) => setOperatorForm({ ...operatorForm, photo_url: e.target.value })} className={inputCls} />
+            <button className="min-h-11 rounded-full bg-cream px-5 text-sm font-medium text-ink">Add</button>
+          </form>
+          <div className="divide-y divide-white/8 border-t border-white/8">
+            {(operators.data ?? []).map((row) => (
+              <div key={row.id} className="flex flex-wrap items-center gap-3 py-3">
+                <div className={`min-w-0 flex-1 text-sm ${row.archived ? "text-stone-soft line-through" : "text-cream"}`}>
+                  {row.name} <span className="text-stone-soft">· {row.headline ?? "—"}</span>
+                </div>
+                <button onClick={() => archive("operators", row.id, !row.archived)} className="text-xs text-cream/80 underline underline-offset-4">
+                  {row.archived ? "Restore" : "Archive"}
+                </button>
+                <button onClick={() => remove("operators", row.id)} className="text-xs text-red-400 underline underline-offset-4">Delete</button>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {tab === "clients" && (
+        <div className="divide-y divide-white/8 border-t border-white/8">
+          {(clients.data ?? []).map((row) => (
+            <div key={row.id} className="flex flex-wrap items-center gap-3 py-3">
+              <div className={`min-w-0 flex-1 text-sm ${row.archived ? "text-stone-soft line-through" : "text-cream"}`}>
+                {row.name} <span className="text-stone-soft">· {row.companies?.name ?? "—"} · {row.email}</span>
+              </div>
+              <button onClick={() => archive("clients", row.id, !row.archived)} className="text-xs text-cream/80 underline underline-offset-4">
+                {row.archived ? "Restore" : "Archive"}
+              </button>
+              <button onClick={() => remove("clients", row.id)} className="text-xs text-red-400 underline underline-offset-4">Delete</button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {tab === "jobs" && (
+        <div className="divide-y divide-white/8 border-t border-white/8">
+          {(jobs.data ?? []).map((row) => (
+            <div key={row.id} className="flex flex-wrap items-center gap-3 py-3">
+              <div className={`min-w-0 flex-1 text-sm ${row.archived ? "text-stone-soft line-through" : "text-cream"}`}>
+                {row.title} <span className="text-stone-soft">· {row.companies?.name ?? "—"} · {row.status}</span>
+              </div>
+              <button onClick={() => archive("jobs", row.id, !row.archived)} className="text-xs text-cream/80 underline underline-offset-4">
+                {row.archived ? "Restore" : "Archive"}
+              </button>
+              <button onClick={() => remove("jobs", row.id)} className="text-xs text-red-400 underline underline-offset-4">Delete</button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {tab === "engagements" && (
+        <div className="divide-y divide-white/8 border-t border-white/8">
+          {(engagements.data ?? []).map((row) => (
+            <div key={row.id} className="flex flex-wrap items-center gap-3 py-3">
+              <div className={`min-w-0 flex-1 text-sm ${row.archived ? "text-stone-soft line-through" : "text-cream"}`}>
+                {row.operators?.name ?? "—"} at {row.companies?.name ?? "—"} <span className="text-stone-soft">· {row.state} · {row.offer_type ?? "—"}</span>
+              </div>
+              <button onClick={() => archive("engagements", row.id, !row.archived)} className="text-xs text-cream/80 underline underline-offset-4">
+                {row.archived ? "Restore" : "Archive"}
+              </button>
+              <button onClick={() => remove("engagements", row.id)} className="text-xs text-red-400 underline underline-offset-4">Delete</button>
+            </div>
+          ))}
+        </div>
+      )}
+    </Card>
+  );
+}
+
