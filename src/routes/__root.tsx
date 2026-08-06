@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useRouterState,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -143,6 +144,8 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const router = useRouter();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isPortal = pathname.startsWith("/portal");
 
   useEffect(() => {
     const unsub = router.subscribe("onResolved", ({ toLocation }) => {
@@ -161,11 +164,11 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <div className="min-h-screen bg-background text-foreground flex flex-col">
-          <SiteHeader />
+          {!isPortal && <SiteHeader />}
           <main className="flex-1">
             <Outlet />
           </main>
-          <SiteFooter />
+          {!isPortal && <SiteFooter />}
         </div>
       </ThemeProvider>
     </QueryClientProvider>
