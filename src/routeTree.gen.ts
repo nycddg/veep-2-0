@@ -89,6 +89,7 @@ import { Route as AuthenticatedPortalOperatorInvitationsRouteImport } from './ro
 import { Route as AuthenticatedPortalOperatorAvailabilityRouteImport } from './routes/_authenticated/portal/operator/availability'
 import { Route as AuthenticatedPortalOperatorAssignmentsRouteImport } from './routes/_authenticated/portal/operator/assignments'
 import { Route as AuthenticatedPortalOperatorAgreementsRouteImport } from './routes/_authenticated/portal/operator/agreements'
+import { Route as AuthenticatedPortalClientTeamRouteImport } from './routes/_authenticated/portal/client/team'
 import { Route as AuthenticatedPortalClientProposalsRouteImport } from './routes/_authenticated/portal/client/proposals'
 import { Route as AuthenticatedPortalClientJobsRouteImport } from './routes/_authenticated/portal/client/jobs'
 import { Route as AuthenticatedPortalClientEngagementsRouteImport } from './routes/_authenticated/portal/client/engagements'
@@ -505,6 +506,12 @@ const AuthenticatedPortalOperatorAgreementsRoute =
     path: '/operator/agreements',
     getParentRoute: () => AuthenticatedPortalRouteRoute,
   } as any)
+const AuthenticatedPortalClientTeamRoute =
+  AuthenticatedPortalClientTeamRouteImport.update({
+    id: '/client/team',
+    path: '/client/team',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
 const AuthenticatedPortalClientProposalsRoute =
   AuthenticatedPortalClientProposalsRouteImport.update({
     id: '/client/proposals',
@@ -598,6 +605,7 @@ export interface FileRoutesByFullPath {
   '/portal/client/engagements': typeof AuthenticatedPortalClientEngagementsRoute
   '/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
   '/portal/client/proposals': typeof AuthenticatedPortalClientProposalsRoute
+  '/portal/client/team': typeof AuthenticatedPortalClientTeamRoute
   '/portal/operator/agreements': typeof AuthenticatedPortalOperatorAgreementsRoute
   '/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
   '/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
@@ -680,6 +688,7 @@ export interface FileRoutesByTo {
   '/portal/client/engagements': typeof AuthenticatedPortalClientEngagementsRoute
   '/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
   '/portal/client/proposals': typeof AuthenticatedPortalClientProposalsRoute
+  '/portal/client/team': typeof AuthenticatedPortalClientTeamRoute
   '/portal/operator/agreements': typeof AuthenticatedPortalOperatorAgreementsRoute
   '/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
   '/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
@@ -766,6 +775,7 @@ export interface FileRoutesById {
   '/_authenticated/portal/client/engagements': typeof AuthenticatedPortalClientEngagementsRoute
   '/_authenticated/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
   '/_authenticated/portal/client/proposals': typeof AuthenticatedPortalClientProposalsRoute
+  '/_authenticated/portal/client/team': typeof AuthenticatedPortalClientTeamRoute
   '/_authenticated/portal/operator/agreements': typeof AuthenticatedPortalOperatorAgreementsRoute
   '/_authenticated/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
   '/_authenticated/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
@@ -852,6 +862,7 @@ export interface FileRouteTypes {
     | '/portal/client/engagements'
     | '/portal/client/jobs'
     | '/portal/client/proposals'
+    | '/portal/client/team'
     | '/portal/operator/agreements'
     | '/portal/operator/assignments'
     | '/portal/operator/availability'
@@ -934,6 +945,7 @@ export interface FileRouteTypes {
     | '/portal/client/engagements'
     | '/portal/client/jobs'
     | '/portal/client/proposals'
+    | '/portal/client/team'
     | '/portal/operator/agreements'
     | '/portal/operator/assignments'
     | '/portal/operator/availability'
@@ -1019,6 +1031,7 @@ export interface FileRouteTypes {
     | '/_authenticated/portal/client/engagements'
     | '/_authenticated/portal/client/jobs'
     | '/_authenticated/portal/client/proposals'
+    | '/_authenticated/portal/client/team'
     | '/_authenticated/portal/operator/agreements'
     | '/_authenticated/portal/operator/assignments'
     | '/_authenticated/portal/operator/availability'
@@ -1655,6 +1668,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPortalOperatorAgreementsRouteImport
       parentRoute: typeof AuthenticatedPortalRouteRoute
     }
+    '/_authenticated/portal/client/team': {
+      id: '/_authenticated/portal/client/team'
+      path: '/client/team'
+      fullPath: '/portal/client/team'
+      preLoaderRoute: typeof AuthenticatedPortalClientTeamRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
     '/_authenticated/portal/client/proposals': {
       id: '/_authenticated/portal/client/proposals'
       path: '/client/proposals'
@@ -1684,6 +1704,7 @@ interface AuthenticatedPortalRouteRouteChildren {
   AuthenticatedPortalClientEngagementsRoute: typeof AuthenticatedPortalClientEngagementsRoute
   AuthenticatedPortalClientJobsRoute: typeof AuthenticatedPortalClientJobsRoute
   AuthenticatedPortalClientProposalsRoute: typeof AuthenticatedPortalClientProposalsRoute
+  AuthenticatedPortalClientTeamRoute: typeof AuthenticatedPortalClientTeamRoute
   AuthenticatedPortalOperatorAgreementsRoute: typeof AuthenticatedPortalOperatorAgreementsRoute
   AuthenticatedPortalOperatorAssignmentsRoute: typeof AuthenticatedPortalOperatorAssignmentsRoute
   AuthenticatedPortalOperatorAvailabilityRoute: typeof AuthenticatedPortalOperatorAvailabilityRoute
@@ -1703,6 +1724,7 @@ const AuthenticatedPortalRouteRouteChildren: AuthenticatedPortalRouteRouteChildr
     AuthenticatedPortalClientJobsRoute: AuthenticatedPortalClientJobsRoute,
     AuthenticatedPortalClientProposalsRoute:
       AuthenticatedPortalClientProposalsRoute,
+    AuthenticatedPortalClientTeamRoute: AuthenticatedPortalClientTeamRoute,
     AuthenticatedPortalOperatorAgreementsRoute:
       AuthenticatedPortalOperatorAgreementsRoute,
     AuthenticatedPortalOperatorAssignmentsRoute:
