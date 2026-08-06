@@ -78,6 +78,24 @@ import { Route as CompareVsExecutiveSearchRouteImport } from './routes/compare.v
 import { Route as CompareVsConsultantsRouteImport } from './routes/compare.vs-consultants'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedPortalRouteRouteImport } from './routes/_authenticated/portal/route'
+import { Route as AuthenticatedPortalIndexRouteImport } from './routes/_authenticated/portal/index'
+import { Route as AuthenticatedPortalOperatorIndexRouteImport } from './routes/_authenticated/portal/operator/index'
+import { Route as AuthenticatedPortalClientIndexRouteImport } from './routes/_authenticated/portal/client/index'
+import { Route as AuthenticatedPortalOperatorSupportRouteImport } from './routes/_authenticated/portal/operator/support'
+import { Route as AuthenticatedPortalOperatorProfileRouteImport } from './routes/_authenticated/portal/operator/profile'
+import { Route as AuthenticatedPortalOperatorPaymentsRouteImport } from './routes/_authenticated/portal/operator/payments'
+import { Route as AuthenticatedPortalOperatorInvitationsRouteImport } from './routes/_authenticated/portal/operator/invitations'
+import { Route as AuthenticatedPortalOperatorAvailabilityRouteImport } from './routes/_authenticated/portal/operator/availability'
+import { Route as AuthenticatedPortalOperatorAssignmentsRouteImport } from './routes/_authenticated/portal/operator/assignments'
+import { Route as AuthenticatedPortalOperatorAgreementsRouteImport } from './routes/_authenticated/portal/operator/agreements'
+import { Route as AuthenticatedPortalClientTeamRouteImport } from './routes/_authenticated/portal/client/team'
+import { Route as AuthenticatedPortalClientSupportRouteImport } from './routes/_authenticated/portal/client/support'
+import { Route as AuthenticatedPortalClientProposalsRouteImport } from './routes/_authenticated/portal/client/proposals'
+import { Route as AuthenticatedPortalClientJobsRouteImport } from './routes/_authenticated/portal/client/jobs'
+import { Route as AuthenticatedPortalClientEngagementsRouteImport } from './routes/_authenticated/portal/client/engagements'
+import { Route as AuthenticatedPortalClientDocumentsRouteImport } from './routes/_authenticated/portal/client/documents'
+import { Route as AuthenticatedPortalClientBillingRouteImport } from './routes/_authenticated/portal/client/billing'
 
 const WebinarRoute = WebinarRouteImport.update({
   id: '/webinar',
@@ -425,6 +443,114 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedPortalRouteRoute =
+  AuthenticatedPortalRouteRouteImport.update({
+    id: '/portal',
+    path: '/portal',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedPortalIndexRoute =
+  AuthenticatedPortalIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorIndexRoute =
+  AuthenticatedPortalOperatorIndexRouteImport.update({
+    id: '/operator/',
+    path: '/operator/',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientIndexRoute =
+  AuthenticatedPortalClientIndexRouteImport.update({
+    id: '/client/',
+    path: '/client/',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorSupportRoute =
+  AuthenticatedPortalOperatorSupportRouteImport.update({
+    id: '/operator/support',
+    path: '/operator/support',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorProfileRoute =
+  AuthenticatedPortalOperatorProfileRouteImport.update({
+    id: '/operator/profile',
+    path: '/operator/profile',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorPaymentsRoute =
+  AuthenticatedPortalOperatorPaymentsRouteImport.update({
+    id: '/operator/payments',
+    path: '/operator/payments',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorInvitationsRoute =
+  AuthenticatedPortalOperatorInvitationsRouteImport.update({
+    id: '/operator/invitations',
+    path: '/operator/invitations',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorAvailabilityRoute =
+  AuthenticatedPortalOperatorAvailabilityRouteImport.update({
+    id: '/operator/availability',
+    path: '/operator/availability',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorAssignmentsRoute =
+  AuthenticatedPortalOperatorAssignmentsRouteImport.update({
+    id: '/operator/assignments',
+    path: '/operator/assignments',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorAgreementsRoute =
+  AuthenticatedPortalOperatorAgreementsRouteImport.update({
+    id: '/operator/agreements',
+    path: '/operator/agreements',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientTeamRoute =
+  AuthenticatedPortalClientTeamRouteImport.update({
+    id: '/client/team',
+    path: '/client/team',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientSupportRoute =
+  AuthenticatedPortalClientSupportRouteImport.update({
+    id: '/client/support',
+    path: '/client/support',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientProposalsRoute =
+  AuthenticatedPortalClientProposalsRouteImport.update({
+    id: '/client/proposals',
+    path: '/client/proposals',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientJobsRoute =
+  AuthenticatedPortalClientJobsRouteImport.update({
+    id: '/client/jobs',
+    path: '/client/jobs',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientEngagementsRoute =
+  AuthenticatedPortalClientEngagementsRouteImport.update({
+    id: '/client/engagements',
+    path: '/client/engagements',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientDocumentsRoute =
+  AuthenticatedPortalClientDocumentsRouteImport.update({
+    id: '/client/documents',
+    path: '/client/documents',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientBillingRoute =
+  AuthenticatedPortalClientBillingRouteImport.update({
+    id: '/client/billing',
+    path: '/client/billing',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -485,6 +611,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/victoriakasumu': typeof VictoriakasumuRoute
   '/webinar': typeof WebinarRoute
+  '/portal': typeof AuthenticatedPortalRouteRouteWithChildren
   '/admin': typeof AuthenticatedAdminRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
@@ -495,6 +622,23 @@ export interface FileRoutesByFullPath {
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
   '/services/interim': typeof ServicesInterimRoute
   '/services/': typeof ServicesIndexRoute
+  '/portal/': typeof AuthenticatedPortalIndexRoute
+  '/portal/client/billing': typeof AuthenticatedPortalClientBillingRoute
+  '/portal/client/documents': typeof AuthenticatedPortalClientDocumentsRoute
+  '/portal/client/engagements': typeof AuthenticatedPortalClientEngagementsRoute
+  '/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
+  '/portal/client/proposals': typeof AuthenticatedPortalClientProposalsRoute
+  '/portal/client/support': typeof AuthenticatedPortalClientSupportRoute
+  '/portal/client/team': typeof AuthenticatedPortalClientTeamRoute
+  '/portal/operator/agreements': typeof AuthenticatedPortalOperatorAgreementsRoute
+  '/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
+  '/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
+  '/portal/operator/invitations': typeof AuthenticatedPortalOperatorInvitationsRoute
+  '/portal/operator/payments': typeof AuthenticatedPortalOperatorPaymentsRoute
+  '/portal/operator/profile': typeof AuthenticatedPortalOperatorProfileRoute
+  '/portal/operator/support': typeof AuthenticatedPortalOperatorSupportRoute
+  '/portal/client/': typeof AuthenticatedPortalClientIndexRoute
+  '/portal/operator/': typeof AuthenticatedPortalOperatorIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -564,6 +708,23 @@ export interface FileRoutesByTo {
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
   '/services/interim': typeof ServicesInterimRoute
   '/services': typeof ServicesIndexRoute
+  '/portal': typeof AuthenticatedPortalIndexRoute
+  '/portal/client/billing': typeof AuthenticatedPortalClientBillingRoute
+  '/portal/client/documents': typeof AuthenticatedPortalClientDocumentsRoute
+  '/portal/client/engagements': typeof AuthenticatedPortalClientEngagementsRoute
+  '/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
+  '/portal/client/proposals': typeof AuthenticatedPortalClientProposalsRoute
+  '/portal/client/support': typeof AuthenticatedPortalClientSupportRoute
+  '/portal/client/team': typeof AuthenticatedPortalClientTeamRoute
+  '/portal/operator/agreements': typeof AuthenticatedPortalOperatorAgreementsRoute
+  '/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
+  '/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
+  '/portal/operator/invitations': typeof AuthenticatedPortalOperatorInvitationsRoute
+  '/portal/operator/payments': typeof AuthenticatedPortalOperatorPaymentsRoute
+  '/portal/operator/profile': typeof AuthenticatedPortalOperatorProfileRoute
+  '/portal/operator/support': typeof AuthenticatedPortalOperatorSupportRoute
+  '/portal/client': typeof AuthenticatedPortalClientIndexRoute
+  '/portal/operator': typeof AuthenticatedPortalOperatorIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -626,6 +787,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/victoriakasumu': typeof VictoriakasumuRoute
   '/webinar': typeof WebinarRoute
+  '/_authenticated/portal': typeof AuthenticatedPortalRouteRouteWithChildren
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/compare/vs-consultants': typeof CompareVsConsultantsRoute
@@ -636,6 +798,23 @@ export interface FileRoutesById {
   '/services/fractional-cfo': typeof ServicesFractionalCfoRoute
   '/services/interim': typeof ServicesInterimRoute
   '/services/': typeof ServicesIndexRoute
+  '/_authenticated/portal/': typeof AuthenticatedPortalIndexRoute
+  '/_authenticated/portal/client/billing': typeof AuthenticatedPortalClientBillingRoute
+  '/_authenticated/portal/client/documents': typeof AuthenticatedPortalClientDocumentsRoute
+  '/_authenticated/portal/client/engagements': typeof AuthenticatedPortalClientEngagementsRoute
+  '/_authenticated/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
+  '/_authenticated/portal/client/proposals': typeof AuthenticatedPortalClientProposalsRoute
+  '/_authenticated/portal/client/support': typeof AuthenticatedPortalClientSupportRoute
+  '/_authenticated/portal/client/team': typeof AuthenticatedPortalClientTeamRoute
+  '/_authenticated/portal/operator/agreements': typeof AuthenticatedPortalOperatorAgreementsRoute
+  '/_authenticated/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
+  '/_authenticated/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
+  '/_authenticated/portal/operator/invitations': typeof AuthenticatedPortalOperatorInvitationsRoute
+  '/_authenticated/portal/operator/payments': typeof AuthenticatedPortalOperatorPaymentsRoute
+  '/_authenticated/portal/operator/profile': typeof AuthenticatedPortalOperatorProfileRoute
+  '/_authenticated/portal/operator/support': typeof AuthenticatedPortalOperatorSupportRoute
+  '/_authenticated/portal/client/': typeof AuthenticatedPortalClientIndexRoute
+  '/_authenticated/portal/operator/': typeof AuthenticatedPortalOperatorIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -698,6 +877,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/victoriakasumu'
     | '/webinar'
+    | '/portal'
     | '/admin'
     | '/dashboard'
     | '/compare/vs-consultants'
@@ -708,6 +888,23 @@ export interface FileRouteTypes {
     | '/services/fractional-cfo'
     | '/services/interim'
     | '/services/'
+    | '/portal/'
+    | '/portal/client/billing'
+    | '/portal/client/documents'
+    | '/portal/client/engagements'
+    | '/portal/client/jobs'
+    | '/portal/client/proposals'
+    | '/portal/client/support'
+    | '/portal/client/team'
+    | '/portal/operator/agreements'
+    | '/portal/operator/assignments'
+    | '/portal/operator/availability'
+    | '/portal/operator/invitations'
+    | '/portal/operator/payments'
+    | '/portal/operator/profile'
+    | '/portal/operator/support'
+    | '/portal/client/'
+    | '/portal/operator/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -777,6 +974,23 @@ export interface FileRouteTypes {
     | '/services/fractional-cfo'
     | '/services/interim'
     | '/services'
+    | '/portal'
+    | '/portal/client/billing'
+    | '/portal/client/documents'
+    | '/portal/client/engagements'
+    | '/portal/client/jobs'
+    | '/portal/client/proposals'
+    | '/portal/client/support'
+    | '/portal/client/team'
+    | '/portal/operator/agreements'
+    | '/portal/operator/assignments'
+    | '/portal/operator/availability'
+    | '/portal/operator/invitations'
+    | '/portal/operator/payments'
+    | '/portal/operator/profile'
+    | '/portal/operator/support'
+    | '/portal/client'
+    | '/portal/operator'
   id:
     | '__root__'
     | '/'
@@ -838,6 +1052,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/victoriakasumu'
     | '/webinar'
+    | '/_authenticated/portal'
     | '/_authenticated/admin'
     | '/_authenticated/dashboard'
     | '/compare/vs-consultants'
@@ -848,6 +1063,23 @@ export interface FileRouteTypes {
     | '/services/fractional-cfo'
     | '/services/interim'
     | '/services/'
+    | '/_authenticated/portal/'
+    | '/_authenticated/portal/client/billing'
+    | '/_authenticated/portal/client/documents'
+    | '/_authenticated/portal/client/engagements'
+    | '/_authenticated/portal/client/jobs'
+    | '/_authenticated/portal/client/proposals'
+    | '/_authenticated/portal/client/support'
+    | '/_authenticated/portal/client/team'
+    | '/_authenticated/portal/operator/agreements'
+    | '/_authenticated/portal/operator/assignments'
+    | '/_authenticated/portal/operator/availability'
+    | '/_authenticated/portal/operator/invitations'
+    | '/_authenticated/portal/operator/payments'
+    | '/_authenticated/portal/operator/profile'
+    | '/_authenticated/portal/operator/support'
+    | '/_authenticated/portal/client/'
+    | '/_authenticated/portal/operator/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1398,15 +1630,202 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/portal': {
+      id: '/_authenticated/portal'
+      path: '/portal'
+      fullPath: '/portal'
+      preLoaderRoute: typeof AuthenticatedPortalRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/portal/': {
+      id: '/_authenticated/portal/'
+      path: '/'
+      fullPath: '/portal/'
+      preLoaderRoute: typeof AuthenticatedPortalIndexRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/': {
+      id: '/_authenticated/portal/operator/'
+      path: '/operator'
+      fullPath: '/portal/operator/'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorIndexRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/': {
+      id: '/_authenticated/portal/client/'
+      path: '/client'
+      fullPath: '/portal/client/'
+      preLoaderRoute: typeof AuthenticatedPortalClientIndexRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/support': {
+      id: '/_authenticated/portal/operator/support'
+      path: '/operator/support'
+      fullPath: '/portal/operator/support'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorSupportRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/profile': {
+      id: '/_authenticated/portal/operator/profile'
+      path: '/operator/profile'
+      fullPath: '/portal/operator/profile'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorProfileRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/payments': {
+      id: '/_authenticated/portal/operator/payments'
+      path: '/operator/payments'
+      fullPath: '/portal/operator/payments'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorPaymentsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/invitations': {
+      id: '/_authenticated/portal/operator/invitations'
+      path: '/operator/invitations'
+      fullPath: '/portal/operator/invitations'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorInvitationsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/availability': {
+      id: '/_authenticated/portal/operator/availability'
+      path: '/operator/availability'
+      fullPath: '/portal/operator/availability'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorAvailabilityRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/assignments': {
+      id: '/_authenticated/portal/operator/assignments'
+      path: '/operator/assignments'
+      fullPath: '/portal/operator/assignments'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorAssignmentsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/agreements': {
+      id: '/_authenticated/portal/operator/agreements'
+      path: '/operator/agreements'
+      fullPath: '/portal/operator/agreements'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorAgreementsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/team': {
+      id: '/_authenticated/portal/client/team'
+      path: '/client/team'
+      fullPath: '/portal/client/team'
+      preLoaderRoute: typeof AuthenticatedPortalClientTeamRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/support': {
+      id: '/_authenticated/portal/client/support'
+      path: '/client/support'
+      fullPath: '/portal/client/support'
+      preLoaderRoute: typeof AuthenticatedPortalClientSupportRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/proposals': {
+      id: '/_authenticated/portal/client/proposals'
+      path: '/client/proposals'
+      fullPath: '/portal/client/proposals'
+      preLoaderRoute: typeof AuthenticatedPortalClientProposalsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/jobs': {
+      id: '/_authenticated/portal/client/jobs'
+      path: '/client/jobs'
+      fullPath: '/portal/client/jobs'
+      preLoaderRoute: typeof AuthenticatedPortalClientJobsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/engagements': {
+      id: '/_authenticated/portal/client/engagements'
+      path: '/client/engagements'
+      fullPath: '/portal/client/engagements'
+      preLoaderRoute: typeof AuthenticatedPortalClientEngagementsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/documents': {
+      id: '/_authenticated/portal/client/documents'
+      path: '/client/documents'
+      fullPath: '/portal/client/documents'
+      preLoaderRoute: typeof AuthenticatedPortalClientDocumentsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/billing': {
+      id: '/_authenticated/portal/client/billing'
+      path: '/client/billing'
+      fullPath: '/portal/client/billing'
+      preLoaderRoute: typeof AuthenticatedPortalClientBillingRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
   }
 }
 
+interface AuthenticatedPortalRouteRouteChildren {
+  AuthenticatedPortalIndexRoute: typeof AuthenticatedPortalIndexRoute
+  AuthenticatedPortalClientBillingRoute: typeof AuthenticatedPortalClientBillingRoute
+  AuthenticatedPortalClientDocumentsRoute: typeof AuthenticatedPortalClientDocumentsRoute
+  AuthenticatedPortalClientEngagementsRoute: typeof AuthenticatedPortalClientEngagementsRoute
+  AuthenticatedPortalClientJobsRoute: typeof AuthenticatedPortalClientJobsRoute
+  AuthenticatedPortalClientProposalsRoute: typeof AuthenticatedPortalClientProposalsRoute
+  AuthenticatedPortalClientSupportRoute: typeof AuthenticatedPortalClientSupportRoute
+  AuthenticatedPortalClientTeamRoute: typeof AuthenticatedPortalClientTeamRoute
+  AuthenticatedPortalOperatorAgreementsRoute: typeof AuthenticatedPortalOperatorAgreementsRoute
+  AuthenticatedPortalOperatorAssignmentsRoute: typeof AuthenticatedPortalOperatorAssignmentsRoute
+  AuthenticatedPortalOperatorAvailabilityRoute: typeof AuthenticatedPortalOperatorAvailabilityRoute
+  AuthenticatedPortalOperatorInvitationsRoute: typeof AuthenticatedPortalOperatorInvitationsRoute
+  AuthenticatedPortalOperatorPaymentsRoute: typeof AuthenticatedPortalOperatorPaymentsRoute
+  AuthenticatedPortalOperatorProfileRoute: typeof AuthenticatedPortalOperatorProfileRoute
+  AuthenticatedPortalOperatorSupportRoute: typeof AuthenticatedPortalOperatorSupportRoute
+  AuthenticatedPortalClientIndexRoute: typeof AuthenticatedPortalClientIndexRoute
+  AuthenticatedPortalOperatorIndexRoute: typeof AuthenticatedPortalOperatorIndexRoute
+}
+
+const AuthenticatedPortalRouteRouteChildren: AuthenticatedPortalRouteRouteChildren =
+  {
+    AuthenticatedPortalIndexRoute: AuthenticatedPortalIndexRoute,
+    AuthenticatedPortalClientBillingRoute:
+      AuthenticatedPortalClientBillingRoute,
+    AuthenticatedPortalClientDocumentsRoute:
+      AuthenticatedPortalClientDocumentsRoute,
+    AuthenticatedPortalClientEngagementsRoute:
+      AuthenticatedPortalClientEngagementsRoute,
+    AuthenticatedPortalClientJobsRoute: AuthenticatedPortalClientJobsRoute,
+    AuthenticatedPortalClientProposalsRoute:
+      AuthenticatedPortalClientProposalsRoute,
+    AuthenticatedPortalClientSupportRoute:
+      AuthenticatedPortalClientSupportRoute,
+    AuthenticatedPortalClientTeamRoute: AuthenticatedPortalClientTeamRoute,
+    AuthenticatedPortalOperatorAgreementsRoute:
+      AuthenticatedPortalOperatorAgreementsRoute,
+    AuthenticatedPortalOperatorAssignmentsRoute:
+      AuthenticatedPortalOperatorAssignmentsRoute,
+    AuthenticatedPortalOperatorAvailabilityRoute:
+      AuthenticatedPortalOperatorAvailabilityRoute,
+    AuthenticatedPortalOperatorInvitationsRoute:
+      AuthenticatedPortalOperatorInvitationsRoute,
+    AuthenticatedPortalOperatorPaymentsRoute:
+      AuthenticatedPortalOperatorPaymentsRoute,
+    AuthenticatedPortalOperatorProfileRoute:
+      AuthenticatedPortalOperatorProfileRoute,
+    AuthenticatedPortalOperatorSupportRoute:
+      AuthenticatedPortalOperatorSupportRoute,
+    AuthenticatedPortalClientIndexRoute: AuthenticatedPortalClientIndexRoute,
+    AuthenticatedPortalOperatorIndexRoute:
+      AuthenticatedPortalOperatorIndexRoute,
+  }
+
+const AuthenticatedPortalRouteRouteWithChildren =
+  AuthenticatedPortalRouteRoute._addFileChildren(
+    AuthenticatedPortalRouteRouteChildren,
+  )
+
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedPortalRouteRoute: typeof AuthenticatedPortalRouteRouteWithChildren
   AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
   AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedPortalRouteRoute: AuthenticatedPortalRouteRouteWithChildren,
   AuthenticatedAdminRoute: AuthenticatedAdminRoute,
   AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
 }
@@ -1512,13 +1931,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
