@@ -123,17 +123,6 @@ function ClientHome() {
           </Rows>
         </div>
       </section>
-
-      <section className="space-y-6">
-        <div>
-          <h2 className="text-lg tracking-tight text-cream">Network pulse</h2>
-          <p className="mt-2 max-w-prose text-base text-stone">
-            What Veep operators are working on across the network. Anonymized.
-          </p>
-        </div>
-        <NetworkPulse leadLimit={4} winLimit={3} />
-        <DemoNote />
-      </section>
     </div>
   );
 }
