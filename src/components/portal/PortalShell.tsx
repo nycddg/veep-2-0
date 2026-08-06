@@ -158,7 +158,7 @@ export function PortalShell({ children }: { children: React.ReactNode }) {
         </aside>
         <main className="min-w-0 flex-1">
           {children}
-          {!isClient && (
+          {pathname.replace(/\/$/, "") === "/portal/operator" && (
             <section className="mt-16 space-y-6 border-t border-white/10 pt-12">
               <div>
                 <h2 className="text-lg tracking-tight text-cream">Network pulse</h2>
