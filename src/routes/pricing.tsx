@@ -120,7 +120,7 @@ function Page() {
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="flex flex-col pb-12 last:pb-0 sm:pb-0 lg:px-6 lg:first:pl-0 lg:last:pr-0"
+                className="flex flex-col lg:px-6 lg:first:pl-0 lg:last:pr-0"
               >
                 <div className="flex items-baseline gap-3">
                   <span className="text-2xl text-cream">{t.t}</span>
