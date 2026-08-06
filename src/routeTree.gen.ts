@@ -89,6 +89,7 @@ import { Route as AuthenticatedPortalOperatorInvitationsRouteImport } from './ro
 import { Route as AuthenticatedPortalOperatorAvailabilityRouteImport } from './routes/_authenticated/portal/operator/availability'
 import { Route as AuthenticatedPortalOperatorAssignmentsRouteImport } from './routes/_authenticated/portal/operator/assignments'
 import { Route as AuthenticatedPortalOperatorAgreementsRouteImport } from './routes/_authenticated/portal/operator/agreements'
+import { Route as AuthenticatedPortalClientJobsRouteImport } from './routes/_authenticated/portal/client/jobs'
 
 const WebinarRoute = WebinarRouteImport.update({
   id: '/webinar',
@@ -502,6 +503,12 @@ const AuthenticatedPortalOperatorAgreementsRoute =
     path: '/operator/agreements',
     getParentRoute: () => AuthenticatedPortalRouteRoute,
   } as any)
+const AuthenticatedPortalClientJobsRoute =
+  AuthenticatedPortalClientJobsRouteImport.update({
+    id: '/client/jobs',
+    path: '/client/jobs',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -574,6 +581,7 @@ export interface FileRoutesByFullPath {
   '/services/interim': typeof ServicesInterimRoute
   '/services/': typeof ServicesIndexRoute
   '/portal/': typeof AuthenticatedPortalIndexRoute
+  '/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
   '/portal/operator/agreements': typeof AuthenticatedPortalOperatorAgreementsRoute
   '/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
   '/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
@@ -653,6 +661,7 @@ export interface FileRoutesByTo {
   '/services/interim': typeof ServicesInterimRoute
   '/services': typeof ServicesIndexRoute
   '/portal': typeof AuthenticatedPortalIndexRoute
+  '/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
   '/portal/operator/agreements': typeof AuthenticatedPortalOperatorAgreementsRoute
   '/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
   '/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
@@ -736,6 +745,7 @@ export interface FileRoutesById {
   '/services/interim': typeof ServicesInterimRoute
   '/services/': typeof ServicesIndexRoute
   '/_authenticated/portal/': typeof AuthenticatedPortalIndexRoute
+  '/_authenticated/portal/client/jobs': typeof AuthenticatedPortalClientJobsRoute
   '/_authenticated/portal/operator/agreements': typeof AuthenticatedPortalOperatorAgreementsRoute
   '/_authenticated/portal/operator/assignments': typeof AuthenticatedPortalOperatorAssignmentsRoute
   '/_authenticated/portal/operator/availability': typeof AuthenticatedPortalOperatorAvailabilityRoute
@@ -819,6 +829,7 @@ export interface FileRouteTypes {
     | '/services/interim'
     | '/services/'
     | '/portal/'
+    | '/portal/client/jobs'
     | '/portal/operator/agreements'
     | '/portal/operator/assignments'
     | '/portal/operator/availability'
@@ -898,6 +909,7 @@ export interface FileRouteTypes {
     | '/services/interim'
     | '/services'
     | '/portal'
+    | '/portal/client/jobs'
     | '/portal/operator/agreements'
     | '/portal/operator/assignments'
     | '/portal/operator/availability'
@@ -980,6 +992,7 @@ export interface FileRouteTypes {
     | '/services/interim'
     | '/services/'
     | '/_authenticated/portal/'
+    | '/_authenticated/portal/client/jobs'
     | '/_authenticated/portal/operator/agreements'
     | '/_authenticated/portal/operator/assignments'
     | '/_authenticated/portal/operator/availability'
@@ -1616,11 +1629,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPortalOperatorAgreementsRouteImport
       parentRoute: typeof AuthenticatedPortalRouteRoute
     }
+    '/_authenticated/portal/client/jobs': {
+      id: '/_authenticated/portal/client/jobs'
+      path: '/client/jobs'
+      fullPath: '/portal/client/jobs'
+      preLoaderRoute: typeof AuthenticatedPortalClientJobsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
   }
 }
 
 interface AuthenticatedPortalRouteRouteChildren {
   AuthenticatedPortalIndexRoute: typeof AuthenticatedPortalIndexRoute
+  AuthenticatedPortalClientJobsRoute: typeof AuthenticatedPortalClientJobsRoute
   AuthenticatedPortalOperatorAgreementsRoute: typeof AuthenticatedPortalOperatorAgreementsRoute
   AuthenticatedPortalOperatorAssignmentsRoute: typeof AuthenticatedPortalOperatorAssignmentsRoute
   AuthenticatedPortalOperatorAvailabilityRoute: typeof AuthenticatedPortalOperatorAvailabilityRoute
@@ -1635,6 +1656,7 @@ interface AuthenticatedPortalRouteRouteChildren {
 const AuthenticatedPortalRouteRouteChildren: AuthenticatedPortalRouteRouteChildren =
   {
     AuthenticatedPortalIndexRoute: AuthenticatedPortalIndexRoute,
+    AuthenticatedPortalClientJobsRoute: AuthenticatedPortalClientJobsRoute,
     AuthenticatedPortalOperatorAgreementsRoute:
       AuthenticatedPortalOperatorAgreementsRoute,
     AuthenticatedPortalOperatorAssignmentsRoute:
