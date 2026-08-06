@@ -12,7 +12,8 @@ import {
   inputCls,
 } from "@/components/portal/ui";
 import { fmtDate } from "@/lib/portal/dates";
-import { companies, companyName, usePortal } from "@/lib/portal/mock-store";
+import { companyName, usePortal } from "@/lib/portal/mock-store";
+
 
 export const Route = createFileRoute("/_authenticated/portal/client/jobs")({
   head: () => ({
