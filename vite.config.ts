@@ -12,4 +12,11 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Hard-pin Vercel output. Without this, local/CI builds default to
+  // cloudflare-module (.output + wrangler). Vercel auto-detect works when
+  // VERCEL=1 is set, but pinning removes an entire class of "built for the
+  // wrong runtime" 500s if detection ever misses.
+  nitro: {
+    preset: "vercel",
+  },
 });

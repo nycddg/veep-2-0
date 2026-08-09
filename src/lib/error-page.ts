@@ -1,4 +1,25 @@
-export function renderErrorPage(): string {
+function sanitizeDetail(error: unknown): string {
+  if (error == null) return "";
+  const raw =
+    error instanceof Error
+      ? `${error.name}: ${error.message}`
+      : typeof error === "string"
+        ? error
+        : (() => {
+            try {
+              return JSON.stringify(error);
+            } catch {
+              return String(error);
+            }
+          })();
+  // Keep HTML-comment safe and short (no secrets dump, no comment breakers).
+  return raw.replace(/--+/g, "-").replace(/[^\x20-\x7E]/g, "?").slice(0, 400);
+}
+
+/** User-facing SSR failure page. Optional detail is embedded in an HTML comment for ops. */
+export function renderErrorPage(error?: unknown): string {
+  const detail = sanitizeDetail(error);
+  const comment = detail ? `\n  <!-- veep-ssr-error: ${detail} -->` : "";
   return `<!doctype html>
 <html lang="en">
   <head>
@@ -16,7 +37,7 @@ export function renderErrorPage(): string {
       .secondary { background: #fff; color: #111; border-color: #d1d5db; }
     </style>
   </head>
-  <body>
+  <body>${comment}
     <div class="card">
       <h1>This page didn't load</h1>
       <p>Something went wrong on our end. You can try refreshing or head back home.</p>
