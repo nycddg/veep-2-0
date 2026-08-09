@@ -1,17 +1,11 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import {
-  createWixFormSubmission,
-  getFormMediaUploadUrl,
-  uploadFileToWix,
-} from "./wix.server";
+import { saveFormSubmission } from "./forms.server";
 import {
   normalizeCompanyType,
   normalizeFunction,
   roleToWix,
   sourceToWix,
-  WIX_FORM_FIELDS,
-  WIX_FORM_ID_DISCOVERY,
 } from "./wix-config";
 
 const MAX_RESUME_SIZE = 10 * 1024 * 1024; // 10 MB
@@ -37,64 +31,49 @@ const applicationSchema = z.object({
   }),
 });
 
-function base64ToFile(payload: { name: string; type: string; data: string }): File {
-  const bytes = Buffer.from(payload.data, "base64");
-  if (bytes.length > MAX_RESUME_SIZE) {
-    throw new Error("Resume file must be smaller than 10 MB");
-  }
-  return new File([bytes], payload.name, { type: payload.type });
-}
-
-function toStringValue(value: string | undefined): string | null {
-  return value || null;
-}
-
 export const submitApplication = createServerFn({ method: "POST" })
   .inputValidator((data) => applicationSchema.parse(data))
   .handler(async ({ data }) => {
-    const file = base64ToFile(data.resume);
+    const resumeBytes = Buffer.from(data.resume.data, "base64");
+    if (resumeBytes.length > MAX_RESUME_SIZE) {
+      throw new Error("Resume file must be smaller than 10 MB");
+    }
 
     const allowedTypes = [
       "application/pdf",
       "application/msword",
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     ];
-    if (!allowedTypes.includes(file.type)) {
+    if (!allowedTypes.includes(data.resume.type)) {
       throw new Error("Resume must be a PDF, DOC, or DOCX file");
     }
-
-    const uploadUrl = await getFormMediaUploadUrl(file.name, file.type);
-    const uploadedFile = await uploadFileToWix(uploadUrl, file);
 
     const mappedRole = roleToWix[data.role] || data.role;
     const mappedSource = sourceToWix[data.source || ""] || "Other";
 
-    const submissions: Record<string, unknown> = {
-      [WIX_FORM_FIELDS.firstName]: data.firstName,
-      [WIX_FORM_FIELDS.lastName]: data.lastName,
-      [WIX_FORM_FIELDS.email]: data.email,
-      [WIX_FORM_FIELDS.linkedIn]: data.linkedIn,
-      [WIX_FORM_FIELDS.website]: toStringValue(data.website || undefined),
-      [WIX_FORM_FIELDS.role]: mappedRole,
-      [WIX_FORM_FIELDS.fractionalExperience]: toStringValue(data.fractionalExperience),
-      [WIX_FORM_FIELDS.companyTypes]: data.companyTypes.map(normalizeCompanyType),
-      [WIX_FORM_FIELDS.growthStages]: data.growthStages,
-      [WIX_FORM_FIELDS.functions]: data.functions.map(normalizeFunction),
-      [WIX_FORM_FIELDS.industries]: toStringValue(data.industries || undefined),
-      [WIX_FORM_FIELDS.notes]: toStringValue(data.notes || undefined),
-      [WIX_FORM_FIELDS.source]: mappedSource,
-      [WIX_FORM_FIELDS.resume]: [
-        {
-          fileId: uploadedFile.id,
-          displayName: uploadedFile.displayName,
-          fileType: file.type,
-          url: uploadedFile.url,
-        },
-      ],
-    };
-
-    await createWixFormSubmission(WIX_FORM_ID_DISCOVERY, submissions);
+    await saveFormSubmission({
+      kind: "join",
+      email: data.email,
+      name: `${data.firstName} ${data.lastName}`.trim(),
+      sourcePath: "/join",
+      payload: {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        linkedIn: data.linkedIn,
+        website: data.website || null,
+        role: data.role,
+        roleMapped: mappedRole,
+        fractionalExperience: data.fractionalExperience ?? null,
+        companyTypes: data.companyTypes.map(normalizeCompanyType),
+        growthStages: data.growthStages,
+        functions: data.functions.map(normalizeFunction),
+        industries: data.industries || null,
+        notes: data.notes || null,
+        source: data.source || null,
+        sourceMapped: mappedSource,
+      },
+      resume: data.resume,
+    });
 
     return { success: true };
   });
-
