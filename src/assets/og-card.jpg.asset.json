@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "ddadb273-aca7-4108-b8a0-7a1791f0303f",
   "project_id": "e50858ab-84a4-4664-a41a-e7b1230927f3",
-  "url": "/__l5e/assets-v1/ddadb273-aca7-4108-b8a0-7a1791f0303f/og-card.jpg",
-  "r2_key": "a/v1/e50858ab-84a4-4664-a41a-e7b1230927f3/ddadb273-aca7-4108-b8a0-7a1791f0303f/og-card.jpg",
+  "url": "/assets/og-card.jpg",
   "original_filename": "og-card.jpg",
   "size": 33425,
   "content_type": "image/jpeg",
-  "created_at": "2026-07-14T17:58:42Z"
+  "created_at": "2026-07-14T17:58:42Z",
+  "rehomed_at": "2026-08-09T00:00:00Z",
+  "rehomed_from": "lovable-cdn-__l5e"
 }
