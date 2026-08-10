@@ -296,7 +296,7 @@ function Page() {
                     {loading ? (
                       <><Loader2 className="h-4 w-4 animate-spin" />Sending…</>
                     ) : (
-                      isAudit ? "Request the audit" : "Book the call"
+                      isAudit ? "Request the audit" : "Send inquiry"
                     )}
                   </button>
                   <p className="text-xs text-cream/75">
