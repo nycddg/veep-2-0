@@ -1,13 +1,14 @@
 /**
- * Server-side form intake — Supabase (service role) + optional email notify.
+ * Server-side form intake — Supabase (service role) + Google Workspace notify.
  * Replaces Lovable connector-gateway → Wix for /join and /contact.
  *
  * Primary: form_submissions table
- * Fallback: JSON object in storage bucket form-uploads/submissions/{id}.json
- *   (used automatically if the table migration has not been applied yet)
+ * Fallback: JSON in storage form-uploads/submissions/{id}.json
+ * Notify: Gmail API as dave@veep.work (OAuth refresh token on Vercel)
  */
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { randomUUID } from "node:crypto";
+import { readFileSync, existsSync } from "node:fs";
 
 export type FormKind = "join" | "contact" | "audit";
 
@@ -36,6 +37,8 @@ export type SaveFormResult = {
 
 const MAX_RESUME_BYTES = 10 * 1024 * 1024;
 const BUCKET = "form-uploads";
+const GMAIL_TOKEN_URI = "https://oauth2.googleapis.com/token";
+const GMAIL_SEND_URL = "https://gmail.googleapis.com/gmail/v1/users/me/messages/send";
 
 function requireEnv(name: string): string {
   const v = process.env[name]?.trim();
@@ -103,6 +106,129 @@ async function uploadResume(
   };
 }
 
+type GoogleOAuthCreds = {
+  client_id: string;
+  client_secret: string;
+  refresh_token: string;
+};
+
+function loadGoogleOAuthCreds(): GoogleOAuthCreds | null {
+  const client_id = process.env.GOOGLE_CLIENT_ID?.trim() || process.env.FORM_GMAIL_CLIENT_ID?.trim();
+  const client_secret =
+    process.env.GOOGLE_CLIENT_SECRET?.trim() || process.env.FORM_GMAIL_CLIENT_SECRET?.trim();
+  const refresh_token =
+    process.env.GOOGLE_REFRESH_TOKEN?.trim() || process.env.FORM_GMAIL_REFRESH_TOKEN?.trim();
+
+  if (client_id && client_secret && refresh_token) {
+    return { client_id, client_secret, refresh_token };
+  }
+
+  // Local/dev fallback: Hermes Workspace token (not available on Vercel)
+  const tokenPath =
+    process.env.GOOGLE_TOKEN_JSON_PATH?.trim() || "/opt/data/google_token.json";
+  if (existsSync(tokenPath)) {
+    try {
+      const raw = JSON.parse(readFileSync(tokenPath, "utf8")) as Record<string, string>;
+      if (raw.client_id && raw.client_secret && raw.refresh_token) {
+        return {
+          client_id: raw.client_id,
+          client_secret: raw.client_secret,
+          refresh_token: raw.refresh_token,
+        };
+      }
+    } catch {
+      /* ignore */
+    }
+  }
+  return null;
+}
+
+async function getGoogleAccessToken(creds: GoogleOAuthCreds): Promise<string> {
+  const body = new URLSearchParams({
+    client_id: creds.client_id,
+    client_secret: creds.client_secret,
+    refresh_token: creds.refresh_token,
+    grant_type: "refresh_token",
+  });
+  const res = await fetch(GMAIL_TOKEN_URI, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body,
+  });
+  const json = (await res.json()) as { access_token?: string; error?: string; error_description?: string };
+  if (!res.ok || !json.access_token) {
+    throw new Error(
+      `Google token refresh failed: ${json.error || res.status} ${json.error_description || ""}`.trim(),
+    );
+  }
+  return json.access_token;
+}
+
+function buildRfc822(opts: {
+  from: string;
+  to: string;
+  subject: string;
+  text: string;
+  replyTo?: string;
+}): string {
+  const encodeSubject = (s: string) => {
+    // RFC 2047 for non-ascii
+    if (/^[\x20-\x7E]*$/.test(s)) return s;
+    return `=?UTF-8?B?${Buffer.from(s, "utf8").toString("base64")}?=`;
+  };
+  const headers = [
+    `From: ${opts.from}`,
+    `To: ${opts.to}`,
+    opts.replyTo ? `Reply-To: ${opts.replyTo}` : null,
+    `Subject: ${encodeSubject(opts.subject)}`,
+    "MIME-Version: 1.0",
+    'Content-Type: text/plain; charset="UTF-8"',
+    "Content-Transfer-Encoding: 8bit",
+  ].filter(Boolean);
+  return `${headers.join("\r\n")}\r\n\r\n${opts.text}`;
+}
+
+function toBase64Url(raw: string): string {
+  return Buffer.from(raw, "utf8")
+    .toString("base64")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/g, "");
+}
+
+async function sendViaGmailApi(opts: {
+  from: string;
+  to: string;
+  subject: string;
+  text: string;
+  replyTo?: string;
+}): Promise<void> {
+  const creds = loadGoogleOAuthCreds();
+  if (!creds) {
+    throw new Error(
+      "Gmail OAuth not configured (set GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN)",
+    );
+  }
+  const accessToken = await getGoogleAccessToken(creds);
+  const raw = toBase64Url(buildRfc822(opts));
+  const res = await fetch(GMAIL_SEND_URL, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ raw }),
+  });
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`Gmail send failed ${res.status}: ${body.slice(0, 400)}`);
+  }
+}
+
+/** SMTP app-password path (optional). Uses undici-free raw sockets via nodemailer-less fetch? 
+ *  We implement via Gmail API only for zero extra deps. App password users set the same
+ *  OAuth env path or use Google "App passwords" with a future SMTP adapter. */
+
 async function sendNotifyEmail(opts: {
   kind: FormKind;
   email: string;
@@ -111,13 +237,13 @@ async function sendNotifyEmail(opts: {
   payload: Record<string, unknown>;
   resumePath: string | null;
 }): Promise<{ status: "skipped" | "sent" | "failed"; error?: string }> {
-  const apiKey = process.env.RESEND_API_KEY?.trim();
   const to = (process.env.FORM_NOTIFY_TO || "dave@veep.work").trim();
   const from = (
-    process.env.FORM_NOTIFY_FROM || "Veep Forms <onboarding@resend.dev>"
+    process.env.FORM_NOTIFY_FROM || "Veep Forms <dave@veep.work>"
   ).trim();
 
-  if (!apiKey) {
+  const creds = loadGoogleOAuthCreds();
+  if (!creds) {
     return { status: "skipped" };
   }
 
@@ -133,37 +259,25 @@ async function sendNotifyEmail(opts: {
   const lines = [
     `Kind: ${opts.kind}`,
     `Id: ${opts.id}`,
-    `Email: ${opts.email}`,
+    `From form: ${opts.email}`,
     opts.name ? `Name: ${opts.name}` : null,
     opts.resumePath ? `Resume path: ${opts.resumePath}` : null,
     "",
     "Payload:",
     JSON.stringify(opts.payload, null, 2),
     "",
-    "Supabase: form_submissions table or form-uploads/submissions/",
+    "Supabase: form_submissions (or form-uploads/submissions/)",
+    `Site: https://veep-2-0.vercel.app`,
   ].filter((l) => l !== null);
 
   try {
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from,
-        to: [to],
-        subject,
-        text: lines.join("\n"),
-      }),
+    await sendViaGmailApi({
+      from,
+      to,
+      subject,
+      text: lines.join("\n"),
+      replyTo: opts.email,
     });
-    if (!res.ok) {
-      const body = await res.text();
-      return {
-        status: "failed",
-        error: `Resend ${res.status}: ${body.slice(0, 300)}`,
-      };
-    }
     return { status: "sent" };
   } catch (e) {
     return {
@@ -231,7 +345,6 @@ export async function saveFormSubmission(
     if (!isMissingTableError(insertError.message)) {
       throw new Error(`Form save failed: ${insertError.message}`);
     }
-    // Table not migrated yet — durable fallback to Storage JSON.
     storage = "object";
     const body = new TextEncoder().encode(JSON.stringify(record, null, 2));
     const { error: objError } = await supabase.storage
@@ -270,7 +383,7 @@ export async function saveFormSubmission(
     console.error("[forms] notify failed", notify.error);
   } else if (notify.status === "skipped") {
     console.info(
-      `[forms] saved ${id} (${storage}); email skipped (set RESEND_API_KEY to enable → dave@veep.work)`,
+      `[forms] saved ${id} (${storage}); email skipped (set GOOGLE_CLIENT_ID/SECRET/REFRESH_TOKEN for Workspace Gmail notify → dave@veep.work)`,
     );
   }
 
