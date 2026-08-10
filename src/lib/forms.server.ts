@@ -196,18 +196,19 @@ function buildHumanEmail(opts: {
   const p = opts.payload || {};
   const kindLabel =
     opts.kind === "join"
-      ? "Operator application"
+      ? "New operator application"
       : opts.kind === "audit"
-        ? "Capacity audit request"
-        : "Discovery call request";
+        ? "New capacity audit request"
+        : "New discovery call request";
 
   const who =
     opts.name?.trim() ||
-    ([str(p.firstName), str(p.lastName)].filter(Boolean).join(" ") || opts.email);
+    [str(p.firstName), str(p.lastName)].filter(Boolean).join(" ") ||
+    opts.email;
 
-  const subject = `[Veep] ${kindLabel} — ${who}`;
+  // ASCII hyphen only in subject - em dash mojibakes in some Gmail paths as Ã¢Â€Â”
+  const subject = `[Veep] ${kindLabel} - ${who}`;
 
-  // Ordered fields for humans (skip empties)
   const rows: { label: string; value: string }[] = [];
   const add = (label: string, value: unknown) => {
     const v = str(value);
@@ -230,7 +231,7 @@ function buildHumanEmail(opts: {
     add("Notes", p.notes);
     if (opts.resumePath) add("Resume (Storage path)", opts.resumePath);
   } else {
-    add("Type", str(p.intentLabel) || kindLabel);
+    add("Type", str(p.intentLabel) || kindLabel.replace(/^New /, ""));
     add("Timing", p.timing);
     add("Company", p.company);
     add("Role", p.role);
@@ -238,33 +239,31 @@ function buildHumanEmail(opts: {
     add("Message", p.message);
   }
 
-  // Plain text
   const textLines = [
     kindLabel.toUpperCase(),
-    "────────────────────────────────",
+    "--------------------------------",
     ...rows.map((r) => `${r.label}: ${r.value}`),
     "",
-    "────────────────────────────────",
+    "--------------------------------",
     "Reply to this email to respond to the submitter.",
     `Ref: ${opts.id}`,
   ];
   const text = textLines.join("\n");
 
-  // Simple HTML — monochrome, scannable
   const rowHtml = rows
     .map((r) => {
       const isBlock =
         r.label === "Message" || r.label === "Notes" || r.value.length > 80;
       if (isBlock) {
         return `<tr>
-  <td style="padding:10px 0 4px;font-size:12px;color:#666;text-transform:uppercase;letter-spacing:0.04em;">${escapeHtml(r.label)}</td>
+  <td style="padding:12px 0 4px;font-size:12px;color:#666;text-transform:uppercase;letter-spacing:0.04em;font-family:Arial,Helvetica,sans-serif;">${escapeHtml(r.label)}</td>
 </tr>
 <tr>
-  <td style="padding:0 0 14px;font-size:15px;color:#111;line-height:1.45;white-space:pre-wrap;">${escapeHtml(r.value)}</td>
+  <td style="padding:0 0 16px;font-size:15px;color:#111;line-height:1.5;white-space:pre-wrap;font-family:Arial,Helvetica,sans-serif;">${escapeHtml(r.value)}</td>
 </tr>`;
       }
       return `<tr>
-  <td style="padding:8px 0;border-bottom:1px solid #eee;">
+  <td style="padding:10px 0;border-bottom:1px solid #eee;font-family:Arial,Helvetica,sans-serif;">
     <div style="font-size:12px;color:#666;margin-bottom:2px;">${escapeHtml(r.label)}</div>
     <div style="font-size:15px;color:#111;">${escapeHtml(r.value)}</div>
   </td>
@@ -272,11 +271,12 @@ function buildHumanEmail(opts: {
     })
     .join("\n");
 
+  // White-on-white, no cream page background / card chrome
   const html = `<!DOCTYPE html>
-<html><body style="margin:0;padding:0;background:#f6f4ef;font-family:Arial,Helvetica,sans-serif;">
-  <div style="max-width:560px;margin:24px auto;background:#fff;border:1px solid #e8e4dc;border-radius:8px;padding:28px 28px 20px;">
+<html><body style="margin:0;padding:0;background:#ffffff;font-family:Arial,Helvetica,sans-serif;">
+  <div style="max-width:560px;margin:0;padding:8px 0 16px;background:#ffffff;">
     <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#888;margin-bottom:8px;">Veep site form</div>
-    <h1 style="margin:0 0 20px;font-size:20px;font-weight:600;color:#0b1220;line-height:1.3;">${escapeHtml(kindLabel)}</h1>
+    <h1 style="margin:0 0 20px;font-size:20px;font-weight:600;color:#111;line-height:1.3;">${escapeHtml(kindLabel)}</h1>
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
       ${rowHtml}
     </table>
