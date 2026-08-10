@@ -164,28 +164,164 @@ async function getGoogleAccessToken(creds: GoogleOAuthCreds): Promise<string> {
   return json.access_token;
 }
 
+function encodeSubject(s: string): string {
+  if (/^[\x20-\x7E]*$/.test(s)) return s;
+  return `=?UTF-8?B?${Buffer.from(s, "utf8").toString("base64")}?=`;
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function str(v: unknown): string {
+  if (v == null) return "";
+  if (Array.isArray(v)) return v.map(str).filter(Boolean).join(", ");
+  if (typeof v === "string") return v.trim();
+  if (typeof v === "number" || typeof v === "boolean") return String(v);
+  return JSON.stringify(v);
+}
+
+function buildHumanEmail(opts: {
+  kind: FormKind;
+  email: string;
+  name?: string;
+  id: string;
+  payload: Record<string, unknown>;
+  resumePath: string | null;
+}): { subject: string; text: string; html: string } {
+  const p = opts.payload || {};
+  const kindLabel =
+    opts.kind === "join"
+      ? "Operator application"
+      : opts.kind === "audit"
+        ? "Capacity audit request"
+        : "Discovery call request";
+
+  const who =
+    opts.name?.trim() ||
+    ([str(p.firstName), str(p.lastName)].filter(Boolean).join(" ") || opts.email);
+
+  const subject = `[Veep] ${kindLabel} — ${who}`;
+
+  // Ordered fields for humans (skip empties)
+  const rows: { label: string; value: string }[] = [];
+  const add = (label: string, value: unknown) => {
+    const v = str(value);
+    if (v) rows.push({ label, value: v });
+  };
+
+  add("Name", who);
+  add("Email", opts.email);
+
+  if (opts.kind === "join") {
+    add("LinkedIn", p.linkedIn);
+    add("Website", p.website);
+    add("Highest role", p.roleMapped || p.role);
+    add("Fractional / interim experience", p.fractionalExperience);
+    add("Company types", p.companyTypes);
+    add("Growth stages", p.growthStages);
+    add("Functions", p.functions);
+    add("Industries", p.industries);
+    add("How they heard of Veep", p.sourceMapped || p.source);
+    add("Notes", p.notes);
+    if (opts.resumePath) add("Resume (Storage path)", opts.resumePath);
+  } else {
+    add("Type", str(p.intentLabel) || kindLabel);
+    add("Timing", p.timing);
+    add("Company", p.company);
+    add("Role", p.role);
+    add("Outcome interest", p.outcome);
+    add("Message", p.message);
+  }
+
+  // Plain text
+  const textLines = [
+    kindLabel.toUpperCase(),
+    "────────────────────────────────",
+    ...rows.map((r) => `${r.label}: ${r.value}`),
+    "",
+    "────────────────────────────────",
+    "Reply to this email to respond to the submitter.",
+    `Ref: ${opts.id}`,
+  ];
+  const text = textLines.join("\n");
+
+  // Simple HTML — monochrome, scannable
+  const rowHtml = rows
+    .map((r) => {
+      const isBlock =
+        r.label === "Message" || r.label === "Notes" || r.value.length > 80;
+      if (isBlock) {
+        return `<tr>
+  <td style="padding:10px 0 4px;font-size:12px;color:#666;text-transform:uppercase;letter-spacing:0.04em;">${escapeHtml(r.label)}</td>
+</tr>
+<tr>
+  <td style="padding:0 0 14px;font-size:15px;color:#111;line-height:1.45;white-space:pre-wrap;">${escapeHtml(r.value)}</td>
+</tr>`;
+      }
+      return `<tr>
+  <td style="padding:8px 0;border-bottom:1px solid #eee;">
+    <div style="font-size:12px;color:#666;margin-bottom:2px;">${escapeHtml(r.label)}</div>
+    <div style="font-size:15px;color:#111;">${escapeHtml(r.value)}</div>
+  </td>
+</tr>`;
+    })
+    .join("\n");
+
+  const html = `<!DOCTYPE html>
+<html><body style="margin:0;padding:0;background:#f6f4ef;font-family:Arial,Helvetica,sans-serif;">
+  <div style="max-width:560px;margin:24px auto;background:#fff;border:1px solid #e8e4dc;border-radius:8px;padding:28px 28px 20px;">
+    <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#888;margin-bottom:8px;">Veep site form</div>
+    <h1 style="margin:0 0 20px;font-size:20px;font-weight:600;color:#0b1220;line-height:1.3;">${escapeHtml(kindLabel)}</h1>
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+      ${rowHtml}
+    </table>
+    <p style="margin:20px 0 0;font-size:13px;color:#555;">Reply to this email to respond to the submitter.</p>
+    <p style="margin:8px 0 0;font-size:11px;color:#999;">Ref ${escapeHtml(opts.id)}</p>
+  </div>
+</body></html>`;
+
+  return { subject, text, html };
+}
+
 function buildRfc822(opts: {
   from: string;
   to: string;
   subject: string;
   text: string;
+  html: string;
   replyTo?: string;
 }): string {
-  const encodeSubject = (s: string) => {
-    // RFC 2047 for non-ascii
-    if (/^[\x20-\x7E]*$/.test(s)) return s;
-    return `=?UTF-8?B?${Buffer.from(s, "utf8").toString("base64")}?=`;
-  };
+  const boundary = `veep_${randomUUID().replace(/-/g, "")}`;
   const headers = [
     `From: ${opts.from}`,
     `To: ${opts.to}`,
     opts.replyTo ? `Reply-To: ${opts.replyTo}` : null,
     `Subject: ${encodeSubject(opts.subject)}`,
     "MIME-Version: 1.0",
+    `Content-Type: multipart/alternative; boundary="${boundary}"`,
+  ].filter(Boolean);
+
+  const parts = [
+    `--${boundary}`,
     'Content-Type: text/plain; charset="UTF-8"',
     "Content-Transfer-Encoding: 8bit",
-  ].filter(Boolean);
-  return `${headers.join("\r\n")}\r\n\r\n${opts.text}`;
+    "",
+    opts.text,
+    `--${boundary}`,
+    'Content-Type: text/html; charset="UTF-8"',
+    "Content-Transfer-Encoding: 8bit",
+    "",
+    opts.html,
+    `--${boundary}--`,
+    "",
+  ].join("\r\n");
+
+  return `${headers.join("\r\n")}\r\n\r\n${parts}`;
 }
 
 function toBase64Url(raw: string): string {
@@ -201,6 +337,7 @@ async function sendViaGmailApi(opts: {
   to: string;
   subject: string;
   text: string;
+  html: string;
   replyTo?: string;
 }): Promise<void> {
   const creds = loadGoogleOAuthCreds();
@@ -225,10 +362,6 @@ async function sendViaGmailApi(opts: {
   }
 }
 
-/** SMTP app-password path (optional). Uses undici-free raw sockets via nodemailer-less fetch? 
- *  We implement via Gmail API only for zero extra deps. App password users set the same
- *  OAuth env path or use Google "App passwords" with a future SMTP adapter. */
-
 async function sendNotifyEmail(opts: {
   kind: FormKind;
   email: string;
@@ -247,35 +380,15 @@ async function sendNotifyEmail(opts: {
     return { status: "skipped" };
   }
 
-  const kindLabel =
-    opts.kind === "join"
-      ? "Join"
-      : opts.kind === "audit"
-        ? "Contact / Audit"
-        : "Contact";
-  const who = opts.name?.trim() || opts.email;
-  const subject = `[Veep ${kindLabel}] ${who}`;
-
-  const lines = [
-    `Kind: ${opts.kind}`,
-    `Id: ${opts.id}`,
-    `From form: ${opts.email}`,
-    opts.name ? `Name: ${opts.name}` : null,
-    opts.resumePath ? `Resume path: ${opts.resumePath}` : null,
-    "",
-    "Payload:",
-    JSON.stringify(opts.payload, null, 2),
-    "",
-    "Supabase: form_submissions (or form-uploads/submissions/)",
-    `Site: https://veep-2-0.vercel.app`,
-  ].filter((l) => l !== null);
+  const { subject, text, html } = buildHumanEmail(opts);
 
   try {
     await sendViaGmailApi({
       from,
       to,
       subject,
-      text: lines.join("\n"),
+      text,
+      html,
       replyTo: opts.email,
     });
     return { status: "sent" };
