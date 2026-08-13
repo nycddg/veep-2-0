@@ -120,7 +120,7 @@ function Page() {
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className={`flex flex-col md:min-h-[280px] pt-7 pb-6 pr-2 ${
+                className={`group motion-hover-lift flex flex-col md:min-h-[280px] pt-7 pb-6 pr-2 ${
                   t.featured
                     ? "border-t-2 border-accent md:border-t-0 md:pl-6 md:border-l-2 md:border-accent"
                     : "border-t border-white/10 md:border-t-0 md:pl-6 md:border-l md:border-white/10"

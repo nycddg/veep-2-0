@@ -452,7 +452,7 @@ function Index() {
     <>
       {/* 1 — HERO */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
-        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
+        <div className="relative mx-auto max-w-5xl motion-fade-up px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
           <h1 className="font-medium text-[2.25rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream text-balance allow-wrap break-words mb-6">
             Because a job always needs to be done.
           </h1>
@@ -497,7 +497,7 @@ function Index() {
       <LogoWall />
 
       {/* 2 — WHAT IS VEEP (extractable AI-search definition) */}
-      <section>
+      <Reveal as="section">
         <div className="mx-auto max-w-[55.2rem] px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
@@ -507,10 +507,10 @@ function Index() {
             Built for companies with real revenue and growing complexity that need a critical outcome now.
           </p>
         </div>
-      </section>
+      </Reveal>
 
       {/* 3 — PROBLEM */}
-      <section id="problem" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="problem" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>The moment you're in</SectionEyebrow>
@@ -546,10 +546,10 @@ function Index() {
             </p>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* 4 — SOLUTION */}
-      <section id="solution" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="solution" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
@@ -586,7 +586,7 @@ function Index() {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* 5 — BENEFITS */}
       {/* 4.5 — OPERATORS SPOTLIGHT */}
@@ -695,7 +695,7 @@ function Index() {
       </Reveal>
 
       {/* 6 — OFFER / ENGAGEMENTS */}
-      <section id="offer" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="offer" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
             <div className="max-w-2xl">
@@ -720,10 +720,10 @@ function Index() {
             Lead with the work. Choose the shape after the work is clear.
           </p>
         </div>
-      </section>
+      </Reveal>
 
       {/* 7 — HOW IT WORKS */}
-      <section id="how" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="how" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>How It Works</SectionEyebrow>
@@ -733,7 +733,7 @@ function Index() {
           </div>
           <StepFlow />
         </div>
-      </section>
+      </Reveal>
 
       {/* 8 — PROOF */}
       <Reveal as="section" id="proof" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
@@ -854,7 +854,7 @@ function Index() {
       </Reveal>
 
       {/* 11 — OBJECTIONS */}
-      <section className="py-14 sm:py-16 md:py-28">
+      <Reveal as="section" className="py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>Before you book</SectionEyebrow>
@@ -867,10 +867,10 @@ function Index() {
             <InlineCTA />
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* 12 — FAQ */}
-      <section id="faq" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="faq" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>MINI FAQ</SectionEyebrow>
@@ -896,7 +896,7 @@ function Index() {
             </Link>.
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* 13 — FINAL CTA */}
       <FooterCTA />

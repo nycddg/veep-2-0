@@ -186,7 +186,7 @@ function RootComponent() {
       <ThemeProvider>
         <div className="min-h-screen bg-background text-foreground flex flex-col">
           {!isPortal && <SiteHeader />}
-          <main className="flex-1">
+          <main className="flex-1 vt-page-main">
             <Outlet />
           </main>
           {!isPortal && <SiteFooter />}

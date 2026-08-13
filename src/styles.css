@@ -467,7 +467,49 @@ html.light .glass-card {
   --dur-micro: 140ms;
   --dur-hover: 200ms;
   --dur-enter: 420ms;
+  --dur-page: 240ms;
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Phase 2 — View Transitions (progressive). Router skips when unsupported /
+   reduced-motion / same-path hash. Named elements keep chrome stable. */
+.motion-header {
+  view-transition-name: site-header;
+}
+.vt-page-main {
+  view-transition-name: page-main;
+}
+
+@keyframes veep-vt-fade-out {
+  to { opacity: 0; }
+}
+@keyframes veep-vt-fade-in {
+  from { opacity: 0; }
+}
+
+::view-transition-old(page-main) {
+  animation: veep-vt-fade-out var(--dur-page) var(--ease-standard) both;
+}
+::view-transition-new(page-main) {
+  animation: veep-vt-fade-in var(--dur-page) var(--ease-standard) both;
+}
+::view-transition-group(site-header) {
+  animation-duration: var(--dur-page);
+  animation-timing-function: var(--ease-standard);
+}
+/* Soften default root snapshot so we don't double-flash with page-main */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--dur-page);
+  animation-timing-function: var(--ease-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
 }
 
 @keyframes motion-fade-up {
