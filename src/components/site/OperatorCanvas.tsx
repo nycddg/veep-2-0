@@ -23,7 +23,7 @@ function MatchMatrixCard({
 }) {
   return (
     <div
-      className={`rounded-2xl border border-white/12 bg-[color:var(--surface-raised)]/95 backdrop-blur-xl p-5 sm:p-6 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.55)] light:border-ink/10 light:shadow-[0_16px_40px_-18px_rgba(26,31,58,0.18)] ${className}`}
+      className={`rounded-2xl border border-white/6 bg-[color:var(--surface-raised)]/95 backdrop-blur-xl p-5 sm:p-6 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.55)] light:border-ink/[0.06] light:shadow-[0_16px_40px_-18px_rgba(26,31,58,0.18)] ${className}`}
     >
       <p className="eyebrow text-cream/80 mb-5">Match Matrix</p>
       <div className="space-y-3.5">
@@ -82,7 +82,7 @@ export function OperatorCanvas() {
 
       <div className="relative">
         {/* Headshot — mobile portrait 3/4 (spotlight parity); sm+ 16/9 under matrix */}
-        <div className="relative z-10 mx-auto w-full max-w-[20rem] sm:max-w-2xl aspect-[3/4] sm:aspect-[16/9] overflow-hidden rounded-2xl sm:rounded-3xl bg-[color:var(--surface-raised)] ring-1 ring-white/10 light:ring-ink/10 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
+        <div className="relative z-10 mx-auto w-full max-w-[20rem] sm:max-w-2xl aspect-[3/4] sm:aspect-[16/9] overflow-hidden rounded-2xl sm:rounded-3xl bg-[color:var(--surface-raised)] ring-0 sm:ring-1 sm:ring-white/6 light:sm:ring-ink/[0.06] shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
           <img
             src={headshotAsset.url}
             alt="Vetted operator headshot"
