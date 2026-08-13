@@ -60,7 +60,7 @@ const steps = [
 
 const included = [
   { t: "In the roster", d: "Priority access, portfolio planning, quarterly reviews, emergency coverage SLA, preferred rates, and included diagnostics." },
-  { t: "Billed by SOW", d: "Advisory, Sprint, Operator in the Loop, Operator, and Pod engagements are scoped and billed per company at preferred roster rates." },
+  { t: "Billed by SOW", d: "Advisory, Sprint, Operator, and Pod engagements are scoped and billed per company at preferred roster rates." },
 ];
 
 export const Route = createFileRoute("/for-portfolios")({
