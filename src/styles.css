@@ -348,8 +348,24 @@ html.light .spotlight-invert .decoration-white\/30 { text-decoration-color: rgb(
     line-height: 1.02;
   }
 
-  h2 { letter-spacing: -0.028em; line-height: 1.06; white-space: nowrap !important; }
-  h2.allow-wrap { white-space: normal !important; text-wrap: balance; }
+  /* Display headings wrap by default (mobile-safe). Use .no-wrap only for
+     intentional single-line chrome labels, never multi-word section titles. */
+  h2 {
+    letter-spacing: -0.028em;
+    line-height: 1.06;
+    white-space: normal;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+  h2.allow-wrap {
+    white-space: normal !important;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+  h2.no-wrap {
+    white-space: nowrap;
+    overflow-wrap: normal;
+  }
   h3 { letter-spacing: -0.018em; line-height: 1.18; }
   h4 { letter-spacing: -0.012em; line-height: 1.25; }
 

@@ -116,7 +116,7 @@ function Page() {
       {/* Four tiers — data cards, no big containers, hierarchy earned by type + left rule. */}
       <section className="bg-surface-band py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 divide-y divide-white/10 sm:divide-y-0 lg:divide-x lg:divide-white/10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 md:gap-x-8 gap-y-10 md:gap-y-12 min-w-0 divide-y divide-white/10 sm:divide-y-0 lg:divide-x lg:divide-white/10">
             {tiers.map((t) => (
               <div
                 key={t.t}
@@ -167,7 +167,7 @@ function Page() {
             <div className="eyebrow">
               What we don't charge for
             </div>
-            <h2 className="mt-5 font-serif font-medium text-3xl md:text-4xl text-cream allow-wrap">
+            <h2 className="mt-5 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream text-balance allow-wrap">
               The price you see is the price you pay.
             </h2>
           </div>
@@ -221,7 +221,7 @@ function Page() {
             <div className="eyebrow">
               Pricing FAQ
             </div>
-            <h2 className="mt-5 font-serif font-medium text-3xl md:text-4xl text-cream">
+            <h2 className="mt-5 font-serif font-medium text-3xl md:text-4xl text-cream text-balance allow-wrap">
               Straight answers to the questions we get most.
             </h2>
           </div>

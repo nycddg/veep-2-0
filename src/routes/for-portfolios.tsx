@@ -95,17 +95,17 @@ function Page() {
       />
 
       {/* Problem */}
-      <section className="bg-surface-raised py-24 md:py-32">
+      <section className="bg-surface-raised py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-14 md:mb-16">
             <div className="eyebrow">
               WHERE YOUR PORTFOLIOS LOSE TIME
             </div>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Transactions create volatility. The work still needs an owner.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-x-16 gap-y-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-10 md:gap-y-14">
             {problems.map((p, i) => (
               <div key={p.t}>
                 <div className="eyebrow">
@@ -130,7 +130,7 @@ function Page() {
             <div className="eyebrow">
               Start here
             </div>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Portfolio Capacity Audit
             </h2>
             <p className="mt-6 text-cream/80 leading-relaxed">
@@ -183,7 +183,7 @@ function Page() {
             <div className="eyebrow">
               Roster model
             </div>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               On-call operators for the work that can't wait.
             </h2>
           </div>
@@ -191,11 +191,11 @@ function Page() {
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="rounded-2xl bg-[color:var(--surface-raised)] p-8"
+                className="rounded-2xl bg-[color:var(--surface-raised)] p-5 sm:p-8"
               >
                 <div className="font-serif font-medium text-xl text-cream">{t.t}</div>
-                <div className="mt-2 font-mono text-sm text-cream tabular-nums">
-                  {t.p} <span className="text-cream/70">{t.per}</span>
+                <div className="mt-2 font-mono text-sm text-cream tabular-nums break-words">
+                  {t.p}{" "}<span className="text-cream/70 whitespace-normal">{t.per}</span>
                 </div>
                 <p className="mt-5 text-base text-cream/85 leading-relaxed">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
@@ -230,11 +230,11 @@ function Page() {
             <div className="eyebrow">
               How It Works
             </div>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               One agreement. Every portfolio company activated.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-x-14 gap-y-12 border-t border-white/10 pt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-14 gap-y-10 md:gap-y-12 border-t border-white/10 pt-10 md:pt-12">
             {steps.map((s) => (
               <div key={s.n}>
                 <div className="eyebrow">{s.n}</div>
@@ -253,7 +253,7 @@ function Page() {
             <div className="eyebrow">
               What the retainer covers
             </div>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.1] text-balance allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Roster access is retained. Operator work is scoped.
             </h2>
           </div>
