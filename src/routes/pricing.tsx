@@ -113,19 +113,23 @@ function Page() {
         sub="Every engagement is scoped to the work, urgency, and level of ownership required. Transparent rates. No hourly billing. No lock-in by default."
       />
 
-      {/* Four tiers — data cards, no big containers, hierarchy earned by type + left rule. */}
+      {/* Four tiers — match homepage Engagements spacing (border-t + pad, not divide-y/gap clash) */}
       <section className="bg-surface-band py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 md:gap-x-8 gap-y-10 md:gap-y-12 min-w-0 divide-y divide-white/10 sm:divide-y-0 lg:divide-x lg:divide-white/10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 min-w-0">
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="flex flex-col lg:px-6 lg:first:pl-0 lg:last:pr-0"
+                className={`flex flex-col md:min-h-[280px] pt-7 pb-6 pr-2 ${
+                  t.featured
+                    ? "border-t-2 border-accent md:border-t-0 md:pl-6 md:border-l-2 md:border-accent"
+                    : "border-t border-white/10 md:border-t-0 md:pl-6 md:border-l md:border-white/10"
+                }`}
               >
-                <div className="flex items-baseline gap-3">
+                <div className="flex items-baseline gap-3 flex-wrap">
                   <span className="font-serif font-medium text-xl text-cream">{t.t}</span>
                   {t.featured && (
-                    <span className="font-mono eyebrow-coral">
+                    <span className="eyebrow text-accent-coral">
                       Most requested
                     </span>
                   )}
@@ -133,7 +137,7 @@ function Page() {
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
                   {t.p} <span className="text-stone">{t.per}</span>
                 </div>
-                <p className="mt-4 text-base text-cream/90 leading-relaxed lg:min-h-[3.75rem]">{t.best}</p>
+                <p className="mt-4 text-base text-cream/90 leading-relaxed">{t.best}</p>
                 <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-start gap-2.5">
@@ -142,7 +146,7 @@ function Page() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 lg:mt-auto pt-2 lg:pt-6">
+                <div className="mt-6 md:mt-auto pt-4 md:pt-8">
                   <Link
                     to="/services"
                     hash={t.t.toLowerCase()}
@@ -154,7 +158,7 @@ function Page() {
               </div>
             ))}
           </div>
-          <p className="mt-14 text-sm text-cream/70">
+          <p className="mt-10 text-sm text-cream/70">
             All engagements carry a 30-day fit guarantee · Response within 1 business day
           </p>
         </div>
