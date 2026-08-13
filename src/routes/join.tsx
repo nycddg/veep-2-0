@@ -176,6 +176,8 @@ function Page() {
         title="An invite-only network on call for the work that cannot wait."
         sub="Veep represents a small roster of senior operators who embed, build, and deliver. If you're ready to own the work that can't wait for high-growth companies, we want to meet you."
         primaryLabel="Apply below"
+        primaryTo="/join"
+        primaryHash="apply"
         secondaryLabel="See how it works"
         secondaryTo="/how-it-works"
       />
@@ -221,7 +223,7 @@ function Page() {
       </section>
 
       {/* Application form */}
-      <section className="py-14 sm:py-16 md:py-28">
+      <section id="apply" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             <div className="lg:col-span-2 space-y-8">

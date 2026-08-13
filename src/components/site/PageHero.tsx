@@ -7,6 +7,10 @@ import { TrustChip } from "./TrustChip";
 /**
  * PageHero — editorial dark-navy hero shared across every interior route.
  * Cream pill primary CTA, ghost link secondary. No mono chrome.
+ *
+ * Primary defaults to external booking. Pass primaryTo (+ optional primaryHash)
+ * for in-site destinations (e.g. Join → #apply form). primaryHref overrides
+ * booking URL when you need a different external link.
  */
 export function PageHero({
   eyebrow,
@@ -15,6 +19,9 @@ export function PageHero({
   children,
   chip,
   primaryLabel = "Book intro call",
+  primaryHref,
+  primaryTo,
+  primaryHash,
   secondaryLabel = "Request a capacity audit",
   secondaryTo = "/contact",
 }: {
@@ -24,12 +31,26 @@ export function PageHero({
   children?: ReactNode;
   chip?: string;
   primaryLabel?: string;
+  /** External primary URL. Ignored when primaryTo is set. Defaults to BOOKING_URL. */
+  primaryHref?: string;
+  /** Internal route for primary CTA (use instead of booking). */
+  primaryTo?: string;
+  primaryHash?: string;
   secondaryLabel?: string;
   secondaryTo?: string;
   /** Legacy props — accepted but unused (retired mono chrome). */
   index?: string | number;
   category?: string;
 }) {
+  const primaryClass =
+    "group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
+
+  const primaryInner = (
+    <>
+      {primaryLabel} <ArrowRight size={16} className="motion-arrow" />
+    </>
+  );
+
   return (
     <section className="relative overflow-hidden border-b border-white/10">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 md:pt-24 pb-12 sm:pb-16 md:pb-24">
@@ -46,14 +67,25 @@ export function PageHero({
             {sub}
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 pt-1">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
-            >
-              {primaryLabel} <ArrowRight size={16} className="motion-arrow" />
-            </a>
+            {primaryTo ? (
+              <Link
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                to={primaryTo as any}
+                hash={primaryHash}
+                className={primaryClass}
+              >
+                {primaryInner}
+              </Link>
+            ) : (
+              <a
+                href={primaryHref ?? BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={primaryClass}
+              >
+                {primaryInner}
+              </a>
+            )}
             <Link
               to={secondaryTo}
               className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 text-center sm:text-left min-h-11 inline-flex items-center justify-center sm:justify-start"
