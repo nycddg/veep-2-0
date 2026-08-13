@@ -64,12 +64,12 @@ export function LogoWall() {
         <div className="eyebrow text-center">
           operators who built the companies you admire
         </div>
-        <div className="mt-7 relative overflow-hidden">
-          <div className="flex marquee whitespace-nowrap gap-16 items-center">
+        <div className="mt-14 relative overflow-hidden">
+          <div className="flex marquee whitespace-nowrap gap-20 md:gap-24 items-center">
             {[...logos, ...logos].map((l, i) => (
               <span
                 key={`${l}-${i}`}
-                className="text-lg md:text-xl tracking-tight text-cream/75 shrink-0"
+                className="text-2xl md:text-3xl tracking-tight text-cream/75 shrink-0 font-medium"
               >
                 {l}
               </span>
