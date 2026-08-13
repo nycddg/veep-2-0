@@ -474,7 +474,7 @@ function Index() {
 
           <OperatorCanvas />
 
-          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-5 mt-16 sm:mt-20 w-full">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-5 mt-12 sm:mt-20 w-full">
             <a
               href={BOOKING_URL}
               target="_blank"

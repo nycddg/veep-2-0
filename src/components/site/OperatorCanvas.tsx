@@ -81,8 +81,8 @@ export function OperatorCanvas() {
       />
 
       <div className="relative">
-        {/* Headshot — 16/9 locked */}
-        <div className="relative z-10 mx-auto w-full max-w-2xl aspect-[16/9] overflow-hidden rounded-2xl sm:rounded-3xl bg-[color:var(--surface-raised)] ring-1 ring-white/10 light:ring-ink/10 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
+        {/* Headshot — mobile portrait 3/4 (spotlight parity); sm+ 16/9 under matrix */}
+        <div className="relative z-10 mx-auto w-full max-w-[20rem] sm:max-w-2xl aspect-[3/4] sm:aspect-[16/9] overflow-hidden rounded-2xl sm:rounded-3xl bg-[color:var(--surface-raised)] ring-1 ring-white/10 light:ring-ink/10 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
           <img
             src={headshotAsset.url}
             alt="Vetted operator headshot"
@@ -93,10 +93,10 @@ export function OperatorCanvas() {
             decoding="async"
             className="h-full w-full object-cover object-bottom"
           />
-          {/* Soft bottom vignette so matrix reads over photo edge */}
+          {/* Soft bottom vignette so matrix reads over photo edge (sm+) */}
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/50 to-transparent light:from-background/30"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/50 to-transparent light:from-background/30 max-sm:hidden"
           />
         </div>
 
@@ -109,7 +109,7 @@ export function OperatorCanvas() {
       </div>
 
       {/* Proof — closer to assembly; clear of matrix overhang on sm+ */}
-      <p className="mt-8 sm:mt-14 md:mt-16 text-center mono-label text-cream/80">
+      <p className="mt-6 sm:mt-14 md:mt-16 text-center mono-label text-cream/80">
         95% match success rate · 75+ vetted senior operators
       </p>
     </div>
