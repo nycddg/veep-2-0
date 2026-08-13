@@ -108,8 +108,8 @@ export function MonoLabel({ children }: { children: ReactNode }) {
  */
 export function DualCTA({
   tone = "onDark",
-  primaryLabel = "Book a call",
-  secondaryLabel = "Request a Capacity Audit",
+  primaryLabel = "Book intro call",
+  secondaryLabel = "Request a capacity audit",
 }: {
   tone?: "onDark" | "onLight";
   primaryLabel?: string;
