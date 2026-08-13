@@ -471,8 +471,7 @@ html.light .glass-card {
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Phase 2 — View Transitions (progressive). Router skips when unsupported /
-   reduced-motion / same-path hash. Named elements keep chrome stable. */
+/* Phase 2 — View Transitions (progressive). */
 .motion-header {
   view-transition-name: site-header;
 }
@@ -481,27 +480,36 @@ html.light .glass-card {
 }
 
 @keyframes veep-vt-fade-out {
-  to { opacity: 0; }
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-6px); }
 }
 @keyframes veep-vt-fade-in {
-  from { opacity: 0; }
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Main content crossfade — slightly more visible than pure opacity */
 ::view-transition-old(page-main) {
-  animation: veep-vt-fade-out var(--dur-page) var(--ease-standard) both;
+  animation: veep-vt-fade-out 320ms var(--ease-standard) both;
 }
 ::view-transition-new(page-main) {
-  animation: veep-vt-fade-in var(--dur-page) var(--ease-standard) both;
+  animation: veep-vt-fade-in 320ms var(--ease-standard) both;
+}
+::view-transition-group(page-main) {
+  animation-duration: 320ms;
+  animation-timing-function: var(--ease-standard);
 }
 ::view-transition-group(site-header) {
-  animation-duration: var(--dur-page);
+  animation-duration: 320ms;
   animation-timing-function: var(--ease-standard);
 }
-/* Soften default root snapshot so we don't double-flash with page-main */
+
+/* Root: keep quiet so named main drives the feel */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: var(--dur-page);
+  animation-duration: 280ms;
   animation-timing-function: var(--ease-standard);
+  mix-blend-mode: normal;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -525,9 +533,9 @@ html.light .glass-card {
 /* In-view reveal — starts hidden, animates when [data-in="true"] is set. */
 @utility motion-reveal {
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity var(--dur-enter) var(--ease-standard),
-              transform var(--dur-enter) var(--ease-standard);
+  transform: translateY(18px);
+  transition: opacity 560ms var(--ease-standard),
+              transform 560ms var(--ease-standard);
   will-change: opacity, transform;
 }
 .motion-reveal[data-in="true"] {

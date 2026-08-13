@@ -51,7 +51,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-x-6 gap-y-9 md:gap-5">
           <div className="col-span-2 md:col-span-4">
-            <Link to="/" className="flex items-center" aria-label="Veep home">
+            <Link to="/" viewTransition className="flex items-center" aria-label="Veep home">
               <img src={wordmarkWhite.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto block light:hidden" />
               <img src={wordmarkNavy.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto hidden light:block" />
             </Link>
@@ -79,7 +79,7 @@ export function SiteFooter() {
                         {l.label}
                       </Link>
                     ) : (
-                      <Link to={l.to} className="motion-link text-sm text-cream/90 hover:text-cream">
+                      <Link to={l.to} viewTransition className="motion-link text-sm text-cream/90 hover:text-cream">
                         {l.label}
                       </Link>
                     )}

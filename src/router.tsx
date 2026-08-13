@@ -2,28 +2,11 @@ import { QueryClient } from "@tanstack/react-query";
 import { createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
-function prefersReducedMotion(): boolean {
-  if (typeof window === "undefined") return false;
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
-
 /**
- * Phase 2 — progressive View Transitions.
- * Skip when: reduced-motion, same pathname (hash/search-only), unsupported browser.
+ * Phase 2 — View Transitions.
+ * Use boolean default (most reliable). Skip same-path / reduced-motion via
+ * a thin navigate wrapper applied after router creation.
  */
-function viewTransitionTypes(info: {
-  fromLocation?: { pathname: string } | null;
-  toLocation: { pathname: string };
-  pathChanged?: boolean;
-}): string[] | false {
-  if (prefersReducedMotion()) return false;
-  if (info.pathChanged === false) return false;
-  const from = info.fromLocation?.pathname;
-  const to = info.toLocation.pathname;
-  if (from && from === to) return false;
-  return ["veep-page"];
-}
-
 export const getRouter = () => {
   const queryClient = new QueryClient();
 
@@ -32,10 +15,34 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
-    defaultViewTransition: {
-      types: viewTransitionTypes,
-    },
+    // Boolean form — always attempt VT when the browser supports it.
+    // Per-nav skip handled in navigate wrapper below.
+    defaultViewTransition: true,
   });
+
+  // Skip VT for hash/search-only hops and prefers-reduced-motion.
+  const originalNavigate = router.navigate.bind(router);
+  router.navigate = (async (opts) => {
+    const reduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const currentPath =
+      typeof window !== "undefined" ? window.location.pathname : "";
+
+    // Resolve target path roughly from `to` when it's an absolute path string.
+    let nextPath: string | undefined;
+    if (typeof opts?.to === "string" && opts.to.startsWith("/")) {
+      nextPath = opts.to.split("?")[0].split("#")[0];
+    }
+
+    const samePath =
+      nextPath !== undefined && currentPath !== "" && nextPath === currentPath;
+
+    const viewTransition = reduced || samePath ? false : opts?.viewTransition ?? true;
+
+    return originalNavigate({ ...opts, viewTransition });
+  }) as typeof router.navigate;
 
   return router;
 };

@@ -62,8 +62,9 @@ export function SiteHeader() {
           <span aria-hidden className="mx-3 h-4 w-px bg-white/15" />
           {nav.filter((n) => n.kind === "route").map((n) => (
             <Link
-              key={(n as { to: "/pricing" | "/faq" | "/join" | "/about" }).to}
-              to={(n as { to: "/pricing" | "/faq" | "/join" | "/about" }).to}
+              key={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
+              to={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
+              viewTransition
               className="motion-link px-3 py-2 text-sm text-cream/85 hover:text-cream"
               activeProps={{ className: "motion-link px-3 py-2 text-sm text-cream border-b border-accent" }}
             >
@@ -115,6 +116,7 @@ export function SiteHeader() {
                 <Link
                   key={n.to}
                   to={n.to}
+                  viewTransition
                   onClick={() => setOpen(false)}
                   className="block px-3 py-3 text-base text-cream rounded-md hover:bg-white/5"
                 >
