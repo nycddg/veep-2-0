@@ -27,6 +27,13 @@ const nav: readonly NavItem[] = [
   { kind: "route", to: "/faq", label: "FAQ" },
 ];
 
+/** Hash anchors hidden in the mobile drawer (still on desktop nav). */
+const MOBILE_HIDDEN_HASHES = new Set(["operators", "benefits", "how", "proof"]);
+
+const mobileNav = nav.filter(
+  (n) => !(n.kind === "hash" && MOBILE_HIDDEN_HASHES.has(n.hash)),
+);
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -101,7 +108,7 @@ export function SiteHeader() {
       {open && (
         <div className="lg:hidden border-t border-white/8 bg-background">
           <div className="px-4 py-4 space-y-0.5">
-            {nav.map((n) =>
+            {mobileNav.map((n) =>
               n.kind === "hash" ? (
                 <Link
                   key={n.hash}
