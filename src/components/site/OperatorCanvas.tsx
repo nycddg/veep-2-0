@@ -25,7 +25,7 @@ function MatchMatrixCard({
     <div
       className={`rounded-2xl border border-white/12 bg-[color:var(--surface-raised)]/95 backdrop-blur-xl p-5 sm:p-6 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.55)] light:border-ink/10 light:shadow-[0_16px_40px_-18px_rgba(26,31,58,0.18)] ${className}`}
     >
-      <p className="eyebrow text-cream/75 mb-5">Match Matrix</p>
+      <p className="eyebrow text-cream/80 mb-5">Match Matrix</p>
       <div className="space-y-3.5">
         {MATRIX.map((row) => (
           <div key={row.label}>

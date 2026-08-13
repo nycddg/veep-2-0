@@ -145,9 +145,16 @@ function RootShell({ children }: { children: ReactNode }) {
 `.trim();
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        {/* FOUC guard: default dark; only add .light if user stored it. Never follow OS. */}
+        <script
+          id="veep-theme-boot"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("veep-theme");var r=document.documentElement;if(t==="light"){r.classList.add("light");r.classList.remove("dark");r.style.colorScheme="light";}else{r.classList.remove("light");r.classList.add("dark");r.style.colorScheme="dark";}}catch(e){document.documentElement.classList.remove("light");document.documentElement.classList.add("dark");document.documentElement.style.colorScheme="dark";}})();`,
+          }}
+        />
         <link rel="preconnect" href="https://r2.leadsy.ai" crossOrigin="anonymous" />
         <script
           id="instantly-pixel-bootstrap"
