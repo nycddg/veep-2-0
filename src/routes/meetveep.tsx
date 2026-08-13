@@ -44,9 +44,9 @@ export const Route = createFileRoute("/meetveep")({
 function MeetVeepPage() {
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-24">
         <div className="flex flex-col gap-7 lg:grid lg:grid-cols-12 lg:gap-x-16 lg:gap-y-7 lg:items-start">
-          <h1 className="order-1 lg:col-span-7 font-medium text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05]">
+          <h1 className="order-1 lg:col-span-7 font-medium text-[2.25rem] sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
             The work needs an owner.
           </h1>
 

@@ -76,7 +76,7 @@ function Page() {
 
       {/* Problem / Meet Veep */}
       <section className="bg-surface-raised border-b border-white/10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 md:py-28 space-y-14">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-28 space-y-10 md:space-y-14">
           {[
             {
               eyebrow: "The problem",
@@ -89,7 +89,7 @@ function Page() {
           ].map((row) => (
             <div
               key={row.eyebrow}
-              className="grid lg:grid-cols-12 gap-8 lg:gap-14 border-t border-white/10 pt-14 first:border-t-0 first:pt-0"
+              className="grid lg:grid-cols-12 gap-8 lg:gap-14 border-t border-white/10 pt-10 md:pt-14 first:border-t-0 first:pt-0"
             >
               <div className="lg:col-span-4">
                 <div className="eyebrow">
@@ -105,14 +105,14 @@ function Page() {
       </section>
 
       {/* Principles */}
-      <section className="py-20 md:py-28 border-b border-white/10">
+      <section className="py-14 sm:py-16 md:py-28 border-b border-white/10">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
             <div className="lg:col-span-4 space-y-5">
               <div className="eyebrow">
                 What we believe
               </div>
-              <h2 className="font-serif font-medium text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
+              <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
                 Built the hard way. Rebuilt the smart way.
               </h2>
               <p className="text-cream/80 text-base leading-relaxed max-w-md">
@@ -146,12 +146,12 @@ function Page() {
 
       {/* Founding team */}
       <section className="bg-surface-raised border-b border-white/10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-28">
           <div className="max-w-2xl space-y-4">
             <div className="eyebrow">
               Founding team
             </div>
-            <h2 className="font-serif font-medium text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
+            <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
               Founders first. Operators always.
             </h2>
             <p className="text-cream/80 text-base leading-relaxed">
@@ -159,7 +159,7 @@ function Page() {
               and leading from inside.
             </p>
           </div>
-          <div className="mt-14 grid md:grid-cols-3 gap-10 md:gap-8">
+          <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-10 md:gap-8">
             {founders.map((f) => (
               <div key={f.name} className="border-t border-white/10 pt-6">
                 <div className="mono-label text-cream/70">

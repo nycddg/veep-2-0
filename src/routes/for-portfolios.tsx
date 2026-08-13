@@ -95,7 +95,7 @@ function Page() {
       />
 
       {/* Problem */}
-      <section className="bg-surface-raised py-16 md:py-28">
+      <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-14 md:mb-16">
             <div className="eyebrow">
@@ -105,7 +105,7 @@ function Page() {
               Transactions create volatility. The work still needs an owner.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-10 md:gap-y-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-10 md:gap-y-10 md:gap-y-14">
             {problems.map((p, i) => (
               <div key={p.t}>
                 <div className="eyebrow">
@@ -124,7 +124,7 @@ function Page() {
       </section>
 
       {/* Capacity Audit entry point */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
@@ -137,7 +137,7 @@ function Page() {
               Before you retain the roster, we map where transactions and operating priorities are likely to create staffing volatility across the portfolio. We identify which companies need what, which upcoming events could create urgency in the next 6 to 12 months, and where a Veep operator would help stabilize execution.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-16 gap-y-12 border-t border-white/10 pt-12">
+          <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12 border-t border-white/10 pt-12">
             <div>
               <div className="font-serif font-medium text-xl text-cream tracking-tight">What you get</div>
               <ul className="mt-6 space-y-3 text-sm text-cream/85">
@@ -177,7 +177,7 @@ function Page() {
       </section>
 
       {/* Roster tiers */}
-      <section className="bg-surface-band py-20 md:py-28">
+      <section className="bg-surface-band py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
@@ -224,7 +224,7 @@ function Page() {
       </section>
 
       {/* How it works */}
-      <section className="bg-surface-band py-20 md:py-28 border-t border-white/10">
+      <section className="bg-surface-band py-14 sm:py-16 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
@@ -234,7 +234,7 @@ function Page() {
               One agreement. Every portfolio company activated.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-14 gap-y-10 md:gap-y-12 border-t border-white/10 pt-10 md:pt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-12 border-t border-white/10 pt-10 md:pt-12">
             {steps.map((s) => (
               <div key={s.n}>
                 <div className="eyebrow">{s.n}</div>
@@ -247,7 +247,7 @@ function Page() {
       </section>
 
       {/* Included vs. billed */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <div className="eyebrow">
@@ -257,7 +257,7 @@ function Page() {
               Roster access is retained. Operator work is scoped.
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
+          <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
             {included.map((i) => (
               <div key={i.t}>
                 <div className="text-lg sm:text-xl text-cream tracking-tight">{i.t}</div>

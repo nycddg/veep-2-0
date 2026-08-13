@@ -165,7 +165,7 @@ function PrivacyPage() {
         secondaryTo="/contact"
       />
 
-      <section className="py-16 md:py-24">
+      <section className="py-14 sm:py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="eyebrow">
             Effective date
@@ -180,7 +180,7 @@ function PrivacyPage() {
             ) and any related features, tools, or services (collectively, the &quot;Service&quot;). By accessing or using the Service, you agree to the terms outlined in this Privacy Policy.
           </p>
 
-          <div className="mt-16 space-y-14">
+          <div className="mt-16 space-y-10 md:space-y-14">
             {sections.map((s) => (
               <div key={s.n}>
                 <div className="flex items-baseline gap-4">

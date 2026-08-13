@@ -172,7 +172,7 @@ function TermsPage() {
         secondaryTo="/contact"
       />
 
-      <section className="py-16 md:py-24">
+      <section className="py-14 sm:py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="eyebrow">
             Last updated
@@ -187,7 +187,7 @@ function TermsPage() {
             or any future websites we operate (the &quot;Website&quot;) &mdash; you agree to be bound by these Terms.
           </p>
 
-          <div className="mt-16 space-y-14">
+          <div className="mt-16 space-y-10 md:space-y-14">
             {sections.slice(0, 3).map((s) => (
               <SectionBlock key={s.n} n={s.n} title={s.title} blocks={s.blocks} />
             ))}

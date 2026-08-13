@@ -10,7 +10,7 @@ export function FooterCTA({
   sub = "Book a 30-minute call with a Veep founder. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
 }: { headline?: ReactNode; sub?: string }) {
   return (
-    <section className="py-20 md:py-28 border-t border-white/10 relative overflow-hidden">
+    <section className="py-14 sm:py-16 md:py-28 border-t border-white/10 relative overflow-hidden">
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream text-balance leading-[1.15] allow-wrap">
           {headline}

@@ -23,10 +23,10 @@ export function Testimonials() {
           FOUNDER TESTIMONIALS
         </div>
 
-        <div className="mt-10 md:mt-14 space-y-16 md:space-y-20">
+        <div className="mt-8 md:mt-14 space-y-12 md:space-y-20">
           {quotes.map((q, i) => (
             <figure key={q.name}>
-              <blockquote className="font-sans font-medium text-3xl md:text-5xl leading-[1.2] text-cream tracking-tight text-balance">
+              <blockquote className="font-sans font-medium text-2xl sm:text-3xl md:text-5xl leading-[1.25] text-cream tracking-tight text-balance allow-wrap">
                 {q.quote}
               </blockquote>
               <figcaption className="mt-10 flex items-center justify-center gap-4">
@@ -40,7 +40,7 @@ export function Testimonials() {
               </figcaption>
 
               {i < quotes.length - 1 && (
-                <div className="mt-16 md:mt-20 border-t border-white/10 max-w-3xl mx-auto" />
+                <div className="mt-12 md:mt-20 border-t border-white/10 max-w-3xl mx-auto" />
               )}
             </figure>
           ))}

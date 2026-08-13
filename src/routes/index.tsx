@@ -453,7 +453,7 @@ function Index() {
       {/* 1 — HERO */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
-          <h1 className="font-medium text-[2.5rem] leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream mb-6">
+          <h1 className="font-medium text-[2.25rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream text-balance allow-wrap break-words mb-6">
             Because a job always needs to be done.
           </h1>
 
@@ -510,16 +510,16 @@ function Index() {
       </section>
 
       {/* 3 — PROBLEM */}
-      <section id="problem" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
+      <section id="problem" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>The moment you're in</SectionEyebrow>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Your business is too important for ownerless work.
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-x-14 gap-y-12 md:gap-x-20">
+          <div className="grid sm:grid-cols-2 gap-x-8 md:gap-x-14 gap-y-12 md:gap-x-20">
             {problems.map((p) => (
               <div key={p.t}>
                 <h3 className="font-serif font-medium text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
@@ -541,7 +541,7 @@ function Index() {
                 </div>
               ))}
             </div>
-            <p className="mt-12 md:mt-14 mx-auto text-center font-serif font-medium text-lg md:text-xl text-cream/90 leading-snug max-w-5xl md:whitespace-nowrap">
+            <p className="mt-12 md:mt-14 mx-auto text-center font-serif font-medium text-lg md:text-xl text-cream/90 leading-snug max-w-5xl">
               Three options. None of them get you the outcomes you need, when you need them&nbsp;— now. Only Veep does.
             </p>
           </div>
@@ -549,12 +549,12 @@ function Index() {
       </section>
 
       {/* 4 — SOLUTION */}
-      <section id="solution" className="py-20 md:py-28 scroll-mt-20">
+      <section id="solution" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
               <SectionEyebrow>What we do</SectionEyebrow>
-              <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+              <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
                 Built for the{"\u00a0"}job to be done.
               </h2>
               <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
@@ -590,12 +590,12 @@ function Index() {
 
       {/* 5 — BENEFITS */}
       {/* 4.5 — OPERATORS SPOTLIGHT */}
-      <Reveal as="section" id="operators" className="py-20 md:py-28 border-t border-white/10 scroll-mt-20">
+      <Reveal as="section" id="operators" className="py-14 sm:py-16 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
 
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>Operator spotlight</SectionEyebrow>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Operators who've held the seat and delivered.
             </h2>
             <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
@@ -667,15 +667,15 @@ function Index() {
       </Reveal>
 
       {/* 5 — BENEFITS */}
-      <Reveal as="section" id="benefits" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="benefits" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Senior ownership on your terms.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-14">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-10 md:gap-y-14">
             {benefits.map((b, i) => (
               <div key={b.t}>
                 <div className="eyebrow">
@@ -695,12 +695,12 @@ function Index() {
       </Reveal>
 
       {/* 6 — OFFER / ENGAGEMENTS */}
-      <section id="offer" className="bg-surface-band py-20 md:py-28 scroll-mt-20">
+      <section id="offer" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
-              <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+              <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
                 Four engagement shapes. One promise.
               </h2>
             </div>
@@ -723,11 +723,11 @@ function Index() {
       </section>
 
       {/* 7 — HOW IT WORKS */}
-      <section id="how" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
+      <section id="how" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>How It Works</SectionEyebrow>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               From first call to operator in the seat in under 10 days.
             </h2>
           </div>
@@ -736,18 +736,18 @@ function Index() {
       </section>
 
       {/* 8 — PROOF */}
-      <Reveal as="section" id="proof" className="py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="proof" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               What senior operators change in the first 90 days.
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-14 gap-y-14">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 md:gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-10 md:gap-y-14">
             {cases.map((c) => (
-              <div key={c.tag} className="flex flex-col rounded-2xl bg-[color:var(--surface-raised)] p-7">
+              <div key={c.tag} className="flex flex-col rounded-2xl bg-[color:var(--surface-raised)] p-5 sm:p-7">
                 <span className="eyebrow">
                   {c.tag}
                 </span>
@@ -764,7 +764,7 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10">
+          <div className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10">
             {[
               { k: "75+", v: "vetted operators" },
               { k: "72h", v: "to shortlist" },
@@ -780,7 +780,7 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-16 md:mt-20">
+          <div className="mt-12 md:mt-20">
             <Testimonials />
           </div>
 
@@ -791,24 +791,24 @@ function Index() {
       </Reveal>
 
       {/* 9 — DIFFERENTIATION */}
-      <Reveal as="section" id="vs" className="hidden md:block bg-surface-band py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="vs" className="hidden md:block bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               How Veep compares to the alternatives.
             </h2>
           </div>
 
           <div className="grid grid-cols-[auto_minmax(min-content,1fr)_minmax(min-content,1fr)] border-y border-white/10 divide-y divide-white/10">
             <div className="hidden md:grid md:grid-cols-subgrid md:col-span-3">
-              <div className="p-5 mono-label md:whitespace-nowrap">Dimension</div>
-              <div className="p-5 mono-label md:whitespace-nowrap">The old way</div>
-              <div className="p-5 eyebrow md:whitespace-nowrap">Veep</div>
+              <div className="p-5 mono-label">Dimension</div>
+              <div className="p-5 mono-label">The old way</div>
+              <div className="p-5 eyebrow">Veep</div>
             </div>
             {differentiators.map((r) => (
               <div key={r.dim} className="grid md:grid-cols-subgrid md:col-span-3 gap-y-2 gap-x-0 p-5 md:p-0">
-                <div className="md:p-5 mono-label md:whitespace-nowrap">
+                <div className="md:p-5 mono-label">
                   {r.dim}
                 </div>
                 <div className="md:p-5 text-base text-stone leading-relaxed">{r.old}</div>
@@ -822,12 +822,12 @@ function Index() {
       </Reveal>
 
       {/* 10 — FOR PORTFOLIOS (secondary audience band) */}
-      <Reveal as="section" id="portfolios" className="spotlight-invert py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="portfolios" className="spotlight-invert py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 md:gap-14 items-center">
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>FOR FUNDS</SectionEyebrow>
-              <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+              <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
                 Portfolio companies don't pause for a search.
               </h2>
               <p className="text-base text-stone leading-relaxed">
@@ -854,11 +854,11 @@ function Index() {
       </Reveal>
 
       {/* 11 — OBJECTIONS */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>Before you book</SectionEyebrow>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               The questions founders ask on the first call.
             </h2>
           </div>
@@ -870,11 +870,11 @@ function Index() {
       </section>
 
       {/* 12 — FAQ */}
-      <section id="faq" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
+      <section id="faq" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>MINI FAQ</SectionEyebrow>
-            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Straight answers.
             </h2>
           </div>

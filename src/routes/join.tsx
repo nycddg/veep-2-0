@@ -182,13 +182,13 @@ function Page() {
 
       {/* Who we're looking for */}
       <section className="bg-surface-raised border-b border-white/10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-28">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
             <div className="lg:col-span-4 space-y-5">
               <div className="eyebrow">
                 Who we're looking for
               </div>
-              <h2 className="font-serif font-medium text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
+              <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
                 A curated roster of business builders.
               </h2>
               <p className="text-cream/80 text-base leading-relaxed max-w-md">
@@ -221,7 +221,7 @@ function Page() {
       </section>
 
       {/* Application form */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             <div className="lg:col-span-2 space-y-8">
@@ -265,7 +265,7 @@ function Page() {
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="glass-card rounded-3xl p-6 sm:p-8 grid gap-5"
+                  className="glass-card rounded-3xl p-5 sm:p-8 grid gap-5"
                 >
                   <div className="grid sm:grid-cols-2 gap-4">
                     <Field label="First name" required>

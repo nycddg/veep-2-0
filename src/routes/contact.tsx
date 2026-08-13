@@ -138,7 +138,7 @@ function Page() {
         secondaryTo="/how-it-works"
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             {/* Left: promise */}
@@ -204,7 +204,7 @@ function Page() {
                   onSubmit={handleSubmit}
                   noValidate
                   aria-describedby={submitError ? "contact-form-error" : undefined}
-                  className="glass-card rounded-3xl p-6 sm:p-8 grid gap-5"
+                  className="glass-card rounded-3xl p-5 sm:p-8 grid gap-5"
                 >
                   {/* Honeypot — hidden from users and screen readers */}
                   <div aria-hidden="true" className="hidden">

@@ -32,14 +32,14 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden border-b border-white/10">
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-16 md:pb-24">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 md:pt-24 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-3xl space-y-7">
           {chip ? (
             <TrustChip label={chip} />
           ) : (
             <div className="eyebrow">{eyebrow}</div>
           )}
-          <h1 className="font-medium text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
+          <h1 className="font-medium text-[2.25rem] sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
             {title}
           </h1>
           <p className="text-base sm:text-lg text-cream/80 max-w-2xl leading-relaxed text-pretty">
