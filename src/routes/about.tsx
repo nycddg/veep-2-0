@@ -179,7 +179,8 @@ function Page() {
 
       <FooterCTA
         headline={<>Tell us what cannot wait.</>}
-        sub="Book a call to explore how Veep can help. If it's a fit, we'll scope the engagement and match you with a Veep within 72 hours."
+        sub="Tell us about the work. If it's a fit, we'll scope the engagement and match you with a Veep within 72 hours."
+        primary="contact"
       />
     </>
   );

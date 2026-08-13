@@ -111,6 +111,8 @@ function Page() {
         eyebrow="Pricing"
         title="Priced to the work. Not the hour."
         sub="Every engagement is scoped to the work, urgency, and level of ownership required. Transparent rates. No hourly billing. No lock-in by default."
+        primaryLabel="Get in touch"
+        primaryTo="/contact"
       />
 
       {/* Four tiers — match homepage Engagements spacing (border-t + pad, not divide-y/gap clash) */}

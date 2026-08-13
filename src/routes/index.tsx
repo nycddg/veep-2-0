@@ -429,17 +429,31 @@ export const Route = createFileRoute("/")({
 // Component
 // ─────────────────────────────────────────────────────────────────────────────
 
-function InlineCTA({ label = "Book intro call" }: { label?: string }) {
+function InlineCTA({
+  label = "Book intro call",
+  mode = "book",
+}: {
+  label?: string;
+  mode?: "book" | "contact";
+}) {
+  const className =
+    "rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 transition inline-flex items-center gap-2 shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)]";
   return (
     <div className="flex flex-wrap items-center gap-4">
-      <a
-        href={BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 transition inline-flex items-center gap-2 shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)]"
-      >
-        {label} <ArrowRight size={16} />
-      </a>
+      {mode === "contact" ? (
+        <Link to="/contact" className={className}>
+          {label} <ArrowRight size={16} />
+        </Link>
+      ) : (
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={className}
+        >
+          {label} <ArrowRight size={16} />
+        </a>
+      )}
       <span className="text-xs text-stone-soft tracking-wide">
         30-minute call · Reply within 1 business day · 30-day fit guarantee
       </span>
@@ -658,14 +672,12 @@ function Index() {
             <p className="text-sm text-stone">
               75+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
             </p>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
             >
-              Meet operators for your work <ArrowRight size={14} />
-            </a>
+              Get in touch <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </Reveal>
@@ -789,7 +801,7 @@ function Index() {
           </div>
 
           <div className="mt-16">
-            <InlineCTA />
+            <InlineCTA label="Get in touch" mode="contact" />
           </div>
         </div>
       </Reveal>
@@ -868,7 +880,7 @@ function Index() {
           </div>
           <ObjectionList />
           <div className="mt-14">
-            <InlineCTA />
+            <InlineCTA label="Get in touch" mode="contact" />
           </div>
         </div>
       </Reveal>

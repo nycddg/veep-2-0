@@ -97,7 +97,7 @@ function Page() {
         </div>
       </section>
 
-      <FooterCTA />
+      <FooterCTA primary="contact" />
     </>
   );
 }
