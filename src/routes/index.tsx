@@ -791,7 +791,7 @@ function Index() {
       </Reveal>
 
       {/* 9 — DIFFERENTIATION */}
-      <Reveal as="section" id="vs" className="bg-surface-band py-20 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="vs" className="hidden md:block bg-surface-band py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>

@@ -57,15 +57,10 @@ export function OperatorCanvas() {
           />
         </div>
 
-        {/* Desktop/tablet: floating card over media */}
+        {/* Match matrix — tablet/desktop only (hidden on mobile) */}
         <div className="hidden sm:block absolute -bottom-10 right-0 md:-right-6 z-20 w-[260px] md:w-[280px]">
           <MatchMatrixCard />
         </div>
-      </div>
-
-      {/* Mobile: matrix stacked under headshot (signature visible on small screens) */}
-      <div className="sm:hidden relative z-10 mt-4">
-        <MatchMatrixCard />
       </div>
 
       <p className="mt-10 sm:mt-14 md:mt-16 text-center mono-label">
