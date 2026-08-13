@@ -91,7 +91,7 @@ export function OperatorCanvas() {
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className="h-full w-full object-cover object-bottom scale-110 origin-bottom"
+            className="h-full w-full object-cover object-bottom scale-110 origin-bottom sm:scale-100"
           />
           {/* Soft bottom vignette so matrix reads over photo edge (sm+) */}
           <div
