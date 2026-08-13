@@ -64,13 +64,13 @@ function OperatorCard({ op }: { op: Operator }) {
           {op.name}
         </h3>
         <div
-          className="font-mono text-[11px] uppercase tracking-[0.14em] mt-1 text-ink/80 light:text-[color:var(--foreground)]/80"
+          className="mono-label mt-1 text-ink/80 light:text-[color:var(--foreground)]/80"
         >
           {op.role}
         </div>
         {op.priorCompanies && op.priorCompanies.length > 0 && (
           <div
-            className="font-mono text-[11px] text-ink/70 light:text-[color:var(--foreground)]/70 mt-2 leading-relaxed uppercase tracking-[0.1em]"
+            className="mono-label mt-2 leading-relaxed text-ink/70 light:text-[color:var(--foreground)]/70"
           >
             {op.priorCompanies.map((c, i) => (
               <span key={c}>
@@ -94,7 +94,7 @@ function OperatorCard({ op }: { op: Operator }) {
             {op.chips.map((c) => (
               <span
                 key={c}
-                className="font-mono text-[11px] uppercase tracking-[0.14em] text-cream/70"
+                className="mono-label text-cream/70"
               >
                 {c}
               </span>
@@ -160,7 +160,7 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
 
       <div className="mt-8 flex items-center justify-between gap-6">
         <div className="flex items-center gap-4 flex-1 min-w-0">
-          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-accent shrink-0">
+          <span className="eyebrow shrink-0">
             {current} // {total}
           </span>
           <div className="relative h-px flex-1 bg-white/10 max-w-md">

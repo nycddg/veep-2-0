@@ -30,7 +30,7 @@ export function ObjectionList() {
     <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
       {objections.map((o) => (
         <div key={o.q}>
-          <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">
+          <h3 className="font-serif font-medium text-xl text-cream tracking-tight leading-snug">
             {o.q}
           </h3>
           <p className="mt-2 text-base text-stone leading-relaxed">{o.a}</p>

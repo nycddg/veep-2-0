@@ -444,11 +444,7 @@ function InlineCTA({ label = "Book intro call" }: { label?: string }) {
 }
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
-      {children}
-    </div>
-  );
+  return <div className="eyebrow">{children}</div>;
 }
 
 function Index() {
@@ -457,11 +453,11 @@ function Index() {
       {/* 1 — HERO */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
-          <h1 className="text-[2.5rem] leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream mb-6">
+          <h1 className="font-medium text-[2.5rem] leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream mb-6">
             Because a job always needs to be done.
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-stone max-w-2xl leading-relaxed mb-10">
+          <p className="text-base sm:text-lg text-stone max-w-2xl leading-relaxed mb-10">
             Vetted senior operators to own urgent priorities and high-stakes
             decisions before you are ready, willing, or able to make
             permanent hires.
@@ -504,7 +500,7 @@ function Index() {
       <section>
         <div className="mx-auto max-w-[55.2rem] px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
-          <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
+          <p className="mt-6 font-serif font-medium text-lg sm:text-xl md:text-2xl text-cream tracking-tight leading-snug">
             An invite-only network of operating partners ready to own the work that can't wait. Founders, CEOs, and investment firms hire Veep when important work has no owner across finance, GTM, operations, product, people, fundraising, and strategy.
           </p>
           <p className="mt-[1.4rem] text-sm text-stone">
@@ -518,7 +514,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>The moment you're in</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               Your business is too important for ownerless work.
             </h2>
           </div>
@@ -526,26 +522,26 @@ function Index() {
           <div className="grid sm:grid-cols-2 gap-x-14 gap-y-12 md:gap-x-20">
             {problems.map((p) => (
               <div key={p.t}>
-                <h3 className="font-serif text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
+                <h3 className="font-serif font-medium text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
                 <p className="mt-2 text-base text-stone leading-relaxed max-w-md">{p.d}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-20 md:mt-24 border-t border-white/10 pt-12">
-            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-stone-soft mb-8">Instead of</div>
+            <div className="mono-label mb-8">Instead of</div>
             <div className="grid md:grid-cols-3 gap-y-10">
               {alternatives.map((a) => (
                 <div
                   key={a.t}
                   className="border-t border-white/10 pt-8 first:border-t-0 first:pt-0 md:border-t-0 md:pt-0 md:border-l md:border-white/10 md:pl-10 md:first:border-l-0 md:first:pl-0 md:pr-10 md:last:pr-0"
                 >
-                  <div className="font-serif text-xl text-cream/90 tracking-tight">{a.t}</div>
+                  <div className="font-serif font-medium text-xl text-cream/90 tracking-tight">{a.t}</div>
                   <p className="mt-2 text-base text-stone leading-relaxed">{a.d}</p>
                 </div>
               ))}
             </div>
-            <p className="mt-12 md:mt-14 mx-auto text-center font-serif text-lg md:text-xl text-cream/90 leading-snug max-w-5xl md:whitespace-nowrap">
+            <p className="mt-12 md:mt-14 mx-auto text-center font-serif font-medium text-lg md:text-xl text-cream/90 leading-snug max-w-5xl md:whitespace-nowrap">
               Three options. None of them get you the outcomes you need, when you need them&nbsp;— now. Only Veep does.
             </p>
           </div>
@@ -558,7 +554,7 @@ function Index() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
               <SectionEyebrow>What we do</SectionEyebrow>
-              <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+              <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
                 Built for the{"\u00a0"}job to be done.
               </h2>
               <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
@@ -570,12 +566,12 @@ function Index() {
                 When the work lands or the permanent hire arrives, we hand off with
                 results and documentation, not ongoing dependency.
               </p>
-              <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.14em] text-accent">
+              <p className="mt-6 eyebrow">
                 Vetted senior operators who step in to own critical work, now.
               </p>
             </div>
             <div className="divide-y divide-white/10 lg:border-l lg:border-white/10 lg:pl-14">
-              <div className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-accent pb-6">The Veep model</div>
+              <div className="eyebrow pb-6">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
                 ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
@@ -583,7 +579,7 @@ function Index() {
                 ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
               ].map(([t, d]) => (
                 <div key={t} className="py-6 last:pb-0">
-                  <div className="font-serif text-xl text-cream tracking-tight">{t}</div>
+                  <div className="font-serif font-medium text-xl text-cream tracking-tight">{t}</div>
                   <p className="mt-2 text-base text-stone leading-relaxed">{d}</p>
                 </div>
               ))}
@@ -599,7 +595,7 @@ function Index() {
 
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>Operator spotlight</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               Operators who've held the seat and delivered.
             </h2>
             <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
@@ -634,11 +630,11 @@ function Index() {
                         )}
                         <div className="relative w-2 h-2 rounded-full bg-accent" />
                       </div>
-                      <span className="font-mono text-[11px] text-stone-soft uppercase tracking-[0.14em] font-medium">
+                      <span className="mono-label font-medium">
                         {m.label}
                       </span>
                     </div>
-                    <div className="font-serif text-3xl md:text-4xl text-cream tracking-tight leading-none">
+                    <div className="stat-figure text-4xl md:text-5xl text-cream leading-none">
                       {m.figure}
                     </div>
                     <p className="text-xs text-stone leading-relaxed">
@@ -675,17 +671,17 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               Senior ownership on your terms.
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-14">
             {benefits.map((b, i) => (
               <div key={b.t}>
-                <div className="font-mono text-[11px] tracking-[0.14em] text-accent">
+                <div className="eyebrow">
                   0{i + 1}
                 </div>
-                <div className="mt-3 font-serif text-2xl text-cream tracking-tight leading-tight">
+                <div className="mt-3 font-serif font-medium text-xl text-cream tracking-tight leading-tight">
                   {b.t}
                 </div>
                 <p className="mt-2 text-base text-stone leading-relaxed">{b.d}</p>
@@ -704,7 +700,7 @@ function Index() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
-              <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+              <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
                 Four engagement shapes. One promise.
               </h2>
             </div>
@@ -731,7 +727,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>How it works</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               From first call to operator in the seat in under 10 days.
             </h2>
           </div>
@@ -744,7 +740,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-16">
             <SectionEyebrow>Proof</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               What senior operators change in the first 90 days.
             </h2>
           </div>
@@ -752,7 +748,7 @@ function Index() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-14 gap-y-14">
             {cases.map((c) => (
               <div key={c.tag} className="flex flex-col rounded-2xl bg-[color:var(--surface-raised)] p-7">
-                <span className="text-[11px] font-medium tracking-[0.14em] uppercase text-accent">
+                <span className="eyebrow">
                   {c.tag}
                 </span>
                 <p className="mt-6 text-base text-stone leading-relaxed">
@@ -761,7 +757,7 @@ function Index() {
                 <p className="mt-4 text-base text-stone leading-relaxed">
                   <span className="text-cream">Outcome. </span>{c.outcome}
                 </p>
-                <div className="mt-auto pt-8 font-serif text-xl text-accent tracking-tight">
+                <div className="mt-auto pt-8 font-serif font-medium text-xl text-accent tracking-tight">
                   {c.metric}
                 </div>
               </div>
@@ -776,8 +772,8 @@ function Index() {
               { k: "30d", v: "fit guarantee" },
             ].map((s) => (
               <div key={s.k}>
-                <div className="font-mono text-4xl md:text-5xl text-cream tracking-tight" style={{ fontFeatureSettings: '"zero", "ss01"' }}>{s.k}</div>
-                <div className="mt-2 font-mono text-[11px] font-medium tracking-[0.12em] uppercase text-stone-soft">
+                <div className="stat-figure text-4xl md:text-5xl text-cream">{s.k}</div>
+                <div className="mt-2 mono-label font-medium">
                   {s.v}
                 </div>
               </div>
@@ -799,20 +795,20 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               How Veep compares to the alternatives.
             </h2>
           </div>
 
           <div className="grid grid-cols-[auto_minmax(min-content,1fr)_minmax(min-content,1fr)] border-y border-white/10 divide-y divide-white/10">
             <div className="hidden md:grid md:grid-cols-subgrid md:col-span-3">
-              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft md:whitespace-nowrap">Dimension</div>
-              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft md:whitespace-nowrap">The old way</div>
-              <div className="p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-accent md:whitespace-nowrap">Veep</div>
+              <div className="p-5 mono-label md:whitespace-nowrap">Dimension</div>
+              <div className="p-5 mono-label md:whitespace-nowrap">The old way</div>
+              <div className="p-5 eyebrow md:whitespace-nowrap">Veep</div>
             </div>
             {differentiators.map((r) => (
               <div key={r.dim} className="grid md:grid-cols-subgrid md:col-span-3 gap-y-2 gap-x-0 p-5 md:p-0">
-                <div className="md:p-5 font-mono text-[11px] uppercase tracking-[0.12em] text-stone-soft md:whitespace-nowrap">
+                <div className="md:p-5 mono-label md:whitespace-nowrap">
                   {r.dim}
                 </div>
                 <div className="md:p-5 text-base text-stone leading-relaxed md:whitespace-nowrap">{r.old}</div>
@@ -831,10 +827,10 @@ function Index() {
           <div className="grid lg:grid-cols-5 gap-10 md:gap-14 items-center">
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>FOR FUNDS</SectionEyebrow>
-              <h2 className="font-serif text-3xl text-cream tracking-tight leading-[1.1] allow-wrap">
+              <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
                 Portfolio companies don't pause for a search.
               </h2>
-              <p className="text-stone leading-relaxed">
+              <p className="text-base text-stone leading-relaxed">
                 Transactions create volatility before close, after close, and during integration. Leadership seats open. The plan is clear, but the company often lacks the senior capacity to own the work. Veep gives transaction-active firms a retained roster of vetted operators, ready to support diligence, transition, integration, value creation, and interim leadership needs across the portfolio.
               </p>
             </div>
@@ -862,7 +858,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>Before you book</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               The questions founders ask on the first call.
             </h2>
           </div>
@@ -878,7 +874,7 @@ function Index() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>MINI FAQ</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               Straight answers.
             </h2>
           </div>
@@ -886,7 +882,7 @@ function Index() {
             {faqs.map((f) => (
               <details key={f.q} className="group py-6 md:py-7">
                 <summary className="cursor-pointer flex items-start justify-between gap-6 text-cream list-none [&::-webkit-details-marker]:hidden hover:text-cream transition">
-                  <span className="font-serif text-lg md:text-xl tracking-tight">{f.q}</span>
+                  <span className="font-serif font-medium text-xl tracking-tight">{f.q}</span>
                   <span className="text-accent text-xl leading-none pt-1 transition-transform group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-4 text-stone leading-relaxed text-base md:text-base max-w-3xl">{f.a}</p>

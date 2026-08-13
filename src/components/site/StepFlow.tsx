@@ -13,8 +13,8 @@ export function StepFlow() {
           key={s.n}
           className="flex flex-col border-t border-white/10 pt-8 first:border-t-0 first:pt-0 md:border-t-0 md:pt-0 md:border-l md:pl-8 md:first:border-l-0 md:first:pl-0 md:pr-8 md:last:pr-0"
         >
-          <span className="font-mono text-[11px] tracking-[0.12em] text-accent">{s.n}</span>
-          <div className="mt-4 font-serif text-2xl text-cream tracking-tight">{s.t}</div>
+          <span className="eyebrow">{s.n}</span>
+          <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">{s.t}</div>
           <p className="mt-2 text-base text-stone leading-relaxed">{s.d}</p>
         </div>
       ))}

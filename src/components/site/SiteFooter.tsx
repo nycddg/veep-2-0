@@ -63,7 +63,7 @@ export function SiteFooter() {
           </div>
           {cols.map((c, i) => (
             <div key={c.title} className={`min-w-0 md:col-span-2 ${i === 0 ? 'md:pl-6 lg:pl-8' : ''}`}>
-              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-cream/70 font-mono">
+              <div className="mono-label text-cream/70">
                 {c.title}
               </div>
               <ul className="mt-3.5 space-y-2 md:mt-4 md:space-y-2.5">
