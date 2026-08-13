@@ -228,7 +228,7 @@ function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
-              How it works
+              How It Works
             </div>
             <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.1]">
               One agreement. Every portfolio company activated.

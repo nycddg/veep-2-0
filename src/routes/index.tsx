@@ -726,7 +726,7 @@ function Index() {
       <section id="how" className="bg-surface-raised py-20 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
-            <SectionEyebrow>How it works</SectionEyebrow>
+            <SectionEyebrow>How It Works</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-3xl md:text-4xl text-cream tracking-tight leading-[1.05] allow-wrap">
               From first call to operator in the seat in under 10 days.
             </h2>
