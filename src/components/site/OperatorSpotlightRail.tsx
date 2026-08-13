@@ -56,22 +56,16 @@ function OperatorCard({ op }: { op: Operator }) {
         }`}
       />
 
-      {/* Meta — top left */}
+      {/* Meta — top left. Always dark ink on photo (do not follow theme cream/ink flip). */}
       <div className="absolute top-5 left-5 text-left z-10 max-w-[75%]">
-        <h3
-          className="font-sans font-medium text-ink light:text-[color:var(--foreground)] text-lg sm:text-xl leading-tight tracking-tight"
-        >
+        <h3 className="font-sans font-medium text-[oklch(0.16_0.03_265)] text-lg sm:text-xl leading-tight tracking-tight drop-shadow-[0_1px_1px_rgb(255_255_255/0.35)]">
           {op.name}
         </h3>
-        <div
-          className="mono-label mt-1 text-ink/80 light:text-[color:var(--foreground)]/80"
-        >
+        <div className="mono-label mt-1 text-[oklch(0.22_0.03_265)]/85">
           {op.role}
         </div>
         {op.priorCompanies && op.priorCompanies.length > 0 && (
-          <div
-            className="mono-label mt-2 leading-relaxed text-ink/70 light:text-[color:var(--foreground)]/70"
-          >
+          <div className="mono-label mt-2 leading-relaxed text-[oklch(0.22_0.03_265)]/75">
             {op.priorCompanies.map((c, i) => (
               <span key={c}>
                 {i > 0 && <br />}
