@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import erikaHeadshot from "@/assets/operator-erika-velazquez.png.asset.json";
 import { FooterCTA } from "@/components/site/FooterCTA";
-import { BOOKING_URL } from "@/lib/booking";
 import { ogImageMeta } from "@/lib/seo";
 
 const BULLETS = [
@@ -106,25 +105,24 @@ function MeetVeepPage() {
             </ul>
 
             <div className="order-5 lg:col-span-7 flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4 sm:gap-5 pt-1">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
-              >
-                Book intro call <ArrowRight size={16} className="motion-arrow" />
-              </a>
               <Link
                 to="/contact"
-                className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
+                className="group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
               >
-                Get in touch
+                Get in touch <ArrowRight size={16} className="motion-arrow" />
               </Link>
               <Link
                 to="/how-it-works"
                 className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
               >
                 See how it works
+              </Link>
+              <Link
+                to="/pricing"
+                hash="tiers"
+                className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
+              >
+                See pricing
               </Link>
             </div>
           </div>
@@ -162,7 +160,8 @@ function MeetVeepPage() {
 
       <FooterCTA
         headline={<>Tell us what cannot wait.</>}
-        sub="Book a 30-minute call with a Veep founder. We'll clarify the work, recommend the right model, and tell you directly if Veep isn't the answer."
+        sub="Tell us about the work. We'll clarify the need, recommend the right model, and tell you directly if Veep isn't the answer."
+        primary="contact"
       />
     </>
   );
