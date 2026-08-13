@@ -17,7 +17,7 @@ const objections = [
   },
   {
     q: "What if it is not a fit?",
-    a: "Every engagement carries a 30-day fit guarantee. If the operator isn't right, we swap them or you walk — no fee owed for the remaining term.",
+    a: "Every engagement carries a 30-day fit guarantee. If the operator isn't right, we swap them or you walk. No fee owed for the remaining term.",
   },
   {
     q: "What happens after the intro call?",

@@ -127,7 +127,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["ROCKET INTERNET", "KIXIE"],
     summary:
-      "Transaction-ready finance operator with PE roots and marketplace scale; former Principal at Lincolnshire Management ($1.8B AUM), then CFO of a Rocket Internet portfolio company during the build of Indonesia's largest e-commerce platform.\u00a0",
+      "Transaction-ready finance operator with PE roots and marketplace scale; former Principal at Lincolnshire Management ($1.8B AUM), then CFO of a Rocket Internet portfolio company during the build of Indonesia's largest e-commerce platform.",
     chips: ["Tech", "SaaS", "Private Capital"],
     photoUrl: alanPoussaintHeadshot.url,
     photoPosition: "center 15%",
@@ -169,7 +169,7 @@ const spotlightOperators = [
     role: "Finance Operating Partner",
     priorCompanies: ["TASTE OF BELGIUM", "FARNSWORTH CANNABIS"],
     summary:
-      "Seasoned operator with a track record of building and transforming companies across finance, strategy, operations, GTM, and product. Brings board-level judgment and hands-on operating experience across consumer, luxury, and finance.\u00a0",
+      "Seasoned operator with a track record of building and transforming companies across finance, strategy, operations, GTM, and product. Brings board-level judgment and hands-on operating experience across consumer, luxury, and finance.",
     chips: ["Consumer", "Luxury", "Finance"],
     photoUrl: miguelFerreyraHeadshot.url,
     photoPosition: "center 15%",
@@ -215,32 +215,32 @@ const alternatives = [
 
 const benefits = [
   { t: "Own the work", d: "Operators step in to take responsibility for critical work, not advise from the sidelines." },
-  { t: "Deploy in under 10 days", d: "Algorithmic matching. Shortlist in 72 hours. Onboarded and in the work inside 10 days." },
+  { t: "Deploy in under 10 days", d: "Matched to the work. Shortlist in 72 hours. Onboarded and in the work inside 10 days." },
   { t: "Senior-only roster", d: "75+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
-  { t: "No permanent commitment", d: "Senior ownership without the commit — engagements can pause, extend, or scale with the work." },
+  { t: "No permanent commitment", d: "Senior ownership without the commit. Engagements can pause, extend, or scale with the work." },
   { t: "Clean handoff", d: "When the work lands or a permanent hire arrives, you get documentation, context, and continuity." },
-  { t: "30-day fit guarantee", d: "If the operator isn't the right fit, we swap them or you walk — exit the agreement with no penalties." },
+  { t: "30-day fit guarantee", d: "If the operator isn't the right fit, we swap them or you walk. Exit the agreement with no penalties." },
 ];
 
 const engagements = [
   {
     name: "Advisory",
     price: "From $3k / mo",
-    bestWhen: "Senior judgment and direction for high-stakes decisions — board and investor prep, fundraise strategy, executive decisions, and strategic tradeoffs. Not full ownership of execution.",
+    bestWhen: "Senior judgment and direction for high-stakes decisions: board and investor prep, fundraise strategy, executive decisions, and strategic tradeoffs. Not full ownership of execution.",
     to: "/pricing" as const,
     hash: "tiers",
   },
   {
     name: "Sprint",
     price: "From $25k / scope",
-    bestWhen: "Time-boxed. Clear scope. Clear outcome. Fast start — GTM reset, fundraise, margin work, diligence, or transaction prep across 4–12 weeks.",
+    bestWhen: "Time-boxed. Clear scope. Clear outcome. Fast start: GTM reset, fundraise, margin work, diligence, or transaction prep across 4–12 weeks.",
     to: "/pricing" as const,
     hash: "tiers",
   },
   {
     name: "Operator",
     price: "From $15k / mo",
-    bestWhen: "Embedded senior ownership of critical work across finance, GTM, operations, product, or people. Build or reset a function, resolve leadership gaps — typically 3–12 months.",
+    bestWhen: "Embedded senior ownership of critical work across finance, GTM, operations, product, or people. Build or reset a function, resolve leadership gaps (typically 3–12 months).",
     to: "/pricing" as const,
     hash: "tiers",
     featured: true,
@@ -248,7 +248,7 @@ const engagements = [
   {
     name: "Pod",
     price: "From $30k / mo",
-    bestWhen: "Multiple operators coordinated against a larger work program — GTM + RevOps, finance + ops, AI initiatives, or an operating reset across the company.",
+    bestWhen: "Multiple operators coordinated against a larger work program: GTM + RevOps, finance + ops, AI initiatives, or an operating reset across the company.",
     to: "/pricing" as const,
     hash: "tiers",
   },
@@ -267,7 +267,7 @@ const differentiators = [
   },
   {
     dim: "OUTCOMES",
-    veep: "High quality work immediately\u00a0\u00a0",
+    veep: "High quality work immediately",
     old: "After the search, after the deck, or with variable quality",
   },
   {
@@ -287,7 +287,7 @@ const differentiators = [
   },
   {
     dim: "Risk",
-    veep: "30-day fit guarantee — swap or walk",
+    veep: "30-day fit guarantee. Swap or walk.",
     old: "You own the miss",
   },
 ];
@@ -372,11 +372,11 @@ const faqSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: "Senior operator placement",
+  serviceType: "Senior operator deployment",
   provider: { "@type": "Organization", name: "Veep" },
   areaServed: ["North America", "Europe"],
   description:
-    "Veep places vetted senior operators — CFOs, COOs, CROs, CMOs, CTOs, product, people, and functional leaders — inside founder-led companies to own critical work in under 10 days.",
+    "Veep places vetted senior operators (CFOs, COOs, CROs, CMOs, CTOs, product, people, and functional leaders) inside founder-led companies to own critical work in under 10 days.",
   offers: [
     { "@type": "Offer", name: "Advisory", priceSpecification: { "@type": "PriceSpecification", price: "3000", priceCurrency: "USD" } },
     { "@type": "Offer", name: "Sprint", priceSpecification: { "@type": "PriceSpecification", price: "25000", priceCurrency: "USD" } },
@@ -392,17 +392,17 @@ const serviceSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Veep — Senior Operators for Critical Work That Can't Wait" },
+      { title: "Veep: Senior Operators for Work That Can't Wait" },
       {
         name: "description",
         content:
-          "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
+          "Veep helps founder-led companies bring in vetted senior operators to own critical work. Matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
       },
-      { property: "og:title", content: "Veep — Senior Operators for Critical Work That Can't Wait" },
+      { property: "og:title", content: "Veep: Senior Operators for Work That Can't Wait" },
       {
         property: "og:description",
         content:
-          "Veep helps founder-led companies bring in vetted senior operators to own critical work — matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
+          "Veep helps founder-led companies bring in vetted senior operators to own critical work. Matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
       },
       { property: "og:url", content: "https://www.veep.work/" },
       { property: "og:type", content: "website" },
@@ -560,7 +560,7 @@ function Index() {
               ))}
             </div>
             <p className="mt-12 md:mt-14 mx-auto text-center font-serif font-medium text-lg md:text-xl text-cream/90 leading-snug max-w-5xl">
-              Three options. None of them get you the outcomes you need, when you need them&nbsp;— now. Only Veep does.
+              Three options. None of them get you the outcomes you need, when you need them. Now. Only Veep does.
             </p>
           </div>
         </div>
@@ -573,7 +573,7 @@ function Index() {
             <div>
               <SectionEyebrow>What we do</SectionEyebrow>
               <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-                Built for the{"\u00a0"}job to be done.
+                Built for the job to be done.
               </h2>
               <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
                 Tell us what's in the way, not moving, or landing back on you to solve.
@@ -592,7 +592,7 @@ function Index() {
               <div className="eyebrow pb-6">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
-                ["Senior only", "Every operator is a vetted senior leader — former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
+                ["Senior only", "Every operator is a vetted senior leader: former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
                 ["Priced to scope", "Advisory, Sprint, Operator, or Pod structured around the work and outcomes."],
                 ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
               ].map(([t, d]) => (
@@ -672,12 +672,22 @@ function Index() {
             <p className="text-sm text-stone">
               75+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
-            >
-              Get in touch <ArrowRight size={14} />
-            </Link>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
+              >
+                Book intro call <ArrowRight size={14} />
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 text-sm text-cream/70 underline underline-offset-8 decoration-white/20 hover:text-cream hover:decoration-white/50 transition"
+              >
+                Get in touch
+              </Link>
+            </div>
           </div>
         </div>
       </Reveal>
@@ -801,7 +811,7 @@ function Index() {
           </div>
 
           <div className="mt-16">
-            <InlineCTA label="Get in touch" mode="contact" />
+            <InlineCTA />
           </div>
         </div>
       </Reveal>
@@ -880,7 +890,7 @@ function Index() {
           </div>
           <ObjectionList />
           <div className="mt-14">
-            <InlineCTA label="Get in touch" mode="contact" />
+            <InlineCTA />
           </div>
         </div>
       </Reveal>
