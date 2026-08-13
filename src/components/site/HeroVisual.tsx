@@ -1,10 +1,10 @@
 import { GradientPyramid } from "./illustrations";
 
 const cols = [
-  { k: "0.1", h: "Fractional", d: "C-suite capacity for the pivotal moment." },
-  { k: "0.2", h: "Interim", d: "Own the seat while the search runs." },
+  { k: "0.1", h: "Operator", d: "C-suite capacity for the pivotal moment." },
+  { k: "0.2", h: "Coverage", d: "Own the seat while the search runs." },
   { k: "0.3", h: "Sprint", d: "Ship one outcome with a clear endpoint." },
-  { k: "0.4", h: "Roster", d: "Portfolio-wide executive capacity." },
+  { k: "0.4", h: "Roster", d: "Portfolio-wide operating capacity." },
   { k: "0.5", h: "AI Ops", d: "Operators governing unlimited AI staff." },
 ];
 

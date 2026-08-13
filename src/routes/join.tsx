@@ -313,7 +313,7 @@ function Page() {
                       <Field label="Personal site">
                         <input type="url" name="website" placeholder="https://" className={inputCls} />
                       </Field>
-                      <Field label="Experience with fractional or interim work">
+                      <Field label="Experience embedding as an operator or advisor">
                         <div className="flex gap-4 pt-1">
                           {["Yes", "No"].map((v) => (
                             <label key={v} className="inline-flex items-center gap-2 text-cream/85 text-sm">

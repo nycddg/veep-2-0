@@ -32,8 +32,8 @@ const principles: readonly { title: string; body: string }[] = [
     body: "From intro call to embedded operator, measured in days — not the months a retained search takes.",
   },
   {
-    title: "Save 40–80% vs. firms or permanent hires",
-    body: "Senior seat coverage without the retained search fee or the fully-loaded C-suite comp.",
+    title: "Shortlist in 72 hours. Deployed in under 10 days.",
+    body: "Focused shortlist while permanent hire stays open — work moves in days, not search cycles.",
   },
   {
     title: "Flexible terms",

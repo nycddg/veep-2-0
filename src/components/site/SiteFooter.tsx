@@ -4,7 +4,11 @@ import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
 
 type FooterLink =
   | { kind: "hash"; hash: string; label: string }
-  | { kind: "route"; to: "/pricing" | "/faq" | "/contact" | "/privacy" | "/terms" | "/join" | "/about"; label: string };
+  | {
+      kind: "route";
+      to: "/pricing" | "/faq" | "/contact" | "/privacy" | "/terms" | "/join" | "/about" | "/for-portfolios";
+      label: string;
+    };
 
 const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
   {
@@ -20,6 +24,7 @@ const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
     title: "Details",
     links: [
       { kind: "route", to: "/about", label: "About" },
+      { kind: "route", to: "/for-portfolios", label: "For Funds" },
       { kind: "route", to: "/pricing", label: "Pricing" },
       { kind: "route", to: "/faq", label: "Full FAQ" },
       { kind: "route", to: "/contact", label: "Contact" },

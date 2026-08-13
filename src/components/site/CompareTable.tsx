@@ -82,7 +82,7 @@ export function CompareTable() {
       </div>
 
       <p className="mt-6 text-xs font-mono uppercase tracking-widest text-ink/50">
-        / Save 40–80% vs. direct hiring, executive search, and consulting firms.
+        / Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.
       </p>
     </div>
   );

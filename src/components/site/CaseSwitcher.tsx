@@ -8,7 +8,7 @@ const cases = [
     tab: "Capital raise",
     metric: "Series B closed in 14 weeks",
     peak: 0.62,
-    body: "A Veep fractional finance operator rebuilt reporting, ran lender-grade forecasting, and owned investor diligence — from first meeting to signed term sheet.",
+    body: "A Veep finance operating partner rebuilt reporting, ran lender-grade forecasting, and owned investor diligence — from first meeting to signed term sheet.",
   },
   {
     id: "gtm",

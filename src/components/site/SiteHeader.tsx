@@ -6,10 +6,13 @@ import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
 import { BOOKING_URL } from "@/lib/booking";
 import { ThemeToggle } from "./ThemeToggle";
 
-// Anchor links on /, plus two standalone routes (/pricing, /faq).
 type NavItem =
   | { kind: "hash"; hash: string; label: string }
-  | { kind: "route"; to: "/pricing" | "/faq" | "/join" | "/about"; label: string };
+  | {
+      kind: "route";
+      to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios";
+      label: string;
+    };
 
 const nav: readonly NavItem[] = [
   { kind: "hash", hash: "overview", label: "Overview" },
@@ -17,6 +20,7 @@ const nav: readonly NavItem[] = [
   { kind: "hash", hash: "benefits", label: "Benefits" },
   { kind: "hash", hash: "how", label: "How it works" },
   { kind: "hash", hash: "proof", label: "Proof" },
+  { kind: "route", to: "/for-portfolios", label: "For Funds" },
   { kind: "route", to: "/pricing", label: "Pricing" },
   { kind: "route", to: "/about", label: "About" },
   { kind: "route", to: "/join", label: "Join" },

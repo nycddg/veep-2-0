@@ -6,8 +6,7 @@ import { ogImageMeta } from "@/lib/seo";
 const FORM_URL = "https://forms.gle/LE2pMAsCW3kWsKes7";
 
 const BULLETS = [
-  "Deployed in under 10 days",
-  "Save 40\u201380% vs. firms or permanent hires",
+  "Shortlist in 72 hours. Deployed in under 10 days.",
   "Flexible terms: scoped to the work (advisory, project, or ongoing)",
   "30-day fit guarantee",
 ];

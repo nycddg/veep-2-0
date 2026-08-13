@@ -20,7 +20,7 @@ type Pillar = {
 const companiesPillars: Pillar[] = [
   {
     idx: "0.1",
-    eyebrow: "Fractional",
+    eyebrow: "Operator",
     title: "C-suite capacity for the moment that matters.",
     bullets: [
       "CFO, COO, CTO, CRO, CMO, or CPO — any C-suite role",
@@ -29,7 +29,7 @@ const companiesPillars: Pillar[] = [
       "Function scoping before a permanent hire",
     ],
     href: "/services/fractional-cfo",
-    panelTitle: "Fractional C-Suite",
+    panelTitle: "Operator C-Suite",
     panelRows: [
       { k: "Onboarded", v: "< 10 days" },
       { k: "Cadence", v: "Weekly + on-call" },

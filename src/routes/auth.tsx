@@ -1,7 +1,6 @@
 import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable/index";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
@@ -73,14 +72,6 @@ function AuthPage() {
     }
   }
 
-  async function onGoogle() {
-    setError(null);
-    const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: window.location.origin,
-    });
-    if (result.error) setError("Google sign-in failed. Make sure your email is on the partner list.");
-  }
-
   return (
     <section className="mx-auto flex min-h-[70vh] max-w-md flex-col justify-center px-4 py-20">
       <div className="eyebrow">
@@ -91,6 +82,7 @@ function AuthPage() {
       </h1>
       <p className="mt-3 text-sm text-stone">
         Live leads and recent wins for Veep operating partners. Access is by invitation only.
+        Sign in with email and password.
       </p>
 
       <form onSubmit={onSubmit} className="mt-8 space-y-4">
@@ -139,17 +131,6 @@ function AuthPage() {
           {busy ? "Working…" : mode === "signin" ? "Sign in" : "Create account"}
         </button>
       </form>
-
-      <div className="mt-6 flex items-center gap-3 mono-label">
-        <span className="h-px flex-1 bg-white/10" /> or <span className="h-px flex-1 bg-white/10" />
-      </div>
-
-      <button
-        onClick={onGoogle}
-        className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-cream hover:bg-white/5"
-      >
-        Continue with Google
-      </button>
 
       <p className="mt-8 text-sm text-stone">
         {mode === "signin" ? "Invited but no account yet? " : "Already have an account? "}
