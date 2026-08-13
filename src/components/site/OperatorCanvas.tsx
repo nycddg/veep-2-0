@@ -109,12 +109,9 @@ export function OperatorCanvas() {
       </div>
 
       {/* Proof — closer to assembly; clear of matrix overhang on sm+ */}
-      <div className="mt-8 sm:mt-14 md:mt-16 flex flex-col items-center gap-2.5">
-        <div className="hidden sm:block h-px w-10 bg-white/15 light:bg-ink/15" aria-hidden />
-        <p className="text-center mono-label text-cream/80">
-          95% match success rate · 75+ vetted senior operators
-        </p>
-      </div>
+      <p className="mt-8 sm:mt-14 md:mt-16 text-center mono-label text-cream/80">
+        95% match success rate · 75+ vetted senior operators
+      </p>
     </div>
   );
 }
