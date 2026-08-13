@@ -92,11 +92,11 @@ function Page() {
               className="grid lg:grid-cols-12 gap-8 lg:gap-14 border-t border-white/10 pt-14 first:border-t-0 first:pt-0"
             >
               <div className="lg:col-span-4">
-                <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+                <div className="eyebrow">
                   {row.eyebrow}
                 </div>
               </div>
-              <p className="lg:col-span-8 text-2xl md:text-3xl text-cream leading-[1.2] tracking-tight text-balance">
+              <p className="lg:col-span-8 font-serif font-medium text-xl md:text-2xl text-cream leading-[1.2] tracking-tight text-balance">
                 {row.body}
               </p>
             </div>
@@ -109,10 +109,10 @@ function Page() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
             <div className="lg:col-span-4 space-y-5">
-              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+              <div className="eyebrow">
                 What we believe
               </div>
-              <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
                 Built the hard way. Rebuilt the smart way.
               </h2>
               <p className="text-cream/80 text-base leading-relaxed max-w-md">
@@ -148,10 +148,10 @@ function Page() {
       <section className="bg-surface-raised border-b border-white/10">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="max-w-2xl space-y-4">
-            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+            <div className="eyebrow">
               Founding team
             </div>
-            <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
+            <h2 className="font-serif font-medium text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
               Founders first. Operators always.
             </h2>
             <p className="text-cream/80 text-base leading-relaxed">
@@ -162,10 +162,10 @@ function Page() {
           <div className="mt-14 grid md:grid-cols-3 gap-10 md:gap-8">
             {founders.map((f) => (
               <div key={f.name} className="border-t border-white/10 pt-6">
-                <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream/70">
+                <div className="mono-label text-cream/70">
                   {f.role}
                 </div>
-                <div className="mt-3 text-2xl text-cream tracking-tight">
+                <div className="mt-3 font-serif font-medium text-xl text-cream tracking-tight">
                   {f.name}
                 </div>
                 <p className="mt-3 text-cream/80 text-base leading-relaxed">

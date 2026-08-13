@@ -26,7 +26,7 @@ export function Testimonials() {
         <div className="mt-10 md:mt-14 space-y-16 md:space-y-20">
           {quotes.map((q, i) => (
             <figure key={q.name}>
-              <blockquote className="font-sans font-medium text-3xl md:text-4xl leading-[1.2] text-cream tracking-tight text-balance">
+              <blockquote className="font-sans font-medium text-3xl md:text-5xl leading-[1.2] text-cream tracking-tight text-balance">
                 {q.quote}
               </blockquote>
               <figcaption className="mt-10 flex items-center justify-center gap-4">

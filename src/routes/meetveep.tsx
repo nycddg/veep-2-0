@@ -47,7 +47,7 @@ function MeetVeepPage() {
     <section className="relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="flex flex-col gap-7 lg:grid lg:grid-cols-12 lg:gap-x-16 lg:gap-y-7 lg:items-start">
-          <h1 className="order-1 lg:col-span-7 text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05]">
+          <h1 className="order-1 lg:col-span-7 font-medium text-4xl sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05]">
             The work needs an owner.
           </h1>
 
@@ -77,7 +77,7 @@ function MeetVeepPage() {
               for the job to be done. Critical work gets owned before a
               permanent hire is in place.
             </p>
-            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-accent pt-2">
+            <p className="eyebrow pt-2">
               Vetted senior operators who step in to own critical work, now.
             </p>
           </div>

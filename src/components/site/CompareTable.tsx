@@ -25,7 +25,7 @@ export function CompareTable() {
   return (
     <div>
       <div className="max-w-2xl">
-        <div className="font-mono text-[11px] tracking-widest uppercase text-ink/50">
+        <div className="mono-label text-ink/50">
           / How we stack up
         </div>
         <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05] text-ink tracking-tight">
@@ -43,16 +43,16 @@ export function CompareTable() {
           <thead>
             <tr>
               <th className="p-4 md:p-5 border-b border-ink/10 w-1/5"></th>
-              <th className="p-4 md:p-5 font-mono text-[11px] tracking-widest uppercase text-ink border-b border-ink/10 bg-ink/[0.04] w-1/5">
+              <th className="p-4 md:p-5 mono-label text-ink border-b border-ink/10 bg-ink/[0.04] w-1/5">
                 / Veep
               </th>
-              <th className="p-4 md:p-5 font-mono text-[11px] tracking-widest uppercase text-ink/50 border-b border-ink/10 w-1/5">
+              <th className="p-4 md:p-5 mono-label text-ink/50 border-b border-ink/10 w-1/5">
                 Exec. Hiring
               </th>
-              <th className="p-4 md:p-5 font-mono text-[11px] tracking-widest uppercase text-ink/50 border-b border-ink/10 w-1/5">
+              <th className="p-4 md:p-5 mono-label text-ink/50 border-b border-ink/10 w-1/5">
                 Consulting Firm
               </th>
-              <th className="p-4 md:p-5 font-mono text-[11px] tracking-widest uppercase text-ink/50 border-b border-ink/10 w-1/5">
+              <th className="p-4 md:p-5 mono-label text-ink/50 border-b border-ink/10 w-1/5">
                 Freelancers
               </th>
             </tr>
@@ -60,7 +60,7 @@ export function CompareTable() {
           <tbody>
             {rows.map((r) => (
               <tr key={r.dim}>
-                <td className="p-4 md:p-5 font-mono text-[11px] tracking-widest uppercase text-ink/50 border-b border-ink/10 align-middle">
+                <td className="p-4 md:p-5 mono-label text-ink/50 border-b border-ink/10 align-middle">
                   {r.dim}
                 </td>
                 <td className="p-4 md:p-5 text-ink text-lg tracking-tight border-b border-ink/10 bg-ink/[0.04]">

@@ -85,7 +85,7 @@ export function Section({
  */
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
+    <div className="eyebrow">
       {children}
     </div>
   );
@@ -96,7 +96,7 @@ export function Eyebrow({ children }: { children: ReactNode }) {
  */
 export function MonoLabel({ children }: { children: ReactNode }) {
   return (
-    <span className="font-mono text-[11px] tracking-[0.14em] text-stone-soft">
+    <span className="mono-label">
       {children}
     </span>
   );
@@ -153,7 +153,7 @@ export function CheckList({ items }: { items: string[] }) {
     <ul className="divide-y divide-white/8 border-y border-white/8">
       {items.map((it, i) => (
         <li key={it} className="flex items-start gap-4 py-3 text-[15px] leading-relaxed text-cream/85">
-          <span className="font-mono text-[11px] tracking-[0.14em] text-stone-soft pt-1 w-10 shrink-0">
+          <span className="mono-label pt-1 w-10 shrink-0">
             0.{i + 1}
           </span>
           <span className="flex-1">{it}</span>
@@ -171,7 +171,7 @@ export function RatingRow() {
   return (
     <div className="flex items-center gap-3 text-sm text-stone">
       <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-gold" />
-      <span className="font-mono text-[11px] tracking-[0.14em] uppercase">
+      <span className="mono-label">
         Trusted by founders, boards, and investors
       </span>
     </div>
@@ -198,7 +198,7 @@ export function FloatingChip({
 }) {
   return (
     <div className={`rounded-md bg-card border border-border px-4 py-3 ${className}`}>
-      <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-stone-soft">{label}</div>
+      <div className="mono-label">{label}</div>
       <div className="mt-0.5 text-sm font-medium text-cream">{value}</div>
     </div>
   );

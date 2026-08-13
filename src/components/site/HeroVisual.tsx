@@ -12,11 +12,11 @@ export function HeroVisual() {
   return (
     <div className="w-full">
       <div className="text-center">
-        <div className="font-mono text-[11px] tracking-widest text-stone-soft">
+        <div className="mono-label">
           / POWERED BY
         </div>
         <div className="mt-3 text-3xl md:text-4xl tracking-tight text-cream">
-          Operator Roster<sup className="font-mono text-[11px] text-stone-soft ml-1">™</sup>
+          Operator Roster<sup className="mono-label ml-1 normal-case tracking-normal">™</sup>
         </div>
       </div>
       <GradientPyramid className="w-full h-[300px] mt-6" />
@@ -27,7 +27,7 @@ export function HeroVisual() {
               <span className="text-cream">{c.h}</span>{" "}
               <span className="text-stone">{c.d}</span>
             </div>
-            <div className="mt-6 font-mono text-[11px] tracking-widest text-stone-soft">
+            <div className="mt-6 mono-label">
               {c.k}
             </div>
           </div>

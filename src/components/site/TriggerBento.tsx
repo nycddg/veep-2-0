@@ -40,14 +40,14 @@ export function TriggerBento() {
         {groups.map((g) => (
           <div key={g.title} className="p-6 flex flex-col gap-6 border-b border-white/8 md:border-r">
             <div className="flex items-center justify-between">
-              <span className="font-mono text-[11px] tracking-widest text-stone-soft">{g.idx}</span>
-              <span className="font-mono text-[11px] tracking-widest text-stone-soft">/ {g.title.toUpperCase()}</span>
+              <span className="mono-label">{g.idx}</span>
+              <span className="mono-label">/ {g.title.toUpperCase()}</span>
             </div>
-            <div className="text-2xl text-cream tracking-tight">{g.title}</div>
+            <div className="font-serif font-medium text-xl text-cream tracking-tight">{g.title}</div>
             <ul className="space-y-2.5">
               {g.triggers.map((t, i) => (
                 <li key={t} className="flex items-baseline gap-3 text-sm text-cream/80">
-                  <span className="font-mono text-[11px] tracking-widest text-stone-soft w-6 shrink-0">
+                  <span className="mono-label w-6 shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span>{t}</span>

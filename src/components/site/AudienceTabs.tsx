@@ -188,10 +188,10 @@ export function AudienceTabs() {
           >
             <div className="md:col-span-5">
               <div className="flex items-center justify-between mb-6">
-                <span className="font-mono text-[11px] tracking-widest text-stone-soft">
+                <span className="mono-label">
                   {p.idx}
                 </span>
-                <span className="font-mono text-[11px] tracking-widest text-stone-soft">
+                <span className="mono-label">
                   / {p.eyebrow.toUpperCase()}
                 </span>
               </div>
@@ -219,14 +219,14 @@ export function AudienceTabs() {
               <div>
                 <div className="flex items-center justify-between border-b border-white/8 pb-4">
                   <div className="text-cream text-sm">{p.panelTitle}</div>
-                  <span className="font-mono text-[11px] tracking-widest text-stone-soft">
+                  <span className="mono-label">
                     / {p.eyebrow.toUpperCase()}
                   </span>
                 </div>
                 <div className="mt-6 grid grid-cols-3 gap-6">
                   {p.panelRows.map((r) => (
                     <div key={r.k}>
-                      <div className="font-mono text-[11px] uppercase tracking-widest text-stone-soft">
+                      <div className="mono-label">
                         {r.k}
                       </div>
                       <div className="mt-2 text-sm text-cream">{r.v}</div>

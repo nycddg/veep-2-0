@@ -167,7 +167,7 @@ function PrivacyPage() {
 
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+          <div className="eyebrow">
             Effective date
           </div>
           <p className="mt-3 text-stone text-base">April 1, 2025</p>
@@ -184,10 +184,10 @@ function PrivacyPage() {
             {sections.map((s) => (
               <div key={s.n}>
                 <div className="flex items-baseline gap-4">
-                  <span className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+                  <span className="eyebrow">
                     {s.n}
                   </span>
-                  <h2 className="text-2xl md:text-3xl text-cream allow-wrap">{s.title}</h2>
+                  <h2 className="font-serif font-medium text-xl md:text-2xl text-cream allow-wrap">{s.title}</h2>
                 </div>
                 <div className="mt-5 space-y-5">
                   {s.blocks.map((b, i) => {
@@ -219,10 +219,10 @@ function PrivacyPage() {
 
             <div>
               <div className="flex items-baseline gap-4">
-                <span className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+                <span className="eyebrow">
                   12
                 </span>
-                <h2 className="text-2xl md:text-3xl text-cream allow-wrap">Contact us</h2>
+                <h2 className="font-serif font-medium text-xl md:text-2xl text-cream allow-wrap">Contact us</h2>
               </div>
               <div className="mt-5 space-y-3 text-stone text-base leading-relaxed">
                 <p>If you have any questions or concerns about this Privacy Policy or your data, please contact us:</p>

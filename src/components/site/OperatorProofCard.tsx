@@ -59,7 +59,7 @@ export function OperatorProofCard({
             <h4 className="font-medium text-cream text-base tracking-tight leading-tight font-sans">
               {name}
             </h4>
-            <p className="text-[11px] text-accent font-medium tracking-[0.14em] uppercase mt-0.5">
+            <p className="eyebrow mt-0.5">
               {role}
             </p>
           </div>
@@ -68,7 +68,7 @@ export function OperatorProofCard({
           {chips.map((c) => (
             <span
               key={c}
-              className="text-[11px] px-2.5 py-1 bg-white/5 rounded-full border border-white/10 text-stone"
+              className="text-xs px-2.5 py-1 bg-white/5 rounded-full border border-white/10 text-stone"
             >
               {c}
             </span>
@@ -131,7 +131,7 @@ export function OperatorProofCard({
 
         {companies.length > 0 && (
           <div className="border-t border-white/10 pt-3">
-            <div className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-cream/70 leading-relaxed">
+            <div className="mono-label text-cream/70 leading-relaxed">
               {companies.join("  ·  ")}
             </div>
           </div>
@@ -152,7 +152,7 @@ export function OperatorProofCard({
               onClick={() => setExpanded((v) => !v)}
               aria-expanded={expanded}
               aria-controls={summaryId}
-              className="self-start text-[11px] font-medium text-accent hover:opacity-80 transition"
+              className="self-start text-xs font-medium text-accent hover:opacity-80 transition"
             >
               {expanded ? "Show less" : "Read more"}
             </button>
@@ -167,7 +167,7 @@ export function OperatorProofCard({
             {chips.map((c) => (
               <span
                 key={c}
-                className="font-mono text-[11px] uppercase tracking-[0.14em] text-stone-soft"
+                className="mono-label"
               >
                 {c}
               </span>

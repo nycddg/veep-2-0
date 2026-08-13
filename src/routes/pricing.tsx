@@ -123,9 +123,9 @@ function Page() {
                 className="flex flex-col lg:px-6 lg:first:pl-0 lg:last:pr-0"
               >
                 <div className="flex items-baseline gap-3">
-                  <span className="text-2xl text-cream">{t.t}</span>
+                  <span className="font-serif font-medium text-xl text-cream">{t.t}</span>
                   {t.featured && (
-                    <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-accent-coral">
+                    <span className="font-mono eyebrow-coral">
                       Most requested
                     </span>
                   )}
@@ -164,10 +164,10 @@ function Page() {
       <section className="bg-surface-band py-20 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
-            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+            <div className="eyebrow">
               What we don't charge for
             </div>
-            <h2 className="mt-5 text-3xl md:text-4xl text-cream allow-wrap">
+            <h2 className="mt-5 font-serif font-medium text-3xl md:text-4xl text-cream allow-wrap">
               The price you see is the price you pay.
             </h2>
           </div>
@@ -186,10 +186,10 @@ function Page() {
       <section className="spotlight-invert py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div>
-            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+            <div className="eyebrow">
               FOR FUNDS
             </div>
-            <h3 className="mt-5 text-2xl md:text-3xl text-cream">
+            <h3 className="mt-5 font-serif font-medium text-xl md:text-2xl text-cream">
               The right operating partners, ready when the portfolio needs them.
             </h3>
             <p className="mt-5 text-cream/80 leading-relaxed max-w-2xl">
@@ -218,10 +218,10 @@ function Page() {
       <section className="bg-surface-raised py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-14">
-            <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+            <div className="eyebrow">
               Pricing FAQ
             </div>
-            <h2 className="mt-5 text-3xl text-cream">
+            <h2 className="mt-5 font-serif font-medium text-3xl md:text-4xl text-cream">
               Straight answers to the questions we get most.
             </h2>
           </div>

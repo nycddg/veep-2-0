@@ -185,10 +185,10 @@ function Page() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
             <div className="lg:col-span-4 space-y-5">
-              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+              <div className="eyebrow">
                 Who we're looking for
               </div>
-              <h2 className="text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-cream leading-[1.1] tracking-tight allow-wrap">
                 A curated roster of business builders.
               </h2>
               <p className="text-cream/80 text-base leading-relaxed max-w-md">
@@ -225,7 +225,7 @@ function Page() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             <div className="lg:col-span-2 space-y-8">
-              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+              <div className="eyebrow">
                 What happens next
               </div>
               <ul className="space-y-4">
@@ -255,7 +255,7 @@ function Page() {
               {submitted ? (
                 <div className="py-8 sm:py-10 text-center">
                   <Check strokeWidth={2.5} className="mx-auto h-8 w-8 text-accent" />
-                  <h3 className="mt-6 text-2xl text-cream tracking-tight">
+                  <h3 className="mt-6 font-serif font-medium text-xl text-cream tracking-tight">
                     Application received.
                   </h3>
                   <p className="mt-3 text-cream/80 text-sm">
@@ -386,7 +386,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream/70">
+      <span className="mono-label text-cream/70">
         {label}
         {required && " *"}
       </span>
@@ -406,7 +406,7 @@ function CheckboxGroup({
 }) {
   return (
     <div>
-      <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream/70">
+      <span className="mono-label text-cream/70">
         {label}
       </span>
       <div className="mt-3 flex flex-wrap gap-2">

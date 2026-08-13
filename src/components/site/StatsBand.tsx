@@ -14,8 +14,8 @@ export function StatsBand() {
     <section className="bg-background text-cream border-t border-b border-white/8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between border-t border-white/8 pt-5">
-          <span className="font-mono text-[11px] tracking-widest text-stone-soft">[04]</span>
-          <span className="font-mono text-[11px] tracking-widest text-stone-soft">/ GROWTH + SECURITY</span>
+          <span className="mono-label">[04]</span>
+          <span className="mono-label">/ GROWTH + SECURITY</span>
         </div>
 
         <div className="py-20 md:py-28">

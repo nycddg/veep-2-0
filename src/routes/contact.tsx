@@ -143,7 +143,7 @@ function Page() {
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             {/* Left: promise */}
             <div className="lg:col-span-2 space-y-8">
-              <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
+              <div className="eyebrow">
                 What happens next
               </div>
               <ul className="space-y-4">
@@ -171,7 +171,7 @@ function Page() {
               </ul>
               {preselected && (
                 <div className="rounded-2xl border border-accent/30 bg-accent/5 p-4">
-                  <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent">
+                  <div className="eyebrow">
                     Outcome
                   </div>
                   <div className="mt-2 text-cream font-medium">{preselected}</div>
@@ -191,7 +191,7 @@ function Page() {
                   <h3
                     ref={successHeadingRef}
                     tabIndex={-1}
-                    className="mt-6 text-2xl text-cream tracking-tight focus:outline-none"
+                    className="mt-6 font-serif font-medium text-xl text-cream tracking-tight focus:outline-none"
                   >
                     Thanks — we'll be in touch.
                   </h3>
@@ -330,7 +330,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream/70">
+      <span className="mono-label text-cream/70">
         {label}{required && " *"}
       </span>
       <div className="mt-2">{children}</div>

@@ -83,7 +83,7 @@ function AuthPage() {
 
   return (
     <section className="mx-auto flex min-h-[70vh] max-w-md flex-col justify-center px-4 py-20">
-      <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent font-mono">
+      <div className="eyebrow">
         Partner access
       </div>
       <h1 className="mt-4 text-3xl text-cream tracking-tight">
@@ -140,7 +140,7 @@ function AuthPage() {
         </button>
       </form>
 
-      <div className="mt-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.14em] text-stone-soft">
+      <div className="mt-6 flex items-center gap-3 mono-label">
         <span className="h-px flex-1 bg-white/10" /> or <span className="h-px flex-1 bg-white/10" />
       </div>
 
