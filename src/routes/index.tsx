@@ -228,18 +228,21 @@ const engagements = [
     price: "From $3k / mo",
     bestWhen: "Senior judgment and direction for high-stakes decisions — board and investor prep, fundraise strategy, executive decisions, and strategic tradeoffs. Not full ownership of execution.",
     to: "/pricing" as const,
+    hash: "tiers",
   },
   {
     name: "Sprint",
     price: "From $25k / scope",
     bestWhen: "Time-boxed. Clear scope. Clear outcome. Fast start — GTM reset, fundraise, margin work, diligence, or transaction prep across 4–12 weeks.",
     to: "/pricing" as const,
+    hash: "tiers",
   },
   {
     name: "Operator",
     price: "From $15k / mo",
     bestWhen: "Embedded senior ownership of critical work across finance, GTM, operations, product, or people. Build or reset a function, resolve leadership gaps — typically 3–12 months.",
     to: "/pricing" as const,
+    hash: "tiers",
     featured: true,
   },
   {
@@ -247,6 +250,7 @@ const engagements = [
     price: "From $30k / mo",
     bestWhen: "Multiple operators coordinated against a larger work program — GTM + RevOps, finance + ops, AI initiatives, or an operating reset across the company.",
     to: "/pricing" as const,
+    hash: "tiers",
   },
 ];
 

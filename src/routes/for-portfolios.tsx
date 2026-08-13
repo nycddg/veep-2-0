@@ -209,6 +209,7 @@ function Page() {
                 <div className="mt-6 pt-4">
                   <Link
                     to="/pricing"
+                    hash="tiers"
                     className="text-xs text-cream/85 hover:text-cream underline underline-offset-4 decoration-white/25 hover:decoration-white/70 transition"
                   >
                     See engagement pricing →

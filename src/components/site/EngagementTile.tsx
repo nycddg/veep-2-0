@@ -5,17 +5,21 @@ export function EngagementTile({
   price,
   bestWhen,
   to,
+  hash,
   featured = false,
 }: {
   name: string;
   price: string;
   bestWhen: string;
   to: string;
+  hash?: string;
   featured?: boolean;
 }) {
   return (
     <Link
-      to={to}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      to={to as any}
+      hash={hash}
       className={`group motion-hover-lift relative flex flex-col md:min-h-[280px] pt-7 pb-6 pr-2 ${
         featured
           ? "border-t-2 border-accent md:border-t-0 md:pl-6 md:border-l-2 md:border-accent"

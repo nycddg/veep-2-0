@@ -134,11 +134,14 @@ function Page() {
             ? "A structured audit of leadership risk across your portfolio, with a recommended roster structure per company. Delivered in 2–3 weeks."
             : "30-minute call. Response within one business day. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
         }
+        primaryLabel={isAudit ? "Request an audit" : "Request a call"}
+        primaryTo="/contact"
+        primaryHash="contact-form"
         secondaryLabel="See how it works"
         secondaryTo="/how-it-works"
       />
 
-      <section className="py-14 sm:py-16 md:py-28">
+      <section id="contact-form" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             {/* Left: promise */}
