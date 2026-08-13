@@ -114,7 +114,7 @@ function Page() {
       />
 
       {/* Four tiers — match homepage Engagements spacing (border-t + pad, not divide-y/gap clash) */}
-      <section className="bg-surface-band py-14 sm:py-16 md:py-28">
+      <section id="tiers" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 min-w-0">
             {tiers.map((t) => (
@@ -148,8 +148,8 @@ function Page() {
                 </ul>
                 <div className="mt-6 md:mt-auto pt-4 md:pt-8">
                   <Link
-                    to="/services"
-                    hash={t.t.toLowerCase()}
+                    to="/pricing"
+                    hash="tiers"
                     className="text-xs text-cream/90 hover:text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70 transition"
                   >
                     See scope →

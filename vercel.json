@@ -4,5 +4,142 @@
     "env": {
       "NITRO_PRESET": "vercel"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/agencies",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/book",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/businessos",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-of-fractional",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-of-mark-newhouse-profile-page",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-of-scale-diagnostic",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/copyright",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fractional",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fundraising",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/get-started",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index-legacy",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/insights",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/officehours",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/operatingpartners",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/post/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/roster",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/scale-diagnostic",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/service",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sg",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sprints",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/subscribe",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/webinar",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }
