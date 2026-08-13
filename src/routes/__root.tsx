@@ -130,17 +130,32 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  // Inline bootstrap so the Leadsy/Instantly tag always executes (React SSR
+  // <script src> tags are present in HTML but Instantly's "Test pixel" popup
+  // often fails to detect them). This injects the real tag.js with data-pid.
+  const instantlyPixelBootstrap = `
+(function () {
+  try {
+    if (document.getElementById("vtag-ai-js")) return;
+    var s = document.createElement("script");
+    s.id = "vtag-ai-js";
+    s.async = true;
+    s.src = "https://r2.leadsy.ai/tag.js";
+    s.setAttribute("data-pid", "${INSTANTLY_PIXEL_PID}");
+    s.setAttribute("data-version", "062024");
+    (document.head || document.documentElement).appendChild(s);
+  } catch (e) {}
+})();
+`.trim();
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
-        {/* Instantly Website Visitors (Leadsy) — sitewide visitor ID → Instantly lists/views */}
+        <link rel="preconnect" href="https://r2.leadsy.ai" crossOrigin="anonymous" />
         <script
-          id="vtag-ai-js"
-          async
-          src="https://r2.leadsy.ai/tag.js"
-          data-pid={INSTANTLY_PIXEL_PID}
-          data-version="062024"
+          id="instantly-pixel-bootstrap"
+          dangerouslySetInnerHTML={{ __html: instantlyPixelBootstrap }}
         />
       </head>
       <body>
