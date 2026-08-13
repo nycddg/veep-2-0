@@ -17,6 +17,8 @@ import { SiteFooter } from "../components/site/SiteFooter";
 import { ThemeProvider } from "../lib/theme";
 
 const GA_MEASUREMENT_ID = "G-W4CC5NJ1H8";
+/** Instantly Website Visitors (Leadsy) pixel — pid from Instantly setup UI */
+const INSTANTLY_PIXEL_PID = "1yMyAoRcMRrO2Ix8a";
 
 const gaInitScript = `
 window.dataLayer = window.dataLayer || [];
@@ -132,6 +134,14 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* Instantly Website Visitors (Leadsy) — sitewide visitor ID → Instantly lists/views */}
+        <script
+          id="vtag-ai-js"
+          async
+          src="https://r2.leadsy.ai/tag.js"
+          data-pid={INSTANTLY_PIXEL_PID}
+          data-version="062024"
+        />
       </head>
       <body>
         {children}
