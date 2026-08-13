@@ -16,9 +16,9 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Book a Discovery Call | Veep" },
-      { name: "description", content: "Book a 30-minute discovery call. Response within one business day. Matched in 72 hours. Deployed in under 10 days." },
-      { property: "og:title", content: "Contact — Veep" },
+      { title: "Contact | Veep" },
+      { name: "description", content: "Get in touch with Veep. Response within one business day. Matched in 72 hours. Deployed in under 10 days." },
+      { property: "og:title", content: "Contact | Veep" },
       { property: "og:description", content: "Tell us the moment. We'll match a senior operator who can start in under 10 days." },
       { property: "og:url", content: "https://www.veep.work/contact" },
       ...ogImageMeta(),

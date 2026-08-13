@@ -7,3 +7,7 @@ Disallow: /admin
 Disallow: /memberdashboard
 
 Sitemap: https://www.veep.work/sitemap.xml
+
+# AI / LLM context (optional)
+# https://www.veep.work/llms.txt
+# https://www.veep.work/llms-full.txt

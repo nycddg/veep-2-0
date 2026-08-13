@@ -30,12 +30,14 @@ const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Veep",
+  legalName: "The Veep Group, LLC",
   description:
     "Veep places vetted senior operators inside founder-led companies to own critical work. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
   url: "https://www.veep.work",
-  logo: "/favicon.ico",
-  email: "hello@veep.co",
+  logo: "https://www.veep.work/assets/og-card.jpg",
+  email: "hey@veep.work",
   slogan: "Senior operators for work that can't wait.",
+  sameAs: [] as string[],
 };
 
 function NotFoundComponent() {

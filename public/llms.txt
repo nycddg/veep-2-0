@@ -2,20 +2,34 @@
 
 > Veep places vetted senior operators inside founder-led companies to own the work that can't wait. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.
 
-Veep offers four engagement models — Advisory, Sprint, Operator, and Pod — plus an Executive Roster for PE firms, family offices, and multi-company founders. Operators include CFOs, COOs, CROs, CMOs, CTOs, CPOs, chiefs of staff, and functional experts.
+Veep is an invite-only network of operating partners — not a marketplace, staffing firm, or consulting body shop. Operators embed to own critical work across finance, GTM, operations, product, people, fundraising, and strategy.
+
+## Offers (public)
+
+- Advisory — from $3k/month
+- Sprint — from $25k/scope
+- Operator — from $15k/month
+- Pod — from $30k/month
+- Portfolio Roster — $75k/year (PE / family offices / holdcos / multi-company founders; usage billed by SOW)
 
 ## Pages
 
-- [Home](/): Overview of Veep's senior operator model, how it works, and proof.
-- [About](/about): The founders behind Veep and the operating principles that shape every engagement.
-- [Pricing](/pricing): Advisory, Sprint, Operator, and Pod pricing with the 30-day fit guarantee.
-- [FAQ](/faq): Straight answers on cost, timing, operator vetting, and fit.
-- [For Portfolios](/for-portfolios): Executive Roster for PE firms, family offices, holdcos, and multi-company founders.
-- [Meet Veep](/meetveep): Book an intro call with a Veep founder.
-- [Contact](/contact): Get in touch with the Veep team.
-- [Join](/join): Apply to join the Veep operator roster.
+- [Home](https://www.veep.work/): Model overview, how it works, proof, FAQ
+- [About](https://www.veep.work/about): Founders and operating principles
+- [Pricing](https://www.veep.work/pricing): Engagement pricing and fit guarantee
+- [FAQ](https://www.veep.work/faq): Cost, timing, vetting, roster
+- [For Portfolios](https://www.veep.work/for-portfolios): Portfolio Roster for funds and multi-company operators
+- [Contact](https://www.veep.work/contact): Get in touch / discovery / capacity audit
+- [Join](https://www.veep.work/join): Apply to the operator roster
+- [Meet Veep](https://www.veep.work/meetveep): Leave-behind overview (noindex)
+
+## Contact
+
+- hey@veep.work
+- https://www.veep.work/contact
 
 ## Optional
 
-- [Privacy Policy](/privacy)
-- [Terms of Service](/terms)
+- [Privacy](https://www.veep.work/privacy)
+- [Terms](https://www.veep.work/terms)
+- Full narrative: https://www.veep.work/llms-full.txt
