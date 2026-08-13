@@ -1,7 +1,7 @@
 const objections = [
   {
     q: "Is this right for me?",
-    a: "You are a founder, CEO, owner-operator, or investor-backed leader with critical work lacking senior ownership:\u00a0a fundraise, GTM reset, margin issue, operations rebuild, leadership gap, recurring workflow, or strategic initiative.",
+    a: "You are a founder, CEO, owner-operator, or investor-backed leader with critical work lacking senior ownership: a fundraise, GTM reset, margin issue, operations rebuild, leadership gap, recurring workflow, or strategic initiative.",
   },
   {
     q: "How much does it cost?",

@@ -1,12 +1,12 @@
 import type { ReactNode, ElementType, CSSProperties } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "./useInView";
 
 /**
  * Reveal — restrained one-shot viewport entrance.
- * Uses motion-reveal (opacity + 8px rise) toggled via IntersectionObserver.
- * Elements above/near the viewport on mount reveal immediately; below-fold
- * elements reveal as they enter. Fully bypassed under prefers-reduced-motion
- * (motion-reveal collapses to no-op via the global guard in styles.css).
+ * Content is visible by default (SSR / no-JS / before observer arms).
+ * After mount, below-fold sections hide then fade in when scrolled into view.
+ * prefers-reduced-motion: CSS forces always-visible.
  */
 export function Reveal({
   as: Tag = "div",
@@ -22,17 +22,28 @@ export function Reveal({
   style?: CSSProperties;
   children: ReactNode;
 } & Record<string, unknown>) {
+  const [armed, setArmed] = useState(false);
   const [ref, inView] = useInView<HTMLElement>({
     threshold: 0.12,
     rootMargin: "-8% 0px",
   });
+
+  useEffect(() => {
+    const id = window.requestAnimationFrame(() => setArmed(true));
+    return () => window.cancelAnimationFrame(id);
+  }, []);
+
   const mergedStyle: CSSProperties | undefined = delay
     ? { ...style, transitionDelay: `${delay}ms` }
     : style;
+
+  // Visible until armed; then IO drives data-in.
+  const shown = !armed || inView;
+
   return (
     <Tag
       ref={ref}
-      data-in={inView ? "true" : "false"}
+      data-in={shown ? "true" : "false"}
       className={`motion-reveal ${className}`.trim()}
       style={mergedStyle}
       {...rest}

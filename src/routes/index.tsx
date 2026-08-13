@@ -58,7 +58,7 @@ const heroOperators = [
   {
     name: "Victoria Kasumu",
     role: "People Operating Partner",
-    chips: ["Ex-Zocdoc", "TECH"],
+    chips: ["Ex-Zocdoc", "Tech"],
     tilt: 2,
     translateY: 0,
     photoUrl: victoriaKasumuHeadshot.url,
@@ -99,7 +99,7 @@ const spotlightOperators = [
     priorCompanies: ["Zocdoc", "Pager Health"],
     summary:
       "Seasoned people leader who builds growth-focused operations by aligning talent, culture, and business goals. At David Zwirner, hired 50+ employees in 90 days while reducing redundancy 30% and increasing retention 15%.",
-    chips: ["Hospitality", "TECH", "Healthcare"],
+    chips: ["Hospitality", "Tech", "Healthcare"],
     photoUrl: victoriaKasumuHeadshot.url,
   },
   {
@@ -148,7 +148,7 @@ const spotlightOperators = [
     priorCompanies: ["ACTIVANT CAPITAL", "EY"],
     summary:
       "People strategy leader who turns org design, leadership, and talent systems into business growth levers. As CPO at Activant Capital, led portfolio talent strategy and served as interim CHRO on a portfolio path to a $2B exit.",
-    chips: ["Growth Equity", "PRO SERVICES", "TECH"],
+    chips: ["Growth Equity", "Pro Services", "Tech"],
     photoUrl: seanParkHeadshot.url,
     photoPosition: "center 15%",
     photoScale: 1.03,
@@ -320,18 +320,11 @@ const networkImpact = [
   { figure: "20+", label: "Exits & acquisitions", detail: "Including strategic sales, integrations, and post-merger transformations." },
 ];
 
+// Mini FAQ — non-dupes of ObjectionList ("Before you book")
 const faqs = [
   {
     q: "What is a Veep operator?",
     a: "A Veep operator is a vetted senior operator who steps into your business to own critical work before a permanent executive hire makes sense. Depending on the need, that operator may be a CFO, COO, CRO, CMO, CTO, product leader, people leader, chief of staff, or functional expert.",
-  },
-  {
-    q: "How fast can a Veep operator start?",
-    a: "Shortlist in 72 hours. Operator deployed in under 10 days. Urgent interim or leadership-gap coverage can move faster when needed.",
-  },
-  {
-    q: "How much does Veep cost?",
-    a: "Advisory starts at $3k/month. Sprints start at $25k. Operators start at $15k/month. Pods start at $30k/month. Every engagement is scoped to the work.",
   },
   {
     q: "How is Veep different from a consulting firm?",
@@ -340,14 +333,6 @@ const faqs = [
   {
     q: "How is Veep different from executive search?",
     a: "Search is for permanent hiring. Veep is for critical work that needs senior ownership before the permanent hire makes sense. The work moves now, while the permanent hiring decision stays open.",
-  },
-  {
-    q: "Who is Veep for?",
-    a: "Veep is built for founder-led, owner-led, and investor-backed companies with real revenue, real teams, and growing complexity. Most clients are doing $5M–$150M in revenue, though the right fit depends more on the work than the exact company size.",
-  },
-  {
-    q: "What if it is not a fit?",
-    a: "Every engagement carries a 30-day fit guarantee. If the operator is not right, we swap them or you walk with no fee owed for the remaining term.",
   },
   {
     q: "Where does Veep operate?",
@@ -468,7 +453,7 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
 function Index() {
   return (
     <>
-      {/* 1 — HERO */}
+      {/* Hero */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
         <div className="relative mx-auto max-w-5xl motion-fade-up px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
           <h1 className="font-medium text-[2.25rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream text-balance allow-wrap break-words mb-6">
@@ -514,7 +499,7 @@ function Index() {
 
       <LogoWall />
 
-      {/* 2 — WHAT IS VEEP (extractable AI-search definition) */}
+      {/* What Veep is */}
       <Reveal as="section">
         <div className="mx-auto max-w-[55.2rem] px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
@@ -527,7 +512,7 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 3 — PROBLEM */}
+      {/* Problem */}
       <Reveal as="section" id="problem" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
@@ -566,7 +551,7 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 4 — SOLUTION */}
+      {/* Solution */}
       <Reveal as="section" id="solution" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -606,8 +591,7 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 5 — BENEFITS */}
-      {/* 4.5 — OPERATORS SPOTLIGHT */}
+      {/* Operators + network impact */}
       <Reveal as="section" id="operators" className="py-14 sm:py-16 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
 
@@ -692,7 +676,7 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 5 — BENEFITS */}
+      {/* Benefits */}
       <Reveal as="section" id="benefits" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
@@ -720,7 +704,7 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 6 — OFFER / ENGAGEMENTS */}
+      {/* Engagements */}
       <Reveal as="section" id="offer" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
@@ -748,7 +732,7 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 7 — HOW IT WORKS */}
+      {/* How it works */}
       <Reveal as="section" id="how" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
@@ -761,7 +745,7 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 8 — PROOF */}
+      {/* Proof */}
       <Reveal as="section" id="proof" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-16">
@@ -816,7 +800,7 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 9 — DIFFERENTIATION */}
+      {/* Why Veep */}
       <Reveal as="section" id="vs" className="hidden md:block bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
@@ -847,7 +831,7 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 10 — FOR PORTFOLIOS (secondary audience band) */}
+      {/* For Funds */}
       <Reveal as="section" id="portfolios" className="spotlight-invert py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 md:gap-14 items-center">
@@ -879,7 +863,7 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 11 — OBJECTIONS */}
+      {/* Before you book (objections) */}
       <Reveal as="section" className="py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
@@ -895,11 +879,11 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 12 — FAQ */}
+      {/* Mini FAQ (non-dupes + link) */}
       <Reveal as="section" id="faq" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
-            <SectionEyebrow>MINI FAQ</SectionEyebrow>
+            <SectionEyebrow>FAQ</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Straight answers.
             </h2>
@@ -924,7 +908,7 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* 13 — FINAL CTA */}
+      {/* Final CTA */}
       <FooterCTA />
     </>
   );
