@@ -76,11 +76,9 @@ function OperatorCard({ op }: { op: Operator }) {
         )}
       </div>
 
-      {/* Slide-up summary */}
+      {/* Slide-up summary — no top hairline (was accent border-t) */}
       <div
-        className={`absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-500 ease-out bg-background/60 backdrop-blur-md p-6 border-t z-20 ${
-          op.featured ? "border-[color:var(--color-accent-coral)]/40" : "border-accent/30"
-        }`}
+        className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-500 ease-out bg-background/60 backdrop-blur-md p-6 z-20"
       >
         <p className="font-sans text-cream text-[0.85rem] leading-relaxed">{op.summary}</p>
         {op.chips.length > 0 && (

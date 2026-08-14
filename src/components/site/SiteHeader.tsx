@@ -61,7 +61,7 @@ export function SiteHeader() {
               key={(n as { hash: string }).hash}
               to="/"
               hash={(n as { hash: string }).hash}
-              className="motion-link px-3 py-2 text-sm text-cream/85 hover:text-cream"
+              className="motion-link px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
             >
               {n.label}
             </Link>
@@ -72,8 +72,8 @@ export function SiteHeader() {
               key={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
               to={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
               viewTransition
-              className="motion-link px-3 py-2 text-sm text-cream/85 hover:text-cream"
-              activeProps={{ className: "motion-link px-3 py-2 text-sm text-cream border-b border-accent" }}
+              className="motion-link px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
+              activeProps={{ className: "motion-link px-3 py-2 text-[0.8rem] text-cream border-b border-accent" }}
             >
               {n.label}
             </Link>
@@ -115,7 +115,7 @@ export function SiteHeader() {
                   to="/"
                   hash={n.hash}
                   onClick={() => setOpen(false)}
-                  className="block px-3 py-3 text-base text-cream rounded-md hover:bg-white/5"
+                  className="block px-3 py-3 text-[0.85rem] text-cream rounded-md hover:bg-white/5"
                 >
                   {n.label}
                 </Link>
@@ -125,7 +125,7 @@ export function SiteHeader() {
                   to={n.to}
                   viewTransition
                   onClick={() => setOpen(false)}
-                  className="block px-3 py-3 text-base text-cream rounded-md hover:bg-white/5"
+                  className="block px-3 py-3 text-[0.85rem] text-cream rounded-md hover:bg-white/5"
                 >
                   {n.label}
                 </Link>
