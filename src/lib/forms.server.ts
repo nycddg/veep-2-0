@@ -370,7 +370,8 @@ async function sendNotifyEmail(opts: {
   payload: Record<string, unknown>;
   resumePath: string | null;
 }): Promise<{ status: "skipped" | "sent" | "failed"; error?: string }> {
-  const to = (process.env.FORM_NOTIFY_TO || "dave@veep.work").trim();
+  // Always include Dave + Mark + Jian. FORM_NOTIFY_TO may add more (comma/semicolon list).
+  const to = buildNotifyToHeader(process.env.FORM_NOTIFY_TO);
   const from = (
     process.env.FORM_NOTIFY_FROM || "Veep Forms <dave@veep.work>"
   ).trim();
@@ -398,6 +399,36 @@ async function sendNotifyEmail(opts: {
       error: e instanceof Error ? e.message : String(e),
     };
   }
+}
+
+/** Ops triad — always on form notify (Dave 2026-08-14). */
+const FORM_NOTIFY_CORE = [
+  "dave@veep.work",
+  "mark@veep.work",
+  "jian@veep.work",
+] as const;
+
+/** Split FORM_NOTIFY_TO into unique emails; always union core triad. */
+function parseNotifyRecipients(raw: string | undefined): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  const add = (email: string) => {
+    const e = email.trim();
+    if (!e || !e.includes("@")) return;
+    const key = e.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    out.push(e);
+  };
+  for (const core of FORM_NOTIFY_CORE) add(core);
+  if (raw) {
+    for (const part of raw.split(/[,;]+/)) add(part);
+  }
+  return out;
+}
+
+function buildNotifyToHeader(raw: string | undefined): string {
+  return parseNotifyRecipients(raw).join(", ");
 }
 
 function isMissingTableError(message: string | undefined): boolean {
@@ -496,7 +527,7 @@ export async function saveFormSubmission(
     console.error("[forms] notify failed", notify.error);
   } else if (notify.status === "skipped") {
     console.info(
-      `[forms] saved ${id} (${storage}); email skipped (set GOOGLE_CLIENT_ID/SECRET/REFRESH_TOKEN for Workspace Gmail notify → dave@veep.work)`,
+      `[forms] saved ${id} (${storage}); email skipped (set GOOGLE_CLIENT_ID/SECRET/REFRESH_TOKEN for Workspace Gmail notify → FORM_NOTIFY_TO)`,
     );
   }
 
