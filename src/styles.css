@@ -79,7 +79,7 @@
 :root {
   --radius: 0.5rem;
 
-  /* Premium managed-marketplace palette — deep navy #050810 canvas, bright blue accent. */
+  /* Premium managed-marketplace palette — deep navy #050810 canvas, punch blue accent. */
   color-scheme: dark;
   --background: oklch(0.115 0.03 265);        /* deep navy ≈ #050810 */
   --foreground: oklch(0.96 0 0);              /* off-white */
@@ -98,16 +98,18 @@
   --stone-soft: oklch(0.68 0.03 255);         /* tertiary / mono labels — clears AA at 12px on navy */
   --rule: oklch(1 0 0 / 0.12);                /* faint ruled-grid lines, just visible on OLED */
 
-  /* Accent — bright blue primary, warm coral for featured/urgent signals */
-  --forest: #789fff;                          /* bright blue */
+  /* Accent — punch blue primary (light+dark), signal red for featured/urgent only.
+     Locked 2026-08-14: #3474F4 replaces #789FFF (dark) + #5B46F5 (light indigo slop).
+     Signal red #F43F34 replaces soft coral #EC6B66. */
+  --forest: #3474f4;                          /* punch blue */
   --forest-deep: oklch(0.205 0.05 265);       /* navy inset panel */
   --forest-foreground: oklch(0.98 0 0);
 
   /* Illustration spectrum (never on chrome, only inside SVG illustrations) */
   --accent-mint: oklch(0.82 0.14 175);
   --accent-cyan: oklch(0.80 0.10 220);
-  --accent-gold: #789fff;                     /* remapped to bright blue */
-  --accent-coral: #ec6b66;                    /* warm coral for featured signals */
+  --accent-gold: #3474f4;                     /* remapped to punch blue */
+  --accent-coral: #f43f34;                    /* signal red — featured/urgent only */
 
   --card: oklch(1 0 0 / 0.04);                /* glass card over navy canvas */
   --card-foreground: var(--cream);
@@ -162,12 +164,12 @@ html.light {
   --stone-soft: oklch(0.52 0.025 258);        /* tertiary / mono labels */
   --rule: oklch(0 0 0 / 0.10);
 
-  /* Brand accent flips to vivid purple in light mode for contrast on cream. */
-  --forest: #5b46f5;
-  --forest-deep: oklch(0.92 0.02 260);
+  /* Brand accent stays punch blue on cream (no separate light purple). */
+  --forest: #3474f4;
+  --forest-deep: oklch(0.92 0.03 250);
   --forest-foreground: oklch(0.18 0.03 265);
-  --accent-gold: #5b46f5;
-  --ring: #5b46f5;
+  --accent-gold: #3474f4;
+  --ring: #3474f4;
 
   --card: oklch(0 0 0 / 0.035);
   --card-foreground: var(--cream);
@@ -249,7 +251,7 @@ html.light .hover\:bg-cream\/90:hover { background-color: oklch(0.24 0.03 265); 
 
 /* Soften white glow shadows that only work on dark canvas */
 html.light .shadow-\[0_0_60px_-10px_rgba\(255\,255\,255\,0\.35\)\] {
-  box-shadow: 0 12px 40px -16px rgb(91 70 245 / 0.28);
+  box-shadow: 0 12px 40px -16px rgb(52 116 244 / 0.28);
 }
 
 /* ─── Spotlight band ────────────────────────────────────────────────────────
@@ -268,13 +270,13 @@ html.light .shadow-\[0_0_60px_-10px_rgba\(255\,255\,255\,0\.35\)\] {
   --stone: oklch(0.42 0.02 260);
   --stone-soft: oklch(0.52 0.025 258);
   --rule: oklch(0 0 0 / 0.10);
-  --forest: #5b46f5;
-  --forest-deep: oklch(0.92 0.02 260);
+  --forest: #3474f4;
+  --forest-deep: oklch(0.92 0.03 250);
   --forest-foreground: oklch(0.18 0.03 265);
-  --accent-gold: #5b46f5;
-  --ring: #5b46f5;
+  --accent-gold: #3474f4;
+  --ring: #3474f4;
   /* Derived tokens must be restated: their :root values already resolved. */
-  --accent: #5b46f5;
+  --accent: #3474f4;
   --accent-foreground: oklch(0.98 0 0);
   --primary: oklch(0.18 0.03 265);
   --primary-foreground: oklch(0.98 0 0);
@@ -311,12 +313,12 @@ html.light .spotlight-invert {
   --stone: oklch(0.80 0.02 250);
   --stone-soft: oklch(0.68 0.03 255);
   --rule: oklch(1 0 0 / 0.10);
-  --forest: #789fff;
+  --forest: #3474f4;
   --forest-deep: oklch(0.205 0.05 265);
   --forest-foreground: oklch(0.98 0 0);
-  --accent-gold: #789fff;
-  --ring: #789fff;
-  --accent: #789fff;
+  --accent-gold: #3474f4;
+  --ring: #3474f4;
+  --accent: #3474f4;
   --accent-foreground: oklch(0.98 0 0);
   --primary: oklch(0.98 0 0);
   --primary-foreground: oklch(0.115 0.03 265);
