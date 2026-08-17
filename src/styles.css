@@ -685,7 +685,6 @@ html.light .glass-card {
   .motion-reveal { opacity: 1 !important; transform: none !important; }
   .motion-hover-lift:hover,
   .motion-cta:hover { transform: none !important; }
-  .op-float, .op-float-delayed { animation: none !important; }
   .motion-image-tilt,
   .group:hover .motion-image-tilt,
   .group:focus-visible .motion-image-tilt,
@@ -702,32 +701,3 @@ html.light .glass-card {
   to { transform: translateX(-50%); }
 }
 
-/* Illustration draw-in — used by BarStack / Waveform on mount */
-@keyframes drawUp {
-  from { transform: scaleY(0); opacity: 0; }
-  to   { transform: scaleY(1); opacity: 1; }
-}
-@utility draw-up {
-  transform-origin: bottom;
-  animation: drawUp 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes orbit {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-/* Subtle command-center scan line used by the Network Impact panel */
-@keyframes scan {
-  from { top: -80px; }
-  to   { top: 100%; }
-}
-
-@utility animate-scan {
-  animation: scan 6s linear infinite;
-}
-
-/* Mint→coral gradient text — used only on the AudienceTabs active underline. */
-@utility gradient-underline {
-  background-image: linear-gradient(90deg, #7CE0C0, #56C7C0 40%, #F2A47C 70%, #EE6A4D);
-}

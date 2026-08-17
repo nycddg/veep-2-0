@@ -30,41 +30,6 @@ import jessicaDavilaHeadshot from "@/assets/operator-jessica-davila.png.asset.js
 // Content
 // ─────────────────────────────────────────────────────────────────────────────
 
-const heroOperators = [
-  {
-    name: "Jian Yang",
-    role: "Finance Operating Partner",
-    chips: ["Ex-UGE", "Real Estate"],
-    tilt: -2,
-    translateY: 16,
-    photoUrl: jianYangHeadshot.url,
-  },
-  {
-    name: "Erika Velazquez",
-    role: "Marketing Operating Partner",
-    chips: ["Ex-Morning Brew", "New Media"],
-    tilt: 3,
-    translateY: -32,
-    photoUrl: erikaVelazquezHeadshot.url,
-  },
-  {
-    name: "Elaine Bogart",
-    role: "Finance Operating Partner",
-    chips: ["Ex-Fullscreen", "Web3"],
-    tilt: -4,
-    translateY: 48,
-    photoUrl: elaineBogartHeadshot.url,
-  },
-  {
-    name: "Victoria Kasumu",
-    role: "People Operating Partner",
-    chips: ["Ex-Zocdoc", "Tech"],
-    tilt: 2,
-    translateY: 0,
-    photoUrl: victoriaKasumuHeadshot.url,
-  },
-];
-
 const spotlightOperators = [
   {
     name: "Jian Yang",
