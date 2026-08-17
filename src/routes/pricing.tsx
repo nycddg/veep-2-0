@@ -172,7 +172,7 @@ function Page() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
             {notIncluded.map((n) => (
               <div key={n.t}>
-                <div className="text-lg text-cream">{n.t}</div>
+                <div className="font-serif font-medium text-xl text-cream tracking-tight">{n.t}</div>
                 <p className="mt-2 text-base text-cream/75 leading-relaxed">{n.d}</p>
               </div>
             ))}
@@ -226,7 +226,7 @@ function Page() {
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
             {faqs.map((f) => (
               <div key={f.q} className="border-t border-white/10 pt-6">
-                <div className="text-lg text-cream leading-snug">{f.q}</div>
+                <div className="text-lg text-cream tracking-tight leading-snug">{f.q}</div>
                 <p className="mt-2 text-base text-cream/80 leading-relaxed">{f.a}</p>
               </div>
             ))}

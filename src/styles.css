@@ -454,6 +454,15 @@ html.light .glass-card {
 
 
 
+/* ─── Named item-title roles (Pass 2 writedown) ─────────────────────────────
+   Item titles come in exactly two voices — do not invent a third:
+   · title-xl (grid items): "font-serif font-medium text-xl text-cream
+     tracking-tight" — home problems / benefits / StepFlow / EngagementTile,
+     pricing tiers + not-included, for-portfolios steps + included, founders.
+   · title-lg (list items under a numbered rail, and FAQ questions):
+     "text-lg text-cream tracking-tight" (plain 400 weight) — about
+     principles, join criteria, pricing FAQ questions. */
+
 /* Monospace label — section indices, table chrome, category tags (stone-soft) */
 @utility mono-label {
   font-family: var(--font-mono);

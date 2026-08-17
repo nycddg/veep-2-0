@@ -240,7 +240,7 @@ function Page() {
             {steps.map((s) => (
               <div key={s.n}>
                 <div className="eyebrow">{s.n}</div>
-                <div className="mt-3 text-lg sm:text-xl text-cream tracking-tight">{s.t}</div>
+                <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">{s.t}</div>
                 <p className="mt-2 text-base text-cream/75 leading-relaxed">{s.d}</p>
               </div>
             ))}
@@ -262,7 +262,7 @@ function Page() {
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
             {included.map((i) => (
               <div key={i.t}>
-                <div className="text-lg sm:text-xl text-cream tracking-tight">{i.t}</div>
+                <div className="font-serif font-medium text-xl text-cream tracking-tight">{i.t}</div>
                 <p className="mt-2 text-base text-cream/75 leading-relaxed">{i.d}</p>
               </div>
             ))}
