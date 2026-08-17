@@ -233,7 +233,7 @@ function InlineCTA({
   const className =
     "group motion-cta cta-accent rounded-full px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
   return (
-    <div className="flex flex-col items-start gap-4">
+    <div className="flex flex-col items-start gap-[1.1rem]">
       {mode === "contact" ? (
         <Link to="/contact" className={className}>
           {label} <ArrowRight size={16} className="motion-arrow" />
@@ -524,7 +524,7 @@ function Index() {
             <Testimonials />
           </div>
 
-          <div className="mt-[4.4rem] md:mt-[6.6rem]">
+          <div className="mt-16">
             <InlineCTA />
           </div>
         </div>

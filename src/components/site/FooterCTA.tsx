@@ -22,10 +22,7 @@ export function FooterCTA({
         <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream text-balance leading-[1.15] allow-wrap">
           {headline}
         </h2>
-        <p className="mt-5 text-cream/80 text-base sm:text-lg max-w-xl leading-relaxed">
-          {sub}
-        </p>
-        <div className="mt-8 flex flex-col items-start sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5">
+        <div className="mt-8 flex flex-col items-start gap-[1.1rem]">
           {primary === "contact" ? (
             <Link to="/contact" className={primaryClass}>
               Get in touch <ArrowRight size={16} className="motion-arrow" />
@@ -40,6 +37,9 @@ export function FooterCTA({
               Book intro call <ArrowRight size={16} className="motion-arrow" />
             </a>
           )}
+          <p className="text-cream/80 text-base sm:text-lg max-w-xl leading-relaxed">
+            {sub}
+          </p>
           <Link
             to="/contact"
             search={{ intent: "audit" }}
