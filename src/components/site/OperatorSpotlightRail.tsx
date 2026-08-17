@@ -18,7 +18,6 @@ function initials(name: string) {
 }
 
 function OperatorCard({ op }: { op: Operator }) {
-  const accent = op.featured ? "accent-coral" : "accent";
   return (
     <article
       tabIndex={0}
@@ -167,7 +166,7 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
             type="button"
             onClick={() => scrollByCard(-1)}
             aria-label="Previous operator"
-            className="group w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent hover:border-accent/40 transition-colors duration-200"
+            className="group w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent hover:border-accent/40 transition-colors duration-200"
           >
             <ArrowLeft size={15} className="motion-arrow" />
           </button>
@@ -175,7 +174,7 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
             type="button"
             onClick={() => scrollByCard(1)}
             aria-label="Next operator"
-            className="group w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent hover:border-accent/40 transition-colors duration-200"
+            className="group w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent hover:border-accent/40 transition-colors duration-200"
           >
             <ArrowRight size={15} className="motion-arrow" />
           </button>
