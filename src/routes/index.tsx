@@ -487,7 +487,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-x-8 md:gap-x-14 gap-y-12 md:gap-x-20">
+          <div className="grid sm:grid-cols-2 gap-x-8 md:gap-x-20 gap-y-12">
             {problems.map((p) => (
               <div key={p.t}>
                 <h3 className="font-serif font-medium text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
@@ -650,7 +650,7 @@ function Index() {
               Senior ownership on your terms.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-10 md:gap-y-14">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
             {benefits.map((b, i) => (
               <div key={b.t}>
                 <div className="eyebrow">
@@ -720,7 +720,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 md:gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-10 md:gap-y-14">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
             {cases.map((c) => (
               <div key={c.tag} className="flex flex-col rounded-2xl bg-[color:var(--surface-raised)] p-5 sm:p-7">
                 <span className="eyebrow">
