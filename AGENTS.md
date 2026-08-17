@@ -1,10 +1,10 @@
-<!-- LOVABLE:BEGIN -->
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+# Cursor / Fable — veep.work polish clone
+
+This is **not** the live repo. Live is `/opt/data/veep-2-0` → `nycddg/veep-2-0` → veep.work.
+
+1. Read `LOCKS.md` then `PLAN.md`.
+2. Do not push to GitHub unless Dave creates a **private** preview remote.
+3. `live-readonly` fetch-only. Push is disabled on purpose.
+4. Small commits on `fable/polish`. Build must stay green.
+
+Lovable history warning on the live repo does not apply here. Do not reconnect Lovable.

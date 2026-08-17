@@ -1,0 +1,16 @@
+---
+description: Veep site locks — never override
+alwaysApply: true
+---
+
+You are working on a **disconnected clone** of veep.work. Never add a GitHub remote to `nycddg/veep-2-0`. Never push live.
+
+Read `LOCKS.md` and `PLAN.md` before editing.
+
+Type: IBM Plex Sans heads/body (heads 500). IBM Plex Mono is chrome only (eyebrows/labels/stats). No 600/700. No Mono headlines.
+
+Keep: dark default, `#789FFF` / `#3474F4` / `#F43F34`, 95% + Match Matrix bars/%, 75+, Book intro call as homepage primary, canvas mobile 3/4 + matrix hidden, Why Veep md+ only.
+
+Do not rewrite copy, proof, CTA destinations, or add a new motion library.
+
+Polish only. Site is already in production — no “launch blocker” language.
