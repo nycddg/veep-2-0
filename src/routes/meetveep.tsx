@@ -117,13 +117,6 @@ function MeetVeepPage() {
               >
                 See how it works
               </Link>
-              <Link
-                to="/pricing"
-                hash="tiers"
-                className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
-              >
-                See pricing
-              </Link>
             </div>
           </div>
         </div>
@@ -144,9 +137,9 @@ function MeetVeepPage() {
             <Link
               to="/pricing"
               hash="tiers"
-              className="group motion-cta rounded-full border border-cream/20 px-7 py-3.5 text-sm font-medium text-cream hover:bg-cream/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent inline-flex items-center justify-center gap-2 min-h-11"
+              className="group motion-link inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70 min-h-11"
             >
-              See pricing <ArrowRight size={16} className="motion-arrow" />
+              See pricing <ArrowRight size={14} className="motion-arrow" />
             </Link>
             <Link
               to="/for-portfolios"
