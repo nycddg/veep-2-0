@@ -499,7 +499,7 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-20 md:mt-24 border-t border-white/10 pt-12">
+          <div className="mt-20 md:mt-24 motion-hairline pt-12">
             <div className="mono-label mb-8">Instead of</div>
             <div className="motion-stagger grid md:grid-cols-3 gap-y-10">
               {alternatives.map((a) => (
@@ -742,7 +742,7 @@ function Index() {
             ))}
           </div>
 
-          <div className="motion-stagger mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10">
+          <div className="motion-stagger mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 motion-hairline-y">
             {[
               { k: "75+", v: "vetted operators" },
               { k: "72h", v: "to shortlist" },

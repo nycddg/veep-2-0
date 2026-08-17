@@ -720,6 +720,51 @@ html.light .glass-card {
               backdrop-filter var(--dur-hover) var(--ease-standard);
 }
 
+/* Hairline draw-in — decorative section dividers draw 0→100% width when
+   their Reveal arms (same defaults-visible contract as motion-reveal: SSR /
+   no-JS render the line painted; only an armed below-fold section draws).
+   Uses the --rule token so the line remaps through light mode and
+   spotlight-invert. Only for decorative internal dividers — load-bearing
+   borders (section boundaries, card outlines, form fields) stay real borders. */
+.motion-hairline {
+  background-image: linear-gradient(var(--rule), var(--rule));
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 1px;
+  transition: background-size 700ms var(--ease-out-expo);
+}
+/* border-y variant (top + bottom rules) */
+.motion-hairline-y {
+  background-image: linear-gradient(var(--rule), var(--rule)),
+                    linear-gradient(var(--rule), var(--rule));
+  background-repeat: no-repeat;
+  background-position: 0 0, 0 100%;
+  background-size: 100% 1px, 100% 1px;
+  transition: background-size 700ms var(--ease-out-expo);
+}
+/* pricing-tier variant — top rule on mobile, left rule on md+ (mirrors the
+   border orientation swap of the tier grid) */
+.motion-hairline-tier {
+  background-image: linear-gradient(var(--rule), var(--rule));
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 1px;
+  transition: background-size 700ms var(--ease-out-expo);
+}
+@media (min-width: 768px) {
+  .motion-hairline-tier { background-size: 1px 100%; }
+}
+/* Hidden (pre-draw) state only exists when motion is allowed — reduced-motion
+   users always see the painted line. */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-reveal[data-in="false"] .motion-hairline,
+  .motion-reveal[data-in="false"] .motion-hairline-tier { background-size: 0% 1px; }
+  .motion-reveal[data-in="false"] .motion-hairline-y { background-size: 0% 1px, 0% 1px; }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+  .motion-reveal[data-in="false"] .motion-hairline-tier { background-size: 1px 0%; }
+}
+
 /* Reading-progress hairline — 1px accent line on the header's bottom edge
    that fills left→right with document scroll. Pure CSS scroll-driven
    animation; an indicator, not parallax (nothing moves against scroll).

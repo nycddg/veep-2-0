@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import { Reveal } from "@/components/site/Reveal";
 import { ogImageMeta } from "@/lib/seo";
 
 const tiers = [
@@ -117,7 +118,7 @@ function Page() {
       />
 
       {/* Four tiers — match homepage Engagements spacing (border-t + pad, not divide-y/gap clash) */}
-      <section id="tiers" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="tiers" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 min-w-0">
             {tiers.map((t) => (
@@ -126,7 +127,7 @@ function Page() {
                 className={`group motion-hover-lift flex flex-col md:min-h-[280px] pt-7 pb-6 pr-2 ${
                   t.featured
                     ? "border-t-2 border-accent md:border-t-0 md:pl-6 md:border-l-2 md:border-accent"
-                    : "border-t border-white/10 md:border-t-0 md:pl-6 md:border-l md:border-white/10"
+                    : "motion-hairline-tier md:pl-6"
                 }`}
               >
                 <div className="flex items-baseline gap-3 flex-wrap">
@@ -156,7 +157,7 @@ function Page() {
             All engagements carry a 30-day fit guarantee · Response within 1 business day
           </p>
         </div>
-      </section>
+      </Reveal>
 
       {/* What's not included */}
       <section className="bg-surface-band py-14 sm:py-16 md:py-28 border-t border-white/10">
