@@ -829,7 +829,10 @@ html.light .spotlight-invert .cta-accent:hover {
 /* Why Veep row wash — on row hover an accent wash slides across the Veep
    cell (background-size draw on the standard curve) while the dimension
    label lifts to cream. Non-interactive table gets a place for the eye to
-   rest; desktop-only by nature (the section is hidden md:block per lock). */
+   rest; desktop-only by nature (the section is hidden md:block per lock).
+   Dave 08.17 PASS4: the same wash is the sitewide card hover — put the
+   class straight on a surface-card box and self-:hover draws it (backgrounds
+   clip to the 20px radius on their own). No lift, no bounce. */
 .motion-row-wash {
   background-image: linear-gradient(
     color-mix(in oklab, var(--color-accent) 12%, transparent),
@@ -840,7 +843,8 @@ html.light .spotlight-invert .cta-accent:hover {
   background-size: 0% 100%;
   transition: background-size 240ms var(--ease-standard);
 }
-.group:hover .motion-row-wash { background-size: 100% 100%; }
+.group:hover .motion-row-wash,
+.motion-row-wash:hover { background-size: 100% 100%; }
 
 /* Reading-progress hairline — 1px accent line on the header's bottom edge
    that fills left→right with document scroll. Pure CSS scroll-driven
@@ -911,6 +915,8 @@ html.light .spotlight-invert .cta-accent:hover {
   .group:focus-visible .motion-image-tilt,
   .group:focus-within .motion-image-tilt { transform: none !important; }
   .motion-underline { background-size: 0 0 !important; padding-bottom: 0 !important; }
+  .group:hover .motion-row-wash,
+  .motion-row-wash:hover { background-size: 0% 100% !important; }
 }
 
 @utility marquee {

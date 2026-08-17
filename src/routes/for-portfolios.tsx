@@ -110,7 +110,7 @@ function Page() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
             {problems.map((p, i) => (
-              <div key={p.t} className="rounded-[20px] border border-white/10 bg-surface-card p-6 sm:p-7">
+              <div key={p.t} className="motion-row-wash rounded-[20px] border border-white/10 bg-surface-card p-6 sm:p-7">
                 <div className="eyebrow">
                   {String(i + 1).padStart(2, "0")}
                 </div>
@@ -202,7 +202,7 @@ function Page() {
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="rounded-[20px] border border-white/10 bg-surface-card p-5 sm:p-8"
+                className="motion-row-wash rounded-[20px] border border-white/10 bg-surface-card p-5 sm:p-8"
               >
                 <div className="font-serif font-medium text-xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums break-words">
