@@ -520,12 +520,12 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-16">
-            <InlineCTA />
-          </div>
-
           <div className="mt-16 md:mt-24">
             <Testimonials />
+          </div>
+
+          <div className="mt-[4.4rem] md:mt-[6.6rem]">
+            <InlineCTA />
           </div>
         </div>
       </Reveal>

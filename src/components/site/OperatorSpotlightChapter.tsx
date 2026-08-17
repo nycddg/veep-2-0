@@ -20,21 +20,27 @@ const networkImpact = [
   { figure: "20+", label: "Exits & acquisitions", detail: "Including strategic sales, integrations, and post-merger transformations." },
 ];
 
-export function OperatorSpotlightChapter() {
+export function OperatorSpotlightChapter({
+  headline = "Operators who've held the seat and delivered.",
+  sub = "Every Veep operator has held the role they're deployed into, at a comparable-stage company, with outcomes we can reference. No juniors, no generalists, no career consultants.",
+  operators = spotlightOperators,
+}: {
+  headline?: string;
+  sub?: string;
+  operators?: typeof spotlightOperators;
+}) {
   return (
     <>
       <div className="max-w-5xl mb-12 md:mb-14">
         <div className="eyebrow">Operator spotlight</div>
         <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-          Operators who've held the seat and delivered.
+          {headline}
         </h2>
         <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
-          Every Veep operator has held the role they're deployed into, at a
-          comparable-stage company, with outcomes we can reference. No juniors, no
-          generalists, no career consultants.
+          {sub}
         </p>
       </div>
-      <OperatorSpotlightRail operators={spotlightOperators} />
+      <OperatorSpotlightRail operators={operators} />
 
       <p className="mt-8 text-left text-sm text-stone">
         Just a few of the 75+ operators in our invite-only network.

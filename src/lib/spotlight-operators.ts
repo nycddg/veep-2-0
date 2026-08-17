@@ -138,3 +138,24 @@ export const spotlightOperators = [
     photoScale: 1.03,
   },
 ];
+
+/** For Funds rail only. Home keeps spotlightOperators order. */
+const FUNDS_LEAD = [
+  "Alan Poussaint",
+  "Sean Park",
+  "Jian Yang",
+  "Elaine Bogart",
+  "Jonathan Levinson",
+  "Vanessa Kwan",
+  "Alasdair Lloyd-Jones",
+  "Miguel Ferreyra de Bone",
+  "Jennifer Kasper",
+  "Erika Velazquez",
+  "Victoria Kasumu",
+  "Jessica Davila",
+];
+
+export function operatorsForFunds() {
+  const byName = new Map(spotlightOperators.map((o) => [o.name, o]));
+  return FUNDS_LEAD.map((n) => byName.get(n)).filter(Boolean) as typeof spotlightOperators;
+}

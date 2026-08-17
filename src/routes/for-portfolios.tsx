@@ -4,6 +4,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { Reveal } from "@/components/site/Reveal";
 import { OperatorSpotlightChapter } from "@/components/site/OperatorSpotlightChapter";
+import { operatorsForFunds } from "@/lib/spotlight-operators";
 import { ogImageMeta } from "@/lib/seo";
 
 const problems = [
@@ -183,7 +184,11 @@ function Page() {
           08.17 PASS4: home is the source of truth, the 75+/72h remix retires) */}
       <Reveal as="section" className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
-          <OperatorSpotlightChapter />
+          <OperatorSpotlightChapter
+            headline="Operators ready when the portfolio cannot wait."
+            sub="Finance, growth, and people operators who have held the seat through transactions, integrations, interim gaps, and value-creation work. The same invite-only roster. Sequenced here for funds. No juniors, no generalists, no career consultants."
+            operators={operatorsForFunds()}
+          />
         </div>
       </Reveal>
 
