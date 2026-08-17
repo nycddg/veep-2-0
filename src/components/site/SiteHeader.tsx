@@ -105,6 +105,10 @@ export function SiteHeader() {
         </div>
       </div>
 
+      {/* Reading progress — 1px accent fill along the header's bottom edge.
+          CSS scroll-driven; hidden entirely where unsupported (see styles.css). */}
+      <div aria-hidden className="motion-progress absolute inset-x-0 bottom-0 h-px" />
+
       {open && (
         <div className="lg:hidden border-t border-white/8 bg-background">
           <div className="px-4 py-4 space-y-0.5">

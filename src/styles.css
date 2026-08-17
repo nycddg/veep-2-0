@@ -720,6 +720,26 @@ html.light .glass-card {
               backdrop-filter var(--dur-hover) var(--ease-standard);
 }
 
+/* Reading-progress hairline — 1px accent line on the header's bottom edge
+   that fills left→right with document scroll. Pure CSS scroll-driven
+   animation; an indicator, not parallax (nothing moves against scroll).
+   Browsers without scroll-timeline support never render it (@supports),
+   and reduced-motion hides it (see reduce block). */
+@keyframes veep-read-progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.motion-progress { display: none; }
+@supports (animation-timeline: scroll()) {
+  .motion-progress {
+    display: block;
+    background-color: var(--color-accent);
+    transform-origin: left center;
+    animation: veep-read-progress linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
 /* Accordion body — grid-rows animation avoids max-height jank.
    360ms gives the open a weighted, unhurried settle. */
 @utility motion-collapse {
@@ -761,6 +781,7 @@ html.light .glass-card {
   .motion-reveal { opacity: 1 !important; transform: none !important; }
   .motion-stagger > * { opacity: 1 !important; transform: none !important; }
   .motion-ping { animation: none !important; opacity: 0 !important; }
+  .motion-progress { display: none !important; }
   .motion-hover-lift:hover,
   .motion-cta:hover { transform: none !important; }
   .motion-image-tilt,
