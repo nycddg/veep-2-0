@@ -235,7 +235,7 @@ function Page() {
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="rounded-2xl bg-[color:var(--surface-raised)] p-5 sm:p-8"
+                className="rounded-[20px] border border-white/10 bg-surface-card p-5 sm:p-8"
               >
                 <div className="font-serif font-medium text-xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums break-words">
