@@ -3,6 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { Reveal } from "@/components/site/Reveal";
+import { OperatorSpotlightRail } from "@/components/site/OperatorSpotlightRail";
+import { spotlightOperators } from "@/lib/spotlight-operators";
 import { ogImageMeta } from "@/lib/seo";
 
 const problems = [
@@ -178,6 +180,25 @@ function Page() {
         </div>
       </Reveal>
 
+      {/* Operator spotlight — the faces behind the roster (shared home rail,
+          shared data; headline + footnote reuse home's locked copy) */}
+      <Reveal as="section" className="bg-surface-raised py-14 sm:py-16 md:py-28">
+        <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mb-12 md:mb-14">
+            <div className="eyebrow">
+              Operator spotlight
+            </div>
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
+              Operators who've held the seat and delivered.
+            </h2>
+          </div>
+          <OperatorSpotlightRail operators={spotlightOperators} />
+          <p className="mt-8 text-left text-sm text-stone">
+            Just a few of the 75+ operators in our invite-only network.
+          </p>
+        </div>
+      </Reveal>
+
       {/* Roster tiers */}
       <section className="bg-surface-band py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -228,7 +249,7 @@ function Page() {
 
       {/* How it works — drops off the roster band to raised so the two money
           chapters stop reading as one slab */}
-      <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
+      <Reveal as="section" className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
@@ -238,7 +259,7 @@ function Page() {
               One agreement. Every portfolio company activated.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-14 gap-y-10 md:gap-y-12 border-t border-white/10 pt-10 md:pt-12">
+          <div className="motion-stagger grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-14 gap-y-10 md:gap-y-12 motion-hairline pt-10 md:pt-12">
             {steps.map((s) => (
               <div key={s.n}>
                 <div className="eyebrow">{s.n}</div>
@@ -247,8 +268,28 @@ function Page() {
               </div>
             ))}
           </div>
+
+          {/* Proof band — the locked home stats, unchanged numbers only */}
+          <div className="motion-stagger mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 motion-hairline-y">
+            {[
+              { k: "75+", v: "vetted operators" },
+              { k: "72h", v: "to shortlist" },
+              { k: "<10d", v: "to deploy" },
+              { k: "30d", v: "fit guarantee" },
+            ].map((s) => (
+              <div key={s.k}>
+                <div className="stat-figure text-4xl md:text-5xl text-cream">{s.k}</div>
+                <div className="mt-2 mono-label font-medium">
+                  {s.v}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-stone">
+            $2B+ cost savings delivered · $1B+ capital raised · $3B+ new revenue generated · Aggregated outcomes across our operator roster.
+          </p>
         </div>
-      </section>
+      </Reveal>
 
       {/* Included vs. billed */}
       <section className="py-14 sm:py-16 md:py-28">
