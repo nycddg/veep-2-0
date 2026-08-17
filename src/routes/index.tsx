@@ -456,7 +456,7 @@ function Index() {
               </div>
             </div>
 
-            <p className="mt-12 text-sm text-stone">
+            <p className="mt-12 mono-label text-right">
               Aggregated outcomes across our operator roster.
             </p>
           </div>
@@ -605,12 +605,12 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-12 md:mt-20">
-            <Testimonials />
-          </div>
-
           <div className="mt-16">
             <InlineCTA />
+          </div>
+
+          <div className="mt-16 md:mt-24">
+            <Testimonials />
           </div>
         </div>
       </Reveal>
