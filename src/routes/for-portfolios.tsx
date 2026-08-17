@@ -3,8 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { Reveal } from "@/components/site/Reveal";
-import { OperatorSpotlightRail } from "@/components/site/OperatorSpotlightRail";
-import { spotlightOperators } from "@/lib/spotlight-operators";
+import { OperatorSpotlightChapter } from "@/components/site/OperatorSpotlightChapter";
 import { ogImageMeta } from "@/lib/seo";
 
 const problems = [
@@ -180,43 +179,11 @@ function Page() {
         </div>
       </Reveal>
 
-      {/* Operator spotlight — the faces behind the roster (shared home rail,
-          shared data; headline + footnote reuse home's locked copy) */}
+      {/* Operator spotlight — the home /#operators chapter verbatim (Dave
+          08.17 PASS4: home is the source of truth, the 75+/72h remix retires) */}
       <Reveal as="section" className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-12 md:mb-14">
-            <div className="eyebrow">
-              Operator spotlight
-            </div>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Operators who've held the seat and delivered.
-            </h2>
-          </div>
-          <OperatorSpotlightRail operators={spotlightOperators} />
-          <p className="mt-8 text-left text-sm text-stone">
-            Just a few of the 75+ operators in our invite-only network.
-          </p>
-
-          {/* Locked home stats live inside the spotlight chapter (Dave 08.17:
-              rail + aggregated stats are one chapter, not split down the page) */}
-          <div className="motion-stagger mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 motion-hairline-y">
-            {[
-              { k: "75+", v: "vetted operators" },
-              { k: "72h", v: "to shortlist" },
-              { k: "<10d", v: "to deploy" },
-              { k: "30d", v: "fit guarantee" },
-            ].map((s) => (
-              <div key={s.k}>
-                <div className="stat-figure text-4xl md:text-5xl text-cream">{s.k}</div>
-                <div className="mt-2 mono-label font-medium">
-                  {s.v}
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 mono-label text-right">
-            $2B+ cost savings delivered · $1B+ capital raised · $3B+ new revenue generated · Aggregated outcomes across our operator roster.
-          </p>
+          <OperatorSpotlightChapter />
         </div>
       </Reveal>
 
