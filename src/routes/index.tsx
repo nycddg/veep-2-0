@@ -785,12 +785,12 @@ function Index() {
               <div className="p-5 eyebrow">Veep</div>
             </div>
             {differentiators.map((r) => (
-              <div key={r.dim} className="grid md:grid-cols-subgrid md:col-span-3 gap-y-2 gap-x-0 p-5 md:p-0">
-                <div className="md:p-5 mono-label">
+              <div key={r.dim} className="group grid md:grid-cols-subgrid md:col-span-3 gap-y-2 gap-x-0 p-5 md:p-0">
+                <div className="md:p-5 mono-label transition-colors duration-200 group-hover:text-cream">
                   {r.dim}
                 </div>
                 <div className="md:p-5 text-base text-stone leading-relaxed">{r.old}</div>
-                <div className="md:p-5 text-base text-cream leading-relaxed md:bg-accent/[0.06]">
+                <div className="md:p-5 text-base text-cream leading-relaxed md:bg-accent/[0.06] motion-row-wash">
                   {r.veep}
                 </div>
               </div>

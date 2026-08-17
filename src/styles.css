@@ -765,6 +765,22 @@ html.light .glass-card {
   .motion-reveal[data-in="false"] .motion-hairline-tier { background-size: 1px 0%; }
 }
 
+/* Why Veep row wash — on row hover an accent wash slides across the Veep
+   cell (background-size draw on the standard curve) while the dimension
+   label lifts to cream. Non-interactive table gets a place for the eye to
+   rest; desktop-only by nature (the section is hidden md:block per lock). */
+.motion-row-wash {
+  background-image: linear-gradient(
+    color-mix(in oklab, var(--color-accent) 12%, transparent),
+    color-mix(in oklab, var(--color-accent) 12%, transparent)
+  );
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 0% 100%;
+  transition: background-size 240ms var(--ease-standard);
+}
+.group:hover .motion-row-wash { background-size: 100% 100%; }
+
 /* Reading-progress hairline — 1px accent line on the header's bottom edge
    that fills left→right with document scroll. Pure CSS scroll-driven
    animation; an indicator, not parallax (nothing moves against scroll).
