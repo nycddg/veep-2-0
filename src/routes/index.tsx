@@ -126,19 +126,22 @@ const differentiators = [
 
 const cases = [
   {
-    tag: "B2B SAAS · FINANCE OPERATING PARTNER",
+    tag: "B2B SAAS",
+    role: "Finance Operating Partner",
     trigger: "CEO was preparing for a first institutional round without a financial model, investor materials, or fundraising experience.",
     outcome: "Built a 3-year model, diligence-ready CAC/LTV dashboards, and coached the CEO through term sheets and investor meetings.",
     metric: "$6M raised in 6 weeks",
   },
   {
-    tag: "SOFTWARE STUDIO · GROWTH OPERATING PARTNER",
+    tag: "SOFTWARE STUDIO",
+    role: "Growth Operating Partner",
     trigger: "An $8M product development studio was stuck firefighting, with inconsistent project profitability and no scalable path into AI.",
     outcome: "Installed standardized project scoping and staffing, built an AI GTM and delivery framework, and hired a Director of AI.",
     metric: "Project margins up 25%",
   },
   {
-    tag: "PODCAST PUBLISHER · BUSINESS OPERATING PARTNER",
+    tag: "PODCAST PUBLISHER",
+    role: "Business Operating Partner",
     trigger: "A profitable, bootstrapped publisher with millions in revenue had never raised outside capital and had no financial model or growth plan.",
     outcome: "Built the company's first financial model, defined use of proceeds, and sourced investors representing over a third of the round.",
     metric: "Sourced 35% of capital",
@@ -591,18 +594,24 @@ function Index() {
 
           <div className="motion-stagger grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
             {cases.map((c) => (
-              <div key={c.tag} className="flex flex-col rounded-2xl bg-[color:var(--surface-raised)] p-5 sm:p-7">
+              <div key={c.tag} className="flex flex-col rounded-[20px] border border-white/10 bg-surface-card p-5 sm:p-7">
                 <span className="eyebrow">
                   {c.tag}
                 </span>
                 <p className="mt-6 text-base text-stone leading-relaxed">
                   <span className="text-cream">Trigger. </span>{c.trigger}
                 </p>
+                <div className="mt-4 mono-label">
+                  Assigned veep: {c.role}
+                </div>
                 <p className="mt-4 text-base text-stone leading-relaxed">
                   <span className="text-cream">Outcome. </span>{c.outcome}
                 </p>
-                <div className="mt-auto pt-8 font-serif font-medium text-xl text-accent tracking-tight">
-                  {c.metric}
+                <div className="mt-auto pt-6">
+                  <div className="border-t border-white/10" />
+                  <div className="mt-6 font-serif font-medium text-xl text-cream tracking-tight">
+                    {c.metric}
+                  </div>
                 </div>
               </div>
             ))}

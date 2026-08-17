@@ -71,6 +71,7 @@
   --color-surface-ink: var(--surface-ink);
   --color-surface-raised: var(--surface-raised);
   --color-surface-band: var(--surface-band);
+  --color-surface-card: var(--surface-card);
 
   --shadow-elegant: 0 1px 0 oklch(1 0 0 / 0.04), 0 24px 60px -30px oklch(0 0 0 / 0.60);
   --shadow-float: 0 20px 48px -20px oklch(0 0 0 / 0.55);
@@ -91,6 +92,10 @@
   --surface-ink: oklch(0.115 0.03 265);
   --surface-raised: oklch(0.155 0.028 262);
   --surface-band: oklch(0.185 0.022 258);
+  /* Card fill — one step above every band so contained boxes always lift
+     (Dave 08.17: dark cards were sinking below their band). Pairs with a
+     border-white/10 hairline, never a drop shadow. */
+  --surface-card: oklch(0.215 0.026 258);
 
   /* Semantic surface + text roles */
   --ink: oklch(0.115 0.03 265);               /* darkest navy for inverted pills */
@@ -158,6 +163,7 @@ html.light {
   --surface-ink: oklch(0.985 0.003 90);
   --surface-raised: oklch(0.965 0.005 85);
   --surface-band: oklch(0.945 0.006 80);
+  --surface-card: oklch(1 0 0);              /* paper-white card lifts off every light band */
 
   --ink: oklch(0.98 0 0);                     /* was navy; now cream so inverted pills flip */
   --cream: oklch(0.18 0.03 265);              /* was cream; now navy ink so text-cream reads on light */
@@ -264,6 +270,7 @@ html.light .spotlight-invert .hover\:bg-cream\/90:hover { background-color: oklc
   --surface-ink: oklch(0.965 0.005 85);
   --surface-raised: oklch(0.965 0.005 85);
   --surface-band: oklch(0.945 0.006 80);
+  --surface-card: oklch(1 0 0);
   --background: oklch(0.965 0.005 85);
   --foreground: oklch(0.18 0.03 265);
   --ink: oklch(0.98 0 0);
@@ -307,6 +314,7 @@ html.light .spotlight-invert {
   --surface-ink: oklch(0.135 0.03 265);
   --surface-raised: oklch(0.135 0.03 265);
   --surface-band: oklch(0.185 0.022 258);
+  --surface-card: oklch(0.215 0.026 258);
   --background: oklch(0.135 0.03 265);
   --foreground: oklch(0.98 0 0);
   --ink: oklch(0.115 0.03 265);
