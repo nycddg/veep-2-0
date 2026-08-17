@@ -226,8 +226,9 @@ function Page() {
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="bg-surface-band py-14 sm:py-16 md:py-28 border-t border-white/10">
+      {/* How it works — drops off the roster band to raised so the two money
+          chapters stop reading as one slab */}
+      <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">

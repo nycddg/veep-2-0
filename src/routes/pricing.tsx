@@ -159,8 +159,9 @@ function Page() {
         </div>
       </Reveal>
 
-      {/* What's not included */}
-      <section className="bg-surface-band py-14 sm:py-16 md:py-28 border-t border-white/10">
+      {/* What's not included — drops off the tiers band to raised so the page
+          breathes ink → band → raised → invert → raised instead of slab-slab */}
+      <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <div className="eyebrow">

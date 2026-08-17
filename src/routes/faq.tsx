@@ -79,22 +79,25 @@ function Page() {
         sub="If the answer is not here, book a 30-minute call with a Veep founder. We will help clarify the work, the right level of support, and whether Veep is the right fit."
       />
 
-      <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-10 md:space-y-14">
-          {groups.map((g) => (
-            <div key={g.label}>
-              <div className="eyebrow mb-6">
-                {g.label}
-              </div>
-              <div className="divide-y divide-white/10 border-y border-white/10">
-                {g.items.map((qa) => (
-                  <Accordion key={qa.q} q={qa.q} a={qa.a} />
-                ))}
-              </div>
+      {/* Groups alternate raised/ink so the long list reads as chapters, not
+          one slab */}
+      {groups.map((g, i) => (
+        <section
+          key={g.label}
+          className={`${i % 2 === 0 ? "bg-surface-raised" : ""} py-12 sm:py-14 md:py-16`}
+        >
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="eyebrow mb-6">
+              {g.label}
             </div>
-          ))}
-        </div>
-      </section>
+            <div className="divide-y divide-white/10 border-y border-white/10">
+              {g.items.map((qa) => (
+                <Accordion key={qa.q} q={qa.q} a={qa.a} />
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
 
       <FooterCTA primary="contact" />
     </>
