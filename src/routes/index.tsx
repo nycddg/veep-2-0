@@ -397,28 +397,6 @@ function Index() {
       <Reveal as="section" id="operators" className="py-14 sm:py-16 md:py-28 border-t border-white/10 scroll-mt-20">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
           <OperatorSpotlightChapter />
-
-          <div className="mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
-            <p className="text-sm text-stone">
-              75+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
-            </p>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group motion-link inline-flex items-center gap-2 text-sm font-medium text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70"
-              >
-                Book intro call <ArrowRight size={14} className="motion-arrow" />
-              </a>
-              <Link
-                to="/contact"
-                className="motion-link inline-flex items-center gap-2 text-sm text-cream/70 underline underline-offset-8 hover:underline-offset-4 decoration-white/20 hover:text-cream hover:decoration-white/50"
-              >
-                Get in touch
-              </Link>
-            </div>
-          </div>
         </div>
       </Reveal>
 

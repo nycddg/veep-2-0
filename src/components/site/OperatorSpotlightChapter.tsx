@@ -1,3 +1,6 @@
+import { Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
+import { BOOKING_URL } from "@/lib/booking";
 import { OperatorSpotlightRail } from "./OperatorSpotlightRail";
 import { spotlightOperators } from "@/lib/spotlight-operators";
 
@@ -75,6 +78,28 @@ export function OperatorSpotlightChapter() {
         <p className="mt-12 mono-label text-right">
           Aggregated outcomes across our operator roster.
         </p>
+
+        <div className="mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
+          <p className="text-sm text-stone">
+            75+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
+          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group motion-link inline-flex items-center gap-2 text-sm font-medium text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70"
+            >
+              Book intro call <ArrowRight size={14} className="motion-arrow" />
+            </a>
+            <Link
+              to="/contact"
+              className="motion-link inline-flex items-center gap-2 text-sm text-cream/70 underline underline-offset-8 hover:underline-offset-4 decoration-white/20 hover:text-cream hover:decoration-white/50"
+            >
+              Get in touch
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   );
