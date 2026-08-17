@@ -86,7 +86,7 @@ export function SiteHeader() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="motion-cta rounded-full bg-cream px-4 py-1.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="motion-cta cta-accent rounded-full px-4 py-1.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Book intro call
           </a>
@@ -141,7 +141,7 @@ export function SiteHeader() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="block rounded-full bg-cream px-4 py-3 text-sm text-center font-medium text-ink"
+                className="motion-cta cta-accent block rounded-full px-4 py-3 text-sm text-center font-medium"
               >
                 Book intro call
               </a>

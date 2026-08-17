@@ -6,7 +6,7 @@ import { TrustChip } from "./TrustChip";
 
 /**
  * PageHero — editorial dark-navy hero shared across every interior route.
- * Cream pill primary CTA, ghost link secondary. No mono chrome.
+ * Accent pill primary CTA, ghost link secondary. No mono chrome.
  *
  * Primary defaults to external booking. Pass primaryTo (+ optional primaryHash)
  * for in-site destinations (e.g. Join → #apply form). primaryHref overrides
@@ -43,7 +43,7 @@ export function PageHero({
   category?: string;
 }) {
   const primaryClass =
-    "group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
+    "group motion-cta cta-accent rounded-full px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
 
   const primaryInner = (
     <>

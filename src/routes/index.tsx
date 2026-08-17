@@ -254,7 +254,7 @@ function InlineCTA({
   mode?: "book" | "contact";
 }) {
   const className =
-    "group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
+    "group motion-cta cta-accent rounded-full px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
   return (
     <div className="flex flex-wrap items-center gap-4">
       {mode === "contact" ? (
@@ -316,7 +316,7 @@ function Index() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
+              className="group motion-cta cta-accent rounded-full px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
             >
               Book intro call <ArrowRight size={16} className="motion-arrow" />
             </a>
@@ -681,7 +681,7 @@ function Index() {
             <div className="lg:col-span-2 flex flex-col items-start lg:items-end gap-4">
               <Link
                 to="/for-portfolios"
-                className="motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 inline-flex items-center justify-center"
+                className="motion-cta cta-accent-dark rounded-full px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 inline-flex items-center justify-center"
               >
                 See how portfolio rosters work
               </Link>

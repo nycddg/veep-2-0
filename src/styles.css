@@ -245,10 +245,15 @@ html.light .hover\:decoration-white\/70:hover { text-decoration-color: rgb(10 19
 html.light .hover\:border-white\/25:hover { border-color: rgb(10 19 48 / 0.22); }
 html.light .hover\:border-white\/70:hover { border-color: rgb(10 19 48 / 0.45); }
 
-/* Cream CTA pills stay high-contrast: in light, cream token is navy — good for text-ink pills */
+/* Cream pills (portal / admin / file chrome). Hardcoded so they stay navy-on-cream
+   in light — but NOT inside .spotlight-invert, where --cream is already off-white
+   and a navy fill would sit on a navy band. */
 html.light .bg-cream { background-color: oklch(0.18 0.03 265); }
 html.light .text-ink { color: oklch(0.98 0 0); }
 html.light .hover\:bg-cream\/90:hover { background-color: oklch(0.24 0.03 265); }
+html.light .spotlight-invert .bg-cream { background-color: oklch(0.98 0 0); }
+html.light .spotlight-invert .text-ink { color: oklch(0.115 0.03 265); }
+html.light .spotlight-invert .hover\:bg-cream\/90:hover { background-color: oklch(0.98 0 0 / 0.9); }
 
 /* ─── Spotlight band ────────────────────────────────────────────────────────
    Inverted surface used to spotlight the "For Funds" callouts. Redefines the
@@ -670,6 +675,43 @@ html.light .glass-card {
 .group:focus-visible .motion-arrow,
 .group:focus-within .motion-arrow {
   transform: translateX(3px);
+}
+
+/* Accent fill on dark surfaces only. Type is locked navy (the :root --ink
+   value) and does not follow the --ink remap — cream/white on #789FFF is
+   ~2.6:1. Navy on #789FFF is ~7.7:1; navy on #3474F4 is ~4.6:1.
+   Light mode keeps the original navy-on-cream pill. Light invert is a navy
+   band, so it takes the accent fill (dark background). */
+@utility cta-accent {
+  background-color: var(--accent);
+  color: oklch(0.115 0.03 265);
+}
+.cta-accent:hover {
+  background-color: color-mix(in oklab, var(--accent) 82%, oklch(0.115 0.03 265));
+}
+html.light .cta-accent {
+  background-color: oklch(0.18 0.03 265);
+  color: oklch(0.98 0 0);
+}
+html.light .cta-accent:hover {
+  background-color: oklch(0.24 0.03 265);
+}
+html.light .spotlight-invert .cta-accent {
+  background-color: var(--accent);
+  color: oklch(0.115 0.03 265);
+}
+html.light .spotlight-invert .cta-accent:hover {
+  background-color: color-mix(in oklab, var(--accent) 82%, oklch(0.115 0.03 265));
+}
+
+/* Locked dark-mode blue (#789FFF). Use on a pale invert band when --accent
+   has remapped to the denser light blue. */
+@utility cta-accent-dark {
+  background-color: #789fff;
+  color: oklch(0.115 0.03 265);
+}
+.cta-accent-dark:hover {
+  background-color: color-mix(in oklab, #789fff 82%, oklch(0.115 0.03 265));
 }
 
 /* Primary pill — subtle lift + shadow on hover, quick settle on press. */
