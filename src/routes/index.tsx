@@ -10,6 +10,7 @@ import { EngagementTile } from "@/components/site/EngagementTile";
 import { StepFlow } from "@/components/site/StepFlow";
 import { Check } from "lucide-react";
 import { ObjectionList } from "@/components/site/ObjectionList";
+import { ProblemDiagram } from "@/components/site/ProblemDiagram";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { Accordion } from "@/components/site/Accordion";
 import { Reveal } from "@/components/site/Reveal";
@@ -19,25 +20,6 @@ import { spotlightOperators } from "@/lib/spotlight-operators";
 // ─────────────────────────────────────────────────────────────────────────────
 // Content
 // ─────────────────────────────────────────────────────────────────────────────
-
-const problems = [
-  {
-    t: "Critical work with no clear owner.",
-    d: "A fundraise, GTM reset, operating issue, or margin problem keeps coming back to you. The team is busy, but the priority is still stuck.",
-  },
-  {
-    t: "The work cannot wait for a perfect org chart.",
-    d: "A permanent hire may be the right answer, eventually. A search takes months or the role may still be undefined but the business needs to move now.",
-  },
-  {
-    t: "You are stuck in the middle.",
-    d: "Sales decisions, finance questions, operational escalations, people issues, and strategic initiatives keep landing on the CEO's desk.",
-  },
-  {
-    t: "More advice is not enough.",
-    d: "You don't need another deck or a stack of candidate profiles. You need someone senior to step in, take responsibility, and move the work.",
-  },
-];
 
 const alternatives = [
   { t: "Permanent hire", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you, and the work waits for the search to finish." },
@@ -359,14 +341,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="motion-stagger grid sm:grid-cols-2 gap-x-8 md:gap-x-20 gap-y-12">
-            {problems.map((p) => (
-              <div key={p.t}>
-                <h3 className="font-serif font-medium text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
-                <p className="mt-2 text-base text-stone leading-relaxed max-w-md">{p.d}</p>
-              </div>
-            ))}
-          </div>
+          <ProblemDiagram />
 
           <div className="mt-20 md:mt-24 motion-hairline pt-12">
             <div className="mono-label mb-8">Instead of</div>
@@ -381,9 +356,6 @@ function Index() {
                 </div>
               ))}
             </div>
-            <p className="mt-12 md:mt-14 mx-auto text-center font-serif font-medium text-lg md:text-xl text-cream/90 leading-snug max-w-5xl">
-              Three options. None of them get you the outcomes you need, when you need them. Now. Only Veep does.
-            </p>
           </div>
         </div>
       </Reveal>
