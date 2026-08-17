@@ -17,7 +17,11 @@ const applicationSchema = z.object({
   linkedIn: z.string().trim().url().max(500),
   website: z.string().trim().url().max(500).optional().or(z.literal("")),
   role: z.string().trim().max(100),
-  fractionalExperience: z.enum(["Yes", "No"]).optional(),
+  fractionalExperience: z
+    .enum(["Yes", "No"])
+    .optional()
+    .or(z.literal(""))
+    .transform((v) => (v === "" ? undefined : v)),
   companyTypes: z.array(z.string()).default([]),
   growthStages: z.array(z.string()).default([]),
   functions: z.array(z.string()).default([]),
