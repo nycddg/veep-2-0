@@ -22,7 +22,7 @@ const problems = [
   },
   {
     t: "Relying on the same informal roster.",
-    d: "Many firms rely on the same familiar operators every time they buy a company. Those people may be effective, but the firm knows stronger or better-fit talent is out there. They just do not have the time to grow and maintain a roster that may never get used.",
+    d: "Most firms call the same familiar operators on every deal. They may be effective, but stronger, better-fit talent is out there. No one has time to maintain a roster that may never get used.",
   },
 ];
 
@@ -109,9 +109,9 @@ function Page() {
               Transactions create volatility. The work still needs an owner.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-10 md:gap-y-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
             {problems.map((p, i) => (
-              <div key={p.t}>
+              <div key={p.t} className="rounded-[20px] border border-white/10 bg-surface-card p-6 sm:p-7">
                 <div className="eyebrow">
                   {String(i + 1).padStart(2, "0")}
                 </div>
