@@ -522,9 +522,9 @@ function Index() {
               Senior ownership on your terms.
             </h2>
           </div>
-          <div className="motion-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
+          <div className="motion-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {benefits.map((b, i) => (
-              <div key={b.t}>
+              <div key={b.t} className="rounded-[20px] border border-white/10 bg-surface-card p-6 sm:p-7">
                 <div className="eyebrow">
                   0{i + 1}
                 </div>
