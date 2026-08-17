@@ -482,7 +482,9 @@ html.light .glass-card {
   font-weight: 400;
 }
 
-/* Eyebrow — accented mono label above headlines (one treatment sitewide) */
+/* Eyebrow — accented mono label above headlines (one treatment sitewide).
+   Carries a letter-spacing transition for the reveal settle (see motion
+   system: eyebrow tracking settle). */
 @utility eyebrow {
   font-family: var(--font-mono);
   font-size: var(--text-label, 0.6875rem);
@@ -490,6 +492,15 @@ html.light .glass-card {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-accent);
+  transition: letter-spacing 500ms var(--ease-out-expo);
+}
+
+/* Eyebrow tracking settle — inside an arming Reveal, eyebrows enter tracked
+   out at 0.22em and ease to the resting 0.12em as the section reveals: a
+   typographic focus pull. Default state is the resting value (SSR / no-JS
+   never see the tracked-out state); reduced-motion is gated out entirely. */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-reveal[data-in="false"] .eyebrow { letter-spacing: 0.22em; }
 }
 
 /* Numeric figure — prices and stats (mono mark) */
