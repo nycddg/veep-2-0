@@ -120,12 +120,21 @@ function Page() {
       if (resumeFile.size > 10 * 1024 * 1024) {
         throw new Error("Resume must be smaller than 10 MB.");
       }
+      const resumeType =
+        resumeFile.type ||
+        (resumeFile.name.toLowerCase().endsWith(".pdf")
+          ? "application/pdf"
+          : resumeFile.name.toLowerCase().endsWith(".docx")
+            ? "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            : resumeFile.name.toLowerCase().endsWith(".doc")
+              ? "application/msword"
+              : resumeFile.type);
       const allowedTypes = [
         "application/pdf",
         "application/msword",
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       ];
-      if (!allowedTypes.includes(resumeFile.type)) {
+      if (!allowedTypes.includes(resumeType)) {
         throw new Error("Resume must be a PDF, DOC, or DOCX file.");
       }
 
@@ -136,10 +145,11 @@ function Page() {
 
       const resume = {
         name: resumeFile.name,
-        type: resumeFile.type,
+        type: resumeType,
         data: await fileToBase64(resumeFile),
       };
 
+      const fractional = String(formData.get("fractional") ?? "");
       await submitApplication({
         data: {
           firstName: String(formData.get("first_name") ?? ""),
@@ -148,7 +158,9 @@ function Page() {
           linkedIn: String(formData.get("linkedin") ?? ""),
           website: String(formData.get("website") ?? ""),
           role: String(formData.get("role") ?? ""),
-          fractionalExperience: String(formData.get("fractional") ?? ""),
+          ...(fractional === "Yes" || fractional === "No"
+            ? { fractionalExperience: fractional as "Yes" | "No" }
+            : {}),
           companyTypes: getAllValues(formData, "company_types"),
           growthStages: getAllValues(formData, "growth_stages"),
           functions: getAllValues(formData, "functions"),
@@ -161,7 +173,11 @@ function Page() {
 
       setSubmitted(true);
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      const raw = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      const message =
+        /invalid_enum_value|fractionalExperience|Expected 'Yes'/i.test(raw)
+          ? "Please pick Yes or No for operator/advisor experience under Add background details, or leave that section closed and try again."
+          : raw;
       setError(message);
     } finally {
       submittingRef.current = false;
