@@ -148,15 +148,6 @@ function Page() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 md:mt-auto pt-4 md:pt-8">
-                  <Link
-                    to="/pricing"
-                    hash="tiers"
-                    className="text-xs text-cream/90 hover:text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70 transition"
-                  >
-                    See scope →
-                  </Link>
-                </div>
               </div>
             ))}
           </div>
@@ -177,7 +168,7 @@ function Page() {
               The price you see is the price you pay.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 md:gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-10 md:gap-y-14">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
             {notIncluded.map((n) => (
               <div key={n.t}>
                 <div className="text-lg text-cream">{n.t}</div>
