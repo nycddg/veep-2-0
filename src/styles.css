@@ -906,7 +906,7 @@ html.light .spotlight-invert .cta-accent:hover {
 }
 
 @utility marquee {
-  animation: marquee 60s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
 /* Courtesy pause — hovering the ticker halts it so names can be read. */
