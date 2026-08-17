@@ -2,8 +2,10 @@
 
 Read this before any edit. If a polish idea fights a lock, the lock wins.
 
+Fable owns visual. These locks are Cisco/Dave constitution, not a second designer.
+
 Live site is a different repo (`/opt/data/veep-2-0`, `nycddg/veep-2-0` main).
-This clone must never gain a push remote to that GitHub repo.
+This clone must never gain a push remote to that GitHub repo. Never edit, push, or deploy live from this pass.
 
 ## Type (HARD — ChatGPT plan was wrong here)
 
@@ -31,6 +33,7 @@ This clone must never gain a push remote to that GitHub repo.
 
 - Signature surface. No new motif.
 - Hide matrix on mobile. Photo `object-bottom`. Mobile aspect **3/4**, `sm+` 16/9.
+- Labels stay the smaller canvas size (~9.9px / −10%). Do not bump to 11px.
 - No float animation. No decorative hairline above the proof line.
 
 ## CTA
@@ -38,7 +41,7 @@ This clone must never gain a push remote to that GitHub repo.
 - Homepage high-intent primary = **Book intro call** → Fillout.
 - Get in touch only on operators rail (secondary) and off-home pages that already use it.
 - Join hero must not open Fillout (`primaryTo="/join"` + hash apply).
-- See scope → `/pricing#tiers`. Never `/services`.
+- See scope → `/pricing#tiers`. Never `/services`. On `/pricing` itself, do **not** render the self-link.
 - No “Operator in the Loop”. No “algorithmic matching”. No em dashes in marketing copy.
 
 ## Nav
@@ -49,8 +52,9 @@ This clone must never gain a push remote to that GitHub repo.
 ## Motion (extend, do not replace)
 
 - View Transitions already exist (~320ms). Section reveals exist (~560ms).
-- Micro 120–220ms. No bounce, parallax, or opacity-0 content gates.
-- Honor `prefers-reduced-motion`.
+- Dave 08.17: **stronger, more elegant** motion. Elevate choreography, stagger, hover, page transitions.
+- Still: no bounce, no parallax, no opacity-0 content gates, no Framer/GSAP.
+- Micro can go a bit longer if it feels expensive (not cheap). Honor `prefers-reduced-motion`.
 
 ## Copy / claims
 
