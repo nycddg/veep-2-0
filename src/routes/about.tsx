@@ -115,7 +115,7 @@ function Page() {
               <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
                 Built the hard way. Rebuilt the smart way.
               </h2>
-              <p className="text-cream/80 text-base leading-relaxed max-w-md">
+              <p className="text-stone text-base leading-relaxed max-w-md">
                 Decades of lessons, one roster. The future belongs to leaner
                 teams, faster decisions, and hands-on operators trusted to lead.
               </p>
@@ -133,7 +133,7 @@ function Page() {
                     <div className="text-cream text-lg tracking-tight">
                       {p.title}
                     </div>
-                    <p className="mt-2 text-cream/80 text-base leading-relaxed">
+                    <p className="mt-2 text-stone text-base leading-relaxed">
                       {p.body}
                     </p>
                   </div>
@@ -154,7 +154,7 @@ function Page() {
             <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
               Founders first. Operators always.
             </h2>
-            <p className="text-cream/80 text-base leading-relaxed">
+            <p className="text-stone text-base leading-relaxed">
               A founding team shaped by firsthand experience building, scaling,
               and leading from inside.
             </p>
@@ -162,13 +162,13 @@ function Page() {
           <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-10 md:gap-8">
             {founders.map((f) => (
               <div key={f.name} className="border-t border-white/10 pt-6">
-                <div className="mono-label text-cream/70">
+                <div className="mono-label">
                   {f.role}
                 </div>
                 <div className="mt-3 font-serif font-medium text-xl text-cream tracking-tight">
                   {f.name}
                 </div>
-                <p className="mt-3 text-cream/80 text-base leading-relaxed">
+                <p className="mt-3 text-stone text-base leading-relaxed">
                   {f.bio}
                 </p>
               </div>

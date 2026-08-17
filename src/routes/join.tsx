@@ -193,7 +193,7 @@ function Page() {
               <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
                 A curated roster of business builders.
               </h2>
-              <p className="text-cream/80 text-base leading-relaxed max-w-md">
+              <p className="text-stone text-base leading-relaxed max-w-md">
                 We stay small on purpose. Every operator on the roster has run
                 the seat before and can start inside two weeks.
               </p>
@@ -211,7 +211,7 @@ function Page() {
                     <div className="text-cream text-lg tracking-tight">
                       {c.title}
                     </div>
-                    <p className="mt-2 text-cream/75 text-base leading-relaxed">
+                    <p className="mt-2 text-stone text-base leading-relaxed">
                       {c.body}
                     </p>
                   </div>
@@ -241,13 +241,13 @@ function Page() {
                     <span className="font-mono text-sm text-accent w-6 shrink-0 tabular-nums">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-cream/85 text-base leading-relaxed">
+                    <span className="text-stone text-base leading-relaxed">
                       {i}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-cream/75 leading-relaxed max-w-xs">
+              <p className="text-xs text-stone-soft leading-relaxed max-w-xs">
                 Roster spots are limited. We respond to every serious
                 application within one business week.
               </p>
@@ -260,7 +260,7 @@ function Page() {
                   <h3 className="mt-6 font-serif font-medium text-xl text-cream tracking-tight">
                     Application received.
                   </h3>
-                  <p className="mt-3 text-cream/80 text-sm">
+                  <p className="mt-3 text-stone text-sm">
                     A Veep founder will review it and be in touch.
                   </p>
                 </div>
@@ -307,7 +307,7 @@ function Page() {
                     />
                   </Field>
 
-                  <details className="text-sm text-cream/80">
+                  <details className="text-sm text-stone">
                     <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none">
                       Add background details (optional)
                     </summary>
@@ -360,7 +360,7 @@ function Page() {
                       "Submit application"
                     )}
                   </button>
-                  <p className="text-xs text-cream/75">
+                  <p className="text-xs text-stone-soft">
                     By submitting you agree to be contacted by Veep about your
                     application.
                   </p>
@@ -388,7 +388,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mono-label text-cream/70">
+      <span className="mono-label">
         {label}
         {required && " *"}
       </span>
@@ -408,7 +408,7 @@ function CheckboxGroup({
 }) {
   return (
     <div>
-      <span className="mono-label text-cream/70">
+      <span className="mono-label">
         {label}
       </span>
       <div className="mt-3 flex flex-wrap gap-2">

@@ -115,7 +115,7 @@ function Page() {
                 <div className="mt-3 font-serif font-medium text-xl text-cream tracking-tight leading-snug">
                   {p.t}
                 </div>
-                <p className="mt-2 text-base text-cream/70 leading-relaxed">
+                <p className="mt-2 text-base text-stone leading-relaxed">
                   {p.d}
                 </p>
               </div>
@@ -134,14 +134,14 @@ function Page() {
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Portfolio Capacity Audit
             </h2>
-            <p className="mt-6 text-cream/80 leading-relaxed">
+            <p className="mt-6 text-stone leading-relaxed">
               Before you retain the roster, we map where transactions and operating priorities are likely to create staffing volatility across the portfolio. We identify which companies need what, which upcoming events could create urgency in the next 6 to 12 months, and where a Veep operator would help stabilize execution.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12 border-t border-white/10 pt-12">
             <div>
               <div className="font-serif font-medium text-xl text-cream tracking-tight">What you get</div>
-              <ul className="mt-6 space-y-3 text-sm text-cream/85">
+              <ul className="mt-6 space-y-3 text-sm text-stone">
                 {auditDeliverables.map((d) => (
                   <li key={d} className="flex items-baseline gap-3">
                     <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 translate-y-[-2px]" />
@@ -157,10 +157,10 @@ function Page() {
               <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">
                 Portfolio Roster
               </div>
-              <p className="mt-4 text-base text-cream/80 leading-relaxed">
+              <p className="mt-4 text-base text-stone leading-relaxed">
                 A retained operating partner function for firms that do not want to build one internally. Veep gives your firm priority access to vetted senior operators who can support transactions, integrations, interim gaps, and value-creation work across the portfolio.
               </p>
-              <ul className="mt-6 space-y-2 text-sm text-cream/85">
+              <ul className="mt-6 space-y-2 text-sm text-stone">
                 {[
                   "Portfolio Roster: $75k",
                   "Usage billed separately at preferred rates",
@@ -196,10 +196,10 @@ function Page() {
               >
                 <div className="font-serif font-medium text-xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums break-words">
-                  {t.p}{" "}<span className="text-cream/70 whitespace-normal">{t.per}</span>
+                  {t.p}{" "}<span className="text-stone whitespace-normal">{t.per}</span>
                 </div>
-                <p className="mt-5 text-base text-cream/85 leading-relaxed">{t.best}</p>
-                <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
+                <p className="mt-5 text-base text-stone leading-relaxed">{t.best}</p>
+                <ul className="mt-6 space-y-2.5 text-sm text-stone">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-baseline gap-2.5">
                       <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 translate-y-[-2px]" />
@@ -219,7 +219,7 @@ function Page() {
               </div>
             ))}
           </div>
-          <p className="mt-12 text-sm text-cream/75 text-center max-w-2xl mx-auto">
+          <p className="mt-12 text-sm text-stone text-center max-w-2xl mx-auto">
             Engagements convert cleanly into Advisory, Sprint, Operator, or Pod work at preferred roster rates.
           </p>
         </div>
@@ -241,7 +241,7 @@ function Page() {
               <div key={s.n}>
                 <div className="eyebrow">{s.n}</div>
                 <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">{s.t}</div>
-                <p className="mt-2 text-base text-cream/75 leading-relaxed">{s.d}</p>
+                <p className="mt-2 text-base text-stone leading-relaxed">{s.d}</p>
               </div>
             ))}
           </div>
@@ -263,7 +263,7 @@ function Page() {
             {included.map((i) => (
               <div key={i.t}>
                 <div className="font-serif font-medium text-xl text-cream tracking-tight">{i.t}</div>
-                <p className="mt-2 text-base text-cream/75 leading-relaxed">{i.d}</p>
+                <p className="mt-2 text-base text-stone leading-relaxed">{i.d}</p>
               </div>
             ))}
           </div>

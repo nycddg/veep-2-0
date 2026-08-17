@@ -140,8 +140,8 @@ function Page() {
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
                   {t.p} <span className="text-stone">{t.per}</span>
                 </div>
-                <p className="mt-4 text-base text-cream/90 leading-relaxed">{t.best}</p>
-                <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
+                <p className="mt-4 text-base text-stone leading-relaxed">{t.best}</p>
+                <ul className="mt-6 space-y-2.5 text-sm text-stone">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-start gap-2.5">
                       <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 mt-2" />
@@ -152,7 +152,7 @@ function Page() {
               </div>
             ))}
           </div>
-          <p className="mt-10 text-sm text-cream/70">
+          <p className="mt-10 text-sm text-stone">
             All engagements carry a 30-day fit guarantee · Response within 1 business day
           </p>
         </div>
@@ -173,7 +173,7 @@ function Page() {
             {notIncluded.map((n) => (
               <div key={n.t}>
                 <div className="font-serif font-medium text-xl text-cream tracking-tight">{n.t}</div>
-                <p className="mt-2 text-base text-cream/75 leading-relaxed">{n.d}</p>
+                <p className="mt-2 text-base text-stone leading-relaxed">{n.d}</p>
               </div>
             ))}
           </div>
@@ -190,7 +190,7 @@ function Page() {
             <h3 className="mt-5 font-serif font-medium text-xl md:text-2xl text-cream">
               The right operating partners, ready when the portfolio needs them.
             </h3>
-            <p className="mt-5 text-cream/80 leading-relaxed max-w-2xl">
+            <p className="mt-5 text-stone leading-relaxed max-w-2xl">
               Built for PE firms, family offices, holdcos, and multi-company
               founders that need senior operating support across recurring
               leadership gaps, transaction moments, and value-creation work.
@@ -227,7 +227,7 @@ function Page() {
             {faqs.map((f) => (
               <div key={f.q} className="border-t border-white/10 pt-6">
                 <div className="text-lg text-cream tracking-tight leading-snug">{f.q}</div>
-                <p className="mt-2 text-base text-cream/80 leading-relaxed">{f.a}</p>
+                <p className="mt-2 text-base text-stone leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>
