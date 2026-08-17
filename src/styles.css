@@ -104,9 +104,8 @@
   --stone-soft: oklch(0.68 0.03 255);         /* tertiary / mono labels — clears AA at 12px on navy */
   --rule: oklch(1 0 0 / 0.12);                /* faint ruled-grid lines, just visible on OLED */
 
-  /* Accent — dark: bright blue #789FFF; light: punch blue #3474F4 (see html.light).
-     Signal red #F43F34 for featured/urgent only (retired soft coral #EC6B66).
-     Light indigo #5B46F5 retired 2026-08-14 (Claude-slop read). */
+  /* Accent — dark: #789FFF. Light: #4E7AD4 (ink blue between electric #3474F4 and washed #789FFF).
+     Signal red #F43F34 for featured/urgent only. */
   --forest: #789fff;                          /* bright blue — dark mode */
   --forest-deep: oklch(0.205 0.05 265);       /* navy inset panel */
   --forest-foreground: oklch(0.98 0 0);
@@ -171,12 +170,12 @@ html.light {
   --stone-soft: oklch(0.52 0.025 258);        /* tertiary / mono labels */
   --rule: oklch(0 0 0 / 0.10);
 
-  /* Brand accent on cream: denser punch blue (not indigo). Dark stays #789FFF in :root. */
-  --forest: #3474f4;
+  /* Brand accent on cream: ink blue #4E7AD4 — between electric #3474F4 and dark #789FFF. */
+  --forest: #4e7ad4;
   --forest-deep: oklch(0.92 0.03 250);
   --forest-foreground: oklch(0.18 0.03 265);
-  --accent-gold: #3474f4;
-  --ring: #3474f4;
+  --accent-gold: #4e7ad4;
+  --ring: #4e7ad4;
 
   --card: oklch(0 0 0 / 0.035);
   --card-foreground: var(--cream);
@@ -278,13 +277,13 @@ html.light .spotlight-invert .hover\:bg-cream\/90:hover { background-color: oklc
   --stone: oklch(0.42 0.02 260);
   --stone-soft: oklch(0.52 0.025 258);
   --rule: oklch(0 0 0 / 0.10);
-  --forest: #3474f4;
+  --forest: #4e7ad4;
   --forest-deep: oklch(0.92 0.03 250);
   --forest-foreground: oklch(0.18 0.03 265);
-  --accent-gold: #3474f4;
-  --ring: #3474f4;
+  --accent-gold: #4e7ad4;
+  --ring: #4e7ad4;
   /* Derived tokens must be restated: their :root values already resolved. */
-  --accent: #3474f4;
+  --accent: #4e7ad4;
   --accent-foreground: oklch(0.98 0 0);
   --primary: oklch(0.18 0.03 265);
   --primary-foreground: oklch(0.98 0 0);

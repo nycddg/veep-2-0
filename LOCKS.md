@@ -18,7 +18,7 @@ This clone must never gain a push remote to that GitHub repo. Never edit, push, 
 ## Color
 
 - Default **dark**. Do not flip default to light or follow OS.
-- Dark accent `#789FFF`. Light accent `#3474F4`. Signal `#F43F34`. Light wash `#E4E9F2`.
+- Dark accent `#789FFF`. Light accent `#4E7AD4` (ink blue; not electric `#3474F4`). Signal `#F43F34`. Light wash `#E4E9F2`.
 - Do not restore indigo `#5B46F5`. Do not add glow gradients.
 
 ## Proof / product chrome (KEEP)
