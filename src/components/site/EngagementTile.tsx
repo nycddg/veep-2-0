@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 
 export function EngagementTile({
   name,
@@ -37,8 +38,8 @@ export function EngagementTile({
       <p className="mt-4 text-base text-stone leading-relaxed">{bestWhen}</p>
       <div className="mt-6 md:mt-auto pt-4 md:pt-8 flex items-baseline justify-between gap-4">
         <span className="font-mono text-xs text-cream tabular-nums">{price}</span>
-        <span className="text-xs text-cream/70 group-hover:text-cream inline-flex items-center gap-1 transition-colors duration-200">
-          See scope <span className="motion-arrow inline-block">→</span>
+        <span className="text-xs text-cream/70 group-hover:text-cream inline-flex items-center gap-1.5 transition-colors duration-200">
+          See scope <ArrowRight size={12} className="motion-arrow" />
         </span>
       </div>
     </Link>

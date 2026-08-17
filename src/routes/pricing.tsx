@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { ogImageMeta } from "@/lib/seo";
@@ -202,9 +203,9 @@ function Page() {
             <div className="mt-6">
               <Link
                 to="/for-portfolios"
-                className="text-sm text-cream hover:text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
+                className="group motion-link inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70"
               >
-                See how the roster works →
+                See how the roster works <ArrowRight size={14} className="motion-arrow" />
               </Link>
             </div>
           </div>
@@ -233,9 +234,9 @@ function Page() {
           <div className="mt-8">
             <Link
               to="/faq"
-              className="text-sm text-cream/90 hover:text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
+              className="group motion-link inline-flex items-center gap-2 text-sm text-cream/90 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70"
             >
-              See the full FAQ →
+              See the full FAQ <ArrowRight size={14} className="motion-arrow" />
             </Link>
           </div>
         </div>

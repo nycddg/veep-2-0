@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { ogImageMeta } from "@/lib/seo";
@@ -210,9 +211,9 @@ function Page() {
                   <Link
                     to="/pricing"
                     hash="tiers"
-                    className="text-xs text-cream/85 hover:text-cream underline underline-offset-4 decoration-white/25 hover:decoration-white/70 transition"
+                    className="group motion-link inline-flex items-center gap-1.5 text-xs text-cream/85 hover:text-cream underline underline-offset-4 decoration-white/25 hover:decoration-white/70"
                   >
-                    See engagement pricing →
+                    See engagement pricing <ArrowRight size={12} className="motion-arrow" />
                   </Link>
                 </div>
               </div>

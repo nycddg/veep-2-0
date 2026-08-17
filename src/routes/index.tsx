@@ -681,9 +681,9 @@ function Index() {
             </div>
             <Link
               to="/pricing"
-              className="text-sm text-cream/90 hover:text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition pb-1"
+              className="group motion-link inline-flex items-center gap-2 text-sm text-cream/90 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70 pb-1"
             >
-              See full pricing →
+              See full pricing <ArrowRight size={14} className="motion-arrow" />
             </Link>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -819,9 +819,9 @@ function Index() {
               <Link
                 to="/contact"
                 search={{ intent: "audit" }}
-                className="text-sm text-cream/85 hover:text-cream underline underline-offset-8 decoration-white/25 hover:decoration-white/60"
+                className="group motion-link inline-flex items-center gap-2 text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/60"
               >
-                Request a capacity audit →
+                Request a capacity audit <ArrowRight size={14} className="motion-arrow" />
               </Link>
             </div>
           </div>
