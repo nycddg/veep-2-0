@@ -167,7 +167,7 @@ function Page() {
                   "MSA activated once, SOWs per engagement",
                 ].map((x) => (
                   <li key={x} className="flex items-baseline gap-3">
-                    <span className="inline-block h-1 w-1 rounded-full bg-accent-gold shrink-0 translate-y-[-2px]" />
+                    <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 translate-y-[-2px]" />
                     <span>{x}</span>
                   </li>
                 ))}

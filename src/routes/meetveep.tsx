@@ -51,7 +51,7 @@ function MeetVeepPage() {
           <div className="flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8 lg:items-start">
             <div className="order-1 lg:col-span-7 space-y-5">
               <div className="eyebrow">Meet Veep</div>
-              <h1 className="font-medium text-[2.25rem] sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
+              <h1 className="font-medium text-[2.25rem] sm:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
                 The work needs an owner.
               </h1>
             </div>

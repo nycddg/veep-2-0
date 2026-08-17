@@ -60,7 +60,7 @@ export function PageHero({
           ) : (
             <div className="eyebrow">{eyebrow}</div>
           )}
-          <h1 className="font-medium text-[2.25rem] sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
+          <h1 className="font-medium text-[2.25rem] sm:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
             {title}
           </h1>
           <p className="text-base sm:text-lg text-cream/80 max-w-2xl leading-relaxed text-pretty">
