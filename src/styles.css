@@ -454,6 +454,15 @@ html.light .glass-card {
 
 
 
+/* ─── Container ladder (Pass 2 writedown) ───────────────────────────────────
+   Six widths, each earned — do not invent a seventh:
+   · max-w-3xl     legal pages, FooterCTA
+   · max-w-4xl     reading measure (FAQ groups, "What Veep is" interstitial)
+   · max-w-5xl     heading blocks inside wider sections, home hero copy
+   · max-w-6xl     editorial two-column pages (about, join)
+   · max-w-7xl     section grids — the default
+   · max-w-[84rem] operator spotlight rail bleed (earned exception) */
+
 /* ─── Named item-title roles (Pass 2 writedown) ─────────────────────────────
    Item titles come in exactly two voices — do not invent a third:
    · title-xl (grid items): "font-serif font-medium text-xl text-cream

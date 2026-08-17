@@ -469,12 +469,12 @@ function Index() {
 
       {/* What Veep is */}
       <Reveal as="section">
-        <div className="mx-auto max-w-[55.2rem] px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
             An invite-only network of operating partners ready to own the work that can't wait. Founders, CEOs, and investment firms hire Veep when important work has no owner across finance, GTM, operations, product, people, fundraising, and strategy.
           </p>
-          <p className="mt-[1.4rem] text-sm text-stone">
+          <p className="mt-6 text-sm text-stone">
             Built for companies with real revenue and growing complexity that need a critical outcome now.
           </p>
         </div>
