@@ -61,9 +61,9 @@ export function SiteHeader() {
               key={(n as { hash: string }).hash}
               to="/"
               hash={(n as { hash: string }).hash}
-              className="motion-link px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
+              className="group motion-link px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
             >
-              {n.label}
+              <span className="motion-underline">{n.label}</span>
             </Link>
           ))}
           <span aria-hidden className="mx-3 h-4 w-px bg-white/15" />
@@ -72,10 +72,10 @@ export function SiteHeader() {
               key={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
               to={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
               viewTransition
-              className="motion-link px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
+              className="group motion-link px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
               activeProps={{ className: "motion-link px-3 py-2 text-[0.8rem] text-cream border-b border-accent" }}
             >
-              {n.label}
+              <span className="motion-underline">{n.label}</span>
             </Link>
           ))}
         </nav>

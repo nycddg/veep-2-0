@@ -492,15 +492,18 @@ html.light .glass-card {
 }
 
 /* ─── Motion system ─────────────────────────────────────────────────────────
-   One easing curve, three durations, small transform distances.
-   Applied via utility classes so animations stay consistent everywhere.
+   Two easing curves, small transform distances, one choreography grammar.
+   --ease-standard for hover/micro; --ease-out-expo for entrances (longer
+   deceleration tail reads more expensive). Applied via utility classes so
+   motion stays consistent everywhere.
    All motion is disabled under prefers-reduced-motion (see block below). */
 :root {
   --dur-micro: 140ms;
   --dur-hover: 200ms;
-  --dur-enter: 420ms;
+  --dur-enter: 560ms;
   --dur-page: 240ms;
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Phase 2 — View Transitions (progressive). */
@@ -513,23 +516,25 @@ html.light .glass-card {
 
 @keyframes veep-vt-fade-out {
   from { opacity: 1; transform: translateY(0); }
-  to   { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 0; transform: translateY(-10px); }
 }
 @keyframes veep-vt-fade-in {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Main content crossfade — slightly more visible than pure opacity */
+/* Page choreography — outgoing page exits quickly, incoming page settles on a
+   longer deceleration tail with a small beat between the two. Reads as one
+   editorial gesture instead of a symmetric crossfade. */
 ::view-transition-old(page-main) {
-  animation: veep-vt-fade-out 320ms var(--ease-standard) both;
+  animation: veep-vt-fade-out 220ms var(--ease-standard) both;
 }
 ::view-transition-new(page-main) {
-  animation: veep-vt-fade-in 320ms var(--ease-standard) both;
+  animation: veep-vt-fade-in 480ms var(--ease-out-expo) 90ms both;
 }
 ::view-transition-group(page-main) {
-  animation-duration: 320ms;
-  animation-timing-function: var(--ease-standard);
+  animation-duration: 480ms;
+  animation-timing-function: var(--ease-out-expo);
 }
 ::view-transition-group(site-header) {
   animation-duration: 320ms;
@@ -553,32 +558,61 @@ html.light .glass-card {
 }
 
 @keyframes motion-fade-up {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Section / element entrance — fade + 8px rise. */
+/* Section / element entrance — fade + 10px rise on the entrance curve. */
 @utility motion-fade-up {
-  animation: motion-fade-up var(--dur-enter) var(--ease-standard) both;
+  animation: motion-fade-up 600ms var(--ease-out-expo) both;
 }
+
+/* Load-in choreography delays — pair with motion-fade-up to cascade a hero.
+   Pure CSS so no-JS still plays; reduced-motion zeroes delay + duration. */
+.motion-delay-1 { animation-delay: 90ms; }
+.motion-delay-2 { animation-delay: 180ms; }
+.motion-delay-3 { animation-delay: 270ms; }
+.motion-delay-4 { animation-delay: 360ms; }
+.motion-delay-5 { animation-delay: 450ms; }
 
 /* In-view reveal — default VISIBLE so SSR/no-JS never blanks content.
    Reveal.tsx arms after mount; [data-in="false"] only then hides below-fold. */
 @utility motion-reveal {
   opacity: 1;
   transform: none;
-  transition: opacity 560ms var(--ease-standard),
-              transform 560ms var(--ease-standard);
+  transition: opacity 640ms var(--ease-out-expo),
+              transform 640ms var(--ease-out-expo);
 }
 .motion-reveal[data-in="false"] {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(14px);
   will-change: opacity, transform;
 }
 .motion-reveal[data-in="true"] {
   opacity: 1;
   transform: none;
 }
+
+/* Grid stagger — put .motion-stagger on a grid/list inside a Reveal section.
+   Direct children rise in sequence when the section enters the viewport.
+   Default state is visible (SSR renders data-in="true"), so content never
+   hides without JS; only an armed below-fold section staggers in. */
+.motion-stagger > * {
+  opacity: 1;
+  transform: none;
+  transition: opacity 640ms var(--ease-out-expo),
+              transform 640ms var(--ease-out-expo);
+}
+.motion-reveal[data-in="false"] .motion-stagger > * {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.motion-stagger > *:nth-child(2) { transition-delay: 70ms; }
+.motion-stagger > *:nth-child(3) { transition-delay: 140ms; }
+.motion-stagger > *:nth-child(4) { transition-delay: 210ms; }
+.motion-stagger > *:nth-child(5) { transition-delay: 280ms; }
+.motion-stagger > *:nth-child(6) { transition-delay: 350ms; }
+.motion-stagger > *:nth-child(n+7) { transition-delay: 420ms; }
 
 /* Interactive card / tile — small lift + border/shadow polish. */
 @utility motion-hover-lift {
@@ -599,17 +633,17 @@ html.light .glass-card {
               opacity var(--dur-hover) var(--ease-standard);
 }
 
-/* Arrow icon inside a `group` CTA — 2px slide on group hover/focus. */
+/* Arrow icon inside a `group` CTA — 3px glide on group hover/focus. */
 @utility motion-arrow {
-  transition: transform var(--dur-hover) var(--ease-standard);
+  transition: transform 240ms var(--ease-standard);
 }
 .group:hover .motion-arrow,
 .group:focus-visible .motion-arrow,
 .group:focus-within .motion-arrow {
-  transform: translateX(2px);
+  transform: translateX(3px);
 }
 
-/* Primary pill — subtle lift + shadow on hover. */
+/* Primary pill — subtle lift + shadow on hover, quick settle on press. */
 @utility motion-cta {
   transition: background-color var(--dur-hover) var(--ease-standard),
               box-shadow var(--dur-hover) var(--ease-standard),
@@ -617,7 +651,11 @@ html.light .glass-card {
 }
 .motion-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.55);
+}
+.motion-cta:active {
+  transform: translateY(0);
+  transition-duration: 80ms;
 }
 
 /* Smooth focus ring for form controls (border + ring). */
@@ -664,11 +702,12 @@ html.light .glass-card {
               backdrop-filter var(--dur-hover) var(--ease-standard);
 }
 
-/* Accordion body — grid-rows animation avoids max-height jank. */
+/* Accordion body — grid-rows animation avoids max-height jank.
+   360ms gives the open a weighted, unhurried settle. */
 @utility motion-collapse {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows var(--dur-hover) var(--ease-standard);
+  transition: grid-template-rows 360ms var(--ease-standard);
 }
 .motion-collapse[data-open="true"] {
   grid-template-rows: 1fr;
@@ -678,15 +717,32 @@ html.light .glass-card {
   overflow: hidden;
 }
 
-/* Reduced-motion — strip transforms & long transitions, keep opacity fades tiny. */
+/* One-shot attention pulse — three quiet pings when the section reveals,
+   then rests. Replaces the infinite animate-ping loop. */
+@keyframes veep-ping {
+  0%        { transform: scale(1);   opacity: 0.8; }
+  70%, 100% { transform: scale(2.4); opacity: 0; }
+}
+.motion-ping {
+  opacity: 0;
+}
+.motion-reveal[data-in="true"] .motion-ping {
+  animation: veep-ping 1.4s var(--ease-standard) 0.4s 3;
+}
+
+/* Reduced-motion — strip transforms, delays & long transitions; keep opacity fades tiny. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
     scroll-behavior: auto !important;
   }
   .motion-reveal { opacity: 1 !important; transform: none !important; }
+  .motion-stagger > * { opacity: 1 !important; transform: none !important; }
+  .motion-ping { animation: none !important; opacity: 0 !important; }
   .motion-hover-lift:hover,
   .motion-cta:hover { transform: none !important; }
   .motion-image-tilt,
@@ -698,6 +754,11 @@ html.light .glass-card {
 
 @utility marquee {
   animation: marquee 60s linear infinite;
+}
+
+/* Courtesy pause — hovering the ticker halts it so names can be read. */
+.marquee:hover {
+  animation-play-state: paused;
 }
 
 @keyframes marquee {

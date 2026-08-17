@@ -27,7 +27,7 @@ const objections = [
 
 export function ObjectionList() {
   return (
-    <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
+    <div className="motion-stagger grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
       {objections.map((o) => (
         <div key={o.q}>
           <h3 className="font-serif font-medium text-xl text-cream tracking-tight leading-snug">

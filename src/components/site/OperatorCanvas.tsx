@@ -27,7 +27,7 @@ function MatchMatrixCard({
     >
       <p className="eyebrow text-cream/80 mb-5">Match Matrix</p>
       <div className="space-y-3.5">
-        {MATRIX.map((row) => (
+        {MATRIX.map((row, i) => (
           <div key={row.label}>
             <div className="flex justify-between items-baseline gap-3 mono-label text-[0.61875rem] tracking-[0.14em] text-cream mb-1.5 font-medium">
               <span className="min-w-0 truncate">{row.label}</span>
@@ -40,7 +40,8 @@ function MatchMatrixCard({
                 }`}
                 style={{
                   width: animate ? `${row.value}%` : "0%",
-                  transition: "width 420ms cubic-bezier(0.22, 1, 0.36, 1)",
+                  // Bars fill in sequence — one gesture, top to bottom.
+                  transition: `width 700ms cubic-bezier(0.16, 1, 0.3, 1) ${i * 90}ms`,
                 }}
               />
             </div>

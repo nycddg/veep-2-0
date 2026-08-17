@@ -75,12 +75,12 @@ export function SiteFooter() {
                 {c.links.map((l) => (
                   <li key={l.label}>
                      {l.kind === "hash" ? (
-                      <Link to="/" hash={l.hash} className="motion-link text-sm text-cream/90 hover:text-cream">
-                        {l.label}
+                      <Link to="/" hash={l.hash} className="group motion-link text-sm text-cream/90 hover:text-cream">
+                        <span className="motion-underline">{l.label}</span>
                       </Link>
                     ) : (
-                      <Link to={l.to} viewTransition className="motion-link text-sm text-cream/90 hover:text-cream">
-                        {l.label}
+                      <Link to={l.to} viewTransition className="group motion-link text-sm text-cream/90 hover:text-cream">
+                        <span className="motion-underline">{l.label}</span>
                       </Link>
                     )}
                   </li>

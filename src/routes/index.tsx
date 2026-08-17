@@ -421,18 +421,18 @@ function Index() {
     <>
       {/* Hero */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
-        <div className="relative mx-auto max-w-5xl motion-fade-up px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
-          <h1 className="font-medium text-[2.25rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream text-balance allow-wrap break-words mb-6">
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
+          <h1 className="motion-fade-up font-medium text-[2.25rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream text-balance allow-wrap break-words mb-6">
             Because a job always needs to be done.
           </h1>
 
-          <p className="text-base sm:text-lg text-stone max-w-2xl leading-relaxed mb-10">
+          <p className="motion-fade-up motion-delay-1 text-base sm:text-lg text-stone max-w-2xl leading-relaxed mb-10">
             Vetted senior operators to own urgent priorities and high-stakes
             decisions before you are ready, willing, or able to make
             permanent hires.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
+          <div className="motion-fade-up motion-delay-2 flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
             {["Invite-only network", "72-hour match", "30-day fit guarantee"].map((t) => (
               <div key={t} className="flex items-center gap-2">
                 <Check size={18} className="text-accent" strokeWidth={2.5} />
@@ -441,9 +441,11 @@ function Index() {
             ))}
           </div>
 
-          <OperatorCanvas />
+          <div className="motion-fade-up motion-delay-3 w-full">
+            <OperatorCanvas />
+          </div>
 
-          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-5 mt-12 sm:mt-20 w-full">
+          <div className="motion-fade-up motion-delay-4 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-5 mt-12 sm:mt-20 w-full">
             <a
               href={BOOKING_URL}
               target="_blank"
@@ -488,7 +490,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-x-8 md:gap-x-20 gap-y-12">
+          <div className="motion-stagger grid sm:grid-cols-2 gap-x-8 md:gap-x-20 gap-y-12">
             {problems.map((p) => (
               <div key={p.t}>
                 <h3 className="font-serif font-medium text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
@@ -499,7 +501,7 @@ function Index() {
 
           <div className="mt-20 md:mt-24 border-t border-white/10 pt-12">
             <div className="mono-label mb-8">Instead of</div>
-            <div className="grid md:grid-cols-3 gap-y-10">
+            <div className="motion-stagger grid md:grid-cols-3 gap-y-10">
               {alternatives.map((a) => (
                 <div
                   key={a.t}
@@ -539,7 +541,7 @@ function Index() {
                 Vetted senior operators who step in to own critical work, now.
               </p>
             </div>
-            <div className="divide-y divide-white/10 lg:border-l lg:border-white/10 lg:pl-14">
+            <div className="motion-stagger divide-y divide-white/10 lg:border-l lg:border-white/10 lg:pl-14">
               <div className="eyebrow pb-6">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
@@ -585,7 +587,7 @@ function Index() {
             </div>
 
             <div className="relative">
-              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-y-10">
+              <div className="motion-stagger relative grid grid-cols-2 lg:grid-cols-4 gap-y-10">
                 {networkImpact.map((m, i) => (
                   <div
                     key={m.label}
@@ -594,7 +596,7 @@ function Index() {
                     <div className="flex items-center gap-2.5">
                       <div className="relative">
                         {i === 0 && (
-                          <div className="absolute inset-0 animate-ping rounded-full bg-accent/40" />
+                          <div className="motion-ping absolute inset-0 rounded-full bg-accent/40" />
                         )}
                         <div className="relative w-2 h-2 rounded-full bg-accent" />
                       </div>
@@ -651,7 +653,7 @@ function Index() {
               Senior ownership on your terms.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
+          <div className="motion-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
             {benefits.map((b, i) => (
               <div key={b.t}>
                 <div className="eyebrow">
@@ -687,7 +689,7 @@ function Index() {
               See full pricing <ArrowRight size={14} className="motion-arrow" />
             </Link>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="motion-stagger grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {engagements.map((e) => (
               <EngagementTile key={e.name} {...e} />
             ))}
@@ -721,7 +723,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
+          <div className="motion-stagger grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
             {cases.map((c) => (
               <div key={c.tag} className="flex flex-col rounded-2xl bg-[color:var(--surface-raised)] p-5 sm:p-7">
                 <span className="eyebrow">
@@ -740,7 +742,7 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10">
+          <div className="motion-stagger mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10">
             {[
               { k: "75+", v: "vetted operators" },
               { k: "72h", v: "to shortlist" },
