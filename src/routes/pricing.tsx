@@ -161,11 +161,11 @@ function Page() {
       {/* What's not included */}
       <section className="bg-surface-band py-14 sm:py-16 md:py-28 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <div className="eyebrow">
               What we don't charge for
             </div>
-            <h2 className="mt-5 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream text-balance allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               The price you see is the price you pay.
             </h2>
           </div>
@@ -187,7 +187,7 @@ function Page() {
             <div className="eyebrow">
               FOR FUNDS
             </div>
-            <h3 className="mt-5 font-serif font-medium text-xl md:text-2xl text-cream">
+            <h3 className="mt-6 font-serif font-medium text-xl md:text-2xl text-cream">
               The right operating partners, ready when the portfolio needs them.
             </h3>
             <p className="mt-5 text-stone leading-relaxed max-w-2xl">
@@ -215,11 +215,11 @@ function Page() {
       {/* Pricing FAQ */}
       <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-14">
+          <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
               Pricing FAQ
             </div>
-            <h2 className="mt-5 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream text-balance allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Straight answers to the questions we get most.
             </h2>
           </div>

@@ -133,7 +133,7 @@ function MeetVeepPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10 md:mb-12">
             <div className="eyebrow">Engagements</div>
-            <h2 className="mt-5 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Four shapes. One promise.
             </h2>
             <p className="mt-4 text-cream/80 leading-relaxed">

@@ -98,7 +98,7 @@ function Page() {
       {/* Problem */}
       <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-14 md:mb-16">
+          <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
               WHERE YOUR PORTFOLIOS LOSE TIME
             </div>
@@ -106,7 +106,7 @@ function Page() {
               Transactions create volatility. The work still needs an owner.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-10 md:gap-y-10 md:gap-y-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-10 md:gap-y-14">
             {problems.map((p, i) => (
               <div key={p.t}>
                 <div className="eyebrow">
@@ -236,7 +236,7 @@ function Page() {
               One agreement. Every portfolio company activated.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-12 border-t border-white/10 pt-10 md:pt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-14 gap-y-10 md:gap-y-12 border-t border-white/10 pt-10 md:pt-12">
             {steps.map((s) => (
               <div key={s.n}>
                 <div className="eyebrow">{s.n}</div>
