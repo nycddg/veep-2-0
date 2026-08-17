@@ -11,6 +11,7 @@ import { StepFlow } from "@/components/site/StepFlow";
 import { Check } from "lucide-react";
 import { ObjectionList } from "@/components/site/ObjectionList";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import { Accordion } from "@/components/site/Accordion";
 import { Reveal } from "@/components/site/Reveal";
 import { ogImageMeta } from "@/lib/seo";
 import jianYangHeadshot from "@/assets/operator-jian-yang.png.asset.json";
@@ -855,13 +856,7 @@ function Index() {
           </div>
           <div className="divide-y divide-white/10 border-y border-white/10">
             {faqs.map((f) => (
-              <details key={f.q} className="group py-6 md:py-7">
-                <summary className="cursor-pointer flex items-start justify-between gap-6 text-cream list-none [&::-webkit-details-marker]:hidden hover:text-cream transition">
-                  <span className="font-serif font-medium text-xl tracking-tight">{f.q}</span>
-                  <span className="text-accent text-xl leading-none pt-1 transition-transform group-open:rotate-45">+</span>
-                </summary>
-                <p className="mt-4 text-stone leading-relaxed text-base md:text-base max-w-3xl">{f.a}</p>
-              </details>
+              <Accordion key={f.q} q={f.q} a={f.a} />
             ))}
           </div>
           <div className="mt-8 text-sm text-stone">

@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
-import { ChevronDown } from "lucide-react";
+import { Accordion } from "@/components/site/Accordion";
 import { ogImageMeta } from "@/lib/seo";
 
 type QA = { q: string; a: string };
@@ -99,37 +98,5 @@ function Page() {
 
       <FooterCTA primary="contact" />
     </>
-  );
-}
-
-function Accordion({ q, a }: QA) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="py-1">
-      <button
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-        className="w-full flex items-start justify-between gap-4 sm:gap-6 py-5 text-left min-h-11 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 rounded-sm transition-colors"
-      >
-        <span className="text-base sm:text-lg md:text-xl text-cream tracking-tight leading-snug">
-          {q}
-        </span>
-        <ChevronDown
-          size={18}
-          className={`text-cream/70 shrink-0 mt-1.5 transition-[transform,color] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? "rotate-180 text-accent" : ""}`}
-        />
-      </button>
-      <div className="motion-collapse" data-open={open ? "true" : "false"}>
-        <div>
-          <p
-            className={`pb-6 pr-6 sm:pr-10 text-base sm:text-[15px] text-cream/80 leading-relaxed max-w-3xl transition-opacity duration-200 ${
-              open ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            {a}
-          </p>
-        </div>
-      </div>
-    </div>
   );
 }
