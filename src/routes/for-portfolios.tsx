@@ -196,6 +196,27 @@ function Page() {
           <p className="mt-8 text-left text-sm text-stone">
             Just a few of the 75+ operators in our invite-only network.
           </p>
+
+          {/* Locked home stats live inside the spotlight chapter (Dave 08.17:
+              rail + aggregated stats are one chapter, not split down the page) */}
+          <div className="motion-stagger mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 motion-hairline-y">
+            {[
+              { k: "75+", v: "vetted operators" },
+              { k: "72h", v: "to shortlist" },
+              { k: "<10d", v: "to deploy" },
+              { k: "30d", v: "fit guarantee" },
+            ].map((s) => (
+              <div key={s.k}>
+                <div className="stat-figure text-4xl md:text-5xl text-cream">{s.k}</div>
+                <div className="mt-2 mono-label font-medium">
+                  {s.v}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 mono-label text-right">
+            $2B+ cost savings delivered · $1B+ capital raised · $3B+ new revenue generated · Aggregated outcomes across our operator roster.
+          </p>
         </div>
       </Reveal>
 
@@ -268,26 +289,6 @@ function Page() {
               </div>
             ))}
           </div>
-
-          {/* Proof band — the locked home stats, unchanged numbers only */}
-          <div className="motion-stagger mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 motion-hairline-y">
-            {[
-              { k: "75+", v: "vetted operators" },
-              { k: "72h", v: "to shortlist" },
-              { k: "<10d", v: "to deploy" },
-              { k: "30d", v: "fit guarantee" },
-            ].map((s) => (
-              <div key={s.k}>
-                <div className="stat-figure text-4xl md:text-5xl text-cream">{s.k}</div>
-                <div className="mt-2 mono-label font-medium">
-                  {s.v}
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 text-sm text-stone">
-            $2B+ cost savings delivered · $1B+ capital raised · $3B+ new revenue generated · Aggregated outcomes across our operator roster.
-          </p>
         </div>
       </Reveal>
 
