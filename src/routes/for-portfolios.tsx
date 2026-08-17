@@ -305,7 +305,10 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
             {included.map((i) => (
-              <div key={i.t}>
+              <div
+                key={i.t}
+                className="md:border-l md:border-white/10 md:pl-12 md:first:border-l-0 md:first:pl-0"
+              >
                 <div className="font-serif font-medium text-xl text-cream tracking-tight">{i.t}</div>
                 <p className="mt-2 text-base text-stone leading-relaxed">{i.d}</p>
               </div>
