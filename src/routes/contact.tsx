@@ -294,7 +294,7 @@ function Page() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="mt-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)] min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                    className="motion-cta mt-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                   >
                     {loading ? (
                       <><Loader2 className="h-4 w-4 animate-spin" />Sending…</>

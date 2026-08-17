@@ -250,11 +250,6 @@ html.light .bg-cream { background-color: oklch(0.18 0.03 265); }
 html.light .text-ink { color: oklch(0.98 0 0); }
 html.light .hover\:bg-cream\/90:hover { background-color: oklch(0.24 0.03 265); }
 
-/* Soften white glow shadows that only work on dark canvas */
-html.light .shadow-\[0_0_60px_-10px_rgba\(255\,255\,255\,0\.35\)\] {
-  box-shadow: 0 12px 40px -16px rgb(52 116 244 / 0.28);
-}
-
 /* ─── Spotlight band ────────────────────────────────────────────────────────
    Inverted surface used to spotlight the "For Funds" callouts. Redefines the
    semantic tokens locally so children using text-cream / text-stone / bg-cream

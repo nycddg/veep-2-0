@@ -387,12 +387,12 @@ function InlineCTA({
   mode?: "book" | "contact";
 }) {
   const className =
-    "rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 transition inline-flex items-center gap-2 shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)]";
+    "group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
   return (
     <div className="flex flex-wrap items-center gap-4">
       {mode === "contact" ? (
         <Link to="/contact" className={className}>
-          {label} <ArrowRight size={16} />
+          {label} <ArrowRight size={16} className="motion-arrow" />
         </Link>
       ) : (
         <a
@@ -401,7 +401,7 @@ function InlineCTA({
           rel="noopener noreferrer"
           className={className}
         >
-          {label} <ArrowRight size={16} />
+          {label} <ArrowRight size={16} className="motion-arrow" />
         </a>
       )}
       <span className="text-xs text-stone-soft tracking-wide">
@@ -447,9 +447,9 @@ function Index() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center justify-center gap-2 min-h-11"
+              className="group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
             >
-              Book intro call <ArrowRight size={16} />
+              Book intro call <ArrowRight size={16} className="motion-arrow" />
             </a>
             <Link
               to="/"
@@ -812,7 +812,7 @@ function Index() {
             <div className="lg:col-span-2 flex flex-col items-start lg:items-end gap-4">
               <Link
                 to="/for-portfolios"
-                className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition min-h-11 inline-flex items-center justify-center"
+                className="motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 inline-flex items-center justify-center"
               >
                 See how portfolio rosters work
               </Link>
