@@ -181,7 +181,7 @@ function TermsPage() {
 
           <p className="mt-10 text-stone text-lg leading-relaxed">
             Welcome to Veep. These Terms of Use (&quot;Terms&quot;) govern your access to and use of The Veep Group, LLC&apos;s platform, website, and related services (collectively, the &quot;Service&quot;). By accessing or using the Service &mdash; including{" "}
-            <a href="https://www.veep.work" className="text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent transition">
+            <a href="https://www.veep.work" className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent">
               www.veep.work
             </a>{" "}
             or any future websites we operate (the &quot;Website&quot;) &mdash; you agree to be bound by these Terms.
@@ -202,7 +202,7 @@ function TermsPage() {
               <div className="mt-5">
                 <p className="text-stone text-base leading-relaxed">
                   Your use of the Service is also governed by our{" "}
-                  <Link to="/privacy" className="text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent transition">
+                  <Link to="/privacy" className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent">
                     Privacy Policy
                   </Link>
                   , which describes how we collect, use, and share your information.
@@ -224,7 +224,7 @@ function TermsPage() {
               <div className="mt-5 text-stone text-base leading-relaxed">
                 <p>
                   Reach out to us at{" "}
-                  <a href="mailto:hey@veep.work" className="text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent transition">
+                  <a href="mailto:hey@veep.work" className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent">
                     hey@veep.work
                   </a>{" "}
                   with any questions or concerns about these Terms.

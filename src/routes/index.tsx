@@ -454,7 +454,7 @@ function Index() {
             <Link
               to="/"
               hash="how"
-              className="text-sm text-cream/85 hover:text-cream underline underline-offset-8 decoration-white/25 hover:decoration-white/60 transition pb-1"
+              className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/60 pb-1"
             >
               See how it works
             </Link>
@@ -626,13 +626,13 @@ function Index() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
+                className="group motion-link inline-flex items-center gap-2 text-sm font-medium text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70"
               >
-                Book intro call <ArrowRight size={14} />
+                Book intro call <ArrowRight size={14} className="motion-arrow" />
               </a>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 text-sm text-cream/70 underline underline-offset-8 decoration-white/20 hover:text-cream hover:decoration-white/50 transition"
+                className="motion-link inline-flex items-center gap-2 text-sm text-cream/70 underline underline-offset-8 hover:underline-offset-4 decoration-white/20 hover:text-cream hover:decoration-white/50"
               >
                 Get in touch
               </Link>
@@ -866,7 +866,7 @@ function Index() {
           </div>
           <div className="mt-8 text-sm text-stone">
             More detail on the{" "}
-            <Link to="/faq" className="text-cream underline underline-offset-4 decoration-white/40 hover:decoration-white">
+            <Link to="/faq" className="motion-link text-cream underline underline-offset-4 decoration-white/40 hover:decoration-white">
               full FAQ page
             </Link>.
           </div>
