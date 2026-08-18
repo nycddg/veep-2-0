@@ -30,7 +30,7 @@ function MatchMatrixCard({
         {MATRIX.map((row, i) => (
           <div key={row.label}>
             <div className="flex justify-between items-baseline gap-3 mono-label text-[0.61875rem] tracking-[0.14em] text-cream mb-1.5 font-medium">
-              <span className="min-w-0 truncate">{row.label}</span>
+              <span className="min-w-0 leading-snug">{row.label}</span>
               <span className="shrink-0 tabular-nums text-cream/90">{row.value}%</span>
             </div>
             <div className="h-[3px] w-full rounded-full bg-white/10 light:bg-ink/10 overflow-hidden">
