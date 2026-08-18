@@ -88,7 +88,7 @@ function MeetVeepPage() {
                 for the job to be done. Critical work gets owned before a
                 permanent hire is in place.
               </p>
-              <p className="eyebrow pt-2 text-cream/70">
+              <p className="eyebrow pt-2">
                 Vetted senior operators who step in to own critical work, now.
               </p>
             </div>
