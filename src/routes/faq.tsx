@@ -87,9 +87,11 @@ function Page() {
           className={`${i % 2 === 0 ? "bg-surface-raised" : ""} py-12 sm:py-14 md:py-16`}
         >
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <div className="eyebrow mb-6">
+            {/* h2 so screen readers can jump between groups; leading pinned to
+                the pre-h2 value so the label renders identically. */}
+            <h2 className="eyebrow mb-6 leading-[1.55]">
               {g.label}
-            </div>
+            </h2>
             <div className="divide-y divide-white/10 border-y border-white/10">
               {g.items.map((qa) => (
                 <Accordion key={qa.q} q={qa.q} a={qa.a} />
