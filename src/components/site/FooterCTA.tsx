@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { BOOKING_URL } from "@/lib/booking";
 
@@ -28,7 +27,7 @@ export function FooterCTA({
         <div className="mt-8 flex flex-col items-start sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5">
           {primary === "contact" ? (
             <Link to="/contact" className={primaryClass}>
-              Get in touch <ArrowRight size={16} className="motion-arrow" />
+              Get in touch
             </Link>
           ) : (
             <a
@@ -37,7 +36,7 @@ export function FooterCTA({
               rel="noopener noreferrer"
               className={primaryClass}
             >
-              Book intro call <ArrowRight size={16} className="motion-arrow" />
+              Book intro call
             </a>
           )}
           <Link

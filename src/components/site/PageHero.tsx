@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { BOOKING_URL } from "@/lib/booking";
 import { TrustChip } from "./TrustChip";
@@ -45,11 +44,7 @@ export function PageHero({
   const primaryClass =
     "group motion-cta cta-accent rounded-full px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
 
-  const primaryInner = (
-    <>
-      {primaryLabel} <ArrowRight size={16} className="motion-arrow" />
-    </>
-  );
+  const primaryInner = <>{primaryLabel}</>;
 
   return (
     <section className="relative overflow-hidden border-b border-white/10">

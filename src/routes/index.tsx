@@ -238,7 +238,7 @@ function InlineCTA({
     <div className="flex flex-col items-start gap-4.5">
       {mode === "contact" ? (
         <Link to="/contact" className={className}>
-          {label} <ArrowRight size={16} className="motion-arrow" />
+          {label}
         </Link>
       ) : (
         <a
@@ -247,7 +247,7 @@ function InlineCTA({
           rel="noopener noreferrer"
           className={className}
         >
-          {label} <ArrowRight size={16} className="motion-arrow" />
+          {label}
         </a>
       )}
       <span className="text-xs text-stone-soft tracking-wide">
@@ -354,7 +354,7 @@ function Index() {
               rel="noopener noreferrer"
               className="group motion-cta cta-accent rounded-full px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
             >
-              Book intro call <ArrowRight size={16} className="motion-arrow" />
+              Book intro call
             </a>
             <Link
               to="/"
