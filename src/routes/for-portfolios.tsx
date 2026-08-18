@@ -161,7 +161,7 @@ function Page() {
                 Post audit
               </div>
               <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">
-                Portfolio Roster
+                On-demand Operating Partners
               </div>
               <p className="mt-4 text-base text-stone leading-relaxed">
                 Deploy operating partners as needed against the gaps the audit identifies — à la carte, one engagement at a time — or secure a custom roster for your firm with priority access to vetted senior operators across the portfolio.
