@@ -62,7 +62,7 @@ function MeetVeepPage() {
                   aria-hidden
                   className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-accent/15 blur-[80px] scale-95 light:hidden"
                 />
-                <div className="overflow-hidden rounded-[15px] ring-1 ring-white/10 light:ring-ink/10 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
+                <div className="overflow-hidden rounded-[15px] shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
                   <img
                     src={erikaHeadshot.url}
                     alt="Senior Veep operator"

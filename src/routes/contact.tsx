@@ -173,7 +173,7 @@ function Page() {
                 ))}
               </ul>
               {preselected && (
-                <div className="rounded-[15px] border border-accent/30 bg-accent/5 p-4 light:bg-foreground/5">
+                <div className="rounded-[15px] bg-accent/5 p-4 light:bg-foreground/5">
                   <div className="eyebrow">
                     Outcome
                   </div>

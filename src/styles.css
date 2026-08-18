@@ -476,17 +476,15 @@ html.light .spotlight-invert .decoration-white\/30 { text-decoration-color: rgb(
   }
 }
 
-/* Glass-morphic operator proof card */
+/* Glass-morphic operator proof card — borderless per the card system. */
 @utility glass-card {
   background: color-mix(in srgb, white 4%, transparent);
-  border: 1px solid color-mix(in srgb, white 10%, transparent);
   backdrop-filter: blur(24px) saturate(140%);
 }
 
-/* Light-mode glass-card: cream fill on the white canvas (no white cards). */
+/* Light-mode glass-card: cream fill on the cream canvas (no white cards). */
 html.light .glass-card {
   background: var(--surface-card);
-  border: 1px solid color-mix(in srgb, #0a1330 8%, transparent);
   box-shadow: 0 12px 32px -20px rgb(10 19 48 / 0.14);
   backdrop-filter: none;
 }
