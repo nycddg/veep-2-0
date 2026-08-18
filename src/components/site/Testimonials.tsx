@@ -30,7 +30,7 @@ export function Testimonials() {
                 {q.quote}
               </blockquote>
               <figcaption className="mt-10 flex items-center justify-center gap-4">
-                <div className="h-11 w-11 rounded-full bg-white/5 ring-1 ring-white/20 grid place-items-center text-cream text-sm">
+                <div className="h-11 w-11 shrink-0 rounded-full bg-white/5 ring-1 ring-white/20 grid place-items-center text-cream text-sm">
                   {q.initials}
                 </div>
                 <div className="text-left">

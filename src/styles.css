@@ -921,14 +921,8 @@ html.light .spotlight-invert .cta-accent:hover {
   .motion-hairline-tier { background-size: 1px 100%; }
   .motion-hairline-tier:first-child { background-size: 0; }
 }
-/* Light tier hairline is coral — the one signal line on the pricing grid
-   (was solid navy; accent reduction 08.18). */
-html.light .motion-hairline-tier {
-  background-image: linear-gradient(
-    var(--accent-coral),
-    var(--accent-coral)
-  );
-}
+/* Tier hairlines stay neutral in both themes — the featured tier's coral
+   border is the one signal line on the pricing grid (Dave 08.18). */
 /* Hidden (pre-draw) state only exists when motion is allowed — reduced-motion
    users always see the painted line. */
 @media (prefers-reduced-motion: no-preference) {

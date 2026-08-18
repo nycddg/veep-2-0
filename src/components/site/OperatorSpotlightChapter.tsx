@@ -59,7 +59,7 @@ export function OperatorSpotlightChapter({
                 className="flex flex-col gap-3 group pr-8 last:pr-0 lg:pr-8 lg:last:pr-0 border-white/10 even:border-l even:pl-8 lg:[&:nth-child(n+2)]:border-l lg:[&:nth-child(n+2)]:pl-8"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="relative">
+                  <div className="relative shrink-0">
                     {i === 0 && (
                       <div className="motion-ping absolute inset-0 rounded-full bg-accent-coral/40" />
                     )}
