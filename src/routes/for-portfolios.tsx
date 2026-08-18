@@ -143,7 +143,10 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12 motion-hairline pt-12">
             <div>
-              <div className="font-serif font-medium text-xl text-cream tracking-tight">What you get</div>
+              <div className="eyebrow">
+                2-week audit
+              </div>
+              <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">What you get</div>
               <ul className="mt-6 space-y-3 text-sm text-stone">
                 {auditDeliverables.map((d) => (
                   <li key={d} className="flex items-baseline gap-3">
@@ -155,13 +158,13 @@ function Page() {
             </div>
             <div className="md:border-l md:border-white/10 md:pl-12">
               <div className="eyebrow">
-                Then
+                Post audit
               </div>
               <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">
                 Portfolio Roster
               </div>
               <p className="mt-4 text-base text-stone leading-relaxed">
-                A retained operating partner function for firms that do not want to build one internally. Veep gives your firm priority access to vetted senior operators who can support transactions, integrations, interim gaps, and value-creation work across the portfolio.
+                Deploy operating partners as needed against the gaps the audit identifies — à la carte, one engagement at a time — or secure a custom roster for your firm with priority access to vetted senior operators across the portfolio.
               </p>
               <ul className="mt-6 space-y-2 text-sm text-stone">
                 {[
@@ -175,6 +178,12 @@ function Page() {
                   </li>
                 ))}
               </ul>
+              <a
+                href="#roster"
+                className="group motion-link mt-6 inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70 min-h-11"
+              >
+                Learn more <ArrowRight size={14} className="motion-arrow" />
+              </a>
             </div>
           </div>
         </div>
@@ -193,7 +202,7 @@ function Page() {
       </Reveal>
 
       {/* Roster tiers */}
-      <section className="bg-surface-band py-14 sm:py-16 md:py-28">
+      <section id="roster" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
