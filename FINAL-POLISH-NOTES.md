@@ -79,7 +79,8 @@ ambient glows (locked), portal/auth/shadcn internals (out of scope).
 
 "Book intro call" was on 10 placements; now one action per context. Nav pills
 read "Get started" (still booking). Homepage InlineCTAs: benefits "Get
-matched", testimonial "Book your intro call", before-you-book unchanged; hero
+matched" then Dave revised to "Meet Veep" (still booking), testimonial "Book
+your intro call", before-you-book unchanged; hero
 pill unchanged (lock). Spotlight rail text link is now a single "Request an
 operator" → /contact (the redundant "Get in touch" secondary beside it was
 dropped). FooterCTA book pill reads "Speak with our founders" (call is with a
