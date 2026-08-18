@@ -286,7 +286,7 @@ function Page() {
                     <p
                       id="contact-form-error"
                       role="alert"
-                      className="text-sm text-red-400 bg-red-500/10 rounded-xl px-4 py-3"
+                      className="text-sm text-accent-coral bg-accent-coral/10 rounded-xl px-4 py-3"
                     >
                       {submitError}
                     </p>
@@ -338,7 +338,7 @@ function Field({
       </span>
       <div className="mt-2">{children}</div>
       {error && (
-        <p id={errorId} className="mt-1.5 text-xs text-red-400">
+        <p id={errorId} className="mt-1.5 text-xs text-accent-coral">
           {error}
         </p>
       )}

@@ -357,7 +357,7 @@ function Page() {
                   </details>
 
                   {error && (
-                    <p className="text-sm text-red-400 border-l-2 border-red-400/50 pl-4 py-1">
+                    <p className="text-sm text-accent-coral border-l-2 border-accent-coral/50 pl-4 py-1">
                       {error}
                     </p>
                   )}
