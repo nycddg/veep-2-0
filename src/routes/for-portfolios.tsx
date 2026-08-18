@@ -146,7 +146,7 @@ function Page() {
               <div className="eyebrow">
                 2-week audit
               </div>
-              <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">What you get</div>
+              <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">Deliverables</div>
               <ul className="mt-6 space-y-3 text-sm text-stone">
                 {auditDeliverables.map((d) => (
                   <li key={d} className="flex items-baseline gap-3">
