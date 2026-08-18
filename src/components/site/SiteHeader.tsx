@@ -141,7 +141,7 @@ export function SiteHeader() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="motion-cta cta-accent block rounded-full px-4 py-3 text-sm text-center font-medium"
+                className="motion-cta cta-accent block rounded-full px-4 py-3 text-sm text-center font-medium min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Book intro call
               </a>
