@@ -80,13 +80,13 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-2 shrink-0">
           <ThemeToggle />
           <a
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="motion-cta cta-accent relative rounded-full px-4 py-1.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background before:absolute before:inset-x-0 before:-inset-y-1.5 before:content-['']"
+            className="motion-cta cta-accent relative shrink-0 whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background before:absolute before:inset-x-0 before:-inset-y-1.5 before:content-['']"
           >
             Get started
           </a>
