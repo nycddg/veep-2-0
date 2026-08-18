@@ -49,6 +49,32 @@ baseline was reverted. `bun run build` green after every commit.
 - Em dashes, all copy, CTA destinations, 11px mono chrome, #F43F34,
   /portal, /auth, _authenticated.
 
+## Addendum — accent reduction pass (same day, after final polish)
+
+Dave: blue for text only; coral for vector graphics; progress bars red; dark
+buttons cream; blue/navy hairlines red. Four commits, no structural rework of
+the polish pass:
+
+1. **Buttons** — `cta-accent` mirrors its ground everywhere: cream pill on
+   dark, navy pill on light and on cream invert bands (`cta-accent-dark`
+   recolored navy, name kept), cream pill on the light-page navy band. No
+   blue button fills remain.
+2. **Bars** — Match Matrix bars + 100% glow, header reading-progress line,
+   and spotlight rail progress → coral. Bars/% lock untouched (color only).
+3. **Hairlines** — featured tier borders (pricing + homepage engagement
+   tiles), the light-mode tier hairline (was solid navy — the pricing navy
+   line Dave flagged), and the active-nav underline → coral.
+4. **Marks** — problem-diagram desk dots + pulse, TrustChip dot (+glow color),
+   spotlight stat ping, list bullets (pricing, for-portfolios), meetveep step
+   badges, rail initials placeholder → coral.
+
+Kept blue by Dave's explicit call: dark hover washes + Why Veep column tint
+(signature hover), eyebrows/mono labels/text links/`hover:text-accent`, focus
+rings and focus borders (a11y chrome). Also left: operator photo tint overlay
+(mix-blend photo grade; featured already coral, non-featured blue encodes the
+distinction), contact outcome panel 5% tint (wash-class treatment), dark
+ambient glows (locked), portal/auth/shadcn internals (out of scope).
+
 ## Environment caveats
 
 - This container has no browser; QA was code-level (audits of radii, borders,

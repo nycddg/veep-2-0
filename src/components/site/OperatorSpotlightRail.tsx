@@ -42,7 +42,7 @@ function OperatorCard({ op }: { op: Operator }) {
             }}
           />
         ) : (
-          <div className="w-full h-full grid place-items-center bg-accent/10 text-accent/70 font-mono text-5xl">
+          <div className="w-full h-full grid place-items-center bg-accent-coral/10 text-accent-coral/70 font-mono text-5xl">
             {initials(op.name)}
           </div>
         )}
