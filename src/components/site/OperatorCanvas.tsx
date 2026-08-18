@@ -35,8 +35,8 @@ function MatchMatrixCard({
             </div>
             <div className="h-[3px] w-full rounded-full bg-white/10 light:bg-ink/10 overflow-hidden">
               <div
-                className={`h-full rounded-full bg-accent ${
-                  row.value === 100 ? "shadow-[0_0_10px_color-mix(in_oklab,var(--accent)_45%,transparent)]" : ""
+                className={`h-full rounded-full bg-accent-coral ${
+                  row.value === 100 ? "shadow-[0_0_10px_color-mix(in_oklab,var(--accent-coral)_45%,transparent)]" : ""
                 }`}
                 style={{
                   width: animate ? `${row.value}%` : "0%",

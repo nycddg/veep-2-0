@@ -156,7 +156,7 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
           </span>
           <div className="relative h-px flex-1 bg-white/10 max-w-md">
             <div
-              className="absolute inset-y-0 left-0 bg-accent/70 transition-[width] duration-200"
+              className="absolute inset-y-0 left-0 bg-accent-coral/70 transition-[width] duration-200"
               style={{ width: `${Math.max(8, progress * 100)}%` }}
             />
           </div>

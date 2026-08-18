@@ -976,7 +976,7 @@ html.light .motion-row-wash {
 @supports (animation-timeline: scroll()) {
   .motion-progress {
     display: block;
-    background-color: var(--color-accent);
+    background-color: var(--accent-coral);
     transform-origin: left center;
     animation: veep-read-progress linear both;
     animation-timeline: scroll(root block);
