@@ -25,7 +25,7 @@ const clients = [
 export function ClientStrip() {
   return (
     <div className="hidden md:block mt-16 md:mt-24 text-center">
-      <div className="eyebrow">Trusted by founders at</div>
+      <div className="eyebrow">Trusted by</div>
       <div className="mt-8 mx-auto max-w-4xl flex flex-wrap justify-center gap-2">
         {clients.map((c) => (
           <span
