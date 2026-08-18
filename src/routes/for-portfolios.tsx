@@ -186,15 +186,17 @@ function Page() {
                 </li>
                 <li className="flex items-baseline gap-3">
                   <span className="inline-block h-1 w-1 rounded-full bg-accent-coral shrink-0 translate-y-[-2px]" />
-                  <span>Portfolio rosters start at $75k</span>
+                  <span>
+                    <a
+                      href="#roster"
+                      className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70"
+                    >
+                      Portfolio rosters
+                    </a>{" "}
+                    start at $75k
+                  </span>
                 </li>
               </ul>
-              <a
-                href="#roster"
-                className="group motion-link mt-6 inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70 min-h-11"
-              >
-                Learn more <ArrowRight size={14} className="motion-arrow" />
-              </a>
             </div>
           </div>
         </div>
