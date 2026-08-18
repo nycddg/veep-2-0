@@ -226,8 +226,10 @@ function Page() {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
+            {/* An odd last item spans both columns so the grid never leaves a
+                blank cell (self-correcting if a fourth question is added). */}
             {faqs.map((f) => (
-              <div key={f.q} className="border-t border-white/10 pt-6">
+              <div key={f.q} className="border-t border-white/10 pt-6 md:last:odd:col-span-2">
                 <div className="text-lg text-cream tracking-tight leading-snug">{f.q}</div>
                 <p className="mt-2 text-base text-stone leading-relaxed">{f.a}</p>
               </div>
