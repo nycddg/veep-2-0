@@ -61,7 +61,7 @@ export function SiteHeader() {
               key={(n as { hash: string }).hash}
               to="/"
               hash={(n as { hash: string }).hash}
-              className="group motion-link px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
+              className="group motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
             >
               <span className="motion-underline">{n.label}</span>
             </Link>
@@ -72,8 +72,8 @@ export function SiteHeader() {
               key={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
               to={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
               viewTransition
-              className="group motion-link px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
-              activeProps={{ className: "motion-link px-3 py-2 text-[0.8rem] text-cream border-b border-accent" }}
+              className="group motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
+              activeProps={{ className: "motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream border-b border-accent" }}
             >
               <span className="motion-underline">{n.label}</span>
             </Link>
@@ -86,7 +86,7 @@ export function SiteHeader() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="motion-cta cta-accent rounded-full px-4 py-1.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="motion-cta cta-accent relative rounded-full px-4 py-1.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background before:absolute before:inset-x-0 before:-inset-y-1.5 before:content-['']"
           >
             Book intro call
           </a>
