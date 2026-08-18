@@ -5,7 +5,7 @@ import { BOOKING_URL } from "@/lib/booking";
 
 export function FooterCTA({
   headline = <>Your next big move starts here.</>,
-  sub = "Book a 30-minute call with a Veep founder. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
+  sub = "Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
   /** Default: Fillout booking. Pass "contact" for Get in touch → /contact. */
   primary = "book",
 }: {
@@ -48,6 +48,11 @@ export function FooterCTA({
             Request a capacity audit
           </Link>
         </div>
+        {primary === "book" && (
+          <p className="mt-3 text-xs text-stone-soft text-left">
+            Book a 30-minute call with a Veep founder.
+          </p>
+        )}
       </div>
     </section>
   );
