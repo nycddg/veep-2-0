@@ -324,7 +324,7 @@ function Page() {
                   </Field>
 
                   <details className="text-sm text-stone">
-                    <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none">
+                    <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none inline-flex items-center min-h-11">
                       Add background details (optional)
                     </summary>
                     <div className="mt-4 grid gap-4">
@@ -431,7 +431,7 @@ function CheckboxGroup({
         {options.map((o) => (
           <label
             key={o}
-            className="inline-flex items-center gap-2 rounded-full border border-white/12 px-3 py-1.5 text-xs text-cream/85 hover:border-accent/50 hover:text-cream transition cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full border border-white/12 px-3.5 py-1.5 min-h-11 text-xs text-cream/85 hover:border-accent/50 hover:text-cream transition cursor-pointer"
           >
             <input type="checkbox" name={name} value={o} className="accent-accent" />
             {o}
