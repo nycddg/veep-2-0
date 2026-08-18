@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import erikaHeadshot from "@/assets/operator-erika-velazquez.png.asset.json";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { ogImageMeta } from "@/lib/seo";
@@ -133,17 +133,17 @@ function MeetVeepPage() {
               Advisory, Sprint, Operator, and Pod — priced to the work, not the hour.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-5">
+          <div className="flex flex-col items-start sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5">
             <Link
               to="/pricing"
               hash="tiers"
-              className="group motion-link inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70 min-h-11"
+              className="group motion-cta cta-accent rounded-full px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
             >
-              See pricing <ArrowRight size={14} className="motion-arrow" />
+              See pricing
             </Link>
             <Link
               to="/for-portfolios"
-              className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
+              className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
             >
               For Funds
             </Link>
