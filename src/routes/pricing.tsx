@@ -133,7 +133,7 @@ function Page() {
                 <div className="flex items-baseline gap-3 flex-wrap">
                   <span className="font-serif font-medium text-xl text-cream">{t.t}</span>
                   {t.featured && (
-                    <span className="eyebrow text-accent-coral">
+                    <span className="eyebrow">
                       Most requested
                     </span>
                   )}

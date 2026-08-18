@@ -431,7 +431,7 @@ function Index() {
                 When the work lands or the permanent hire arrives, we hand off with
                 results and documentation, not ongoing dependency.
               </p>
-              <p className="mt-6 eyebrow hidden md:block">
+              <p className="mt-6 eyebrow hidden md:block !text-cream">
                 Vetted senior operators who step in to own critical work, now.
               </p>
             </div>

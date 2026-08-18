@@ -30,7 +30,7 @@ export function EngagementTile({
       <div className="flex items-baseline gap-3">
         <span className="font-serif font-medium text-xl text-cream">{name}</span>
         {featured && (
-          <span className="eyebrow text-accent-coral">
+          <span className="eyebrow">
             Most requested
           </span>
         )}
