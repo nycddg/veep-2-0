@@ -89,7 +89,10 @@ founder; Dave revised from "Talk to a founder"). PageHero default label is "Book
 /faq and /about); /for-portfolios hero primary is "Request a capacity audit"
 → /contact?intent=audit with secondary "See pricing" → /pricing (default
 secondary would have duplicated the new primary); /terms and /privacy read
-"Get started". Destination changes are only the two flagged contact-page
+"Learn more" → /about (Dave revised from "Get started"; internal destination
+since Learn more → booking form would mislead). Meetveep hero pill reads
+"Request an operator" → /contact so the page's FooterCTA keeps "Get in touch"
+without duplicating it. Destination changes are only the two flagged contact-page
 placements (spotlight, for-portfolios hero). PageHero gained a
 `primarySearch` prop to pass query params on internal primary routes.
 

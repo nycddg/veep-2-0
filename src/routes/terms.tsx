@@ -167,7 +167,8 @@ function TermsPage() {
         eyebrow="Legal"
         title="Terms of Service."
         sub="These Terms govern your access to and use of The Veep Group, LLC's platform, website, and related services. Please read them carefully."
-        primaryLabel="Get started"
+        primaryLabel="Learn more"
+        primaryTo="/about"
         secondaryLabel="Contact us"
         secondaryTo="/contact"
       />

@@ -160,7 +160,8 @@ function PrivacyPage() {
         eyebrow="Legal"
         title="Privacy Policy."
         sub="How The Veep Group, LLC collects, uses, shares, and protects your information when you use veep.work and the Veep platform."
-        primaryLabel="Get started"
+        primaryLabel="Learn more"
+        primaryTo="/about"
         secondaryLabel="Contact us"
         secondaryTo="/contact"
       />
