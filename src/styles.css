@@ -420,7 +420,9 @@ html.light .spotlight-invert .decoration-white\/30 { text-decoration-color: rgb(
      radius, so pill CTAs stay pills under keyboard focus. */
   a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
   input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
-    outline: 2px solid var(--color-accent);
+    /* var(--accent) (not the :root-resolved --color-accent alias) so
+       spotlight-invert band remaps reach the ring. */
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 
@@ -503,7 +505,9 @@ html.light .glass-card {
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  /* var(--accent) (not the :root-resolved --color-accent alias) so
+     spotlight-invert band remaps reach the eyebrow. */
+  color: var(--accent);
   transition: letter-spacing 500ms var(--ease-out-expo);
 }
 
