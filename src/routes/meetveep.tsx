@@ -96,7 +96,7 @@ function MeetVeepPage() {
             <ul className="order-4 lg:col-span-7 rounded-[15px] bg-surface-card divide-y divide-white/10 max-w-xl">
               {BULLETS.map((b) => (
                 <li key={b} className="flex items-center gap-3 px-5 py-4">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-accent/40 text-accent">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-accent-coral/40 text-accent-coral">
                     <Check size={14} strokeWidth={2.5} />
                   </span>
                   <span className="text-sm sm:text-base text-cream/90">{b}</span>

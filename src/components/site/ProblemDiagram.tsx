@@ -39,11 +39,11 @@ function DeskDot({ delay = false }: { delay?: boolean }) {
     <span className="relative inline-flex h-[7.2px] w-[7.2px] shrink-0">
       <span
         aria-hidden
-        className={`problem-diagram-pulse absolute inset-0 rounded-full bg-accent/50 ${
+        className={`problem-diagram-pulse absolute inset-0 rounded-full bg-accent-coral/50 ${
           delay ? "problem-diagram-pulse-delay" : ""
         }`}
       />
-      <span className="relative inline-block h-full w-full rounded-full bg-accent" />
+      <span className="relative inline-block h-full w-full rounded-full bg-accent-coral" />
     </span>
   );
 }

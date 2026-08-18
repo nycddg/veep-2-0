@@ -62,9 +62,9 @@ export function OperatorSpotlightChapter({
                 <div className="flex items-center gap-2.5">
                   <div className="relative">
                     {i === 0 && (
-                      <div className="motion-ping absolute inset-0 rounded-full bg-accent/40" />
+                      <div className="motion-ping absolute inset-0 rounded-full bg-accent-coral/40" />
                     )}
-                    <div className="relative w-2 h-2 rounded-full bg-accent" />
+                    <div className="relative w-2 h-2 rounded-full bg-accent-coral" />
                   </div>
                   <span className="mono-label font-medium">
                     {m.label}
