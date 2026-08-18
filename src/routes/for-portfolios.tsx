@@ -164,7 +164,7 @@ function Page() {
                 On-demand Operating Partners
               </div>
               <p className="mt-4 text-base text-stone leading-relaxed">
-                Deploy operating partners as needed against the gaps the audit identifies — à la carte, one engagement at a time — or secure a custom roster for your firm with priority access to vetted senior operators across the portfolio.
+                Assign operating partners as needed against the gaps identified in the audit. Secure a custom roster for your firm with priority access to vetted senior operators across the portfolio.
               </p>
               <ul className="mt-6 space-y-2 text-sm text-stone">
                 <li className="flex items-baseline gap-3">
