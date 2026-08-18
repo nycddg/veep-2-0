@@ -24,11 +24,14 @@ const clients = [
  */
 export function ClientStrip() {
   return (
-    <div className="mt-16 md:mt-24 text-center">
+    <div className="hidden md:block mt-16 md:mt-24 text-center">
       <div className="eyebrow">Trusted by founders at</div>
-      <div className="mt-8 mx-auto max-w-4xl flex flex-wrap justify-center gap-x-8 gap-y-3">
+      <div className="mt-8 mx-auto max-w-4xl flex flex-wrap justify-center gap-2">
         {clients.map((c) => (
-          <span key={c} className="text-base text-cream/60 whitespace-nowrap">
+          <span
+            key={c}
+            className="rounded-full border border-white/10 bg-background px-3.5 py-1.5 text-sm text-cream whitespace-nowrap"
+          >
             {c}
           </span>
         ))}
