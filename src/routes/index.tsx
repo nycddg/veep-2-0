@@ -395,7 +395,7 @@ function Index() {
       {/* Problem — before Meet Veep on mobile */}
       <Reveal as="section" id="problem" className="order-1 md:order-2 bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-12 md:mb-14 text-center md:text-left">
+          <div className="max-w-5xl mb-12 md:mb-14 text-left">
             <SectionEyebrow>The moment you're in</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Your business is too important for ownerless work.
