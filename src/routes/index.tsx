@@ -492,7 +492,7 @@ function Index() {
             ))}
           </div>
           <div className="mt-16">
-            <InlineCTA />
+            <InlineCTA label="Get matched" />
           </div>
         </div>
       </Reveal>
@@ -577,7 +577,7 @@ function Index() {
           </div>
 
           <div className="mt-16">
-            <InlineCTA centered />
+            <InlineCTA centered label="Book your intro call" />
           </div>
         </div>
       </Reveal>
