@@ -103,7 +103,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Veep" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#0b1220" },
+      { name: "theme-color", media: "(prefers-color-scheme: dark)", content: "#0b1220" },
+      { name: "theme-color", media: "(prefers-color-scheme: light)", content: "#E4E9F2" },
       { name: "format-detection", content: "telephone=no" },
     ],
     links: [
