@@ -18,11 +18,10 @@ function initials(name: string) {
 }
 
 function OperatorCard({ op }: { op: Operator }) {
-  const accent = op.featured ? "accent-coral" : "accent";
   return (
     <article
       tabIndex={0}
-      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-2xl bg-[color:var(--surface-raised)] cursor-pointer transition-colors duration-300 ${
+      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-[15px] bg-[color:var(--surface-raised)] cursor-pointer transition-colors duration-300 ${
         op.featured ? "ring-1 ring-inset ring-[color:var(--color-accent-coral)]/40" : ""
       } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
       aria-label={`${op.name}, ${op.role}`}
@@ -43,7 +42,7 @@ function OperatorCard({ op }: { op: Operator }) {
             }}
           />
         ) : (
-          <div className="w-full h-full grid place-items-center bg-accent/10 text-accent/70 font-mono text-5xl">
+          <div className="w-full h-full grid place-items-center bg-accent-coral/10 text-accent-coral/70 font-mono text-5xl">
             {initials(op.name)}
           </div>
         )}
@@ -153,11 +152,11 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
       <div className="mt-8 flex items-center justify-between gap-6">
         <div className="flex items-center gap-4 flex-1 min-w-0">
           <span className="eyebrow shrink-0">
-            {current} // {total}
+            {current} / {total}
           </span>
           <div className="relative h-px flex-1 bg-white/10 max-w-md">
             <div
-              className="absolute inset-y-0 left-0 bg-accent/70 transition-[width] duration-200"
+              className="absolute inset-y-0 left-0 bg-accent-coral/70 transition-[width] duration-200"
               style={{ width: `${Math.max(8, progress * 100)}%` }}
             />
           </div>
@@ -167,7 +166,7 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
             type="button"
             onClick={() => scrollByCard(-1)}
             aria-label="Previous operator"
-            className="group w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent hover:border-accent/40 transition-colors duration-200"
+            className="group w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent-coral transition-colors duration-200"
           >
             <ArrowLeft size={15} className="motion-arrow" />
           </button>
@@ -175,7 +174,7 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
             type="button"
             onClick={() => scrollByCard(1)}
             aria-label="Next operator"
-            className="group w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent hover:border-accent/40 transition-colors duration-200"
+            className="group w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent-coral transition-colors duration-200"
           >
             <ArrowRight size={15} className="motion-arrow" />
           </button>

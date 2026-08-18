@@ -61,9 +61,9 @@ export function SiteHeader() {
               key={(n as { hash: string }).hash}
               to="/"
               hash={(n as { hash: string }).hash}
-              className="motion-link px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
+              className="group motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
             >
-              {n.label}
+              <span className="motion-underline">{n.label}</span>
             </Link>
           ))}
           <span aria-hidden className="mx-3 h-4 w-px bg-white/15" />
@@ -72,23 +72,23 @@ export function SiteHeader() {
               key={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
               to={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
               viewTransition
-              className="motion-link px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
-              activeProps={{ className: "motion-link px-3 py-2 text-[0.8rem] text-cream border-b border-accent" }}
+              className="group motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
+              activeProps={{ className: "motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream border-b border-accent-coral" }}
             >
-              {n.label}
+              <span className="motion-underline">{n.label}</span>
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-2 shrink-0">
           <ThemeToggle />
           <a
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="motion-cta rounded-full bg-cream px-4 py-1.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="motion-cta cta-accent relative shrink-0 whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background before:absolute before:inset-x-0 before:-inset-y-1.5 before:content-['']"
           >
-            Book intro call
+            Get started
           </a>
         </div>
 
@@ -104,6 +104,10 @@ export function SiteHeader() {
           </button>
         </div>
       </div>
+
+      {/* Reading progress — 1px accent fill along the header's bottom edge.
+          CSS scroll-driven; hidden entirely where unsupported (see styles.css). */}
+      <div aria-hidden className="motion-progress absolute inset-x-0 bottom-0 h-px" />
 
       {open && (
         <div className="lg:hidden border-t border-white/8 bg-background">
@@ -137,9 +141,9 @@ export function SiteHeader() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="block rounded-full bg-cream px-4 py-3 text-sm text-center font-medium text-ink"
+                className="motion-cta cta-accent block rounded-full px-4 py-3 text-sm text-center font-medium min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                Book intro call
+                Get started
               </a>
             </div>
           </div>

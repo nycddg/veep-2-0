@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import { Reveal } from "@/components/site/Reveal";
 import { ogImageMeta } from "@/lib/seo";
 
 const tiers = [
@@ -116,7 +118,7 @@ function Page() {
       />
 
       {/* Four tiers — match homepage Engagements spacing (border-t + pad, not divide-y/gap clash) */}
-      <section id="tiers" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="tiers" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 min-w-0">
             {tiers.map((t) => (
@@ -124,14 +126,14 @@ function Page() {
                 key={t.t}
                 className={`group motion-hover-lift flex flex-col md:min-h-[280px] pt-7 pb-6 pr-2 ${
                   t.featured
-                    ? "border-t-2 border-accent md:border-t-0 md:pl-6 md:border-l-2 md:border-accent"
-                    : "border-t border-white/10 md:border-t-0 md:pl-6 md:border-l md:border-white/10"
+                    ? "border-t-2 border-accent-coral md:border-t-0 md:pl-6 md:border-l-2 md:border-accent-coral"
+                    : "motion-hairline-tier md:pl-6 md:first:pl-0"
                 }`}
               >
                 <div className="flex items-baseline gap-3 flex-wrap">
                   <span className="font-serif font-medium text-xl text-cream">{t.t}</span>
                   {t.featured && (
-                    <span className="eyebrow text-accent-coral">
+                    <span className="eyebrow">
                       Most requested
                     </span>
                   )}
@@ -139,49 +141,41 @@ function Page() {
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums">
                   {t.p} <span className="text-stone">{t.per}</span>
                 </div>
-                <p className="mt-4 text-base text-cream/90 leading-relaxed">{t.best}</p>
-                <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
+                <p className="mt-4 text-base text-stone leading-relaxed">{t.best}</p>
+                <ul className="mt-6 space-y-2.5 text-sm text-stone">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 mt-2" />
+                      <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 mt-2" />
                       <span>{i}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 md:mt-auto pt-4 md:pt-8">
-                  <Link
-                    to="/pricing"
-                    hash="tiers"
-                    className="text-xs text-cream/90 hover:text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70 transition"
-                  >
-                    See scope →
-                  </Link>
-                </div>
               </div>
             ))}
           </div>
-          <p className="mt-10 text-sm text-cream/70">
+          <p className="mt-10 text-sm text-stone">
             All engagements carry a 30-day fit guarantee · Response within 1 business day
           </p>
         </div>
-      </section>
+      </Reveal>
 
-      {/* What's not included */}
-      <section className="bg-surface-band py-14 sm:py-16 md:py-28 border-t border-white/10">
+      {/* What's not included — drops off the tiers band to raised so the page
+          breathes ink → band → raised → invert → raised instead of slab-slab */}
+      <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12 md:mb-14">
             <div className="eyebrow">
               What we don't charge for
             </div>
-            <h2 className="mt-5 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream text-balance allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               The price you see is the price you pay.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 md:gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-10 md:gap-y-14">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
             {notIncluded.map((n) => (
               <div key={n.t}>
-                <div className="text-lg text-cream">{n.t}</div>
-                <p className="mt-2 text-base text-cream/75 leading-relaxed">{n.d}</p>
+                <div className="font-serif font-medium text-xl text-cream tracking-tight">{n.t}</div>
+                <p className="mt-2 text-base text-stone leading-relaxed">{n.d}</p>
               </div>
             ))}
           </div>
@@ -195,10 +189,10 @@ function Page() {
             <div className="eyebrow">
               FOR FUNDS
             </div>
-            <h3 className="mt-5 font-serif font-medium text-xl md:text-2xl text-cream">
+            <h3 className="mt-6 font-serif font-medium text-xl md:text-2xl text-cream">
               The right operating partners, ready when the portfolio needs them.
             </h3>
-            <p className="mt-5 text-cream/80 leading-relaxed max-w-2xl">
+            <p className="mt-5 text-stone leading-relaxed max-w-2xl">
               Built for PE firms, family offices, holdcos, and multi-company
               founders that need senior operating support across recurring
               leadership gaps, transaction moments, and value-creation work.
@@ -211,9 +205,9 @@ function Page() {
             <div className="mt-6">
               <Link
                 to="/for-portfolios"
-                className="text-sm text-cream hover:text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
+                className="group motion-link inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70"
               >
-                See how the roster works →
+                See how the roster works <ArrowRight size={14} className="motion-arrow" />
               </Link>
             </div>
           </div>
@@ -223,28 +217,30 @@ function Page() {
       {/* Pricing FAQ */}
       <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-14">
+          <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
               Pricing FAQ
             </div>
-            <h2 className="mt-5 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream text-balance allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Straight answers to the questions we get most.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
+            {/* An odd last item spans both columns so the grid never leaves a
+                blank cell (self-correcting if a fourth question is added). */}
             {faqs.map((f) => (
-              <div key={f.q} className="border-t border-white/10 pt-6">
-                <div className="text-lg text-cream leading-snug">{f.q}</div>
-                <p className="mt-2 text-base text-cream/80 leading-relaxed">{f.a}</p>
+              <div key={f.q} className="border-t border-white/10 pt-6 md:last:odd:col-span-2">
+                <div className="text-lg text-cream tracking-tight leading-snug">{f.q}</div>
+                <p className="mt-2 text-base text-stone leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>
           <div className="mt-8">
             <Link
               to="/faq"
-              className="text-sm text-cream/90 hover:text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
+              className="group motion-link inline-flex items-center gap-2 text-sm text-cream/90 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70"
             >
-              See the full FAQ →
+              See the full FAQ <ArrowRight size={14} className="motion-arrow" />
             </Link>
           </div>
         </div>

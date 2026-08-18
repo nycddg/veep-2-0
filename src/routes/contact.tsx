@@ -141,7 +141,7 @@ function Page() {
         secondaryTo="/how-it-works"
       />
 
-      <section id="contact-form" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <section id="contact-form" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             {/* Left: promise */}
@@ -173,7 +173,7 @@ function Page() {
                 ))}
               </ul>
               {preselected && (
-                <div className="rounded-2xl border border-accent/30 bg-accent/5 p-4">
+                <div className="rounded-[15px] bg-accent/5 p-4 light:bg-foreground/5">
                   <div className="eyebrow">
                     Outcome
                   </div>
@@ -207,7 +207,7 @@ function Page() {
                   onSubmit={handleSubmit}
                   noValidate
                   aria-describedby={submitError ? "contact-form-error" : undefined}
-                  className="glass-card rounded-3xl p-5 sm:p-8 grid gap-5"
+                  className="glass-card rounded-[15px] p-5 sm:p-8 grid gap-5"
                 >
                   {/* Honeypot — hidden from users and screen readers */}
                   <div aria-hidden="true" className="hidden">
@@ -286,7 +286,7 @@ function Page() {
                     <p
                       id="contact-form-error"
                       role="alert"
-                      className="text-sm text-red-400 bg-red-500/10 rounded-xl px-4 py-3"
+                      className="text-sm text-accent-coral bg-accent-coral/10 rounded-[15px] px-4 py-3"
                     >
                       {submitError}
                     </p>
@@ -294,7 +294,7 @@ function Page() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="mt-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)] min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                    className="motion-cta cta-accent mt-2 rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                   >
                     {loading ? (
                       <><Loader2 className="h-4 w-4 animate-spin" />Sending…</>
@@ -302,7 +302,7 @@ function Page() {
                       isAudit ? "Request the audit" : "Send inquiry"
                     )}
                   </button>
-                  <p className="text-xs text-cream/75">
+                  <p className="text-xs text-stone-soft">
                     By submitting you agree to be contacted by Veep about your inquiry.
                   </p>
                 </form>
@@ -316,7 +316,7 @@ function Page() {
 }
 
 const inputCls =
-  "w-full rounded-xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
+  "motion-field w-full rounded-[15px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
 
 function Field({
   label,
@@ -333,12 +333,12 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mono-label text-cream/70">
+      <span className="mono-label">
         {label}{required && " *"}
       </span>
       <div className="mt-2">{children}</div>
       {error && (
-        <p id={errorId} className="mt-1.5 text-xs text-red-400">
+        <p id={errorId} className="mt-1.5 text-xs text-accent-coral">
           {error}
         </p>
       )}

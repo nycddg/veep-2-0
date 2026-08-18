@@ -207,7 +207,7 @@ function Page() {
               <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
                 A curated roster of business builders.
               </h2>
-              <p className="text-cream/80 text-base leading-relaxed max-w-md">
+              <p className="text-stone text-base leading-relaxed max-w-md">
                 We stay small on purpose. Every operator on the roster has run
                 the seat before and can start inside two weeks.
               </p>
@@ -225,7 +225,7 @@ function Page() {
                     <div className="text-cream text-lg tracking-tight">
                       {c.title}
                     </div>
-                    <p className="mt-2 text-cream/75 text-base leading-relaxed">
+                    <p className="mt-2 text-stone text-base leading-relaxed">
                       {c.body}
                     </p>
                   </div>
@@ -255,13 +255,13 @@ function Page() {
                     <span className="font-mono text-sm text-accent w-6 shrink-0 tabular-nums">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-cream/85 text-base leading-relaxed">
+                    <span className="text-stone text-base leading-relaxed">
                       {i}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-cream/75 leading-relaxed max-w-xs">
+              <p className="text-xs text-stone-soft leading-relaxed max-w-xs">
                 Roster spots are limited. We respond to every serious
                 application within one business week.
               </p>
@@ -274,14 +274,14 @@ function Page() {
                   <h3 className="mt-6 font-serif font-medium text-xl text-cream tracking-tight">
                     Application received.
                   </h3>
-                  <p className="mt-3 text-cream/80 text-sm">
+                  <p className="mt-3 text-stone text-sm">
                     A Veep founder will review it and be in touch.
                   </p>
                 </div>
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="glass-card rounded-3xl p-5 sm:p-8 grid gap-5"
+                  className="glass-card rounded-[15px] p-5 sm:p-8 grid gap-5"
                 >
                   <div className="grid sm:grid-cols-2 gap-4">
                     <Field label="First name" required>
@@ -321,8 +321,8 @@ function Page() {
                     />
                   </Field>
 
-                  <details className="text-sm text-cream/80">
-                    <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none">
+                  <details className="text-sm text-stone">
+                    <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none inline-flex items-center min-h-11">
                       Add background details (optional)
                     </summary>
                     <div className="mt-4 grid gap-4">
@@ -355,7 +355,7 @@ function Page() {
                   </details>
 
                   {error && (
-                    <p className="text-sm text-red-400 border-l-2 border-red-400/50 pl-4 py-1">
+                    <p className="text-sm text-accent-coral border-l-2 border-accent-coral/50 pl-4 py-1">
                       {error}
                     </p>
                   )}
@@ -363,7 +363,7 @@ function Page() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="mt-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)] min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                    className="motion-cta cta-accent mt-2 rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                   >
                     {loading ? (
                       <>
@@ -374,7 +374,7 @@ function Page() {
                       "Submit application"
                     )}
                   </button>
-                  <p className="text-xs text-cream/75">
+                  <p className="text-xs text-stone-soft">
                     By submitting you agree to be contacted by Veep about your
                     application.
                   </p>
@@ -389,7 +389,7 @@ function Page() {
 }
 
 const inputCls =
-  "w-full rounded-xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
+  "motion-field w-full rounded-[15px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
 
 function Field({
   label,
@@ -402,7 +402,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mono-label text-cream/70">
+      <span className="mono-label">
         {label}
         {required && " *"}
       </span>
@@ -422,14 +422,14 @@ function CheckboxGroup({
 }) {
   return (
     <div>
-      <span className="mono-label text-cream/70">
+      <span className="mono-label">
         {label}
       </span>
       <div className="mt-3 flex flex-wrap gap-2">
         {options.map((o) => (
           <label
             key={o}
-            className="inline-flex items-center gap-2 rounded-full border border-white/12 px-3 py-1.5 text-xs text-cream/85 hover:border-accent/50 hover:text-cream transition cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full border border-white/12 px-3.5 py-1.5 min-h-11 text-xs text-cream/85 hover:border-accent/50 hover:text-cream transition cursor-pointer"
           >
             <input type="checkbox" name={name} value={o} className="accent-accent" />
             {o}

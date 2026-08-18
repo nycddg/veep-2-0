@@ -87,7 +87,7 @@ export function TextButton(props: React.ButtonHTMLAttributes<HTMLButtonElement>)
 /** The one raised surface allowed per logical unit. Never nest these. */
 export function Surface({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <div className={`rounded-2xl bg-[color:var(--surface-raised)] p-5 shadow-sm md:p-6 ${className}`}>
+    <div className={`rounded-[15px] bg-[color:var(--surface-raised)] p-5 shadow-sm md:p-6 ${className}`}>
       {children}
     </div>
   );

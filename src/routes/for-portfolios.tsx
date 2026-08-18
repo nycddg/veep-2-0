@@ -1,6 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import { Reveal } from "@/components/site/Reveal";
+import { OperatorSpotlightChapter } from "@/components/site/OperatorSpotlightChapter";
+import { operatorsForFunds } from "@/lib/spotlight-operators";
 import { ogImageMeta } from "@/lib/seo";
 
 const problems = [
@@ -18,13 +22,13 @@ const problems = [
   },
   {
     t: "Relying on the same informal roster.",
-    d: "Many firms rely on the same familiar operators every time they buy a company. Those people may be effective, but the firm knows stronger or better-fit talent is out there. They just do not have the time to grow and maintain a roster that may never get used.",
+    d: "Most firms call the same familiar operators on every deal. They may be effective, but stronger, better-fit talent is out there. No one has time to maintain a roster that may never get used.",
   },
 ];
 
 const auditDeliverables = [
   "Portfolio-wide leadership and operator gap map",
-  "Function coverage assessment across finance, GTM, operations, product, and people",
+  "Coverage assessments across finance, GTM, operations, product, and people",
   "Upcoming transaction and event triggers, including diligence, close, integration, fundraise, exit, leadership transition, and value-creation work",
   "Recommended roster structure by company and function",
   "Emergency coverage path for interim vacancies",
@@ -92,12 +96,17 @@ function Page() {
         eyebrow="FOR FUNDS"
         title="The right operating partners, ready when the portfolio needs them."
         sub="Access a vetted roster of senior operators across finance, GTM, operations, product, and people. Use us before a transaction, after close, during integration, or whenever a portfolio company needs senior ownership. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
+        primaryLabel="Request a capacity audit"
+        primaryTo="/contact"
+        primarySearch={{ intent: "audit" }}
+        secondaryLabel="See pricing"
+        secondaryTo="/pricing"
       />
 
       {/* Problem */}
       <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-14 md:mb-16">
+          <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
               WHERE YOUR PORTFOLIOS LOSE TIME
             </div>
@@ -105,16 +114,16 @@ function Page() {
               Transactions create volatility. The work still needs an owner.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-10 md:gap-y-10 md:gap-y-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
             {problems.map((p, i) => (
-              <div key={p.t}>
+              <div key={p.t} className="motion-row-wash rounded-[15px] bg-surface-card p-6 sm:p-7">
                 <div className="eyebrow">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div className="mt-3 font-serif font-medium text-xl text-cream tracking-tight leading-snug">
                   {p.t}
                 </div>
-                <p className="mt-2 text-base text-cream/70 leading-relaxed">
+                <p className="mt-2 text-base text-stone leading-relaxed">
                   {p.d}
                 </p>
               </div>
@@ -124,7 +133,7 @@ function Page() {
       </section>
 
       {/* Capacity Audit entry point */}
-      <section className="py-14 sm:py-16 md:py-28">
+      <Reveal as="section" className="py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
@@ -133,17 +142,20 @@ function Page() {
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Portfolio Capacity Audit
             </h2>
-            <p className="mt-6 text-cream/80 leading-relaxed">
+            <p className="mt-6 text-stone leading-relaxed">
               Before you retain the roster, we map where transactions and operating priorities are likely to create staffing volatility across the portfolio. We identify which companies need what, which upcoming events could create urgency in the next 6 to 12 months, and where a Veep operator would help stabilize execution.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12 border-t border-white/10 pt-12">
+          <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12 motion-hairline pt-12">
             <div>
-              <div className="font-serif font-medium text-xl text-cream tracking-tight">What you get</div>
-              <ul className="mt-6 space-y-3 text-sm text-cream/85">
+              <div className="eyebrow">
+                2-week audit
+              </div>
+              <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">Deliverables</div>
+              <ul className="mt-6 space-y-3 text-sm text-stone">
                 {auditDeliverables.map((d) => (
                   <li key={d} className="flex items-baseline gap-3">
-                    <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 translate-y-[-2px]" />
+                    <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
                     <span>{d}</span>
                   </li>
                 ))}
@@ -151,33 +163,64 @@ function Page() {
             </div>
             <div className="md:border-l md:border-white/10 md:pl-12">
               <div className="eyebrow">
-                Then
+                Post audit
               </div>
               <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">
-                Portfolio Roster
+                On-demand Operating Partners
               </div>
-              <p className="mt-4 text-base text-cream/80 leading-relaxed">
-                A retained operating partner function for firms that do not want to build one internally. Veep gives your firm priority access to vetted senior operators who can support transactions, integrations, interim gaps, and value-creation work across the portfolio.
+              <p className="mt-4 text-base text-stone leading-relaxed">
+                Assign operating partners as needed against the gaps identified in the audit. Secure a custom roster for your firm with priority access to vetted senior operators across the portfolio.
               </p>
-              <ul className="mt-6 space-y-2 text-sm text-cream/85">
-                {[
-                  "Portfolio Roster: $75k",
-                  "Usage billed separately at preferred rates",
-                  "MSA activated once, SOWs per engagement",
-                ].map((x) => (
-                  <li key={x} className="flex items-baseline gap-3">
-                    <span className="inline-block h-1 w-1 rounded-full bg-accent-gold shrink-0 translate-y-[-2px]" />
-                    <span>{x}</span>
-                  </li>
-                ))}
+              <ul className="mt-6 space-y-2 text-sm text-stone">
+                <li className="flex items-baseline gap-3">
+                  <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
+                  <span>
+                    Standard{" "}
+                    <Link
+                      to="/pricing"
+                      className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70"
+                    >
+                      rates
+                    </Link>{" "}
+                    apply
+                  </span>
+                </li>
+                <li className="flex items-baseline gap-3">
+                  <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
+                  <span>MSA activated once, SOWs per engagement</span>
+                </li>
+                <li className="flex items-baseline gap-3">
+                  <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
+                  <span>
+                    <a
+                      href="#roster"
+                      className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70"
+                    >
+                      Portfolio rosters
+                    </a>{" "}
+                    start at $75k
+                  </span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
+
+      {/* Operator spotlight — the home /#operators chapter verbatim (Dave
+          08.17 PASS4: home is the source of truth, the 75+/72h remix retires) */}
+      <Reveal as="section" className="bg-surface-raised py-14 sm:py-16 md:py-28">
+        <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
+          <OperatorSpotlightChapter
+            headline="Operators ready when the portfolio cannot wait."
+            sub="Finance, growth, and people operators who have held the seat through transactions, integrations, interim gaps, and value-creation work. The same invite-only roster. Sequenced here for funds. No juniors, no generalists, no career consultants."
+            operators={operatorsForFunds()}
+          />
+        </div>
+      </Reveal>
 
       {/* Roster tiers */}
-      <section className="bg-surface-band py-14 sm:py-16 md:py-28">
+      <section id="roster" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
@@ -191,17 +234,17 @@ function Page() {
             {tiers.map((t) => (
               <div
                 key={t.t}
-                className="rounded-2xl bg-[color:var(--surface-raised)] p-5 sm:p-8"
+                className="motion-row-wash rounded-[15px] bg-surface-card p-5 sm:p-8"
               >
                 <div className="font-serif font-medium text-xl text-cream">{t.t}</div>
                 <div className="mt-2 font-mono text-sm text-cream tabular-nums break-words">
-                  {t.p}{" "}<span className="text-cream/70 whitespace-normal">{t.per}</span>
+                  {t.p}{" "}<span className="text-stone whitespace-normal">{t.per}</span>
                 </div>
-                <p className="mt-5 text-base text-cream/85 leading-relaxed">{t.best}</p>
-                <ul className="mt-6 space-y-2.5 text-sm text-cream/80">
+                <p className="mt-5 text-base text-stone leading-relaxed">{t.best}</p>
+                <ul className="mt-6 space-y-2.5 text-sm text-stone">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-baseline gap-2.5">
-                      <span className="inline-block h-1 w-1 rounded-full bg-accent shrink-0 translate-y-[-2px]" />
+                      <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
                       <span>{i}</span>
                     </li>
                   ))}
@@ -210,22 +253,23 @@ function Page() {
                   <Link
                     to="/pricing"
                     hash="tiers"
-                    className="text-xs text-cream/85 hover:text-cream underline underline-offset-4 decoration-white/25 hover:decoration-white/70 transition"
+                    className="group motion-link inline-flex items-center gap-1.5 text-xs text-cream/85 hover:text-cream underline underline-offset-4 decoration-white/25 hover:decoration-white/70"
                   >
-                    See engagement pricing →
+                    See engagement pricing <ArrowRight size={12} className="motion-arrow" />
                   </Link>
                 </div>
               </div>
             ))}
           </div>
-          <p className="mt-12 text-sm text-cream/75 text-center max-w-2xl mx-auto">
+          <p className="mt-12 text-sm text-stone text-center max-w-2xl mx-auto">
             Engagements convert cleanly into Advisory, Sprint, Operator, or Pod work at preferred roster rates.
           </p>
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="bg-surface-band py-14 sm:py-16 md:py-28 border-t border-white/10">
+      {/* How it works — drops off the roster band to raised so the two money
+          chapters stop reading as one slab */}
+      <Reveal as="section" className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
@@ -235,17 +279,17 @@ function Page() {
               One agreement. Every portfolio company activated.
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-12 border-t border-white/10 pt-10 md:pt-12">
+          <div className="motion-stagger grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-14 gap-y-10 md:gap-y-12 motion-hairline pt-10 md:pt-12">
             {steps.map((s) => (
               <div key={s.n}>
                 <div className="eyebrow">{s.n}</div>
-                <div className="mt-3 text-lg sm:text-xl text-cream tracking-tight">{s.t}</div>
-                <p className="mt-2 text-base text-cream/75 leading-relaxed">{s.d}</p>
+                <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">{s.t}</div>
+                <p className="mt-2 text-base text-stone leading-relaxed">{s.d}</p>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* Included vs. billed */}
       <section className="py-14 sm:py-16 md:py-28">
@@ -260,9 +304,12 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
             {included.map((i) => (
-              <div key={i.t}>
-                <div className="text-lg sm:text-xl text-cream tracking-tight">{i.t}</div>
-                <p className="mt-2 text-base text-cream/75 leading-relaxed">{i.d}</p>
+              <div
+                key={i.t}
+                className="md:border-l md:border-white/10 md:pl-12 md:first:border-l-0 md:first:pl-0"
+              >
+                <div className="font-serif font-medium text-xl text-cream tracking-tight">{i.t}</div>
+                <p className="mt-2 text-base text-stone leading-relaxed">{i.d}</p>
               </div>
             ))}
           </div>
@@ -275,7 +322,7 @@ function Page() {
           <br />
           across your portfolio.
         </>}
-        sub="Book a 30-minute call to walk through the audit and roster model. We will tell you directly whether Veep is the right operating partner function for your firm."
+        sub="Book a 30-minute call to walk through the audit and roster model. We will tell you directly whether Veep is the right operating partner platform for your firm."
       />
     </>
   );

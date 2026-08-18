@@ -1,11 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { BOOKING_URL } from "@/lib/booking";
 
 export function FooterCTA({
   headline = <>Your next big move starts here.</>,
-  sub = "Book a 30-minute call with a Veep founder. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
+  sub = "Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
   /** Default: Fillout booking. Pass "contact" for Get in touch → /contact. */
   primary = "book",
 }: {
@@ -14,7 +13,7 @@ export function FooterCTA({
   primary?: "book" | "contact";
 }) {
   const primaryClass =
-    "group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
+    "group motion-cta cta-accent rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
 
   return (
     <section className="py-14 sm:py-16 md:py-28 border-t border-white/10 relative overflow-hidden">
@@ -28,7 +27,7 @@ export function FooterCTA({
         <div className="mt-8 flex flex-col items-start sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5">
           {primary === "contact" ? (
             <Link to="/contact" className={primaryClass}>
-              Get in touch <ArrowRight size={16} className="motion-arrow" />
+              Get in touch
             </Link>
           ) : (
             <a
@@ -37,7 +36,7 @@ export function FooterCTA({
               rel="noopener noreferrer"
               className={primaryClass}
             >
-              Book intro call <ArrowRight size={16} className="motion-arrow" />
+              Speak with our founders
             </a>
           )}
           <Link

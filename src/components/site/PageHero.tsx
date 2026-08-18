@@ -1,12 +1,11 @@
 import type { ReactNode } from "react";
-import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { BOOKING_URL } from "@/lib/booking";
 import { TrustChip } from "./TrustChip";
 
 /**
  * PageHero — editorial dark-navy hero shared across every interior route.
- * Cream pill primary CTA, ghost link secondary. No mono chrome.
+ * Accent pill primary CTA, ghost link secondary. No mono chrome.
  *
  * Primary defaults to external booking. Pass primaryTo (+ optional primaryHash)
  * for in-site destinations (e.g. Join → #apply form). primaryHref overrides
@@ -18,10 +17,11 @@ export function PageHero({
   sub,
   children,
   chip,
-  primaryLabel = "Book intro call",
+  primaryLabel = "Book a 30-minute call",
   primaryHref,
   primaryTo,
   primaryHash,
+  primarySearch,
   secondaryLabel = "Request a capacity audit",
   secondaryTo = "/contact",
 }: {
@@ -36,6 +36,8 @@ export function PageHero({
   /** Internal route for primary CTA (use instead of booking). */
   primaryTo?: string;
   primaryHash?: string;
+  /** Query params for the internal primary route (e.g. { intent: "audit" }). */
+  primarySearch?: Record<string, string>;
   secondaryLabel?: string;
   secondaryTo?: string;
   /** Legacy props — accepted but unused (retired mono chrome). */
@@ -43,13 +45,9 @@ export function PageHero({
   category?: string;
 }) {
   const primaryClass =
-    "group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
+    "group motion-cta cta-accent rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
 
-  const primaryInner = (
-    <>
-      {primaryLabel} <ArrowRight size={16} className="motion-arrow" />
-    </>
-  );
+  const primaryInner = <>{primaryLabel}</>;
 
   return (
     <section className="relative overflow-hidden border-b border-white/10">
@@ -60,7 +58,7 @@ export function PageHero({
           ) : (
             <div className="eyebrow">{eyebrow}</div>
           )}
-          <h1 className="font-medium text-[2.25rem] sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
+          <h1 className="font-medium text-[2.25rem] sm:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
             {title}
           </h1>
           <p className="text-base sm:text-lg text-cream/80 max-w-2xl leading-relaxed text-pretty">
@@ -72,6 +70,7 @@ export function PageHero({
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 to={primaryTo as any}
                 hash={primaryHash}
+                search={primarySearch}
                 className={primaryClass}
               >
                 {primaryInner}

@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
-import { ChevronDown } from "lucide-react";
+import { Accordion } from "@/components/site/Accordion";
 import { ogImageMeta } from "@/lib/seo";
 
 type QA = { q: string; a: string };
@@ -80,56 +79,29 @@ function Page() {
         sub="If the answer is not here, book a 30-minute call with a Veep founder. We will help clarify the work, the right level of support, and whether Veep is the right fit."
       />
 
-      <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-10 md:space-y-14">
-          {groups.map((g) => (
-            <div key={g.label}>
-              <div className="eyebrow mb-6">
-                {g.label}
-              </div>
-              <div className="divide-y divide-white/10 border-y border-white/10">
-                {g.items.map((qa) => (
-                  <Accordion key={qa.q} q={qa.q} a={qa.a} />
-                ))}
-              </div>
+      {/* Groups alternate raised/ink so the long list reads as chapters, not
+          one slab */}
+      {groups.map((g, i) => (
+        <section
+          key={g.label}
+          className={`${i % 2 === 0 ? "bg-surface-raised" : ""} py-12 sm:py-14 md:py-16`}
+        >
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            {/* h2 so screen readers can jump between groups; leading pinned to
+                the pre-h2 value so the label renders identically. */}
+            <h2 className="eyebrow mb-6 leading-[1.55]">
+              {g.label}
+            </h2>
+            <div className="divide-y divide-white/10 border-y border-white/10">
+              {g.items.map((qa) => (
+                <Accordion key={qa.q} q={qa.q} a={qa.a} />
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+      ))}
 
       <FooterCTA primary="contact" />
     </>
-  );
-}
-
-function Accordion({ q, a }: QA) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="py-1">
-      <button
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-        className="w-full flex items-start justify-between gap-4 sm:gap-6 py-5 text-left min-h-11 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 rounded-sm transition-colors"
-      >
-        <span className="text-base sm:text-lg md:text-xl text-cream tracking-tight leading-snug">
-          {q}
-        </span>
-        <ChevronDown
-          size={18}
-          className={`text-cream/70 shrink-0 mt-1.5 transition-[transform,color] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? "rotate-180 text-accent" : ""}`}
-        />
-      </button>
-      <div className="motion-collapse" data-open={open ? "true" : "false"}>
-        <div>
-          <p
-            className={`pb-6 pr-6 sm:pr-10 text-base sm:text-[15px] text-cream/80 leading-relaxed max-w-3xl transition-opacity duration-200 ${
-              open ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            {a}
-          </p>
-        </div>
-      </div>
-    </div>
   );
 }

@@ -7,7 +7,7 @@ const steps = [
 
 export function StepFlow() {
   return (
-    <div className="grid md:grid-cols-4 gap-y-10 border-t border-white/10 pt-10">
+    <div className="motion-stagger grid md:grid-cols-4 gap-y-10 border-t border-white/10 pt-10">
       {steps.map((s) => (
         <div
           key={s.n}

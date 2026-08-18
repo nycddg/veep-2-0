@@ -71,16 +71,18 @@ export function SiteFooter() {
               <div className="mono-label text-cream/70">
                 {c.title}
               </div>
-              <ul className="mt-3.5 space-y-2 md:mt-4 md:space-y-2.5">
+              {/* 44px link rows (a11y target size); mt trimmed so the column
+                  rhythm reads the same as the old 20px rows + space-y. */}
+              <ul className="mt-1.5 md:mt-2">
                 {c.links.map((l) => (
                   <li key={l.label}>
                      {l.kind === "hash" ? (
-                      <Link to="/" hash={l.hash} className="motion-link text-sm text-cream/90 hover:text-cream">
-                        {l.label}
+                      <Link to="/" hash={l.hash} className="group motion-link inline-flex items-center min-h-11 text-sm text-cream/90 hover:text-cream">
+                        <span className="motion-underline">{l.label}</span>
                       </Link>
                     ) : (
-                      <Link to={l.to} viewTransition className="motion-link text-sm text-cream/90 hover:text-cream">
-                        {l.label}
+                      <Link to={l.to} viewTransition className="group motion-link inline-flex items-center min-h-11 text-sm text-cream/90 hover:text-cream">
+                        <span className="motion-underline">{l.label}</span>
                       </Link>
                     )}
                   </li>

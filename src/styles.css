@@ -71,6 +71,7 @@
   --color-surface-ink: var(--surface-ink);
   --color-surface-raised: var(--surface-raised);
   --color-surface-band: var(--surface-band);
+  --color-surface-card: var(--surface-card);
 
   --shadow-elegant: 0 1px 0 oklch(1 0 0 / 0.04), 0 24px 60px -30px oklch(0 0 0 / 0.60);
   --shadow-float: 0 20px 48px -20px oklch(0 0 0 / 0.55);
@@ -86,22 +87,24 @@
   --foreground: oklch(0.96 0 0);              /* off-white */
 
   /* Editorial tonal bands — 3 dark surfaces used to pace the page.
-     ink = base canvas, raised = subtly lifted blue-black,
-     band = charcoal-navy for pricing / comparison chapters. */
+     ink = base canvas, raised = lifted blue-black chapter,
+     band = charcoal-navy for commercial / comparison chapters.
+     Steps are wide enough to read without a section hairline. */
   --surface-ink: oklch(0.115 0.03 265);
-  --surface-raised: oklch(0.155 0.028 262);
-  --surface-band: oklch(0.185 0.022 258);
+  --surface-raised: oklch(0.16 0.028 262);
+  --surface-band: oklch(0.22 0.022 258);
+  /* Card fill — clears band without a stroke. No drop shadow. */
+  --surface-card: oklch(0.26 0.024 258);
 
   /* Semantic surface + text roles */
   --ink: oklch(0.115 0.03 265);               /* darkest navy for inverted pills */
   --cream: oklch(0.98 0 0);                   /* off-white for text on dark, and light pills */
-  --stone: oklch(0.80 0.02 250);              /* secondary body text — soft blue-gray, AA on navy */
-  --stone-soft: oklch(0.68 0.03 255);         /* tertiary / mono labels — clears AA at 12px on navy */
+  --stone: oklch(0.82 0.02 250);              /* secondary body — AA on ink, raised, band, card */
+  --stone-soft: oklch(0.74 0.025 255);        /* tertiary / mono labels — AA at 11px on card */
   --rule: oklch(1 0 0 / 0.12);                /* faint ruled-grid lines, just visible on OLED */
 
-  /* Accent — dark: bright blue #789FFF; light: punch blue #3474F4 (see html.light).
-     Signal red #F43F34 for featured/urgent only (retired soft coral #EC6B66).
-     Light indigo #5B46F5 retired 2026-08-14 (Claude-slop read). */
+  /* Accent — dark: #789FFF. Light: #4E7AD4 (ink blue between electric #3474F4 and washed #789FFF).
+     Signal red: original palette #ec6b66, both themes. */
   --forest: #789fff;                          /* bright blue — dark mode */
   --forest-deep: oklch(0.205 0.05 265);       /* navy inset panel */
   --forest-foreground: oklch(0.98 0 0);
@@ -110,7 +113,7 @@
   --accent-mint: oklch(0.82 0.14 175);
   --accent-cyan: oklch(0.80 0.10 220);
   --accent-gold: #789fff;                     /* remapped to bright blue */
-  --accent-coral: #f43f34;                    /* signal red — featured/urgent only */
+  --accent-coral: #ec6b66;                    /* original palette red — both themes */
 
   --card: oklch(1 0 0 / 0.04);                /* glass card over navy canvas */
   --card-foreground: var(--cream);
@@ -146,59 +149,66 @@
   --sidebar-ring: var(--forest);
 }
 
-/* ─── Light mode ────────────────────────────────────────────────────────────
-   Palette flip only. All semantic tokens invert so components using
-   text-cream / bg-background / border-border / etc. render dark-on-light.
-   Brand accents (blue + coral) stay the same for continuity. */
+/* ─── Light mode: ink on cream paper ────────────────────────────────────────
+   Mirror of dark's grammar, not its values. Dark = blue light on navy ground
+   (surfaces lighten as they lift, blue washes over blue). Light = navy ink on
+   cream paper: surfaces DEEPEN as they lift, every interactive fill/wash is
+   navy ink, and blue #4E7AD4 keeps exactly one job — chrome and links
+   (eyebrows, labels, text links, focus rings), the voice #789FFF has in dark.
+   Rule: in light mode blue is never a fill, only a line or letter. */
 html.light {
   color-scheme: light;
-  --background: oklch(0.985 0.003 90);       /* warm off-white canvas */
+  --background: oklch(0.985 0.003 90);        /* cream canvas */
   --foreground: oklch(0.18 0.03 265);        /* deep navy ink */
 
+  /* Elevation = deeper cream (paper shading). Tighter ladder than dark:
+     deep cream goes gray fast, so cards stay near the light creams and
+     chroma stays low (more chroma at hue 90 = brown). Cards never white. */
   --surface-ink: oklch(0.985 0.003 90);
-  --surface-raised: oklch(0.965 0.005 85);
-  --surface-band: oklch(0.945 0.006 80);
+  --surface-raised: oklch(0.972 0.004 90);    /* chapter — must clear canvas when stacked */
+  --surface-band: oklch(0.968 0.005 90);      /* commercial */
+  --surface-card: oklch(0.95 0.006 90);       /* cards — deepest shade, clears the chapter */
 
   --ink: oklch(0.98 0 0);                     /* was navy; now cream so inverted pills flip */
   --cream: oklch(0.18 0.03 265);              /* was cream; now navy ink so text-cream reads on light */
-  --stone: oklch(0.42 0.02 260);              /* body secondary on light */
-  --stone-soft: oklch(0.52 0.025 258);        /* tertiary / mono labels */
-  --rule: oklch(0 0 0 / 0.10);
+  --stone: oklch(0.38 0.025 260);             /* body secondary — AA on every cream step */
+  --stone-soft: oklch(0.46 0.025 258);        /* tertiary / mono labels — AA at 11px */
+  --rule: rgb(10 19 48 / 0.12);               /* hairlines are ink, not neutral black */
 
-  /* Brand accent on cream: denser punch blue (not indigo). Dark stays #789FFF in :root. */
-  --forest: #3474f4;
-  --forest-deep: oklch(0.92 0.03 250);
+  /* Brand accent on cream: ink blue #4E7AD4 — chrome and links only. */
+  --forest: #4e7ad4;
+  --forest-deep: oklch(0.93 0.012 265);       /* cream-navy inset — no pale-blue slab */
   --forest-foreground: oklch(0.18 0.03 265);
-  --accent-gold: #3474f4;
-  --ring: #3474f4;
+  --accent-gold: #4e7ad4;
+  --ring: #4e7ad4;
 
-  --card: oklch(0 0 0 / 0.035);
+  --card: rgb(10 19 48 / 0.04);
   --card-foreground: var(--cream);
-  --popover: oklch(1 0 0);
+  --popover: oklch(0.985 0.003 90);
   --popover-foreground: var(--cream);
   --primary: var(--cream);
   --primary-foreground: var(--ink);
-  --secondary: oklch(0 0 0 / 0.04);
+  --secondary: rgb(10 19 48 / 0.05);
   --secondary-foreground: var(--cream);
-  --muted: oklch(0 0 0 / 0.04);
+  --muted: rgb(10 19 48 / 0.05);
   --muted-foreground: var(--stone);
-  --border: oklch(0 0 0 / 0.10);
-  --input: oklch(0 0 0 / 0.14);
+  --border: rgb(10 19 48 / 0.12);
+  --input: rgb(10 19 48 / 0.16);
 
-  --shadow-elegant: 0 1px 0 oklch(0 0 0 / 0.04), 0 24px 60px -30px oklch(0 0 0 / 0.18);
-  --shadow-float: 0 20px 48px -20px oklch(0 0 0 / 0.16);
+  --shadow-elegant: 0 1px 0 rgb(10 19 48 / 0.04), 0 24px 60px -30px rgb(10 19 48 / 0.16);
+  --shadow-float: 0 20px 48px -20px rgb(10 19 48 / 0.14);
 }
 
 /* Raw white/black opacity utilities used across components — invert under light. */
 html.light .bg-black\/80 { background-color: rgb(255 255 255 / 0.80); }
 html.light .bg-white\/3  { background-color: rgb(10 19 48 / 0.04); }
 html.light .bg-white\/4  { background-color: rgb(10 19 48 / 0.04); }
-html.light .bg-white\/5  { background-color: rgb(0 0 0 / 0.05); }
+html.light .bg-white\/5  { background-color: rgb(10 19 48 / 0.05); }
 html.light .bg-white\/6  { background-color: rgb(10 19 48 / 0.06); }
 html.light .bg-white\/\[0\.02\] { background-color: rgb(10 19 48 / 0.03); }
 html.light .bg-white\/\[0\.03\] { background-color: rgb(10 19 48 / 0.04); }
-html.light .bg-white\/10 { background-color: rgb(0 0 0 / 0.05); }
-html.light .bg-white\/15 { background-color: rgb(0 0 0 / 0.08); }
+html.light .bg-white\/10 { background-color: rgb(10 19 48 / 0.05); }
+html.light .bg-white\/15 { background-color: rgb(10 19 48 / 0.08); }
 html.light .bg-white\/20 { background-color: rgb(10 19 48 / 0.10); }
 html.light .bg-white\/25 { background-color: rgb(10 19 48 / 0.12); }
 html.light .bg-white\/30 { background-color: rgb(10 19 48 / 0.14); }
@@ -208,9 +218,9 @@ html.light .bg-white\/60 { background-color: rgb(10 19 48 / 0.28); }
 html.light .bg-white\/70 { background-color: rgb(10 19 48 / 0.35); }
 html.light .bg-white\/80 { background-color: rgb(10 19 48 / 0.45); }
 html.light .bg-white\/90 { background-color: rgb(10 19 48 / 0.55); }
-html.light .hover\:bg-white\/5:hover { background-color: rgb(0 0 0 / 0.05); }
-html.light .hover\:bg-white\/10:hover { background-color: rgb(0 0 0 / 0.06); }
-html.light .border-white\/5  { border-color: rgb(0 0 0 / 0.06); }
+html.light .hover\:bg-white\/5:hover { background-color: rgb(10 19 48 / 0.05); }
+html.light .hover\:bg-white\/10:hover { background-color: rgb(10 19 48 / 0.06); }
+html.light .border-white\/5  { border-color: rgb(10 19 48 / 0.06); }
 html.light .border-white\/8  { border-color: rgb(10 19 48 / 0.14); }
 html.light .border-white\/10 { border-color: rgb(10 19 48 / 0.18); }
 html.light .border-white\/12 { border-color: rgb(10 19 48 / 0.14); }
@@ -219,16 +229,16 @@ html.light .border-white\/20 { border-color: rgb(10 19 48 / 0.18); }
 html.light .border-white\/25 { border-color: rgb(10 19 48 / 0.20); }
 html.light .border-white\/30 { border-color: rgb(10 19 48 / 0.22); }
 html.light .border-white\/40 { border-color: rgb(10 19 48 / 0.28); }
-html.light .divide-white\/5  > :not([hidden]) ~ :not([hidden]) { border-color: rgb(0 0 0 / 0.06); }
+html.light .divide-white\/5  > :not([hidden]) ~ :not([hidden]) { border-color: rgb(10 19 48 / 0.06); }
 html.light .divide-white\/8  > :not([hidden]) ~ :not([hidden]) { border-color: rgb(10 19 48 / 0.14); }
 html.light .divide-white\/10 > :not([hidden]) ~ :not([hidden]) { border-color: rgb(10 19 48 / 0.18); }
 html.light .divide-white\/10 > * { border-color: rgb(10 19 48 / 0.18); }
 html.light .divide-white\/8  > * { border-color: rgb(10 19 48 / 0.14); }
 html.light .lg\:divide-white\/10 > * { border-color: rgb(10 19 48 / 0.18); }
-html.light .ring-white\/8  { --tw-ring-color: rgb(0 0 0 / 0.10); }
+html.light .ring-white\/8  { --tw-ring-color: rgb(10 19 48 / 0.10); }
 html.light .ring-white\/10 { --tw-ring-color: rgb(10 19 48 / 0.14); }
-html.light .ring-white\/15 { --tw-ring-color: rgb(0 0 0 / 0.14); }
-html.light .ring-white\/20 { --tw-ring-color: rgb(0 0 0 / 0.18); }
+html.light .ring-white\/15 { --tw-ring-color: rgb(10 19 48 / 0.14); }
+html.light .ring-white\/20 { --tw-ring-color: rgb(10 19 48 / 0.18); }
 
 /* Text + decoration that hardcode white — map to ink/cream tokens in light. */
 html.light .text-white { color: var(--cream); }
@@ -245,14 +255,26 @@ html.light .hover\:decoration-white\/70:hover { text-decoration-color: rgb(10 19
 html.light .hover\:border-white\/25:hover { border-color: rgb(10 19 48 / 0.22); }
 html.light .hover\:border-white\/70:hover { border-color: rgb(10 19 48 / 0.45); }
 
-/* Cream CTA pills stay high-contrast: in light, cream token is navy — good for text-ink pills */
+/* Cream pills (portal / admin / file chrome). Hardcoded so they stay navy-on-cream
+   in light — but NOT inside .spotlight-invert, where --cream is already off-white
+   and a navy fill would sit on a navy band. */
 html.light .bg-cream { background-color: oklch(0.18 0.03 265); }
 html.light .text-ink { color: oklch(0.98 0 0); }
 html.light .hover\:bg-cream\/90:hover { background-color: oklch(0.24 0.03 265); }
+html.light .spotlight-invert .bg-cream { background-color: oklch(0.98 0 0); }
+html.light .spotlight-invert .text-ink { color: oklch(0.115 0.03 265); }
+html.light .spotlight-invert .hover\:bg-cream\/90:hover { background-color: oklch(0.98 0 0 / 0.9); }
 
-/* Soften white glow shadows that only work on dark canvas */
-html.light .shadow-\[0_0_60px_-10px_rgba\(255\,255\,255\,0\.35\)\] {
-  box-shadow: 0 12px 40px -16px rgb(52 116 244 / 0.28);
+/* Match Matrix card keeps its dark-mode treatment in light (Dave 08.18):
+   a navy island on the cream hero. Remap just the tokens its content uses —
+   bright blue for eyebrow + bars, light stone for labels. The bar track's
+   light:bg-ink/10 already resolves to white 10% (--ink is cream in light). */
+html.light .match-matrix-card {
+  --accent: #789fff;
+  --stone: oklch(0.82 0.02 250);
+  /* Deep near-black navy, slightly translucent so the headshot ghosts
+     through the blur — richer than the grayed mid-navy it replaced. */
+  background-color: oklch(0.17 0.03 262 / 0.72);
 }
 
 /* ─── Spotlight band ────────────────────────────────────────────────────────
@@ -260,39 +282,45 @@ html.light .shadow-\[0_0_60px_-10px_rgba\(255\,255\,255\,0\.35\)\] {
    semantic tokens locally so children using text-cream / text-stone / bg-cream
    / text-ink / accent render correctly against the flipped surface. */
 .spotlight-invert {
-  /* Dark mode → pale surface with navy type */
-  --surface-ink: oklch(0.965 0.005 85);
-  --surface-raised: oklch(0.965 0.005 85);
-  --surface-band: oklch(0.945 0.006 80);
-  --background: oklch(0.965 0.005 85);
+  /* Dark mode → cream paper band + deeper-cream cards (mirrors html.light) */
+  --surface-ink: oklch(0.985 0.003 90);
+  --surface-raised: oklch(0.972 0.004 90);
+  --surface-band: oklch(0.968 0.005 90);
+  --surface-card: oklch(0.95 0.006 90);
+  --background: oklch(0.985 0.003 90);
   --foreground: oklch(0.18 0.03 265);
   --ink: oklch(0.98 0 0);
   --cream: oklch(0.18 0.03 265);
-  --stone: oklch(0.42 0.02 260);
-  --stone-soft: oklch(0.52 0.025 258);
-  --rule: oklch(0 0 0 / 0.10);
-  --forest: #3474f4;
-  --forest-deep: oklch(0.92 0.03 250);
+  --stone: oklch(0.38 0.025 260);
+  --stone-soft: oklch(0.46 0.025 258);
+  --rule: rgb(10 19 48 / 0.12);
+  --forest: #4e7ad4;
+  --forest-deep: oklch(0.93 0.012 265);
   --forest-foreground: oklch(0.18 0.03 265);
-  --accent-gold: #3474f4;
-  --ring: #3474f4;
+  --accent-gold: #4e7ad4;
+  --ring: #4e7ad4;
   /* Derived tokens must be restated: their :root values already resolved. */
-  --accent: #3474f4;
+  --accent: #4e7ad4;
   --accent-foreground: oklch(0.98 0 0);
   --primary: oklch(0.18 0.03 265);
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0 0 0 / 0.04);
+  --secondary: rgb(10 19 48 / 0.05);
   --secondary-foreground: oklch(0.18 0.03 265);
-  --muted: oklch(0 0 0 / 0.04);
-  --muted-foreground: oklch(0.42 0.02 260);
-  --card: oklch(0 0 0 / 0.035);
+  --muted: rgb(10 19 48 / 0.05);
+  --muted-foreground: oklch(0.38 0.025 260);
+  --card: rgb(10 19 48 / 0.04);
   --card-foreground: oklch(0.18 0.03 265);
-  --popover: oklch(1 0 0);
+  --popover: oklch(0.985 0.003 90);
   --popover-foreground: oklch(0.18 0.03 265);
-  --border: oklch(0 0 0 / 0.10);
-  --input: oklch(0 0 0 / 0.14);
+  --border: rgb(10 19 48 / 0.12);
+  --input: rgb(10 19 48 / 0.16);
   background-color: var(--surface-raised);
   color: var(--foreground);
+}
+
+/* Card hover inside a cream band is paper shading, same as html.light. */
+.spotlight-invert .motion-row-wash {
+  --row-wash: color-mix(in oklab, oklch(0.86 0.012 90) 30%, transparent);
 }
 
 .spotlight-invert .border-white\/10 { border-color: rgb(10 19 48 / 0.18); }
@@ -303,16 +331,17 @@ html.light .shadow-\[0_0_60px_-10px_rgba\(255\,255\,255\,0\.35\)\] {
 .spotlight-invert .decoration-white\/30 { text-decoration-color: rgb(10 19 48 / 0.32); }
 
 html.light .spotlight-invert {
-  /* Light mode → deep navy surface with cream type */
-  --surface-ink: oklch(0.135 0.03 265);
-  --surface-raised: oklch(0.135 0.03 265);
-  --surface-band: oklch(0.185 0.022 258);
-  --background: oklch(0.135 0.03 265);
+  /* Light mode → deep navy surface with cream type (mirrors :root bands) */
+  --surface-ink: oklch(0.16 0.028 262);
+  --surface-raised: oklch(0.16 0.028 262);
+  --surface-band: oklch(0.22 0.022 258);
+  --surface-card: oklch(0.26 0.024 258);
+  --background: oklch(0.16 0.028 262);
   --foreground: oklch(0.98 0 0);
   --ink: oklch(0.115 0.03 265);
   --cream: oklch(0.98 0 0);
-  --stone: oklch(0.80 0.02 250);
-  --stone-soft: oklch(0.68 0.03 255);
+  --stone: oklch(0.82 0.02 250);
+  --stone-soft: oklch(0.74 0.025 255);
   --rule: oklch(1 0 0 / 0.10);
   /* Light-mode spotlight is a navy band — use dark bright blue. */
   --forest: #789fff;
@@ -327,13 +356,19 @@ html.light .spotlight-invert {
   --secondary: oklch(1 0 0 / 0.05);
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(1 0 0 / 0.05);
-  --muted-foreground: oklch(0.80 0.02 250);
+  --muted-foreground: oklch(0.82 0.02 250);
   --card: oklch(1 0 0 / 0.04);
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.155 0.028 262);
   --popover-foreground: oklch(0.98 0 0);
   --border: oklch(1 0 0 / 0.10);
   --input: oklch(1 0 0 / 0.14);
+}
+
+/* Inside the light-page navy band the hover wash goes back to blue-on-navy
+   (tonal, same as dark mode) — ink would vanish on navy. */
+html.light .spotlight-invert .motion-row-wash {
+  --row-wash: color-mix(in oklab, var(--accent) 12%, transparent);
 }
 
 html.light .spotlight-invert .border-white\/10 { border-color: rgb(255 255 255 / 0.12); }
@@ -408,12 +443,23 @@ html.light .spotlight-invert .decoration-white\/30 { text-decoration-color: rgb(
   .font-bold, .font-extrabold, .font-black { font-weight: 500; }
   .font-semibold { font-weight: 500; }
 
-  /* Consistent keyboard focus for every interactive element. */
+  /* Consistent keyboard focus for every interactive element.
+     No border-radius override — the outline follows each element's own
+     radius, so pill CTAs stay pills under keyboard focus. */
   a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
   input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
-    outline: 2px solid var(--color-accent);
+    /* var(--accent) (not the :root-resolved --color-accent alias) so
+       spotlight-invert band remaps reach the ring. */
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
-    border-radius: 4px;
+  }
+
+  /* Form fields that draw their own accent ring (motion-field) suppress the
+     global outline — one clean focus indicator, not two stacked rings. */
+  input.motion-field:focus-visible,
+  select.motion-field:focus-visible,
+  textarea.motion-field:focus-visible {
+    outline: none;
   }
 
   /* Italics kept as normal weight; do NOT globally recolor emphasis.
@@ -430,25 +476,39 @@ html.light .spotlight-invert .decoration-white\/30 { text-decoration-color: rgb(
   }
 }
 
-/* Glass-morphic operator proof card */
+/* Glass-morphic operator proof card — borderless per the card system. */
 @utility glass-card {
   background: color-mix(in srgb, white 4%, transparent);
-  border: 1px solid color-mix(in srgb, white 10%, transparent);
   backdrop-filter: blur(24px) saturate(140%);
 }
 
-/* Light-mode glass-card: white-on-white is invisible on the cream canvas,
-   so flip to ink-tinted panels that read against the warm off-white. */
+/* Light-mode glass-card: cream fill on the cream canvas (no white cards). */
 html.light .glass-card {
-  background: color-mix(in srgb, #0a1330 3%, transparent);
-  border: 1px solid color-mix(in srgb, #0a1330 12%, transparent);
-  box-shadow: 0 1px 0 rgb(255 255 255 / 0.6) inset,
-              0 12px 32px -20px rgb(10 19 48 / 0.18);
+  background: var(--surface-card);
+  box-shadow: 0 12px 32px -20px rgb(10 19 48 / 0.14);
   backdrop-filter: none;
 }
 
 
 
+
+/* ─── Container ladder (Pass 2 writedown) ───────────────────────────────────
+   Six widths, each earned — do not invent a seventh:
+   · max-w-3xl     legal pages, FooterCTA
+   · max-w-4xl     reading measure (FAQ groups, "What Veep is" interstitial)
+   · max-w-5xl     heading blocks inside wider sections, home hero copy
+   · max-w-6xl     editorial two-column pages (about, join)
+   · max-w-7xl     section grids — the default
+   · max-w-[84rem] operator spotlight rail bleed (earned exception) */
+
+/* ─── Named item-title roles (Pass 2 writedown) ─────────────────────────────
+   Item titles come in exactly two voices — do not invent a third:
+   · title-xl (grid items): "font-serif font-medium text-xl text-cream
+     tracking-tight" — home problems / benefits / StepFlow / EngagementTile,
+     pricing tiers + not-included, for-portfolios steps + included, founders.
+   · title-lg (list items under a numbered rail, and FAQ questions):
+     "text-lg text-cream tracking-tight" (plain 400 weight) — about
+     principles, join criteria, pricing FAQ questions. */
 
 /* Monospace label — section indices, table chrome, category tags (stone-soft) */
 @utility mono-label {
@@ -460,14 +520,27 @@ html.light .glass-card {
   font-weight: 400;
 }
 
-/* Eyebrow — accented mono label above headlines (one treatment sitewide) */
+/* Eyebrow — accented mono label above headlines (one treatment sitewide).
+   Carries a letter-spacing transition for the reveal settle (see motion
+   system: eyebrow tracking settle). */
 @utility eyebrow {
   font-family: var(--font-mono);
   font-size: var(--text-label, 0.6875rem);
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  /* var(--accent) (not the :root-resolved --color-accent alias) so
+     spotlight-invert band remaps reach the eyebrow. */
+  color: var(--accent);
+  transition: letter-spacing 500ms var(--ease-out-expo);
+}
+
+/* Eyebrow tracking settle — inside an arming Reveal, eyebrows enter tracked
+   out at 0.22em and ease to the resting 0.12em as the section reveals: a
+   typographic focus pull. Default state is the resting value (SSR / no-JS
+   never see the tracked-out state); reduced-motion is gated out entirely. */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-reveal[data-in="false"] .eyebrow { letter-spacing: 0.22em; }
 }
 
 /* Numeric figure — prices and stats (mono mark) */
@@ -488,15 +561,18 @@ html.light .glass-card {
 }
 
 /* ─── Motion system ─────────────────────────────────────────────────────────
-   One easing curve, three durations, small transform distances.
-   Applied via utility classes so animations stay consistent everywhere.
+   Two easing curves, small transform distances, one choreography grammar.
+   --ease-standard for hover/micro; --ease-out-expo for entrances (longer
+   deceleration tail reads more expensive). Applied via utility classes so
+   motion stays consistent everywhere.
    All motion is disabled under prefers-reduced-motion (see block below). */
 :root {
   --dur-micro: 140ms;
   --dur-hover: 200ms;
-  --dur-enter: 420ms;
+  --dur-enter: 560ms;
   --dur-page: 240ms;
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Phase 2 — View Transitions (progressive). */
@@ -509,23 +585,25 @@ html.light .glass-card {
 
 @keyframes veep-vt-fade-out {
   from { opacity: 1; transform: translateY(0); }
-  to   { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 0; transform: translateY(-10px); }
 }
 @keyframes veep-vt-fade-in {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Main content crossfade — slightly more visible than pure opacity */
+/* Page choreography — outgoing page exits quickly, incoming page settles on a
+   longer deceleration tail with a small beat between the two. Reads as one
+   editorial gesture instead of a symmetric crossfade. */
 ::view-transition-old(page-main) {
-  animation: veep-vt-fade-out 320ms var(--ease-standard) both;
+  animation: veep-vt-fade-out 220ms var(--ease-standard) both;
 }
 ::view-transition-new(page-main) {
-  animation: veep-vt-fade-in 320ms var(--ease-standard) both;
+  animation: veep-vt-fade-in 480ms var(--ease-out-expo) 90ms both;
 }
 ::view-transition-group(page-main) {
-  animation-duration: 320ms;
-  animation-timing-function: var(--ease-standard);
+  animation-duration: 480ms;
+  animation-timing-function: var(--ease-out-expo);
 }
 ::view-transition-group(site-header) {
   animation-duration: 320ms;
@@ -549,32 +627,132 @@ html.light .glass-card {
 }
 
 @keyframes motion-fade-up {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Section / element entrance — fade + 8px rise. */
+/* Section / element entrance — fade + 10px rise on the entrance curve. */
 @utility motion-fade-up {
-  animation: motion-fade-up var(--dur-enter) var(--ease-standard) both;
+  animation: motion-fade-up 600ms var(--ease-out-expo) both;
 }
+
+/* Load-in choreography delays — pair with motion-fade-up to cascade a hero.
+   Pure CSS so no-JS still plays; reduced-motion zeroes delay + duration. */
+.motion-delay-1 { animation-delay: 90ms; }
+.motion-delay-2 { animation-delay: 180ms; }
+.motion-delay-3 { animation-delay: 270ms; }
+.motion-delay-4 { animation-delay: 360ms; }
+.motion-delay-5 { animation-delay: 450ms; }
 
 /* In-view reveal — default VISIBLE so SSR/no-JS never blanks content.
    Reveal.tsx arms after mount; [data-in="false"] only then hides below-fold. */
 @utility motion-reveal {
   opacity: 1;
   transform: none;
-  transition: opacity 560ms var(--ease-standard),
-              transform 560ms var(--ease-standard);
+  transition: opacity 640ms var(--ease-out-expo),
+              transform 640ms var(--ease-out-expo);
 }
 .motion-reveal[data-in="false"] {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(14px);
   will-change: opacity, transform;
 }
 .motion-reveal[data-in="true"] {
   opacity: 1;
   transform: none;
 }
+
+/* Lead proof figure — tracking settle + 8px rise. Default is the resting
+   value so SSR / no-JS never blanks or offsets the $6M. */
+@utility proof-figure {
+  letter-spacing: -0.04em;
+  transform: none;
+  transition: letter-spacing 640ms var(--ease-out-expo),
+              transform 640ms var(--ease-out-expo);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .motion-reveal[data-in="false"] .proof-figure {
+    letter-spacing: 0.06em;
+    transform: translateY(8px);
+  }
+}
+
+/* Grid stagger — put .motion-stagger on a grid/list inside a Reveal section.
+   Direct children rise in sequence when the section enters the viewport.
+   Default state is visible (SSR renders data-in="true"), so content never
+   hides without JS; only an armed below-fold section staggers in. */
+.motion-stagger > * {
+  opacity: 1;
+  transform: none;
+  transition: opacity 640ms var(--ease-out-expo),
+              transform 640ms var(--ease-out-expo);
+}
+.motion-reveal[data-in="false"] .motion-stagger > * {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.motion-stagger > *:nth-child(2) { transition-delay: 70ms; }
+.motion-stagger > *:nth-child(3) { transition-delay: 140ms; }
+.motion-stagger > *:nth-child(4) { transition-delay: 210ms; }
+.motion-stagger > *:nth-child(5) { transition-delay: 280ms; }
+.motion-stagger > *:nth-child(6) { transition-delay: 350ms; }
+.motion-stagger > *:nth-child(n+7) { transition-delay: 420ms; }
+
+/* Problem diagram choreography — the flow reads top to bottom:
+   work box → branch lines draw → three route boxes stagger in →
+   converge lines draw → the CEO desk lands last. Copy inside each box
+   follows its shell by a 160ms beat. Default state is visible (no-JS safe);
+   delays only apply on entry so leaving hides instantly. */
+.problem-diagram-box {
+  opacity: 1;
+  transform: none;
+  transition: opacity 640ms var(--ease-out-expo),
+              transform 640ms var(--ease-out-expo);
+}
+.problem-diagram-line {
+  opacity: 1;
+  transform: none;
+  transform-origin: top center;
+  transition: opacity 480ms var(--ease-out-expo),
+              transform 480ms var(--ease-out-expo);
+}
+.problem-diagram-line.h-px { transform-origin: center; }
+.problem-diagram-copy {
+  opacity: 1;
+  transition: opacity 560ms var(--ease-out-expo);
+}
+.motion-reveal[data-in="false"] .problem-diagram-box {
+  opacity: 0;
+  transform: translateY(8px);
+}
+/* Lines draw rather than fade: stems grow downward, horizontals from center. */
+.motion-reveal[data-in="false"] .problem-diagram-line {
+  opacity: 0;
+  transform: scaleY(0);
+}
+.motion-reveal[data-in="false"] .problem-diagram-line.h-px {
+  transform: scaleX(0);
+}
+.motion-reveal[data-in="false"] .problem-diagram-copy {
+  opacity: 0;
+}
+/* Entry timeline (delays scoped to data-in so exit is immediate). DOM order:
+   box · branch(md) · stem(mobile) · route grid · converge(md) · stem(mobile) · box */
+.motion-reveal[data-in="true"] .problem-diagram > .problem-diagram-box:first-child { transition-delay: 0ms; }
+.motion-reveal[data-in="true"] .problem-diagram > :nth-child(2) .problem-diagram-line,
+.motion-reveal[data-in="true"] .problem-diagram > :nth-child(3).problem-diagram-line { transition-delay: 120ms; }
+.motion-reveal[data-in="true"] .problem-diagram > .grid > .problem-diagram-box:nth-child(1) { transition-delay: 190ms; }
+.motion-reveal[data-in="true"] .problem-diagram > .grid > .problem-diagram-box:nth-child(2) { transition-delay: 260ms; }
+.motion-reveal[data-in="true"] .problem-diagram > .grid > .problem-diagram-box:nth-child(3) { transition-delay: 330ms; }
+.motion-reveal[data-in="true"] .problem-diagram > :nth-child(5) .problem-diagram-line,
+.motion-reveal[data-in="true"] .problem-diagram > :nth-child(6).problem-diagram-line { transition-delay: 400ms; }
+.motion-reveal[data-in="true"] .problem-diagram > .problem-diagram-box:last-child { transition-delay: 470ms; }
+/* Copy follows its own shell by a 160ms beat. */
+.motion-reveal[data-in="true"] .problem-diagram > .problem-diagram-box:first-child .problem-diagram-copy { transition-delay: 160ms; }
+.motion-reveal[data-in="true"] .problem-diagram > .grid > .problem-diagram-box:nth-child(1) .problem-diagram-copy { transition-delay: 350ms; }
+.motion-reveal[data-in="true"] .problem-diagram > .grid > .problem-diagram-box:nth-child(2) .problem-diagram-copy { transition-delay: 420ms; }
+.motion-reveal[data-in="true"] .problem-diagram > .grid > .problem-diagram-box:nth-child(3) .problem-diagram-copy { transition-delay: 490ms; }
+.motion-reveal[data-in="true"] .problem-diagram > .problem-diagram-box:last-child .problem-diagram-copy { transition-delay: 630ms; }
 
 /* Interactive card / tile — small lift + border/shadow polish. */
 @utility motion-hover-lift {
@@ -595,17 +773,61 @@ html.light .glass-card {
               opacity var(--dur-hover) var(--ease-standard);
 }
 
-/* Arrow icon inside a `group` CTA — 2px slide on group hover/focus. */
+/* Arrow icon inside a `group` CTA — 3px glide on group hover/focus. */
 @utility motion-arrow {
-  transition: transform var(--dur-hover) var(--ease-standard);
+  transition: transform 240ms var(--ease-standard);
 }
 .group:hover .motion-arrow,
 .group:focus-visible .motion-arrow,
 .group:focus-within .motion-arrow {
-  transform: translateX(2px);
+  transform: translateX(3px);
 }
 
-/* Primary pill — subtle lift + shadow on hover. */
+/* Primary pill mirrors its ground — no blue fills (accent reduction 08.18):
+   dark ground → base cream pill with locked navy type (~15:1);
+   light ground → navy pill with cream type. Invert bands flip again. */
+@utility cta-accent {
+  background-color: oklch(0.98 0 0);
+  color: oklch(0.115 0.03 265);
+}
+.cta-accent:hover {
+  background-color: color-mix(in oklab, oklch(0.98 0 0) 88%, oklch(0.115 0.03 265));
+}
+/* Dark page → cream invert band: cream pill would vanish; mirror to navy. */
+.spotlight-invert .cta-accent {
+  background-color: oklch(0.18 0.03 265);
+  color: oklch(0.98 0 0);
+}
+.spotlight-invert .cta-accent:hover {
+  background-color: oklch(0.24 0.03 265);
+}
+html.light .cta-accent {
+  background-color: oklch(0.18 0.03 265);
+  color: oklch(0.98 0 0);
+}
+html.light .cta-accent:hover {
+  background-color: oklch(0.24 0.03 265);
+}
+/* Light page → navy invert band: cream pill, same as the dark-page recipe. */
+html.light .spotlight-invert .cta-accent {
+  background-color: oklch(0.98 0 0);
+  color: oklch(0.115 0.03 265);
+}
+html.light .spotlight-invert .cta-accent:hover {
+  background-color: color-mix(in oklab, oklch(0.98 0 0) 88%, oklch(0.115 0.03 265));
+}
+
+/* Pill for the pale (cream) invert bands — navy ink on paper. Name kept
+   from the old blue recipe to avoid markup churn (accent reduction 08.18). */
+@utility cta-accent-dark {
+  background-color: oklch(0.18 0.03 265);
+  color: oklch(0.98 0 0);
+}
+.cta-accent-dark:hover {
+  background-color: oklch(0.24 0.03 265);
+}
+
+/* Primary pill — subtle lift + shadow on hover, quick settle on press. */
 @utility motion-cta {
   transition: background-color var(--dur-hover) var(--ease-standard),
               box-shadow var(--dur-hover) var(--ease-standard),
@@ -613,7 +835,11 @@ html.light .glass-card {
 }
 .motion-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.55);
+}
+.motion-cta:active {
+  transform: translateY(0);
+  transition-duration: 80ms;
 }
 
 /* Smooth focus ring for form controls (border + ring). */
@@ -660,11 +886,105 @@ html.light .glass-card {
               backdrop-filter var(--dur-hover) var(--ease-standard);
 }
 
-/* Accordion body — grid-rows animation avoids max-height jank. */
+/* Hairline draw-in — decorative section dividers draw 0→100% width when
+   their Reveal arms (same defaults-visible contract as motion-reveal: SSR /
+   no-JS render the line painted; only an armed below-fold section draws).
+   Uses the --rule token so the line remaps through light mode and
+   spotlight-invert. Only for decorative internal dividers — load-bearing
+   borders (section boundaries, card outlines, form fields) stay real borders. */
+.motion-hairline {
+  background-image: linear-gradient(var(--rule), var(--rule));
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 1px;
+  transition: background-size 700ms var(--ease-out-expo);
+}
+/* border-y variant (top + bottom rules) */
+.motion-hairline-y {
+  background-image: linear-gradient(var(--rule), var(--rule)),
+                    linear-gradient(var(--rule), var(--rule));
+  background-repeat: no-repeat;
+  background-position: 0 0, 0 100%;
+  background-size: 100% 1px, 100% 1px;
+  transition: background-size 700ms var(--ease-out-expo);
+}
+/* pricing-tier variant — top rule on mobile, left rule on md+ (mirrors the
+   border orientation swap of the tier grid) */
+.motion-hairline-tier {
+  background-image: linear-gradient(var(--rule), var(--rule));
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 1px;
+  transition: background-size 700ms var(--ease-out-expo);
+}
+@media (min-width: 768px) {
+  .motion-hairline-tier { background-size: 1px 100%; }
+  .motion-hairline-tier:first-child { background-size: 0; }
+}
+/* Tier hairlines stay neutral in both themes — the featured tier's coral
+   border is the one signal line on the pricing grid (Dave 08.18). */
+/* Hidden (pre-draw) state only exists when motion is allowed — reduced-motion
+   users always see the painted line. */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-reveal[data-in="false"] .motion-hairline,
+  .motion-reveal[data-in="false"] .motion-hairline-tier { background-size: 0% 1px; }
+  .motion-reveal[data-in="false"] .motion-hairline-y { background-size: 0% 1px, 0% 1px; }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+  .motion-reveal[data-in="false"] .motion-hairline-tier { background-size: 1px 0%; }
+}
+
+/* Why Veep row wash — on row hover an accent wash slides across the Veep
+   cell (background-size draw on the standard curve) while the dimension
+   label lifts to cream. Non-interactive table gets a place for the eye to
+   rest; desktop-only by nature (the section is hidden md:block per lock).
+   Dave 08.17 PASS4: the same wash is the sitewide card hover — put the
+   class straight on a surface-card box and self-:hover draws it (backgrounds
+   clip to the 20px radius on their own). No lift, no bounce. */
+.motion-row-wash {
+  /* Wash color is themed: blue-over-navy in dark (tonal light), deeper-cream
+     shading in light (paper darkens under the hand — same hue family, never
+     gray navy tint). Same draw, same timing. */
+  --row-wash: color-mix(in oklab, var(--color-accent) 12%, transparent);
+  background-image: linear-gradient(var(--row-wash), var(--row-wash));
+  background-repeat: no-repeat;
+  /* Anchored center so the wash grows inside-out rather than left→right. */
+  background-position: center;
+  background-size: 0% 100%;
+  transition: background-size 240ms var(--ease-standard);
+}
+html.light .motion-row-wash {
+  --row-wash: color-mix(in oklab, oklch(0.86 0.012 90) 30%, transparent);
+}
+.group:hover .motion-row-wash,
+.motion-row-wash:hover { background-size: 100% 100%; }
+
+/* Reading-progress hairline — 1px accent line on the header's bottom edge
+   that fills left→right with document scroll. Pure CSS scroll-driven
+   animation; an indicator, not parallax (nothing moves against scroll).
+   Browsers without scroll-timeline support never render it (@supports),
+   and reduced-motion hides it (see reduce block). */
+@keyframes veep-read-progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.motion-progress { display: none; }
+@supports (animation-timeline: scroll()) {
+  .motion-progress {
+    display: block;
+    background-color: var(--accent-coral);
+    transform-origin: left center;
+    animation: veep-read-progress linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+/* Accordion body — grid-rows animation avoids max-height jank.
+   360ms gives the open a weighted, unhurried settle. */
 @utility motion-collapse {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows var(--dur-hover) var(--ease-standard);
+  transition: grid-template-rows 360ms var(--ease-standard);
 }
 .motion-collapse[data-open="true"] {
   grid-template-rows: 1fr;
@@ -674,27 +994,78 @@ html.light .glass-card {
   overflow: hidden;
 }
 
-/* Reduced-motion — strip transforms & long transitions, keep opacity fades tiny. */
+/* One-shot attention pulse — three quiet pings when the section reveals,
+   then rests. Replaces the infinite animate-ping loop. */
+@keyframes veep-ping {
+  0%        { transform: scale(1);   opacity: 0.8; }
+  70%, 100% { transform: scale(2.4); opacity: 0; }
+}
+.motion-ping {
+  opacity: 0;
+}
+.motion-reveal[data-in="true"] .motion-ping {
+  animation: veep-ping 1.4s var(--ease-standard) 0.4s 3;
+}
+
+/* CEO-desk dots — quiet persistent pulse. Core stays put; the halo rings. */
+@keyframes veep-desk-pulse {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  70%, 100% { transform: scale(2.2); opacity: 0; }
+}
+.problem-diagram-pulse {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .problem-diagram-pulse {
+    animation: veep-desk-pulse 1.8s var(--ease-standard) infinite;
+  }
+  .problem-diagram-pulse-delay {
+    animation-delay: 0.9s;
+  }
+}
+
+/* Reduced-motion — strip transforms, delays & long transitions; keep opacity fades tiny. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
     scroll-behavior: auto !important;
   }
   .motion-reveal { opacity: 1 !important; transform: none !important; }
+  .motion-stagger > * { opacity: 1 !important; transform: none !important; }
+  .problem-diagram-box,
+  .problem-diagram-line,
+  .problem-diagram-copy { opacity: 1 !important; transform: none !important; }
+  .proof-figure { transform: none !important; letter-spacing: -0.04em !important; }
+  .motion-ping { animation: none !important; opacity: 0 !important; }
+  .problem-diagram-pulse { animation: none !important; opacity: 0 !important; }
+  .motion-progress { display: none !important; }
   .motion-hover-lift:hover,
   .motion-cta:hover { transform: none !important; }
-  .op-float, .op-float-delayed { animation: none !important; }
   .motion-image-tilt,
   .group:hover .motion-image-tilt,
   .group:focus-visible .motion-image-tilt,
   .group:focus-within .motion-image-tilt { transform: none !important; }
   .motion-underline { background-size: 0 0 !important; padding-bottom: 0 !important; }
+  .group:hover .motion-row-wash,
+  .motion-row-wash:hover { background-size: 0% 100% !important; }
+  .marquee { animation: none !important; }
+  .motion-arrow,
+  .group:hover .motion-arrow,
+  .group:focus-visible .motion-arrow,
+  .group:focus-within .motion-arrow { transform: none !important; }
 }
 
 @utility marquee {
-  animation: marquee 60s linear infinite;
+  animation: marquee 30s linear infinite;
+}
+
+/* Courtesy pause — hovering the ticker halts it so names can be read. */
+.marquee:hover {
+  animation-play-state: paused;
 }
 
 @keyframes marquee {
@@ -702,32 +1073,3 @@ html.light .glass-card {
   to { transform: translateX(-50%); }
 }
 
-/* Illustration draw-in — used by BarStack / Waveform on mount */
-@keyframes drawUp {
-  from { transform: scaleY(0); opacity: 0; }
-  to   { transform: scaleY(1); opacity: 1; }
-}
-@utility draw-up {
-  transform-origin: bottom;
-  animation: drawUp 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes orbit {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-/* Subtle command-center scan line used by the Network Impact panel */
-@keyframes scan {
-  from { top: -80px; }
-  to   { top: 100%; }
-}
-
-@utility animate-scan {
-  animation: scan 6s linear infinite;
-}
-
-/* Mint→coral gradient text — used only on the AudienceTabs active underline. */
-@utility gradient-underline {
-  background-image: linear-gradient(90deg, #7CE0C0, #56C7C0 40%, #F2A47C 70%, #EE6A4D);
-}

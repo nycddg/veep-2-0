@@ -160,7 +160,8 @@ function PrivacyPage() {
         eyebrow="Legal"
         title="Privacy Policy."
         sub="How The Veep Group, LLC collects, uses, shares, and protects your information when you use veep.work and the Veep platform."
-        primaryLabel="Book intro call"
+        primaryLabel="Learn more"
+        primaryTo="/about"
         secondaryLabel="Contact us"
         secondaryTo="/contact"
       />
@@ -174,7 +175,7 @@ function PrivacyPage() {
 
           <p className="mt-10 text-stone text-lg leading-relaxed">
             At Veep, your privacy matters. This Privacy Policy explains how The Veep Group, LLC (&quot;Veep,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, shares, and protects your information through the use of our website (
-            <a href="https://www.veep.work" className="text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent transition">
+            <a href="https://www.veep.work" className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent">
               www.veep.work
             </a>
             ) and any related features, tools, or services (collectively, the &quot;Service&quot;). By accessing or using the Service, you agree to the terms outlined in this Privacy Policy.
@@ -206,7 +207,7 @@ function PrivacyPage() {
                       );
                     }
                     return (
-                      <ul key={i} className="space-y-2 pl-5 list-disc marker:text-accent/70 text-stone text-base leading-relaxed">
+                      <ul key={i} className="space-y-2 pl-5 list-disc marker:text-current text-stone text-base leading-relaxed">
                         {b.items.map((it) => (
                           <li key={it}>{it}</li>
                         ))}
@@ -229,13 +230,13 @@ function PrivacyPage() {
                 <p className="text-cream">The Veep Group, LLC</p>
                 <p>
                   Email:{" "}
-                  <a href="mailto:hey@veep.work" className="text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent transition">
+                  <a href="mailto:hey@veep.work" className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent">
                     hey@veep.work
                   </a>
                 </p>
                 <p>
                   See also our{" "}
-                  <Link to="/terms" className="text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent transition">
+                  <Link to="/terms" className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-accent">
                     Terms of Service
                   </Link>
                   .

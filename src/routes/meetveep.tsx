@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import erikaHeadshot from "@/assets/operator-erika-velazquez.png.asset.json";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { ogImageMeta } from "@/lib/seo";
@@ -51,18 +51,18 @@ function MeetVeepPage() {
           <div className="flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8 lg:items-start">
             <div className="order-1 lg:col-span-7 space-y-5">
               <div className="eyebrow">Meet Veep</div>
-              <h1 className="font-medium text-[2.25rem] sm:text-5xl md:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
+              <h1 className="font-medium text-[2.25rem] sm:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
                 The work needs an owner.
               </h1>
             </div>
 
-            <div className="order-2 lg:col-span-5 lg:row-span-4">
+            <div className="order-2 lg:col-span-5 lg:row-span-4 lg:self-center">
               <div className="relative mx-auto max-w-md">
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-accent/15 blur-[80px] scale-95"
+                  className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-accent/15 blur-[80px] scale-95 light:hidden"
                 />
-                <div className="overflow-hidden rounded-2xl sm:rounded-3xl ring-1 ring-white/10 light:ring-ink/10 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
+                <div className="overflow-hidden rounded-[15px] shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
                   <img
                     src={erikaHeadshot.url}
                     alt="Senior Veep operator"
@@ -88,15 +88,15 @@ function MeetVeepPage() {
                 for the job to be done. Critical work gets owned before a
                 permanent hire is in place.
               </p>
-              <p className="eyebrow pt-2 text-cream/70">
+              <p className="eyebrow pt-2">
                 Vetted senior operators who step in to own critical work, now.
               </p>
             </div>
 
-            <ul className="order-4 lg:col-span-7 rounded-2xl border border-white/10 bg-[color:var(--surface-raised)] divide-y divide-white/10 max-w-xl">
+            <ul className="order-4 lg:col-span-7 rounded-[15px] bg-surface-card divide-y divide-white/10 max-w-xl">
               {BULLETS.map((b) => (
                 <li key={b} className="flex items-center gap-3 px-5 py-4">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-accent/40 text-accent">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-accent-coral/40 text-accent-coral">
                     <Check size={14} strokeWidth={2.5} />
                   </span>
                   <span className="text-sm sm:text-base text-cream/90">{b}</span>
@@ -107,22 +107,15 @@ function MeetVeepPage() {
             <div className="order-5 lg:col-span-7 flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4 sm:gap-5 pt-1">
               <Link
                 to="/contact"
-                className="group motion-cta rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
+                className="group motion-cta cta-accent rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
               >
-                Get in touch <ArrowRight size={16} className="motion-arrow" />
+                Request an operator
               </Link>
               <Link
                 to="/how-it-works"
                 className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
               >
                 See how it works
-              </Link>
-              <Link
-                to="/pricing"
-                hash="tiers"
-                className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
-              >
-                See pricing
               </Link>
             </div>
           </div>
@@ -133,24 +126,24 @@ function MeetVeepPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10 md:mb-12">
             <div className="eyebrow">Engagements</div>
-            <h2 className="mt-5 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Four shapes. One promise.
             </h2>
             <p className="mt-4 text-cream/80 leading-relaxed">
               Advisory, Sprint, Operator, and Pod — priced to the work, not the hour.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-5">
+          <div className="flex flex-col items-start sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5">
             <Link
               to="/pricing"
               hash="tiers"
-              className="group motion-cta rounded-full border border-cream/20 px-7 py-3.5 text-sm font-medium text-cream hover:bg-cream/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent inline-flex items-center justify-center gap-2 min-h-11"
+              className="group motion-cta cta-accent rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
             >
-              See pricing <ArrowRight size={16} className="motion-arrow" />
+              See pricing
             </Link>
             <Link
               to="/for-portfolios"
-              className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
+              className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
             >
               For Funds
             </Link>

@@ -53,7 +53,7 @@ function NotFoundComponent() {
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-full bg-cream px-5 py-2.5 text-sm font-medium text-ink transition hover:opacity-90"
+            className="motion-cta cta-accent inline-flex items-center justify-center rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11"
           >
             Back to Veep
           </Link>
@@ -78,13 +78,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => { router.invalidate(); reset(); }}
-            className="inline-flex items-center justify-center rounded-full bg-cream px-5 py-2.5 text-sm font-medium text-ink transition hover:opacity-90"
+            className="motion-cta cta-accent inline-flex items-center justify-center rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-transparent px-5 py-2.5 text-sm font-medium text-cream transition hover:bg-white/5"
+            className="motion-cta inline-flex items-center justify-center rounded-full whitespace-nowrap border border-white/15 bg-transparent px-5 py-2.5 text-sm font-medium text-cream hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11"
           >
             Go home
           </a>
@@ -103,7 +103,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Veep" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#0b1220" },
+      { name: "theme-color", media: "(prefers-color-scheme: dark)", content: "#0b1220" },
+      { name: "theme-color", media: "(prefers-color-scheme: light)", content: "#E4E9F2" },
       { name: "format-detection", content: "telephone=no" },
     ],
     links: [
@@ -112,7 +113,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
+        // Weights 300/600 were requested but unrenderable under the 500 ceiling — trimmed.
+        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap",
       },
     ],
     scripts: [

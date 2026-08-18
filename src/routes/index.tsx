@@ -4,208 +4,22 @@ import { BOOKING_URL } from "@/lib/booking";
 import heroHeadshot from "@/assets/operator-headshot.png.asset.json";
 import { LogoWall } from "@/components/site/LogoWall";
 import { Testimonials } from "@/components/site/Testimonials";
-import { OperatorSpotlightRail } from "@/components/site/OperatorSpotlightRail";
+import { OperatorSpotlightChapter } from "@/components/site/OperatorSpotlightChapter";
 import { OperatorCanvas } from "@/components/site/OperatorCanvas";
+import { ClientStrip } from "@/components/site/ClientStrip";
 import { EngagementTile } from "@/components/site/EngagementTile";
 import { StepFlow } from "@/components/site/StepFlow";
 import { Check } from "lucide-react";
 import { ObjectionList } from "@/components/site/ObjectionList";
+import { ProblemDiagram } from "@/components/site/ProblemDiagram";
 import { FooterCTA } from "@/components/site/FooterCTA";
+import { Accordion } from "@/components/site/Accordion";
 import { Reveal } from "@/components/site/Reveal";
 import { ogImageMeta } from "@/lib/seo";
-import jianYangHeadshot from "@/assets/operator-jian-yang.png.asset.json";
-import erikaVelazquezHeadshot from "@/assets/operator-erika-velazquez.png.asset.json";
-import elaineBogartHeadshot from "@/assets/operator-elaine-bogart.png.asset.json";
-import victoriaKasumuHeadshot from "@/assets/operator-victoria-kasumu.png.asset.json";
-import vanessaKwanHeadshot from "@/assets/operator-vanessa-kwan.png.asset.json";
-import alasdairLloydJonesHeadshot from "@/assets/operator-alasdair-lloyd-jones.png.asset.json";
-import alanPoussaintHeadshot from "@/assets/operator-alan-poussaint.png.asset.json";
-import jenniferKasperHeadshot from "@/assets/operator-jennifer-kasper.png.asset.json";
-import seanParkHeadshot from "@/assets/operator-sean-park.png.asset.json";
-import jonathanLevinsonHeadshot from "@/assets/operator-jonathan-levinson.png.asset.json";
-import miguelFerreyraHeadshot from "@/assets/operator-miguel-ferreyra-de-bone.png.asset.json";
-import jessicaDavilaHeadshot from "@/assets/operator-jessica-davila.png.asset.json";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Content
 // ─────────────────────────────────────────────────────────────────────────────
-
-const heroOperators = [
-  {
-    name: "Jian Yang",
-    role: "Finance Operating Partner",
-    chips: ["Ex-UGE", "Real Estate"],
-    tilt: -2,
-    translateY: 16,
-    photoUrl: jianYangHeadshot.url,
-  },
-  {
-    name: "Erika Velazquez",
-    role: "Marketing Operating Partner",
-    chips: ["Ex-Morning Brew", "New Media"],
-    tilt: 3,
-    translateY: -32,
-    photoUrl: erikaVelazquezHeadshot.url,
-  },
-  {
-    name: "Elaine Bogart",
-    role: "Finance Operating Partner",
-    chips: ["Ex-Fullscreen", "Web3"],
-    tilt: -4,
-    translateY: 48,
-    photoUrl: elaineBogartHeadshot.url,
-  },
-  {
-    name: "Victoria Kasumu",
-    role: "People Operating Partner",
-    chips: ["Ex-Zocdoc", "Tech"],
-    tilt: 2,
-    translateY: 0,
-    photoUrl: victoriaKasumuHeadshot.url,
-  },
-];
-
-const spotlightOperators = [
-  {
-    name: "Jian Yang",
-    role: "Finance Operating Partner",
-    priorCompanies: ["INDUSTRIOUS", "OPENCARE"],
-    summary:
-      "Strategic finance leader and entrepreneur with a record of scaling fast-growing firms, optimizing financial operations, and securing funding. At Industrious, secured $140M+ in equity funding and restructured financial operations for rapid scale.",
-    chips: ["Real Estate", "Finance", "Tech"],
-    photoUrl: jianYangHeadshot.url,
-  },
-  {
-    name: "Erika Velazquez",
-    role: "Marketing Operating Partner",
-    priorCompanies: ["MORNING BREW", "THE NEW REPUBLIC"],
-    summary:
-      "Story-driven marketer with deep expertise in brand strategy, product marketing, and audience growth. Specializes in launching and repositioning for impact. At Morning Brew, developed a new newsletter ad product that doubled the average CTR.",
-    chips: ["New Media", "Consumer", "GenAI"],
-    photoUrl: erikaVelazquezHeadshot.url,
-  },
-  {
-    name: "Elaine Bogart",
-    role: "Finance Operating Partner",
-    priorCompanies: ["Fullscreen", "Nifty's"],
-    summary:
-      "Powerhouse CFO with 15+ years of experience leading financial transformation and strategic exits across SaaS, Web3, and new media. At Mojix, drove a +98% EBITDA turnaround and completed a successful international sale.",
-    chips: ["Tech", "Web3", "Media"],
-    photoUrl: elaineBogartHeadshot.url,
-  },
-  {
-    name: "Victoria Kasumu",
-    role: "People Operating Partner",
-    priorCompanies: ["Zocdoc", "Pager Health"],
-    summary:
-      "Seasoned people leader who builds growth-focused operations by aligning talent, culture, and business goals. At David Zwirner, hired 50+ employees in 90 days while reducing redundancy 30% and increasing retention 15%.",
-    chips: ["Hospitality", "Tech", "Healthcare"],
-    photoUrl: victoriaKasumuHeadshot.url,
-  },
-  {
-    name: "Vanessa Kwan",
-    role: "Finance Operating Partner",
-    priorCompanies: ["BDG MEDIA", "GOLDMAN SACHS"],
-    summary:
-      "Strategic finance and operations leader with 15+ years across investment banking, luxury retail, and digital media. At BDG Media, rose from Director to EVP Head of Finance and redesigned seller commissions, improving gross margins by 4 points.",
-    chips: ["Digital Media", "Luxury Retail", "Consumer"],
-    photoUrl: vanessaKwanHeadshot.url,
-    photoPosition: "center 15%",
-    photoScale: 1.03,
-  },
-  {
-    name: "Alasdair Lloyd-Jones",
-    role: "Growth Operating Partner",
-    priorCompanies: ["SET CREATIVE (WPP)", "DAVID YURMAN"],
-    summary:
-      "Global brand strategist and creative operator with a record of scaling consumer brands and leading high-impact transformation. As CEO of SET Creative, scaled revenue 5x and led the firm through a successful sale to WPP.",
-    chips: ["Consumer Retail", "Tech", "Automotive"],
-    photoUrl: alasdairLloydJonesHeadshot.url,
-  },
-  {
-    name: "Alan Poussaint",
-    role: "Finance Operating Partner",
-    priorCompanies: ["ROCKET INTERNET", "KIXIE"],
-    summary:
-      "Transaction-ready finance operator with PE roots and marketplace scale; former Principal at Lincolnshire Management ($1.8B AUM), then CFO of a Rocket Internet portfolio company during the build of Indonesia's largest e-commerce platform.",
-    chips: ["Tech", "SaaS", "Private Capital"],
-    photoUrl: alanPoussaintHeadshot.url,
-    photoPosition: "center 15%",
-    photoScale: 1.03,
-  },
-  {
-    name: "Jennifer Kasper",
-    role: "Growth Operating Partner",
-    priorCompanies: ["LVMH", "MACY'S"],
-    summary:
-      "Senior marketing leader with deep experience across global retail, beauty, fashion, media, and customer strategy. At LVMH, unified group media strategy across 75+ Maisons and built cross-brand agency models.",
-    chips: ["Retail", "Fashion", "Beauty"],
-    photoUrl: jenniferKasperHeadshot.url,
-  },
-  {
-    name: "Sean Park",
-    role: "People Operating Partner",
-    priorCompanies: ["ACTIVANT CAPITAL", "EY"],
-    summary:
-      "People strategy leader who turns org design, leadership, and talent systems into business growth levers. As CPO at Activant Capital, led portfolio talent strategy and served as interim CHRO on a portfolio path to a $2B exit.",
-    chips: ["Growth Equity", "Pro Services", "Tech"],
-    photoUrl: seanParkHeadshot.url,
-    photoPosition: "center 15%",
-    photoScale: 1.03,
-  },
-  {
-    name: "Jonathan Levinson",
-    role: "Finance Operating Partner",
-    priorCompanies: ["KIDS MADE MODERN", "YELLOWHEART"],
-    summary:
-      "Finance and operations leader with 25+ years turning founder assumptions into investor-ready plans and operating discipline. Has led or supported $65M+ in M&A and fundraising transactions.",
-    chips: ["E-Commerce", "SaaS", "Manufacturing"],
-    photoUrl: jonathanLevinsonHeadshot.url,
-    photoPosition: "center 15%",
-    photoScale: 1.03,
-  },
-  {
-    name: "Miguel Ferreyra de Bone",
-    role: "Finance Operating Partner",
-    priorCompanies: ["TASTE OF BELGIUM", "FARNSWORTH CANNABIS"],
-    summary:
-      "Seasoned operator with a track record of building and transforming companies across finance, strategy, operations, GTM, and product. Brings board-level judgment and hands-on operating experience across consumer, luxury, and finance.",
-    chips: ["Consumer", "Luxury", "Finance"],
-    photoUrl: miguelFerreyraHeadshot.url,
-    photoPosition: "center 15%",
-    photoScale: 1.03,
-  },
-  {
-    name: "Jessica Davila",
-    role: "People Operating Partner",
-    priorCompanies: ["TASKRABBIT", "BREAD"],
-    summary:
-      "People strategy leader with a record of guiding companies through scale, acquisition, and leadership change. At TaskRabbit, rebuilt people strategy while scaling from 250 to 500 employees across 9 countries.",
-    chips: ["Marketplace", "Fintech", "Consumer"],
-    photoUrl: jessicaDavilaHeadshot.url,
-    photoPosition: "center 15%",
-    photoScale: 1.03,
-  },
-];
-
-const problems = [
-  {
-    t: "Critical work with no clear owner.",
-    d: "A fundraise, GTM reset, operating issue, or margin problem keeps coming back to you. The team is busy, but the priority is still stuck.",
-  },
-  {
-    t: "The work cannot wait for a perfect org chart.",
-    d: "A permanent hire may be the right answer, eventually. A search takes months or the role may still be undefined but the business needs to move now.",
-  },
-  {
-    t: "You are stuck in the middle.",
-    d: "Sales decisions, finance questions, operational escalations, people issues, and strategic initiatives keep landing on the CEO's desk.",
-  },
-  {
-    t: "More advice is not enough.",
-    d: "You don't need another deck or a stack of candidate profiles. You need someone senior to step in, take responsibility, and move the work.",
-  },
-];
 
 const alternatives = [
   { t: "Permanent hire", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you, and the work waits for the search to finish." },
@@ -294,30 +108,28 @@ const differentiators = [
 
 const cases = [
   {
-    tag: "B2B SAAS · FINANCE OPERATING PARTNER",
+    tag: "B2B SAAS",
+    role: "Finance Operating Partner",
     trigger: "CEO was preparing for a first institutional round without a financial model, investor materials, or fundraising experience.",
     outcome: "Built a 3-year model, diligence-ready CAC/LTV dashboards, and coached the CEO through term sheets and investor meetings.",
     metric: "$6M raised in 6 weeks",
+    figure: "$6M",
+    kicker: "Raised in 6 weeks",
   },
   {
-    tag: "SOFTWARE STUDIO · GROWTH OPERATING PARTNER",
+    tag: "SOFTWARE STUDIO",
+    role: "Growth Operating Partner",
     trigger: "An $8M product development studio was stuck firefighting, with inconsistent project profitability and no scalable path into AI.",
     outcome: "Installed standardized project scoping and staffing, built an AI GTM and delivery framework, and hired a Director of AI.",
     metric: "Project margins up 25%",
   },
   {
-    tag: "PODCAST PUBLISHER · BUSINESS OPERATING PARTNER",
+    tag: "PODCAST PUBLISHER",
+    role: "Business Operating Partner",
     trigger: "A profitable, bootstrapped publisher with millions in revenue had never raised outside capital and had no financial model or growth plan.",
     outcome: "Built the company's first financial model, defined use of proceeds, and sourced investors representing over a third of the round.",
     metric: "Sourced 35% of capital",
   },
-];
-
-const networkImpact = [
-  { figure: "$2B+", label: "Cost savings delivered", detail: "Across transformation, product redesign, and operational efficiency initiatives at global enterprises." },
-  { figure: "$1B+", label: "Capital raised", detail: "Venture funding, structured finance, SPACs, and instruments like securitized bonds." },
-  { figure: "$3B+", label: "New revenue generated", detail: "Through new business lines, go-to-market strategy, and product commercialization." },
-  { figure: "20+", label: "Exits & acquisitions", detail: "Including strategic sales, integrations, and post-merger transformations." },
 ];
 
 // Mini FAQ — non-dupes of ObjectionList ("Before you book")
@@ -399,7 +211,7 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: heroHeadshot.url,
-        fetchpriority: "high",
+        fetchPriority: "high",
       },
     ],
     scripts: [
@@ -417,28 +229,36 @@ export const Route = createFileRoute("/")({
 function InlineCTA({
   label = "Book intro call",
   mode = "book",
+  centered = false,
 }: {
   label?: string;
   mode?: "book" | "contact";
+  /** Testimonial-section variant: centered pill, no fine print. */
+  centered?: boolean;
 }) {
   const className =
-    "rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 transition inline-flex items-center gap-2 shadow-[0_0_60px_-10px_rgba(255,255,255,0.35)]";
+    "group motion-cta cta-accent rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
+  const pill =
+    mode === "contact" ? (
+      <Link to="/contact" className={className}>
+        {label}
+      </Link>
+    ) : (
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {label}
+      </a>
+    );
+  if (centered) {
+    return <div className="mt-6 flex justify-center">{pill}</div>;
+  }
   return (
-    <div className="flex flex-wrap items-center gap-4">
-      {mode === "contact" ? (
-        <Link to="/contact" className={className}>
-          {label} <ArrowRight size={16} />
-        </Link>
-      ) : (
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={className}
-        >
-          {label} <ArrowRight size={16} />
-        </a>
-      )}
+    <div className="flex flex-col items-start gap-4.5">
+      {pill}
       <span className="text-xs text-stone-soft tracking-wide">
         30-minute call · Reply within 1 business day · 30-day fit guarantee
       </span>
@@ -450,23 +270,80 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return <div className="eyebrow">{children}</div>;
 }
 
+function CaseCard({
+  c,
+  featured = false,
+}: {
+  c: (typeof cases)[number];
+  featured?: boolean;
+}) {
+  const pad = featured ? "p-7 md:p-8" : "p-5 sm:p-7";
+
+  const body = (
+    <>
+      {featured && c.figure && c.kicker ? (
+        <div className="mt-4" role="img" aria-label={c.metric}>
+          <div
+            aria-hidden="true"
+            className="proof-figure stat-figure text-[4.125rem] md:text-[4.95rem] lg:text-[6.6rem] text-cream leading-none"
+          >
+            {c.figure}
+          </div>
+          <div
+            aria-hidden="true"
+            className="mt-3 font-serif font-medium text-xl md:text-2xl text-cream tracking-tight leading-snug"
+          >
+            {c.kicker}
+          </div>
+        </div>
+      ) : (
+        <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight leading-snug text-balance">
+          {c.metric}
+        </div>
+      )}
+      <div className="mt-4 mono-label">Assigned veep: {c.role}</div>
+      <p className="mt-4 text-sm text-stone leading-relaxed">
+        <span className="text-cream">Trigger. </span>
+        {c.trigger}
+      </p>
+      <p className="mt-3 text-sm text-stone leading-relaxed">
+        <span className="text-cream">Outcome. </span>
+        {c.outcome}
+      </p>
+    </>
+  );
+
+  return (
+    <div
+      className={`motion-row-wash flex h-full flex-col rounded-[15px] bg-surface-card ${pad}`}
+    >
+      <span className="eyebrow">{c.tag}</span>
+      {featured ? (
+        <div className="flex min-h-0 flex-1 flex-col justify-center">{body}</div>
+      ) : (
+        body
+      )}
+    </div>
+  );
+}
+
 function Index() {
   return (
     <>
       {/* Hero */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
-        <div className="relative mx-auto max-w-5xl motion-fade-up px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
-          <h1 className="font-medium text-[2.25rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream text-balance allow-wrap break-words mb-6">
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
+          <h1 className="motion-fade-up font-medium text-[2.25rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream text-balance allow-wrap break-words mb-6">
             Because a job always needs to be done.
           </h1>
 
-          <p className="text-base sm:text-lg text-stone max-w-2xl leading-relaxed mb-10">
+          <p className="motion-fade-up motion-delay-1 text-base sm:text-lg text-stone max-w-2xl leading-relaxed mb-10">
             Vetted senior operators to own urgent priorities and high-stakes
             decisions before you are ready, willing, or able to make
             permanent hires.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
+          <div className="motion-fade-up motion-delay-2 flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
             {["Invite-only network", "72-hour match", "30-day fit guarantee"].map((t) => (
               <div key={t} className="flex items-center gap-2">
                 <Check size={18} className="text-accent" strokeWidth={2.5} />
@@ -475,21 +352,23 @@ function Index() {
             ))}
           </div>
 
-          <OperatorCanvas />
+          <div className="motion-fade-up motion-delay-3 w-full">
+            <OperatorCanvas />
+          </div>
 
-          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-5 mt-12 sm:mt-20 w-full">
+          <div className="motion-fade-up motion-delay-4 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-5 mt-12 sm:mt-20 w-full">
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition inline-flex items-center justify-center gap-2 min-h-11"
+              className="group motion-cta cta-accent rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
             >
-              Book intro call <ArrowRight size={16} />
+              Book intro call
             </a>
             <Link
               to="/"
               hash="how"
-              className="text-sm text-cream/85 hover:text-cream underline underline-offset-8 decoration-white/25 hover:decoration-white/60 transition pb-1"
+              className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/60 pb-1"
             >
               See how it works
             </Link>
@@ -499,41 +378,35 @@ function Index() {
 
       <LogoWall />
 
-      {/* What Veep is */}
-      <Reveal as="section">
-        <div className="mx-auto max-w-[55.2rem] px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
-          <SectionEyebrow>WHAT VEEP IS</SectionEyebrow>
+      <div className="flex flex-col">
+      {/* What Veep is — after Problem on mobile */}
+      <Reveal as="section" className="order-2 md:order-1">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
+          <SectionEyebrow>MEET VEEP</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
             An invite-only network of operating partners ready to own the work that can't wait. Founders, CEOs, and investment firms hire Veep when important work has no owner across finance, GTM, operations, product, people, fundraising, and strategy.
           </p>
-          <p className="mt-[1.4rem] text-sm text-stone">
+          <p className="mt-6 text-sm text-stone">
             Built for companies with real revenue and growing complexity that need a critical outcome now.
           </p>
         </div>
       </Reveal>
 
-      {/* Problem */}
-      <Reveal as="section" id="problem" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
+      {/* Problem — before Meet Veep on mobile */}
+      <Reveal as="section" id="problem" className="order-1 md:order-2 bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-12 md:mb-14">
+          <div className="max-w-5xl mb-12 md:mb-14 text-left">
             <SectionEyebrow>The moment you're in</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Your business is too important for ownerless work.
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-x-8 md:gap-x-14 gap-y-12 md:gap-x-20">
-            {problems.map((p) => (
-              <div key={p.t}>
-                <h3 className="font-serif font-medium text-xl text-cream tracking-tight leading-snug">{p.t}</h3>
-                <p className="mt-2 text-base text-stone leading-relaxed max-w-md">{p.d}</p>
-              </div>
-            ))}
-          </div>
+          <ProblemDiagram />
 
-          <div className="mt-20 md:mt-24 border-t border-white/10 pt-12">
+          <div className="mt-20 md:mt-24 motion-hairline pt-12">
             <div className="mono-label mb-8">Instead of</div>
-            <div className="grid md:grid-cols-3 gap-y-10">
+            <div className="motion-stagger grid md:grid-cols-3 gap-y-10">
               {alternatives.map((a) => (
                 <div
                   key={a.t}
@@ -544,15 +417,13 @@ function Index() {
                 </div>
               ))}
             </div>
-            <p className="mt-12 md:mt-14 mx-auto text-center font-serif font-medium text-lg md:text-xl text-cream/90 leading-snug max-w-5xl">
-              Three options. None of them get you the outcomes you need, when you need them. Now. Only Veep does.
-            </p>
           </div>
         </div>
       </Reveal>
+      </div>
 
       {/* Solution */}
-      <Reveal as="section" id="solution" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="solution" className="border-t border-white/10 md:border-t-0 py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
@@ -569,11 +440,11 @@ function Index() {
                 When the work lands or the permanent hire arrives, we hand off with
                 results and documentation, not ongoing dependency.
               </p>
-              <p className="mt-6 eyebrow">
+              <p className="mt-6 eyebrow hidden md:block !text-cream">
                 Vetted senior operators who step in to own critical work, now.
               </p>
             </div>
-            <div className="divide-y divide-white/10 lg:border-l lg:border-white/10 lg:pl-14">
+            <div className="motion-stagger divide-y divide-white/10 lg:border-l lg:border-white/10 lg:pl-14">
               <div className="eyebrow pb-6">The Veep model</div>
               {[
                 ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
@@ -591,93 +462,16 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* Operators + network impact */}
-      <Reveal as="section" id="operators" className="py-14 sm:py-16 md:py-28 border-t border-white/10 scroll-mt-20">
+      {/* Operators + network impact — shared chapter (source of truth for
+          For Funds too; see OperatorSpotlightChapter) */}
+      <Reveal as="section" id="operators" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
-
-          <div className="max-w-5xl mb-12 md:mb-14">
-            <SectionEyebrow>Operator spotlight</SectionEyebrow>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Operators who've held the seat and delivered.
-            </h2>
-            <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
-              Every Veep operator has held the role they're deployed into, at a
-              comparable-stage company, with outcomes we can reference. No juniors, no
-              generalists, no career consultants.
-            </p>
-          </div>
-          <OperatorSpotlightRail operators={spotlightOperators} />
-
-          <p className="mt-8 text-left text-sm text-stone">
-            Just a few of the 75+ operators in our invite-only network.
-          </p>
-
-          {/* Network impact */}
-          <div className="mt-20 md:mt-24">
-            <div className="border-t border-white/10 pt-8 mb-12">
-              <SectionEyebrow>Network impact</SectionEyebrow>
-            </div>
-
-            <div className="relative">
-              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-y-10">
-                {networkImpact.map((m, i) => (
-                  <div
-                    key={m.label}
-                    className="flex flex-col gap-3 group border-l border-white/10 pl-8 pr-8 odd:border-l-0 odd:pl-0 lg:odd:border-l lg:odd:pl-8 lg:first:border-l-0 lg:first:pl-0 last:pr-0 lg:pr-8 lg:last:pr-0"
-                  >
-                    <div className="flex items-center gap-2.5">
-                      <div className="relative">
-                        {i === 0 && (
-                          <div className="absolute inset-0 animate-ping rounded-full bg-accent/40" />
-                        )}
-                        <div className="relative w-2 h-2 rounded-full bg-accent" />
-                      </div>
-                      <span className="mono-label font-medium">
-                        {m.label}
-                      </span>
-                    </div>
-                    <div className="stat-figure text-4xl md:text-5xl text-cream leading-none">
-                      {m.figure}
-                    </div>
-                    <p className="text-xs text-stone leading-relaxed">
-                      {m.detail}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <p className="mt-12 text-sm text-stone">
-              Aggregated outcomes across our operator roster.
-            </p>
-          </div>
-
-          <div className="mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
-            <p className="text-sm text-stone">
-              75+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
-            </p>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition"
-              >
-                Book intro call <ArrowRight size={14} />
-              </a>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 text-sm text-cream/70 underline underline-offset-8 decoration-white/20 hover:text-cream hover:decoration-white/50 transition"
-              >
-                Get in touch
-              </Link>
-            </div>
-          </div>
+          <OperatorSpotlightChapter />
         </div>
       </Reveal>
 
       {/* Benefits */}
-      <Reveal as="section" id="benefits" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="benefits" className="hidden md:block py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
@@ -685,9 +479,9 @@ function Index() {
               Senior ownership on your terms.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-10 md:gap-y-14">
+          <div className="motion-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {benefits.map((b, i) => (
-              <div key={b.t}>
+              <div key={b.t} className="motion-row-wash rounded-[15px] bg-surface-card p-6 sm:p-7">
                 <div className="eyebrow">
                   0{i + 1}
                 </div>
@@ -699,7 +493,7 @@ function Index() {
             ))}
           </div>
           <div className="mt-16">
-            <InlineCTA />
+            <InlineCTA label="Get in touch" mode="contact" />
           </div>
         </div>
       </Reveal>
@@ -716,12 +510,12 @@ function Index() {
             </div>
             <Link
               to="/pricing"
-              className="text-sm text-cream/90 hover:text-cream underline underline-offset-8 decoration-white/30 hover:decoration-white/70 transition pb-1"
+              className="group motion-link inline-flex items-center gap-2 text-sm text-cream/90 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70 pb-1"
             >
-              See full pricing →
+              See full pricing <ArrowRight size={14} className="motion-arrow" />
             </Link>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="motion-stagger grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {engagements.map((e) => (
               <EngagementTile key={e.name} {...e} />
             ))}
@@ -733,7 +527,7 @@ function Index() {
       </Reveal>
 
       {/* How it works */}
-      <Reveal as="section" id="how" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="how" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>How It Works</SectionEyebrow>
@@ -746,35 +540,24 @@ function Index() {
       </Reveal>
 
       {/* Proof */}
-      <Reveal as="section" id="proof" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="proof" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-12 md:mb-16">
+          <div className="max-w-5xl mb-12 md:mb-14 hidden md:block">
             <SectionEyebrow>Proof</SectionEyebrow>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap hidden md:block">
               What senior operators change in the first 90 days.
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 md:gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-10 md:gap-y-14">
-            {cases.map((c) => (
-              <div key={c.tag} className="flex flex-col rounded-2xl bg-[color:var(--surface-raised)] p-5 sm:p-7">
-                <span className="eyebrow">
-                  {c.tag}
-                </span>
-                <p className="mt-6 text-base text-stone leading-relaxed">
-                  <span className="text-cream">Trigger. </span>{c.trigger}
-                </p>
-                <p className="mt-4 text-base text-stone leading-relaxed">
-                  <span className="text-cream">Outcome. </span>{c.outcome}
-                </p>
-                <div className="mt-auto pt-8 font-serif font-medium text-xl text-accent tracking-tight">
-                  {c.metric}
-                </div>
-              </div>
-            ))}
+          <div className="motion-stagger hidden md:grid md:grid-cols-2 gap-4 md:gap-5">
+            <CaseCard c={cases[0]} featured />
+            <div className="flex flex-col gap-4 md:gap-5">
+              <CaseCard c={cases[1]} />
+              <CaseCard c={cases[2]} />
+            </div>
           </div>
 
-          <div className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 border-y border-white/10">
+          <div className="motion-stagger hidden md:grid mt-12 md:mt-20 grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 motion-hairline-y">
             {[
               { k: "75+", v: "vetted operators" },
               { k: "72h", v: "to shortlist" },
@@ -790,12 +573,14 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-12 md:mt-20">
+          <ClientStrip />
+
+          <div className="md:mt-24">
             <Testimonials />
           </div>
 
           <div className="mt-16">
-            <InlineCTA />
+            <InlineCTA centered label="Meet Veep" />
           </div>
         </div>
       </Reveal>
@@ -817,12 +602,12 @@ function Index() {
               <div className="p-5 eyebrow">Veep</div>
             </div>
             {differentiators.map((r) => (
-              <div key={r.dim} className="grid md:grid-cols-subgrid md:col-span-3 gap-y-2 gap-x-0 p-5 md:p-0">
-                <div className="md:p-5 mono-label">
+              <div key={r.dim} className="group grid md:grid-cols-subgrid md:col-span-3 gap-y-2 gap-x-0 p-5 md:p-0">
+                <div className="md:p-5 mono-label transition-colors duration-200 group-hover:text-cream">
                   {r.dim}
                 </div>
                 <div className="md:p-5 text-base text-stone leading-relaxed">{r.old}</div>
-                <div className="md:p-5 text-base text-cream leading-relaxed md:bg-accent/[0.06]">
+                <div className="md:p-5 text-base text-cream leading-relaxed md:bg-accent/[0.06] light:md:bg-foreground/5 motion-row-wash">
                   {r.veep}
                 </div>
               </div>
@@ -847,16 +632,16 @@ function Index() {
             <div className="lg:col-span-2 flex flex-col items-start lg:items-end gap-4">
               <Link
                 to="/for-portfolios"
-                className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-ink hover:bg-cream/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition min-h-11 inline-flex items-center justify-center"
+                className="motion-cta cta-accent-dark rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 inline-flex items-center justify-center"
               >
                 See how portfolio rosters work
               </Link>
               <Link
                 to="/contact"
                 search={{ intent: "audit" }}
-                className="text-sm text-cream/85 hover:text-cream underline underline-offset-8 decoration-white/25 hover:decoration-white/60"
+                className="group motion-link inline-flex items-center gap-2 text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/60"
               >
-                Request a capacity audit →
+                Request a capacity audit <ArrowRight size={14} className="motion-arrow" />
               </Link>
             </div>
           </div>
@@ -873,14 +658,14 @@ function Index() {
             </h2>
           </div>
           <ObjectionList />
-          <div className="mt-14">
+          <div className="mt-14 hidden md:block">
             <InlineCTA />
           </div>
         </div>
       </Reveal>
 
       {/* Mini FAQ (non-dupes + link) */}
-      <Reveal as="section" id="faq" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="faq" className="hidden md:block bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>FAQ</SectionEyebrow>
@@ -890,18 +675,12 @@ function Index() {
           </div>
           <div className="divide-y divide-white/10 border-y border-white/10">
             {faqs.map((f) => (
-              <details key={f.q} className="group py-6 md:py-7">
-                <summary className="cursor-pointer flex items-start justify-between gap-6 text-cream list-none [&::-webkit-details-marker]:hidden hover:text-cream transition">
-                  <span className="font-serif font-medium text-xl tracking-tight">{f.q}</span>
-                  <span className="text-accent text-xl leading-none pt-1 transition-transform group-open:rotate-45">+</span>
-                </summary>
-                <p className="mt-4 text-stone leading-relaxed text-base md:text-base max-w-3xl">{f.a}</p>
-              </details>
+              <Accordion key={f.q} q={f.q} a={f.a} />
             ))}
           </div>
           <div className="mt-8 text-sm text-stone">
             More detail on the{" "}
-            <Link to="/faq" className="text-cream underline underline-offset-4 decoration-white/40 hover:decoration-white">
+            <Link to="/faq" className="motion-link text-cream underline underline-offset-4 decoration-white/40 hover:decoration-white">
               full FAQ page
             </Link>.
           </div>
