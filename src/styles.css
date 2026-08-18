@@ -921,10 +921,12 @@ html.light .spotlight-invert .cta-accent:hover {
   .motion-hairline-tier { background-size: 1px 100%; }
   .motion-hairline-tier:first-child { background-size: 0; }
 }
+/* Light tier hairline is coral — the one signal line on the pricing grid
+   (was solid navy; accent reduction 08.18). */
 html.light .motion-hairline-tier {
   background-image: linear-gradient(
-    oklch(0.115 0.03 265),
-    oklch(0.115 0.03 265)
+    var(--accent-coral),
+    var(--accent-coral)
   );
 }
 /* Hidden (pre-draw) state only exists when motion is allowed — reduced-motion
