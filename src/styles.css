@@ -284,7 +284,7 @@ html.light .match-matrix-card {
 .spotlight-invert {
   /* Dark mode → cream paper band + deeper-cream cards (mirrors html.light) */
   --surface-ink: oklch(0.985 0.003 90);
-  --surface-raised: oklch(0.985 0.003 90);
+  --surface-raised: oklch(0.972 0.004 90);
   --surface-band: oklch(0.968 0.005 90);
   --surface-card: oklch(0.96 0.006 90);
   --background: oklch(0.985 0.003 90);
