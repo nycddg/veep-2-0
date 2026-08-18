@@ -36,7 +36,7 @@ export function FooterCTA({
               rel="noopener noreferrer"
               className={primaryClass}
             >
-              Talk to a founder
+              Speak with our founders
             </a>
           )}
           <Link

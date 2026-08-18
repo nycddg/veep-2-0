@@ -82,8 +82,8 @@ read "Get started" (still booking). Homepage InlineCTAs: benefits "Get
 matched", testimonial "Book your intro call", before-you-book unchanged; hero
 pill unchanged (lock). Spotlight rail text link is now a single "Request an
 operator" → /contact (the redundant "Get in touch" secondary beside it was
-dropped). FooterCTA book pill reads "Talk to a founder" (call is with a
-founder). PageHero default label is "Book a 30-minute call" (inherited by
+dropped). FooterCTA book pill reads "Speak with our founders" (call is with a
+founder; Dave revised from "Talk to a founder"). PageHero default label is "Book a 30-minute call" (inherited by
 /faq and /about); /for-portfolios hero primary is "Request a capacity audit"
 → /contact?intent=audit with secondary "See pricing" → /pricing (default
 secondary would have duplicated the new primary); /terms and /privacy read
