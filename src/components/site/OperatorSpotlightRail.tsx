@@ -152,7 +152,7 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
       <div className="mt-8 flex items-center justify-between gap-6">
         <div className="flex items-center gap-4 flex-1 min-w-0">
           <span className="eyebrow shrink-0">
-            {current} // {total}
+            {current} / {total}
           </span>
           <div className="relative h-px flex-1 bg-white/10 max-w-md">
             <div
