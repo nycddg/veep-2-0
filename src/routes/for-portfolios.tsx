@@ -167,16 +167,27 @@ function Page() {
                 Deploy operating partners as needed against the gaps the audit identifies — à la carte, one engagement at a time — or secure a custom roster for your firm with priority access to vetted senior operators across the portfolio.
               </p>
               <ul className="mt-6 space-y-2 text-sm text-stone">
-                {[
-                  "Portfolio Roster: $75k",
-                  "Usage billed separately at preferred rates",
-                  "MSA activated once, SOWs per engagement",
-                ].map((x) => (
-                  <li key={x} className="flex items-baseline gap-3">
-                    <span className="inline-block h-1 w-1 rounded-full bg-accent-coral shrink-0 translate-y-[-2px]" />
-                    <span>{x}</span>
-                  </li>
-                ))}
+                <li className="flex items-baseline gap-3">
+                  <span className="inline-block h-1 w-1 rounded-full bg-accent-coral shrink-0 translate-y-[-2px]" />
+                  <span>
+                    Standard{" "}
+                    <Link
+                      to="/pricing"
+                      className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70"
+                    >
+                      rates
+                    </Link>{" "}
+                    apply
+                  </span>
+                </li>
+                <li className="flex items-baseline gap-3">
+                  <span className="inline-block h-1 w-1 rounded-full bg-accent-coral shrink-0 translate-y-[-2px]" />
+                  <span>MSA activated once, SOWs per engagement</span>
+                </li>
+                <li className="flex items-baseline gap-3">
+                  <span className="inline-block h-1 w-1 rounded-full bg-accent-coral shrink-0 translate-y-[-2px]" />
+                  <span>Portfolio rosters start at $75k</span>
+                </li>
               </ul>
               <a
                 href="#roster"
