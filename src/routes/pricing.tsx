@@ -145,7 +145,7 @@ function Page() {
                 <ul className="mt-6 space-y-2.5 text-sm text-stone">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <span className="inline-block h-1 w-1 rounded-full bg-accent-coral shrink-0 mt-2" />
+                      <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 mt-2" />
                       <span>{i}</span>
                     </li>
                   ))}

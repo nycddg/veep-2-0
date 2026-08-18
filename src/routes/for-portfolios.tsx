@@ -155,7 +155,7 @@ function Page() {
               <ul className="mt-6 space-y-3 text-sm text-stone">
                 {auditDeliverables.map((d) => (
                   <li key={d} className="flex items-baseline gap-3">
-                    <span className="inline-block h-1 w-1 rounded-full bg-accent-coral shrink-0 translate-y-[-2px]" />
+                    <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
                     <span>{d}</span>
                   </li>
                 ))}
@@ -173,7 +173,7 @@ function Page() {
               </p>
               <ul className="mt-6 space-y-2 text-sm text-stone">
                 <li className="flex items-baseline gap-3">
-                  <span className="inline-block h-1 w-1 rounded-full bg-accent-coral shrink-0 translate-y-[-2px]" />
+                  <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
                   <span>
                     Standard{" "}
                     <Link
@@ -186,11 +186,11 @@ function Page() {
                   </span>
                 </li>
                 <li className="flex items-baseline gap-3">
-                  <span className="inline-block h-1 w-1 rounded-full bg-accent-coral shrink-0 translate-y-[-2px]" />
+                  <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
                   <span>MSA activated once, SOWs per engagement</span>
                 </li>
                 <li className="flex items-baseline gap-3">
-                  <span className="inline-block h-1 w-1 rounded-full bg-accent-coral shrink-0 translate-y-[-2px]" />
+                  <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
                   <span>
                     <a
                       href="#roster"
@@ -244,7 +244,7 @@ function Page() {
                 <ul className="mt-6 space-y-2.5 text-sm text-stone">
                   {t.items.map((i) => (
                     <li key={i} className="flex items-baseline gap-2.5">
-                      <span className="inline-block h-1 w-1 rounded-full bg-accent-coral shrink-0 translate-y-[-2px]" />
+                      <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
                       <span>{i}</span>
                     </li>
                   ))}

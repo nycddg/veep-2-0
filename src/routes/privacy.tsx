@@ -207,7 +207,7 @@ function PrivacyPage() {
                       );
                     }
                     return (
-                      <ul key={i} className="space-y-2 pl-5 list-disc marker:text-accent/70 text-stone text-base leading-relaxed">
+                      <ul key={i} className="space-y-2 pl-5 list-disc marker:text-current text-stone text-base leading-relaxed">
                         {b.items.map((it) => (
                           <li key={it}>{it}</li>
                         ))}
