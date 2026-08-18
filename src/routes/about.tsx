@@ -96,7 +96,7 @@ function Page() {
                   {row.eyebrow}
                 </div>
               </div>
-              <p className="lg:col-span-8 font-serif font-medium text-xl md:text-2xl text-cream leading-[1.2] tracking-tight text-balance">
+              <p className="lg:col-span-8 font-serif font-medium text-xl md:text-2xl text-cream leading-[1.5] tracking-tight text-balance">
                 {row.body}
               </p>
             </div>

@@ -57,7 +57,7 @@ export function OperatorSpotlightChapter({
             {networkImpact.map((m, i) => (
               <div
                 key={m.label}
-                className="flex flex-col gap-3 group border-l border-white/10 pl-8 pr-8 odd:border-l-0 odd:pl-0 lg:odd:border-l lg:odd:pl-8 lg:first:border-l-0 lg:first:pl-0 last:pr-0 lg:pr-8 lg:last:pr-0"
+                className="flex flex-col gap-3 group pr-8 last:pr-0 lg:pr-8 lg:last:pr-0 border-white/10 even:border-l even:pl-8 lg:[&:nth-child(n+2)]:border-l lg:[&:nth-child(n+2)]:pl-8"
               >
                 <div className="flex items-center gap-2.5">
                   <div className="relative">
@@ -81,11 +81,11 @@ export function OperatorSpotlightChapter({
           </div>
         </div>
 
-        <p className="mt-12 mono-label text-right">
-          Aggregated outcomes across our operator roster.
+        <p className="mt-12 mono-label text-right hidden md:block">
+          Aggregated outcomes across our operator roster
         </p>
 
-        <div className="mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
+        <div className="mt-10 md:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
           <p className="text-sm text-stone">
             75+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
           </p>

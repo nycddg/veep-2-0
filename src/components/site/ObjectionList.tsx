@@ -29,7 +29,7 @@ export function ObjectionList() {
   return (
     <div className="motion-stagger grid md:grid-cols-2 gap-4 md:gap-5">
       {objections.map((o) => (
-        <div key={o.q} className="motion-row-wash rounded-[20px] border border-white/10 bg-surface-card p-6 sm:p-7">
+        <div key={o.q} className="motion-row-wash rounded-[15px] bg-surface-card p-6 sm:p-7">
           <h3 className="font-serif font-medium text-xl text-cream tracking-tight leading-snug">
             {o.q}
           </h3>

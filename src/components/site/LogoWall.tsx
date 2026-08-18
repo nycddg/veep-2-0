@@ -59,7 +59,7 @@ const logos = [
 
 export function LogoWall() {
   return (
-    <section className="border-y border-white/10 bg-background overflow-hidden">
+    <section className="border-t border-white/10 md:border-b bg-background overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-14">
         <div className="eyebrow text-center">
           operators who built the companies you admire

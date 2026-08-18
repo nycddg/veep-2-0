@@ -60,9 +60,9 @@ function MeetVeepPage() {
               <div className="relative mx-auto max-w-md">
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-accent/15 blur-[80px] scale-95"
+                  className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-accent/15 blur-[80px] scale-95 light:hidden"
                 />
-                <div className="overflow-hidden rounded-2xl sm:rounded-3xl ring-1 ring-white/10 light:ring-ink/10 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
+                <div className="overflow-hidden rounded-[15px] ring-1 ring-white/10 light:ring-ink/10 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
                   <img
                     src={erikaHeadshot.url}
                     alt="Senior Veep operator"
@@ -93,7 +93,7 @@ function MeetVeepPage() {
               </p>
             </div>
 
-            <ul className="order-4 lg:col-span-7 rounded-2xl border border-white/10 bg-[color:var(--surface-raised)] divide-y divide-white/10 max-w-xl">
+            <ul className="order-4 lg:col-span-7 rounded-[15px] bg-surface-card divide-y divide-white/10 max-w-xl">
               {BULLETS.map((b) => (
                 <li key={b} className="flex items-center gap-3 px-5 py-4">
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-accent/40 text-accent">

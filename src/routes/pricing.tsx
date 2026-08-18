@@ -126,8 +126,8 @@ function Page() {
                 key={t.t}
                 className={`group motion-hover-lift flex flex-col md:min-h-[280px] pt-7 pb-6 pr-2 ${
                   t.featured
-                    ? "border-t-2 border-accent md:border-t-0 md:pl-6 md:border-l-2 md:border-accent"
-                    : "motion-hairline-tier md:pl-6"
+                    ? "border-t-2 border-accent md:border-t-0 md:pl-6 md:border-l-2 md:border-accent light:md:[border-left-color:oklch(0.115_0.03_265)]"
+                    : "motion-hairline-tier md:pl-6 md:first:pl-0"
                 }`}
               >
                 <div className="flex items-baseline gap-3 flex-wrap">

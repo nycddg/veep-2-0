@@ -23,8 +23,8 @@ export function EngagementTile({
       hash={hash}
       className={`group motion-hover-lift relative flex flex-col md:min-h-[280px] pt-7 pb-6 pr-2 ${
         featured
-          ? "border-t-2 border-accent md:border-t-0 md:pl-6 md:border-l-2 md:border-accent"
-          : "border-t border-white/10 md:border-t-0 md:pl-6 md:border-l md:border-white/10 md:hover:border-white/25"
+          ? "border-t-2 border-accent md:border-t-0 md:pl-6 md:border-l-2 md:border-accent light:md:[border-left-color:oklch(0.115_0.03_265)]"
+          : "border-t border-white/10 first:border-t-0 md:border-t-0 md:pl-6 md:border-l md:border-white/10 md:hover:border-white/25 md:first:border-l-0 md:first:pl-0 light:md:[border-left-color:oklch(0.115_0.03_265)]"
       }`}
     >
       <div className="flex items-baseline gap-3">
