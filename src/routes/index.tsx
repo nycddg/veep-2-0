@@ -545,7 +545,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14 hidden md:block">
             <SectionEyebrow>Proof</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap hidden md:block">
-              What Veeps can do in 90 days.
+              Outcomes we've delivered in 90 days or less.
             </h2>
           </div>
 
