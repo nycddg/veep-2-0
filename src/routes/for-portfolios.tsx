@@ -28,7 +28,7 @@ const problems = [
 
 const auditDeliverables = [
   "Portfolio-wide leadership and operator gap map",
-  "Function coverage assessment across finance, GTM, operations, product, and people",
+  "Coverage assessment across finance, GTM, operations, product, and people",
   "Upcoming transaction and event triggers, including diligence, close, integration, fundraise, exit, leadership transition, and value-creation work",
   "Recommended roster structure by company and function",
   "Emergency coverage path for interim vacancies",
