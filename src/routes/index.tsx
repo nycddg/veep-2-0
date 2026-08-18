@@ -228,28 +228,39 @@ export const Route = createFileRoute("/")({
 function InlineCTA({
   label = "Book intro call",
   mode = "book",
+  centered = false,
 }: {
   label?: string;
   mode?: "book" | "contact";
+  /** Testimonial-section variant: centered pill, no fine print. */
+  centered?: boolean;
 }) {
   const className =
     "group motion-cta cta-accent rounded-full px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
+  const pill =
+    mode === "contact" ? (
+      <Link to="/contact" className={className}>
+        {label}
+      </Link>
+    ) : (
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {label}
+      </a>
+    );
+  if (centered) {
+    return <div className="mt-6 flex justify-center">{pill}</div>;
+  }
   return (
-    <div className="mt-6 flex justify-center">
-      {mode === "contact" ? (
-        <Link to="/contact" className={className}>
-          {label}
-        </Link>
-      ) : (
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={className}
-        >
-          {label}
-        </a>
-      )}
+    <div className="flex flex-col items-start gap-4.5">
+      {pill}
+      <span className="text-xs text-stone-soft tracking-wide">
+        30-minute call · Reply within 1 business day · 30-day fit guarantee
+      </span>
     </div>
   );
 }
@@ -566,7 +577,7 @@ function Index() {
           </div>
 
           <div className="mt-16">
-            <InlineCTA />
+            <InlineCTA centered />
           </div>
         </div>
       </Reveal>
