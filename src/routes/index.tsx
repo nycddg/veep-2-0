@@ -6,6 +6,7 @@ import { LogoWall } from "@/components/site/LogoWall";
 import { Testimonials } from "@/components/site/Testimonials";
 import { OperatorSpotlightChapter } from "@/components/site/OperatorSpotlightChapter";
 import { OperatorCanvas } from "@/components/site/OperatorCanvas";
+import { ClientStrip } from "@/components/site/ClientStrip";
 import { EngagementTile } from "@/components/site/EngagementTile";
 import { StepFlow } from "@/components/site/StepFlow";
 import { Check } from "lucide-react";
@@ -571,6 +572,8 @@ function Index() {
               </div>
             ))}
           </div>
+
+          <ClientStrip />
 
           <div className="md:mt-24">
             <Testimonials />

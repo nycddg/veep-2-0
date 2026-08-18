@@ -96,6 +96,15 @@ without duplicating it. Destination changes are only the two flagged contact-pag
 placements (spotlight, for-portfolios hero). PageHero gained a
 `primarySearch` prop to pass query params on internal primary routes.
 
+## Addendum — client strip (2026-08-18)
+
+New ClientStrip in the homepage proof section (stats band → strip →
+testimonials): 16 client names from the original Wix site, supplied by Dave.
+Static text-only treatment ("Trusted by founders at" eyebrow, base type at
+cream/60, flex-wrap centered) — deliberately quieter than the operator
+LogoWall marquee so "hired us" and "worked at" stay distinct. Visible on all
+viewports.
+
 ## Environment caveats
 
 - This container has no browser; QA was code-level (audits of radii, borders,
