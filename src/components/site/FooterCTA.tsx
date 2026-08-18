@@ -22,7 +22,7 @@ export function FooterCTA({
         <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream text-balance leading-[1.15] allow-wrap">
           {headline}
         </h2>
-        <div className="mt-8 flex flex-col items-start gap-[1.1rem]">
+        <div className="mt-8 flex flex-col items-start gap-4.5">
           {primary === "contact" ? (
             <Link to="/contact" className={primaryClass}>
               Get in touch <ArrowRight size={16} className="motion-arrow" />
