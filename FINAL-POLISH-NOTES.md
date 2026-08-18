@@ -75,6 +75,22 @@ rings and focus borders (a11y chrome). Also left: operator photo tint overlay
 distinction), contact outcome panel 5% tint (wash-class treatment), dark
 ambient glows (locked), portal/auth/shadcn internals (out of scope).
 
+## Addendum — CTA diversity pass (2026-08-18)
+
+"Book intro call" was on 10 placements; now one action per context. Nav pills
+read "Get started" (still booking). Homepage InlineCTAs: benefits "Get
+matched", testimonial "Book your intro call", before-you-book unchanged; hero
+pill unchanged (lock). Spotlight rail text link is now a single "Request an
+operator" → /contact (the redundant "Get in touch" secondary beside it was
+dropped). FooterCTA book pill reads "Talk to a founder" (call is with a
+founder). PageHero default label is "Book a 30-minute call" (inherited by
+/faq and /about); /for-portfolios hero primary is "Request a capacity audit"
+→ /contact?intent=audit with secondary "See pricing" → /pricing (default
+secondary would have duplicated the new primary); /terms and /privacy read
+"Get started". Destination changes are only the two flagged contact-page
+placements (spotlight, for-portfolios hero). PageHero gained a
+`primarySearch` prop to pass query params on internal primary routes.
+
 ## Environment caveats
 
 - This container has no browser; QA was code-level (audits of radii, borders,

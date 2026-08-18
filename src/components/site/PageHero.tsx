@@ -17,10 +17,11 @@ export function PageHero({
   sub,
   children,
   chip,
-  primaryLabel = "Book intro call",
+  primaryLabel = "Book a 30-minute call",
   primaryHref,
   primaryTo,
   primaryHash,
+  primarySearch,
   secondaryLabel = "Request a capacity audit",
   secondaryTo = "/contact",
 }: {
@@ -35,6 +36,8 @@ export function PageHero({
   /** Internal route for primary CTA (use instead of booking). */
   primaryTo?: string;
   primaryHash?: string;
+  /** Query params for the internal primary route (e.g. { intent: "audit" }). */
+  primarySearch?: Record<string, string>;
   secondaryLabel?: string;
   secondaryTo?: string;
   /** Legacy props — accepted but unused (retired mono chrome). */
@@ -67,6 +70,7 @@ export function PageHero({
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 to={primaryTo as any}
                 hash={primaryHash}
+                search={primarySearch}
                 className={primaryClass}
               >
                 {primaryInner}
