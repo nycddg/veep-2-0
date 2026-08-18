@@ -302,7 +302,7 @@ function Page() {
                       isAudit ? "Request the audit" : "Send inquiry"
                     )}
                   </button>
-                  <p className="text-xs text-cream/75">
+                  <p className="text-xs text-stone-soft">
                     By submitting you agree to be contacted by Veep about your inquiry.
                   </p>
                 </form>
@@ -333,7 +333,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mono-label text-cream/70">
+      <span className="mono-label">
         {label}{required && " *"}
       </span>
       <div className="mt-2">{children}</div>
