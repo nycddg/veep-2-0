@@ -167,7 +167,7 @@ html.light {
   --surface-ink: oklch(0.985 0.003 90);
   --surface-raised: oklch(0.972 0.004 90);    /* chapter — must clear canvas when stacked */
   --surface-band: oklch(0.968 0.005 90);      /* commercial */
-  --surface-card: oklch(0.96 0.006 90);       /* cards — deepest shade */
+  --surface-card: oklch(0.95 0.006 90);       /* cards — deepest shade, clears the chapter */
 
   --ink: oklch(0.98 0 0);                     /* was navy; now cream so inverted pills flip */
   --cream: oklch(0.18 0.03 265);              /* was cream; now navy ink so text-cream reads on light */
@@ -286,7 +286,7 @@ html.light .match-matrix-card {
   --surface-ink: oklch(0.985 0.003 90);
   --surface-raised: oklch(0.972 0.004 90);
   --surface-band: oklch(0.968 0.005 90);
-  --surface-card: oklch(0.96 0.006 90);
+  --surface-card: oklch(0.95 0.006 90);
   --background: oklch(0.985 0.003 90);
   --foreground: oklch(0.18 0.03 265);
   --ink: oklch(0.98 0 0);
