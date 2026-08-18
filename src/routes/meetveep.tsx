@@ -56,7 +56,7 @@ function MeetVeepPage() {
               </h1>
             </div>
 
-            <div className="order-2 lg:col-span-5 lg:row-span-4">
+            <div className="order-2 lg:col-span-5 lg:row-span-4 lg:self-center">
               <div className="relative mx-auto max-w-md">
                 <div
                   aria-hidden
