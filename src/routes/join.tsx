@@ -283,7 +283,7 @@ function Page() {
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="glass-card rounded-3xl p-5 sm:p-8 grid gap-5"
+                  className="glass-card rounded-[15px] p-5 sm:p-8 grid gap-5"
                 >
                   <div className="grid sm:grid-cols-2 gap-4">
                     <Field label="First name" required>
@@ -391,7 +391,7 @@ function Page() {
 }
 
 const inputCls =
-  "motion-field w-full rounded-xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
+  "motion-field w-full rounded-[15px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
 
 function Field({
   label,

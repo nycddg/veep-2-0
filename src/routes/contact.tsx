@@ -141,7 +141,7 @@ function Page() {
         secondaryTo="/how-it-works"
       />
 
-      <section id="contact-form" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <section id="contact-form" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
             {/* Left: promise */}
@@ -173,7 +173,7 @@ function Page() {
                 ))}
               </ul>
               {preselected && (
-                <div className="rounded-2xl border border-accent/30 bg-accent/5 p-4">
+                <div className="rounded-[15px] border border-accent/30 bg-accent/5 p-4 light:bg-foreground/5">
                   <div className="eyebrow">
                     Outcome
                   </div>
@@ -207,7 +207,7 @@ function Page() {
                   onSubmit={handleSubmit}
                   noValidate
                   aria-describedby={submitError ? "contact-form-error" : undefined}
-                  className="glass-card rounded-3xl p-5 sm:p-8 grid gap-5"
+                  className="glass-card rounded-[15px] p-5 sm:p-8 grid gap-5"
                 >
                   {/* Honeypot — hidden from users and screen readers */}
                   <div aria-hidden="true" className="hidden">
@@ -286,7 +286,7 @@ function Page() {
                     <p
                       id="contact-form-error"
                       role="alert"
-                      className="text-sm text-accent-coral bg-accent-coral/10 rounded-xl px-4 py-3"
+                      className="text-sm text-accent-coral bg-accent-coral/10 rounded-[15px] px-4 py-3"
                     >
                       {submitError}
                     </p>
@@ -316,7 +316,7 @@ function Page() {
 }
 
 const inputCls =
-  "motion-field w-full rounded-xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
+  "motion-field w-full rounded-[15px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
 
 function Field({
   label,
