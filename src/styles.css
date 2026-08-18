@@ -783,17 +783,23 @@ html.light .glass-card {
   transform: translateX(3px);
 }
 
-/* Accent fill on dark surfaces only. Type is locked navy (the :root --ink
-   value) and does not follow the --ink remap — cream/white on #789FFF is
-   ~2.6:1. Navy on #789FFF is ~7.7:1; navy on #3474F4 is ~4.6:1.
-   Light mode keeps the original navy-on-cream pill. Light invert is a navy
-   band, so it takes the accent fill (dark background). */
+/* Primary pill mirrors its ground — no blue fills (accent reduction 08.18):
+   dark ground → base cream pill with locked navy type (~15:1);
+   light ground → navy pill with cream type. Invert bands flip again. */
 @utility cta-accent {
-  background-color: var(--accent);
+  background-color: oklch(0.98 0 0);
   color: oklch(0.115 0.03 265);
 }
 .cta-accent:hover {
-  background-color: color-mix(in oklab, var(--accent) 82%, oklch(0.115 0.03 265));
+  background-color: color-mix(in oklab, oklch(0.98 0 0) 88%, oklch(0.115 0.03 265));
+}
+/* Dark page → cream invert band: cream pill would vanish; mirror to navy. */
+.spotlight-invert .cta-accent {
+  background-color: oklch(0.18 0.03 265);
+  color: oklch(0.98 0 0);
+}
+.spotlight-invert .cta-accent:hover {
+  background-color: oklch(0.24 0.03 265);
 }
 html.light .cta-accent {
   background-color: oklch(0.18 0.03 265);
@@ -802,22 +808,23 @@ html.light .cta-accent {
 html.light .cta-accent:hover {
   background-color: oklch(0.24 0.03 265);
 }
+/* Light page → navy invert band: cream pill, same as the dark-page recipe. */
 html.light .spotlight-invert .cta-accent {
-  background-color: var(--accent);
+  background-color: oklch(0.98 0 0);
   color: oklch(0.115 0.03 265);
 }
 html.light .spotlight-invert .cta-accent:hover {
-  background-color: color-mix(in oklab, var(--accent) 82%, oklch(0.115 0.03 265));
+  background-color: color-mix(in oklab, oklch(0.98 0 0) 88%, oklch(0.115 0.03 265));
 }
 
-/* Locked dark-mode blue (#789FFF). Use on a pale invert band when --accent
-   has remapped to the denser light blue. */
+/* Pill for the pale (cream) invert bands — navy ink on paper. Name kept
+   from the old blue recipe to avoid markup churn (accent reduction 08.18). */
 @utility cta-accent-dark {
-  background-color: #789fff;
-  color: oklch(0.115 0.03 265);
+  background-color: oklch(0.18 0.03 265);
+  color: oklch(0.98 0 0);
 }
 .cta-accent-dark:hover {
-  background-color: color-mix(in oklab, #789fff 82%, oklch(0.115 0.03 265));
+  background-color: oklch(0.24 0.03 265);
 }
 
 /* Primary pill — subtle lift + shadow on hover, quick settle on press. */
