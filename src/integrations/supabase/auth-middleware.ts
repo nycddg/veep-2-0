@@ -10,8 +10,14 @@
 import { createMiddleware } from "@tanstack/react-start";
 import { getRequest } from "@tanstack/react-start/server";
 import { createClient } from "@supabase/supabase-js";
-import { httpError } from "@/lib/http-error";
 import type { Database } from "./types";
+
+function unauthorizedResponse(message: string): Response {
+  return new Response(JSON.stringify({ error: message }), {
+    status: 401,
+    headers: { "content-type": "application/json; charset=utf-8" },
+  });
+}
 
 function isNewSupabaseApiKey(value: string): boolean {
   return value.startsWith("sb_publishable_") || value.startsWith("sb_secret_");
@@ -66,26 +72,26 @@ function buildRequireSupabaseAuth(): Mw {
     const request = getRequest();
 
     if (!request?.headers) {
-      httpError(401, "Unauthorized: No request headers available");
+      return unauthorizedResponse("Unauthorized: No request headers available");
     }
 
     const authHeader = request.headers.get("authorization");
 
     if (!authHeader) {
-      httpError(401, "Unauthorized: No authorization header provided");
+      return unauthorizedResponse("Unauthorized: No authorization header provided");
     }
 
     if (!authHeader.startsWith("Bearer ")) {
-      httpError(401, "Unauthorized: Only Bearer tokens are supported");
+      return unauthorizedResponse("Unauthorized: Only Bearer tokens are supported");
     }
 
     const token = authHeader.replace("Bearer ", "");
     if (!token) {
-      httpError(401, "Unauthorized: No token provided");
+      return unauthorizedResponse("Unauthorized: No token provided");
     }
 
     if (token.split(".").length !== 3) {
-      httpError(401, "Unauthorized: Invalid token");
+      return unauthorizedResponse("Unauthorized: Invalid token");
     }
 
     const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
@@ -104,11 +110,11 @@ function buildRequireSupabaseAuth(): Mw {
 
     const { data, error } = await supabase.auth.getClaims(token);
     if (error || !data?.claims) {
-      httpError(401, "Unauthorized: Invalid token");
+      return unauthorizedResponse("Unauthorized: Invalid token");
     }
 
     if (!data.claims.sub) {
-      httpError(401, "Unauthorized: No user ID found in token");
+      return unauthorizedResponse("Unauthorized: No user ID found in token");
     }
 
     return next({

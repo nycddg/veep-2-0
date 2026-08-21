@@ -42,6 +42,19 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 
   const captured =
     consumeLastCapturedError() ?? new Error(`h3 swallowed SSR error: ${body}`);
+  const msg = captured instanceof Error ? captured.message : String(captured ?? "");
+  if (/^Unauthorized/i.test(msg)) {
+    return new Response(JSON.stringify({ error: msg || "Unauthorized" }), {
+      status: 401,
+      headers: { "content-type": "application/json; charset=utf-8" },
+    });
+  }
+  if (/^Forbidden/i.test(msg)) {
+    return new Response(JSON.stringify({ error: msg || "Forbidden" }), {
+      status: 403,
+      headers: { "content-type": "application/json; charset=utf-8" },
+    });
+  }
   console.error(captured);
   return new Response(renderErrorPage(captured), {
     status: 500,
