@@ -21,7 +21,7 @@ function OperatorCard({ op }: { op: Operator }) {
   return (
     <article
       tabIndex={0}
-      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-[15px] bg-[color:var(--surface-raised)] cursor-pointer transition-colors duration-300 ${
+      className={`group relative flex-shrink-0 w-[300px] sm:w-[320px] lg:w-[340px] aspect-[3/4] snap-start overflow-hidden rounded-[6px] bg-[color:var(--surface-raised)] cursor-pointer transition-colors duration-300 ${
         op.featured ? "ring-1 ring-inset ring-[color:var(--color-accent-coral)]/40" : ""
       } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
       aria-label={`${op.name}, ${op.role}`}
@@ -166,7 +166,7 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
             type="button"
             onClick={() => scrollByCard(-1)}
             aria-label="Previous operator"
-            className="group w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent-coral transition-colors duration-200"
+            className="group w-11 h-11 rounded-[6px] border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent-coral transition-colors duration-200"
           >
             <ArrowLeft size={15} className="motion-arrow" />
           </button>
@@ -174,7 +174,7 @@ export function OperatorSpotlightRail({ operators }: { operators: Operator[] }) 
             type="button"
             onClick={() => scrollByCard(1)}
             aria-label="Next operator"
-            className="group w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent-coral transition-colors duration-200"
+            className="group w-11 h-11 rounded-[6px] border border-white/10 flex items-center justify-center text-cream/60 hover:text-accent-coral transition-colors duration-200"
           >
             <ArrowRight size={15} className="motion-arrow" />
           </button>

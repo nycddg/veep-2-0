@@ -70,7 +70,7 @@ function Shell({ children }: { children: React.ReactNode }) {
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-[15px] border border-white/10 bg-[color:var(--surface-raised)] p-6">
+    <div className="rounded-[6px] border border-white/10 bg-[color:var(--surface-raised)] p-6">
       <h2 className="text-lg text-cream tracking-tight">{title}</h2>
       <div className="mt-5 space-y-4">{children}</div>
     </div>

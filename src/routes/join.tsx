@@ -281,7 +281,7 @@ function Page() {
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="glass-card rounded-[15px] p-5 sm:p-8 grid gap-5"
+                  className="glass-card rounded-[6px] p-5 sm:p-8 grid gap-5"
                 >
                   <div className="grid sm:grid-cols-2 gap-4">
                     <Field label="First name" required>
@@ -317,7 +317,7 @@ function Page() {
                       type="file"
                       name="resume"
                       accept=".pdf,.doc,.docx"
-                      className={`${inputCls} file:mr-4 file:rounded-full file:border-0 file:bg-cream file:px-4 file:py-1.5 file:text-ink file:text-xs file:font-medium file:cursor-pointer`}
+                      className={`${inputCls} file:mr-4 file:rounded-[6px] file:border-0 file:bg-cream file:px-4 file:py-1.5 file:text-ink file:text-xs file:font-medium file:cursor-pointer`}
                     />
                   </Field>
 
@@ -363,7 +363,7 @@ function Page() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="motion-cta cta-accent mt-2 rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                    className="motion-cta cta-accent mt-2 rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                   >
                     {loading ? (
                       <>
@@ -389,7 +389,7 @@ function Page() {
 }
 
 const inputCls =
-  "motion-field w-full rounded-[15px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
+  "motion-field w-full rounded-[6px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
 
 function Field({
   label,
@@ -429,7 +429,7 @@ function CheckboxGroup({
         {options.map((o) => (
           <label
             key={o}
-            className="inline-flex items-center gap-2 rounded-full border border-white/12 px-3.5 py-1.5 min-h-11 text-xs text-cream/85 hover:border-accent/50 hover:text-cream transition cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-[6px] border border-white/12 px-3.5 py-1.5 min-h-11 text-xs text-cream/85 hover:border-accent/50 hover:text-cream transition cursor-pointer"
           >
             <input type="checkbox" name={name} value={o} className="accent-accent" />
             {o}

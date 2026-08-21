@@ -173,7 +173,7 @@ function Page() {
                 ))}
               </ul>
               {preselected && (
-                <div className="rounded-[15px] bg-accent/5 p-4 light:bg-foreground/5">
+                <div className="rounded-[6px] bg-accent/5 p-4 light:bg-foreground/5">
                   <div className="eyebrow">
                     Outcome
                   </div>
@@ -207,7 +207,7 @@ function Page() {
                   onSubmit={handleSubmit}
                   noValidate
                   aria-describedby={submitError ? "contact-form-error" : undefined}
-                  className="glass-card rounded-[15px] p-5 sm:p-8 grid gap-5"
+                  className="glass-card rounded-[6px] p-5 sm:p-8 grid gap-5"
                 >
                   {/* Honeypot — hidden from users and screen readers */}
                   <div aria-hidden="true" className="hidden">
@@ -286,7 +286,7 @@ function Page() {
                     <p
                       id="contact-form-error"
                       role="alert"
-                      className="text-sm text-accent-coral bg-accent-coral/10 rounded-[15px] px-4 py-3"
+                      className="text-sm text-accent-coral bg-accent-coral/10 rounded-[6px] px-4 py-3"
                     >
                       {submitError}
                     </p>
@@ -294,7 +294,7 @@ function Page() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="motion-cta cta-accent mt-2 rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                    className="motion-cta cta-accent mt-2 rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                   >
                     {loading ? (
                       <><Loader2 className="h-4 w-4 animate-spin" />Sending…</>
@@ -316,7 +316,7 @@ function Page() {
 }
 
 const inputCls =
-  "motion-field w-full rounded-[15px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
+  "motion-field w-full rounded-[6px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
 
 function Field({
   label,

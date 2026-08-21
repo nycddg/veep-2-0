@@ -237,7 +237,7 @@ function InlineCTA({
   centered?: boolean;
 }) {
   const className =
-    "group motion-cta cta-accent rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
+    "group motion-cta cta-accent rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
   const pill =
     mode === "contact" ? (
       <Link to="/contact" className={className}>
@@ -315,7 +315,7 @@ function CaseCard({
 
   return (
     <div
-      className={`motion-row-wash flex h-full flex-col rounded-[15px] bg-surface-card ${pad}`}
+      className={`motion-row-wash flex h-full flex-col rounded-[6px] bg-surface-card ${pad}`}
     >
       <span className="eyebrow">{c.tag}</span>
       {featured ? (
@@ -361,7 +361,7 @@ function Index() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group motion-cta cta-accent rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
+              className="group motion-cta cta-accent rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
             >
               Book intro call
             </a>
@@ -481,7 +481,7 @@ function Index() {
           </div>
           <div className="motion-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {benefits.map((b, i) => (
-              <div key={b.t} className="motion-row-wash rounded-[15px] bg-surface-card p-6 sm:p-7">
+              <div key={b.t} className="motion-row-wash rounded-[6px] bg-surface-card p-6 sm:p-7">
                 <div className="eyebrow">
                   0{i + 1}
                 </div>
@@ -632,7 +632,7 @@ function Index() {
             <div className="lg:col-span-2 flex flex-col items-start lg:items-end gap-4">
               <Link
                 to="/for-portfolios"
-                className="motion-cta cta-accent-dark rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 inline-flex items-center justify-center"
+                className="motion-cta cta-accent-dark rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 inline-flex items-center justify-center"
               >
                 See how portfolio rosters work
               </Link>

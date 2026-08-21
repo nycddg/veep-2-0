@@ -47,7 +47,7 @@ export function Status({ label, tone = "quiet" }: { label: string; tone?: "quiet
         : "border-white/15 text-stone";
   return (
     <span
-      className={`inline-flex shrink-0 items-center rounded-full border px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.1em] ${cls}`}
+      className={`inline-flex shrink-0 items-center rounded-[6px] border px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.1em] ${cls}`}
     >
       {label}
     </span>
@@ -59,7 +59,7 @@ export function PrimaryButton(props: React.ButtonHTMLAttributes<HTMLButtonElemen
   return (
     <button
       {...rest}
-      className={`motion-cta inline-flex min-h-11 items-center justify-center rounded-full bg-cream px-5 py-2.5 text-sm font-medium text-ink transition hover:opacity-90 disabled:opacity-50 ${className}`}
+      className={`motion-cta inline-flex min-h-11 items-center justify-center rounded-[6px] bg-cream px-5 py-2.5 text-sm font-medium text-ink transition hover:opacity-90 disabled:opacity-50 ${className}`}
     />
   );
 }
@@ -69,7 +69,7 @@ export function GhostButton(props: React.ButtonHTMLAttributes<HTMLButtonElement>
   return (
     <button
       {...rest}
-      className={`inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 px-5 py-2.5 text-sm text-cream transition hover:bg-white/5 disabled:opacity-50 ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center rounded-[6px] border border-white/15 px-5 py-2.5 text-sm text-cream transition hover:bg-white/5 disabled:opacity-50 ${className}`}
     />
   );
 }
@@ -87,7 +87,7 @@ export function TextButton(props: React.ButtonHTMLAttributes<HTMLButtonElement>)
 /** The one raised surface allowed per logical unit. Never nest these. */
 export function Surface({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <div className={`rounded-[15px] bg-[color:var(--surface-raised)] p-5 shadow-sm md:p-6 ${className}`}>
+    <div className={`rounded-[6px] bg-[color:var(--surface-raised)] p-5 shadow-sm md:p-6 ${className}`}>
       {children}
     </div>
   );

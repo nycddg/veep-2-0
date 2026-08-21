@@ -30,7 +30,7 @@ export function ClientStrip() {
         {clients.map((c) => (
           <span
             key={c}
-            className="rounded-full border border-white/10 bg-background px-3.5 py-1.5 text-sm text-cream whitespace-nowrap"
+            className="rounded-[6px] border border-white/10 bg-background px-3.5 py-1.5 text-sm text-cream whitespace-nowrap"
           >
             {c}
           </span>

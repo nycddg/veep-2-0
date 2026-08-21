@@ -23,7 +23,7 @@ function MatchMatrixCard({
 }) {
   return (
     <div
-      className={`match-matrix-card rounded-[15px] bg-[color:oklch(0.225_0.024_258)]/95 backdrop-blur-xl p-4 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.55)] light:shadow-[0_16px_40px_-18px_rgba(26,31,58,0.28)] text-left ${className}`}
+      className={`match-matrix-card rounded-[6px] bg-[color:oklch(0.225_0.024_258)]/95 backdrop-blur-xl p-4 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.55)] light:shadow-[0_16px_40px_-18px_rgba(26,31,58,0.28)] text-left ${className}`}
     >
       <p className="eyebrow mb-4 !text-[10px] text-center !text-[color:oklch(0.98_0_0)]">
         Assigned Operating Partner
@@ -85,7 +85,7 @@ export function OperatorCanvas() {
 
       <div className="relative mx-auto w-full max-w-[20rem] sm:max-w-2xl">
         {/* Headshot — mobile portrait 3/4 (spotlight parity); sm+ 16/9 under matrix */}
-        <div className="relative z-10 aspect-[3/4] sm:aspect-[16/9] overflow-hidden rounded-[15px] bg-[color:var(--surface-raised)] shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
+        <div className="relative z-10 aspect-[3/4] sm:aspect-[16/9] overflow-hidden rounded-[6px] bg-[color:var(--surface-raised)] shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
           <img
             src={headshotAsset.url}
             alt="Vetted operator headshot"

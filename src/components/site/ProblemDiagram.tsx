@@ -52,14 +52,14 @@ export function ProblemDiagram() {
   return (
     <div className="problem-diagram max-w-4xl mx-auto">
       {/* The work — no clear owner */}
-      <div className="problem-diagram-box motion-row-wash rounded-[15px] bg-surface-card p-6 sm:p-7 text-center">
+      <div className="problem-diagram-box motion-row-wash rounded-[6px] bg-surface-card p-6 sm:p-7 text-center">
         <div className="problem-diagram-copy">
           <div className="mono-label">Critical work · No clear owner</div>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             {work.map((w) => (
               <span
                 key={w}
-                className="rounded-full border border-white/10 bg-background px-3.5 py-1.5 text-sm text-cream"
+                className="rounded-[6px] border border-white/10 bg-background px-3.5 py-1.5 text-sm text-cream"
               >
                 {w}
               </span>
@@ -85,7 +85,7 @@ export function ProblemDiagram() {
         {routes.map((r) => (
           <div
             key={r.label}
-            className="problem-diagram-box motion-row-wash rounded-[15px] bg-surface-card p-6 text-center"
+            className="problem-diagram-box motion-row-wash rounded-[6px] bg-surface-card p-6 text-center"
           >
             <div className="problem-diagram-copy">
               <div className="mono-label">{r.label}</div>
@@ -108,7 +108,7 @@ export function ProblemDiagram() {
       <Stem className="md:hidden" />
 
       {/* Where it actually lands */}
-      <div className="problem-diagram-box motion-row-wash rounded-[15px] bg-surface-card p-6 sm:p-8 text-center">
+      <div className="problem-diagram-box motion-row-wash rounded-[6px] bg-surface-card p-6 sm:p-8 text-center">
         <div className="problem-diagram-copy">
           <div className="flex justify-center">
             <div className="mono-label inline-flex items-center gap-2.5">

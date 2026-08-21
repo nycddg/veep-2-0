@@ -78,7 +78,7 @@
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 6px;
 
   /* Premium managed-marketplace palette — deep navy #050810 canvas.
      Dark accent = bright blue #789FFF; light mode uses denser #3474F4. */
