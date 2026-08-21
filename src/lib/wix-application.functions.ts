@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { saveFormSubmission } from "./forms.server";
+import { httpError } from "./http-error";
 import {
   normalizeCompanyType,
   normalizeFunction,
@@ -40,7 +41,7 @@ export const submitApplication = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const resumeBytes = Buffer.from(data.resume.data, "base64");
     if (resumeBytes.length > MAX_RESUME_SIZE) {
-      throw new Error("Resume file must be smaller than 10 MB");
+      httpError(400, "Resume file must be smaller than 10 MB");
     }
 
     const allowedTypes = [
@@ -49,7 +50,7 @@ export const submitApplication = createServerFn({ method: "POST" })
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     ];
     if (!allowedTypes.includes(data.resume.type)) {
-      throw new Error("Resume must be a PDF, DOC, or DOCX file");
+      httpError(400, "Resume must be a PDF, DOC, or DOCX file");
     }
 
     const mappedRole = roleToWix[data.role] || data.role;

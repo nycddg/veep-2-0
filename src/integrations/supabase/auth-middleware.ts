@@ -10,6 +10,7 @@
 import { createMiddleware } from "@tanstack/react-start";
 import { getRequest } from "@tanstack/react-start/server";
 import { createClient } from "@supabase/supabase-js";
+import { httpError } from "@/lib/http-error";
 import type { Database } from "./types";
 
 function isNewSupabaseApiKey(value: string): boolean {
@@ -65,26 +66,26 @@ function buildRequireSupabaseAuth(): Mw {
     const request = getRequest();
 
     if (!request?.headers) {
-      throw new Error("Unauthorized: No request headers available");
+      httpError(401, "Unauthorized: No request headers available");
     }
 
     const authHeader = request.headers.get("authorization");
 
     if (!authHeader) {
-      throw new Error("Unauthorized: No authorization header provided");
+      httpError(401, "Unauthorized: No authorization header provided");
     }
 
     if (!authHeader.startsWith("Bearer ")) {
-      throw new Error("Unauthorized: Only Bearer tokens are supported");
+      httpError(401, "Unauthorized: Only Bearer tokens are supported");
     }
 
     const token = authHeader.replace("Bearer ", "");
     if (!token) {
-      throw new Error("Unauthorized: No token provided");
+      httpError(401, "Unauthorized: No token provided");
     }
 
     if (token.split(".").length !== 3) {
-      throw new Error("Unauthorized: Invalid token");
+      httpError(401, "Unauthorized: Invalid token");
     }
 
     const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
@@ -103,11 +104,11 @@ function buildRequireSupabaseAuth(): Mw {
 
     const { data, error } = await supabase.auth.getClaims(token);
     if (error || !data?.claims) {
-      throw new Error("Unauthorized: Invalid token");
+      httpError(401, "Unauthorized: Invalid token");
     }
 
     if (!data.claims.sub) {
-      throw new Error("Unauthorized: No user ID found in token");
+      httpError(401, "Unauthorized: No user ID found in token");
     }
 
     return next({

@@ -31,7 +31,16 @@ export const startInstance = createStart(async () => {
         try {
           return await next();
         } catch (error) {
-          if (error != null && typeof error === "object" && "statusCode" in error) {
+          if (
+            error != null &&
+            typeof error === "object" &&
+            (("statusCode" in error &&
+              typeof (error as { statusCode: unknown }).statusCode === "number" &&
+              (error as { statusCode: number }).statusCode < 500) ||
+              ("status" in error &&
+                typeof (error as { status: unknown }).status === "number" &&
+                (error as { status: number }).status < 500))
+          ) {
             throw error;
           }
           console.error(error);
