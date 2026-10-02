@@ -1,8 +1,8 @@
 const steps = [
-  { n: "01", t: "Clarify", d: "A 30-minute intro call to understand the work, urgency, and outcome, and whether Veep is the right fit." },
-  { n: "02", t: "Scope", d: "Within 72 hours, define the work, responsibilities, success criteria, and recommended engagement shape." },
-  { n: "03", t: "Assemble", d: "Select a lead operating partner and the supporting capacity required, matched to the mandate and company." },
-  { n: "04", t: "Own", d: "Start in under 10 days. The operator runs the work; Veep manages scope, quality, and continuity." },
+  { n: "01", t: "Diagnose", d: "30-minute call to clarify the priority, urgency, current owner, and the outcome that needs to move." },
+  { n: "02", t: "Scope", d: "We define the work and recommend the right structure: Advisory, Sprint, Operator, or Pod." },
+  { n: "03", t: "Match", d: "A senior operator shortlisted against the work, company stage, function, and industry." },
+  { n: "04", t: "Deploy in <10 days", d: "Contracts, onboarding, and working rhythm set. The operator starts owning the work." },
 ];
 
 export function StepFlow() {

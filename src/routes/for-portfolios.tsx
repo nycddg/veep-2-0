@@ -9,77 +9,77 @@ import { ogImageMeta } from "@/lib/seo";
 
 const problems = [
   {
-    t: "Before close, the work is already moving.",
-    d: "Diligence, financial models, team assessments, and operating plans compete for the same internal capacity. A clear view of the gaps helps you plan who will own the work.",
+    t: "Pre-close needs arrive before the team is ready.",
+    d: "Diligence, modeling, operating plans, team assessments, and value-creation planning all need to get done before the deal closes. The internal team is stretched, and the same few trusted people get called again.",
   },
   {
-    t: "The 100-day plan needs owners.",
-    d: "After close, reporting, integration, commercial priorities, and people decisions arrive together. The existing team may not have the capacity to lead every workstream.",
+    t: "Post-close work moves faster than staffing.",
+    d: "The deal closes. The 100-day plan starts. Reporting, integration, finance, GTM, operations, and people priorities all need owners. The company may not yet have the right leaders in place.",
   },
   {
-    t: "Leadership transitions leave work exposed.",
-    d: "A planned succession, an unexpected exit, or an open executive seat can slow execution. The company needs ownership while the longer-term leadership decision takes shape.",
+    t: "Executive transitions create immediate gaps.",
+    d: "A CFO leaves mid-fundraise. A COO exits after close. A revenue leader misses the plan. Search may be running, but the seat still needs coverage now.",
   },
   {
-    t: "The same contacts cannot cover every mandate.",
-    d: "Trusted relationships matter. But availability, functional experience, and company fit change from deal to deal. Each new priority needs the right operator and a clear scope.",
+    t: "Relying on the same informal roster.",
+    d: "Most firms call the same familiar operators on every deal. They may be effective, but stronger, better-fit talent is out there. No one has time to maintain a roster that may never get used.",
   },
 ];
 
 const auditDeliverables = [
-  "Portfolio-wide map of leadership and execution gaps",
-  "Capacity assessment across finance, GTM, operations, product, and people",
-  "Upcoming needs across diligence, close, integration, fundraising, exit, and leadership transitions",
-  "Recommended operating capacity by company and priority",
-  "Coverage plan for interim leadership gaps",
-  "Priority shortlists for likely operating mandates",
+  "Portfolio-wide leadership and operator gap map",
+  "Coverage assessments across finance, GTM, operations, product, and people",
+  "Upcoming transaction and event triggers, including diligence, close, integration, fundraise, exit, leadership transition, and value-creation work",
+  "Recommended roster structure by company and function",
+  "Emergency coverage path for interim vacancies",
+  "Priority shortlists for likely operator needs",
 ];
 
 const tiers = [
   {
     t: "Portfolio Roster",
     p: "$75k",
-    per: "/ year · operator work billed separately",
-    best: "For private equity firms, family offices, holding companies, and independent sponsors with recurring operating needs. Retain Veep for portfolio capacity planning and priority access, then scope delivery around each company's work.",
+    per: "/ year · usage billed separately",
+    best: "Built for private equity firms, family offices, holding companies, and independent sponsors that engage in frequent transactions or manage recurring operator needs across multiple companies.",
     items: [
-      "Portfolio-wide intake and operating capacity map",
-      "Quarterly review of priorities and capacity",
-      "Priority operator matching for portfolio companies",
-      "Vetted senior operators across finance, GTM, operations, product, and people",
-      "Agreed emergency Operator or Pod coverage terms",
-      "Included diagnostics and operator shortlists",
-      "One master services agreement",
-      "Preferred engagement rates on each statement of work",
+      "Portfolio-wide intake and capacity map",
+      "Quarterly portfolio capacity review",
+      "Priority operator matching across portcos",
+      "Pre-vetted roster across finance, GTM, operations, product, and people",
+      "Emergency Operator or Pod coverage SLA",
+      "Included diagnostics and shortlists",
+      "Executive Capacity MSA signed once",
+      "Preferred engagement rates on every SOW",
     ],
     featured: true,
   },
 ];
 
 const steps = [
-  { n: "01", t: "Map the capacity", d: "Over 2–3 weeks, the audit identifies operating gaps, upcoming transactions, and leadership needs. We recommend where to put capacity first." },
-  { n: "02", t: "Agree the relationship", d: "Set master terms, commercial terms, IP, confidentiality, and engagement structure once, so each new mandate starts from an agreed foundation." },
-  { n: "03", t: "Scope and assign", d: "Define the company's work, assign a lead operator, and agree a statement of work. Operating engagements are scoped in 72 hours and started in under 10 days." },
-  { n: "04", t: "Review the portfolio", d: "Each quarter, revisit priorities, upcoming transactions, and leadership changes. Adjust the capacity plan as the portfolio's needs evolve." },
+  { n: "01", t: "Capacity Audit", d: "Over 2 to 3 weeks, we map the portfolio, flag the seats and functions most exposed to transaction volatility, and recommend the right roster shape by company." },
+  { n: "02", t: "MSA signed once", d: "Master terms, rate card, IP, confidentiality, and engagement structure are pre-approved so portcos can activate quickly without redoing paper." },
+  { n: "03", t: "SOW per engagement", d: "When a company needs an owner, we scope the work, match in 72 hours, and deploy in under 10 days under the MSA." },
+  { n: "04", t: "Quarterly review", d: "We revisit the portfolio map with your team: what changed, what transactions are coming, where leadership risk is rising, and what operator capacity should be pre-positioned." },
 ];
 
 const included = [
-  { t: "Included in the roster", d: "Priority access, portfolio capacity planning, quarterly reviews, agreed emergency coverage terms, preferred rates, and included diagnostics. Veep manages the operating relationship across engagements." },
-  { t: "Scoped and billed separately", d: "Operator delivery is priced by company and statement of work. Each scope defines the work, lead owner, and responsibilities. Fund and company leaders keep strategic decisions and approvals." },
+  { t: "In the roster", d: "Priority access, portfolio planning, quarterly reviews, emergency coverage SLA, preferred rates, and included diagnostics." },
+  { t: "Billed by SOW", d: "Advisory, Sprint, Operator, and Pod engagements are scoped and billed per company at preferred roster rates." },
 ];
 
 export const Route = createFileRoute("/for-portfolios")({
   head: () => ({
     meta: [
-      { title: "For Funds | Portfolio operating capacity" },
+      { title: "For Portfolios | Veep Portfolio Roster" },
       {
         name: "description",
         content:
-          "Veep gives funds senior ownership across diligence, post-close execution, leadership gaps, and value creation without building a full internal portfolio ops team.",
+          "A retained Portfolio Roster for PE firms, family offices, holdcos, and multi-company founders. Priority access to vetted senior operators for diligence, transition, integration, value creation, and interim leadership — matched in 72 hours.",
       },
-      { property: "og:title", content: "For Funds — Portfolio operating capacity" },
+      { property: "og:title", content: "For Portfolios — Veep Portfolio Roster" },
       {
         property: "og:description",
-        content: "Senior ownership across the portfolio. Scope the work company by company.",
+        content: "On-call senior operators for the work that can't wait. Retained capacity across your portfolio.",
       },
       { property: "og:url", content: "https://www.veep.work/for-portfolios" },
       ...ogImageMeta(),
@@ -94,8 +94,8 @@ function Page() {
     <>
       <PageHero
         eyebrow="FOR FUNDS"
-        title="Portfolio operating capacity. Ready when the work is."
-        sub="Veep gives funds senior ownership across diligence, post-close execution, leadership gaps, and value creation without building a full internal portfolio ops team. We scope each company's work, assign a lead operating partner, and stay accountable for delivery, quality, and continuity."
+        title="The right operating partners, ready when the portfolio needs them."
+        sub="Access a vetted roster of senior operators across finance, GTM, operations, product, and people. Use us before a transaction, after close, during integration, or whenever a portfolio company needs senior ownership. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
         primaryLabel="Request a capacity audit"
         primaryTo="/contact"
         primarySearch={{ intent: "audit" }}
@@ -108,10 +108,10 @@ function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
-              Where portfolios lose time
+              WHERE YOUR PORTFOLIOS LOSE TIME
             </div>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              The investment plan still needs operators.
+              Transactions create volatility. The work still needs an owner.
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
@@ -143,13 +143,13 @@ function Page() {
               Portfolio Capacity Audit
             </h2>
             <p className="mt-6 text-stone leading-relaxed">
-              Find the operating gaps before they become urgent introductions. We map current priorities and likely needs over the next 6–12 months, then identify where each company needs senior ownership, specialist support, or a plan for leadership coverage.
+              Before you retain the roster, we map where transactions and operating priorities are likely to create staffing volatility across the portfolio. We identify which companies need what, which upcoming events could create urgency in the next 6 to 12 months, and where a Veep operator would help stabilize execution.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12 motion-hairline pt-12">
             <div>
               <div className="eyebrow">
-                2–3 week audit
+                2-week audit
               </div>
               <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">Deliverables</div>
               <ul className="mt-6 space-y-3 text-sm text-stone">
@@ -163,30 +163,31 @@ function Page() {
             </div>
             <div className="md:border-l md:border-white/10 md:pl-12">
               <div className="eyebrow">
-                After the audit
+                Post audit
               </div>
               <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">
-                Put an owner around each priority.
+                On-demand Operating Partners
               </div>
               <p className="mt-4 text-base text-stone leading-relaxed">
-                Turn the capacity map into scoped engagements. Veep assigns a lead operating partner and the support each job requires. Your fund keeps the portfolio view; each company gets a clear owner for the work.
+                Assign operating partners as needed against the gaps identified in the audit. Secure a custom roster for your firm with priority access to vetted senior operators across the portfolio.
               </p>
               <ul className="mt-6 space-y-2 text-sm text-stone">
                 <li className="flex items-baseline gap-3">
                   <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
                   <span>
-                    Operator work is{" "}
+                    Standard{" "}
                     <Link
                       to="/pricing"
                       className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70"
                     >
-                      billed separately by scope
-                    </Link>
+                      rates
+                    </Link>{" "}
+                    apply
                   </span>
                 </li>
                 <li className="flex items-baseline gap-3">
                   <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
-                  <span>One master agreement; a statement of work per engagement</span>
+                  <span>MSA activated once, SOWs per engagement</span>
                 </li>
                 <li className="flex items-baseline gap-3">
                   <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
@@ -195,9 +196,9 @@ function Page() {
                       href="#roster"
                       className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70"
                     >
-                      Portfolio Roster
-                    </a>
-                    : $75k/year, with preferred engagement rates
+                      Portfolio rosters
+                    </a>{" "}
+                    start at $75k
                   </span>
                 </li>
               </ul>
@@ -211,8 +212,8 @@ function Page() {
       <Reveal as="section" className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
           <OperatorSpotlightChapter
-            headline="Senior operators for consequential work."
-            sub="Operators with experience across transactions, integrations, leadership transitions, and company building. We select for the mandate and the business, then put clear ownership around delivery."
+            headline="Operators ready when the portfolio cannot wait."
+            sub="Finance, growth, and people operators who have held the seat through transactions, integrations, interim gaps, and value-creation work. The same invite-only roster. Sequenced here for funds. No juniors, no generalists, no career consultants."
             operators={operatorsForFunds()}
           />
         </div>
@@ -223,10 +224,10 @@ function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
             <div className="eyebrow">
-              Portfolio operating capacity
+              Roster model
             </div>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              One operating relationship across the portfolio.
+              On-call operators for the work that can't wait.
             </h2>
           </div>
           <div className="max-w-2xl mx-auto space-y-4">
@@ -261,7 +262,7 @@ function Page() {
             ))}
           </div>
           <p className="mt-12 text-sm text-stone text-center max-w-2xl mx-auto">
-            Each mandate becomes an Advisory, Sprint, Operator, or Pod engagement, scoped separately at preferred roster rates.
+            Engagements convert cleanly into Advisory, Sprint, Operator, or Pod work at preferred roster rates.
           </p>
         </div>
       </section>
@@ -275,7 +276,7 @@ function Page() {
               How It Works
             </div>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Master agreement once. Delivery company by company.
+              One agreement. Every portfolio company activated.
             </h2>
           </div>
           <div className="motion-stagger grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-14 gap-y-10 md:gap-y-12 motion-hairline pt-10 md:pt-12">
@@ -298,7 +299,7 @@ function Page() {
               What the retainer covers
             </div>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Retain the relationship. Scope the work.
+              Roster access is retained. Operator work is scoped.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
@@ -316,9 +317,12 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline="Where does the portfolio need an owner next?"
-        sub="Book a 30-minute intro call to discuss the gaps, walk through the audit and roster model, and see whether Veep fits your firm's operating needs."
-        primaryLabel="Book intro call"
+        headline={<>
+          Stabilize the operator gaps
+          <br />
+          across your portfolio.
+        </>}
+        sub="Book a 30-minute call to walk through the audit and roster model. We will tell you directly whether Veep is the right operating partner platform for your firm."
       />
     </>
   );

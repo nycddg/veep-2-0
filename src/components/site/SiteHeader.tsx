@@ -1,4 +1,4 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
@@ -37,9 +37,6 @@ const mobileNav = nav.filter(
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const ctaLabel =
-    pathname === "/" || pathname === "/for-portfolios" ? "Book intro call" : "Get started";
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
@@ -91,7 +88,7 @@ export function SiteHeader() {
             rel="noopener noreferrer"
             className="motion-cta cta-accent relative shrink-0 whitespace-nowrap rounded-[6px] px-4 py-1.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background before:absolute before:inset-x-0 before:-inset-y-1.5 before:content-['']"
           >
-            {ctaLabel}
+            Get started
           </a>
         </div>
 
@@ -146,7 +143,7 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="motion-cta cta-accent block rounded-[6px] px-4 py-3 text-sm text-center font-medium min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                {ctaLabel}
+                Get started
               </a>
             </div>
           </div>
