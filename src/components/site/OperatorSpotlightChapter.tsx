@@ -13,15 +13,15 @@ import { spotlightOperators } from "@/lib/spotlight-operators";
  */
 
 const networkImpact = [
-  { figure: "$2B+", label: "Cost savings delivered", detail: "Across transformation, product redesign, and operational efficiency initiatives at global enterprises." },
-  { figure: "$1B+", label: "Capital raised", detail: "Venture funding, structured finance, SPACs, and instruments like securitized bonds." },
+  { figure: "$2B+", label: "Cost savings delivered", detail: "Across transformation, product redesign, and operational efficiency initiatives." },
+  { figure: "$1B+", label: "Capital raised", detail: "Across venture funding, structured finance, and other capital raises." },
   { figure: "$3B+", label: "New revenue generated", detail: "Through new business lines, go-to-market strategy, and product commercialization." },
-  { figure: "20+", label: "Exits & acquisitions", detail: "Including strategic sales, integrations, and post-merger transformations." },
+  { figure: "20+", label: "Exits & acquisitions", detail: "Across strategic sales, acquisitions, and related integration work." },
 ];
 
 export function OperatorSpotlightChapter({
-  headline = "Operators who've held the seat and delivered.",
-  sub = "Every Veep operator has held the role they're deployed into, at a comparable-stage company, with outcomes we can reference. No juniors, no generalists, no career consultants.",
+  headline = "Operators who've held the seat.",
+  sub = "Senior leaders who have built teams, run functions, and delivered through change. We select for the work, your business model, and your company stage, with experience and references you can assess.",
   operators = spotlightOperators,
 }: {
   headline?: string;
@@ -42,13 +42,13 @@ export function OperatorSpotlightChapter({
       <OperatorSpotlightRail operators={operators} />
 
       <p className="mt-8 text-left text-sm text-stone">
-        Just a few of the 75+ operators in our invite-only network.
+        A few of the 75+ vetted senior operators behind Veep.
       </p>
 
       {/* Network impact */}
       <div className="mt-20 md:mt-24">
         <div className="border-t border-white/10 pt-8 mb-12">
-          <div className="eyebrow">Network impact</div>
+          <div className="eyebrow">Operator career impact</div>
         </div>
 
         <div className="relative">
@@ -82,19 +82,19 @@ export function OperatorSpotlightChapter({
         </div>
 
         <p className="mt-12 mono-label text-right hidden md:block">
-          Aggregated outcomes across our operator roster
+          Aggregated outcomes across our operators' careers.
         </p>
 
         <div className="mt-10 md:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
           <p className="text-sm text-stone">
-            75+ vetted senior operators · Avg. 18 yrs experience · Every operator has held the seat
+            75+ vetted senior operators · Average 18 years' experience · Every operator has held the seat
           </p>
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
             <Link
               to="/contact"
               className="group motion-link inline-flex items-center gap-2 text-sm font-medium text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70"
             >
-              Request an operator <ArrowRight size={14} className="motion-arrow" />
+              Discuss the work <ArrowRight size={14} className="motion-arrow" />
             </Link>
           </div>
         </div>

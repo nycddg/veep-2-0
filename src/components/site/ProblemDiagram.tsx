@@ -14,15 +14,15 @@ const work = ["Fundraise", "GTM reset", "Operating issue", "Margin problem"];
 const routes = [
   {
     label: "The team",
-    d: "Busy. The priority is still stuck.",
+    d: "At capacity. The priority keeps slipping.",
   },
   {
     label: "A permanent hire",
-    d: "A search takes months. The business needs to move now.",
+    d: "The search is running. The work still needs an owner.",
   },
   {
-    label: "Consultants",
-    d: "Another deck and more decisions for you. No one steps in.",
+    label: "Outside advice",
+    d: "The direction is clear. Execution still lands on your team.",
   },
 ];
 
@@ -118,7 +118,7 @@ export function ProblemDiagram() {
             </div>
           </div>
           <p className="mt-3 font-serif font-medium text-lg md:text-xl text-cream tracking-tight leading-snug">
-            Everything keeps landing on you.
+            Every unresolved decision comes back to you.
           </p>
         </div>
       </div>

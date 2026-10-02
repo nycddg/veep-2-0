@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
 
@@ -46,6 +46,14 @@ const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
 ];
 
 export function SiteFooter() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const scoped = pathname === "/" || pathname === "/for-portfolios";
+  const description = scoped
+    ? "Veep puts senior ownership around critical work. We scope the job, assemble the team, and own delivery."
+    : "Vetted senior operators who step in to own critical work, now. Matched in 72 hours. Ready to go in under 10 days.";
+  const signature = scoped
+    ? "Critical work, owned."
+    : "Senior operators for work that can't wait.";
   return (
     <footer className="border-t border-white/10 bg-background text-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
@@ -56,8 +64,7 @@ export function SiteFooter() {
               <img src={wordmarkNavy.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto hidden light:block" />
             </Link>
             <p className="mt-5 text-base text-cream/85 max-w-[20.4rem] leading-relaxed">
-              Vetted senior operators who step in to own critical work, now.
-              Matched in 72 hours. Ready to go in under 10 days.
+              {description}
             </p>
               <a
                 href="mailto:hey@veep.work"
@@ -93,7 +100,7 @@ export function SiteFooter() {
         </div>
         <div className="mt-10 md:mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-3 text-xs leading-relaxed text-cream/70">
           <div className="text-balance">© {new Date().getFullYear()}&nbsp;The Veep Group,&nbsp;LLC. All rights reserved.</div>
-          <div className="text-balance">Senior operators for work that can't&nbsp;wait.</div>
+          <div className="text-balance">{signature}</div>
         </div>
       </div>
     </footer>

@@ -7,10 +7,12 @@ export function FooterCTA({
   sub = "Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
   /** Default: Fillout booking. Pass "contact" for Get in touch → /contact. */
   primary = "book",
+  primaryLabel,
 }: {
   headline?: ReactNode;
   sub?: string;
   primary?: "book" | "contact";
+  primaryLabel?: string;
 }) {
   const primaryClass =
     "group motion-cta cta-accent rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11";
@@ -27,7 +29,7 @@ export function FooterCTA({
         <div className="mt-8 flex flex-col items-start sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5">
           {primary === "contact" ? (
             <Link to="/contact" className={primaryClass}>
-              Get in touch
+              {primaryLabel ?? "Get in touch"}
             </Link>
           ) : (
             <a
@@ -36,7 +38,7 @@ export function FooterCTA({
               rel="noopener noreferrer"
               className={primaryClass}
             >
-              Speak with our founders
+              {primaryLabel ?? "Speak with our founders"}
             </a>
           )}
           <Link

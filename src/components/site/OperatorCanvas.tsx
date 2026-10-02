@@ -4,14 +4,14 @@ import { useInView } from "./useInView";
 
 /**
  * OperatorCanvas — homepage signature (D2 / Phase 3).
- * Locks: matrix bars+% kept · 95%+75+ kept · no float · matrix sm+ only · labels −10%.
- * C1 bar fill once · C2 assigned-partner card · C3 16/9 · C4 no mobile matrix.
+ * Locks: decorative lines kept · no match % · no float · matrix sm+ only · labels −10%.
+ * C1 bar fill once · C2 selected-for-the-work card · C3 16/9 · C4 no mobile matrix.
  */
 const MATRIX = [
-  { label: "Functional Depth", value: 97 },
-  { label: "Business Model Familiarity", value: 95 },
-  { label: "Industry Expertise", value: 98 },
-  { label: "Life Stage Experience", value: 100 },
+  { label: "Functional depth", right: "Role" },
+  { label: "Business model", right: "Model" },
+  { label: "Industry experience", right: "Sector" },
+  { label: "Company stage", right: "Stage" },
 ] as const;
 
 function MatchMatrixCard({
@@ -26,23 +26,20 @@ function MatchMatrixCard({
       className={`match-matrix-card rounded-[6px] bg-[color:oklch(0.225_0.024_258)]/95 backdrop-blur-xl p-4 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.55)] light:shadow-[0_16px_40px_-18px_rgba(26,31,58,0.28)] text-left ${className}`}
     >
       <p className="eyebrow mb-4 !text-[10px] text-center !text-[color:oklch(0.98_0_0)]">
-        Assigned Operating Partner
+        Selected for the work
       </p>
       <div className="space-y-2.5">
         {MATRIX.map((row, i) => (
           <div key={row.label}>
             <div className="flex justify-between items-baseline gap-2 text-[10px] text-stone mb-1">
               <span className="min-w-0 text-left leading-snug">{row.label}</span>
-              <span className="shrink-0 tabular-nums">{row.value}%</span>
+              <span className="shrink-0">{row.right}</span>
             </div>
             <div className="h-[3px] w-full rounded-full bg-white/10 light:bg-ink/10 overflow-hidden">
               <div
-                className={`h-full rounded-full bg-accent-coral ${
-                  row.value === 100 ? "shadow-[0_0_10px_color-mix(in_oklab,var(--accent-coral)_45%,transparent)]" : ""
-                }`}
+                className="h-full rounded-full bg-accent-coral"
                 style={{
-                  width: animate ? `${row.value}%` : "0%",
-                  // Bars fill in sequence — one gesture, top to bottom.
+                  width: animate ? "100%" : "0%",
                   transition: `width 700ms cubic-bezier(0.16, 1, 0.3, 1) ${i * 90}ms`,
                 }}
               />
@@ -115,7 +112,7 @@ export function OperatorCanvas() {
       {/* Proof — mt-6 from the photo on mobile; sm+ adds the card hang
           (-bottom-5) so the gap is card-to-line, not photo-to-line. */}
       <p className="mt-6 sm:mt-11 text-center mono-label text-cream/80">
-        95% match success rate · 75+ vetted senior operators
+        75+ vetted senior operators · Selected for the job
       </p>
     </div>
   );

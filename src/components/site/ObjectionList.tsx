@@ -1,27 +1,27 @@
 const objections = [
   {
     q: "Is this right for me?",
-    a: "You are a founder, CEO, owner-operator, or investor-backed leader with critical work lacking senior ownership: a fundraise, GTM reset, margin issue, operations rebuild, leadership gap, recurring workflow, or strategic initiative.",
+    a: "You lead a business with critical work the team cannot absorb: preparing for capital, rebuilding sales, entering a market, fixing operations, or covering a leadership gap. Bring the priority; we'll assess the fit.",
   },
   {
     q: "How much does it cost?",
-    a: "Advisory starts at $3k/month. Sprints start at $25k. Operators start at $15k/month. Pods start at $30k/month. The right structure depends on the work, urgency, and level of ownership required.",
+    a: "Advisory starts at $3k/month, Sprints at $25k/scope, Operators at $15k/month, and Pods at $30k/month. Scope and level of support determine the price.",
   },
   {
-    q: "How fast does it actually move?",
-    a: "Shortlist in 72 hours. Operator deployed in under 10 days. Urgent coverage can move faster when the situation requires it.",
+    q: "How quickly can we start?",
+    a: "Operating engagements are scoped in 72 hours and started in under 10 days. We clarify responsibilities and the starting plan before work begins.",
   },
   {
-    q: "Can I trust the operator?",
-    a: "Every operator is vetted and senior. Veep operators are former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders who've owned real outcomes before.",
+    q: "How do you choose the operator?",
+    a: "We select for the work, business model, and company stage. You can review relevant experience and references before the engagement begins.",
   },
   {
-    q: "What if it is not a fit?",
-    a: "Every engagement carries a 30-day fit guarantee. If the operator isn't right, we swap them or you walk. No fee owed for the remaining term.",
+    q: "What if it isn't a fit?",
+    a: "The operator has a 30-day fit guarantee. We swap them or you walk, with no fee owed for the remaining engagement term.",
   },
   {
-    q: "What happens after the intro call?",
-    a: "We run a 30-minute call with a Veep founder to clarify the work, urgency, and outcome. Within 72 hours we recommend the structure and shortlist the operator.",
+    q: "What happens on the intro call?",
+    a: "In 30 minutes, we clarify the work, urgency, and support you need. If Veep fits, we move into scoping. We'll tell you directly if another route makes more sense.",
   },
 ];
 
