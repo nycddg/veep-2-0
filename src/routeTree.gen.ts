@@ -9,215 +9,74 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as VictoriakasumuRouteImport } from './routes/victoriakasumu'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as SeanparkRouteImport } from './routes/seanpark'
-import { Route as ProofRouteImport } from './routes/proof'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as PricingRouteImport } from './routes/pricing'
-import { Route as PartnersRouteImport } from './routes/partners'
-import { Route as OperatorsRouteImport } from './routes/operators'
-import { Route as MunawarahmedRouteImport } from './routes/munawarahmed'
-import { Route as MemberdashboardRouteImport } from './routes/memberdashboard'
-import { Route as MeetveepRouteImport } from './routes/meetveep'
-import { Route as MarknewhouseRouteImport } from './routes/marknewhouse'
-import { Route as LauramerlingRouteImport } from './routes/lauramerling'
-import { Route as JoinRouteImport } from './routes/join'
-import { Route as JianyangRouteImport } from './routes/jianyang'
-import { Route as JenniferkasperRouteImport } from './routes/jenniferkasper'
-import { Route as HowItWorksRouteImport } from './routes/how-it-works'
-import { Route as ForPortfoliosRouteImport } from './routes/for-portfolios'
-import { Route as ForCompaniesRouteImport } from './routes/for-companies'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as ErikavelazquezRouteImport } from './routes/erikavelazquez'
-import { Route as ElainebogartRouteImport } from './routes/elainebogart'
-import { Route as DavegarciaRouteImport } from './routes/davegarcia'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CompareRouteImport } from './routes/compare'
-import { Route as AuthRouteImport } from './routes/auth'
-import { Route as AndrewsilverRouteImport } from './routes/andrewsilver'
-import { Route as AlasdairlloydjonesRouteImport } from './routes/alasdairlloydjones'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesIndexRouteImport } from './routes/services.index'
-import { Route as ServicesInterimRouteImport } from './routes/services.interim'
-import { Route as ServicesFractionalCfoRouteImport } from './routes/services.fractional-cfo'
-import { Route as ServicesExecutiveBenchRouteImport } from './routes/services.executive-bench'
-import { Route as ServicesAiOperatorsRouteImport } from './routes/services.ai-operators'
-import { Route as CompareVsExecutiveSearchRouteImport } from './routes/compare.vs-executive-search'
-import { Route as CompareVsConsultantsRouteImport } from './routes/compare.vs-consultants'
-import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AlasdairlloydjonesRouteImport } from './routes/alasdairlloydjones'
+import { Route as AndrewsilverRouteImport } from './routes/andrewsilver'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CompareRouteImport } from './routes/compare'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DavegarciaRouteImport } from './routes/davegarcia'
+import { Route as ElainebogartRouteImport } from './routes/elainebogart'
+import { Route as ErikavelazquezRouteImport } from './routes/erikavelazquez'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ForCompaniesRouteImport } from './routes/for-companies'
+import { Route as ForPortfoliosRouteImport } from './routes/for-portfolios'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as JenniferkasperRouteImport } from './routes/jenniferkasper'
+import { Route as JianyangRouteImport } from './routes/jianyang'
+import { Route as JoinRouteImport } from './routes/join'
+import { Route as LauramerlingRouteImport } from './routes/lauramerling'
+import { Route as MarknewhouseRouteImport } from './routes/marknewhouse'
+import { Route as MeetveepRouteImport } from './routes/meetveep'
+import { Route as MemberdashboardRouteImport } from './routes/memberdashboard'
+import { Route as MunawarahmedRouteImport } from './routes/munawarahmed'
+import { Route as OperatorsRouteImport } from './routes/operators'
+import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProofRouteImport } from './routes/proof'
+import { Route as SeanparkRouteImport } from './routes/seanpark'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as VictoriakasumuRouteImport } from './routes/victoriakasumu'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedPortalRouteRouteImport } from './routes/_authenticated/portal/route'
+import { Route as CompareVsConsultantsRouteImport } from './routes/compare.vs-consultants'
+import { Route as CompareVsExecutiveSearchRouteImport } from './routes/compare.vs-executive-search'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesAiOperatorsRouteImport } from './routes/services.ai-operators'
+import { Route as ServicesExecutiveBenchRouteImport } from './routes/services.executive-bench'
+import { Route as ServicesFractionalCfoRouteImport } from './routes/services.fractional-cfo'
+import { Route as ServicesInterimRouteImport } from './routes/services.interim'
 import { Route as AuthenticatedPortalIndexRouteImport } from './routes/_authenticated/portal/index'
-import { Route as AuthenticatedPortalOperatorIndexRouteImport } from './routes/_authenticated/portal/operator/index'
 import { Route as AuthenticatedPortalClientIndexRouteImport } from './routes/_authenticated/portal/client/index'
-import { Route as AuthenticatedPortalOperatorSupportRouteImport } from './routes/_authenticated/portal/operator/support'
-import { Route as AuthenticatedPortalOperatorProfileRouteImport } from './routes/_authenticated/portal/operator/profile'
-import { Route as AuthenticatedPortalOperatorPaymentsRouteImport } from './routes/_authenticated/portal/operator/payments'
-import { Route as AuthenticatedPortalOperatorInvitationsRouteImport } from './routes/_authenticated/portal/operator/invitations'
-import { Route as AuthenticatedPortalOperatorAvailabilityRouteImport } from './routes/_authenticated/portal/operator/availability'
-import { Route as AuthenticatedPortalOperatorAssignmentsRouteImport } from './routes/_authenticated/portal/operator/assignments'
-import { Route as AuthenticatedPortalOperatorAgreementsRouteImport } from './routes/_authenticated/portal/operator/agreements'
-import { Route as AuthenticatedPortalClientTeamRouteImport } from './routes/_authenticated/portal/client/team'
-import { Route as AuthenticatedPortalClientSupportRouteImport } from './routes/_authenticated/portal/client/support'
-import { Route as AuthenticatedPortalClientProposalsRouteImport } from './routes/_authenticated/portal/client/proposals'
-import { Route as AuthenticatedPortalClientJobsRouteImport } from './routes/_authenticated/portal/client/jobs'
-import { Route as AuthenticatedPortalClientEngagementsRouteImport } from './routes/_authenticated/portal/client/engagements'
-import { Route as AuthenticatedPortalClientDocumentsRouteImport } from './routes/_authenticated/portal/client/documents'
 import { Route as AuthenticatedPortalClientBillingRouteImport } from './routes/_authenticated/portal/client/billing'
+import { Route as AuthenticatedPortalClientDocumentsRouteImport } from './routes/_authenticated/portal/client/documents'
+import { Route as AuthenticatedPortalClientEngagementsRouteImport } from './routes/_authenticated/portal/client/engagements'
+import { Route as AuthenticatedPortalClientJobsRouteImport } from './routes/_authenticated/portal/client/jobs'
+import { Route as AuthenticatedPortalClientProposalsRouteImport } from './routes/_authenticated/portal/client/proposals'
+import { Route as AuthenticatedPortalClientSupportRouteImport } from './routes/_authenticated/portal/client/support'
+import { Route as AuthenticatedPortalClientTeamRouteImport } from './routes/_authenticated/portal/client/team'
+import { Route as AuthenticatedPortalOperatorIndexRouteImport } from './routes/_authenticated/portal/operator/index'
+import { Route as AuthenticatedPortalOperatorAgreementsRouteImport } from './routes/_authenticated/portal/operator/agreements'
+import { Route as AuthenticatedPortalOperatorAssignmentsRouteImport } from './routes/_authenticated/portal/operator/assignments'
+import { Route as AuthenticatedPortalOperatorAvailabilityRouteImport } from './routes/_authenticated/portal/operator/availability'
+import { Route as AuthenticatedPortalOperatorInvitationsRouteImport } from './routes/_authenticated/portal/operator/invitations'
+import { Route as AuthenticatedPortalOperatorPaymentsRouteImport } from './routes/_authenticated/portal/operator/payments'
+import { Route as AuthenticatedPortalOperatorProfileRouteImport } from './routes/_authenticated/portal/operator/profile'
+import { Route as AuthenticatedPortalOperatorSupportRouteImport } from './routes/_authenticated/portal/operator/support'
 
-const VictoriakasumuRoute = VictoriakasumuRouteImport.update({
-  id: '/victoriakasumu',
-  path: '/victoriakasumu',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SeanparkRoute = SeanparkRouteImport.update({
-  id: '/seanpark',
-  path: '/seanpark',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProofRoute = ProofRouteImport.update({
-  id: '/proof',
-  path: '/proof',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PartnersRoute = PartnersRouteImport.update({
-  id: '/partners',
-  path: '/partners',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OperatorsRoute = OperatorsRouteImport.update({
-  id: '/operators',
-  path: '/operators',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MunawarahmedRoute = MunawarahmedRouteImport.update({
-  id: '/munawarahmed',
-  path: '/munawarahmed',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MemberdashboardRoute = MemberdashboardRouteImport.update({
-  id: '/memberdashboard',
-  path: '/memberdashboard',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MeetveepRoute = MeetveepRouteImport.update({
-  id: '/meetveep',
-  path: '/meetveep',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MarknewhouseRoute = MarknewhouseRouteImport.update({
-  id: '/marknewhouse',
-  path: '/marknewhouse',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LauramerlingRoute = LauramerlingRouteImport.update({
-  id: '/lauramerling',
-  path: '/lauramerling',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JoinRoute = JoinRouteImport.update({
-  id: '/join',
-  path: '/join',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JianyangRoute = JianyangRouteImport.update({
-  id: '/jianyang',
-  path: '/jianyang',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JenniferkasperRoute = JenniferkasperRouteImport.update({
-  id: '/jenniferkasper',
-  path: '/jenniferkasper',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HowItWorksRoute = HowItWorksRouteImport.update({
-  id: '/how-it-works',
-  path: '/how-it-works',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ForPortfoliosRoute = ForPortfoliosRouteImport.update({
-  id: '/for-portfolios',
-  path: '/for-portfolios',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ForCompaniesRoute = ForCompaniesRouteImport.update({
-  id: '/for-companies',
-  path: '/for-companies',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ErikavelazquezRoute = ErikavelazquezRouteImport.update({
-  id: '/erikavelazquez',
-  path: '/erikavelazquez',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ElainebogartRoute = ElainebogartRouteImport.update({
-  id: '/elainebogart',
-  path: '/elainebogart',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DavegarciaRoute = DavegarciaRouteImport.update({
-  id: '/davegarcia',
-  path: '/davegarcia',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CompareRoute = CompareRouteImport.update({
-  id: '/compare',
-  path: '/compare',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthRoute = AuthRouteImport.update({
-  id: '/auth',
-  path: '/auth',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AndrewsilverRoute = AndrewsilverRouteImport.update({
-  id: '/andrewsilver',
-  path: '/andrewsilver',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AlasdairlloydjonesRoute = AlasdairlloydjonesRouteImport.update({
-  id: '/alasdairlloydjones',
-  path: '/alasdairlloydjones',
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -225,59 +84,164 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
-  id: '/_authenticated',
+const AlasdairlloydjonesRoute = AlasdairlloydjonesRouteImport.update({
+  id: '/alasdairlloydjones',
+  path: '/alasdairlloydjones',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AndrewsilverRoute = AndrewsilverRouteImport.update({
+  id: '/andrewsilver',
+  path: '/andrewsilver',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => ServicesRoute,
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesInterimRoute = ServicesInterimRouteImport.update({
-  id: '/interim',
-  path: '/interim',
-  getParentRoute: () => ServicesRoute,
+const CompareRoute = CompareRouteImport.update({
+  id: '/compare',
+  path: '/compare',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesFractionalCfoRoute = ServicesFractionalCfoRouteImport.update({
-  id: '/fractional-cfo',
-  path: '/fractional-cfo',
-  getParentRoute: () => ServicesRoute,
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesExecutiveBenchRoute = ServicesExecutiveBenchRouteImport.update({
-  id: '/executive-bench',
-  path: '/executive-bench',
-  getParentRoute: () => ServicesRoute,
+const DavegarciaRoute = DavegarciaRouteImport.update({
+  id: '/davegarcia',
+  path: '/davegarcia',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesAiOperatorsRoute = ServicesAiOperatorsRouteImport.update({
-  id: '/ai-operators',
-  path: '/ai-operators',
-  getParentRoute: () => ServicesRoute,
+const ElainebogartRoute = ElainebogartRouteImport.update({
+  id: '/elainebogart',
+  path: '/elainebogart',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const CompareVsExecutiveSearchRoute =
-  CompareVsExecutiveSearchRouteImport.update({
-    id: '/vs-executive-search',
-    path: '/vs-executive-search',
-    getParentRoute: () => CompareRoute,
-  } as any)
-const CompareVsConsultantsRoute = CompareVsConsultantsRouteImport.update({
-  id: '/vs-consultants',
-  path: '/vs-consultants',
-  getParentRoute: () => CompareRoute,
+const ErikavelazquezRoute = ErikavelazquezRouteImport.update({
+  id: '/erikavelazquez',
+  path: '/erikavelazquez',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
-  getParentRoute: () => AuthenticatedRouteRoute,
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForCompaniesRoute = ForCompaniesRouteImport.update({
+  id: '/for-companies',
+  path: '/for-companies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForPortfoliosRoute = ForPortfoliosRouteImport.update({
+  id: '/for-portfolios',
+  path: '/for-portfolios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JenniferkasperRoute = JenniferkasperRouteImport.update({
+  id: '/jenniferkasper',
+  path: '/jenniferkasper',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JianyangRoute = JianyangRouteImport.update({
+  id: '/jianyang',
+  path: '/jianyang',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LauramerlingRoute = LauramerlingRouteImport.update({
+  id: '/lauramerling',
+  path: '/lauramerling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarknewhouseRoute = MarknewhouseRouteImport.update({
+  id: '/marknewhouse',
+  path: '/marknewhouse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MeetveepRoute = MeetveepRouteImport.update({
+  id: '/meetveep',
+  path: '/meetveep',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MemberdashboardRoute = MemberdashboardRouteImport.update({
+  id: '/memberdashboard',
+  path: '/memberdashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MunawarahmedRoute = MunawarahmedRouteImport.update({
+  id: '/munawarahmed',
+  path: '/munawarahmed',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OperatorsRoute = OperatorsRouteImport.update({
+  id: '/operators',
+  path: '/operators',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProofRoute = ProofRouteImport.update({
+  id: '/proof',
+  path: '/proof',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeanparkRoute = SeanparkRouteImport.update({
+  id: '/seanpark',
+  path: '/seanpark',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VictoriakasumuRoute = VictoriakasumuRouteImport.update({
+  id: '/victoriakasumu',
+  path: '/victoriakasumu',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   id: '/admin',
   path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const AuthenticatedPortalRouteRoute =
@@ -286,16 +250,46 @@ const AuthenticatedPortalRouteRoute =
     path: '/portal',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const CompareVsConsultantsRoute = CompareVsConsultantsRouteImport.update({
+  id: '/vs-consultants',
+  path: '/vs-consultants',
+  getParentRoute: () => CompareRoute,
+} as any)
+const CompareVsExecutiveSearchRoute =
+  CompareVsExecutiveSearchRouteImport.update({
+    id: '/vs-executive-search',
+    path: '/vs-executive-search',
+    getParentRoute: () => CompareRoute,
+  } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesAiOperatorsRoute = ServicesAiOperatorsRouteImport.update({
+  id: '/ai-operators',
+  path: '/ai-operators',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesExecutiveBenchRoute = ServicesExecutiveBenchRouteImport.update({
+  id: '/executive-bench',
+  path: '/executive-bench',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesFractionalCfoRoute = ServicesFractionalCfoRouteImport.update({
+  id: '/fractional-cfo',
+  path: '/fractional-cfo',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesInterimRoute = ServicesInterimRouteImport.update({
+  id: '/interim',
+  path: '/interim',
+  getParentRoute: () => ServicesRoute,
+} as any)
 const AuthenticatedPortalIndexRoute =
   AuthenticatedPortalIndexRouteImport.update({
     id: '/',
     path: '/',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalOperatorIndexRoute =
-  AuthenticatedPortalOperatorIndexRouteImport.update({
-    id: '/operator/',
-    path: '/operator/',
     getParentRoute: () => AuthenticatedPortalRouteRoute,
   } as any)
 const AuthenticatedPortalClientIndexRoute =
@@ -304,76 +298,10 @@ const AuthenticatedPortalClientIndexRoute =
     path: '/client/',
     getParentRoute: () => AuthenticatedPortalRouteRoute,
   } as any)
-const AuthenticatedPortalOperatorSupportRoute =
-  AuthenticatedPortalOperatorSupportRouteImport.update({
-    id: '/operator/support',
-    path: '/operator/support',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalOperatorProfileRoute =
-  AuthenticatedPortalOperatorProfileRouteImport.update({
-    id: '/operator/profile',
-    path: '/operator/profile',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalOperatorPaymentsRoute =
-  AuthenticatedPortalOperatorPaymentsRouteImport.update({
-    id: '/operator/payments',
-    path: '/operator/payments',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalOperatorInvitationsRoute =
-  AuthenticatedPortalOperatorInvitationsRouteImport.update({
-    id: '/operator/invitations',
-    path: '/operator/invitations',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalOperatorAvailabilityRoute =
-  AuthenticatedPortalOperatorAvailabilityRouteImport.update({
-    id: '/operator/availability',
-    path: '/operator/availability',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalOperatorAssignmentsRoute =
-  AuthenticatedPortalOperatorAssignmentsRouteImport.update({
-    id: '/operator/assignments',
-    path: '/operator/assignments',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalOperatorAgreementsRoute =
-  AuthenticatedPortalOperatorAgreementsRouteImport.update({
-    id: '/operator/agreements',
-    path: '/operator/agreements',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalClientTeamRoute =
-  AuthenticatedPortalClientTeamRouteImport.update({
-    id: '/client/team',
-    path: '/client/team',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalClientSupportRoute =
-  AuthenticatedPortalClientSupportRouteImport.update({
-    id: '/client/support',
-    path: '/client/support',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalClientProposalsRoute =
-  AuthenticatedPortalClientProposalsRouteImport.update({
-    id: '/client/proposals',
-    path: '/client/proposals',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalClientJobsRoute =
-  AuthenticatedPortalClientJobsRouteImport.update({
-    id: '/client/jobs',
-    path: '/client/jobs',
-    getParentRoute: () => AuthenticatedPortalRouteRoute,
-  } as any)
-const AuthenticatedPortalClientEngagementsRoute =
-  AuthenticatedPortalClientEngagementsRouteImport.update({
-    id: '/client/engagements',
-    path: '/client/engagements',
+const AuthenticatedPortalClientBillingRoute =
+  AuthenticatedPortalClientBillingRouteImport.update({
+    id: '/client/billing',
+    path: '/client/billing',
     getParentRoute: () => AuthenticatedPortalRouteRoute,
   } as any)
 const AuthenticatedPortalClientDocumentsRoute =
@@ -382,10 +310,82 @@ const AuthenticatedPortalClientDocumentsRoute =
     path: '/client/documents',
     getParentRoute: () => AuthenticatedPortalRouteRoute,
   } as any)
-const AuthenticatedPortalClientBillingRoute =
-  AuthenticatedPortalClientBillingRouteImport.update({
-    id: '/client/billing',
-    path: '/client/billing',
+const AuthenticatedPortalClientEngagementsRoute =
+  AuthenticatedPortalClientEngagementsRouteImport.update({
+    id: '/client/engagements',
+    path: '/client/engagements',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientJobsRoute =
+  AuthenticatedPortalClientJobsRouteImport.update({
+    id: '/client/jobs',
+    path: '/client/jobs',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientProposalsRoute =
+  AuthenticatedPortalClientProposalsRouteImport.update({
+    id: '/client/proposals',
+    path: '/client/proposals',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientSupportRoute =
+  AuthenticatedPortalClientSupportRouteImport.update({
+    id: '/client/support',
+    path: '/client/support',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalClientTeamRoute =
+  AuthenticatedPortalClientTeamRouteImport.update({
+    id: '/client/team',
+    path: '/client/team',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorIndexRoute =
+  AuthenticatedPortalOperatorIndexRouteImport.update({
+    id: '/operator/',
+    path: '/operator/',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorAgreementsRoute =
+  AuthenticatedPortalOperatorAgreementsRouteImport.update({
+    id: '/operator/agreements',
+    path: '/operator/agreements',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorAssignmentsRoute =
+  AuthenticatedPortalOperatorAssignmentsRouteImport.update({
+    id: '/operator/assignments',
+    path: '/operator/assignments',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorAvailabilityRoute =
+  AuthenticatedPortalOperatorAvailabilityRouteImport.update({
+    id: '/operator/availability',
+    path: '/operator/availability',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorInvitationsRoute =
+  AuthenticatedPortalOperatorInvitationsRouteImport.update({
+    id: '/operator/invitations',
+    path: '/operator/invitations',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorPaymentsRoute =
+  AuthenticatedPortalOperatorPaymentsRouteImport.update({
+    id: '/operator/payments',
+    path: '/operator/payments',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorProfileRoute =
+  AuthenticatedPortalOperatorProfileRouteImport.update({
+    id: '/operator/profile',
+    path: '/operator/profile',
+    getParentRoute: () => AuthenticatedPortalRouteRoute,
+  } as any)
+const AuthenticatedPortalOperatorSupportRoute =
+  AuthenticatedPortalOperatorSupportRouteImport.update({
+    id: '/operator/support',
+    path: '/operator/support',
     getParentRoute: () => AuthenticatedPortalRouteRoute,
   } as any)
 
@@ -795,221 +795,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/victoriakasumu': {
-      id: '/victoriakasumu'
-      path: '/victoriakasumu'
-      fullPath: '/victoriakasumu'
-      preLoaderRoute: typeof VictoriakasumuRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/seanpark': {
-      id: '/seanpark'
-      path: '/seanpark'
-      fullPath: '/seanpark'
-      preLoaderRoute: typeof SeanparkRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/proof': {
-      id: '/proof'
-      path: '/proof'
-      fullPath: '/proof'
-      preLoaderRoute: typeof ProofRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/partners': {
-      id: '/partners'
-      path: '/partners'
-      fullPath: '/partners'
-      preLoaderRoute: typeof PartnersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/operators': {
-      id: '/operators'
-      path: '/operators'
-      fullPath: '/operators'
-      preLoaderRoute: typeof OperatorsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/munawarahmed': {
-      id: '/munawarahmed'
-      path: '/munawarahmed'
-      fullPath: '/munawarahmed'
-      preLoaderRoute: typeof MunawarahmedRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/memberdashboard': {
-      id: '/memberdashboard'
-      path: '/memberdashboard'
-      fullPath: '/memberdashboard'
-      preLoaderRoute: typeof MemberdashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/meetveep': {
-      id: '/meetveep'
-      path: '/meetveep'
-      fullPath: '/meetveep'
-      preLoaderRoute: typeof MeetveepRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/marknewhouse': {
-      id: '/marknewhouse'
-      path: '/marknewhouse'
-      fullPath: '/marknewhouse'
-      preLoaderRoute: typeof MarknewhouseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lauramerling': {
-      id: '/lauramerling'
-      path: '/lauramerling'
-      fullPath: '/lauramerling'
-      preLoaderRoute: typeof LauramerlingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/join': {
-      id: '/join'
-      path: '/join'
-      fullPath: '/join'
-      preLoaderRoute: typeof JoinRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/jianyang': {
-      id: '/jianyang'
-      path: '/jianyang'
-      fullPath: '/jianyang'
-      preLoaderRoute: typeof JianyangRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/jenniferkasper': {
-      id: '/jenniferkasper'
-      path: '/jenniferkasper'
-      fullPath: '/jenniferkasper'
-      preLoaderRoute: typeof JenniferkasperRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/how-it-works': {
-      id: '/how-it-works'
-      path: '/how-it-works'
-      fullPath: '/how-it-works'
-      preLoaderRoute: typeof HowItWorksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/for-portfolios': {
-      id: '/for-portfolios'
-      path: '/for-portfolios'
-      fullPath: '/for-portfolios'
-      preLoaderRoute: typeof ForPortfoliosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/for-companies': {
-      id: '/for-companies'
-      path: '/for-companies'
-      fullPath: '/for-companies'
-      preLoaderRoute: typeof ForCompaniesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/erikavelazquez': {
-      id: '/erikavelazquez'
-      path: '/erikavelazquez'
-      fullPath: '/erikavelazquez'
-      preLoaderRoute: typeof ErikavelazquezRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/elainebogart': {
-      id: '/elainebogart'
-      path: '/elainebogart'
-      fullPath: '/elainebogart'
-      preLoaderRoute: typeof ElainebogartRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/davegarcia': {
-      id: '/davegarcia'
-      path: '/davegarcia'
-      fullPath: '/davegarcia'
-      preLoaderRoute: typeof DavegarciaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/compare': {
-      id: '/compare'
-      path: '/compare'
-      fullPath: '/compare'
-      preLoaderRoute: typeof CompareRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth': {
-      id: '/auth'
-      path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof AuthRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/andrewsilver': {
-      id: '/andrewsilver'
-      path: '/andrewsilver'
-      fullPath: '/andrewsilver'
-      preLoaderRoute: typeof AndrewsilverRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/alasdairlloydjones': {
-      id: '/alasdairlloydjones'
-      path: '/alasdairlloydjones'
-      fullPath: '/alasdairlloydjones'
-      preLoaderRoute: typeof AlasdairlloydjonesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated': {
@@ -1019,74 +809,235 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/': {
-      id: '/services/'
-      path: '/'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesIndexRouteImport
-      parentRoute: typeof ServicesRoute
+    '/alasdairlloydjones': {
+      id: '/alasdairlloydjones'
+      path: '/alasdairlloydjones'
+      fullPath: '/alasdairlloydjones'
+      preLoaderRoute: typeof AlasdairlloydjonesRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/services/interim': {
-      id: '/services/interim'
-      path: '/interim'
-      fullPath: '/services/interim'
-      preLoaderRoute: typeof ServicesInterimRouteImport
-      parentRoute: typeof ServicesRoute
+    '/andrewsilver': {
+      id: '/andrewsilver'
+      path: '/andrewsilver'
+      fullPath: '/andrewsilver'
+      preLoaderRoute: typeof AndrewsilverRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/services/fractional-cfo': {
-      id: '/services/fractional-cfo'
-      path: '/fractional-cfo'
-      fullPath: '/services/fractional-cfo'
-      preLoaderRoute: typeof ServicesFractionalCfoRouteImport
-      parentRoute: typeof ServicesRoute
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/services/executive-bench': {
-      id: '/services/executive-bench'
-      path: '/executive-bench'
-      fullPath: '/services/executive-bench'
-      preLoaderRoute: typeof ServicesExecutiveBenchRouteImport
-      parentRoute: typeof ServicesRoute
+    '/compare': {
+      id: '/compare'
+      path: '/compare'
+      fullPath: '/compare'
+      preLoaderRoute: typeof CompareRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/services/ai-operators': {
-      id: '/services/ai-operators'
-      path: '/ai-operators'
-      fullPath: '/services/ai-operators'
-      preLoaderRoute: typeof ServicesAiOperatorsRouteImport
-      parentRoute: typeof ServicesRoute
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/compare/vs-executive-search': {
-      id: '/compare/vs-executive-search'
-      path: '/vs-executive-search'
-      fullPath: '/compare/vs-executive-search'
-      preLoaderRoute: typeof CompareVsExecutiveSearchRouteImport
-      parentRoute: typeof CompareRoute
+    '/davegarcia': {
+      id: '/davegarcia'
+      path: '/davegarcia'
+      fullPath: '/davegarcia'
+      preLoaderRoute: typeof DavegarciaRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/compare/vs-consultants': {
-      id: '/compare/vs-consultants'
-      path: '/vs-consultants'
-      fullPath: '/compare/vs-consultants'
-      preLoaderRoute: typeof CompareVsConsultantsRouteImport
-      parentRoute: typeof CompareRoute
+    '/elainebogart': {
+      id: '/elainebogart'
+      path: '/elainebogart'
+      fullPath: '/elainebogart'
+      preLoaderRoute: typeof ElainebogartRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/dashboard': {
-      id: '/_authenticated/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+    '/erikavelazquez': {
+      id: '/erikavelazquez'
+      path: '/erikavelazquez'
+      fullPath: '/erikavelazquez'
+      preLoaderRoute: typeof ErikavelazquezRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-companies': {
+      id: '/for-companies'
+      path: '/for-companies'
+      fullPath: '/for-companies'
+      preLoaderRoute: typeof ForCompaniesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-portfolios': {
+      id: '/for-portfolios'
+      path: '/for-portfolios'
+      fullPath: '/for-portfolios'
+      preLoaderRoute: typeof ForPortfoliosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jenniferkasper': {
+      id: '/jenniferkasper'
+      path: '/jenniferkasper'
+      fullPath: '/jenniferkasper'
+      preLoaderRoute: typeof JenniferkasperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jianyang': {
+      id: '/jianyang'
+      path: '/jianyang'
+      fullPath: '/jianyang'
+      preLoaderRoute: typeof JianyangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lauramerling': {
+      id: '/lauramerling'
+      path: '/lauramerling'
+      fullPath: '/lauramerling'
+      preLoaderRoute: typeof LauramerlingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marknewhouse': {
+      id: '/marknewhouse'
+      path: '/marknewhouse'
+      fullPath: '/marknewhouse'
+      preLoaderRoute: typeof MarknewhouseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/meetveep': {
+      id: '/meetveep'
+      path: '/meetveep'
+      fullPath: '/meetveep'
+      preLoaderRoute: typeof MeetveepRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/memberdashboard': {
+      id: '/memberdashboard'
+      path: '/memberdashboard'
+      fullPath: '/memberdashboard'
+      preLoaderRoute: typeof MemberdashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/munawarahmed': {
+      id: '/munawarahmed'
+      path: '/munawarahmed'
+      fullPath: '/munawarahmed'
+      preLoaderRoute: typeof MunawarahmedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/operators': {
+      id: '/operators'
+      path: '/operators'
+      fullPath: '/operators'
+      preLoaderRoute: typeof OperatorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proof': {
+      id: '/proof'
+      path: '/proof'
+      fullPath: '/proof'
+      preLoaderRoute: typeof ProofRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seanpark': {
+      id: '/seanpark'
+      path: '/seanpark'
+      fullPath: '/seanpark'
+      preLoaderRoute: typeof SeanparkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/victoriakasumu': {
+      id: '/victoriakasumu'
+      path: '/victoriakasumu'
+      fullPath: '/victoriakasumu'
+      preLoaderRoute: typeof VictoriakasumuRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin': {
       id: '/_authenticated/admin'
       path: '/admin'
       fullPath: '/admin'
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/dashboard': {
+      id: '/_authenticated/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/portal': {
@@ -1096,18 +1047,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPortalRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/compare/vs-consultants': {
+      id: '/compare/vs-consultants'
+      path: '/vs-consultants'
+      fullPath: '/compare/vs-consultants'
+      preLoaderRoute: typeof CompareVsConsultantsRouteImport
+      parentRoute: typeof CompareRoute
+    }
+    '/compare/vs-executive-search': {
+      id: '/compare/vs-executive-search'
+      path: '/vs-executive-search'
+      fullPath: '/compare/vs-executive-search'
+      preLoaderRoute: typeof CompareVsExecutiveSearchRouteImport
+      parentRoute: typeof CompareRoute
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/ai-operators': {
+      id: '/services/ai-operators'
+      path: '/ai-operators'
+      fullPath: '/services/ai-operators'
+      preLoaderRoute: typeof ServicesAiOperatorsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/executive-bench': {
+      id: '/services/executive-bench'
+      path: '/executive-bench'
+      fullPath: '/services/executive-bench'
+      preLoaderRoute: typeof ServicesExecutiveBenchRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/fractional-cfo': {
+      id: '/services/fractional-cfo'
+      path: '/fractional-cfo'
+      fullPath: '/services/fractional-cfo'
+      preLoaderRoute: typeof ServicesFractionalCfoRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/interim': {
+      id: '/services/interim'
+      path: '/interim'
+      fullPath: '/services/interim'
+      preLoaderRoute: typeof ServicesInterimRouteImport
+      parentRoute: typeof ServicesRoute
+    }
     '/_authenticated/portal/': {
       id: '/_authenticated/portal/'
       path: '/'
       fullPath: '/portal/'
       preLoaderRoute: typeof AuthenticatedPortalIndexRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/operator/': {
-      id: '/_authenticated/portal/operator/'
-      path: '/operator'
-      fullPath: '/portal/operator/'
-      preLoaderRoute: typeof AuthenticatedPortalOperatorIndexRouteImport
       parentRoute: typeof AuthenticatedPortalRouteRoute
     }
     '/_authenticated/portal/client/': {
@@ -1117,88 +1110,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPortalClientIndexRouteImport
       parentRoute: typeof AuthenticatedPortalRouteRoute
     }
-    '/_authenticated/portal/operator/support': {
-      id: '/_authenticated/portal/operator/support'
-      path: '/operator/support'
-      fullPath: '/portal/operator/support'
-      preLoaderRoute: typeof AuthenticatedPortalOperatorSupportRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/operator/profile': {
-      id: '/_authenticated/portal/operator/profile'
-      path: '/operator/profile'
-      fullPath: '/portal/operator/profile'
-      preLoaderRoute: typeof AuthenticatedPortalOperatorProfileRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/operator/payments': {
-      id: '/_authenticated/portal/operator/payments'
-      path: '/operator/payments'
-      fullPath: '/portal/operator/payments'
-      preLoaderRoute: typeof AuthenticatedPortalOperatorPaymentsRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/operator/invitations': {
-      id: '/_authenticated/portal/operator/invitations'
-      path: '/operator/invitations'
-      fullPath: '/portal/operator/invitations'
-      preLoaderRoute: typeof AuthenticatedPortalOperatorInvitationsRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/operator/availability': {
-      id: '/_authenticated/portal/operator/availability'
-      path: '/operator/availability'
-      fullPath: '/portal/operator/availability'
-      preLoaderRoute: typeof AuthenticatedPortalOperatorAvailabilityRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/operator/assignments': {
-      id: '/_authenticated/portal/operator/assignments'
-      path: '/operator/assignments'
-      fullPath: '/portal/operator/assignments'
-      preLoaderRoute: typeof AuthenticatedPortalOperatorAssignmentsRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/operator/agreements': {
-      id: '/_authenticated/portal/operator/agreements'
-      path: '/operator/agreements'
-      fullPath: '/portal/operator/agreements'
-      preLoaderRoute: typeof AuthenticatedPortalOperatorAgreementsRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/client/team': {
-      id: '/_authenticated/portal/client/team'
-      path: '/client/team'
-      fullPath: '/portal/client/team'
-      preLoaderRoute: typeof AuthenticatedPortalClientTeamRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/client/support': {
-      id: '/_authenticated/portal/client/support'
-      path: '/client/support'
-      fullPath: '/portal/client/support'
-      preLoaderRoute: typeof AuthenticatedPortalClientSupportRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/client/proposals': {
-      id: '/_authenticated/portal/client/proposals'
-      path: '/client/proposals'
-      fullPath: '/portal/client/proposals'
-      preLoaderRoute: typeof AuthenticatedPortalClientProposalsRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/client/jobs': {
-      id: '/_authenticated/portal/client/jobs'
-      path: '/client/jobs'
-      fullPath: '/portal/client/jobs'
-      preLoaderRoute: typeof AuthenticatedPortalClientJobsRouteImport
-      parentRoute: typeof AuthenticatedPortalRouteRoute
-    }
-    '/_authenticated/portal/client/engagements': {
-      id: '/_authenticated/portal/client/engagements'
-      path: '/client/engagements'
-      fullPath: '/portal/client/engagements'
-      preLoaderRoute: typeof AuthenticatedPortalClientEngagementsRouteImport
+    '/_authenticated/portal/client/billing': {
+      id: '/_authenticated/portal/client/billing'
+      path: '/client/billing'
+      fullPath: '/portal/client/billing'
+      preLoaderRoute: typeof AuthenticatedPortalClientBillingRouteImport
       parentRoute: typeof AuthenticatedPortalRouteRoute
     }
     '/_authenticated/portal/client/documents': {
@@ -1208,11 +1124,95 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPortalClientDocumentsRouteImport
       parentRoute: typeof AuthenticatedPortalRouteRoute
     }
-    '/_authenticated/portal/client/billing': {
-      id: '/_authenticated/portal/client/billing'
-      path: '/client/billing'
-      fullPath: '/portal/client/billing'
-      preLoaderRoute: typeof AuthenticatedPortalClientBillingRouteImport
+    '/_authenticated/portal/client/engagements': {
+      id: '/_authenticated/portal/client/engagements'
+      path: '/client/engagements'
+      fullPath: '/portal/client/engagements'
+      preLoaderRoute: typeof AuthenticatedPortalClientEngagementsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/jobs': {
+      id: '/_authenticated/portal/client/jobs'
+      path: '/client/jobs'
+      fullPath: '/portal/client/jobs'
+      preLoaderRoute: typeof AuthenticatedPortalClientJobsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/proposals': {
+      id: '/_authenticated/portal/client/proposals'
+      path: '/client/proposals'
+      fullPath: '/portal/client/proposals'
+      preLoaderRoute: typeof AuthenticatedPortalClientProposalsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/support': {
+      id: '/_authenticated/portal/client/support'
+      path: '/client/support'
+      fullPath: '/portal/client/support'
+      preLoaderRoute: typeof AuthenticatedPortalClientSupportRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/client/team': {
+      id: '/_authenticated/portal/client/team'
+      path: '/client/team'
+      fullPath: '/portal/client/team'
+      preLoaderRoute: typeof AuthenticatedPortalClientTeamRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/': {
+      id: '/_authenticated/portal/operator/'
+      path: '/operator'
+      fullPath: '/portal/operator/'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorIndexRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/agreements': {
+      id: '/_authenticated/portal/operator/agreements'
+      path: '/operator/agreements'
+      fullPath: '/portal/operator/agreements'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorAgreementsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/assignments': {
+      id: '/_authenticated/portal/operator/assignments'
+      path: '/operator/assignments'
+      fullPath: '/portal/operator/assignments'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorAssignmentsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/availability': {
+      id: '/_authenticated/portal/operator/availability'
+      path: '/operator/availability'
+      fullPath: '/portal/operator/availability'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorAvailabilityRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/invitations': {
+      id: '/_authenticated/portal/operator/invitations'
+      path: '/operator/invitations'
+      fullPath: '/portal/operator/invitations'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorInvitationsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/payments': {
+      id: '/_authenticated/portal/operator/payments'
+      path: '/operator/payments'
+      fullPath: '/portal/operator/payments'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorPaymentsRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/profile': {
+      id: '/_authenticated/portal/operator/profile'
+      path: '/operator/profile'
+      fullPath: '/portal/operator/profile'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorProfileRouteImport
+      parentRoute: typeof AuthenticatedPortalRouteRoute
+    }
+    '/_authenticated/portal/operator/support': {
+      id: '/_authenticated/portal/operator/support'
+      path: '/operator/support'
+      fullPath: '/portal/operator/support'
+      preLoaderRoute: typeof AuthenticatedPortalOperatorSupportRouteImport
       parentRoute: typeof AuthenticatedPortalRouteRoute
     }
   }
