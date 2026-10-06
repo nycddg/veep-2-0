@@ -8,7 +8,8 @@ type FooterLink =
       kind: "route";
       to: "/pricing" | "/faq" | "/contact" | "/privacy" | "/terms" | "/join" | "/about" | "/for-portfolios";
       label: string;
-    };
+    }
+  | { kind: "href"; href: string; label: string };
 
 const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
   {
@@ -18,6 +19,9 @@ const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
       { kind: "hash", hash: "offer", label: "Engagements" },
       { kind: "hash", hash: "proof", label: "Proof" },
       { kind: "hash", hash: "faq", label: "Mini FAQ" },
+      // Absolute www — /feeds is Gushwork overlay, not a veep-2-0 route.
+      // Do not point at Gushwork staging/test copy.
+      { kind: "href", href: "https://www.veep.work/feeds", label: "Feeds" },
     ],
   },
   {
@@ -80,6 +84,10 @@ export function SiteFooter() {
                       <Link to="/" hash={l.hash} className="group motion-link inline-flex items-center min-h-11 text-sm text-cream/90 hover:text-cream">
                         <span className="motion-underline">{l.label}</span>
                       </Link>
+                    ) : l.kind === "href" ? (
+                      <a href={l.href} className="group motion-link inline-flex items-center min-h-11 text-sm text-cream/90 hover:text-cream">
+                        <span className="motion-underline">{l.label}</span>
+                      </a>
                     ) : (
                       <Link to={l.to} viewTransition className="group motion-link inline-flex items-center min-h-11 text-sm text-cream/90 hover:text-cream">
                         <span className="motion-underline">{l.label}</span>
