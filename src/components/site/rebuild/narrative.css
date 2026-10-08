@@ -1,0 +1,221 @@
+/* Selected narrative ideas, expressed in the existing editorial system. */
+.rebuild .ve-mandate-outcome {
+  margin-top: 20px;
+  font-size: 19px;
+  line-height: 1.4;
+}
+.rebuild .ve-mandate-outcome > span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  margin-bottom: 6px;
+  color: #505b6c;
+}
+.rebuild .ve-fund-entry-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  align-items: start;
+  gap: 100px;
+  margin-top: 48px;
+}
+.rebuild .ve-company-entry {
+  padding-top: 32px;
+}
+.rebuild .ve-company-entry h3 {
+  font-size: 38px;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin: 22px 0;
+}
+.rebuild .ve-company-entry > p:not(.ve-kicker) {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--rb-muted);
+  max-width: 38ch;
+  margin-top: 16px;
+}
+.rebuild .ve-company-entry > a {
+  margin-top: 30px;
+}
+.rebuild .ve-capacity-brief {
+  background: var(--ve-paper);
+  color: var(--ve-ink);
+  padding: 36px 40px;
+  border-top: 5px solid var(--ve-blue);
+}
+.rebuild .ve-capacity-brief-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+}
+.rebuild .ve-capacity-brief-label > span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.rebuild .ve-capacity-brief h3 {
+  font-size: 36px;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin-top: 24px;
+}
+.rebuild .ve-capacity-brief > p {
+  font-size: 18px;
+  line-height: 1.55;
+  margin-top: 18px;
+}
+.rebuild .ve-capacity-brief dl {
+  margin: 28px 0 20px;
+}
+.rebuild .ve-capacity-brief dl > div {
+  padding: 18px 0;
+  border-top: 1px solid #10182926;
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+  gap: 25px;
+}
+.rebuild .ve-capacity-brief dt {
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.rebuild .ve-capacity-brief dd {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #4c5360;
+}
+.rebuild .ve-capacity-brief .rb-link {
+  color: #345486;
+  border-color: #345486;
+}
+.rebuild .ve-agents-section {
+  background: var(--rb-canvas);
+  color: var(--rb-text);
+  padding: 48px 0;
+}
+.rebuild .ve-agent-layout .ve-title {
+  font-size: 36px;
+}
+.rebuild .ve-agent-layout .ve-body,
+.rebuild .ve-agent-terms {
+  color: var(--rb-muted);
+}
+.rebuild .ve-agent-preview {
+  background: var(--rb-raised);
+  color: var(--rb-text);
+  padding: 30px;
+  border: 1px solid var(--rb-rule);
+}
+.rebuild .ve-agent-preview h3 {
+  margin-top: 20px;
+  font-size: 28px;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+.rebuild .ve-agent-preview ol {
+  margin-top: 26px;
+}
+.rebuild .ve-agent-preview li {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  gap: 20px;
+  padding: 16px 0;
+  border-top: 1px solid var(--rb-rule);
+}
+.rebuild .ve-agent-preview li > span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding-top: 3px;
+  color: var(--rb-link);
+}
+.rebuild .ve-agent-preview li > p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.rebuild .ve-agent-preview figcaption {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 18px;
+  color: var(--rb-muted);
+}
+.rebuild .ve-agent-preview figcaption > span {
+  display: block;
+  margin-top: 12px;
+}
+@media (max-width: 1100px) {
+  .rebuild .ve-fund-entry-grid {
+    gap: 48px;
+  }
+  .rebuild .ve-capacity-brief {
+    padding: 30px;
+  }
+  .rebuild .ve-capacity-brief dl > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+@media (max-width: 800px) {
+  .rebuild .ve-fund-entry-grid {
+    grid-template-columns: 0.8fr 1fr;
+    gap: 32px;
+  }
+  .rebuild .ve-company-entry h3 {
+    font-size: 30px;
+  }
+  .rebuild .ve-capacity-brief-label {
+    display: block;
+  }
+  .rebuild .ve-capacity-brief-label > span {
+    display: block;
+    margin-top: 12px;
+  }
+  .rebuild .ve-capacity-brief h3 {
+    font-size: 30px;
+  }
+  .rebuild .ve-capacity-brief {
+    padding: 26px;
+  }
+  .rebuild .ve-agent-preview {
+    padding: 28px;
+  }
+}
+@media (max-width: 560px) {
+  .rebuild .ve-mandate-outcome {
+    font-size: 17px;
+  }
+  .rebuild .ve-fund-entry-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 30px;
+  }
+  .rebuild .ve-company-entry {
+    padding-top: 0;
+  }
+  .rebuild .ve-company-entry h3 {
+    font-size: 32px;
+    margin-top: 18px;
+  }
+  .rebuild .ve-company-entry > p:not(.ve-kicker) {
+    font-size: 17px;
+  }
+  .rebuild .ve-capacity-brief {
+    padding: 26px 22px;
+  }
+  .rebuild .ve-capacity-brief > p {
+    font-size: 17px;
+  }
+  .rebuild .ve-agent-preview {
+    padding: 26px 22px;
+  }
+  .rebuild .ve-agent-layout .ve-title {
+    font-size: 30px;
+  }
+  .rebuild .ve-agent-preview h3 {
+    font-size: 26px;
+  }
+  .rebuild .ve-agent-preview li {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+}

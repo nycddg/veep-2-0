@@ -200,8 +200,8 @@ function Page() {
             </h1>
             <div>
               <p>
-                When the work sits between functions, depends too much on you, or needs capacity
-                your team cannot spare, Veep puts a lead operating partner in charge.
+                The business needs to move, and your team is already at capacity. Veep puts a lead
+                operating partner in charge of the work that keeps coming back to you.
               </p>
               <BookLink />
             </div>
@@ -356,7 +356,7 @@ function Page() {
 
       <Section id="alternatives" pad="compact">
         <Container className="ve-container">
-          <h2 className="rb-utility-title">When the usual options leave a gap.</h2>
+          <h2 className="rb-utility-title">Choose the help the job requires.</h2>
           <table className="rb-options mt-10 w-full border-collapse">
             <thead>
               <tr className="border-b border-[var(--rb-rule)]">
@@ -486,13 +486,14 @@ function Page() {
       <Section className="ve-close">
         <Container className="ve-container ve-close-layout">
           <h2>
-            Tell us what
-            <br /> needs to move<span className="ve-period">.</span>
+            Bring the
+            <br /> stuck priority<span className="ve-period">.</span>
           </h2>
           <div>
             <p>
-              Bring the priority, the urgency, and what a good outcome would look like. In a
-              30-minute intro call, we’ll discuss the work and whether Veep is the right fit.
+              You don’t need to know the title or team. Tell us what changed, what needs to move,
+              and what happens if it doesn’t. In a 30-minute intro call, we’ll clarify the work and
+              whether Veep is the right fit.
             </p>
             <BookLink />
           </div>

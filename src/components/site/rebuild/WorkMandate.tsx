@@ -7,7 +7,8 @@ const work = [
     title: "Capital readiness",
     situation: "A raise, financing, or transaction is approaching.",
     detail:
-      "Build the models, reporting, and materials the process needs. Coordinate preparation so the business is ready for investor, lender, or buyer scrutiny.",
+      "Build the financial model, reporting, and materials for investor, lender, or buyer scrutiny.",
+    outcome: "Financials the business can stand behind.",
     papers: ["Financial model", "Reporting", "Investor materials"],
   },
   {
@@ -15,7 +16,8 @@ const work = [
     title: "Revenue repeatability",
     situation: "Growth still depends on the founder.",
     detail:
-      "Clarify customer focus, positioning, and pricing. Put pipeline management and a sales cadence in place that the team can run.",
+      "Clarify customer focus, positioning, and pricing. Establish pipeline management and a sales cadence.",
+    outcome: "Growth the team can run beyond the founder.",
     papers: ["Customer focus", "Pipeline", "Sales cadence"],
   },
   {
@@ -23,7 +25,8 @@ const work = [
     title: "Commercial expansion",
     situation: "The opportunity is clear. The operating plan is missing.",
     detail:
-      "Build the business case and operating plan for a new market, product, offer, or channel. Lead the launch and the coordination it requires across the business.",
+      "Build the business case and operating plan for a new market, product, offer, or channel. Lead the launch and coordinate the functions it needs.",
+    outcome: "A sound expansion decision and a plan to act on.",
     papers: ["Business case", "Operating plan", "Launch plan"],
   },
   {
@@ -31,7 +34,8 @@ const work = [
     title: "Leadership gaps",
     situation: "A critical function needs someone in charge.",
     detail:
-      "Give the work a senior owner while the team, role, or permanent hire takes shape. Maintain continuity and prepare a documented handoff.",
+      "Put a senior operator in charge while the permanent role takes shape. Maintain continuity and prepare the handoff.",
+    outcome: "Critical work keeps moving through the transition.",
     papers: ["Workplan", "Team cadence", "Handoff"],
   },
 ];
@@ -100,6 +104,10 @@ export function WorkMandate() {
             <p className="ve-kicker">Illustrative scope · not a client record</p>
             <h3>{item.situation}</h3>
             <p className="ve-mandate-detail">{item.detail}</p>
+            <p className="ve-mandate-outcome">
+              <span>Working toward</span>
+              {item.outcome}
+            </p>
             <div className="ve-paper-stack" aria-label="Illustrative work products">
               {item.papers.map((paper, i) => (
                 <div key={paper} className={`ve-work-paper ve-work-paper-${i}`}>
