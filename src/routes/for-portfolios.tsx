@@ -1,325 +1,376 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
-import { PageHero } from "@/components/site/PageHero";
-import { FooterCTA } from "@/components/site/FooterCTA";
-import { Reveal } from "@/components/site/Reveal";
-import { OperatorSpotlightChapter } from "@/components/site/OperatorSpotlightChapter";
-import { operatorsForFunds } from "@/lib/spotlight-operators";
+import { createFileRoute } from "@tanstack/react-router";
 import { ogImageMeta } from "@/lib/seo";
+import { BookLink } from "@/components/site/rebuild/BookLink";
+import { Container } from "@/components/site/rebuild/Container";
+import { operatorAsset } from "@/components/site/rebuild/operatorAsset";
+import { Portrait } from "@/components/site/rebuild/Portrait";
+import { Section } from "@/components/site/rebuild/Section";
+import { TextLink } from "@/components/site/rebuild/TextLink";
 
-const problems = [
+const TITLE = "For Funds | Veep";
+const DESCRIPTION =
+  "Portfolio operating capacity for funds and portfolio owners. One operating relationship, with delivery scoped company by company.";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "For Funds",
+  serviceType: "Portfolio operating capacity",
+  provider: { "@type": "Organization", name: "Veep" },
+  description: DESCRIPTION,
+};
+
+const stages = [
   {
-    t: "Before close, the work is already moving.",
-    d: "Diligence, financial models, team assessments, and operating plans compete for the same internal capacity. A clear view of the gaps helps you plan who will own the work.",
+    title: "Before close",
+    body: "Financial models, team assessments, and operating plans help identify what the business will need and who should own the work.",
   },
   {
-    t: "The 100-day plan needs owners.",
-    d: "After close, reporting, integration, commercial priorities, and people decisions arrive together. The existing team may not have the capacity to lead every workstream.",
+    title: "After close",
+    body: "Reporting, integration, commercial priorities, and people decisions arrive together. Put senior ownership around the workstreams the team cannot absorb.",
   },
   {
-    t: "Leadership transitions leave work exposed.",
-    d: "A planned succession, an unexpected exit, or an open executive seat can slow execution. The company needs ownership while the longer-term leadership decision takes shape.",
+    title: "During ownership",
+    body: "Build commercial systems, strengthen finance and operations, and lead defined improvement mandates as the company's needs change.",
   },
   {
-    t: "The same contacts cannot cover every mandate.",
-    d: "Trusted relationships matter. But availability, functional experience, and company fit change from deal to deal. Each new priority needs the right operator and a clear scope.",
+    title: "Ahead of exit",
+    body: "Prepare the financial and operating materials, reporting, and coordination a transaction requires.",
   },
 ];
 
-const auditDeliverables = [
-  "Portfolio-wide map of leadership and execution gaps",
-  "Capacity assessment across finance, GTM, operations, product, and people",
-  "Upcoming needs across diligence, close, integration, fundraising, exit, and leadership transitions",
-  "Recommended operating capacity by company and priority",
-  "Coverage plan for interim leadership gaps",
-  "Priority shortlists for likely operating mandates",
-];
-
-const tiers = [
+const cadence = [
+  { label: "Agree once", body: "Set master terms and the operating relationship." },
   {
-    t: "Portfolio Roster",
-    p: "$75k",
-    per: "/ year · operator work billed separately",
-    best: "For private equity firms, family offices, holding companies, and independent sponsors with recurring operating needs. Retain Veep for portfolio capacity planning and priority access, then scope delivery around each company's work.",
-    items: [
-      "Portfolio-wide intake and operating capacity map",
-      "Quarterly review of priorities and capacity",
-      "Priority operator matching for portfolio companies",
-      "Vetted senior operators across finance, GTM, operations, product, and people",
-      "Agreed emergency Operator or Pod coverage terms",
-      "Included diagnostics and operator shortlists",
-      "One master services agreement",
-      "Preferred engagement rates on each statement of work",
-    ],
-    featured: true,
+    label: "Scope each mandate",
+    body: "Define the company's work and assemble the operating capacity it needs.",
+  },
+  {
+    label: "Review quarterly",
+    body: "Revisit priorities, upcoming transactions, and leadership changes across the portfolio.",
   },
 ];
 
-const steps = [
-  { n: "01", t: "Map the capacity", d: "Over 2–3 weeks, the audit identifies operating gaps, upcoming transactions, and leadership needs. We recommend where to put capacity first." },
-  { n: "02", t: "Agree the relationship", d: "Set master terms, commercial terms, IP, confidentiality, and engagement structure once, so each new mandate starts from an agreed foundation." },
-  { n: "03", t: "Scope and assign", d: "Define the company's work, assign a lead operator, and agree a statement of work. Operating engagements are scoped in 72 hours and started in under 10 days." },
-  { n: "04", t: "Review the portfolio", d: "Each quarter, revisit priorities, upcoming transactions, and leadership changes. Adjust the capacity plan as the portfolio's needs evolve." },
+const operators = [
+  {
+    name: "Alan Poussaint",
+    role: "Finance Operating Partner",
+    bio: "Former Principal at Lincolnshire Management and CFO of a Rocket Internet portfolio company. Brings experience across private equity, strategic finance, and company building.",
+  },
+  {
+    name: "Sean Park",
+    role: "People Operating Partner",
+    bio: "Former CPO at Activant Capital, with experience in portfolio talent strategy, organization design, and interim people leadership.",
+  },
+];
+
+const outputs = [
+  {
+    title: "Capacity map",
+    body: "Leadership and execution gaps across finance, GTM, operations, product, and people, organized by company and priority.",
+  },
+  {
+    title: "Upcoming needs",
+    body: "Operating requirements around diligence, close, integration, fundraising, exit, and leadership transitions.",
+  },
+  {
+    title: "Recommended coverage",
+    body: "Suggested operating capacity, interim leadership coverage, and priority operator shortlists for likely mandates.",
+  },
 ];
 
 const included = [
-  { t: "Included in the roster", d: "Priority access, portfolio capacity planning, quarterly reviews, agreed emergency coverage terms, preferred rates, and included diagnostics. Veep manages the operating relationship across engagements." },
-  { t: "Scoped and billed separately", d: "Operator delivery is priced by company and statement of work. Each scope defines the work, lead owner, and responsibilities. Fund and company leaders keep strategic decisions and approvals." },
+  "Portfolio intake and operating capacity planning",
+  "Quarterly reviews of priorities and capacity",
+  "Priority operator matching and shortlists",
+  "Included diagnostics",
+  "Agreed emergency Operator or Pod coverage terms",
+  "One master services agreement",
+  "Preferred rates on separately scoped engagements",
 ];
 
 export const Route = createFileRoute("/for-portfolios")({
   head: () => ({
     meta: [
-      { title: "For Funds | Portfolio operating capacity" },
-      {
-        name: "description",
-        content:
-          "Veep gives funds senior ownership across diligence, post-close execution, leadership gaps, and value creation without building a full internal portfolio ops team.",
-      },
-      { property: "og:title", content: "For Funds — Portfolio operating capacity" },
-      {
-        property: "og:description",
-        content: "Senior ownership across the portfolio. Scope the work company by company.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: "https://www.veep.work/for-portfolios" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
       ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/for-portfolios" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(serviceSchema) }],
   }),
   component: Page,
 });
 
 function Page() {
   return (
-    <>
-      <PageHero
-        eyebrow="FOR FUNDS"
-        title="Portfolio operating capacity. Ready when the work is."
-        sub="Veep gives funds senior ownership across diligence, post-close execution, leadership gaps, and value creation without building a full internal portfolio ops team. We scope each company's work, assign a lead operating partner, and stay accountable for delivery, quality, and continuity."
-        primaryLabel="Request a capacity audit"
-        primaryTo="/contact"
-        primarySearch={{ intent: "audit" }}
-        secondaryLabel="See pricing"
-        secondaryTo="/pricing"
-      />
-
-      {/* Problem */}
-      <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-12 md:mb-14">
-            <div className="eyebrow">
-              Where portfolios lose time
+    <div className="rebuild">
+      <Section pad="none" className="rb-funds-hero">
+        <Container>
+          <p className="rb-mono text-[14px] leading-[1.5] text-[var(--rb-link)]">For funds</p>
+          <h1 className="rb-h1 rb-funds-title mt-4">Operating capacity across your portfolio.</h1>
+          <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:gap-6">
+            <div className="lg:col-span-6">
+              <p className="rb-deck">
+                Veep gives private equity firms, family offices, holding companies, and independent
+                sponsors senior operating capacity without building a full internal platform team.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
+                <BookLink />
+                <TextLink hash="audit">Explore the capacity audit</TextLink>
+              </div>
             </div>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              The investment plan still needs operators.
-            </h2>
+            <p className="rb-relationship-note text-[18px] leading-[1.55] lg:col-span-4 lg:col-start-9">
+              Your fund has one operating relationship. Each company gets a scoped engagement and a
+              lead owner for the work.
+            </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-            {problems.map((p, i) => (
-              <div key={p.t} className="motion-row-wash rounded-[6px] bg-surface-card p-6 sm:p-7">
-                <div className="eyebrow">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div className="mt-3 font-serif font-medium text-xl text-cream tracking-tight leading-snug">
-                  {p.t}
-                </div>
-                <p className="mt-2 text-base text-stone leading-relaxed">
-                  {p.d}
+        </Container>
+      </Section>
+
+      <Section id="lifecycle" pad="none" className="pb-14 pt-8 md:pb-16 lg:pb-24 lg:pt-10">
+        <Container>
+          <h2 className="rb-utility-title">The investment plan still needs operators.</h2>
+          <div className="relative mt-10">
+            <div
+              className="pointer-events-none absolute left-0 right-0 top-[4px] hidden h-px bg-[var(--rb-rule)] lg:block"
+              aria-hidden
+            />
+            <ol className="border-l border-[var(--rb-rule)] pl-6 lg:grid lg:grid-cols-4 lg:gap-6 lg:border-l-0 lg:pl-0">
+              {stages.map((stage) => (
+                <li key={stage.title} className="relative py-6 lg:py-0 lg:pt-6">
+                  <span
+                    aria-hidden
+                    className="absolute -left-[29px] top-8 h-2.5 w-2.5 rounded-full bg-[var(--rb-text)] lg:left-0 lg:top-0"
+                  />
+                  <h3 className="text-[24px] font-medium leading-[1.2] lg:text-[26px]">
+                    {stage.title}
+                  </h3>
+                  <p className="mt-3 text-[18px] leading-[1.55] text-[var(--rb-muted)]">
+                    {stage.body}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <p className="mt-8 border-t border-[var(--rb-coral)] pt-4 text-[18px] leading-[1.5] lg:mt-10">
+            Leadership changes can happen at any point. Veep can provide ownership while the
+            longer-term leadership decision takes shape.
+          </p>
+        </Container>
+      </Section>
+
+      <Section id="relationship" tone="raised">
+        <Container>
+          <h2 className="rb-h2 max-w-[30ch]">
+            One operating relationship. Work scoped company by company.
+          </h2>
+          <div className="rb-portfolio-band mt-12">
+            <div className="rb-portfolio-band-title">
+              <h3 className="text-[24px] font-medium leading-[1.2] lg:text-[28px]">
+                Across the portfolio
+              </h3>
+              <p className="mt-3 text-[16px] leading-[1.45] text-[var(--rb-muted)]">
+                One master agreement
+              </p>
+            </div>
+            <p className="rb-body rb-portfolio-intro">
+              Capacity planning, priority operator access, and quarterly reviews help the fund
+              prepare for upcoming needs. One master agreement establishes the relationship.
+            </p>
+            <ul className="rb-shared-capacity">
+              {["Capacity planning", "Priority operator access", "Quarterly review"].map((item) => (
+                <li key={item} className="text-[18px] leading-[1.4]">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rb-company-branches">
+            {["Capital readiness", "Commercial expansion", "Leadership coverage"].map((work) => (
+              <article key={work} className="rb-company-mandate">
+                <h4 className="text-[22px] font-medium leading-[1.25]">{work}</h4>
+                <p className="mt-2 text-[16px] leading-[1.45] text-[var(--rb-muted)]">
+                  Separate scope + lead owner
+                </p>
+                <p className="rb-mandate-fee mt-6 text-[16px] leading-[1.45]">
+                  Separate statement of work and delivery fee
+                </p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-5 text-[16px] leading-[1.45] text-[var(--rb-muted)]">
+            Illustrative company mandates, not named clients.
+          </p>
+          <h3 className="mt-10 text-[24px] font-medium leading-[1.2] lg:text-[28px]">
+            Inside each company
+          </h3>
+          <p className="rb-body mt-4">
+            Each engagement defines the work, lead owner, responsibilities, and price in a separate
+            statement of work. Veep manages scope, quality, and continuity through delivery.
+          </p>
+          <ol className="mt-12 grid gap-6 border-t border-[var(--rb-rule)] pt-8 md:grid-cols-3">
+            {cadence.map((item) => (
+              <li key={item.label}>
+                <h3 className="text-[18px] font-medium leading-[1.4]">{item.label}</h3>
+                <p className="mt-2 text-[16px] leading-[1.5] text-[var(--rb-muted)]">{item.body}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="rb-support mt-10 max-w-[62ch]">
+            Fund and company leaders retain strategic decisions and approvals. Veep can also support
+            an existing operating team with specialist or additional capacity around a defined
+            mandate.
+          </p>
+        </Container>
+      </Section>
+
+      <Section id="operators">
+        <Container>
+          <h2 className="rb-h2">Experience inside investment firms and operating companies.</h2>
+          <div className="mt-12 grid gap-12 md:grid-cols-2">
+            {operators.map((person) => {
+              const photo = operatorAsset(person.name);
+              return (
+                <article key={person.name}>
+                  <Portrait
+                    src={photo.src}
+                    objectPosition={photo.objectPosition}
+                    scale={photo.scale}
+                    className="aspect-[4/5] w-full max-w-[250px]"
+                  />
+                  <h3 className="mt-5 text-[26px] font-medium leading-[1.2]">{person.name}</h3>
+                  <p className="mt-2 text-[16px] leading-[1.45]">{person.role}</p>
+                  <p className="mt-3 max-w-[36ch] text-[18px] leading-[1.55] text-[var(--rb-muted)]">
+                    {person.bio}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+          <p className="rb-caption rb-measure mt-10 text-[var(--rb-muted)]">
+            Experience shown is from the operators' careers, including roles before Veep. We select
+            from 75+ vetted senior operators for the mandate and the business.
+          </p>
+        </Container>
+      </Section>
+
+      <Section id="audit">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-6">
+            <div className="lg:col-span-5">
+              <p className="rb-support">Portfolio Capacity Audit</p>
+              <h2 className="rb-h2 mt-4">See where operating capacity will be needed next.</h2>
+              <p className="rb-body mt-6">
+                Over 2-3 weeks, we map current priorities and likely needs over the next 6-12
+                months. The audit identifies where each company needs senior ownership, specialist
+                support, or a plan for leadership coverage.
+              </p>
+              <TextLink to="/contact" search={{ intent: "audit" }} className="mt-6">
+                Request a capacity audit
+              </TextLink>
+            </div>
+            <div className="rb-audit-structure lg:col-span-7">
+              <p className="text-[16px] leading-[1.45] text-[var(--rb-muted)]">
+                Illustrative structure, not client findings.
+              </p>
+              <div className="mt-6 grid gap-5">
+                {[
+                  ["Company + priority", "Capital readiness"],
+                  ["Upcoming need", "A raise, financing, or transaction is approaching"],
+                  ["Recommended coverage", "Finance support with a lead operating partner"],
+                ].map(([label, sample], index) => (
+                  <div key={label} className="rb-audit-annotation">
+                    <span className="rb-mono text-[14px] text-[var(--rb-muted)]" aria-hidden>
+                      0{index + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-[20px] font-medium leading-[1.3] lg:text-[22px]">
+                        {label}
+                      </h3>
+                      <p className="mt-2 text-[16px] leading-[1.5] text-[var(--rb-muted)]">
+                        {sample}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {outputs.map((item) => (
+              <div key={item.title}>
+                <h3 className="text-[20px] font-medium leading-[1.3]">{item.title}</h3>
+                <p className="mt-3 text-[16px] leading-[1.55] text-[var(--rb-muted)]">
+                  {item.body}
                 </p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      {/* Capacity Audit entry point */}
-      <Reveal as="section" className="py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-12 md:mb-14">
-            <div className="eyebrow">
-              Start here
+      <Section id="roster" tone="field">
+        <Container>
+          <h2 className="rb-h2">Keep the operating relationship in place.</h2>
+          <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-6">
+            <div className="lg:col-span-4">
+              <h3 className="text-[26px] font-medium leading-[1.2]">Portfolio Roster</h3>
+              <p className="rb-mono rb-roster-price mt-4 text-[var(--rb-text)]">$75k / year</p>
+              <p className="mt-3 max-w-[24ch] text-[18px] leading-[1.45]">
+                Operator delivery is scoped and billed separately.
+              </p>
             </div>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Portfolio Capacity Audit
-            </h2>
-            <p className="mt-6 text-stone leading-relaxed">
-              Find the operating gaps before they become urgent introductions. We map current priorities and likely needs over the next 6–12 months, then identify where each company needs senior ownership, specialist support, or a plan for leadership coverage.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12 motion-hairline pt-12">
-            <div>
-              <div className="eyebrow">
-                2–3 week audit
-              </div>
-              <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">Deliverables</div>
-              <ul className="mt-6 space-y-3 text-sm text-stone">
-                {auditDeliverables.map((d) => (
-                  <li key={d} className="flex items-baseline gap-3">
-                    <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
-                    <span>{d}</span>
-                  </li>
+            <div className="lg:col-span-8">
+              <p className="rb-body">
+                For funds and portfolio owners with recurring operating needs. Retain Veep for
+                portfolio capacity planning and priority access, then scope delivery around each
+                company's work.
+              </p>
+              <h3 className="mt-10 text-[18px] font-medium leading-[1.4]">
+                Included in the annual relationship
+              </h3>
+              <ul className="rb-support mt-4 list-disc space-y-2 pl-5">
+                {included.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
-            </div>
-            <div className="md:border-l md:border-white/10 md:pl-12">
-              <div className="eyebrow">
-                After the audit
-              </div>
-              <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">
-                Put an owner around each priority.
-              </div>
-              <p className="mt-4 text-base text-stone leading-relaxed">
-                Turn the capacity map into scoped engagements. Veep assigns a lead operating partner and the support each job requires. Your fund keeps the portfolio view; each company gets a clear owner for the work.
+              <h3 className="mt-10 text-[18px] font-medium leading-[1.4]">
+                Scoped company by company
+              </h3>
+              <p className="rb-body mt-4">
+                Delivery is defined and priced in each statement of work. The mandate determines
+                whether the engagement takes the shape of Advisory, Sprint, Operator, or Pod. Fund
+                and company leaders retain strategic decisions and approvals.
               </p>
-              <ul className="mt-6 space-y-2 text-sm text-stone">
-                <li className="flex items-baseline gap-3">
-                  <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
-                  <span>
-                    Operator work is{" "}
-                    <Link
-                      to="/pricing"
-                      className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70"
-                    >
-                      billed separately by scope
-                    </Link>
-                  </span>
-                </li>
-                <li className="flex items-baseline gap-3">
-                  <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
-                  <span>One master agreement; a statement of work per engagement</span>
-                </li>
-                <li className="flex items-baseline gap-3">
-                  <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
-                  <span>
-                    <a
-                      href="#roster"
-                      className="motion-link text-cream underline underline-offset-4 decoration-white/30 hover:decoration-white/70"
-                    >
-                      Portfolio Roster
-                    </a>
-                    : $75k/year, with preferred engagement rates
-                  </span>
-                </li>
-              </ul>
+              <p className="rb-support mt-4">
+                Operating engagements are scoped in 72 hours and started in under 10 days.
+              </p>
+              <TextLink to="/pricing" hash="tiers" className="mt-4">
+                See engagement pricing
+              </TextLink>
             </div>
           </div>
-        </div>
-      </Reveal>
+        </Container>
+      </Section>
 
-      {/* Operator spotlight — the home /#operators chapter verbatim (Dave
-          08.17 PASS4: home is the source of truth, the 75+/72h remix retires) */}
-      <Reveal as="section" className="bg-surface-raised py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
-          <OperatorSpotlightChapter
-            headline="Senior operators for consequential work."
-            sub="Operators with experience across transactions, integrations, leadership transitions, and company building. We select for the mandate and the business, then put clear ownership around delivery."
-            operators={operatorsForFunds()}
-          />
-        </div>
-      </Reveal>
-
-      {/* Roster tiers */}
-      <section id="roster" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-12 md:mb-14">
-            <div className="eyebrow">
-              Portfolio operating capacity
-            </div>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              One operating relationship across the portfolio.
-            </h2>
-          </div>
-          <div className="max-w-2xl mx-auto space-y-4">
-            {tiers.map((t) => (
-              <div
-                key={t.t}
-                className="motion-row-wash rounded-[6px] bg-surface-card p-5 sm:p-8"
-              >
-                <div className="font-serif font-medium text-xl text-cream">{t.t}</div>
-                <div className="mt-2 font-mono text-sm text-cream tabular-nums break-words">
-                  {t.p}{" "}<span className="text-stone whitespace-normal">{t.per}</span>
-                </div>
-                <p className="mt-5 text-base text-stone leading-relaxed">{t.best}</p>
-                <ul className="mt-6 space-y-2.5 text-sm text-stone">
-                  {t.items.map((i) => (
-                    <li key={i} className="flex items-baseline gap-2.5">
-                      <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 translate-y-[-2px]" />
-                      <span>{i}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-6 pt-4">
-                  <Link
-                    to="/pricing"
-                    hash="tiers"
-                    className="group motion-link inline-flex items-center gap-1.5 text-xs text-cream/85 hover:text-cream underline underline-offset-4 decoration-white/25 hover:decoration-white/70"
-                  >
-                    See engagement pricing <ArrowRight size={12} className="motion-arrow" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-12 text-sm text-stone text-center max-w-2xl mx-auto">
-            Each mandate becomes an Advisory, Sprint, Operator, or Pod engagement, scoped separately at preferred roster rates.
+      <Section pad="compact">
+        <Container>
+          <h2 className="max-w-[18ch] text-[36px] font-medium leading-[1.15] lg:text-[40px]">
+            Where will your portfolio need operating capacity next?
+          </h2>
+          <p className="rb-body mt-4 max-w-[48ch]">
+            Bring the current company gaps and upcoming transactions. In a 30-minute intro call,
+            we'll discuss the work, the operating relationship, and whether Veep is the right fit.
           </p>
-        </div>
-      </section>
-
-      {/* How it works — drops off the roster band to raised so the two money
-          chapters stop reading as one slab */}
-      <Reveal as="section" className="bg-surface-raised py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-12 md:mb-14">
-            <div className="eyebrow">
-              How It Works
-            </div>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Master agreement once. Delivery company by company.
-            </h2>
-          </div>
-          <div className="motion-stagger grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-14 gap-y-10 md:gap-y-12 motion-hairline pt-10 md:pt-12">
-            {steps.map((s) => (
-              <div key={s.n}>
-                <div className="eyebrow">{s.n}</div>
-                <div className="mt-4 font-serif font-medium text-xl text-cream tracking-tight">{s.t}</div>
-                <p className="mt-2 text-base text-stone leading-relaxed">{s.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Reveal>
-
-      {/* Included vs. billed */}
-      <section className="py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10">
-            <div className="eyebrow">
-              What the retainer covers
-            </div>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Retain the relationship. Scope the work.
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
-            {included.map((i) => (
-              <div
-                key={i.t}
-                className="md:border-l md:border-white/10 md:pl-12 md:first:border-l-0 md:first:pl-0"
-              >
-                <div className="font-serif font-medium text-xl text-cream tracking-tight">{i.t}</div>
-                <p className="mt-2 text-base text-stone leading-relaxed">{i.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <FooterCTA
-        headline="Where does the portfolio need an owner next?"
-        sub="Book a 30-minute intro call to discuss the gaps, walk through the audit and roster model, and see whether Veep fits your firm's operating needs."
-        primaryLabel="Book intro call"
-      />
-    </>
+          <BookLink className="mt-8" />
+        </Container>
+      </Section>
+    </div>
   );
 }
