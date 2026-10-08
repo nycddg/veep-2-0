@@ -167,6 +167,61 @@ function Page() {
         </Container>
       </Section>
 
+      <Section id="audit" className="ve-audit-section ve-fund-entry">
+        <Container className="ve-container">
+          <div className="ve-section-opening">
+            <h2 className="ve-title">
+              Start with
+              <br /> the need.
+            </h2>
+            <p className="ve-body">
+              One company’s urgent mandate, or a view across the portfolio. We can start with
+              either.
+            </p>
+          </div>
+          <div className="ve-fund-entry-grid">
+            <article className="ve-company-entry">
+              <p className="ve-kicker">A known company priority</p>
+              <h3>
+                Put an owner
+                <br /> on the work now.
+              </h3>
+              <p>
+                Bring the upcoming transaction, exposed leadership seat, or initiative that keeps
+                falling back on the investment team.
+              </p>
+              <p>
+                We define the company mandate, agree the scope and price, and assemble the operating
+                capacity it needs. An urgent company mandate can start on its own.
+              </p>
+              <BookLink />
+            </article>
+            <article className="ve-capacity-brief">
+              <div className="ve-capacity-brief-label">
+                <p className="ve-kicker">Portfolio Capacity Audit</p>
+                <span>2–3 weeks</span>
+              </div>
+              <h3>See the needs ahead.</h3>
+              <p>
+                Map current priorities and likely needs over the next 6–12 months. See which
+                companies need senior ownership, specialist support, or leadership coverage.
+              </p>
+              <dl>
+                {outputs.map((item) => (
+                  <div key={item.title}>
+                    <dt>{item.title}</dt>
+                    <dd>{item.body}</dd>
+                  </div>
+                ))}
+              </dl>
+              <TextLink to="/contact" search={{ intent: "audit" }}>
+                Request a capacity audit <span aria-hidden="true">↗</span>
+              </TextLink>
+            </article>
+          </div>
+        </Container>
+      </Section>
+
       <Section id="relationship" className="ve-relationship-section">
         <Container className="ve-container">
           <div className="ve-section-opening">
@@ -246,68 +301,6 @@ function Page() {
         </Container>
       </Section>
 
-      <Section id="audit" className="ve-audit-section">
-        <Container className="ve-container">
-          <div className="ve-audit-opening">
-            <div>
-              <p className="ve-kicker">Portfolio Capacity Audit</p>
-              <h2 className="ve-title">
-                See the gaps
-                <br /> before they
-                <br /> become urgent.
-              </h2>
-              <p className="ve-body">
-                Over 2–3 weeks, we map current priorities and likely needs over the next 6–12
-                months. See where each company needs senior ownership, specialist support, or a plan
-                for leadership coverage.
-              </p>
-              <TextLink to="/contact" search={{ intent: "audit" }}>
-                Request a capacity audit <span aria-hidden="true">↗</span>
-              </TextLink>
-            </div>
-            <div className="ve-audit-sheet">
-              <div className="ve-audit-sheet-head">
-                <span>Portfolio capacity</span>
-                <span>Illustrative structure</span>
-              </div>
-              <h3>The next 6–12 months.</h3>
-              <div className="ve-audit-horizon" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-              </div>
-              <dl>
-                <div>
-                  <dt>Company priority</dt>
-                  <dd>Capital readiness</dd>
-                </div>
-                <div>
-                  <dt>Upcoming need</dt>
-                  <dd>A raise, financing, or transaction</dd>
-                </div>
-                <div>
-                  <dt>Recommended coverage</dt>
-                  <dd>Finance support with a lead operating partner</dd>
-                </div>
-              </dl>
-              <p>Illustrative audit structure, not client findings or a prescribed timeline.</p>
-            </div>
-          </div>
-          <div className="ve-audit-outputs">
-            {outputs.map((item, index) => (
-              <div key={item.title}>
-                <span aria-hidden="true">0{index + 1}</span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
       <Section id="roster" tone="field" className="ve-roster-section">
         <Container className="ve-container">
           <h2 className="rb-h2">Keep the operating relationship in place.</h2>
@@ -355,13 +348,14 @@ function Page() {
       <Section className="ve-close">
         <Container className="ve-container ve-close-layout">
           <h2>
-            What’s next
-            <br /> for the portfolio<span className="ve-period">?</span>
+            Where does the
+            <br /> portfolio need
+            <br /> an owner next<span className="ve-period">?</span>
           </h2>
           <div>
             <p>
-              Bring the company gaps and upcoming transactions. In a 30-minute intro call, we’ll
-              discuss the work, the operating relationship, and whether Veep is the right fit.
+              Bring one urgent mandate or the gaps you see across the portfolio. In a 30-minute
+              intro call, we’ll discuss the work and the right starting point.
             </p>
             <BookLink />
           </div>
