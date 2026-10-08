@@ -1,7 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { Check, Loader2 } from "lucide-react";
-import { PageHero } from "@/components/site/PageHero";
+import { PublicIntro } from "@/components/site/rebuild/PublicPage";
+import { Container } from "@/components/site/rebuild/Container";
+import { Section } from "@/components/site/rebuild/Section";
+import { TextLink } from "@/components/site/rebuild/TextLink";
+import { spotlightOperators } from "@/lib/spotlight-operators";
 import { submitApplication } from "@/lib/wix-application.functions";
 import { ogImageMeta } from "@/lib/seo";
 
@@ -12,13 +16,12 @@ export const Route = createFileRoute("/join")({
       {
         name: "description",
         content:
-          "Apply to Veep's invite-only network of senior operators. Own critical work for high-growth companies. Matched in 72 hours. Deployed in under 10 days.",
+          "Apply to join Veep's network of senior operators. Bring your experience to critical company and portfolio mandates.",
       },
       { property: "og:title", content: "Join Veep — Operator roster" },
       {
         property: "og:description",
-        content:
-          "Senior operators who embed, build, and deliver. Apply to the roster.",
+        content: "Senior operators who embed, build, and deliver. Apply to the roster.",
       },
       { property: "og:url", content: "https://www.veep.work/join" },
       ...ogImageMeta(),
@@ -31,19 +34,19 @@ export const Route = createFileRoute("/join")({
 const criteria: readonly { title: string; body: string }[] = [
   {
     title: "Senior operating experience",
-    body: "Prior seat as a founder, CEO, GM, or C-suite / SVP leader. You've owned outcomes end-to-end, not advised from the sidelines.",
+    body: "Prior experience as a founder, CEO, GM, or C-suite / SVP leader. You’ve owned decisions, teams, and delivery.",
   },
   {
     title: "Built for high impact",
-    body: "You're motivated by hands-on work, not management theater. You want to work with high-growth companies, own meaningful initiatives, win, and move on to the next challenge.\u00a0Prior consulting or interim experience is a plus, but not required.",
+    body: "You want to lead meaningful initiatives and stay close to execution. Prior consulting or interim experience is a plus, but not required.",
   },
   {
     title: "Track record in fast-paced environments",
-    body: "Bootstrapped, VC-backed, PE-backed, public — you've delivered under pressure with real constraints and short runway.",
+    body: "Experience in bootstrapped, investor-backed, or public companies. You’ve delivered with real constraints and competing priorities.",
   },
   {
     title: "References and standards to match",
-    body: "Strong references, a bias to action, and a commitment to the craft. The roster stays small on purpose.",
+    body: "Strong references, clear communication, and care for the work you leave behind. You’re comfortable being accountable for delivery.",
   },
 ];
 
@@ -172,10 +175,9 @@ function Page() {
       setSubmitted(true);
     } catch (err) {
       const raw = err instanceof Error ? err.message : "Something went wrong. Please try again.";
-      const message =
-        /invalid_enum_value|fractionalExperience|Expected 'Yes'/i.test(raw)
-          ? "Please pick Yes or No for operator/advisor experience under Add background details, or leave that section closed and try again."
-          : raw;
+      const message = /invalid_enum_value|fractionalExperience|Expected 'Yes'/i.test(raw)
+        ? "Please pick Yes or No for operator/advisor experience under Add background details, or leave that section closed and try again."
+        : raw;
       setError(message);
     } finally {
       submittingRef.current = false;
@@ -184,212 +186,262 @@ function Page() {
   };
 
   return (
-    <>
-      <PageHero
-        eyebrow="Join Veep"
-        title="An invite-only network on call for the work that cannot wait."
-        sub="Veep represents a small roster of senior operators who embed, build, and deliver. If you're ready to own the work that can't wait for high-growth companies, we want to meet you."
-        primaryLabel="Apply below"
-        primaryTo="/join"
-        primaryHash="apply"
-        secondaryLabel="See how it works"
-        secondaryTo="/how-it-works"
-      />
-
-      {/* Who we're looking for */}
-      <section className="bg-surface-raised border-b border-white/10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-28">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
-            <div className="lg:col-span-4 space-y-5">
-              <div className="eyebrow">
-                Who we're looking for
-              </div>
-              <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
-                A curated roster of business builders.
-              </h2>
-              <p className="text-stone text-base leading-relaxed max-w-md">
-                We stay small on purpose. Every operator on the roster has run
-                the seat before and can start inside two weeks.
-              </p>
-            </div>
-            <ul className="lg:col-span-8">
-              {criteria.map((c, idx) => (
-                <li
-                  key={c.title}
-                  className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 border-t border-white/10 py-6 first:border-t-0 first:pt-0"
-                >
-                  <span className="font-mono text-sm text-accent tabular-nums pt-1">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <div className="text-cream text-lg tracking-tight">
-                      {c.title}
-                    </div>
-                    <p className="mt-2 text-stone text-base leading-relaxed">
-                      {c.body}
-                    </p>
-                  </div>
+    <div className="rebuild ve-editorial ve-public ve-join">
+      <PublicIntro
+        label="Join Veep"
+        title={
+          <>
+            You’ve done
+            <br /> the work.
+            <br /> <span>Own what’s next.</span>
+          </>
+        }
+        actions={
+          <>
+            <Link to="/join" hash="apply" className="ve-button cta-accent">
+              Apply to join Veep
+            </Link>
+            <TextLink to="/for-companies" hash="how">
+              How we work <span aria-hidden="true">↗</span>
+            </TextLink>
+          </>
+        }
+      >
+        <p>
+          Bring your experience to critical work for companies and funds. Veep defines the mandate
+          and assembles the team. You bring the judgment and hands-on leadership to move it forward.
+        </p>
+        <div className="ve-join-portraits" aria-label="Selected operating partners">
+          {[spotlightOperators[1], spotlightOperators[3], spotlightOperators[0]].map((person) => (
+            <figure key={person.name}>
+              <img
+                src={person.photoUrl}
+                alt=""
+                width="330"
+                height="410"
+                loading="eager"
+                decoding="async"
+              />
+              <figcaption>
+                {person.name}
+                <span>{person.role.replace(" Operating Partner", "")}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </PublicIntro>
+      <Section className="ve-join-criteria">
+        <Container className="ve-container">
+          <div className="ve-section-opening">
+            <h2 className="ve-title">
+              Experience you can
+              <br /> put to work.
+            </h2>
+            <p className="ve-body">
+              We look for operators who have held the seat, owned the decisions, and delivered under
+              real constraints. Relevant experience and references matter.
+            </p>
+          </div>
+          <div className="ve-criteria-grid">
+            {criteria.map((item, i) => (
+              <article key={item.title}>
+                <span className="ve-kicker">0{i + 1}</span>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </Section>
+      <Section id="apply" className="ve-application-section">
+        <Container className="ve-container ve-form-layout">
+          <aside className="ve-form-aside">
+            <p className="ve-kicker">Apply to join Veep</p>
+            <h2 className="ve-title">
+              Tell us about
+              <br /> your work.
+            </h2>
+            <p>
+              Start with your background and the responsibilities you’ve owned. We’ll take it from
+              there.
+            </p>
+            <ol className="ve-next-steps">
+              {[
+                "We review your application",
+                "An intro conversation with a Veep founder",
+                "References and roster onboarding",
+                "Consideration for relevant mandates",
+              ].map((item, i) => (
+                <li key={item}>
+                  <span>0{i + 1}</span>
+                  <p>{item}</p>
                 </li>
               ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Application form */}
-      <section id="apply" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
-            <div className="lg:col-span-2 space-y-8">
-              <div className="eyebrow">
-                What happens next
-              </div>
-              <ul className="space-y-4">
-                {[
-                  "We review every application personally",
-                  "Intro conversation with a Veep founder",
-                  "References and roster onboarding",
-                  "Matched to engagements as they come in",
-                ].map((i, idx) => (
-                  <li key={i} className="flex items-baseline gap-4">
-                    <span className="font-mono text-sm text-accent w-6 shrink-0 tabular-nums">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-stone text-base leading-relaxed">
-                      {i}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-xs text-stone-soft leading-relaxed max-w-xs">
-                Roster spots are limited. We respond to every serious
-                application within one business week.
-              </p>
+            </ol>
+            <p className="ve-small-note">
+              We review every application personally and respond to serious applications within one
+              business week.
+            </p>
+          </aside>
+          <div className="ve-form-sheet">
+            <div className="ve-form-heading">
+              <p className="ve-kicker">Operator application</p>
+              <h3>Your experience.</h3>
+              <p>Required fields are marked with an asterisk.</p>
             </div>
-
-            <div className="lg:col-span-3">
-              {submitted ? (
-                <div className="py-8 sm:py-10 text-center">
-                  <Check strokeWidth={2.5} className="mx-auto h-8 w-8 text-accent" />
-                  <h3 className="mt-6 font-serif font-medium text-xl text-cream tracking-tight">
-                    Application received.
-                  </h3>
-                  <p className="mt-3 text-stone text-sm">
-                    A Veep founder will review it and be in touch.
-                  </p>
-                </div>
-              ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  className="glass-card rounded-[6px] p-5 sm:p-8 grid gap-5"
-                >
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <Field label="First name" required>
-                      <input required name="first_name" className={inputCls} />
-                    </Field>
-                    <Field label="Last name" required>
-                      <input required name="last_name" className={inputCls} />
-                    </Field>
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <Field label="Work email" required>
-                      <input required type="email" name="email" className={inputCls} />
-                    </Field>
-                    <Field label="LinkedIn URL" required>
-                      <input required type="url" name="linkedin" placeholder="https://" className={inputCls} />
-                    </Field>
-                  </div>
-                  <Field label="Highest executive role held" required>
-                    <select required name="role" className={inputCls} defaultValue="">
-                      <option value="" disabled>Select a role…</option>
-                      <option>CEO / Founder</option>
-                      <option>President / COO</option>
-                      <option>CFO</option>
-                      <option>CRO / CMO</option>
-                      <option>CPO / CTO</option>
-                      <option>GM / SVP</option>
-                      <option>Other</option>
-                    </select>
+            {submitted ? (
+              <div className="py-8 sm:py-10 text-center">
+                <Check strokeWidth={2.5} className="mx-auto h-8 w-8 text-accent" />
+                <h3 className="mt-6 font-serif font-medium text-xl text-cream tracking-tight">
+                  Application received.
+                </h3>
+                <p className="mt-3 text-stone text-sm">
+                  A Veep founder will review it and be in touch.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="ve-form grid gap-5">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <Field label="First name" required>
+                    <input required name="first_name" className={inputCls} />
                   </Field>
-                  <Field label="Resume" required>
+                  <Field label="Last name" required>
+                    <input required name="last_name" className={inputCls} />
+                  </Field>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <Field label="Work email" required>
+                    <input required type="email" name="email" className={inputCls} />
+                  </Field>
+                  <Field label="LinkedIn URL" required>
                     <input
                       required
-                      type="file"
-                      name="resume"
-                      accept=".pdf,.doc,.docx"
-                      className={`${inputCls} file:mr-4 file:rounded-[6px] file:border-0 file:bg-cream file:px-4 file:py-1.5 file:text-ink file:text-xs file:font-medium file:cursor-pointer`}
+                      type="url"
+                      name="linkedin"
+                      placeholder="https://"
+                      className={inputCls}
                     />
                   </Field>
+                </div>
+                <Field label="Highest executive role held" required>
+                  <select required name="role" className={inputCls} defaultValue="">
+                    <option value="" disabled>
+                      Select a role…
+                    </option>
+                    <option>CEO / Founder</option>
+                    <option>President / COO</option>
+                    <option>CFO</option>
+                    <option>CRO / CMO</option>
+                    <option>CPO / CTO</option>
+                    <option>GM / SVP</option>
+                    <option>Other</option>
+                  </select>
+                </Field>
+                <Field label="Resume" required>
+                  <input
+                    required
+                    type="file"
+                    name="resume"
+                    accept=".pdf,.doc,.docx"
+                    className={`${inputCls} file:mr-4 file:rounded-[6px] file:border-0 file:bg-cream file:px-4 file:py-1.5 file:text-ink file:text-xs file:font-medium file:cursor-pointer`}
+                  />
+                </Field>
 
-                  <details className="text-sm text-stone">
-                    <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none inline-flex items-center min-h-11">
-                      Add background details (optional)
-                    </summary>
-                    <div className="mt-4 grid gap-4">
-                      <Field label="Personal site">
-                        <input type="url" name="website" placeholder="https://" className={inputCls} />
-                      </Field>
-                      <Field label="Experience embedding as an operator or advisor">
-                        <div className="flex gap-4 pt-1">
-                          {["Yes", "No"].map((v) => (
-                            <label key={v} className="inline-flex items-center gap-2 text-cream/85 text-sm">
-                              <input type="radio" name="fractional" value={v} className="accent-accent" />
-                              {v}
-                            </label>
-                          ))}
-                        </div>
-                      </Field>
-                      <CheckboxGroup name="company_types" label="Company types you've worked with" options={companyTypes} />
-                      <CheckboxGroup name="growth_stages" label="Growth stages you've worked with" options={growthStages} />
-                      <CheckboxGroup name="functions" label="Functional expertise" options={functions} />
-                      <Field label="Industry experience">
-                        <input name="industries" className={inputCls} placeholder="e.g. SaaS, fintech, healthcare" />
-                      </Field>
-                      <Field label="Anything else we should know?">
-                        <textarea name="notes" rows={4} className={inputCls} />
-                      </Field>
-                      <Field label="How did you hear about Veep?">
-                        <input name="source" className={inputCls} />
-                      </Field>
-                    </div>
-                  </details>
+                <details className="text-sm text-stone">
+                  <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none inline-flex items-center min-h-11">
+                    Add background details (optional)
+                  </summary>
+                  <div className="mt-4 grid gap-4">
+                    <Field label="Personal site">
+                      <input
+                        type="url"
+                        name="website"
+                        placeholder="https://"
+                        className={inputCls}
+                      />
+                    </Field>
+                    <Field label="Experience embedding as an operator or advisor">
+                      <div className="flex gap-4 pt-1">
+                        {["Yes", "No"].map((v) => (
+                          <label
+                            key={v}
+                            className="inline-flex items-center gap-2 text-cream/85 text-sm"
+                          >
+                            <input
+                              type="radio"
+                              name="fractional"
+                              value={v}
+                              className="accent-accent"
+                            />
+                            {v}
+                          </label>
+                        ))}
+                      </div>
+                    </Field>
+                    <CheckboxGroup
+                      name="company_types"
+                      label="Company types you've worked with"
+                      options={companyTypes}
+                    />
+                    <CheckboxGroup
+                      name="growth_stages"
+                      label="Growth stages you've worked with"
+                      options={growthStages}
+                    />
+                    <CheckboxGroup
+                      name="functions"
+                      label="Functional expertise"
+                      options={functions}
+                    />
+                    <Field label="Industry experience">
+                      <input
+                        name="industries"
+                        className={inputCls}
+                        placeholder="e.g. SaaS, fintech, healthcare"
+                      />
+                    </Field>
+                    <Field label="Anything else we should know?">
+                      <textarea name="notes" rows={4} className={inputCls} />
+                    </Field>
+                    <Field label="How did you hear about Veep?">
+                      <input name="source" className={inputCls} />
+                    </Field>
+                  </div>
+                </details>
 
-                  {error && (
-                    <p className="text-sm text-accent-coral border-l-2 border-accent-coral/50 pl-4 py-1">
-                      {error}
-                    </p>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="motion-cta cta-accent mt-2 rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
-                  >
-                    {loading ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        Submitting…
-                      </>
-                    ) : (
-                      "Submit application"
-                    )}
-                  </button>
-                  <p className="text-xs text-stone-soft">
-                    By submitting you agree to be contacted by Veep about your
-                    application.
+                {error && (
+                  <p className="text-sm text-accent-coral border-l-2 border-accent-coral/50 pl-4 py-1">
+                    {error}
                   </p>
-                </form>
-              )}
-            </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="motion-cta cta-accent mt-2 rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                >
+                  {loading ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      Submitting…
+                    </>
+                  ) : (
+                    "Submit application"
+                  )}
+                </button>
+                <p className="text-xs text-stone-soft">
+                  By submitting you agree to be contacted by Veep about your application.
+                </p>
+              </form>
+            )}
           </div>
-        </div>
-      </section>
-    </>
+        </Container>
+      </Section>
+    </div>
   );
 }
 
-const inputCls =
-  "motion-field w-full rounded-[6px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
+const inputCls = "ve-input";
 
 function Field({
   label,
@@ -402,7 +454,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mono-label">
+      <span className="ve-field-label">
         {label}
         {required && " *"}
       </span>
@@ -422,15 +474,10 @@ function CheckboxGroup({
 }) {
   return (
     <div>
-      <span className="mono-label">
-        {label}
-      </span>
+      <span className="ve-field-label">{label}</span>
       <div className="mt-3 flex flex-wrap gap-2">
         {options.map((o) => (
-          <label
-            key={o}
-            className="inline-flex items-center gap-2 rounded-[6px] border border-white/12 px-3.5 py-1.5 min-h-11 text-xs text-cream/85 hover:border-accent/50 hover:text-cream transition cursor-pointer"
-          >
+          <label key={o} className="ve-choice">
             <input type="checkbox" name={name} value={o} className="accent-accent" />
             {o}
           </label>

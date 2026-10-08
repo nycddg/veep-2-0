@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { z } from "zod";
-import { PageHero } from "@/components/site/PageHero";
+import { PublicIntro } from "@/components/site/rebuild/PublicPage";
+import { Container } from "@/components/site/rebuild/Container";
+import { Section } from "@/components/site/rebuild/Section";
 import { Check, Loader2 } from "lucide-react";
 import { submitContactInquiry } from "@/lib/wix-contact.functions";
 import { ogImageMeta } from "@/lib/seo";
@@ -17,9 +19,17 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact | Veep" },
-      { name: "description", content: "Get in touch with Veep. Response within one business day. Matched in 72 hours. Deployed in under 10 days." },
+      {
+        name: "description",
+        content:
+          "Tell Veep about your company or portfolio priorities. We define the work, assemble the right operating capacity, and own delivery. Response within one business day.",
+      },
       { property: "og:title", content: "Contact | Veep" },
-      { property: "og:description", content: "Tell us the moment. We'll match a senior operator who can start in under 10 days." },
+      {
+        property: "og:description",
+        content:
+          "Tell us about the critical work that needs an owner. Start with the priority, urgency, and outcome.",
+      },
       { property: "og:url", content: "https://www.veep.work/contact" },
       ...ogImageMeta(),
     ],
@@ -42,7 +52,7 @@ const outcomeLabels: Record<string, string> = {
 function Page() {
   const { intent, outcome } = Route.useSearch();
   const isAudit = intent === "audit";
-  const preselected = outcome ? outcomeLabels[outcome] ?? outcome : undefined;
+  const preselected = outcome ? (outcomeLabels[outcome] ?? outcome) : undefined;
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -117,7 +127,9 @@ function Page() {
       setSubmitted(true);
     } catch (err) {
       console.error("Contact form submission failed:", err);
-      setSubmitError("Something went wrong sending your message. Please email hey@veep.work or try again.");
+      setSubmitError(
+        "Something went wrong sending your message. Please email hey@veep.work or try again.",
+      );
     } finally {
       submittingRef.current = false;
       setLoading(false);
@@ -125,198 +137,236 @@ function Page() {
   };
 
   return (
-    <>
-      <PageHero
-        eyebrow={isAudit ? "Capacity audit" : "Discovery call"}
-        title={isAudit ? "Map the portfolio's executive risk." : "What critical work doesn't have an owner?"}
-        sub={
-          isAudit
-            ? "A structured audit of leadership risk across your portfolio, with a recommended roster structure per company. Delivered in 2–3 weeks."
-            : "30-minute call. Response within one business day. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
+    <div className="rebuild ve-editorial ve-public ve-contact">
+      <PublicIntro
+        label={isAudit ? "Portfolio Capacity Audit" : "Contact Veep"}
+        title={
+          isAudit ? (
+            <>
+              See what the
+              <br /> portfolio
+              <br /> <span>needs next.</span>
+            </>
+          ) : (
+            <>
+              Tell us what
+              <br /> <span>needs to move.</span>
+            </>
+          )
         }
-        primaryLabel={isAudit ? "Request an audit" : "Request a call"}
-        primaryTo="/contact"
-        primaryHash="contact-form"
-        secondaryLabel="See how it works"
-        secondaryTo="/how-it-works"
-      />
-
-      <section id="contact-form" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
-            {/* Left: promise */}
-            <div className="lg:col-span-2 space-y-8">
-              <div className="eyebrow">
-                What happens next
-              </div>
-              <ul className="space-y-4">
-                {(isAudit
-                  ? [
-                      "Portfolio-wide risk map",
-                      "CFO / COO / GTM coverage assessment",
-                      "Recommended roster structure per company",
-                      "Emergency coverage path",
-                    ]
-                  : [
-                      "Reply within 1 business day",
-                      "30-minute diagnostic call",
-                      "Operator shortlist within 72 hours",
-                      "30-day fit guarantee",
-                    ]
-                ).map((i, idx) => (
-                  <li key={i} className="flex items-baseline gap-4">
-                    <span className="font-mono text-sm text-accent w-6 shrink-0 tabular-nums">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-cream/85 text-base leading-relaxed">{i}</span>
-                  </li>
-                ))}
-              </ul>
-              {preselected && (
-                <div className="rounded-[6px] bg-accent/5 p-4 light:bg-foreground/5">
-                  <div className="eyebrow">
-                    Outcome
-                  </div>
-                  <div className="mt-2 text-cream font-medium">{preselected}</div>
-                </div>
-              )}
-            </div>
-
-            {/* Right: form */}
-            <div className="lg:col-span-3">
-              {submitted ? (
-                <div
-                  className="py-8 sm:py-10 text-center"
-                  role="status"
-                  aria-live="polite"
-                >
-                  <Check strokeWidth={2.5} className="mx-auto h-8 w-8 text-accent" />
-                  <h3
-                    ref={successHeadingRef}
-                    tabIndex={-1}
-                    className="mt-6 font-serif font-medium text-xl text-cream tracking-tight focus:outline-none"
-                  >
-                    Thanks — we'll be in touch.
-                  </h3>
-                  <p className="mt-3 text-cream/80 text-sm">
-                    A Veep partner will reach out within one business day.
-                  </p>
-                </div>
+        actions={
+          <a href="#contact-form" className="ve-button cta-accent">
+            {isAudit ? "Request an audit" : "Send an inquiry"}
+          </a>
+        }
+      >
+        <p>
+          {isAudit
+            ? "Over 2–3 weeks, we map current priorities and likely needs over the next 6–12 months. Start with the companies, the upcoming moments, and the work that needs senior ownership."
+            : "Bring the priority, the urgency, and what a good outcome would look like. We’ll help clarify the work, the operating capacity it needs, and whether Veep is the right fit."}
+        </p>
+        <p className="ve-intro-note">Response within one business day.</p>
+      </PublicIntro>
+      <Section id="contact-form" className="ve-inquiry-section">
+        <Container className="ve-container ve-form-layout">
+          <aside className="ve-form-aside">
+            <p className="ve-kicker">{isAudit ? "What the audit covers" : "What happens next"}</p>
+            <h2 className="ve-title">
+              {isAudit ? (
+                <>
+                  A view across
+                  <br /> the portfolio.
+                </>
               ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  noValidate
-                  aria-describedby={submitError ? "contact-form-error" : undefined}
-                  className="glass-card rounded-[6px] p-5 sm:p-8 grid gap-5"
+                <>
+                  A conversation
+                  <br /> about the work.
+                </>
+              )}
+            </h2>
+            <ol className="ve-next-steps">
+              {(isAudit
+                ? [
+                    "Company priorities and operating capacity gaps",
+                    "Upcoming transactions and leadership needs",
+                    "Recommended coverage for likely mandates",
+                  ]
+                : [
+                    "A reply within one business day",
+                    "A 30-minute intro call",
+                    "An agreed scope and the capacity it needs",
+                  ]
+              ).map((item, i) => (
+                <li key={item}>
+                  <span>0{i + 1}</span>
+                  <p>{item}</p>
+                </li>
+              ))}
+            </ol>
+            {!isAudit && (
+              <p className="ve-small-note">
+                Operating engagements are scoped in 72 hours and started in under 10 days. These are
+                engagement timings, not completion promises.
+              </p>
+            )}
+            {preselected && (
+              <div className="ve-inquiry-context">
+                <p className="ve-kicker">Outcome</p>
+                <p>{preselected}</p>
+              </div>
+            )}
+          </aside>
+          <div className="ve-form-sheet">
+            <div className="ve-form-heading">
+              <p className="ve-kicker">{isAudit ? "Audit inquiry" : "Your inquiry"}</p>
+              <h3>Start here.</h3>
+              <p>Required fields are marked with an asterisk.</p>
+            </div>
+            {submitted ? (
+              <div className="py-8 sm:py-10 text-center" role="status" aria-live="polite">
+                <Check strokeWidth={2.5} className="mx-auto h-8 w-8 text-accent" />
+                <h3
+                  ref={successHeadingRef}
+                  tabIndex={-1}
+                  className="mt-6 font-serif font-medium text-xl text-cream tracking-tight focus:outline-none"
                 >
-                  {/* Honeypot — hidden from users and screen readers */}
-                  <div aria-hidden="true" className="hidden">
-                    <label>
-                      Company website
-                      <input
-                        type="text"
-                        name="company_website"
-                        tabIndex={-1}
-                        autoComplete="off"
-                      />
-                    </label>
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <Field label="Name" required error={errors.name} errorId="err-name">
-                      <input
-                        required
-                        name="name"
-                        maxLength={100}
-                        autoComplete="name"
-                        aria-invalid={errors.name ? true : undefined}
-                        aria-describedby={errors.name ? "err-name" : undefined}
-                        className={inputCls}
-                      />
-                    </Field>
-                    <Field label="Work email" required error={errors.email} errorId="err-email">
-                      <input
-                        required
-                        type="email"
-                        name="email"
-                        maxLength={255}
-                        autoComplete="email"
-                        aria-invalid={errors.email ? true : undefined}
-                        aria-describedby={errors.email ? "err-email" : undefined}
-                        className={inputCls}
-                      />
-                    </Field>
-                  </div>
-                  <Field
-                    label={isAudit ? "Portfolio size or context" : "What's the biggest initiative without an owner?"}
-                    required
-                    error={errors.context}
-                    errorId="err-context"
-                  >
-                    <textarea
+                  Thanks. We’ll be in touch.
+                </h3>
+                <p className="mt-3 text-cream/80 text-sm">
+                  A Veep partner will reach out within one business day.
+                </p>
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                noValidate
+                aria-describedby={submitError ? "contact-form-error" : undefined}
+                className="ve-form grid gap-5"
+              >
+                {/* Honeypot — hidden from users and screen readers */}
+                <div aria-hidden="true" className="hidden">
+                  <label>
+                    Company website
+                    <input type="text" name="company_website" tabIndex={-1} autoComplete="off" />
+                  </label>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <Field label="Name" required error={errors.name} errorId="err-name">
+                    <input
                       required
-                      name="context"
-                      rows={5}
-                      maxLength={2000}
-                      defaultValue={preselected ? `Interested in: ${preselected}\n\n` : ""}
-                      aria-invalid={errors.context ? true : undefined}
-                      aria-describedby={errors.context ? "err-context" : undefined}
+                      name="name"
+                      maxLength={100}
+                      autoComplete="name"
+                      aria-invalid={errors.name ? true : undefined}
+                      aria-describedby={errors.name ? "err-name" : undefined}
                       className={inputCls}
                     />
                   </Field>
-                  <details className="text-sm text-cream/80">
-                    <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none">
-                      Add company, role, or timing (optional)
-                    </summary>
-                    <div className="mt-4 grid gap-4">
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <Field label="Company"><input name="company" maxLength={200} autoComplete="organization" className={inputCls} /></Field>
-                        <Field label="Role"><input name="role" maxLength={200} autoComplete="organization-title" className={inputCls} /></Field>
-                      </div>
-                      <Field label="Timing">
-                        <select name="timing" className={inputCls} defaultValue="now">
-                          <option value="now">Immediate — start in weeks</option>
-                          <option value="30-60">Inside 30–60 days</option>
-                          <option value="90">Inside 90 days</option>
-                          <option value="explore">Exploring</option>
-                        </select>
+                  <Field label="Work email" required error={errors.email} errorId="err-email">
+                    <input
+                      required
+                      type="email"
+                      name="email"
+                      maxLength={255}
+                      autoComplete="email"
+                      aria-invalid={errors.email ? true : undefined}
+                      aria-describedby={errors.email ? "err-email" : undefined}
+                      className={inputCls}
+                    />
+                  </Field>
+                </div>
+                <Field
+                  label={
+                    isAudit
+                      ? "Portfolio size or context"
+                      : "What's the biggest initiative without an owner?"
+                  }
+                  required
+                  error={errors.context}
+                  errorId="err-context"
+                >
+                  <textarea
+                    required
+                    name="context"
+                    rows={5}
+                    maxLength={2000}
+                    defaultValue={preselected ? `Interested in: ${preselected}\n\n` : ""}
+                    aria-invalid={errors.context ? true : undefined}
+                    aria-describedby={errors.context ? "err-context" : undefined}
+                    className={inputCls}
+                  />
+                </Field>
+                <details className="text-sm text-cream/80">
+                  <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none">
+                    Add company, role, or timing (optional)
+                  </summary>
+                  <div className="mt-4 grid gap-4">
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <Field label="Company">
+                        <input
+                          name="company"
+                          maxLength={200}
+                          autoComplete="organization"
+                          className={inputCls}
+                        />
+                      </Field>
+                      <Field label="Role">
+                        <input
+                          name="role"
+                          maxLength={200}
+                          autoComplete="organization-title"
+                          className={inputCls}
+                        />
                       </Field>
                     </div>
-                  </details>
-                  {submitError && (
-                    <p
-                      id="contact-form-error"
-                      role="alert"
-                      className="text-sm text-accent-coral bg-accent-coral/10 rounded-[6px] px-4 py-3"
-                    >
-                      {submitError}
-                    </p>
-                  )}
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="motion-cta cta-accent mt-2 rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                    <Field label="Timing">
+                      <select name="timing" className={inputCls} defaultValue="now">
+                        <option value="now">Immediate — start in weeks</option>
+                        <option value="30-60">Inside 30–60 days</option>
+                        <option value="90">Inside 90 days</option>
+                        <option value="explore">Exploring</option>
+                      </select>
+                    </Field>
+                  </div>
+                </details>
+                {submitError && (
+                  <p
+                    id="contact-form-error"
+                    role="alert"
+                    className="text-sm text-accent-coral bg-accent-coral/10 rounded-[6px] px-4 py-3"
                   >
-                    {loading ? (
-                      <><Loader2 className="h-4 w-4 animate-spin" />Sending…</>
-                    ) : (
-                      isAudit ? "Request the audit" : "Send inquiry"
-                    )}
-                  </button>
-                  <p className="text-xs text-stone-soft">
-                    By submitting you agree to be contacted by Veep about your inquiry.
+                    {submitError}
                   </p>
-                </form>
-              )}
-            </div>
+                )}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="motion-cta cta-accent mt-2 rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                >
+                  {loading ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      Sending…
+                    </>
+                  ) : isAudit ? (
+                    "Request the audit"
+                  ) : (
+                    "Send inquiry"
+                  )}
+                </button>
+                <p className="text-xs text-stone-soft">
+                  By submitting you agree to be contacted by Veep about your inquiry.
+                </p>
+              </form>
+            )}
           </div>
-        </div>
-      </section>
-    </>
+        </Container>
+      </Section>
+    </div>
   );
 }
 
-const inputCls =
-  "motion-field w-full rounded-[6px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
+const inputCls = "ve-input";
 
 function Field({
   label,
@@ -333,8 +383,9 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mono-label">
-        {label}{required && " *"}
+      <span className="ve-field-label">
+        {label}
+        {required && " *"}
       </span>
       <div className="mt-2">{children}</div>
       {error && (
