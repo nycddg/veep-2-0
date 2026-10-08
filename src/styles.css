@@ -959,6 +959,29 @@ html.light .motion-row-wash {
 .group:hover .motion-row-wash,
 .motion-row-wash:hover { background-size: 100% 100%; }
 
+/* Service rows: same draw, at full highlight blue (#789FFF) instead of the 12% wash.
+   Light mode keeps the paper shade — blue is chrome there, not a fill. */
+.capacity-row-wash {
+  --row-wash: #789fff;
+  transition: background-size 240ms var(--ease-standard),
+              transform var(--dur-hover) var(--ease-standard),
+              box-shadow var(--dur-hover) var(--ease-standard);
+}
+.capacity-row-wash:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.55);
+}
+.capacity-row-wash:active {
+  transform: translateY(0);
+  transition-duration: 80ms;
+}
+.capacity-row-wash :is(h3, p, .mono-label) {
+  transition: color 240ms var(--ease-standard);
+}
+html.dark .capacity-row-wash:hover :is(h3, p, .mono-label) {
+  color: oklch(0.115 0.03 265);
+}
+
 /* Reading-progress hairline — 1px accent line on the header's bottom edge
    that fills left→right with document scroll. Pure CSS scroll-driven
    animation; an indicator, not parallax (nothing moves against scroll).
@@ -1044,7 +1067,8 @@ html.light .motion-row-wash {
   .problem-diagram-pulse { animation: none !important; opacity: 0 !important; }
   .motion-progress { display: none !important; }
   .motion-hover-lift:hover,
-  .motion-cta:hover { transform: none !important; }
+  .motion-cta:hover,
+  .capacity-row-wash:hover { transform: none !important; }
   .motion-image-tilt,
   .group:hover .motion-image-tilt,
   .group:focus-visible .motion-image-tilt,
@@ -1073,3 +1097,835 @@ html.light .motion-row-wash {
   to { transform: translateX(-50%); }
 }
 
+/* Rebuilt public pages and shared chrome. Tokens stay on these roots so
+   pricing, about, FAQ, join, contact, and the portal keep their surfaces. */
+.rebuild,
+.site-chrome {
+  --rb-canvas: #060912;
+  --rb-raised: #111a25;
+  --rb-text: #f6f6f2;
+  --rb-muted: #acb5c3;
+  --rb-rule: rgba(246, 246, 242, 0.16);
+  --rb-link: #86a8ff;
+  --rb-coral: #ff7166;
+  --rb-field: #f3f2ed;
+  --rb-field-text: #111827;
+  --rb-field-muted: #46515c;
+  background-color: var(--rb-canvas);
+  color: var(--rb-text);
+  font-weight: 400;
+}
+
+html.light .rebuild,
+html.light .site-chrome {
+  --rb-canvas: #f5f4ef;
+  --rb-raised: #ffffff;
+  --rb-text: #111827;
+  --rb-muted: #46515c;
+  --rb-rule: rgba(17, 24, 39, 0.16);
+  --rb-link: #315ea8;
+  --rb-field: #e6ebef;
+  --rb-field-text: #111827;
+  --rb-field-muted: #46515c;
+}
+
+.rebuild :is([id]) {
+  scroll-margin-top: 88px;
+}
+
+@media (min-width: 1024px) {
+  .rebuild :is([id]) {
+    scroll-margin-top: 96px;
+  }
+}
+
+.rebuild :is(h1, h2, h3) {
+  font-weight: 500;
+  overflow-wrap: normal;
+  word-break: normal;
+  color: inherit;
+}
+
+.rebuild .rb-h1-home {
+  font-size: 44px;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.rebuild .rb-h1 {
+  font-size: 40px;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+}
+
+.rebuild .rb-h2 {
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.rebuild .rb-h3 {
+  font-size: 23px;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.rebuild .rb-deck {
+  font-size: 19px;
+  line-height: 1.5;
+  font-weight: 400;
+  max-width: 65ch;
+}
+
+.rebuild .rb-body {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 65ch;
+}
+
+.rebuild .rb-support {
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 400;
+  max-width: 65ch;
+}
+
+.rebuild .rb-caption,
+.site-chrome .rb-caption {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.rebuild .rb-measure {
+  max-width: 65ch;
+}
+
+.rebuild .rb-mono,
+.site-chrome .rb-mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+.rebuild .rb-result {
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.rebuild .rb-quote {
+  max-width: 800px;
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rebuild .rb-on-field {
+  background-color: var(--rb-field);
+  color: var(--rb-field-text);
+  --rb-text: var(--rb-field-text);
+  --rb-muted: var(--rb-field-muted);
+  --rb-link: #315ea8;
+  --rb-rule: rgba(17, 24, 39, 0.16);
+}
+
+.rebuild .rb-link,
+.site-chrome .rb-link {
+  color: var(--rb-link);
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: color 160ms ease;
+}
+
+.rebuild .rb-link:hover,
+.site-chrome .rb-link:hover {
+  color: var(--rb-text);
+}
+
+.rebuild .rb-on-field .rb-link:hover {
+  color: var(--rb-field-text);
+}
+
+.site-chrome .rb-nav {
+  color: var(--rb-text);
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.site-chrome .rb-nav.is-active {
+  box-shadow: inset 0 -2px 0 var(--rb-coral);
+}
+
+.site-chrome .rb-nav:hover {
+  color: var(--rb-link);
+}
+
+.rebuild .rb-on-field :focus-visible {
+  outline-color: #315ea8;
+}
+
+.rb-ticker-move,
+.rb-ticker-pause {
+  display: none;
+}
+
+.rb-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: rb-ticker 36s linear infinite;
+}
+
+.rb-ticker-track.is-paused {
+  animation-play-state: paused;
+}
+
+.rb-ticker-track p {
+  font-size: 20px;
+  line-height: 1.45;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+@keyframes rb-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .rb-ticker-static {
+    display: none;
+  }
+  .rb-ticker-move {
+    display: block;
+  }
+  .rb-ticker-pause {
+    display: inline-flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-ticker-static {
+    display: block;
+  }
+  .rb-ticker-move,
+  .rb-ticker-pause {
+    display: none;
+  }
+  .rb-ticker-track {
+    animation: none;
+  }
+}
+
+.rebuild .rb-metric {
+  font-size: 72px;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+  .rebuild .rb-h1-home {
+    font-size: 64px;
+  }
+  .rebuild .rb-h1 {
+    font-size: 60px;
+  }
+  .rebuild .rb-metric {
+    font-size: 112px;
+  }
+  .rebuild .rb-h2 {
+    font-size: 42px;
+  }
+  .rebuild .rb-h3 {
+    font-size: 26px;
+  }
+  .rebuild .rb-deck {
+    font-size: 21px;
+  }
+  .rebuild .rb-result {
+    font-size: 72px;
+  }
+  .rebuild .rb-quote {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .rebuild .rb-h1-home {
+    font-size: 92px;
+  }
+  .rebuild .rb-h1 {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 767px) {
+  .rb-options thead,
+  .rb-options tr,
+  .rb-options th,
+  .rb-options td {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Page compositions: structure expresses the work, rather than a shared card template. */
+.rebuild .rb-home-hero,
+.rebuild .rb-company-hero,
+.rebuild .rb-funds-hero {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.rebuild .rb-funds-hero {
+  padding-bottom: 24px;
+}
+.rebuild .rb-funds-title {
+  max-width: 24ch;
+}
+.rebuild .rb-utility-title {
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.rebuild .rb-relationship-note {
+  border-left: 1px solid var(--rb-coral);
+  padding-left: 20px;
+}
+
+.rebuild .rb-mandate-sheet {
+  background: var(--rb-raised);
+  padding: 28px;
+  border-top: 2px solid var(--rb-coral);
+}
+.rebuild .rb-mandate-entry {
+  border-left: 1px solid var(--rb-rule);
+  padding: 4px 0 4px 20px;
+  margin-top: 24px;
+}
+.rebuild .rb-client-quote {
+  max-width: 760px;
+  padding-left: 24px;
+  border-left: 2px solid var(--rb-coral);
+}
+
+.rebuild .rb-portfolio-band {
+  position: relative;
+  background: var(--rb-canvas);
+  padding: 24px;
+  border-top: 1px solid var(--rb-rule);
+}
+.rebuild .rb-portfolio-band::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  bottom: -32px;
+  height: 32px;
+  width: 1px;
+  background: var(--rb-coral);
+}
+.rebuild .rb-portfolio-intro {
+  margin-top: 24px;
+}
+.rebuild .rb-shared-capacity {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rb-rule);
+}
+.rebuild .rb-company-branches {
+  position: relative;
+  display: grid;
+  gap: 24px;
+  margin-top: 32px;
+  margin-left: 16px;
+  border-left: 1px solid var(--rb-coral);
+  padding-left: 24px;
+}
+.rebuild .rb-company-mandate {
+  position: relative;
+  padding: 24px 20px;
+  background: var(--rb-canvas);
+  min-width: 0;
+}
+.rebuild .rb-company-mandate::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 24px;
+  height: 1px;
+  width: 24px;
+  background: var(--rb-coral);
+}
+.rebuild .rb-mandate-fee {
+  border-top: 1px solid var(--rb-rule);
+  padding-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .rebuild .rb-shared-capacity {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .rebuild .rb-portfolio-band {
+    padding: 32px;
+  }
+  .rebuild .rb-portfolio-band::after {
+    left: 50%;
+    bottom: -34px;
+    height: 34px;
+  }
+  .rebuild .rb-company-branches {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 0;
+    padding: 68px 0 0;
+    border: 0;
+  }
+  .rebuild .rb-company-branches::before {
+    content: "";
+    position: absolute;
+    left: calc((100% - 48px) / 6);
+    right: calc((100% - 48px) / 6);
+    top: 34px;
+    height: 1px;
+    background: var(--rb-coral);
+  }
+  .rebuild .rb-company-mandate::before {
+    left: 50%;
+    top: -34px;
+    height: 34px;
+    width: 1px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rebuild .rb-home-hero,
+  .rebuild .rb-company-hero,
+  .rebuild .rb-funds-hero {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .rebuild .rb-home-hero {
+    padding-bottom: 48px;
+  }
+  .rebuild .rb-funds-hero {
+    padding-bottom: 24px;
+  }
+  .rebuild .rb-hero-portrait {
+    max-width: 220px;
+  }
+  .rebuild .rb-utility-title {
+    font-size: 32px;
+  }
+  .rebuild .rb-funds-title {
+    font-size: 64px;
+    max-width: 24ch;
+  }
+  .rebuild .rb-mandate-sheet {
+    margin-top: 36px;
+    padding: 32px;
+  }
+  .rebuild .rb-portfolio-band {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+  }
+  .rebuild .rb-portfolio-intro {
+    margin-top: 0;
+  }
+  .rebuild .rb-shared-capacity {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+  }
+}
+
+.rebuild :focus-visible,
+.site-chrome :focus-visible {
+  outline: 2px solid var(--rb-link);
+  outline-offset: 4px;
+}
+.rebuild .rb-relationship-note {
+  align-self: start;
+}
+.rebuild .rb-owned-mandate,
+.rebuild .rb-work-inputs,
+.rebuild .rb-leadership-desk {
+  position: relative;
+  min-width: 0;
+}
+.rebuild .rb-ownership-map {
+  display: grid;
+}
+.rebuild .rb-work-inputs {
+  margin-left: 16px;
+  padding: 0 0 28px 24px;
+  border-left: 1px solid var(--rb-rule);
+}
+.rebuild .rb-returning-work li {
+  position: relative;
+  padding: 12px 0;
+}
+.rebuild .rb-returning-work li::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 24px;
+  width: 16px;
+  height: 1px;
+  background: var(--rb-rule);
+}
+.rebuild .rb-leadership-desk {
+  margin-left: 16px;
+  padding: 24px;
+  border-left: 1px solid var(--rb-rule);
+}
+.rebuild .rb-leadership-desk::before {
+  content: "";
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 16px;
+  height: 1px;
+  background: var(--rb-rule);
+}
+.rebuild .rb-desk-line {
+  display: block;
+  height: 16px;
+  margin-top: 24px;
+  border-top: 1px solid var(--rb-text);
+  border-left: 1px solid var(--rb-text);
+  border-right: 1px solid var(--rb-text);
+}
+.rebuild .rb-owned-mandate {
+  margin-left: 16px;
+  padding: 24px;
+  border-left: 1px solid var(--rb-coral);
+  background: var(--rb-raised);
+}
+.rebuild .rb-owned-details {
+  display: grid;
+  gap: 24px;
+  font-size: 16px;
+  line-height: 1.45;
+}
+.rebuild .rb-owned-details dt {
+  color: var(--rb-muted);
+  margin-bottom: 6px;
+}
+.rebuild .rb-owned-delivery {
+  border-top: 1px solid var(--rb-rule);
+  padding-top: 20px;
+}
+
+.rebuild .rb-responsibility-map {
+  display: flex;
+  flex-direction: column;
+}
+.rebuild .rb-execution-lane {
+  order: 1;
+  display: grid;
+  gap: 24px;
+  padding-left: 24px;
+  border-left: 1px solid var(--rb-coral);
+}
+.rebuild .rb-execution-start,
+.rebuild .rb-execution-end {
+  position: relative;
+}
+.rebuild .rb-execution-start::before,
+.rebuild .rb-execution-end::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 12px;
+  width: 16px;
+  height: 1px;
+  background: var(--rb-coral);
+}
+.rebuild .rb-lead-owner {
+  padding: 24px;
+  background: var(--rb-canvas);
+}
+.rebuild .rb-veep-bracket {
+  order: 2;
+  position: relative;
+  margin-top: 32px;
+  padding: 0 0 24px 24px;
+  border-left: 1px solid var(--rb-rule);
+}
+.rebuild .rb-client-decisions {
+  order: 3;
+  position: relative;
+  margin-top: 32px;
+  padding-left: 24px;
+  border-left: 1px solid var(--rb-rule);
+}
+.rebuild .rb-tier-grid {
+  display: grid;
+}
+.rebuild .rb-tier-grid > div {
+  min-width: 0;
+  padding: 32px 0;
+  border-top: 1px solid var(--rb-rule);
+}
+.rebuild .rb-recurring-lane {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rb-coral);
+}
+.rebuild .rb-agent-responsibilities {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+.rebuild .rb-agent-role {
+  border-left: 1px solid var(--rb-coral);
+  padding-left: 20px;
+}
+.rebuild .rb-audit-structure {
+  background: var(--rb-raised);
+  padding: 24px;
+  border-top: 2px solid var(--rb-coral);
+}
+.rebuild .rb-audit-annotation {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px 0;
+}
+.rebuild .rb-roster-price {
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+@media (min-width: 390px) {
+  .rebuild .rb-roster-price {
+    font-size: 44px;
+  }
+}
+@media (min-width: 768px) {
+  .rebuild .rb-owned-details {
+    grid-template-columns: 1fr 1fr;
+  }
+  .rebuild .rb-owned-scope,
+  .rebuild .rb-owned-delivery {
+    grid-column: 1 / -1;
+  }
+  .rebuild .rb-tier-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .rebuild .rb-tier-grid > div {
+    padding: 32px 24px;
+  }
+  .rebuild .rb-tier-grid > div:nth-child(even) {
+    border-left: 1px solid var(--rb-rule);
+  }
+  .rebuild .rb-tier-grid > div:nth-child(-n + 2) {
+    border-top: 0;
+  }
+  .rebuild .rb-agent-responsibilities {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 0;
+  }
+  .rebuild .rb-agent-role {
+    position: relative;
+    border: 0;
+    padding: 32px 0 0;
+  }
+  .rebuild .rb-agent-role::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 20px;
+    width: 1px;
+    background: var(--rb-coral);
+  }
+  .rebuild .rb-audit-structure {
+    padding: 32px;
+  }
+  .rebuild .rb-audit-annotation {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .rebuild .rb-ownership-map {
+    grid-template-columns: minmax(0, 1fr) 160px minmax(0, 1.4fr);
+    gap: 40px;
+    align-items: center;
+  }
+  .rebuild .rb-work-inputs {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .rebuild .rb-returning-work {
+    position: relative;
+    padding-right: 24px;
+  }
+  .rebuild .rb-returning-work::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 24px;
+    bottom: 24px;
+    width: 1px;
+    background: var(--rb-rule);
+  }
+  .rebuild .rb-returning-work li {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+  }
+  .rebuild .rb-returning-work li::before {
+    left: auto;
+    right: -24px;
+    top: 50%;
+    width: 16px;
+  }
+  .rebuild .rb-leadership-desk {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .rebuild .rb-leadership-desk::before {
+    top: 50%;
+    left: -40px;
+    width: 40px;
+  }
+  .rebuild .rb-leadership-desk::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    width: 40px;
+    height: 1px;
+    background: var(--rb-coral);
+  }
+  .rebuild .rb-owned-mandate {
+    margin: 0;
+    border: 0;
+    padding: 28px;
+  }
+  .rebuild .rb-owned-mandate::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    height: 9px;
+    width: 9px;
+    border-top: 1px solid var(--rb-coral);
+    border-right: 1px solid var(--rb-coral);
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .rebuild .rb-veep-bracket {
+    order: 0;
+    margin: 0 8% 32px;
+    padding: 0 0 24px;
+    border-left: 0;
+    border-bottom: 1px solid var(--rb-rule);
+    text-align: center;
+  }
+  .rebuild .rb-veep-bracket p {
+    max-width: 62ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .rebuild .rb-veep-bracket::before,
+  .rebuild .rb-veep-bracket::after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    width: 1px;
+    height: 16px;
+    background: var(--rb-rule);
+  }
+  .rebuild .rb-veep-bracket::before {
+    left: 0;
+  }
+  .rebuild .rb-veep-bracket::after {
+    right: 0;
+  }
+  .rebuild .rb-execution-lane {
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    border: 0;
+  }
+  .rebuild .rb-execution-start,
+  .rebuild .rb-execution-end {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .rebuild .rb-execution-start::before,
+  .rebuild .rb-execution-end::before {
+    position: static;
+    flex: 1;
+    width: auto;
+  }
+  .rebuild .rb-execution-start::before {
+    order: 1;
+  }
+  .rebuild .rb-execution-end::before {
+    margin-right: 16px;
+  }
+  .rebuild .rb-lead-owner {
+    padding: 32px;
+    border-left: 1px solid var(--rb-coral);
+    border-right: 1px solid var(--rb-coral);
+  }
+  .rebuild .rb-client-decisions {
+    width: 50%;
+    margin: 0 auto;
+    padding: 48px 32px 0;
+    border: 0;
+  }
+  .rebuild .rb-client-decisions::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 32px;
+    width: 1px;
+    height: 32px;
+    background: var(--rb-rule);
+  }
+}
+@media (min-width: 1280px) {
+  .rebuild .rb-tier-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .rebuild .rb-tier-grid > div {
+    border-top: 0;
+    border-left: 1px solid var(--rb-rule);
+  }
+  .rebuild .rb-tier-grid > div:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .rebuild .rb-tier-grid > div:last-child {
+    padding-right: 0;
+  }
+  .rebuild .rb-roster-price {
+    font-size: 48px;
+  }
+}
