@@ -1,106 +1,100 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
 
-type FooterLink =
-  | { kind: "hash"; hash: string; label: string }
-  | {
-      kind: "route";
-      to: "/pricing" | "/faq" | "/contact" | "/privacy" | "/terms" | "/join" | "/about" | "/for-portfolios";
-      label: string;
-    };
+type FooterLink = {
+  label: string;
+  to:
+    | "/for-companies"
+    | "/for-portfolios"
+    | "/pricing"
+    | "/about"
+    | "/faq"
+    | "/contact"
+    | "/join"
+    | "/privacy"
+    | "/terms";
+  hash?: string;
+};
 
 const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
   {
     title: "Explore",
     links: [
-      { kind: "hash", hash: "how", label: "How It Works" },
-      { kind: "hash", hash: "offer", label: "Engagements" },
-      { kind: "hash", hash: "proof", label: "Proof" },
-      { kind: "hash", hash: "faq", label: "Mini FAQ" },
+      { to: "/for-companies", label: "For Companies" },
+      { to: "/for-portfolios", label: "For Funds" },
+      { to: "/pricing", label: "Pricing" },
+      { to: "/about", label: "About" },
     ],
   },
   {
     title: "Details",
     links: [
-      { kind: "route", to: "/about", label: "About" },
-      { kind: "route", to: "/for-portfolios", label: "For Funds" },
-      { kind: "route", to: "/pricing", label: "Pricing" },
-      { kind: "route", to: "/faq", label: "Full FAQ" },
-      { kind: "route", to: "/contact", label: "Contact" },
+      { to: "/for-companies", hash: "how", label: "How delivery works" },
+      { to: "/for-companies", hash: "proof", label: "Selected work" },
+      { to: "/faq", label: "FAQ" },
+      { to: "/contact", label: "Contact" },
     ],
   },
   {
     title: "Operators",
-    links: [
-      { kind: "route", to: "/join", label: "Join Veep" },
-    ],
+    links: [{ to: "/join", label: "Apply to join Veep" }],
   },
   {
     title: "Legal",
     links: [
-      { kind: "route", to: "/privacy", label: "Privacy Policy" },
-      { kind: "route", to: "/terms", label: "Terms of Service" },
+      { to: "/privacy", label: "Privacy Policy" },
+      { to: "/terms", label: "Terms of Service" },
     ],
   },
 ];
 
 export function SiteFooter() {
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const scoped = pathname === "/" || pathname === "/for-portfolios";
-  const description = scoped
-    ? "Veep puts senior ownership around critical work. We scope the job, assemble the team, and own delivery."
-    : "Vetted senior operators who step in to own critical work, now. Matched in 72 hours. Ready to go in under 10 days.";
-  const signature = scoped
-    ? "Critical work, owned."
-    : "Senior operators for work that can't wait.";
   return (
-    <footer className="border-t border-white/10 bg-background text-cream">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-x-6 gap-y-9 md:gap-5">
+    <footer className="site-chrome ve-site-footer border-t border-[var(--rb-rule)]">
+      <div className="ve-footer-inner mx-auto w-full max-w-[1200px] px-5 py-14 md:px-6 md:py-16 lg:px-8">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-12">
           <div className="col-span-2 md:col-span-4">
-            <Link to="/" viewTransition className="flex items-center" aria-label="Veep home">
-              <img src={wordmarkWhite.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto block light:hidden" />
-              <img src={wordmarkNavy.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto hidden light:block" />
+            <Link to="/" className="inline-flex items-center" aria-label="Veep home">
+              <img src={wordmarkWhite.url} alt="" className="h-6 w-auto light:hidden" />
+              <img src={wordmarkNavy.url} alt="" className="hidden h-6 w-auto light:block" />
             </Link>
-            <p className="mt-5 text-base text-cream/85 max-w-[20.4rem] leading-relaxed">
-              {description}
+            <p className="rb-support mt-5 max-w-[36ch] text-[var(--rb-text)]">
+              Operating partner capacity for companies and funds.
             </p>
-              <a
-                href="mailto:hey@veep.work"
-                className="motion-link mt-6 inline-block text-lg text-cream hover:text-accent underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-accent"
-              >
+            <a
+              href="mailto:hey@veep.work"
+              className="rb-link mt-6 inline-flex min-h-11 items-center"
+            >
               hey@veep.work
             </a>
           </div>
-          {cols.map((c, i) => (
-            <div key={c.title} className={`min-w-0 md:col-span-2 ${i === 0 ? 'md:pl-6 lg:pl-8' : ''}`}>
-              <div className="mono-label text-cream/70">
-                {c.title}
-              </div>
-              {/* 44px link rows (a11y target size); mt trimmed so the column
-                  rhythm reads the same as the old 20px rows + space-y. */}
-              <ul className="mt-1.5 md:mt-2">
-                {c.links.map((l) => (
-                  <li key={l.label}>
-                     {l.kind === "hash" ? (
-                      <Link to="/" hash={l.hash} className="group motion-link inline-flex items-center min-h-11 text-sm text-cream/90 hover:text-cream">
-                        <span className="motion-underline">{l.label}</span>
-                      </Link>
-                    ) : (
-                      <Link to={l.to} viewTransition className="group motion-link inline-flex items-center min-h-11 text-sm text-cream/90 hover:text-cream">
-                        <span className="motion-underline">{l.label}</span>
-                      </Link>
-                    )}
+          {cols.map((col) => (
+            <div key={col.title} className="min-w-0 md:col-span-2">
+              <p className="text-[14px] font-medium leading-[1.5]">{col.title}</p>
+              <ul className="mt-2">
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      to={link.to}
+                      hash={link.hash}
+                      activeOptions={{ exact: true, includeHash: Boolean(link.hash) }}
+                      className="inline-flex min-h-11 items-center text-[16px] leading-[1.4] text-[var(--rb-text)] underline decoration-[var(--rb-rule)] underline-offset-4 hover:decoration-[var(--rb-link)]"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
-        <div className="mt-10 md:mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-3 text-xs leading-relaxed text-cream/70">
-          <div className="text-balance">© {new Date().getFullYear()}&nbsp;The Veep Group,&nbsp;LLC. All rights reserved.</div>
-          <div className="text-balance">{signature}</div>
+        <p className="ve-footer-signature">Critical work, owned.</p>
+        <div className="mt-8 flex flex-col justify-between gap-3 border-t border-[var(--rb-rule)] pt-6 md:mt-8 md:flex-row md:items-center">
+          <p className="rb-caption text-[var(--rb-muted)]">
+            © {new Date().getFullYear()} The Veep Group, LLC. All rights reserved.
+          </p>
+          <p className="rb-caption text-[var(--rb-muted)]">An operating partner platform.</p>
         </div>
       </div>
     </footer>
