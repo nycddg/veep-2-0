@@ -1,5 +1,16 @@
 import { useState } from "react";
+import { Pause, Play } from "lucide-react";
 
+const careers = [
+  "Industrious",
+  "Morning Brew",
+  "Zocdoc",
+  "LVMH",
+  "TaskRabbit",
+  "Goldman Sachs",
+  "Activant Capital",
+  "David Yurman",
+];
 const clients = [
   "Atomic Audio",
   "VeroSkills",
@@ -8,35 +19,39 @@ const clients = [
   "Fowler Laundry Solutions",
 ];
 
-const gap = "\u00A0\u00A0\u00A0·\u00A0\u00A0\u00A0";
-const line = `${clients.join(gap)}${gap}`;
-const staticLine = `${clients.join("  ·  ")}  ·`;
-
-export function ClientTicker() {
+export function ClientTicker({ kind = "careers" }: { kind?: "careers" | "clients" }) {
   const [paused, setPaused] = useState(false);
-
+  const names = kind === "careers" ? careers : clients;
   return (
-    <div className="rb-client-line mt-10 border-t border-[var(--rb-rule)] pt-4">
-      <div className="flex items-center justify-between gap-4">
-        <p className="rb-caption text-[var(--rb-muted)]">Selected Veep clients</p>
+    <div className={`ve-ticker ve-ticker-${kind}`}>
+      <div className="ve-ticker-label">
+        <p>{kind === "careers" ? "Our operators have built at" : "Selected Veep clients"}</p>
         <button
           type="button"
-          className="rb-ticker-pause min-h-11 items-center px-3 text-[14px] text-[var(--rb-muted)] underline decoration-1 underline-offset-[0.22em]"
+          aria-label={paused ? "Play names" : "Pause names"}
           aria-pressed={paused}
-          onClick={() => setPaused((value) => !value)}
+          onClick={() => setPaused(!paused)}
         >
-          {paused ? "Play client names" : "Pause client names"}
+          {paused ? <Play size={15} /> : <Pause size={15} />}
         </button>
       </div>
-      <p className="rb-ticker-static mt-3 text-[18px] leading-[1.45] md:text-[20px]">
-        {staticLine}
-      </p>
-      <div className="rb-ticker-move mt-3 overflow-hidden">
-        <div className={`rb-ticker-track ${paused ? "is-paused" : ""}`}>
-          <p>{line}</p>
-          <p aria-hidden="true">{line}</p>
+      <div className="ve-ticker-window">
+        <div className={`ve-ticker-track ${paused ? "is-paused" : ""}`}>
+          {[0, 1].map((copy) => (
+            <ul key={copy} aria-hidden={copy === 1 ? true : undefined}>
+              {names.map((name) => (
+                <li key={name}>
+                  {name}
+                  <span aria-hidden="true">↗</span>
+                </li>
+              ))}
+            </ul>
+          ))}
         </div>
       </div>
+      {kind === "careers" && (
+        <p className="ve-ticker-note">Operator career experience, including roles before Veep.</p>
+      )}
     </div>
   );
 }

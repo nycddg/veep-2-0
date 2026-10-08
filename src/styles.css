@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "./components/site/rebuild/editorial.css";
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant light (&:is(.light *));
