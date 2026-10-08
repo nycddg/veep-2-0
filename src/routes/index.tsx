@@ -5,7 +5,7 @@ import { ClientTicker } from "@/components/site/rebuild/ClientTicker";
 import { Container } from "@/components/site/rebuild/Container";
 import { LegacyHash } from "@/components/site/rebuild/LegacyHash";
 import { operatorAsset } from "@/components/site/rebuild/operatorAsset";
-import { OperatorDeck } from "@/components/site/rebuild/OperatorDeck";
+import { OperatorSpotlight } from "@/components/site/rebuild/OperatorSpotlight";
 import { OwnershipDiagram } from "@/components/site/rebuild/OwnershipDiagram";
 import { Section } from "@/components/site/rebuild/Section";
 import { TextLink } from "@/components/site/rebuild/TextLink";
@@ -84,7 +84,7 @@ function Index() {
                 </span>
               </p>
             </div>
-            <OperatorDeck />
+            <OperatorSpotlight audience="home" />
           </div>
         </Container>
         <ClientTicker />

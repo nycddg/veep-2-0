@@ -5,6 +5,7 @@
 @import "./components/site/rebuild/public-pages.css";
 /* Scoped narrative refinements for Home, Companies, and Funds. */
 @import "./components/site/rebuild/narrative.css";
+@import "./components/site/rebuild/spotlight.css";
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant light (&:is(.light *));

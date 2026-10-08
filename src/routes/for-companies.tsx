@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ogImageMeta } from "@/lib/seo";
 import { BookLink } from "@/components/site/rebuild/BookLink";
 import { Container } from "@/components/site/rebuild/Container";
-import { operatorAsset } from "@/components/site/rebuild/operatorAsset";
-import { Portrait } from "@/components/site/rebuild/Portrait";
+import { OperatorSpotlight } from "@/components/site/rebuild/OperatorSpotlight";
 import { WorkMandate } from "@/components/site/rebuild/WorkMandate";
 import { AgentTeam } from "@/components/site/rebuild/AgentTeam";
 import { Section } from "@/components/site/rebuild/Section";
@@ -83,21 +82,6 @@ const cases = [
       "An $8M product development studio faced inconsistent project profitability and needed a scalable approach to AI work.",
     work: "Standardized project scoping and staffing, built an AI GTM and delivery framework, and hired a Director of AI.",
     role: "Operating partner: Growth",
-  },
-];
-
-const operators = [
-  {
-    name: "Jian Yang",
-    role: "Finance Operating Partner",
-    prior: "Prior experience: Industrious, Opencare",
-    bio: "At Industrious, secured $140M+ in equity funding and restructured financial operations for rapid scale.",
-  },
-  {
-    name: "Erika Velazquez",
-    role: "Marketing Operating Partner",
-    prior: "Prior experience: Morning Brew, The New Republic",
-    bio: "Specializes in launching and repositioning products. At Morning Brew, developed a newsletter ad product that doubled the average click-through rate.",
   },
 ];
 
@@ -322,35 +306,7 @@ function Page() {
               Review relevant experience and references before the engagement begins.
             </p>
           </div>
-          <div className="ve-people-spread">
-            {operators.map((person, index) => {
-              const photo = operatorAsset(person.name);
-              return (
-                <article
-                  key={person.name}
-                  className={`ve-person-feature ve-person-feature-${index}`}
-                >
-                  <div className="ve-person-image">
-                    <Portrait
-                      src={photo.src}
-                      objectPosition="center 72%"
-                      scale={photo.scale}
-                      className="aspect-[4/5] w-full"
-                    />
-                    <span>{person.role.replace(" Operating Partner", "")}</span>
-                  </div>
-                  <div className="ve-person-copy">
-                    <h3>{person.name}</h3>
-                    <p className="ve-person-prior">{person.prior}</p>
-                    <p>{person.bio}</p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-          <p className="ve-provenance">
-            Experience shown is from the operators’ careers, including roles before Veep.
-          </p>
+          <OperatorSpotlight audience="companies" />
         </Container>
       </Section>
 

@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ogImageMeta } from "@/lib/seo";
 import { BookLink } from "@/components/site/rebuild/BookLink";
 import { Container } from "@/components/site/rebuild/Container";
-import { operatorAsset } from "@/components/site/rebuild/operatorAsset";
-import { Portrait } from "@/components/site/rebuild/Portrait";
+import { OperatorSpotlight } from "@/components/site/rebuild/OperatorSpotlight";
 import { PortfolioMap } from "@/components/site/rebuild/PortfolioMap";
 import { Section } from "@/components/site/rebuild/Section";
 import { TextLink } from "@/components/site/rebuild/TextLink";
@@ -49,19 +48,6 @@ const cadence = [
   {
     label: "Review quarterly",
     body: "Revisit priorities, upcoming transactions, and leadership changes across the portfolio.",
-  },
-];
-
-const operators = [
-  {
-    name: "Alan Poussaint",
-    role: "Finance Operating Partner",
-    bio: "Former Principal at Lincolnshire Management and CFO of a Rocket Internet portfolio company. Brings experience across private equity, strategic finance, and company building.",
-  },
-  {
-    name: "Sean Park",
-    role: "People Operating Partner",
-    bio: "Former CPO at Activant Capital, with experience in portfolio talent strategy, organization design, and interim people leadership.",
   },
 ];
 
@@ -267,37 +253,10 @@ function Page() {
             </p>
             <p>Aggregated outcomes across our operators’ careers.</p>
           </div>
-          <div className="ve-fund-people">
-            <div className="ve-fund-portraits">
-              {operators.map((person) => {
-                const photo = operatorAsset(person.name);
-                return (
-                  <figure key={person.name}>
-                    <Portrait
-                      src={photo.src}
-                      objectPosition={photo.objectPosition}
-                      scale={photo.scale}
-                      className="aspect-[4/5] w-full"
-                    />
-                    <figcaption>{person.name}</figcaption>
-                  </figure>
-                );
-              })}
-            </div>
-            <div className="ve-fund-careers">
-              {operators.map((person) => (
-                <article key={person.name}>
-                  <p className="ve-kicker">{person.role}</p>
-                  <h3>{person.name}</h3>
-                  <p>{person.bio}</p>
-                </article>
-              ))}
-              <p className="ve-provenance">
-                Experience shown is from the operators’ careers, including roles before Veep.
-                Selected from 75+ vetted senior operators for the mandate and business.
-              </p>
-            </div>
-          </div>
+          <OperatorSpotlight audience="funds" />
+          <p className="ve-provenance">
+            Selected from 75+ vetted senior operators for the mandate and business.
+          </p>
         </Container>
       </Section>
 
