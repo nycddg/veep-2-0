@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Pause, Play } from "lucide-react";
+import { Container } from "./Container";
 
 // Full client list from the original polish site's ClientStrip.
 const clients = [
@@ -31,18 +32,20 @@ const selectedClients = [
 export function ClientTicker({ kind = "full" }: { kind?: "full" | "clients" }) {
   const [paused, setPaused] = useState(false);
   const names = kind === "full" ? clients : selectedClients;
-  return (
-    <div className={`ve-ticker ve-ticker-${kind}`}>
+  const content = (
+    <>
       <div className="ve-ticker-label">
         <p>{kind === "full" ? "Trusted by" : "Selected Veep clients"}</p>
-        <button
-          type="button"
-          aria-label={paused ? "Play names" : "Pause names"}
-          aria-pressed={paused}
-          onClick={() => setPaused(!paused)}
-        >
-          {paused ? <Play size={15} /> : <Pause size={15} />}
-        </button>
+        {kind === "clients" && (
+          <button
+            type="button"
+            aria-label={paused ? "Play names" : "Pause names"}
+            aria-pressed={paused}
+            onClick={() => setPaused(!paused)}
+          >
+            {paused ? <Play size={15} /> : <Pause size={15} />}
+          </button>
+        )}
       </div>
       <div className="ve-ticker-window">
         <div
@@ -61,6 +64,20 @@ export function ClientTicker({ kind = "full" }: { kind?: "full" | "clients" }) {
           ))}
         </div>
       </div>
+    </>
+  );
+  return (
+    <div
+      className={`ve-ticker ve-ticker-${kind}`}
+      role={kind === "full" ? "group" : undefined}
+      aria-label={kind === "full" ? "Veep clients. Pauses while hovered or focused." : undefined}
+      tabIndex={kind === "full" ? 0 : undefined}
+    >
+      {kind === "full" ? (
+        <Container className="ve-container ve-ticker-inner">{content}</Container>
+      ) : (
+        content
+      )}
     </div>
   );
 }

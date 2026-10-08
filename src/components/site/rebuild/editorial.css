@@ -235,6 +235,25 @@
 .rebuild .ve-ticker-window {
   overflow: hidden;
 }
+.rebuild .ve-ticker-full .ve-ticker-inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: 24px;
+}
+.rebuild .ve-ticker-full .ve-ticker-label {
+  display: contents;
+}
+.rebuild .ve-ticker-full .ve-ticker-label p {
+  grid-column: 1;
+  grid-row: 1;
+  white-space: nowrap;
+}
+.rebuild .ve-ticker-full .ve-ticker-window {
+  grid-column: 2;
+  grid-row: 1;
+  mask-image: linear-gradient(to right, transparent, #000 48px);
+}
 .rebuild .ve-ticker-track {
   display: flex;
   width: max-content;
@@ -847,6 +866,12 @@
     gap: 25px;
     padding-right: 25px;
   }
+  .rebuild .ve-ticker-full .ve-ticker-inner {
+    column-gap: 8px;
+  }
+  .rebuild .ve-ticker-full .ve-ticker-window {
+    mask-image: linear-gradient(to right, transparent, #000 24px);
+  }
   .rebuild .ve-title {
     font-size: 36px;
   }
@@ -973,6 +998,22 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .rebuild .ve-ticker-full .ve-ticker-inner {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 12px;
+  }
+  .rebuild .ve-ticker-full .ve-ticker-window {
+    grid-column: 1;
+    grid-row: 2;
+    mask-image: none;
+  }
+  .rebuild .ve-ticker-full .ve-ticker-track ul {
+    min-width: 0;
+    padding: 0;
+  }
+  .rebuild .ve-ticker-full .ve-ticker-track li {
+    white-space: normal;
+  }
   .rebuild .ve-ticker-track {
     animation: none;
     width: auto;
