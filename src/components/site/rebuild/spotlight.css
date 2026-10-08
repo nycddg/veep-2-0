@@ -1,0 +1,404 @@
+/* A rotating portrait field with a single editorial focus. */
+.rebuild .ve-spotlight {
+  --spotlight-card: 300px;
+  min-width: 0;
+}
+.rebuild .ve-spotlight-stage {
+  position: relative;
+  height: 410px;
+  isolation: isolate;
+}
+.rebuild .ve-spotlight-portrait {
+  position: absolute;
+  top: 22px;
+  left: calc(50% - var(--spotlight-card) / 2);
+  width: var(--spotlight-card);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #dfe7f5;
+  box-shadow: 0 14px 30px #0002;
+  transform-origin: center 65%;
+  transition:
+    transform 1100ms cubic-bezier(0.22, 0.75, 0.25, 1),
+    filter 1100ms ease;
+}
+.rebuild .ve-spotlight-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rebuild .ve-spotlight-photo-label {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  font-family: var(--font-mono);
+  color: #17233d;
+  font-size: 11px;
+}
+.rebuild .ve-spotlight-portrait[data-position="prime"] {
+  z-index: 4;
+  transform: translate(0, 0) rotate(-2deg);
+  filter: grayscale(0);
+}
+.rebuild .ve-spotlight-portrait[data-position="left"] {
+  z-index: 2;
+  transform: translate(-64%, 10px) scale(0.8) rotate(-10deg);
+  filter: grayscale(1) contrast(0.88);
+}
+.rebuild .ve-spotlight-portrait[data-position="right"] {
+  z-index: 3;
+  transform: translate(64%, 14px) scale(0.8) rotate(9deg);
+  filter: grayscale(1) contrast(0.88);
+}
+.rebuild .ve-spotlight-portrait[data-position="back"] {
+  z-index: 1;
+  transform: translate(8%, -12px) scale(0.84) rotate(5deg);
+  filter: grayscale(1) contrast(0.88);
+}
+.rebuild .ve-spotlight-copy {
+  position: relative;
+  display: grid;
+}
+.rebuild .ve-spotlight-story {
+  grid-area: 1 / 1;
+  align-self: start;
+}
+.rebuild .ve-spotlight-story h3 {
+  font-size: 40px;
+  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  margin-top: 20px;
+}
+.rebuild .ve-spotlight-context {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--rb-link);
+}
+.rebuild .ve-spotlight-role {
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--rb-muted);
+  margin-top: 10px;
+}
+.rebuild .ve-spotlight-evidence {
+  font-size: 23px;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  margin-top: 28px;
+  max-width: 35ch;
+}
+.rebuild .ve-spotlight-offstage {
+  /* Keep every story in layout and the accessibility tree, reserving the
+     tallest caption so automatic progression never moves surrounding content. */
+  clip-path: inset(50%);
+  pointer-events: none;
+}
+.rebuild .ve-spotlight-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 22px;
+}
+.rebuild .ve-spotlight-count {
+  font-family: var(--font-mono);
+  color: var(--rb-muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.rebuild .ve-spotlight-indicators {
+  display: flex;
+}
+.rebuild .ve-spotlight-indicators button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 44px;
+  cursor: pointer;
+}
+.rebuild .ve-spotlight-indicators button > span {
+  width: 20px;
+  height: 2px;
+  background: var(--rb-rule);
+}
+.rebuild .ve-spotlight-indicators button[aria-pressed="true"] > span {
+  background: var(--rb-link);
+}
+.rebuild .ve-spotlight-playback {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  margin-left: auto;
+  padding: 0 6px;
+  font-size: 12px;
+  color: var(--rb-muted);
+  cursor: pointer;
+}
+.rebuild .ve-spotlight-controls button:focus-visible {
+  outline: 2px solid var(--rb-link);
+  outline-offset: 2px;
+}
+.rebuild .ve-spotlight-provenance {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--rb-muted);
+  margin-top: 10px;
+}
+/* Home keeps the evidence on the portrait; only playback sits below it. */
+.rebuild .ve-spotlight--home {
+  --spotlight-card: 350px;
+  width: 100%;
+  max-width: 460px;
+  justify-self: center;
+}
+.rebuild .ve-spotlight--home .ve-spotlight-stage {
+  height: 476px;
+}
+.rebuild .ve-spotlight--home .ve-spotlight-portrait {
+  top: 0;
+  aspect-ratio: 7 / 8;
+  transform-origin: center bottom;
+  border: 1px solid #ffffff45;
+  border-radius: 12px;
+}
+.rebuild .ve-spotlight--home .ve-spotlight-portrait[data-depth="0"] {
+  z-index: 4;
+  transform: none;
+}
+.rebuild .ve-spotlight--home .ve-spotlight-portrait[data-depth="1"] {
+  z-index: 3;
+  transform: translateY(24px) scale(0.94);
+}
+.rebuild .ve-spotlight--home .ve-spotlight-portrait[data-depth="2"] {
+  z-index: 2;
+  transform: translateY(48px) scale(0.88);
+}
+.rebuild .ve-spotlight--home .ve-spotlight-portrait[data-depth="3"] {
+  z-index: 1;
+  transform: translateY(72px) scale(0.82);
+}
+.rebuild .ve-spotlight--home .ve-spotlight-photo-label {
+  top: 20px;
+  left: 24px;
+}
+.rebuild .ve-spotlight--home .ve-spotlight-portrait img {
+  transform: scale(1.15);
+  transform-origin: center 70%;
+}
+.rebuild .ve-spotlight-overlay {
+  position: absolute;
+  inset: 50% 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  background: linear-gradient(transparent, #081122b8 65%, #081122f5);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+.rebuild .ve-spotlight-portrait[data-position="prime"] .ve-spotlight-overlay {
+  opacity: 1;
+}
+.rebuild .ve-spotlight-overlay .ve-spotlight-overlay-name {
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.rebuild .ve-spotlight-overlay p {
+  font-size: 15px;
+  line-height: 1.45;
+  max-width: 29ch;
+}
+.rebuild .ve-spotlight-stack-name {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 5px 20px;
+  background: #101b30;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.rebuild .ve-spotlight-portrait[data-position="prime"] .ve-spotlight-stack-name {
+  visibility: hidden;
+}
+.rebuild .ve-spotlight-sr-copy {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.rebuild .ve-spotlight--home .ve-spotlight-editorial {
+  width: var(--spotlight-card);
+  max-width: 100%;
+  margin: 0 auto;
+}
+.rebuild .ve-spotlight--home .ve-spotlight-controls {
+  margin-top: 10px;
+}
+.rebuild .ve-spotlight--companies,
+.rebuild .ve-spotlight--funds {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 70px;
+  align-items: center;
+  margin-top: 60px;
+}
+.rebuild .ve-spotlight--companies .ve-spotlight-copy,
+.rebuild .ve-spotlight--funds .ve-spotlight-copy {
+  min-height: 315px;
+}
+.rebuild .ve-spotlight--funds .ve-spotlight-portrait[data-position="prime"] {
+  transform: translate(0, 0) rotate(0);
+}
+.rebuild .ve-spotlight--funds .ve-spotlight-portrait[data-position="left"] {
+  transform: translate(-63%, 14px) scale(0.8) rotate(-5deg);
+}
+.rebuild .ve-spotlight--funds .ve-spotlight-portrait[data-position="right"] {
+  transform: translate(63%, 14px) scale(0.8) rotate(5deg);
+}
+@media (max-width: 1100px) {
+  .rebuild .ve-spotlight--home {
+    --spotlight-card: 300px;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-stage {
+    height: 420px;
+  }
+  .rebuild .ve-spotlight--companies,
+  .rebuild .ve-spotlight--funds {
+    --spotlight-card: 250px;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 38px;
+  }
+  .rebuild .ve-spotlight-stage {
+    height: 345px;
+  }
+  .rebuild .ve-spotlight-story h3 {
+    font-size: 34px;
+  }
+  .rebuild .ve-spotlight-evidence {
+    font-size: 20px;
+  }
+}
+@media (max-width: 800px) {
+  .rebuild .ve-spotlight--home {
+    --spotlight-card: 340px;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-stage {
+    height: 464px;
+  }
+  .rebuild .ve-spotlight--companies,
+  .rebuild .ve-spotlight--funds {
+    --spotlight-card: 245px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 680px;
+  }
+  .rebuild .ve-spotlight--companies .ve-spotlight-editorial,
+  .rebuild .ve-spotlight--funds .ve-spotlight-editorial {
+    max-width: 560px;
+    width: 100%;
+    margin: auto;
+  }
+  .rebuild .ve-spotlight--companies .ve-spotlight-copy,
+  .rebuild .ve-spotlight--funds .ve-spotlight-copy {
+    min-height: 245px;
+  }
+}
+@media (max-width: 560px) {
+  .rebuild .ve-home-stage .ve-spotlight {
+    order: 0;
+  }
+  .rebuild .ve-spotlight,
+  .rebuild .ve-spotlight--companies,
+  .rebuild .ve-spotlight--funds {
+    --spotlight-card: 68%;
+  }
+  .rebuild .ve-spotlight-stage {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+  .rebuild .ve-spotlight-portrait {
+    top: 16px;
+    border-radius: 6px;
+  }
+  .rebuild .ve-spotlight:not(.ve-spotlight--home) .ve-spotlight-portrait[data-position="prime"] {
+    transform: none;
+  }
+  .rebuild .ve-spotlight:not(.ve-spotlight--home) .ve-spotlight-portrait[data-position="left"] {
+    transform: translate(-25%, 0) scale(0.88) rotate(-5deg);
+  }
+  .rebuild .ve-spotlight:not(.ve-spotlight--home) .ve-spotlight-portrait[data-position="right"] {
+    transform: translate(25%, 0) scale(0.88) rotate(5deg);
+  }
+  .rebuild .ve-spotlight-portrait[data-position="back"] {
+    transform: translate(0, -7px) scale(0.88) rotate(3deg);
+  }
+  .rebuild .ve-spotlight-photo-label {
+    font-size: 10px;
+    top: 12px;
+    left: 14px;
+  }
+  .rebuild .ve-spotlight--home {
+    --spotlight-card: 100%;
+    max-width: 350px;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-stage {
+    height: auto;
+    aspect-ratio: auto;
+    padding-bottom: calc(100% * 8 / 7 + 76px);
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-overlay {
+    padding: 20px;
+  }
+  .rebuild .ve-spotlight-overlay .ve-spotlight-overlay-name {
+    font-size: 27px;
+  }
+  .rebuild .ve-spotlight-overlay p {
+    font-size: 14px;
+  }
+  .rebuild .ve-spotlight-story h3 {
+    font-size: 30px;
+    margin-top: 14px;
+  }
+  .rebuild .ve-spotlight-role {
+    font-size: 15px;
+    margin-top: 8px;
+  }
+  .rebuild .ve-spotlight-evidence {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .rebuild .ve-spotlight-controls {
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .rebuild .ve-spotlight-indicators button {
+    width: 32px;
+  }
+  .rebuild .ve-spotlight--companies,
+  .rebuild .ve-spotlight--funds {
+    margin-top: 36px;
+    gap: 16px;
+  }
+  .rebuild .ve-spotlight--companies .ve-spotlight-copy,
+  .rebuild .ve-spotlight--funds .ve-spotlight-copy {
+    min-height: 275px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rebuild .ve-spotlight-portrait,
+  .rebuild .ve-spotlight-overlay {
+    transition: none;
+  }
+}
