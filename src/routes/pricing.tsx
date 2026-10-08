@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
-import { PageHero } from "@/components/site/PageHero";
-import { FooterCTA } from "@/components/site/FooterCTA";
-import { Reveal } from "@/components/site/Reveal";
+import { Container } from "@/components/site/rebuild/Container";
+import { Section } from "@/components/site/rebuild/Section";
+import { TextLink } from "@/components/site/rebuild/TextLink";
+import { Disclosure, PublicClose, PublicIntro } from "@/components/site/rebuild/PublicPage";
 import { ogImageMeta } from "@/lib/seo";
 
 const tiers = [
@@ -35,14 +35,13 @@ const tiers = [
     t: "Operator",
     p: "From $15k",
     per: "per month",
-    best: "Ongoing senior ownership for your most critical initiatives.",
+    best: "Embedded senior ownership of a function, initiative, or leadership gap.",
     items: [
       "Finance, GTM, operations, product, or people",
       "Build or reset a function",
       "Resolve leadership gaps",
       "Typically 3–12 months",
     ],
-    featured: true,
   },
   {
     t: "Pod",
@@ -60,9 +59,15 @@ const tiers = [
 
 const notIncluded = [
   { t: "Placement fees", d: "Calls with a Veep founder and operator matching are free." },
-  { t: "Setup or onboarding fees", d: "Contracting, access, and onboarding are managed at no extra cost." },
+  {
+    t: "Setup or onboarding fees",
+    d: "Contracting, access, and onboarding are managed at no extra cost.",
+  },
   { t: "Long-term lock-in", d: "Start focused and continue, pause, or scale as the work changes." },
-  { t: "Hourly billing surprises", d: "Scoped around the work. You know the number before you sign." },
+  {
+    t: "Hourly billing surprises",
+    d: "Scoped around the work. You know the number before you sign.",
+  },
 ];
 
 const faqs = [
@@ -94,9 +99,20 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "Pricing | Veep" },
-      { name: "description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
-      { property: "og:title", content: "Pricing — Priced to the work, not the hour | Veep" },
-      { property: "og:description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
+      {
+        name: "description",
+        content:
+          "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Operator fit is covered by a 30-day fit guarantee.",
+      },
+      {
+        property: "og:title",
+        content: "Pricing | Scope, ownership, and operating capacity | Veep",
+      },
+      {
+        property: "og:description",
+        content:
+          "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Operator fit is covered by a 30-day fit guarantee.",
+      },
       { property: "og:url", content: "https://www.veep.work/pricing" },
       ...ogImageMeta(),
     ],
@@ -108,148 +124,188 @@ export const Route = createFileRoute("/pricing")({
 
 function Page() {
   return (
-    <>
-      <PageHero
-        eyebrow="Pricing"
-        title="Priced to the work. Not the hour."
-        sub="Every engagement is scoped to the work, urgency, and level of ownership required. Transparent rates. No hourly billing. No lock-in by default."
-        primaryLabel="Get in touch"
-        primaryTo="/contact"
-      />
-
-      {/* Four tiers — match homepage Engagements spacing (border-t + pad, not divide-y/gap clash) */}
-      <Reveal as="section" id="tiers" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 min-w-0">
-            {tiers.map((t) => (
-              <div
-                key={t.t}
-                className={`group motion-hover-lift flex flex-col md:min-h-[280px] pt-7 pb-6 pr-2 ${
-                  t.featured
-                    ? "border-t-2 border-accent-coral md:border-t-0 md:pl-6 md:border-l-2 md:border-accent-coral"
-                    : "motion-hairline-tier md:pl-6 md:first:pl-0"
-                }`}
-              >
-                <div className="flex items-baseline gap-3 flex-wrap">
-                  <span className="font-serif font-medium text-xl text-cream">{t.t}</span>
-                  {t.featured && (
-                    <span className="eyebrow">
-                      Most requested
-                    </span>
-                  )}
-                </div>
-                <div className="mt-2 font-mono text-sm text-cream tabular-nums">
-                  {t.p} <span className="text-stone">{t.per}</span>
-                </div>
-                <p className="mt-4 text-base text-stone leading-relaxed">{t.best}</p>
-                <ul className="mt-6 space-y-2.5 text-sm text-stone">
-                  {t.items.map((i) => (
-                    <li key={i} className="flex items-start gap-2.5">
-                      <span className="inline-block h-1 w-1 rounded-full bg-current shrink-0 mt-2" />
-                      <span>{i}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <p className="mt-10 text-sm text-stone">
-            All engagements carry a 30-day fit guarantee · Response within 1 business day
-          </p>
-        </div>
-      </Reveal>
-
-      {/* What's not included — drops off the tiers band to raised so the page
-          breathes ink → band → raised → invert → raised instead of slab-slab */}
-      <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12 md:mb-14">
-            <div className="eyebrow">
-              What we don't charge for
-            </div>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              The price you see is the price you pay.
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
-            {notIncluded.map((n) => (
-              <div key={n.t}>
-                <div className="font-serif font-medium text-xl text-cream tracking-tight">{n.t}</div>
-                <p className="mt-2 text-base text-stone leading-relaxed">{n.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio callout */}
-      <section className="spotlight-invert py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div>
-            <div className="eyebrow">
-              FOR FUNDS
-            </div>
-            <h3 className="mt-6 font-serif font-medium text-xl md:text-2xl text-cream">
-              The right operating partners, ready when the portfolio needs them.
-            </h3>
-            <p className="mt-5 text-stone leading-relaxed max-w-2xl">
-              Built for PE firms, family offices, holdcos, and multi-company
-              founders that need senior operating support across recurring
-              leadership gaps, transaction moments, and value-creation work.
-              Portfolio Rosters include priority operator matching, quarterly
-              capacity planning, preferred commercial terms, as well as
-              emergency CFO, COO, and operator coverage for {"$75k"} annually.
-              Operator engagements are scoped separately by SOW at preferred
-              rates.
-            </p>
-            <div className="mt-6">
-              <Link
-                to="/for-portfolios"
-                className="group motion-link inline-flex items-center gap-2 text-sm text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70"
-              >
-                See how the roster works <ArrowRight size={14} className="motion-arrow" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing FAQ */}
-      <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-12 md:mb-14">
-            <div className="eyebrow">
-              Pricing FAQ
-            </div>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Straight answers to the questions we get most.
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
-            {/* An odd last item spans both columns so the grid never leaves a
-                blank cell (self-correcting if a fourth question is added). */}
-            {faqs.map((f) => (
-              <div key={f.q} className="border-t border-white/10 pt-6 md:last:odd:col-span-2">
-                <div className="text-lg text-cream tracking-tight leading-snug">{f.q}</div>
-                <p className="mt-2 text-base text-stone leading-relaxed">{f.a}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8">
-            <Link
-              to="/faq"
-              className="group motion-link inline-flex items-center gap-2 text-sm text-cream/90 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70"
-            >
-              See the full FAQ <ArrowRight size={14} className="motion-arrow" />
+    <div className="rebuild ve-editorial ve-public ve-pricing">
+      <PublicIntro
+        label="Pricing"
+        title={
+          <>
+            Define the work.
+            <br /> <span>Price the mandate.</span>
+          </>
+        }
+        actions={
+          <>
+            <Link to="/contact" className="ve-button cta-accent">
+              Get in touch
             </Link>
-          </div>
-        </div>
-      </section>
+            <TextLink to="/contact" search={{ intent: "audit" }}>
+              Request a capacity audit <span aria-hidden="true">↗</span>
+            </TextLink>
+          </>
+        }
+      >
+        <p>
+          Agree the scope, the outcomes, and the level of ownership. Then choose the operating
+          capacity the work needs.
+        </p>
+        <p className="ve-intro-note">
+          Transparent rates. No hourly billing. No lock-in by default.
+        </p>
+      </PublicIntro>
 
-      <FooterCTA
-        headline={<>Tell us what cannot wait.</>}
-        sub="Book a 30-minute call with a Veep founder. We'll clarify the work, recommend the right model, and tell you directly if Veep isn't the answer."
-      />
-    </>
+      <Section id="tiers" pad="none" className="ve-pricing-sheet-section">
+        <Container className="ve-container">
+          <div className="ve-pricing-sheet">
+            <div className="ve-price-group-labels">
+              <span>Senior judgment</span>
+              <span>Operating delivery</span>
+            </div>
+            <div className="ve-price-tiers">
+              {tiers.map((tier, index) => (
+                <article key={tier.t} className={`ve-price-tier ve-price-tier-${index}`}>
+                  <p className="ve-kicker">0{index + 1}</p>
+                  <h2>{tier.t}</h2>
+                  <p className="ve-tier-price">
+                    <span>From</span>
+                    {tier.p.replace("From ", "")}
+                    <small>{tier.per}</small>
+                  </p>
+                  <p className="ve-tier-best">{tier.best}</p>
+                  <ul>
+                    {tier.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  <p className="ve-tier-owner">
+                    {index === 0
+                      ? "Your team owns execution."
+                      : index === 3
+                        ? "A lead operator coordinates the team."
+                        : "A lead operator owns the work."}
+                  </p>
+                </article>
+              ))}
+            </div>
+            <div className="ve-price-sheet-note">
+              <span>Scope. Assemble. Own. Deliver.</span>
+              <p>Starting prices. The agreed scope sets the final fee.</p>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="ve-price-assurance">
+        <Container className="ve-container ve-assurance-layout">
+          <div className="ve-fit-statement">
+            <p className="ve-kicker">Operator fit</p>
+            <p className="ve-fit-number">
+              30<span>days</span>
+            </p>
+            <h2>
+              Fit matters.
+              <br /> We stand behind it.
+            </h2>
+            <p>
+              If the operator isn't right within the first 30 days, we swap them or you walk, with
+              no fee owed for the remaining term.
+            </p>
+          </div>
+          <div>
+            <h2 className="ve-title">
+              Clear before
+              <br /> you commit.
+            </h2>
+            <div className="ve-commercial-notes">
+              {notIncluded.map((item) => (
+                <div key={item.t}>
+                  <h3>{item.t}</h3>
+                  <p>{item.d}</p>
+                </div>
+              ))}
+            </div>
+            <p className="ve-small-note">Response within one business day.</p>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="ve-price-roster">
+        <Container className="ve-container ve-roster-price-layout">
+          <div>
+            <p className="ve-kicker">For Funds & Portfolio Owners</p>
+            <h2 className="ve-title">
+              One operating
+              <br /> relationship.
+              <br /> Across the portfolio.
+            </h2>
+            <p className="ve-roster-price">
+              $75k <span>/ year</span>
+            </p>
+            <p>Portfolio Roster · Annual retainer</p>
+          </div>
+          <div>
+            <h3>Plan capacity. Scope delivery separately.</h3>
+            <p>
+              Portfolio planning and priority operator access, under one master agreement. Quarterly
+              reviews, included diagnostics, and agreed emergency Operator or Pod coverage terms
+              help prepare for what’s next.
+            </p>
+            <p>
+              Company engagements have their own scope, statement of work, and delivery fee at
+              preferred rates. The annual retainer does not include unlimited operator delivery.
+            </p>
+            <TextLink to="/for-portfolios" hash="roster">
+              See the full Roster relationship <span aria-hidden="true">↗</span>
+            </TextLink>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="ve-price-agent-note">
+        <Container className="ve-container ve-section-opening">
+          <div>
+            <p className="ve-kicker">Agent Teams</p>
+            <h2 className="ve-title">
+              Recurring work.
+              <br /> A separate scope.
+            </h2>
+          </div>
+          <div>
+            <p className="ve-body">
+              For recurring functional work, agents support delivery under operator direction and
+              technical oversight. Systems, data access, timing, pricing, review, and handoff are
+              agreed for the work.
+            </p>
+            <TextLink to="/for-companies" hash="agent-teams">
+              Explore Agent Teams <span aria-hidden="true">↗</span>
+            </TextLink>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="ve-price-questions">
+        <Container className="ve-container ve-question-layout">
+          <div>
+            <h2 className="ve-title">
+              Before
+              <br /> we begin.
+            </h2>
+            <TextLink to="/faq">
+              All questions <span aria-hidden="true">↗</span>
+            </TextLink>
+          </div>
+          <div>
+            {faqs.map((faq) => (
+              <Disclosure key={faq.q} question={faq.q}>
+                <p>{faq.a}</p>
+              </Disclosure>
+            ))}
+          </div>
+        </Container>
+      </Section>
+      <PublicClose>
+        Bring the priority, urgency, and outcome. In a 30-minute intro call, we’ll discuss the right
+        scope and level of support.
+      </PublicClose>
+    </div>
   );
 }

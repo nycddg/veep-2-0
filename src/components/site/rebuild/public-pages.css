@@ -1,0 +1,1627 @@
+/* Companion pages share the public narrative without changing portal surfaces. */
+.rebuild.ve-public {
+  overflow: clip;
+}
+.rebuild .ve-public-intro {
+  padding: 56px 0 76px;
+}
+.rebuild .ve-public-opening {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 72px;
+  margin-top: 26px;
+  align-items: start;
+}
+.rebuild .ve-public-opening h1,
+.rebuild .ve-meet-opening h1 {
+  font-size: clamp(48px, 5.65vw, 82px);
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
+.rebuild .ve-public-opening h1 > span,
+.rebuild .ve-meet-opening h1 > span {
+  color: var(--rb-link);
+}
+.rebuild .ve-public-intro-copy {
+  padding-top: 5px;
+}
+.rebuild .ve-public-intro-copy > p {
+  font-size: 20px;
+  line-height: 1.55;
+  max-width: 43ch;
+}
+.rebuild .ve-public-intro-copy > p + p {
+  margin-top: 22px;
+}
+.rebuild .ve-public-intro-copy .ve-intro-note {
+  font-size: 15px;
+  color: var(--rb-muted);
+}
+.rebuild .ve-public-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 28px;
+  margin-top: 30px;
+}
+.rebuild .ve-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 13px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.rebuild .ve-small-note {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--rb-muted);
+  margin-top: 24px;
+}
+.rebuild .ve-pricing-sheet-section {
+  padding-bottom: 36px;
+}
+.rebuild .ve-pricing-sheet {
+  color: #101829;
+  background: #eeefe9;
+  border-top: 5px solid #789fff;
+}
+.rebuild .ve-price-group-labels {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  font-size: 14px;
+}
+.rebuild .ve-price-group-labels span {
+  padding: 16px 28px;
+  background: #dfe5ef;
+}
+.rebuild .ve-price-group-labels span:first-child {
+  background: #cad6ef;
+}
+.rebuild .ve-price-tiers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.rebuild .ve-price-tier {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 32px 28px 24px;
+  border-right: 1px solid #10182926;
+}
+.rebuild .ve-price-tier:last-child {
+  border: 0;
+}
+.rebuild .ve-price-tier > .ve-kicker {
+  color: #526882;
+}
+.rebuild .ve-price-tier h2 {
+  margin-top: 18px;
+  font-size: 29px;
+  letter-spacing: -0.03em;
+}
+.rebuild .ve-tier-price {
+  font-family: var(--font-mono);
+  font-size: clamp(40px, 4.45vw, 64px);
+  letter-spacing: -0.075em;
+  line-height: 1.05;
+  margin-top: 32px;
+  white-space: nowrap;
+}
+.rebuild .ve-tier-price > span,
+.rebuild .ve-tier-price > small {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+.rebuild .ve-tier-price > span {
+  margin-bottom: 6px;
+}
+.rebuild .ve-tier-price > small {
+  margin-top: 8px;
+}
+.rebuild .ve-tier-best {
+  font-size: 18px;
+  line-height: 1.45;
+  margin-top: 28px;
+  min-height: 104px;
+}
+.rebuild .ve-price-tier ul {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 20px 0 32px;
+}
+.rebuild .ve-price-tier li {
+  padding-left: 13px;
+  position: relative;
+  margin-top: 10px;
+}
+.rebuild .ve-price-tier li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 4px;
+  height: 4px;
+  background: #4e7ad4;
+}
+.rebuild .ve-tier-owner {
+  font-size: 14px;
+  line-height: 1.45;
+  padding-top: 20px;
+  border-top: 1px solid #10182926;
+  margin-top: auto;
+}
+.rebuild .ve-price-sheet-note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 28px;
+  border-top: 1px solid #10182926;
+  font-size: 13px;
+}
+.rebuild .ve-price-sheet-note > span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.rebuild .ve-assurance-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 120px;
+}
+.rebuild .ve-fit-statement {
+  border-left: 2px solid var(--ve-coral);
+  padding-left: 30px;
+}
+.rebuild .ve-fit-number {
+  font-family: var(--font-mono);
+  font-size: 144px;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  margin-top: 24px;
+  color: var(--rb-link);
+}
+.rebuild .ve-fit-number > span {
+  font-family: var(--font-sans);
+  font-size: 27px;
+  letter-spacing: -0.02em;
+  margin-left: 14px;
+}
+.rebuild .ve-fit-statement h2 {
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-top: 24px;
+}
+.rebuild .ve-fit-statement > p:last-child {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 22px;
+  max-width: 34ch;
+  color: var(--rb-muted);
+}
+.rebuild .ve-commercial-notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px 32px;
+  margin-top: 44px;
+}
+.rebuild .ve-commercial-notes h3 {
+  font-size: 21px;
+  line-height: 1.25;
+}
+.rebuild .ve-commercial-notes p {
+  margin-top: 12px;
+  color: var(--rb-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.rebuild .ve-price-roster {
+  background: #20314e;
+  color: #f6f6f2;
+  --rb-link: #b5caff;
+}
+.rebuild .ve-roster-price-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.rebuild .ve-price-roster .ve-title {
+  margin-top: 24px;
+  font-size: 52px;
+}
+.rebuild .ve-price-roster .ve-roster-price {
+  font-family: var(--font-mono);
+  font-size: 66px;
+  letter-spacing: -0.06em;
+  margin-top: 30px;
+  line-height: 1.1;
+}
+.rebuild .ve-roster-price span {
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+.rebuild .ve-roster-price + p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #c4cfe1;
+}
+.rebuild .ve-roster-price-layout > div:last-child > h3 {
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+.rebuild .ve-roster-price-layout > div:last-child > p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 22px;
+  color: #c4cfe1;
+}
+.rebuild .ve-roster-price-layout .rb-link {
+  margin-top: 24px;
+}
+.rebuild .ve-price-agent-note {
+  border-bottom: 1px solid var(--rb-rule);
+}
+.rebuild .ve-price-agent-note .ve-kicker {
+  margin-bottom: 22px;
+}
+.rebuild .ve-price-agent-note .rb-link {
+  margin-top: 24px;
+}
+.rebuild .ve-question-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  gap: 100px;
+}
+.rebuild .ve-question-layout > div:first-child .rb-link {
+  margin-top: 28px;
+}
+.rebuild .ve-disclosure {
+  border-bottom: 1px solid var(--rb-rule);
+}
+.rebuild .ve-disclosure:first-child {
+  border-top: 1px solid var(--rb-rule);
+}
+.rebuild .ve-disclosure summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 28px;
+  list-style: none;
+  cursor: pointer;
+  padding: 25px 0;
+  font-size: 23px;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+.rebuild .ve-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+.rebuild .ve-disclosure summary:hover {
+  color: var(--rb-link);
+}
+.rebuild .ve-disclosure summary:focus-visible {
+  outline: 2px solid var(--rb-link);
+  outline-offset: 5px;
+}
+.rebuild .ve-disclosure-mark {
+  flex-shrink: 0;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--rb-link);
+  transition: transform 220ms;
+}
+.rebuild .ve-disclosure[open] .ve-disclosure-mark {
+  transform: rotate(45deg);
+}
+.rebuild .ve-disclosure > div {
+  padding: 0 46px 30px 0;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--rb-muted);
+}
+.rebuild .ve-network-spread {
+  padding-bottom: 86px;
+}
+.rebuild .ve-network-spread-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 28px;
+  font-size: 15px;
+}
+.rebuild .ve-network-spread-label strong {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: -0.06em;
+  margin-right: 10px;
+}
+.rebuild .ve-contact-sheet {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+.rebuild .ve-contact-sheet figure:nth-child(even) {
+  margin-top: 35px;
+}
+.rebuild .ve-contact-sheet img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center 70%;
+}
+.rebuild .ve-contact-sheet figcaption {
+  font-size: 13px;
+  color: var(--rb-muted);
+  margin-top: 15px;
+}
+.rebuild .ve-contact-sheet figcaption span {
+  display: block;
+  color: var(--rb-text);
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+.rebuild .ve-founders-section {
+  background: #eeefe9;
+  color: #101829;
+  --rb-muted: #46515c;
+}
+.rebuild .ve-founders {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 65px;
+  gap: 52px;
+}
+.rebuild .ve-founders article {
+  border-top: 2px solid #4e7ad4;
+  padding-top: 26px;
+}
+.rebuild .ve-founders h3 {
+  font-size: 40px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  margin: 22px 0;
+  max-width: 8ch;
+}
+.rebuild .ve-founders article > p:last-child {
+  font-size: 18px;
+  line-height: 1.6;
+}
+.rebuild .ve-principles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 80px;
+  row-gap: 56px;
+  margin: 60px 0 35px;
+}
+.rebuild .ve-principles li {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 24px;
+}
+.rebuild .ve-principles li > span {
+  font-family: var(--font-mono);
+  font-size: 32px;
+  line-height: 1.15;
+  color: var(--rb-link);
+  letter-spacing: -0.05em;
+}
+.rebuild .ve-principles h3 {
+  font-size: 28px;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+.rebuild .ve-principles p {
+  font-size: 18px;
+  color: var(--rb-muted);
+  line-height: 1.6;
+  margin-top: 14px;
+}
+.rebuild .ve-principles-section > div > .rb-link {
+  margin-top: 22px;
+}
+.rebuild .ve-join-portraits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 28px 0 0;
+}
+.rebuild .ve-join-portraits img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: center 70%;
+}
+.rebuild .ve-join-portraits figcaption {
+  font-size: 14px;
+  margin-top: 10px;
+  line-height: 1.3;
+}
+.rebuild .ve-join-portraits figcaption span {
+  display: block;
+  color: var(--rb-muted);
+  font-size: 12px;
+  margin-top: 5px;
+}
+.rebuild .ve-join-criteria {
+  background: #20314e;
+  color: #f6f6f2;
+}
+.rebuild .ve-join-criteria .ve-section-opening > p {
+  color: #c4cfe1;
+}
+.rebuild .ve-criteria-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px 90px;
+  margin-top: 58px;
+}
+.rebuild .ve-criteria-grid .ve-kicker {
+  color: #b5caff;
+}
+.rebuild .ve-criteria-grid h3 {
+  font-size: 29px;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-top: 16px;
+}
+.rebuild .ve-criteria-grid p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #c4cfe1;
+  margin-top: 16px;
+}
+.rebuild .ve-form-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 100px;
+  align-items: start;
+}
+.rebuild .ve-form-aside {
+  padding-top: 30px;
+}
+.rebuild .ve-form-aside > .ve-title {
+  margin-top: 25px;
+}
+.rebuild .ve-form-aside > p:not(.ve-kicker):not(.ve-small-note) {
+  font-size: 19px;
+  color: var(--rb-muted);
+  line-height: 1.6;
+  margin-top: 25px;
+  max-width: 35ch;
+}
+.rebuild .ve-next-steps {
+  margin-top: 40px;
+}
+.rebuild .ve-next-steps li {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 20px;
+  padding: 0 0 24px;
+  position: relative;
+}
+.rebuild .ve-next-steps li > span {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--rb-link);
+  padding-top: 5px;
+}
+.rebuild .ve-next-steps p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.rebuild .ve-form-sheet {
+  background: #eeefe9;
+  color: #101829;
+  padding: 42px;
+  border-top: 5px solid #789fff;
+  color-scheme: light;
+  --cream: #101829;
+  --stone: #46515c;
+  --stone-soft: #46515c;
+  --ink: #101829;
+  --accent: #315ea8;
+  --accent-coral: #bb342d;
+  --rb-text: #101829;
+  --rb-muted: #46515c;
+  --rb-rule: #10182935;
+  --rb-link: #315ea8;
+}
+.rebuild .ve-form-heading {
+  margin-bottom: 34px;
+}
+.rebuild .ve-form-heading h3 {
+  font-size: 34px;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-top: 16px;
+}
+.rebuild .ve-form-heading > p:last-child {
+  font-size: 13px;
+  margin-top: 12px;
+  color: #46515c;
+}
+.rebuild .ve-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--rb-rule);
+  color: var(--rb-text);
+  background: var(--rb-raised);
+  border-radius: 2px;
+  padding: 12px 13px;
+  min-height: 48px;
+  font-size: 16px;
+  line-height: 1.4;
+  transition: border-color 180ms;
+}
+.rebuild .ve-input::placeholder {
+  color: var(--rb-muted);
+  opacity: 0.8;
+}
+.rebuild .ve-input:focus {
+  outline: 2px solid var(--rb-link);
+  outline-offset: 2px;
+  border-color: var(--rb-link);
+}
+.rebuild .ve-form-sheet .ve-input {
+  background: #fff;
+}
+.rebuild .ve-form-sheet .ve-field-label {
+  display: block;
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 500;
+}
+.rebuild .ve-form-sheet form {
+  min-width: 0;
+}
+.rebuild .ve-form-sheet form > div,
+.rebuild .ve-form-sheet form label {
+  min-width: 0;
+}
+.rebuild .ve-form-sheet form > button {
+  background: #101829;
+  color: #f6f6f2;
+  border-radius: 3px;
+  font-size: 16px;
+  min-height: 48px;
+}
+.rebuild .ve-form-sheet form > button:hover {
+  background: #283d60;
+}
+.rebuild .ve-form-sheet details {
+  border-top: 1px solid #10182930;
+  padding-top: 14px;
+}
+.rebuild .ve-form-sheet summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  min-height: 44px;
+  font-size: 15px;
+  color: #315ea8;
+  line-height: 1.4;
+}
+.rebuild .ve-form-sheet summary::after {
+  content: "+";
+  font-size: 25px;
+}
+.rebuild .ve-form-sheet details[open] > summary::after {
+  content: "−";
+}
+.rebuild .ve-form-sheet summary:focus-visible {
+  outline: 2px solid #315ea8;
+  outline-offset: 4px;
+}
+.rebuild .ve-input[type="file"] {
+  font-size: 13px;
+  padding: 8px;
+}
+.rebuild .ve-input::file-selector-button {
+  background: #101829;
+  color: #f6f6f2;
+  border: 0;
+  border-radius: 2px;
+  padding: 8px 12px;
+  margin-right: 12px;
+  font-family: inherit;
+}
+.rebuild .ve-choice {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 12px;
+  gap: 8px;
+  border: 1px solid #10182940;
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.rebuild .ve-choice:has(:checked) {
+  border-color: #315ea8;
+  background: #dce5f5;
+}
+.rebuild .ve-form-sheet :is(input[type="checkbox"], input[type="radio"]) {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  accent-color: #315ea8;
+}
+.rebuild .ve-inquiry-context {
+  margin-top: 25px;
+  padding: 20px;
+  border-left: 2px solid var(--rb-link);
+  background: var(--rb-raised);
+}
+.rebuild .ve-inquiry-context > p:last-child {
+  overflow-wrap: anywhere;
+  margin-top: 10px;
+}
+.rebuild .ve-meet-hero {
+  padding: 56px 0 60px;
+}
+.rebuild .ve-meet-opening {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 110px;
+  align-items: start;
+  margin-top: 28px;
+}
+.rebuild .ve-meet-opening h1 {
+  font-size: 88px;
+}
+.rebuild .ve-meet-opening .ve-meet-lead {
+  margin-top: 35px;
+  font-size: 28px;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+.rebuild .ve-meet-opening > div > p:not(.ve-meet-lead) {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--rb-muted);
+  margin-top: 25px;
+  max-width: 42ch;
+}
+.rebuild .ve-meet-portrait {
+  position: relative;
+  background: #edf0f7;
+  color: #101829;
+  transform: rotate(3deg);
+  margin: 15px 12px 0 0;
+}
+.rebuild .ve-meet-portrait img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center 70%;
+}
+.rebuild .ve-meet-portrait figcaption {
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 20px 24px;
+}
+.rebuild .ve-meet-portrait figcaption > span {
+  display: block;
+  font-size: 24px;
+  letter-spacing: -0.025em;
+}
+.rebuild .ve-meet-portrait figcaption > small {
+  display: block;
+  font-size: 12px;
+  margin-top: 7px;
+}
+.rebuild .ve-meet-note {
+  position: absolute;
+  bottom: 130px;
+  left: -44px;
+  padding: 18px 22px;
+  background: #789fff;
+  transform: rotate(-6deg);
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.rebuild .ve-meet-timing {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 70px;
+  margin-top: 65px;
+  padding-top: 35px;
+  border-top: 1px solid var(--rb-rule);
+  align-items: end;
+}
+.rebuild .ve-meet-timing > p strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 55px;
+  letter-spacing: -0.07em;
+  line-height: 1;
+}
+.rebuild .ve-meet-timing > p span {
+  display: block;
+  font-size: 14px;
+  color: var(--rb-muted);
+  margin-top: 14px;
+}
+.rebuild .ve-meet-timing > div {
+  justify-self: end;
+  font-size: 13px;
+  color: var(--rb-muted);
+  line-height: 1.7;
+}
+.rebuild .ve-method-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 48px;
+}
+.rebuild .ve-method-track li {
+  border-top: 1px solid var(--rb-link);
+  position: relative;
+  padding: 30px 28px 0 0;
+}
+.rebuild .ve-method-track li::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  top: -4px;
+  left: 0;
+  background: var(--rb-link);
+}
+.rebuild .ve-method-track li > span {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--rb-link);
+}
+.rebuild .ve-method-track h3 {
+  font-size: 27px;
+  letter-spacing: -0.025em;
+  margin-top: 18px;
+}
+.rebuild .ve-method-track p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--rb-muted);
+  margin-top: 14px;
+}
+.rebuild .ve-meet-proof {
+  background: #eeefe9;
+  color: #101829;
+  --rb-link: #315ea8;
+  --rb-muted: #46515c;
+}
+.rebuild .ve-meet-proof-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.rebuild .ve-meet-proof h2 {
+  font-size: 29px;
+  letter-spacing: -0.025em;
+}
+.rebuild .ve-meet-proof h3 {
+  font-size: 38px;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+.rebuild .ve-meet-proof-layout > div:last-child > p:not(.ve-small-note) {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-top: 26px;
+}
+.rebuild .ve-meet-proof .rb-link {
+  margin-top: 24px;
+}
+.rebuild .ve-meet-next {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+}
+.rebuild .ve-meet-next > div {
+  padding: 32px 0 0;
+  border-top: 1px solid var(--rb-rule);
+}
+.rebuild .ve-meet-next .ve-title {
+  margin-top: 26px;
+}
+.rebuild .ve-meet-next > div > p:not(.ve-kicker) {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--rb-muted);
+  max-width: 40ch;
+  margin: 24px 0;
+}
+.rebuild .ve-faq-section {
+  padding: 15px 0 60px;
+}
+.rebuild .ve-faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 80px;
+  align-items: start;
+}
+.rebuild .ve-faq-index,
+.rebuild .ve-legal-index {
+  position: sticky;
+  top: 115px;
+}
+.rebuild .ve-faq-index > a {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  font-size: 18px;
+  padding: 14px 0;
+}
+.rebuild .ve-faq-index .ve-kicker {
+  margin-bottom: 22px;
+  color: var(--rb-muted);
+}
+.rebuild .ve-faq-index > a > span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--rb-link);
+}
+.rebuild .ve-faq-index > a:hover {
+  color: var(--rb-link);
+}
+.rebuild .ve-faq-group {
+  padding-bottom: 60px;
+}
+.rebuild .ve-faq-group h2 {
+  font-size: 38px;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin-bottom: 22px;
+}
+.rebuild.ve-legal .ve-public-opening {
+  grid-template-columns: 1.1fr 1fr;
+}
+.rebuild .ve-legal-document {
+  display: grid;
+  grid-template-columns: 1fr 2.3fr;
+  gap: 100px;
+  padding-bottom: 100px;
+}
+.rebuild .ve-legal-index nav {
+  display: grid;
+  gap: 4px;
+  margin-top: 22px;
+}
+.rebuild .ve-legal-index a {
+  font-size: 15px;
+  line-height: 1.4;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  color: var(--rb-muted);
+}
+.rebuild .ve-legal-index a:hover {
+  color: var(--rb-link);
+}
+.rebuild .ve-legal-copy {
+  max-width: 74ch;
+  color: var(--rb-text);
+}
+.rebuild .ve-legal-copy .eyebrow {
+  color: var(--rb-muted);
+  font-size: 12px;
+}
+.rebuild .ve-legal-copy p,
+.rebuild .ve-legal-copy ul {
+  color: var(--rb-muted);
+  font-size: 17px;
+  line-height: 1.75;
+}
+.rebuild .ve-legal-copy h2 {
+  font-size: 28px;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.rebuild .ve-legal-copy h3 {
+  font-size: 21px;
+}
+.rebuild .ve-legal-copy a {
+  color: var(--rb-link);
+  text-decoration-color: var(--rb-rule);
+}
+.rebuild .ve-legal-copy .flex > .eyebrow {
+  min-width: 22px;
+  flex-shrink: 0;
+}
+.rebuild.ve-auth {
+  padding: 70px 22px 90px;
+  min-height: 75vh;
+}
+.rebuild .ve-auth-panel {
+  max-width: 500px;
+  margin: auto;
+  padding-top: 25px;
+}
+.rebuild .ve-auth-panel h1 {
+  font-size: 46px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+.rebuild .ve-auth-panel > p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--rb-muted);
+}
+.rebuild .ve-auth-panel form {
+  margin-top: 36px;
+}
+.rebuild .ve-auth-panel button {
+  border-radius: 4px;
+}
+.rebuild.ve-status-page {
+  min-height: 75vh;
+  padding: 70px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rebuild .ve-status-copy {
+  max-width: 680px;
+  width: 100%;
+  text-align: left;
+}
+.rebuild .ve-status-number {
+  font-family: var(--font-mono);
+  font-size: 170px;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  color: var(--rb-link);
+  margin-top: 20px;
+}
+.rebuild .ve-status-copy > h2 {
+  font-size: 40px;
+  letter-spacing: -0.03em;
+}
+.rebuild .ve-status-copy > p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--rb-muted);
+  margin-top: 20px;
+}
+.rebuild .ve-status-copy :is(a, button) {
+  border-radius: 4px;
+}
+@media (max-width: 1100px) {
+  .rebuild .ve-public-opening {
+    gap: 44px;
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .rebuild .ve-public-opening h1 {
+    font-size: 62px;
+  }
+  .rebuild .ve-public-intro-copy > p {
+    font-size: 18px;
+  }
+  .rebuild .ve-price-tier {
+    padding: 26px 20px 22px;
+  }
+  .rebuild .ve-price-group-labels span {
+    padding-left: 20px;
+  }
+  .rebuild .ve-tier-best {
+    font-size: 17px;
+    min-height: 125px;
+  }
+  .rebuild .ve-assurance-layout,
+  .rebuild .ve-roster-price-layout,
+  .rebuild .ve-question-layout {
+    gap: 65px;
+  }
+  .rebuild .ve-price-roster .ve-title {
+    font-size: 44px;
+  }
+  .rebuild .ve-founders {
+    gap: 30px;
+  }
+  .rebuild .ve-founders h3 {
+    font-size: 36px;
+  }
+  .rebuild .ve-principles {
+    gap: 45px;
+  }
+  .rebuild .ve-principles li {
+    grid-template-columns: 44px 1fr;
+    gap: 18px;
+  }
+  .rebuild .ve-criteria-grid {
+    gap: 40px 54px;
+  }
+  .rebuild .ve-form-layout {
+    gap: 50px;
+    grid-template-columns: 1fr 1.4fr;
+  }
+  .rebuild .ve-form-sheet {
+    padding: 32px;
+  }
+  .rebuild .ve-meet-opening {
+    gap: 70px;
+  }
+  .rebuild .ve-meet-opening h1 {
+    font-size: 64px;
+  }
+  .rebuild .ve-meet-note {
+    font-size: 18px;
+    left: -30px;
+    bottom: 135px;
+  }
+  .rebuild .ve-meet-timing {
+    gap: 45px;
+  }
+  .rebuild .ve-meet-proof-layout,
+  .rebuild .ve-meet-next {
+    gap: 60px;
+  }
+  .rebuild .ve-faq-layout,
+  .rebuild .ve-legal-document {
+    gap: 48px;
+  }
+  .rebuild .ve-contact-sheet {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 16px;
+  }
+  .rebuild .ve-contact-sheet figure:nth-child(even) {
+    margin-top: 0;
+  }
+  .rebuild .ve-contact-sheet img {
+    max-height: 290px;
+  }
+}
+@media (max-width: 800px) {
+  .rebuild .ve-public-intro {
+    padding: 48px 0 58px;
+  }
+  .rebuild .ve-public-opening,
+  .rebuild.ve-legal .ve-public-opening {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .rebuild .ve-public-opening h1 {
+    font-size: 66px;
+  }
+  .rebuild .ve-public-intro-copy > p {
+    max-width: 55ch;
+  }
+  .rebuild .ve-price-tiers {
+    grid-template-columns: 1fr 1fr;
+  }
+  .rebuild .ve-price-group-labels {
+    display: none;
+  }
+  .rebuild .ve-price-tier {
+    padding: 30px;
+    border-bottom: 1px solid #10182926;
+  }
+  .rebuild .ve-price-tier:nth-child(even) {
+    border-right: 0;
+  }
+  .rebuild .ve-price-tier:nth-child(3) {
+    border-bottom: 0;
+  }
+  .rebuild .ve-price-tier > .ve-kicker::after {
+    content: " / Operating delivery";
+  }
+  .rebuild .ve-price-tier-0 > .ve-kicker::after {
+    content: " / Senior judgment";
+  }
+  .rebuild .ve-tier-price {
+    font-size: 64px;
+    margin-top: 24px;
+  }
+  .rebuild .ve-tier-best {
+    min-height: 76px;
+  }
+  .rebuild .ve-assurance-layout {
+    gap: 48px;
+    grid-template-columns: 0.9fr 1fr;
+  }
+  .rebuild .ve-commercial-notes {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .rebuild .ve-fit-number {
+    font-size: 110px;
+  }
+  .rebuild .ve-roster-price-layout {
+    gap: 45px;
+  }
+  .rebuild .ve-price-roster .ve-title {
+    font-size: 38px;
+  }
+  .rebuild .ve-roster-price-layout > div:last-child > h3 {
+    font-size: 26px;
+  }
+  .rebuild .ve-roster-price-layout > div:last-child > p {
+    font-size: 17px;
+  }
+  .rebuild .ve-question-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .rebuild .ve-question-layout .ve-title br {
+    display: none;
+  }
+  .rebuild .ve-question-layout > div:first-child .rb-link {
+    margin-top: 12px;
+  }
+  .rebuild .ve-founders {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .rebuild .ve-founders article {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    column-gap: 40px;
+  }
+  .rebuild .ve-founders .ve-kicker {
+    grid-column: 1/-1;
+  }
+  .rebuild .ve-founders article > p:last-child {
+    margin-top: 20px;
+  }
+  .rebuild .ve-principles {
+    grid-template-columns: 1fr 1fr;
+    gap: 42px 30px;
+  }
+  .rebuild .ve-principles li {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .rebuild.ve-join .ve-public-opening {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 35px;
+  }
+  .rebuild.ve-join .ve-public-opening h1 {
+    font-size: 54px;
+  }
+  .rebuild .ve-join-portraits {
+    gap: 5px;
+  }
+  .rebuild .ve-join-portraits figcaption {
+    font-size: 12px;
+  }
+  .rebuild .ve-criteria-grid {
+    gap: 35px;
+  }
+  .rebuild .ve-criteria-grid h3 {
+    font-size: 26px;
+  }
+  .rebuild .ve-form-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .rebuild .ve-form-aside {
+    padding-top: 0;
+  }
+  .rebuild .ve-form-aside > p:not(.ve-kicker):not(.ve-small-note) {
+    max-width: 50ch;
+  }
+  .rebuild .ve-next-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+  }
+  .rebuild .ve-form-sheet {
+    padding: 38px;
+  }
+  .rebuild .ve-meet-opening {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 45px;
+  }
+  .rebuild .ve-meet-opening h1 {
+    font-size: 57px;
+  }
+  .rebuild .ve-meet-opening .ve-meet-lead {
+    font-size: 23px;
+  }
+  .rebuild .ve-meet-opening > div > p:not(.ve-meet-lead) {
+    font-size: 17px;
+  }
+  .rebuild .ve-meet-portrait {
+    margin-top: 80px;
+  }
+  .rebuild .ve-meet-portrait figcaption {
+    padding: 17px;
+  }
+  .rebuild .ve-meet-portrait figcaption > span {
+    font-size: 22px;
+  }
+  .rebuild .ve-meet-note {
+    position: static;
+    display: block;
+    transform: none;
+    font-size: 17px;
+    padding: 16px;
+  }
+  .rebuild .ve-meet-timing {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 45px;
+  }
+  .rebuild .ve-meet-timing > div {
+    grid-column: 1/-1;
+    justify-self: start;
+  }
+  .rebuild .ve-method-track {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 0;
+  }
+  .rebuild .ve-meet-proof-layout {
+    gap: 35px;
+  }
+  .rebuild .ve-meet-proof .ve-proof-number {
+    font-size: 125px;
+  }
+  .rebuild .ve-meet-proof h3 {
+    font-size: 30px;
+  }
+  .rebuild .ve-meet-proof-layout > div:last-child > p:not(.ve-small-note) {
+    font-size: 18px;
+  }
+  .rebuild .ve-meet-next {
+    gap: 35px;
+  }
+  .rebuild .ve-meet-next .ve-title {
+    font-size: 38px;
+  }
+  .rebuild .ve-faq-layout,
+  .rebuild .ve-legal-document {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .rebuild .ve-faq-index,
+  .rebuild .ve-legal-index {
+    position: static;
+  }
+  .rebuild .ve-faq-index {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rb-rule);
+  }
+  .rebuild .ve-faq-index .ve-kicker {
+    grid-column: 1/-1;
+    margin-bottom: 8px;
+  }
+  .rebuild .ve-legal-index nav {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 30px;
+  }
+}
+@media (max-width: 560px) {
+  .rebuild .ve-public-intro {
+    padding: 35px 0 45px;
+  }
+  .rebuild .ve-public-opening {
+    margin-top: 22px;
+    gap: 26px;
+  }
+  .rebuild .ve-public-opening h1 {
+    font-size: clamp(36px, 9.8vw, 51px);
+  }
+  .rebuild .ve-public-intro-copy > p {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  .rebuild .ve-public-actions {
+    margin-top: 25px;
+    gap: 16px 24px;
+  }
+  .rebuild .ve-price-tiers {
+    grid-template-columns: 1fr;
+  }
+  .rebuild .ve-price-tier,
+  .rebuild .ve-price-tier:nth-child(3) {
+    padding: 28px 24px;
+    border-right: 0;
+    border-bottom: 1px solid #10182926;
+  }
+  .rebuild .ve-price-tier:last-child {
+    border-bottom: 0;
+  }
+  .rebuild .ve-tier-price {
+    font-size: 67px;
+  }
+  .rebuild .ve-tier-best {
+    min-height: 0;
+    font-size: 19px;
+  }
+  .rebuild .ve-price-tier ul {
+    margin-top: 14px;
+  }
+  .rebuild .ve-tier-owner {
+    margin-top: 0;
+  }
+  .rebuild .ve-price-sheet-note {
+    display: block;
+    padding: 22px 24px;
+  }
+  .rebuild .ve-price-sheet-note p {
+    margin-top: 10px;
+  }
+  .rebuild .ve-assurance-layout,
+  .rebuild .ve-roster-price-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .rebuild .ve-fit-statement {
+    padding-left: 22px;
+  }
+  .rebuild .ve-fit-number {
+    font-size: 116px;
+  }
+  .rebuild .ve-fit-statement > p:last-child {
+    font-size: 17px;
+  }
+  .rebuild .ve-commercial-notes {
+    margin-top: 30px;
+  }
+  .rebuild .ve-price-roster .ve-title {
+    font-size: 38px;
+  }
+  .rebuild .ve-price-roster .ve-roster-price {
+    font-size: 60px;
+  }
+  .rebuild .ve-disclosure summary {
+    font-size: 21px;
+    padding: 22px 0;
+    gap: 20px;
+  }
+  .rebuild .ve-disclosure > div {
+    font-size: 17px;
+    padding-right: 15px;
+  }
+  .rebuild .ve-network-spread {
+    padding-bottom: 54px;
+  }
+  .rebuild .ve-network-spread-label {
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .rebuild .ve-network-spread-label strong {
+    font-size: 31px;
+  }
+  .rebuild .ve-contact-sheet {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 12px;
+  }
+  .rebuild .ve-contact-sheet figcaption span {
+    font-size: 15px;
+  }
+  .rebuild .ve-founders {
+    margin-top: 40px;
+  }
+  .rebuild .ve-founders article {
+    display: block;
+  }
+  .rebuild .ve-founders h3 {
+    max-width: none;
+    font-size: 36px;
+  }
+  .rebuild .ve-founders article > p:last-child {
+    font-size: 17px;
+  }
+  .rebuild .ve-principles {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+    gap: 35px;
+  }
+  .rebuild .ve-principles li {
+    grid-template-columns: 34px 1fr;
+    gap: 20px;
+  }
+  .rebuild .ve-principles li > span {
+    font-size: 23px;
+  }
+  .rebuild .ve-principles h3 {
+    font-size: 26px;
+  }
+  .rebuild .ve-principles p {
+    font-size: 17px;
+  }
+  .rebuild.ve-join .ve-public-opening {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .rebuild.ve-join .ve-public-opening h1 {
+    font-size: clamp(40px, 11vw, 57px);
+  }
+  .rebuild .ve-join-portraits {
+    gap: 8px;
+  }
+  .rebuild .ve-join-portraits figcaption {
+    font-size: 13px;
+  }
+  .rebuild .ve-criteria-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .rebuild .ve-criteria-grid h3 {
+    margin-top: 12px;
+  }
+  .rebuild .ve-criteria-grid p {
+    font-size: 17px;
+  }
+  .rebuild .ve-next-steps {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+  .rebuild .ve-next-steps p {
+    font-size: 17px;
+  }
+  .rebuild .ve-form-sheet {
+    padding: 25px 20px;
+  }
+  .rebuild .ve-form-heading h3 {
+    font-size: 30px;
+  }
+  .rebuild .ve-form-heading {
+    margin-bottom: 26px;
+  }
+  .rebuild .ve-form-sheet .ve-field-label {
+    font-size: 14px;
+  }
+  .rebuild .ve-choice {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+  .rebuild .ve-meet-hero {
+    padding: 36px 0 42px;
+  }
+  .rebuild .ve-meet-opening {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 23px;
+  }
+  .rebuild .ve-meet-opening h1 {
+    font-size: clamp(43px, 12vw, 65px);
+  }
+  .rebuild .ve-meet-opening .ve-meet-lead {
+    font-size: 25px;
+    margin-top: 28px;
+  }
+  .rebuild .ve-meet-portrait {
+    width: 86%;
+    margin: 0 auto;
+  }
+  .rebuild .ve-meet-portrait img {
+    aspect-ratio: 1/1;
+  }
+  .rebuild .ve-meet-portrait figcaption > span {
+    font-size: 24px;
+  }
+  .rebuild .ve-meet-timing {
+    gap: 28px 18px;
+  }
+  .rebuild .ve-meet-timing > p strong {
+    font-size: 46px;
+  }
+  .rebuild .ve-meet-timing > p span {
+    font-size: 13px;
+  }
+  .rebuild .ve-meet-timing > div {
+    font-size: 12px;
+  }
+  .rebuild .ve-method-track {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 36px;
+  }
+  .rebuild .ve-method-track li {
+    border-top: 0;
+    border-left: 1px solid var(--rb-link);
+    padding: 0 0 32px 27px;
+    margin-left: 4px;
+  }
+  .rebuild .ve-method-track li::before {
+    left: -4px;
+    top: 7px;
+  }
+  .rebuild .ve-method-track li:last-child {
+    padding-bottom: 0;
+  }
+  .rebuild .ve-method-track h3 {
+    margin-top: 7px;
+  }
+  .rebuild .ve-meet-proof-layout,
+  .rebuild .ve-meet-next {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .rebuild .ve-meet-proof .ve-proof-number {
+    font-size: 138px;
+  }
+  .rebuild .ve-meet-proof h2 {
+    font-size: 26px;
+  }
+  .rebuild .ve-faq-layout {
+    gap: 30px;
+  }
+  .rebuild .ve-faq-index {
+    grid-template-columns: 1fr;
+  }
+  .rebuild .ve-faq-index > a {
+    padding: 11px 0;
+    font-size: 17px;
+  }
+  .rebuild .ve-faq-group {
+    padding-bottom: 44px;
+  }
+  .rebuild .ve-faq-group h2 {
+    font-size: 31px;
+  }
+  .rebuild .ve-legal-index nav {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .rebuild .ve-legal-copy h2 {
+    font-size: 25px;
+  }
+  .rebuild .ve-legal-copy p,
+  .rebuild .ve-legal-copy ul {
+    font-size: 16px;
+  }
+  .rebuild .ve-legal-document {
+    padding-bottom: 60px;
+  }
+  .rebuild .ve-auth-panel h1 {
+    font-size: 36px;
+  }
+  .rebuild.ve-auth {
+    padding-top: 30px;
+  }
+  .rebuild.ve-status-page {
+    padding: 45px 22px;
+  }
+  .rebuild .ve-status-number {
+    font-size: 120px;
+  }
+  .rebuild .ve-status-copy > h2 {
+    font-size: 30px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rebuild .ve-disclosure-mark,
+  .rebuild .ve-input {
+    transition: none;
+  }
+}
+/* Keep the requested form close to the inquiry, especially after an anchor jump. */
+.rebuild.ve-contact .ve-public-intro {
+  padding-bottom: 42px;
+}
+.rebuild .ve-inquiry-section {
+  padding-top: 38px;
+}
+@media (max-width: 800px) {
+  .rebuild .ve-form-layout .ve-form-sheet {
+    order: -1;
+  }
+  .rebuild .ve-form-layout .ve-form-aside {
+    order: 1;
+  }
+}
