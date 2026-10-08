@@ -6,6 +6,7 @@ const DWELL_MS = 11_000;
 
 /** A small editorial sequence. Profiles are evidence, never selectable inventory. */
 export function OperatorSpotlight({ audience }: { audience: SpotlightAudience }) {
+  const isHome = audience === "home";
   const people = selectedSpotlights(audience);
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -53,6 +54,8 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
       className={`ve-spotlight ve-spotlight--${audience}`}
       role="region"
       aria-label="Selected operating partner experience"
+      aria-describedby={isHome ? `${id}-description` : undefined}
+      tabIndex={isHome ? 0 : undefined}
       data-motion={playing ? "playing" : "paused"}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -61,7 +64,13 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
         if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
       }}
     >
-      <div className="ve-spotlight-stage" aria-hidden="true">
+      {isHome && (
+        <p className="ve-spotlight-sr-copy" id={`${id}-description`}>
+          Selected career experience, including roles before Veep. This portrait sequence pauses
+          while hovered or focused and stays still when reduced motion is preferred.
+        </p>
+      )}
+      <div className="ve-spotlight-stage" aria-hidden={isHome ? undefined : true}>
         {people.map((person, index) => {
           const relative = (index - active + count) % count;
           const position =
@@ -78,6 +87,7 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
               className="ve-spotlight-portrait"
               data-position={position}
               data-depth={relative}
+              aria-hidden={isHome && relative !== 0 ? true : undefined}
             >
               <img
                 src={person.photoUrl}
@@ -86,95 +96,94 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
                 height={1440}
                 loading={audience === "home" ? "eager" : "lazy"}
                 decoding="async"
-                style={{ objectPosition: person.photoPosition ?? "center 65%" }}
+                style={{
+                  objectPosition: person.photoPosition ?? "center 65%",
+                  ...(isHome && relative === 0 ? { transform: person.heroCrop } : {}),
+                }}
               />
-              <span className="ve-spotlight-photo-label">
-                {person.role.replace(" Operating Partner", "")}
-              </span>
-              {audience === "home" && (
-                <>
-                  <div className="ve-spotlight-overlay">
-                    <p className="ve-spotlight-overlay-name">{person.name}</p>
-                    <p>{person.heroCredential}</p>
-                  </div>
-                  <span className="ve-spotlight-stack-name">{person.name}</span>
-                </>
+              {!isHome && (
+                <span className="ve-spotlight-photo-label">
+                  {person.role.replace(" Operating Partner", "")}
+                </span>
+              )}
+              {isHome && relative === 0 && (
+                <article className="ve-spotlight-overlay" aria-label={person.name} aria-live="off">
+                  <h2 className="ve-spotlight-overlay-name">{person.name}</h2>
+                  <p className="ve-spotlight-overlay-role">{person.role}</p>
+                  <p className="ve-spotlight-overlay-proof">{person.heroCredential}</p>
+                </article>
               )}
             </div>
           );
         })}
       </div>
-      <div className="ve-spotlight-editorial">
-        <div
-          className={audience === "home" ? "ve-spotlight-sr-copy" : "ve-spotlight-copy"}
-          id={`${id}-copy`}
-          aria-live="off"
-        >
-          {people.map((person, index) => (
-            <article
-              key={person.name}
-              className={
-                active === index
-                  ? "ve-spotlight-story is-prime"
-                  : "ve-spotlight-story ve-spotlight-offstage"
-              }
-              id={`${id}-${index}`}
-              aria-label={`${person.name}, ${person.role}`}
-            >
-              <p className="ve-spotlight-context">{person.context}</p>
-              <h3>{person.name}</h3>
-              <p className="ve-spotlight-role">{person.role}</p>
-              <p className="ve-spotlight-evidence">{person.evidence}</p>
-            </article>
-          ))}
-        </div>
-        <div className="ve-spotlight-controls">
-          <span className="ve-spotlight-count" aria-hidden="true">
-            0{active + 1} / 0{count}
-          </span>
-          <div
-            className="ve-spotlight-indicators"
-            role="group"
-            aria-label="Choose an editorial spotlight"
-          >
+      {!isHome && (
+        <div className="ve-spotlight-editorial">
+          <div className="ve-spotlight-copy" id={`${id}-copy`} aria-live="off">
             {people.map((person, index) => (
-              <button
+              <article
                 key={person.name}
-                type="button"
-                aria-label={`Spotlight ${person.name}`}
-                aria-pressed={active === index}
-                aria-controls={`${id}-${index}`}
-                onClick={() => {
-                  setActive(index);
-                  setPaused(true);
-                }}
+                className={
+                  active === index
+                    ? "ve-spotlight-story is-prime"
+                    : "ve-spotlight-story ve-spotlight-offstage"
+                }
+                id={`${id}-${index}`}
+                aria-label={`${person.name}, ${person.role}`}
               >
-                <span />
-              </button>
+                <p className="ve-spotlight-context">{person.context}</p>
+                <h3>{person.name}</h3>
+                <p className="ve-spotlight-role">{person.role}</p>
+                <p className="ve-spotlight-evidence">{person.evidence}</p>
+              </article>
             ))}
           </div>
-          {!reducedMotion && (
-            <button
-              type="button"
-              className="ve-spotlight-playback"
-              aria-label={paused ? "Resume automatic spotlights" : "Pause automatic spotlights"}
-              onClick={() => setPaused((value) => !value)}
+          <div className="ve-spotlight-controls">
+            <span className="ve-spotlight-count" aria-hidden="true">
+              0{active + 1} / 0{count}
+            </span>
+            <div
+              className="ve-spotlight-indicators"
+              role="group"
+              aria-label="Choose an editorial spotlight"
             >
-              {paused ? (
-                <Play size={13} aria-hidden="true" />
-              ) : (
-                <Pause size={13} aria-hidden="true" />
-              )}
-              <span>{paused ? "Resume" : "Pause"}</span>
-            </button>
-          )}
-        </div>
-        {audience !== "home" && (
+              {people.map((person, index) => (
+                <button
+                  key={person.name}
+                  type="button"
+                  aria-label={`Spotlight ${person.name}`}
+                  aria-pressed={active === index}
+                  aria-controls={`${id}-${index}`}
+                  onClick={() => {
+                    setActive(index);
+                    setPaused(true);
+                  }}
+                >
+                  <span />
+                </button>
+              ))}
+            </div>
+            {!reducedMotion && (
+              <button
+                type="button"
+                className="ve-spotlight-playback"
+                aria-label={paused ? "Resume automatic spotlights" : "Pause automatic spotlights"}
+                onClick={() => setPaused((value) => !value)}
+              >
+                {paused ? (
+                  <Play size={13} aria-hidden="true" />
+                ) : (
+                  <Pause size={13} aria-hidden="true" />
+                )}
+                <span>{paused ? "Resume" : "Pause"}</span>
+              </button>
+            )}
+          </div>
           <p className="ve-spotlight-provenance">
             Selected career experience, including roles before Veep.
           </p>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

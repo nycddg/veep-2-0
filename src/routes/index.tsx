@@ -56,14 +56,15 @@ function Index() {
             <p>An operating partner platform</p>
             <span>Critical work, owned.</span>
           </div>
-          <h1 className="ve-home-title">
-            <span>Because a job</span>
-            <span>
-              always needs to be done<span className="ve-period">.</span>
-            </span>
-          </h1>
           <div className="ve-home-stage">
             <div className="ve-home-intro">
+              <h1 className="ve-home-title">
+                <span>Because a job</span>
+                <span>always needs</span>
+                <span>
+                  to be done<span className="ve-period">.</span>
+                </span>
+              </h1>
               <p className="ve-lead">
                 The work you can’t get to.
                 <br />
@@ -75,14 +76,6 @@ function Index() {
                 delivery.
               </p>
               <BookLink />
-              <p className="ve-network-count">
-                <strong>75+</strong>
-                <span>
-                  vetted senior operators
-                  <br />
-                  selected for the work
-                </span>
-              </p>
             </div>
             <OperatorSpotlight audience="home" />
           </div>

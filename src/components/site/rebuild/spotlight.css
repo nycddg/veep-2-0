@@ -148,85 +148,122 @@
   color: var(--rb-muted);
   margin-top: 10px;
 }
-/* Home keeps the evidence on the portrait; only playback sits below it. */
+/* Home: one message and its human proof, composed together. */
+.rebuild .ve-home-hero .ve-home-stage {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  align-items: center;
+  gap: 72px;
+  margin: 42px 0 54px;
+}
+.rebuild .ve-home-hero .ve-home-intro {
+  display: block;
+  padding: 0;
+}
+.rebuild .ve-home-hero .ve-home-title {
+  font-size: clamp(54px, 5.3vw, 76px);
+  line-height: 1.02;
+  margin: 0 0 28px;
+}
+.rebuild .ve-home-hero .ve-home-intro .ve-lead {
+  display: block;
+  font-size: 23px;
+  line-height: 1.4;
+}
+.rebuild .ve-home-hero .ve-home-intro > p:not(.ve-lead):not(.ve-network-count) {
+  max-width: 44ch;
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 20px 0 28px;
+}
 .rebuild .ve-spotlight--home {
-  --spotlight-card: 350px;
+  --spotlight-card: 360px;
   width: 100%;
-  max-width: 460px;
+  max-width: 480px;
   justify-self: center;
+  border-radius: 12px;
+}
+.rebuild .ve-spotlight--home:focus-visible {
+  outline: 2px solid var(--rb-link);
+  outline-offset: 8px;
 }
 .rebuild .ve-spotlight--home .ve-spotlight-stage {
-  height: 476px;
+  height: 604px;
 }
 .rebuild .ve-spotlight--home .ve-spotlight-portrait {
-  top: 0;
-  aspect-ratio: 7 / 8;
-  transform-origin: center bottom;
-  border: 1px solid #ffffff45;
-  border-radius: 12px;
+  top: 36px;
+  aspect-ratio: 2 / 3;
+  transform-origin: center;
+  border-radius: 10px;
+  background: #081122;
+  filter: saturate(0.72) contrast(0.94);
+  transition:
+    transform 1400ms cubic-bezier(0.22, 0.75, 0.25, 1),
+    filter 1200ms ease;
 }
 .rebuild .ve-spotlight--home .ve-spotlight-portrait[data-depth="0"] {
   z-index: 4;
   transform: none;
+  filter: saturate(1) contrast(1);
 }
 .rebuild .ve-spotlight--home .ve-spotlight-portrait[data-depth="1"] {
   z-index: 3;
-  transform: translateY(24px) scale(0.94);
+  transform: translate(20%, -60px) scale(0.9);
 }
 .rebuild .ve-spotlight--home .ve-spotlight-portrait[data-depth="2"] {
   z-index: 2;
-  transform: translateY(48px) scale(0.88);
+  transform: translate(-22%, 42px) scale(0.87);
 }
 .rebuild .ve-spotlight--home .ve-spotlight-portrait[data-depth="3"] {
   z-index: 1;
-  transform: translateY(72px) scale(0.82);
-}
-.rebuild .ve-spotlight--home .ve-spotlight-photo-label {
-  top: 20px;
-  left: 24px;
+  transform: translate(27%, 42px) scale(0.76);
 }
 .rebuild .ve-spotlight--home .ve-spotlight-portrait img {
-  transform: scale(1.15);
-  transform-origin: center 70%;
+  transform: scale(1);
+  transform-origin: center bottom;
+  transition: transform 1600ms cubic-bezier(0.22, 0.75, 0.25, 1);
 }
-.rebuild .ve-spotlight-overlay {
+.rebuild .ve-spotlight--home .ve-spotlight-overlay {
   position: absolute;
-  inset: 50% 0 0;
+  inset: 46% 0 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 24px;
-  background: linear-gradient(transparent, #081122b8 65%, #081122f5);
+  padding: 28px;
+  background: linear-gradient(transparent, #081122a8 58%, #081122ed);
   color: #fff;
-  opacity: 0;
-  transition: opacity 600ms ease;
+  /* Outgoing copy is removed before its portrait recedes. Incoming copy
+     follows the image reframing, without withholding the semantic content. */
+  animation: ve-spotlight-copy-enter 700ms 350ms both ease;
 }
-.rebuild .ve-spotlight-portrait[data-position="prime"] .ve-spotlight-overlay {
-  opacity: 1;
-}
-.rebuild .ve-spotlight-overlay .ve-spotlight-overlay-name {
-  font-size: 30px;
-  line-height: 1.1;
+.rebuild .ve-spotlight--home .ve-spotlight-overlay-name {
+  font-size: 32px;
+  line-height: 1.08;
   letter-spacing: -0.04em;
   font-weight: 500;
-  margin-bottom: 10px;
 }
-.rebuild .ve-spotlight-overlay p {
-  font-size: 15px;
+.rebuild .ve-spotlight--home .ve-spotlight-overlay-role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 10px;
+  color: #dce4f5;
+}
+.rebuild .ve-spotlight--home .ve-spotlight-overlay-proof {
+  font-size: 16px;
   line-height: 1.45;
-  max-width: 29ch;
+  margin-top: 16px;
+  max-width: 28ch;
 }
-.rebuild .ve-spotlight-stack-name {
-  position: absolute;
-  inset: auto 0 0;
-  padding: 5px 20px;
-  background: #101b30;
-  color: #fff;
-  font-size: 12px;
-  line-height: 1.4;
-}
-.rebuild .ve-spotlight-portrait[data-position="prime"] .ve-spotlight-stack-name {
-  visibility: hidden;
+@keyframes ve-spotlight-copy-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .rebuild .ve-spotlight-sr-copy {
   position: absolute;
@@ -237,14 +274,6 @@
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
-}
-.rebuild .ve-spotlight--home .ve-spotlight-editorial {
-  width: var(--spotlight-card);
-  max-width: 100%;
-  margin: 0 auto;
-}
-.rebuild .ve-spotlight--home .ve-spotlight-controls {
-  margin-top: 10px;
 }
 .rebuild .ve-spotlight--companies,
 .rebuild .ve-spotlight--funds {
@@ -268,11 +297,30 @@
   transform: translate(63%, 14px) scale(0.8) rotate(5deg);
 }
 @media (max-width: 1100px) {
+  .rebuild .ve-home-hero .ve-home-stage {
+    gap: 40px;
+  }
+  .rebuild .ve-home-hero .ve-home-title {
+    font-size: 60px;
+  }
+  .rebuild .ve-home-hero .ve-home-intro .ve-lead {
+    font-size: 21px;
+  }
   .rebuild .ve-spotlight--home {
     --spotlight-card: 300px;
+    max-width: 400px;
   }
   .rebuild .ve-spotlight--home .ve-spotlight-stage {
-    height: 420px;
+    height: 514px;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-overlay {
+    padding: 24px;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-overlay-name {
+    font-size: 28px;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-overlay-proof {
+    font-size: 15px;
   }
   .rebuild .ve-spotlight--companies,
   .rebuild .ve-spotlight--funds {
@@ -291,11 +339,40 @@
   }
 }
 @media (max-width: 800px) {
+  .rebuild .ve-home-hero .ve-home-stage {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 24px;
+  }
+  .rebuild .ve-home-hero .ve-home-title {
+    font-size: 44px;
+    margin-bottom: 24px;
+  }
+  .rebuild .ve-home-hero .ve-home-intro .ve-lead {
+    font-size: 18px;
+  }
+  .rebuild .ve-home-hero .ve-home-intro > p:not(.ve-lead):not(.ve-network-count) {
+    font-size: 16px;
+    margin: 18px 0 24px;
+  }
   .rebuild .ve-spotlight--home {
-    --spotlight-card: 340px;
+    --spotlight-card: 244px;
+    max-width: 330px;
   }
   .rebuild .ve-spotlight--home .ve-spotlight-stage {
-    height: 464px;
+    height: 430px;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-overlay {
+    padding: 20px;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-overlay-name {
+    font-size: 25px;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-overlay-role {
+    font-size: 10px;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-overlay-proof {
+    font-size: 14px;
+    margin-top: 12px;
   }
   .rebuild .ve-spotlight--companies,
   .rebuild .ve-spotlight--funds {
@@ -349,24 +426,6 @@
     top: 12px;
     left: 14px;
   }
-  .rebuild .ve-spotlight--home {
-    --spotlight-card: 100%;
-    max-width: 350px;
-  }
-  .rebuild .ve-spotlight--home .ve-spotlight-stage {
-    height: auto;
-    aspect-ratio: auto;
-    padding-bottom: calc(100% * 8 / 7 + 76px);
-  }
-  .rebuild .ve-spotlight--home .ve-spotlight-overlay {
-    padding: 20px;
-  }
-  .rebuild .ve-spotlight-overlay .ve-spotlight-overlay-name {
-    font-size: 27px;
-  }
-  .rebuild .ve-spotlight-overlay p {
-    font-size: 14px;
-  }
   .rebuild .ve-spotlight-story h3 {
     font-size: 30px;
     margin-top: 14px;
@@ -396,9 +455,44 @@
     min-height: 275px;
   }
 }
+@media (max-width: 740px) {
+  .rebuild .ve-home-hero .ve-home-stage {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    margin: 32px 0 36px;
+  }
+  .rebuild .ve-home-hero .ve-home-title {
+    font-size: clamp(42px, 8vw, 58px);
+  }
+  .rebuild .ve-home-hero .ve-home-intro .ve-lead {
+    font-size: 21px;
+  }
+  .rebuild .ve-spotlight--home {
+    --spotlight-card: calc(100% - 40px);
+    max-width: 360px;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-stage {
+    height: auto;
+    aspect-ratio: auto;
+    padding-bottom: calc(150% + 4px);
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-portrait[data-depth="1"] {
+    transform: translate(12%, -40px) scale(0.88);
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-portrait[data-depth="2"] {
+    transform: translate(-12%, 36px) scale(0.88);
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-portrait[data-depth="3"] {
+    transform: translate(15%, 36px) scale(0.76);
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .rebuild .ve-spotlight-portrait,
-  .rebuild .ve-spotlight-overlay {
+  .rebuild .ve-spotlight--home .ve-spotlight-portrait,
+  .rebuild .ve-spotlight--home .ve-spotlight-portrait img {
     transition: none;
+  }
+  .rebuild .ve-spotlight--home .ve-spotlight-overlay {
+    animation: none;
   }
 }

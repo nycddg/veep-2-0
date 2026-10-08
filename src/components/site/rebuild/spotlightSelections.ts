@@ -7,6 +7,7 @@ type EditorialSelection = {
   context: string;
   evidence: string;
   heroCredential?: string;
+  heroCrop?: string;
 };
 
 // Editorial excerpts from spotlight-operators.ts. These are career credentials,
@@ -17,13 +18,15 @@ const selections: Record<SpotlightAudience, EditorialSelection[]> = {
       name: "Jian Yang",
       context: "Finance for growth",
       heroCredential: "$140M+ equity raised at Industrious",
+      heroCrop: "scale(1.14) translateY(-2%)",
       evidence:
         "At Industrious, secured $140M+ in equity funding and rebuilt finance for rapid scale.",
     },
     {
       name: "Erika Velazquez",
       context: "Products & audiences",
-      heroCredential: "Built ad products at Morning Brew",
+      heroCredential: "Built an ad product at Morning Brew",
+      heroCrop: "scale(1.1) translateY(-2%)",
       evidence:
         "At Morning Brew, developed a newsletter ad product that doubled the average click-through rate.",
     },
@@ -31,6 +34,7 @@ const selections: Record<SpotlightAudience, EditorialSelection[]> = {
       name: "Victoria Kasumu",
       context: "People through change",
       heroCredential: "50+ hires in 90 days at David Zwirner",
+      heroCrop: "scale(1.18) translateY(-3%)",
       evidence:
         "At David Zwirner, hired 50+ employees in 90 days. Prior experience includes Zocdoc and Pager Health.",
     },
@@ -38,6 +42,7 @@ const selections: Record<SpotlightAudience, EditorialSelection[]> = {
       name: "Jennifer Kasper",
       context: "Growth across brands",
       heroCredential: "Media strategy across 75+ LVMH Maisons",
+      heroCrop: "scale(1.12) translateY(-2%)",
       evidence:
         "At LVMH, unified media strategy across 75+ Maisons and built cross-brand agency models.",
     },
