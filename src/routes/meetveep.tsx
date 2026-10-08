@@ -1,161 +1,187 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check } from "lucide-react";
 import erikaHeadshot from "@/assets/operator-erika-velazquez.png.asset.json";
-import { FooterCTA } from "@/components/site/FooterCTA";
 import { ogImageMeta } from "@/lib/seo";
+import { Container } from "@/components/site/rebuild/Container";
+import { Section } from "@/components/site/rebuild/Section";
+import { TextLink } from "@/components/site/rebuild/TextLink";
+import { PublicClose } from "@/components/site/rebuild/PublicPage";
 
-const BULLETS = [
-  "Shortlist in 72 hours. Deployed in under 10 days.",
-  "Flexible terms: scoped to the work (advisory, project, or ongoing)",
-  "30-day fit guarantee",
-  "75+ vetted senior operators · Avg. 18 yrs in seat",
-];
-
+const title = "Meet Veep | Critical work, owned.";
+const description =
+  "Operating partner capacity for companies and funds. Veep defines the work and outcomes, assembles the right team, and owns delivery.";
 export const Route = createFileRoute("/meetveep")({
   head: () => ({
     meta: [
-      { title: "Meet Veep | Senior Operators for Work That Can't Wait" },
-      {
-        name: "description",
-        content:
-          "Veep connects founder-led companies with vetted senior operators who step in to own critical work, now. Deployed in under 10 days. 30-day fit guarantee.",
-      },
+      { title },
+      { name: "description", content: description },
       { name: "robots", content: "noindex, nofollow" },
-      { property: "og:title", content: "Meet Veep | Senior Operators for Work That Can't Wait" },
-      {
-        property: "og:description",
-        content:
-          "Vetted senior operators who step in to own critical work, now. Deployed in under 10 days. 30-day fit guarantee.",
-      },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
       { property: "og:url", content: "https://www.veep.work/meetveep" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Meet Veep | Senior Operators for Work That Can't Wait" },
-      {
-        name: "twitter:description",
-        content:
-          "Vetted senior operators who step in to own critical work, now. Deployed in under 10 days. 30-day fit guarantee.",
-      },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       ...ogImageMeta(),
     ],
     links: [{ rel: "canonical", href: "https://www.veep.work/meetveep" }],
   }),
   component: MeetVeepPage,
 });
-
+const steps = [
+  ["Scope", "Define the work, outcomes, responsibilities, and price."],
+  ["Assemble", "Select a lead operating partner and the capacity the mandate needs."],
+  ["Own", "The operator runs the work. Veep manages scope, quality, and continuity."],
+  ["Deliver", "Complete the mandate and hand over the work, materials, and context."],
+];
 function MeetVeepPage() {
   return (
-    <>
-      <section className="relative overflow-hidden border-b border-white/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-24">
-          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:gap-x-16 lg:gap-y-8 lg:items-start">
-            <div className="order-1 lg:col-span-7 space-y-5">
-              <div className="eyebrow">Meet Veep</div>
-              <h1 className="font-medium text-[2.25rem] sm:text-5xl xl:text-6xl text-cream text-balance leading-[1.05] allow-wrap break-words">
-                The work needs an owner.
+    <div className="rebuild ve-editorial ve-public ve-meet">
+      <Section pad="none" className="ve-meet-hero">
+        <Container className="ve-container">
+          <p className="ve-kicker">Meet Veep</p>
+          <div className="ve-meet-opening">
+            <div>
+              <h1>
+                The work needs
+                <br /> <span>an owner.</span>
               </h1>
-            </div>
-
-            <div className="order-2 lg:col-span-5 lg:row-span-4 lg:self-center">
-              <div className="relative mx-auto max-w-md">
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-accent/15 blur-[80px] scale-95 light:hidden"
-                />
-                <div className="overflow-hidden rounded-[6px] shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
-                  <img
-                    src={erikaHeadshot.url}
-                    alt="Senior Veep operator"
-                    width={800}
-                    height={1000}
-                    className="w-full h-auto object-cover object-top"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                  />
-                </div>
+              <p className="ve-meet-lead">
+                The raise. The growth plan.
+                <br /> The priority that keeps coming back.
+              </p>
+              <p>
+                Veep gives companies and funds the operating partner capacity found inside top VC
+                and PE firms. We define the work and outcomes, assemble the right team, and own
+                delivery.
+              </p>
+              <div className="ve-public-actions">
+                <Link to="/contact" className="ve-button cta-accent">
+                  Get in touch
+                </Link>
+                <TextLink to="/for-companies" hash="how">
+                  See how it works <span aria-hidden="true">↗</span>
+                </TextLink>
               </div>
             </div>
-
-            <div className="order-3 lg:col-span-7 space-y-4 text-base sm:text-lg text-cream/80 max-w-2xl leading-relaxed text-pretty">
-              <p>
-                Your company may not be ready, willing, or able to make the
-                permanent executive hire. The fundraise, GTM reset, margin
-                issue, leadership gap, or operating priority still needs to move.
-              </p>
-              <p>
-                Veep matches founder-led companies with vetted senior operators
-                for the job to be done. Critical work gets owned before a
-                permanent hire is in place.
-              </p>
-              <p className="eyebrow pt-2">
-                Vetted senior operators who step in to own critical work, now.
-              </p>
-            </div>
-
-            <ul className="order-4 lg:col-span-7 rounded-[6px] bg-surface-card divide-y divide-white/10 max-w-xl">
-              {BULLETS.map((b) => (
-                <li key={b} className="flex items-center gap-3 px-5 py-4">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-accent-coral/40 text-accent-coral">
-                    <Check size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-sm sm:text-base text-cream/90">{b}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="order-5 lg:col-span-7 flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4 sm:gap-5 pt-1">
-              <Link
-                to="/contact"
-                className="group motion-cta cta-accent rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
-              >
-                Request an operator
-              </Link>
-              <Link
-                to="/how-it-works"
-                className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
-              >
-                See how it works
-              </Link>
+            <figure className="ve-meet-portrait">
+              <img
+                src={erikaHeadshot.url}
+                alt=""
+                width="660"
+                height="825"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+              <figcaption>
+                <span>Erika Velazquez</span>Marketing Operating Partner
+                <small>Prior experience: Morning Brew, The New Republic</small>
+              </figcaption>
+              <span className="ve-meet-note">
+                Senior judgment.
+                <br /> Hands-on ownership.
+              </span>
+            </figure>
+          </div>
+          <div className="ve-meet-timing">
+            <p>
+              <strong>72h</strong>
+              <span>Scoped in 72 hours</span>
+            </p>
+            <p>
+              <strong>&lt;10d</strong>
+              <span>Started in under 10 days</span>
+            </p>
+            <div>
+              <p>Timing applies to operating engagements.</p>
+              <p>The mandate sets the delivery timeline.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-surface-band py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-10 md:mb-12">
-            <div className="eyebrow">Engagements</div>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Four shapes. One promise.
+        </Container>
+      </Section>
+      <Section className="ve-meet-method">
+        <Container className="ve-container">
+          <div className="ve-section-opening">
+            <h2 className="ve-title">
+              A clear mandate.
+              <br /> Ownership through handoff.
             </h2>
-            <p className="mt-4 text-cream/80 leading-relaxed">
-              Advisory, Sprint, Operator, and Pod — priced to the work, not the hour.
+            <p className="ve-body">
+              75+ vetted senior operators, selected for the work. Your team retains strategic
+              decisions and approvals.
             </p>
           </div>
-          <div className="flex flex-col items-start sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5">
-            <Link
-              to="/pricing"
-              hash="tiers"
-              className="group motion-cta cta-accent rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
-            >
-              See pricing
-            </Link>
-            <Link
-              to="/for-portfolios"
-              className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 min-h-11 inline-flex items-center"
-            >
-              For Funds
-            </Link>
+          <ol className="ve-method-track">
+            {steps.map(([name, body], i) => (
+              <li key={name}>
+                <span>0{i + 1}</span>
+                <h3>{name}</h3>
+                <p>{body}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="ve-small-note">
+            Advisory provides senior guidance while your team owns execution.
+          </p>
+        </Container>
+      </Section>
+      <Section className="ve-meet-proof">
+        <Container className="ve-container ve-meet-proof-layout">
+          <div>
+            <p className="ve-kicker">Selected engagement · B2B SaaS</p>
+            <p className="ve-proof-number">$6M</p>
+            <h2>Raised in six weeks.</h2>
           </div>
-        </div>
-      </section>
-
-      <FooterCTA
-        headline={<>Tell us what cannot wait.</>}
-        sub="Tell us about the work. We'll clarify the need, recommend the right model, and tell you directly if Veep isn't the answer."
-        primary="contact"
-      />
-    </>
+          <div>
+            <h3>The result has work behind it.</h3>
+            <p>
+              A three-year financial model, diligence-ready CAC/LTV reporting, and CEO coaching
+              through investor meetings and term sheets.
+            </p>
+            <p className="ve-small-note">Selected Veep engagement. Company anonymized.</p>
+            <TextLink to="/for-companies" hash="proof">
+              Inside the engagement <span aria-hidden="true">↗</span>
+            </TextLink>
+          </div>
+        </Container>
+      </Section>
+      <Section>
+        <Container className="ve-container ve-meet-next">
+          <div>
+            <p className="ve-kicker">For Companies</p>
+            <h2 className="ve-title">
+              Size the support
+              <br /> to the work.
+            </h2>
+            <p>
+              Advisory, Sprint, Operator, and Pod describe how the engagement is resourced. The
+              mandate comes first.
+            </p>
+            <TextLink to="/pricing" hash="tiers">
+              See pricing <span aria-hidden="true">↗</span>
+            </TextLink>
+          </div>
+          <div>
+            <p className="ve-kicker">For Funds</p>
+            <h2 className="ve-title">
+              Plan across
+              <br /> the portfolio.
+            </h2>
+            <p>
+              One operating relationship connects capacity planning to company delivery. Each
+              mandate has its own scope, owner, and fee.
+            </p>
+            <TextLink to="/for-portfolios">
+              Explore portfolio operations <span aria-hidden="true">↗</span>
+            </TextLink>
+          </div>
+        </Container>
+      </Section>
+      <PublicClose contact>
+        Bring the priority, urgency, and outcome. We’ll help clarify the work and the operating
+        capacity it needs. Operator fit is covered by a 30-day fit guarantee.
+      </PublicClose>
+    </div>
   );
 }

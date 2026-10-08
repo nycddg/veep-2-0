@@ -1,23 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero } from "@/components/site/PageHero";
-import { FooterCTA } from "@/components/site/FooterCTA";
 import { ogImageMeta } from "@/lib/seo";
+import { spotlightOperators } from "@/lib/spotlight-operators";
+import { BookLink } from "@/components/site/rebuild/BookLink";
+import { Container } from "@/components/site/rebuild/Container";
+import { Section } from "@/components/site/rebuild/Section";
+import { TextLink } from "@/components/site/rebuild/TextLink";
+import { PublicClose, PublicIntro } from "@/components/site/rebuild/PublicPage";
 
+const description =
+  "Meet the founders and operating principles behind Veep. Operating partner capacity for companies and funds, with clear ownership from scope through handoff.";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Veep — Our Founders and Operating Principles" },
-      {
-        name: "description",
-        content:
-          "Meet the founders behind Veep and the operating principles that shape every engagement — a small roster of senior operators who embed, build, and deliver.",
-      },
-      { property: "og:title", content: "About Veep — Who we are and why we built it" },
-      {
-        property: "og:description",
-        content:
-          "Born from the inside. Built for what's next. Meet the founders and principles behind Veep's senior operator model.",
-      },
+      { title: "About Veep | Built by operators" },
+      { name: "description", content: description },
+      { property: "og:title", content: "About Veep | Built by operators" },
+      { property: "og:description", content: description },
       { property: "og:url", content: "https://www.veep.work/about" },
       ...ogImageMeta(),
     ],
@@ -26,162 +24,176 @@ export const Route = createFileRoute("/about")({
   component: Page,
 });
 
-const principles: readonly { title: string; body: string }[] = [
-  {
-    title: "Onboarded in under 10 days",
-    body: "From intro call to embedded operator, measured in days — not the months a retained search takes.",
-  },
-  {
-    title: "Shortlist in 72 hours. Deployed in under 10 days.",
-    body: "Focused shortlist while permanent hire stays open — work moves in days, not search cycles.",
-  },
-  {
-    title: "Flexible terms",
-    body: "Scoped to the initiative, not to a five-year plan.",
-  },
-  {
-    title: "30-day fit guarantee",
-    body: "30 days to prove it. If the operator is not right, we swap them or you walk.",
-  },
-];
-
-const founders: readonly { name: string; role: string; bio: string }[] = [
+const founders = [
   {
     name: "Dave Garcia",
-    role: "Co-Founder",
-    bio: "Launched products, led pivots, landed exits. Now helping founders move faster with Veep.",
+    bio: "Launched products, led pivots, and helped companies through exits. Now building Veep to put senior ownership around critical work.",
   },
   {
     name: "Jian Yang",
-    role: "Co-Founder",
-    bio: "Raised big, scaled fast, exited right. Now helping founders do the same, smarter.",
+    bio: "Finance operator and entrepreneur. At Industrious, secured $140M+ in equity funding and restructured financial operations for rapid scale.",
   },
   {
     name: "Mark Newhouse",
-    role: "Co-Founder",
-    bio: "Built brands, transformed orgs, sold startups. Now building alongside founders at Veep.",
+    bio: "Built brands, transformed organizations, and sold startups. Now building alongside founders through Veep.",
   },
+];
+const principles = [
+  {
+    title: "Start with the work.",
+    body: "Define the priority, the outcome, and what getting it done requires. The mandate determines the team.",
+  },
+  {
+    title: "Put an owner in charge.",
+    body: "For operating engagements, a lead operating partner runs the workplan, coordinates delivery, and works inside the business.",
+  },
+  {
+    title: "Stay accountable.",
+    body: "Veep manages scope, quality, escalation, and continuity. Your team retains strategic decisions and approvals.",
+  },
+  {
+    title: "Make the handoff count.",
+    body: "Complete the agreed work and leave the documentation, context, and working materials the business needs next.",
+  },
+];
+const people = [
+  spotlightOperators[0],
+  spotlightOperators[1],
+  spotlightOperators[3],
+  spotlightOperators[6],
+  spotlightOperators[8],
+  spotlightOperators[11],
 ];
 
 function Page() {
   return (
-    <>
-      <PageHero
-        eyebrow="About Veep"
-        title="Born from the inside. Built for what's next."
-        sub="After decades inside high-growth startups and large institutions, we kept seeing the same pattern: critical work slowed down, ownership got blurry, and the default answer was to add more headcount. Veep was built for a different path."
-        secondaryLabel="See how it works"
-        secondaryTo="/how-it-works"
-      />
+    <div className="rebuild ve-editorial ve-public ve-about">
+      <PublicIntro
+        label="About Veep"
+        title={
+          <>
+            Built by operators.
+            <br />{" "}
+            <span>
+              Accountable for
+              <br /> the work.
+            </span>
+          </>
+        }
+        actions={
+          <>
+            <BookLink />
+            <TextLink to="/for-companies" hash="how">
+              How we work <span aria-hidden="true">↗</span>
+            </TextLink>
+          </>
+        }
+      >
+        <p>
+          We built Veep around a familiar problem: the work is critical, the team is stretched, and
+          no one clearly owns what happens next.
+        </p>
+        <p>
+          Companies and funds need operating capacity that can take responsibility for a defined
+          mandate. We scope the work, assemble the right team, and own delivery.
+        </p>
+      </PublicIntro>
 
-      {/* Problem / Meet Veep */}
-      <section className="bg-surface-raised border-b border-white/10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-28 space-y-10 md:space-y-14">
-          {[
-            {
-              eyebrow: "The problem",
-              body: "Operators felt stuck inside bloated orgs. Companies struggled to find senior capacity that could lead fast and deliver with focus. The market rewarded process over ownership. Ownerless work kept landing on founders.",
-            },
-            {
-              eyebrow: "Meet Veep",
-              body: "Companies get high-impact operators who own outcomes. Operators get the freedom and focus to lead. Matched in 72 hours. Deployed in under 10 days. Veep delivers on-demand operating capacity.",
-            },
-          ].map((row) => (
-            <div
-              key={row.eyebrow}
-              className="grid lg:grid-cols-12 gap-8 lg:gap-14 border-t border-white/10 pt-10 md:pt-14 first:border-t-0 first:pt-0"
-            >
-              <div className="lg:col-span-4">
-                <div className="eyebrow">
-                  {row.eyebrow}
-                </div>
-              </div>
-              <p className="lg:col-span-8 font-serif font-medium text-xl md:text-2xl text-cream leading-[1.5] tracking-tight text-balance">
-                {row.body}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Principles */}
-      <section className="py-14 sm:py-16 md:py-28 border-b border-white/10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
-            <div className="lg:col-span-4 space-y-5">
-              <div className="eyebrow">
-                What we believe
-              </div>
-              <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
-                Built the hard way. Rebuilt the smart way.
-              </h2>
-              <p className="text-stone text-base leading-relaxed max-w-md">
-                Decades of lessons, one roster. The future belongs to leaner
-                teams, faster decisions, and hands-on operators trusted to lead.
-              </p>
-            </div>
-            <ul className="lg:col-span-8">
-              {principles.map((p, idx) => (
-                <li
-                  key={p.title}
-                  className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 border-t border-white/10 py-6 first:border-t-0 first:pt-0"
-                >
-                  <span className="font-mono text-sm text-accent tabular-nums pt-1">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <div className="text-cream text-lg tracking-tight">
-                      {p.title}
-                    </div>
-                    <p className="mt-2 text-stone text-base leading-relaxed">
-                      {p.body}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Founding team */}
-      <section className="bg-surface-raised border-b border-white/10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-28">
-          <div className="max-w-2xl space-y-4">
-            <div className="eyebrow">
-              Founding team
-            </div>
-            <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
-              Founders first. Operators always.
-            </h2>
-            <p className="text-stone text-base leading-relaxed">
-              A founding team shaped by firsthand experience building, scaling,
-              and leading from inside.
+      <Section pad="none" className="ve-network-spread">
+        <Container className="ve-container">
+          <div className="ve-network-spread-label">
+            <p>Selected operating partners</p>
+            <p>
+              <strong>75+</strong> vetted senior operators
             </p>
           </div>
-          <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-10 md:gap-8">
-            {founders.map((f) => (
-              <div key={f.name} className="border-t border-white/10 pt-6">
-                <div className="mono-label">
-                  {f.role}
-                </div>
-                <div className="mt-3 font-serif font-medium text-xl text-cream tracking-tight">
-                  {f.name}
-                </div>
-                <p className="mt-3 text-stone text-base leading-relaxed">
-                  {f.bio}
-                </p>
-              </div>
+          <div className="ve-contact-sheet">
+            {people.map((person) => (
+              <figure key={person.name}>
+                <img
+                  src={person.photoUrl}
+                  alt=""
+                  width="330"
+                  height="410"
+                  loading="eager"
+                  decoding="async"
+                />
+                <figcaption>
+                  <span>{person.name}</span>
+                  {person.role.replace(" Operating Partner", "")}
+                </figcaption>
+              </figure>
             ))}
           </div>
-        </div>
-      </section>
+          <p className="ve-small-note">
+            The team is assembled for the mandate, business, and stage. Profiles show network
+            experience, not current availability.
+          </p>
+        </Container>
+      </Section>
 
-      <FooterCTA
-        headline={<>Tell us what cannot wait.</>}
-        sub="Tell us about the work. If it's a fit, we'll scope the engagement and match you with a Veep within 72 hours."
-        primary="contact"
-      />
-    </>
+      <Section className="ve-founders-section">
+        <Container className="ve-container">
+          <div className="ve-section-opening">
+            <h2 className="ve-title">
+              Founders first.
+              <br /> Operators always.
+            </h2>
+            <p className="ve-body">
+              Veep grew out of firsthand experience building, scaling, and leading from inside
+              companies. Our founders know how quickly a critical priority can become an ownership
+              gap.
+            </p>
+          </div>
+          <div className="ve-founders">
+            {founders.map((founder, index) => (
+              <article key={founder.name}>
+                <p className="ve-kicker">Co-founder / 0{index + 1}</p>
+                <h3>{founder.name}</h3>
+                <p>{founder.bio}</p>
+              </article>
+            ))}
+          </div>
+          <p className="ve-small-note">Career experience includes work before Veep.</p>
+        </Container>
+      </Section>
+
+      <Section className="ve-principles-section">
+        <Container className="ve-container">
+          <div className="ve-section-opening">
+            <h2 className="ve-title">
+              Ownership is
+              <br /> a way of working.
+            </h2>
+            <p className="ve-body">
+              The operating partner model found inside top VC and PE firms, available to companies
+              and funds when the work needs to move.
+            </p>
+          </div>
+          <ol className="ve-principles">
+            {principles.map((item, i) => (
+              <li key={item.title}>
+                <span aria-hidden="true">0{i + 1}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="ve-small-note">
+            In Advisory engagements, your team retains execution ownership, supported by senior
+            judgment and guidance.
+          </p>
+          <TextLink to="/for-companies" hash="benefits">
+            See who owns what <span aria-hidden="true">↗</span>
+          </TextLink>
+        </Container>
+      </Section>
+      <PublicClose contact>
+        Tell us about the work that keeps coming back to you. We’ll discuss the scope, the ownership
+        it needs, and whether Veep is the right fit.
+      </PublicClose>
+    </div>
   );
 }
