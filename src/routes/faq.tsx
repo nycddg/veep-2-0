@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero } from "@/components/site/PageHero";
-import { FooterCTA } from "@/components/site/FooterCTA";
-import { Accordion } from "@/components/site/Accordion";
+import { Container } from "@/components/site/rebuild/Container";
+import { Section } from "@/components/site/rebuild/Section";
+import { BookLink } from "@/components/site/rebuild/BookLink";
+import { TextLink } from "@/components/site/rebuild/TextLink";
+import { Disclosure, PublicClose, PublicIntro } from "@/components/site/rebuild/PublicPage";
 import { ogImageMeta } from "@/lib/seo";
 
 type QA = { q: string; a: string };
@@ -12,7 +14,7 @@ const groups: { label: string; items: QA[] }[] = [
     items: [
       {
         q: "How fast can a Veep operator start?",
-        a: "Scoped in 72 hours. Started in under 10 days.",
+        a: "Operating engagements are scoped in 72 hours and started in under 10 days. The scope defines the delivery timeline. These timings do not describe completion of a mandate, audit, or technical implementation.",
       },
       {
         q: "How is Veep different from a consultant?",
@@ -40,12 +42,12 @@ const groups: { label: string; items: QA[] }[] = [
         a: "Veep operators include CFOs, COOs, CROs, CMOs, CTOs, CPOs, people leaders, chiefs of staff, GMs, and functional experts. But we start with the work, not the title. Depending on the need, the right structure may be Advisory, Sprint, Operator, or Pod.",
       },
       {
-        q: "Can I browse the roster?",
-        a: "No. Veep is a managed model, not a self-service marketplace. We recommend the operator based on the work, urgency, company stage, function, industry, business model, and fit. Full profiles and references are shared once we understand the priority. Marketplaces give you options. Veep gives you the operator.",
+        q: "How is the operator selected?",
+        a: "We select the operating capacity for the mandate, urgency, company stage, function, industry, and business model. The site shows selected network experience. We share relevant profiles and references once we understand the work, before an engagement begins.",
       },
       {
         q: "Do you use AI?",
-        a: "Yes, where it improves capacity, consistency, and speed. AI can support recurring workflows, research, reporting, content, data cleanup, analysis, and internal process work. But the operator provides judgment, oversight, quality control, and business context. AI supports the work. The operator owns the outcome.",
+        a: "Yes. Agent Teams are a distinct scoped offer for recurring finance, founder office, growth, and operations work. Agents support the agreed work. An operating partner provides functional judgment, quality review, and exception handling; a technical lead owns architecture, permissions, integrations, monitoring, and reliability. Your team retains strategic decisions and approvals. Systems, data access, timing, pricing, review requirements, and handoff are agreed in the scope.",
       },
       {
         q: "What industries do you serve?",
@@ -58,7 +60,7 @@ const groups: { label: string; items: QA[] }[] = [
     items: [
       {
         q: "How much does Veep cost?",
-        a: "Typical ranges: Advisory from $3k/month · Sprint from $25k · Operator from $15k/month · Pod from $30k/month. Every engagement is scoped to the work, urgency, and level of ownership required.",
+        a: "Starting prices: Advisory from $3k/month · Sprint from $25k/scope · Operator from $15k/month · Pod from $30k/month. Every engagement is scoped to the work, urgency, and level of ownership required.",
       },
       {
         q: "Are there setup or matching fees?",
@@ -80,6 +82,10 @@ const groups: { label: string; items: QA[] }[] = [
       {
         q: "How does the Portfolio Roster work?",
         a: "PE firms, family offices, holding companies, independent sponsors, search funds, and multi-company founders can retain Veep as an operating-capacity partner. The annual relationship includes portfolio intake and operating capacity planning, quarterly reviews, priority operator matching and shortlists, included diagnostics, agreed emergency Operator or Pod coverage terms, one master services agreement, and preferred rates on separately scoped engagements. Annual Roster pricing is $75k/year. Operator delivery is scoped and billed separately in each statement of work.",
+      },
+      {
+        q: "What is a Portfolio Capacity Audit?",
+        a: "Over 2–3 weeks, Veep maps current priorities and likely needs over the next 6–12 months. The audit identifies operating capacity gaps, upcoming needs, and recommended coverage for company mandates. Discuss the scope with Veep before the audit begins.",
       },
       {
         q: "Do you have a referral program?",
@@ -127,34 +133,66 @@ export const Route = createFileRoute("/faq")({
 
 function Page() {
   return (
-    <>
-      <PageHero
-        eyebrow="FAQ"
-        title="Straight answers on cost, timing, and fit."
-        sub="If the answer is not here, book a 30-minute call with a Veep founder. We will help clarify the work, the right level of support, and whether Veep is the right fit."
-      />
-
-      {/* Groups alternate raised/ink so the long list reads as chapters, not
-          one slab */}
-      {groups.map((g, i) => (
-        <section
-          key={g.label}
-          className={`${i % 2 === 0 ? "bg-surface-raised" : ""} py-12 sm:py-14 md:py-16`}
-        >
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            {/* h2 so screen readers can jump between groups; leading pinned to
-                the pre-h2 value so the label renders identically. */}
-            <h2 className="eyebrow mb-6 leading-[1.55]">{g.label}</h2>
-            <div className="divide-y divide-white/10 border-y border-white/10">
-              {g.items.map((qa) => (
-                <Accordion key={qa.q} q={qa.q} a={qa.a} />
-              ))}
-            </div>
+    <div className="rebuild ve-editorial ve-public ve-faq">
+      <PublicIntro
+        label="Questions & answers"
+        title={
+          <>
+            Clarity before
+            <br /> <span>we get to work.</span>
+          </>
+        }
+        actions={
+          <>
+            <BookLink />
+            <TextLink to="/contact">
+              Ask us directly <span aria-hidden="true">↗</span>
+            </TextLink>
+          </>
+        }
+      >
+        <p>
+          Scope, timing, ownership, and cost. Here’s how Veep engagements work and what to expect
+          from the operating relationship.
+        </p>
+      </PublicIntro>
+      <Section className="ve-faq-section" pad="none">
+        <Container className="ve-container ve-faq-layout">
+          <nav className="ve-faq-index" aria-label="Question categories">
+            <p className="ve-kicker">On this page</p>
+            {groups.map((group, i) => (
+              <a key={group.label} href={`#questions-${i + 1}`}>
+                <span>0{i + 1}</span>
+                {group.label}
+              </a>
+            ))}
+          </nav>
+          <div>
+            {groups.map((group, i) => (
+              <section className="ve-faq-group" id={`questions-${i + 1}`} key={group.label}>
+                <h2>{group.label}</h2>
+                {group.items.map((item) => (
+                  <Disclosure key={item.q} question={item.q}>
+                    <p>{item.a}</p>
+                  </Disclosure>
+                ))}
+              </section>
+            ))}
           </div>
-        </section>
-      ))}
-
-      <FooterCTA primary="contact" />
-    </>
+        </Container>
+      </Section>
+      <PublicClose
+        contact
+        title={
+          <>
+            Still have
+            <br /> a question<span className="ve-period">?</span>
+          </>
+        }
+      >
+        Tell us what you’re considering. We’ll help clarify the work, the right level of support,
+        and whether Veep is a fit.
+      </PublicClose>
+    </div>
   );
 }

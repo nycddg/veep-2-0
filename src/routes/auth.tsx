@@ -73,94 +73,95 @@ function AuthPage() {
   }
 
   return (
-    <section className="mx-auto flex min-h-[70vh] max-w-md flex-col justify-center px-4 py-20">
-      <div className="eyebrow">
-        Partner access
-      </div>
-      <h1 className="mt-4 text-3xl text-cream tracking-tight">
-        {mode === "signin" ? "Sign in to the partner dashboard" : "Create your partner account"}
-      </h1>
-      <p className="mt-3 text-sm text-stone">
-        Live leads and recent wins for Veep operating partners. Access is by invitation only.
-        Sign in with email and password.
-      </p>
+    <div className="rebuild ve-editorial ve-public ve-auth">
+      <section className="ve-auth-panel">
+        <div className="eyebrow">Partner access</div>
+        <h1 className="mt-4 text-3xl text-cream tracking-tight">
+          {mode === "signin" ? "Sign in to the partner dashboard" : "Create your partner account"}
+        </h1>
+        <p className="mt-3 text-sm text-stone">
+          Access your Veep partner workspace. Access is by invitation only. Sign in with email and
+          password.
+        </p>
 
-      <form onSubmit={onSubmit} className="mt-8 space-y-4">
-        {mode === "signup" && (
-          <Field label="Full name">
+        <form onSubmit={onSubmit} className="mt-8 space-y-4">
+          {mode === "signup" && (
+            <Field label="Full name">
+              <input
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                autoComplete="name"
+                maxLength={120}
+                className={inputCls}
+              />
+            </Field>
+          )}
+          <Field label="Email">
             <input
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              autoComplete="name"
-              maxLength={120}
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoComplete="email"
+              maxLength={255}
               className={inputCls}
             />
           </Field>
-        )}
-        <Field label="Email">
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            autoComplete="email"
-            maxLength={255}
-            className={inputCls}
-          />
-        </Field>
-        <Field label="Password">
-          <input
-            type="password"
-            required
-            minLength={8}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            autoComplete={mode === "signin" ? "current-password" : "new-password"}
-            className={inputCls}
-          />
-        </Field>
+          <Field label="Password">
+            <input
+              type="password"
+              required
+              minLength={8}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete={mode === "signin" ? "current-password" : "new-password"}
+              className={inputCls}
+            />
+          </Field>
 
-        {error && <p className="text-sm text-red-400">{error}</p>}
-        {notice && <p className="text-sm text-accent">{notice}</p>}
+          {error && <p className="text-sm text-red-400">{error}</p>}
+          {notice && <p className="text-sm text-accent">{notice}</p>}
 
-        <button
-          type="submit"
-          disabled={busy}
-          className="motion-cta cta-accent inline-flex min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-medium disabled:opacity-60"
-        >
-          {busy ? "Working…" : mode === "signin" ? "Sign in" : "Create account"}
-        </button>
-      </form>
+          <button
+            type="submit"
+            disabled={busy}
+            className="motion-cta cta-accent inline-flex min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-medium disabled:opacity-60"
+          >
+            {busy ? "Working…" : mode === "signin" ? "Sign in" : "Create account"}
+          </button>
+        </form>
 
-      <p className="mt-8 text-sm text-stone">
-        {mode === "signin" ? "Invited but no account yet? " : "Already have an account? "}
-        <button
-          onClick={() => {
-            setMode(mode === "signin" ? "signup" : "signin");
-            setError(null);
-            setNotice(null);
-          }}
-          className="text-cream underline underline-offset-4"
-        >
-          {mode === "signin" ? "Create one" : "Sign in"}
-        </button>
-      </p>
-      <p className="mt-2 text-sm text-stone-soft">
-        <Link to="/" className="underline underline-offset-4">
-          Back to veep.work
-        </Link>
-      </p>
-    </section>
+        <p className="mt-8 text-sm text-stone">
+          {mode === "signin" ? "Invited but no account yet? " : "Already have an account? "}
+          <button
+            onClick={() => {
+              setMode(mode === "signin" ? "signup" : "signin");
+              setError(null);
+              setNotice(null);
+            }}
+            className="text-cream underline underline-offset-4"
+          >
+            {mode === "signin" ? "Create one" : "Sign in"}
+          </button>
+        </p>
+        <p className="mt-2 text-sm text-stone-soft">
+          <Link to="/" className="underline underline-offset-4">
+            Back to veep.work
+          </Link>
+        </p>
+      </section>
+    </div>
   );
 }
 
-const inputCls =
-  "w-full rounded-lg border border-white/12 bg-white/5 px-3 py-2.5 text-sm text-cream outline-none focus:border-accent";
+const inputCls = "ve-input";
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="mb-1.5 block text-xs uppercase tracking-[0.1em] text-stone-soft">{label}</span>
+      <span className="mb-1.5 block text-xs uppercase tracking-[0.1em] text-stone-soft">
+        {label}
+      </span>
       {children}
     </label>
   );

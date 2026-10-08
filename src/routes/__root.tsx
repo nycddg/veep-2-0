@@ -42,10 +42,10 @@ const orgSchema = {
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <div className="mono-label">[404] / NOT FOUND</div>
-        <h1 className="mt-6 text-7xl text-cream tracking-tight">404</h1>
+    <div className="rebuild ve-editorial ve-public ve-status-page">
+      <div className="ve-status-copy">
+        <div className="mono-label">Page not found</div>
+        <h1 className="ve-status-number">404</h1>
         <h2 className="mt-4 text-xl text-cream tracking-tight">Page not found</h2>
         <p className="mt-2 text-sm text-stone">
           The page you're looking for doesn't exist or has moved.
@@ -68,9 +68,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <div className="mono-label">[ERR] / SOMETHING BROKE</div>
+    <div className="rebuild ve-editorial ve-public ve-status-page">
+      <div className="ve-status-copy">
+        <div className="mono-label">Page unavailable</div>
         <h1 className="mt-6 text-2xl text-cream tracking-tight">This page didn't load</h1>
         <p className="mt-2 text-sm text-stone">
           Something went wrong. Try again or head back home.
