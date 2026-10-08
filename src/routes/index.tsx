@@ -53,7 +53,7 @@ function Index() {
       <Section pad="none" className="ve-home-hero">
         <Container className="ve-container">
           <div className="ve-masthead-top">
-            <p>Operating partners for companies & funds</p>
+            <p>An operating partner platform</p>
             <span>Critical work, owned.</span>
           </div>
           <h1 className="ve-home-title">
@@ -65,9 +65,9 @@ function Index() {
           <div className="ve-home-stage">
             <div className="ve-home-intro">
               <p className="ve-lead">
-                The work needs to move.
+                The work you can’t get to.
                 <br />
-                Put the right people behind it.
+                The priority that keeps slipping.
               </p>
               <p>
                 Veep gives companies and funds the operating partner capacity found inside top VC
@@ -201,14 +201,14 @@ function Index() {
       <Section className="ve-close">
         <Container className="ve-container ve-close-layout">
           <h2>
-            What needs
-            <br />
-            to move<span className="ve-period">?</span>
+            It's probably
+            <br /> a job for Veep<span className="ve-period">.</span>
           </h2>
           <div>
             <p>
-              Bring the priority that keeps coming back. In a 30-minute intro call, we’ll discuss
-              the work and whether Veep is the right fit.
+              It keeps slipping. It sits between functions. You’re still the one pushing it forward.
+              Bring that work to a 30-minute intro call. We’ll discuss what it needs and whether
+              Veep is the right fit.
             </p>
             <BookLink />
           </div>
