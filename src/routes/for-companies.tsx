@@ -4,6 +4,8 @@ import { BookLink } from "@/components/site/rebuild/BookLink";
 import { Container } from "@/components/site/rebuild/Container";
 import { operatorAsset } from "@/components/site/rebuild/operatorAsset";
 import { Portrait } from "@/components/site/rebuild/Portrait";
+import { WorkMandate } from "@/components/site/rebuild/WorkMandate";
+import { AgentTeam } from "@/components/site/rebuild/AgentTeam";
 import { Section } from "@/components/site/rebuild/Section";
 import { TextLink } from "@/components/site/rebuild/TextLink";
 
@@ -45,37 +47,6 @@ const serviceSchema = {
     },
   ],
 };
-
-const work = [
-  {
-    id: "capital-readiness",
-    title: "Capital & transaction readiness",
-    situation: "A raise, financing, or transaction is approaching.",
-    detail:
-      "Build the models, reporting, and materials the process needs. Coordinate preparation so the business is ready for investor, lender, or buyer scrutiny.",
-  },
-  {
-    id: "revenue-repeatability",
-    title: "Revenue repeatability",
-    situation: "Growth still depends on the founder.",
-    detail:
-      "Clarify customer focus, positioning, and pricing. Put pipeline management and a sales cadence in place that the team can run.",
-  },
-  {
-    id: "commercial-expansion",
-    title: "Commercial expansion",
-    situation: "The opportunity is clear. The operating plan is missing.",
-    detail:
-      "Build the business case and operating plan for a new market, product, offer, or channel. Lead the launch and the coordination it requires across the business.",
-  },
-  {
-    id: "leadership",
-    title: "Leadership and operating gaps",
-    situation: "A critical function needs someone in charge.",
-    detail:
-      "Give the work a senior owner while the team, role, or permanent hire takes shape. Maintain continuity and prepare a documented handoff.",
-  },
-] as const;
 
 const responsibilities = [
   {
@@ -218,76 +189,29 @@ export const Route = createFileRoute("/for-companies")({
 
 function Page() {
   return (
-    <div className="rebuild">
-      <Section pad="none" className="rb-company-hero">
-        <Container>
-          <div className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-6">
-            <div className="lg:col-span-6">
-              <p className="rb-mono text-[14px] leading-[1.5] text-[var(--rb-link)]">
-                For companies
-              </p>
-              <h1 className="rb-h1 mt-4">Give critical work a senior owner.</h1>
-              <p className="rb-deck mt-6">
+    <div className="rebuild ve-editorial ve-companies">
+      <Section pad="none" className="ve-company-hero">
+        <Container className="ve-container">
+          <p className="ve-kicker">For Companies</p>
+          <div className="ve-company-opening">
+            <h1>
+              Give critical work
+              <br /> <span>a senior owner.</span>
+            </h1>
+            <div>
+              <p>
                 When the work sits between functions, depends too much on you, or needs capacity
-                your team cannot spare, Veep scopes the mandate and puts a lead operating partner in
-                charge.
+                your team cannot spare, Veep puts a lead operating partner in charge.
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
-                <BookLink />
-                <TextLink hash="work">Explore the work</TextLink>
-              </div>
+              <BookLink />
             </div>
-            <aside className="rb-mandate-sheet mt-12 lg:col-span-5 lg:col-start-8 lg:mt-0">
-              <p className="rb-caption text-[var(--rb-muted)]">Illustrative mandate</p>
-              <h2 className="mt-3 text-[26px] font-medium leading-[1.2]">Capital readiness</h2>
-              <p className="rb-caption mt-3 text-[var(--rb-muted)]">
-                An example of a scoped arrangement. Not a client record.
-              </p>
-              <dl className="mt-6">
-                {[
-                  ["Work", "Capital readiness"],
-                  ["Scope", "Model, reporting, and investor materials"],
-                  ["Ownership", "Lead operating partner"],
-                  ["Decisions", "Client leadership retains approvals"],
-                ].map(([label, value]) => (
-                  <div key={label} className="rb-mandate-entry">
-                    <dt className="text-[14px] leading-[1.4] text-[var(--rb-muted)]">{label}</dt>
-                    <dd className="mt-1 text-[18px] leading-[1.45]">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </aside>
           </div>
+          <WorkMandate />
         </Container>
       </Section>
 
-      <Section id="work">
-        <Container>
-          <h2 className="rb-h2">Start with the work that needs to move.</h2>
-          <div className="mt-10">
-            {work.map((row) => (
-              <article
-                key={row.id}
-                id={row.id}
-                className="grid gap-3 border-t border-[var(--rb-rule)] py-10 lg:grid-cols-12 lg:gap-6 lg:py-12"
-              >
-                <p className="text-[16px] leading-[1.45] text-[var(--rb-muted)] lg:col-span-3">
-                  {row.title}
-                </p>
-                <div className="lg:col-span-9">
-                  <h3 className="max-w-[28ch] text-[26px] font-medium leading-[1.25] lg:text-[30px]">
-                    {row.situation}
-                  </h3>
-                  <p className="mt-3 max-w-[62ch] text-[18px] leading-[1.55]">{row.detail}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <Section id="benefits" tone="raised">
-        <Container>
+      <Section id="benefits" className="ve-accountability">
+        <Container className="ve-container">
           <h2 className="rb-h2 max-w-[26ch]">
             An operating partner leads. Veep stays accountable.
           </h2>
@@ -320,102 +244,118 @@ function Page() {
         </Container>
       </Section>
 
-      <Section id="proof" tone="field">
-        <Container>
-          <h2 className="rb-h2 max-w-[16ch]">What the work looks like in practice.</h2>
-          <article className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-6">
-            <div className="lg:col-span-4">
-              <p className="rb-caption text-[var(--rb-muted)]">B2B SaaS</p>
-              <p className="rb-metric mt-3">$6M</p>
-              <p className="mt-3 text-[20px] leading-[1.35] lg:text-[22px]">Raised in six weeks</p>
-              <p className="rb-caption mt-4 text-[var(--rb-muted)]">Operating partner: Finance</p>
-            </div>
-            <div className="lg:col-span-8">
-              <h3 className="max-w-[22ch] text-[26px] font-medium leading-[1.2] lg:text-[28px]">
-                Preparing for a first institutional round
-              </h3>
-              <p className="mt-6 text-[14px] leading-[1.4] text-[var(--rb-muted)]">Situation</p>
-              <p className="rb-body mt-2">{cases[0].situation}</p>
-              <p className="mt-6 text-[14px] leading-[1.4] text-[var(--rb-muted)]">Work</p>
-              <p className="rb-body mt-2">{cases[0].work}</p>
-            </div>
-          </article>
-          <article className="mt-14 grid gap-4 border-t border-[var(--rb-rule)] pt-8 lg:grid-cols-12 lg:gap-6">
-            <div className="lg:col-span-4">
-              <p className="rb-caption text-[var(--rb-muted)]">Software studio</p>
-              <p className="mt-3 text-[22px] font-medium leading-[1.3] lg:text-[26px]">
-                Project margins up 25%
-              </p>
-              <p className="rb-caption mt-4 text-[var(--rb-muted)]">Operating partner: Growth</p>
-            </div>
-            <div className="lg:col-span-8">
-              <h3 className="text-[20px] font-medium leading-[1.3]">
-                Rebuilding project economics and AI delivery
-              </h3>
-              <p className="mt-4 text-[14px] leading-[1.4] text-[var(--rb-muted)]">Situation</p>
-              <p className="rb-body mt-2">{cases[1].situation}</p>
-              <p className="mt-4 text-[14px] leading-[1.4] text-[var(--rb-muted)]">Work</p>
-              <p className="rb-body mt-2">{cases[1].work}</p>
-            </div>
-          </article>
-          <figure className="rb-client-quote mt-16">
-            <blockquote>
-              <p className="text-[28px] font-medium leading-[1.3] lg:text-[32px]">
-                "I cannot recommend this team more highly. They think, act, and engage like
-                co-founders."
-              </p>
-            </blockquote>
-            <figcaption className="mt-4 text-[16px] leading-[1.45]">
-              Jerry Kolber, Founder & CEO, Atomic Audio
-            </figcaption>
-            <p className="rb-caption mt-3 text-[var(--rb-muted)]">
-              Attributed client experience. The cases above are anonymous engagements.
+      <Section id="proof" pad="none" className="ve-case-section">
+        <Container className="ve-container">
+          <div className="ve-case-heading">
+            <h2 className="ve-title">
+              The work.
+              <br /> The difference it made.
+            </h2>
+            <p>
+              Selected Veep engagements.
+              <br /> Companies anonymized.
             </p>
+          </div>
+          <article className="ve-case-primary">
+            <div className="ve-case-result">
+              <p className="ve-kicker">B2B SaaS · Finance operating partner</p>
+              <p className="ve-proof-number">$6M</p>
+              <p className="ve-proof-label">Raised in six weeks.</p>
+            </div>
+            <div className="ve-case-story">
+              <h3>
+                From first-round preparation
+                <br /> to investor conversations.
+              </h3>
+              <p>{cases[0].situation}</p>
+              <p>{cases[0].work}</p>
+              <div className="ve-case-artifacts">
+                <span>3-year model</span>
+                <span>CAC / LTV reporting</span>
+                <span>Investor meeting support</span>
+              </div>
+            </div>
+          </article>
+          <article className="ve-case-secondary">
+            <div>
+              <p className="ve-kicker">Software studio · Growth operating partner</p>
+              <h3>
+                Better project economics.
+                <br /> A path into AI delivery.
+              </h3>
+              <p>{cases[1].situation}</p>
+              <p>{cases[1].work}</p>
+            </div>
+            <div className="ve-secondary-result">
+              <p>
+                25<span>%</span>
+              </p>
+              <h4>Project margins up</h4>
+              <span>At an $8M product development studio</span>
+            </div>
+          </article>
+          <figure className="ve-testimonial">
+            <span className="ve-quote-mark" aria-hidden="true">
+              “
+            </span>
+            <blockquote>
+              I cannot recommend this team more highly. They think, act, and engage like
+              co-founders.
+            </blockquote>
+            <figcaption>
+              <span>Jerry Kolber</span>Founder & CEO, Atomic Audio
+            </figcaption>
+            <p>Attributed client experience, separate from the anonymous cases above.</p>
           </figure>
         </Container>
       </Section>
 
-      <Section id="operators">
-        <Container>
-          <h2 className="rb-h2">Operators who've held the seat.</h2>
-          <p className="rb-body rb-measure mt-6">
-            75+ vetted senior operators. We select for the work, business model, and company stage.
-            You can review relevant experience and references before the engagement begins.
-          </p>
-          <div className="mt-12 space-y-16">
-            {operators.map((person) => {
+      <Section id="operators" className="ve-company-people">
+        <Container className="ve-container">
+          <div className="ve-section-opening">
+            <h2 className="ve-title">
+              They’ve held the seat.
+              <br /> They know the work.
+            </h2>
+            <p className="ve-body">
+              75+ vetted senior operators. Selected for the work, business model, and company stage.
+              Review relevant experience and references before the engagement begins.
+            </p>
+          </div>
+          <div className="ve-people-spread">
+            {operators.map((person, index) => {
               const photo = operatorAsset(person.name);
               return (
                 <article
                   key={person.name}
-                  className="grid gap-6 md:grid-cols-[260px_minmax(0,1fr)]"
+                  className={`ve-person-feature ve-person-feature-${index}`}
                 >
-                  <Portrait
-                    src={photo.src}
-                    objectPosition={photo.objectPosition}
-                    scale={photo.scale}
-                    className="aspect-[4/5] w-[220px] md:w-full md:max-w-[260px]"
-                  />
-                  <div className="max-w-[42ch]">
-                    <h3 className="text-[26px] font-medium leading-[1.2]">{person.name}</h3>
-                    <p className="mt-2 text-[16px] leading-[1.45]">{person.role}</p>
-                    <p className="mt-1 text-[16px] leading-[1.45] text-[var(--rb-muted)]">
-                      {person.prior}
-                    </p>
-                    <p className="mt-4 text-[20px] leading-[1.45] lg:text-[22px]">{person.bio}</p>
+                  <div className="ve-person-image">
+                    <Portrait
+                      src={photo.src}
+                      objectPosition="center 72%"
+                      scale={photo.scale}
+                      className="aspect-[4/5] w-full"
+                    />
+                    <span>{person.role.replace(" Operating Partner", "")}</span>
+                  </div>
+                  <div className="ve-person-copy">
+                    <h3>{person.name}</h3>
+                    <p className="ve-person-prior">{person.prior}</p>
+                    <p>{person.bio}</p>
                   </div>
                 </article>
               );
             })}
           </div>
-          <p className="rb-caption mt-10 text-[var(--rb-muted)]">
-            Experience shown is from the operators' careers, including roles before Veep.
+          <p className="ve-provenance">
+            Experience shown is from the operators’ careers, including roles before Veep.
           </p>
         </Container>
       </Section>
 
       <Section id="alternatives" pad="compact">
-        <Container>
+        <Container className="ve-container">
           <h2 className="rb-utility-title">When the usual options leave a gap.</h2>
           <table className="rb-options mt-10 w-full border-collapse">
             <thead>
@@ -457,8 +397,8 @@ function Page() {
       </Section>
 
       <Section id="offer" tone="raised">
-        <Container>
-          <h2 className="rb-h2">Scope determines the support and the price.</h2>
+        <Container className="ve-container">
+          <h2 className="rb-h2">Size the support to the work.</h2>
           <p className="rb-body rb-measure mt-6">
             Define the work first. Choose the engagement shape together.
           </p>
@@ -494,85 +434,68 @@ function Page() {
               no fee owed for the remaining term.
             </p>
           </div>
-          <div id="agent-teams" className="mt-16 border-t border-[var(--rb-rule)] pt-10">
-            <h3 className="text-[26px] font-medium leading-[1.25]">
-              Agent Teams for recurring work.
-            </h3>
-            <div className="rb-recurring-lane mt-8">
-              <p className="text-[18px] leading-[1.4]">
-                <span aria-hidden className="mr-3 text-[var(--rb-coral)]">
-                  ↻
-                </span>
-                Recurring finance, founder office, growth, and operations work
-              </p>
-            </div>
-            <div className="rb-agent-responsibilities">
-              {[
-                ["Operating partner", "Functional judgment, quality, and exceptions"],
-                ["Technical lead", "Architecture and reliability"],
-                ["Your team", "Strategic decisions and approvals"],
-              ].map(([label, note]) => (
-                <div key={label} className="rb-agent-role">
-                  <p className="text-[18px] font-medium leading-[1.4]">{label}</p>
-                  <p className="mt-2 text-[16px] leading-[1.5] text-[var(--rb-muted)]">{note}</p>
-                </div>
-              ))}
-            </div>
-            <p className="rb-body mt-8">
-              For recurring finance, founder office, growth, and operations work, Veep combines
-              operator direction with technical oversight. The operating partner governs functional
-              judgment, quality, and exceptions. A CTO or technical lead oversees architecture and
-              reliability. Your team retains strategic decisions and approvals.
-            </p>
-            <p className="mt-4 text-[16px] leading-[1.5]">Agent Teams are scoped separately.</p>
-          </div>
+        </Container>
+      </Section>
+
+      <Section id="agent-teams" className="ve-agents-section">
+        <Container className="ve-container">
+          <AgentTeam />
         </Container>
       </Section>
 
       <Section id="how">
-        <Container>
-          <h2 className="rb-h2">From the first conversation to the handoff.</h2>
-          <p className="rb-body rb-measure mt-6">
-            We start with a 30-minute intro call to understand the priority, urgency, and outcome,
-            and whether Veep is the right fit.
-          </p>
-          <ol className="mt-12 border-l border-[var(--rb-rule)] pl-6 md:pl-8">
+        <Container className="ve-container ve-delivery-layout">
+          <div>
+            <h2 className="ve-title">
+              From the first
+              <br /> conversation
+              <br /> to the handoff.
+            </h2>
+            <p className="ve-body">
+              We start with a 30-minute intro call to understand the priority, urgency, and outcome,
+              and whether Veep is the right fit.
+            </p>
+            <div className="ve-delivery-speed">
+              <p>
+                <strong>72h</strong>
+                <span>Scoped in 72 hours</span>
+              </p>
+              <p>
+                <strong>&lt;10d</strong>
+                <span>Started in under 10 days</span>
+              </p>
+            </div>
+            <p className="ve-provenance">
+              Timing applies to operating engagements, not completion of the mandate.
+            </p>
+          </div>
+          <ol className="ve-delivery-steps">
             {delivery.map((step) => (
-              <li key={step.n} className="relative pb-10">
-                <span
-                  aria-hidden
-                  className="absolute -left-[29px] top-2 h-2.5 w-2.5 rounded-full bg-[var(--rb-link)] md:-left-[37px]"
-                />
-                <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1">
-                  <h3 className="text-[26px] font-medium leading-[1.2]">{step.t}</h3>
-                  {step.n === "01" ? (
-                    <p className="text-[20px] leading-[1.3]">Scoped in 72 hours</p>
-                  ) : null}
-                  {step.n === "03" ? (
-                    <p className="text-[20px] leading-[1.3]">Started in under 10 days</p>
-                  ) : null}
-                  {step.n === "04" ? <p className="text-[20px] leading-[1.3]">Handoff</p> : null}
+              <li key={step.n}>
+                <span>{step.n}</span>
+                <div>
+                  <h3>{step.t}</h3>
+                  <p>{step.d}</p>
                 </div>
-                <p className="rb-body mt-3">{step.d}</p>
               </li>
             ))}
           </ol>
-          <p className="max-w-[52ch] text-[16px] leading-[1.5] text-[var(--rb-muted)]">
-            Scoped in 72 hours and started in under 10 days applies to operating engagements.
-          </p>
         </Container>
       </Section>
 
-      <Section pad="compact">
-        <Container>
-          <h2 className="max-w-[14ch] text-[36px] font-medium leading-[1.15] lg:text-[40px]">
-            Tell us what needs to move.
+      <Section className="ve-close">
+        <Container className="ve-container ve-close-layout">
+          <h2>
+            Tell us what
+            <br /> needs to move<span className="ve-period">.</span>
           </h2>
-          <p className="rb-body mt-4 max-w-[48ch]">
-            Bring the priority, the urgency, and what a good outcome would look like. In a 30-minute
-            intro call, we'll discuss the work and whether Veep is the right fit.
-          </p>
-          <BookLink className="mt-8" />
+          <div>
+            <p>
+              Bring the priority, the urgency, and what a good outcome would look like. In a
+              30-minute intro call, we’ll discuss the work and whether Veep is the right fit.
+            </p>
+            <BookLink />
+          </div>
         </Container>
       </Section>
     </div>
