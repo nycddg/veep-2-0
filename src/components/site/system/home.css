@@ -970,11 +970,43 @@
   width: 100%;
   height: auto;
 }
-.vh-delivery-end h3 {
-  transform: translateY(-5px);
-  font-size: 28px;
-  line-height: 1.1;
-  letter-spacing: var(--v-tracking-heading);
+.vh-delivery-check {
+  width: 56px;
+  height: 56px;
+  margin-inline: auto;
+  color: var(--v-accent);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.vh-delivery-check path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-delivery-check path {
+  animation: vh-complete-check var(--work-cycle) ease-out infinite both;
+}
+@keyframes vh-complete-check {
+  0%,
+  88% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+  89% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+  94%,
+  97% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
 }
 .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-owned-path > span {
   animation: vh-work-owned var(--work-cycle) var(--v-motion-spatial) infinite both;
@@ -1431,10 +1463,10 @@
   .vh-mandate-scope {
     padding: 8px 4px;
   }
-  .vh-delivery-end h3 {
-    transform: none;
-    padding-top: 17px;
-    font-size: 20px;
+  .vh-delivery-check {
+    width: 48px;
+    height: 48px;
+    margin-top: 17px;
   }
   .vh-ownership-flow > div > p {
     margin: 0;

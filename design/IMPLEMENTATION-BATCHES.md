@@ -398,3 +398,8 @@ Remove “We stay accountable through delivery and handoff.” from the hero at 
 ## Batch 01AF — centered overview introduction
 
 Center the overview headline and body at Dave’s request. Remove the forced headline break and expand the centered paragraph measure to 100ch with balanced wrapping. Verified one headline line and two body lines at 1466px; natural wrapping and no page overflow at 390px. No new breakpoint or copy change to the introduction. Follow-up changes the diagram circle label from “Your desk” to “You” at all widths. Production build and diff checks pass. Screenshot: voice-update/centered-overview.jpg in the October 9 visualization directory. Local commit only.
+
+
+## Batch 01AG — animated completion check
+
+Replace the visible “The work gets done” heading with an accessible SVG checkmark. Its stroke draws during 89–94% of the existing work cycle, after the coral work item reaches delivery, then resets with the loop. Retain the text as its accessible image label and preserve the caption. Use the existing accent color and mobile breakpoint (56px desktop, 48px mobile). Reduced-motion/still state shows the complete check without animation. Static browser appearance verified; production build and diff checks pass. Local only.

@@ -55,11 +55,14 @@ export function OwnershipDiagram() {
         </div>
         <div className="vh-delivery">
           <div className="vh-delivery-end">
-            <h3>
-              The work
-              <br />
-              gets done.
-            </h3>
+            <svg
+              className="vh-delivery-check"
+              viewBox="0 0 48 48"
+              role="img"
+              aria-label="The work gets done"
+            >
+              <path d="M10 25l9 9 19-21" pathLength="1" />
+            </svg>
           </div>
           <p>The agreed work, completed and ready for handoff.</p>
         </div>
