@@ -3,6 +3,7 @@ import { ogImageMeta } from "@/lib/seo";
 import { BookLink } from "@/components/site/rebuild/BookLink";
 import { Container } from "@/components/site/rebuild/Container";
 import { OperatorSpotlight } from "@/components/site/rebuild/OperatorSpotlight";
+import { MotionScene } from "@/components/site/motion/MotionScene";
 import { WorkMandate } from "@/components/site/rebuild/WorkMandate";
 import { AgentTeam } from "@/components/site/rebuild/AgentTeam";
 import { Section } from "@/components/site/rebuild/Section";
@@ -177,18 +178,20 @@ function Page() {
       <Section pad="none" className="ve-company-hero">
         <Container className="ve-container">
           <p className="ve-kicker">For Companies</p>
-          <div className="ve-company-opening">
-            <h1>
-              Give critical work
-              <br /> <span>a senior owner.</span>
-            </h1>
-            <div>
+          <div className="ve-motion-hero ve-motion-company">
+            <div className="ve-motion-intro">
+              <h1>
+                Give critical work
+                <br />
+                <span>a senior owner.</span>
+              </h1>
               <p>
                 The business needs to move, and your team is already at capacity. Veep puts a lead
                 operating partner in charge of the work that keeps coming back to you.
               </p>
               <BookLink />
             </div>
+            <MotionScene concept="mandate" />
           </div>
           <WorkMandate />
         </Container>
@@ -424,6 +427,7 @@ function Page() {
             <p className="ve-provenance">
               Timing applies to operating engagements, not completion of the mandate.
             </p>
+            <MotionScene concept="handoff" compact />
           </div>
           <ol className="ve-delivery-steps">
             {delivery.map((step) => (

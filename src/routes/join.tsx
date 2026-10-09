@@ -1,3 +1,4 @@
+import { MotionScene } from "@/components/site/motion/MotionScene";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { Check, Loader2 } from "lucide-react";
@@ -211,24 +212,7 @@ function Page() {
           Bring your experience to critical work for companies and funds. Veep defines the mandate
           and assembles the team. You bring the judgment and hands-on leadership to move it forward.
         </p>
-        <div className="ve-join-portraits" aria-label="Selected operating partners">
-          {[spotlightOperators[1], spotlightOperators[3], spotlightOperators[0]].map((person) => (
-            <figure key={person.name}>
-              <img
-                src={person.photoUrl}
-                alt=""
-                width="330"
-                height="410"
-                loading="eager"
-                decoding="async"
-              />
-              <figcaption>
-                {person.name}
-                <span>{person.role.replace(" Operating Partner", "")}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        <MotionScene concept="expertise" />
       </PublicIntro>
       <Section className="ve-join-criteria">
         <Container className="ve-container">
@@ -242,6 +226,25 @@ function Page() {
               real constraints. Relevant experience and references matter.
             </p>
           </div>
+          <div className="ve-join-portraits" aria-label="Selected operating partners">
+            {[spotlightOperators[1], spotlightOperators[3], spotlightOperators[0]].map((person) => (
+              <figure key={person.name}>
+                <img
+                  src={person.photoUrl}
+                  alt=""
+                  width="330"
+                  height="410"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>
+                  {person.name}
+                  <span>{person.role.replace(" Operating Partner", "")}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
           <div className="ve-criteria-grid">
             {criteria.map((item, i) => (
               <article key={item.title}>

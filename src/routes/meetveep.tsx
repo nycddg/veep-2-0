@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import erikaHeadshot from "@/assets/operator-erika-velazquez.png.asset.json";
+import { MotionScene } from "@/components/site/motion/MotionScene";
 import { ogImageMeta } from "@/lib/seo";
 import { Container } from "@/components/site/rebuild/Container";
 import { Section } from "@/components/site/rebuild/Section";
@@ -64,25 +64,7 @@ function MeetVeepPage() {
                 </TextLink>
               </div>
             </div>
-            <figure className="ve-meet-portrait">
-              <img
-                src={erikaHeadshot.url}
-                alt=""
-                width="660"
-                height="825"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-              />
-              <figcaption>
-                <span>Erika Velazquez</span>Marketing Operating Partner
-                <small>Prior experience: Morning Brew, The New Republic</small>
-              </figcaption>
-              <span className="ve-meet-note">
-                Senior judgment.
-                <br /> Hands-on ownership.
-              </span>
-            </figure>
+            <MotionScene concept="first-step" className="ve-meet-motion" />
           </div>
           <div className="ve-meet-timing">
             <p>

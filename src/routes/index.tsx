@@ -4,8 +4,8 @@ import { BookLink } from "@/components/site/rebuild/BookLink";
 import { ClientTicker } from "@/components/site/rebuild/ClientTicker";
 import { Container } from "@/components/site/rebuild/Container";
 import { LegacyHash } from "@/components/site/rebuild/LegacyHash";
-import { operatorAsset } from "@/components/site/rebuild/operatorAsset";
-import { OperatorSpotlight } from "@/components/site/rebuild/OperatorSpotlight";
+import { OperatorProof } from "@/components/site/motion/OperatorProof";
+import { MotionScene } from "@/components/site/motion/MotionScene";
 import { OwnershipDiagram } from "@/components/site/rebuild/OwnershipDiagram";
 import { Section } from "@/components/site/rebuild/Section";
 import { TextLink } from "@/components/site/rebuild/TextLink";
@@ -13,8 +13,6 @@ import { TextLink } from "@/components/site/rebuild/TextLink";
 const TITLE = "Veep | Critical work, owned.";
 const DESCRIPTION =
   "Operating partner capacity for companies and funds. Veep defines the work and outcomes, assembles the right team, and owns delivery.";
-
-const jian = operatorAsset("Jian Yang");
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -37,10 +35,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: DESCRIPTION },
       ...ogImageMeta(),
     ],
-    links: [
-      { rel: "canonical", href: "https://www.veep.work/" },
-      { rel: "preload", as: "image", href: jian.src, fetchPriority: "high" },
-    ],
+    links: [{ rel: "canonical", href: "https://www.veep.work/" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(serviceSchema) }],
   }),
   component: Index,
@@ -56,7 +51,7 @@ function Index() {
             <p>An operating partner platform</p>
             <span>Critical work, owned.</span>
           </div>
-          <div className="ve-home-stage">
+          <div className="ve-home-stage ve-motion-home-stage">
             <div className="ve-home-intro">
               <h1 className="ve-home-title">
                 <span>Because a job</span>
@@ -72,12 +67,11 @@ function Index() {
               </p>
               <p>
                 Veep gives companies and funds the operating partner capacity found inside top VC
-                and PE firms. We define the work and outcomes, assemble the right team, and own
-                delivery.
+                and PE firms.
               </p>
               <BookLink />
             </div>
-            <OperatorSpotlight audience="home" />
+            <MotionScene concept="desk" />
           </div>
         </Container>
         <ClientTicker />
@@ -189,6 +183,7 @@ function Index() {
             </div>
           </div>
           <ClientTicker kind="clients" />
+          <OperatorProof />
         </Container>
       </Section>
       <Section className="ve-close">

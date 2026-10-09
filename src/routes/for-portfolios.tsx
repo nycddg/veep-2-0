@@ -3,6 +3,7 @@ import { ogImageMeta } from "@/lib/seo";
 import { BookLink } from "@/components/site/rebuild/BookLink";
 import { Container } from "@/components/site/rebuild/Container";
 import { OperatorSpotlight } from "@/components/site/rebuild/OperatorSpotlight";
+import { MotionScene } from "@/components/site/motion/MotionScene";
 import { PortfolioMap } from "@/components/site/rebuild/PortfolioMap";
 import { Section } from "@/components/site/rebuild/Section";
 import { TextLink } from "@/components/site/rebuild/TextLink";
@@ -99,17 +100,18 @@ function Page() {
     <div className="rebuild ve-editorial ve-funds">
       <Section pad="none" className="ve-funds-hero">
         <Container className="ve-container">
-          <div className="ve-funds-opening">
-            <p className="ve-kicker">For Funds & Portfolio Owners</p>
-            <h1>
-              The thesis is clear.
-              <br />{" "}
-              <span>
-                Put operators
-                <br /> behind it.
-              </span>
-            </h1>
-            <div className="ve-funds-intro">
+          <p className="ve-kicker">For Funds &amp; Portfolio Owners</p>
+          <div className="ve-motion-hero ve-motion-funds">
+            <div className="ve-motion-intro">
+              <h1>
+                The thesis is clear.
+                <br />
+                <span>
+                  Put operators
+                  <br />
+                  behind it.
+                </span>
+              </h1>
               <p>
                 Veep gives private equity firms, family offices, holding companies, and independent
                 sponsors senior operating capacity without building a full internal platform team.
@@ -119,6 +121,7 @@ function Page() {
                 Explore the capacity audit <span aria-hidden="true">↘</span>
               </TextLink>
             </div>
+            <MotionScene concept="portfolio" />
           </div>
           <div id="lifecycle" className="ve-lifecycle">
             <div className="ve-lifecycle-caption">

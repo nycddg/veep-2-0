@@ -1,3 +1,5 @@
+import { MotionScene } from "../motion/MotionScene";
+
 export function AgentTeam() {
   return (
     <div className="ve-agent-layout">
@@ -18,32 +20,19 @@ export function AgentTeam() {
           engagements.
         </p>
       </div>
-      <figure className="ve-agent-preview">
+      <div className="ve-agent-motion-model">
         <p className="ve-kicker">Illustrative finance workflow</p>
-        <h3>
-          The board pack
-          <br /> before the meeting.
-        </h3>
-        <ol>
-          <li>
-            <span>Prepare</span>
-            <p>Agents assemble the agreed reports and draft materials.</p>
-          </li>
-          <li>
-            <span>Review</span>
-            <p>The finance operator checks assumptions and handles exceptions.</p>
-          </li>
-          <li>
-            <span>Decide</span>
-            <p>Your team makes the business decisions and gives approvals.</p>
-          </li>
-        </ol>
-        <figcaption>
+        <MotionScene concept="assembly" />
+        <p className="ve-small-note">
+          Agents prepare the agreed materials. The finance operator checks assumptions and handles
+          exceptions. Your team makes business decisions and gives approvals.
+        </p>
+        <p className="ve-small-note">
           A technical lead owns architecture, permissions, integrations, monitoring, and
           reliability.
-          <span>Illustrative model, not a completed client engagement.</span>
-        </figcaption>
-      </figure>
+        </p>
+        <p className="ve-small-note">Illustrative model, not a completed client engagement.</p>
+      </div>
     </div>
   );
 }
