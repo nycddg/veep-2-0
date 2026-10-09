@@ -63,7 +63,7 @@ function Index() {
               <p className="v-body-large">
                 The hardest jobs rarely arrive with a clean title or an obvious owner. Veep puts
                 senior operators on critical finance, GTM, and operations work for founders and
-                funds. We stay accountable through delivery and handoff.
+                funds.
               </p>
               <div className="vh-hero-actions">
                 <ActionLink href="/for-companies" variant="secondary">

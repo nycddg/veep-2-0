@@ -138,7 +138,7 @@ Dave's site-wide copy correction takes precedence over earlier provenance-footno
 - Calls to action explain what the reader gets: define the priority, recommend the operating capacity, agree the next step. Avoid repeated “whether Veep is the right fit” endings.
 - Keep supported figures, exact testimonial wording, prices, scope, service responsibilities, and commercial terms accurate. Put useful terms where readers make the relevant decision; do not repeat them as defensive marketing footnotes.
 - The October 9 homepage voice pass closes with “What work keeps coming back to you?” and a specific invitation to bring the stuck priority to the intro call. “It’s probably a job for Veep” remains available brand language, not the current closing heading.
-- The October 9 Vosler/Voice & Edge homepage pass supersedes the earlier hero supporting sentence. Lead with jobs lacking a clean title or obvious owner, then explain senior ownership across finance, GTM, and operations for founders and funds, accountable through handoff. The three recognition lines remain beneath the unchanged headline. Both audience routes keep their approved destinations; header and closing booking links retain their existing behavior.
+- The October 9 Vosler/Voice & Edge homepage pass supersedes the earlier hero supporting sentence. Lead with jobs lacking a clean title or obvious owner, then explain senior ownership across finance, GTM, and operations for founders and funds. The three recognition lines remain beneath the unchanged headline. Both audience routes keep their approved destinations; header and closing booking links retain their existing behavior.
 
 ## Homepage editorial patterns
 

@@ -388,3 +388,8 @@ Dave requested a homepage copy update using Vosler Copywriting and supplied Veep
 Replace the hero’s mandate-heavy support and OKR line, sharpen the recognition and diagram captions, turn service inventories into active descriptions, clarify founder relief and fund readiness, rewrite the four delivery steps, and make the close a direct invitation to bring the stuck work. Update the operator introduction without changing its evidence. Retain H1, accountability statement, audience labels/casing, all case numbers and descriptions, testimonial/attribution, people/credentials, newsletter, metadata, URLs, and commercial terms. This user-requested copy pass supersedes the earlier exact supporting-copy and closing-heading guidance. No stylesheet, breakpoint, motion, or behavior change.
 
 Validation: production build and focused lint pass; actual desktop dark/light and 390px mobile renders reviewed, including hero, method and closing copy. No horizontal page overflow at checked widths. Existing responsive typography accommodates the copy. Evidence: October 9 visualization directory /voice-update/. Restore dark theme and viewport. Local commit only; preserve unrelated changes and do not push.
+
+
+## Batch 01AE — shorten hero support
+
+Remove “We stay accountable through delivery and handoff.” from the hero at Dave’s request. Retain the accountability statement in the overview. No layout or behavior changes. Source diff checked; production build passes. Local only.
