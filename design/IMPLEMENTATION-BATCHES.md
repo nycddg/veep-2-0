@@ -372,3 +372,10 @@ Actual 1381, 768 and 390px layouts reviewed in both themes with no overflow; bot
 **Verification:** rendered Home at 1381, 1024, 768, 390 and 320px in both themes with no document overflow. At 320/390px the audience actions remain equal-width with 46px height; no additional breakpoint. Inspected desktop audience/timeline/proof rhythm, tablet newsletter/close and mobile reading order. Paired specimen reviewed at desktop and 390px. Measured enabled action/surface text pairs above 4.5:1; corrected the newsletter light pressed mixture from 16% to 12%, yielding 4.76:1 (dark 6.37:1). Keyboard Tab reaches both hero routes with a 2px/4px-offset focus ring; mobile menu focuses navigation and Escape restores its trigger. Local-only field error/success, selected state and disclosure toggling work. Reduced motion stops hero, desk and ticker while preserving complete content; restored device preference and dark mode. Production build, focused ESLint and diff checks pass. No real submissions, push or deployment.
 
 Evidence: `canon-refinement/material-refinement/` in the October 9 visualization directory, including paired-state, hero, responsive full-page, reduced-motion and contrast records. Existing uncommitted foundation and page work remains preserved and unstaged; scoped commits contain only this pass. No claim of complete legacy-page or screen-reader certification.
+
+
+## Batch 01AC — founder audience labels
+
+Rename the company audience label throughout navigation, homepage actions and headings, page metadata, related audience copy and the component reference. Follow Dave’s capitalization rule: “For Founders” in header/mobile/footer navigation; “For founders” in buttons and headings. Preserve /for-companies destinations and general prose referring to companies. No responsive or token changes.
+
+Production build passes; focused lint passes for the cleanly scoped files, with pre-existing formatting errors in OperatorSpotlightChapter left untouched. Source and browser checks verify the audience labels and existing destinations. Preserve unrelated work; local commit only, no push or deployment.

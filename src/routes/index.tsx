@@ -66,7 +66,7 @@ function Index() {
               </p>
               <div className="vh-hero-actions">
                 <ActionLink href="/for-companies" variant="secondary">
-                  For companies
+                  For founders
                 </ActionLink>
                 <ActionLink href="/for-portfolios" variant="secondary">
                   For funds
@@ -137,7 +137,7 @@ function Index() {
       <section id="audiences" className="v-section v-section--tonal vh-audiences">
         <Container className="vh-paths">
           <article>
-            <h2>For companies</h2>
+            <h2>For founders</h2>
             <p className="v-body-large v-muted">
               A senior owner for a critical operating priority.
             </p>

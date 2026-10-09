@@ -130,7 +130,7 @@ function MeetVeepPage() {
       <Section>
         <Container className="ve-container ve-meet-next">
           <div>
-            <p className="ve-kicker">For Companies</p>
+            <p className="ve-kicker">For founders</p>
             <h2 className="ve-title">
               Size the support
               <br /> to the work.

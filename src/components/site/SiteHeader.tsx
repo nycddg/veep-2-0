@@ -7,7 +7,7 @@ import { BookLink } from "./rebuild/BookLink";
 import { ThemeToggle } from "./ThemeToggle";
 
 const nav = [
-  { to: "/for-companies", label: "For Companies" },
+  { to: "/for-companies", label: "For Founders" },
   { to: "/for-portfolios", label: "For Funds" },
   { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },

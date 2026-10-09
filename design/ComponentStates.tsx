@@ -127,7 +127,7 @@ export function ComponentStates() {
       </div>
       <div className="vs-actions" aria-label="Equal audience routes">
         <ActionLink variant="secondary" href="/for-companies">
-          For companies
+          For founders
         </ActionLink>
         <ActionLink variant="secondary" href="/for-portfolios">
           For funds

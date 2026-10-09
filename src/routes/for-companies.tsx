@@ -9,14 +9,14 @@ import { AgentTeam } from "@/components/site/rebuild/AgentTeam";
 import { Section } from "@/components/site/rebuild/Section";
 import { TextLink } from "@/components/site/rebuild/TextLink";
 
-const TITLE = "For Companies | Veep";
+const TITLE = "For founders | Veep";
 const DESCRIPTION =
   "Senior operating partners for capital readiness, growth, expansion, and leadership gaps. Defined scopes, clear ownership, and delivery managed by Veep.";
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "For Companies",
+  name: "For founders",
   serviceType: "Senior operating partners",
   provider: { "@type": "Organization", name: "Veep" },
   description: DESCRIPTION,
@@ -177,7 +177,7 @@ function Page() {
     <div className="rebuild ve-editorial ve-companies">
       <Section pad="none" className="ve-company-hero">
         <Container className="ve-container">
-          <p className="ve-kicker">For Companies</p>
+          <p className="ve-kicker">For founders</p>
           <div className="ve-motion-hero ve-motion-company">
             <div className="ve-motion-intro">
               <h1>
