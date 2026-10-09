@@ -31,7 +31,7 @@ function measureOwnership(node: SVGSVGElement | SVGGElement) {
     arrivalSpeed: 2,
     arrivalPause: 0.2,
     downwardEntry: true,
-    motion: { speedScale: 1.15 },
+    motion: { speedScale: 1.15, boxMultiplier: 2.5, boxHold: 1.5 },
   };
 }
 

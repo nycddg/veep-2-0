@@ -435,3 +435,7 @@ Dave clarified that only the new hairline bounce needed refinement. Restore the 
 ## Batch 01AM — quicker client fill and downward box entry
 
 Dave requested faster filling of the You circle, clarified that the coral ball should hop above the hairline then bounce downward inside Veep, and requested a further 15% speed increase. Ownership arrivals now travel at twice their base speed with a 0.2-second inter-arrival pause; the ownership motion rate increases 15%. Preserve positive-height rail hops and switch the initial box velocity downward. Keep hero behavior unchanged, making its existing smooth-landing option explicit. Four collision/loop tests, focused lint, build and diff checks pass. Browser confirms running delivery above the rail. No layout/copy/theme changes. Local only.
+
+## Batch 01AN — shorter, livelier Veep box stage
+
+Dave found the time inside Veep too slow. Increase ownership box/exit velocity 2.5× and begin exit after 1.5 seconds instead of six. Ease speed near exit waypoints to prevent overshooting or circling a waypoint before leaving. Keep arrival, client motion, rail travel, hero and completion timing unchanged. Collision/loop tests pass; a new duration assertion requires desktop/mobile box visits including exit routing to finish within eight simulated seconds. Focused lint, production build and diff checks pass. Local only.

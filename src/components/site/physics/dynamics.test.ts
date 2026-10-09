@@ -44,13 +44,20 @@ describe("work collisions", () => {
         arrivalSpeed: 2,
         arrivalPause: 0.2,
         downwardEntry: true,
-        motion: { speedScale: 1.15 },
+        motion: { speedScale: 1.15, boxMultiplier: 2.5, boxHold: 1.5 },
       };
       const sim = new WorkSimulation(g),
         stages = new Set<string>();
+      let boxElapsed = 0,
+        longestBoxVisit = 0;
       for (let i = 0; i < 120 * 180; i++) {
         sim.update(1 / 120);
         stages.add(sim.stage);
+        if (sim.stage === "box" || sim.stage === "leave") boxElapsed += 1 / 120;
+        else if (boxElapsed) {
+          longestBoxVisit = Math.max(longestBoxVisit, boxElapsed);
+          boxElapsed = 0;
+        }
         checkPairs([...sim.bodies, ...(sim.incoming ? [sim.incoming] : [])]);
         if (sim.selected) assert.equal(sim.selected.id, g.count - 1);
         for (const b of sim.bodies) {
@@ -79,6 +86,7 @@ describe("work collisions", () => {
       }
       assert(stages.has("done"), "Never completed");
       assert(stages.has("leave"), "Never left box");
+      assert(longestBoxVisit < 8, `Box visit took ${longestBoxVisit.toFixed(2)} seconds`);
     });
   }
 });

@@ -19,6 +19,8 @@ export type WorkGeometry = {
     hops?: number;
     lift?: number;
     smoothLanding?: boolean;
+    boxMultiplier?: number;
+    boxHold?: number;
   };
 };
 type Stage = "fill" | "settle" | "extract" | "travel" | "box" | "leave" | "deliver" | "done";
@@ -188,26 +190,29 @@ export class WorkSimulation {
         : { x: g.box.x + b.r + 1, y: g.box.y + g.box.height / 2 };
       this.move(target, this.speed * (g.motion?.travelMultiplier ?? 2), dt);
       if (Math.hypot(b.x - target.x, b.y - target.y) < 0.1) {
-        b.vx = this.speed * 0.78;
-        b.vy = this.speed * (g.vertical || g.downwardEntry ? 0.63 : -0.63);
+        const boxSpeed = this.speed * (g.motion?.boxMultiplier ?? 1);
+        b.vx = boxSpeed * 0.78;
+        b.vy = boxSpeed * (g.vertical || g.downwardEntry ? 0.63 : -0.63);
         this.transition("box");
       }
     } else if (this.stage === "box" || this.stage === "leave") {
       let gate;
+      const boxSpeed = this.speed * (g.motion?.boxMultiplier ?? 1);
       if (this.stage === "leave") {
         const target = this.waypoints[0];
         if (target) {
-          steer(b, target, this.speed, dt);
-          if (Math.hypot(b.x - target.x, b.y - target.y) < b.r * 1.5) this.waypoints.shift();
+          const distance = Math.hypot(b.x - target.x, b.y - target.y);
+          steer(b, target, Math.min(boxSpeed, distance * 4), dt);
+          if (distance < b.r * 1.5) this.waypoints.shift();
         } else {
           const d = this.direction,
             p = this.boxGate;
-          steer(b, { x: p.x + d.x * b.r * 4, y: p.y + d.y * b.r * 4 }, this.speed, dt);
+          steer(b, { x: p.x + d.x * b.r * 4, y: p.y + d.y * b.r * 4 }, boxSpeed, dt);
           gate = { id: b.id, point: p, direction: d };
         }
       }
       step([b], g.box, g.boxObstacles, dt, gate);
-      if (this.stage === "box" && this.clock > 6) {
+      if (this.stage === "box" && this.clock > (g.motion?.boxHold ?? 6)) {
         if (g.completeInBox) {
           this.transition("done");
         } else {
