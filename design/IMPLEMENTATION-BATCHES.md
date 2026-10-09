@@ -457,10 +457,14 @@ Unify legacy public-page color aliases with the current semantic palette. Give l
 
 Verification: production build passes. Desktop selected tabs retain correct labels/panels and paired colors; canonical actions retain 6px corners. Mobile opening checks cover Home, Founders, Pricing, About and Join. Evidence: studio-polish/batch1-controls.png and baseline captures. Further responsive/theme acceptance follows in 02C.
 
-### Batch 02B — composed page openings and editorial detail (queued)
+### Batch 02B — composed page openings and editorial detail (complete)
 
 Retain the strong homepage composition, refine hierarchy and portrait captions, remove redundant introductory diagrams on decision-focused pages, align About's contact sheet, and calibrate responsive public-page openings. Preserve meaningful diagrams and approved work-animation timing.
 
-### Batch 02C — responsive, interaction and optical acceptance (queued)
+Implemented: remove decorative scope/expertise scenes from Pricing/Join intros; use the shared fluid page-title role rather than conflicting tablet sizes; bound the Founders/Funds/MeetVeep hero drawings; align About portraits; remove homepage role pills and scaled-in portrait frames; prevent ticker-name flex compression; place homepage actions before the mobile illustration. Mobile navigation overlays the page and retains focus/Escape behavior. Existing 600/800/900/1100px composition boundaries remain; no new breakpoint.
+
+Verification: production build and focused lint pass. Actual 1440px Pricing/About and 390px Home/menu renders inspected. Escape restores the menu trigger and page layout does not move. No content, rates, routes, or handlers changed.
+
+### Batch 02C — responsive, interaction and optical acceptance (active)
 
 Inspect the primary public page families at 1600, 1440, 1024, 768, 390 and 360px, in both themes. Verify keyboard navigation, selection, disclosures, form focus without submitting, reduced motion, and the existing collision/timing tests. Resolve actual defects and record screenshot evidence and limitations.

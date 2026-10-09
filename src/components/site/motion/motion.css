@@ -250,8 +250,8 @@
   display: grid;
   grid-template-columns: 1fr 1.04fr;
   align-items: center;
-  gap: 54px;
-  margin-top: 32px;
+  gap: var(--v-layout-gap);
+  margin-top: var(--v-space-6);
 }
 .rebuild .ve-motion-intro h1 {
   font-size: clamp(48px, 5.1vw, 74px);
@@ -277,6 +277,13 @@
 }
 .rebuild .ve-motion-hero .vm-scene {
   align-self: center;
+  min-width: 0;
+}
+.rebuild .ve-motion-hero .vm-art {
+  max-height: 400px;
+}
+.rebuild .ve-meet-opening .vm-art {
+  max-height: 360px;
 }
 .rebuild .ve-agent-motion-model {
   padding-left: 24px;
@@ -342,5 +349,12 @@
   }
   .rebuild .ve-motion-hero .vm-scene {
     max-width: 380px;
+  }
+}
+
+@media (max-width: 600px) {
+  .rebuild .ve-motion-hero .vm-art,
+  .rebuild .ve-meet-opening .vm-art {
+    max-height: 260px;
   }
 }

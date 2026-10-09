@@ -1,4 +1,3 @@
-import { MotionScene } from "@/components/site/motion/MotionScene";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Container } from "@/components/site/rebuild/Container";
 import { Section } from "@/components/site/rebuild/Section";
@@ -150,7 +149,6 @@ function Page() {
           capacity the work needs.
         </p>
         <p className="ve-intro-note">Transparent rates. No hourly billing. Flexible engagements.</p>
-        <MotionScene concept="scope" />
       </PublicIntro>
 
       <Section id="tiers" pad="none" className="ve-pricing-sheet-section">

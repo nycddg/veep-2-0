@@ -3,20 +3,20 @@
   overflow: clip;
 }
 .rebuild .ve-public-intro {
-  padding: 56px 0 76px;
+  padding: var(--v-space-8) 0 var(--v-space-8);
 }
 .rebuild .ve-public-opening {
   display: grid;
   grid-template-columns: 1.35fr 1fr;
-  gap: 72px;
-  margin-top: 26px;
+  gap: var(--v-layout-gap);
+  margin-top: var(--v-space-5);
   align-items: start;
 }
 .rebuild .ve-public-opening h1,
 .rebuild .ve-meet-opening h1 {
-  font-size: clamp(48px, 5.65vw, 82px);
-  line-height: 1.04;
-  letter-spacing: -0.05em;
+  font-size: var(--v-type-page);
+  line-height: var(--v-leading-page);
+  letter-spacing: var(--v-tracking-display);
 }
 .rebuild .ve-public-opening h1 > span,
 .rebuild .ve-meet-opening h1 > span {
@@ -296,8 +296,8 @@
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;
 }
-.rebuild .ve-contact-sheet figure:nth-child(even) {
-  margin-top: 35px;
+.rebuild .ve-contact-sheet figure {
+  margin-top: 0;
 }
 .rebuild .ve-contact-sheet img {
   width: 100%;
@@ -953,9 +953,6 @@
     gap: 44px;
     grid-template-columns: 1.2fr 1fr;
   }
-  .rebuild .ve-public-opening h1 {
-    font-size: 62px;
-  }
   .rebuild .ve-public-intro-copy > p {
     font-size: 18px;
   }
@@ -1026,9 +1023,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 28px 16px;
   }
-  .rebuild .ve-contact-sheet figure:nth-child(even) {
-    margin-top: 0;
-  }
   .rebuild .ve-contact-sheet img {
     max-height: 290px;
   }
@@ -1041,9 +1035,6 @@
   .rebuild.ve-legal .ve-public-opening {
     grid-template-columns: 1fr;
     gap: 30px;
-  }
-  .rebuild .ve-public-opening h1 {
-    font-size: 66px;
   }
   .rebuild .ve-public-intro-copy > p {
     max-width: 55ch;
@@ -1262,9 +1253,6 @@
   .rebuild .ve-public-opening {
     margin-top: 22px;
     gap: 26px;
-  }
-  .rebuild .ve-public-opening h1 {
-    font-size: clamp(36px, 9.8vw, 51px);
   }
   .rebuild .ve-public-intro-copy > p {
     font-size: 17px;

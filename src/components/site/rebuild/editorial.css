@@ -697,7 +697,7 @@
 
 /* Companies: a brief becomes work, then evidence. */
 .rebuild .ve-company-hero {
-  padding: 54px 0 76px;
+  padding: var(--v-space-8) 0 var(--v-space-8);
 }
 .rebuild .ve-company-opening {
   display: grid;
@@ -722,7 +722,7 @@
 .rebuild .ve-work-studio {
   display: grid;
   grid-template-columns: 0.85fr 1.6fr;
-  margin-top: 72px;
+  margin-top: var(--v-space-8);
 }
 .rebuild .ve-work-selector {
   padding: 36px 40px 36px 0;

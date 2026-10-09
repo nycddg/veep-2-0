@@ -1,4 +1,3 @@
-import { MotionScene } from "@/components/site/motion/MotionScene";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { Check, Loader2 } from "lucide-react";
@@ -212,7 +211,6 @@ function Page() {
           Bring your experience to critical work for companies and funds. Veep defines the mandate
           and assembles the team. You bring the judgment and hands-on leadership to move it forward.
         </p>
-        <MotionScene concept="expertise" />
       </PublicIntro>
       <Section motion="portraits" className="ve-join-criteria">
         <Container className="ve-container">

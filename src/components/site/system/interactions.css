@@ -143,3 +143,19 @@
     transition: none;
   }
 }
+
+/* The menu is an overlay: opening navigation never moves the page underneath. */
+.v-mobile-nav {
+  position: absolute;
+  top: 100%;
+  inset-inline: 0;
+  max-height: calc(100dvh - 64px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--v-surface);
+  border-bottom: 1px solid var(--v-divider);
+  box-shadow: 0 16px 32px -24px var(--v-ref-ink);
+}
+.v-header-inner > a {
+  min-height: var(--v-target);
+}
