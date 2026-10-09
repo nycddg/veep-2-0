@@ -1,0 +1,60 @@
+.wp-ball {
+  fill: var(--v-accent, #adbef6);
+}
+.wp-ball--1 {
+  fill: var(--v-secondary);
+}
+.wp-ball--2 {
+  fill: var(--v-success);
+}
+.wp-ball--3 {
+  fill: var(--v-tertiary);
+}
+.wp-ball--4 {
+  fill: var(--v-text-muted);
+}
+.wp-ball--selected {
+  fill: var(--v-signal, #ed6964);
+}
+.wp-check {
+  fill: none;
+  stroke: var(--v-ref-ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+}
+.wp-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 4;
+}
+.wp-boundary {
+  fill: none;
+  stroke: var(--vm-accent);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.wp-client {
+  stroke: var(--v-border);
+}
+.wp-scope {
+  opacity: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    opacity 450ms ease,
+    transform 450ms ease;
+}
+.wp-hero:is([data-stage="fill"], [data-stage="settle"]) .wp-scope {
+  opacity: 0;
+  transform: scale(0.94);
+}
+.vm-scene[data-animate="false"] .wp-scope {
+  transition: none;
+}

@@ -20,11 +20,11 @@ export const stories: Record<
 > = {
   desk: {
     title: "Work stops returning to your desk",
-    problem: "Six blue circles and one coral circle fill an expanding center.",
+    problem: "Colored work items fill the center, including one coral priority.",
     resolution:
-      "The coral circle has been pulled out and advanced in its scope. Six blue circles remain in the center.",
+      "The same coral priority has moved into its scope. Six other work items remain in the center.",
     description:
-      "A small circle expands as six blue circles and one coral circle fill it. The same coral circle is pulled out, gains a scope, then advances to the right and settles. Fresh work begins the next cycle.",
+      "Colored work items enter the circle and bounce against its border and each other. The same coral priority leaves the circle and moves into its scope. Fresh work begins the next cycle.",
     seconds: 12,
     loop: true,
   },
