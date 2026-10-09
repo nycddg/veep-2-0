@@ -23,6 +23,7 @@ Keep the proposition, supported evidence, commercial responsibilities, real peop
 | Batch                                             | Scope / dependency                                                                                                                                                                                        | Concrete review checkpoint                                                                                                                                                     |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **01 — Homepage composition pilot**               | Latest annotated concerns: opening hierarchy, punctuation, client ticker, ownership explanation. Reconcile the historical guidance that locks the old layout.                                             | One real opening-to-ownership sequence, desktop/tablet/mobile, dark/light; explicit copy and layout decisions. This does not claim the whole homepage is final.                |
+| **01B — Homepage narrative correction**           | Dave’s review of 01: retain stronger hero type; restore the explicit diagram’s explanatory job; lead with customer stakes, impact, and evidence.                                                          | One continuous problem → ownership → impact → proof → people argument, with process secondary and audience routing after evidence.                                             |
 | **02 — Foundations and references**               | Import curated Material documentation and provenance into the agreed `design/references/material3/` folder. Consolidate the translation layer and extend existing tokens/type/layout/state roles.         | Paired specimen containing long text, real profiles, surfaces, controls, and legible static diagram states. No contradictory rules or new parallel architecture.               |
 | **03 — Shared components and behavior**           | Depends on 02. Refine navigation, links, actions, disclosures, profiles, and presentation-only form states. Consolidate motion lifecycle and add the shared persistent motion preference.                 | Keyboard/touch/state matrix in the specimen, including reduced motion and persistence. Existing submissions, booking URLs, and menu semantics stay intact.                     |
 | **04 — Complete homepage**                        | Use pilot feedback plus 02–03 to reconsider the whole page: hero, client evidence, ownership, audience paths, proof, people, close, and transitions. Nothing is locked solely because it is in the pilot. | Full homepage at 1440, 1024, 768, 390, and 320px in both themes. Review actual animation, static states, hierarchy, responsiveness, and interaction before broader rollout.    |
@@ -37,7 +38,7 @@ Batches are serial design units, not instructions to spawn agents. If a batch be
 
 ## Batch 01 — decision and change record
 
-**Status:** implemented; verification recorded below. This is an early composition review, not final homepage acceptance.
+**Status:** reviewed. Dave accepted the stronger hero typography but rejected the process-first hierarchy and removal of the explicit diagram. The historical decisions below are superseded by Batch 01B. They are retained to explain the correction, not as current design instructions.
 
 **Problem:** the hero already demonstrates work leaving the executive center. The next section repeated that problem in a separate failure tree next to a process card. Decorative coral periods and ticker arrows also survived from an older visual treatment without explaining anything.
 
@@ -77,6 +78,53 @@ Batches are serial design units, not instructions to spawn agents. If a batch be
 
 Review captures live outside the source tree at `/Users/dave/.codex/visualizations/2026/10/08/01a11cba-9c61-7091-878a-af7c099dd3d0/homepage-batch-01/`. They include desktop opening/ownership, compact ownership, and light/dark breakpoint captures. Do not infer full-site readiness from this pilot.
 
+## Batch 01B — homepage narrative correction
+
+**Status:** implemented and verified for narrative review. Shared-system rollout and final homepage acceptance remain later work.
+
+**Problem:** the prior pass confused emotional implication with explicit explanation. Its removal of the second diagram erased the reason alternatives still leave the executive holding the work. The blue process chapter then gave Veep’s method more importance than the buyer’s problem, impact, or evidence. Audience routing interrupted the argument before the result.
+
+**Decision and sequence:**
+
+1. Preserve the stronger hero, approved copy, circular work loop, CTA, and clean 16-client ticker.
+2. Restore “It can’t all land back on your desk.” Explain why team capacity, a pending permanent hire, and outside advice still return unresolved decisions to the executive.
+3. Make the ownership change spatially explicit: desk → senior operating partner → completed work. Retain remaining work at the executive center and the explicit client decision boundary.
+4. Put the four delivery responsibilities in a native “How the work gets delivered” disclosure. They remain available without leading the page.
+5. Give the large blue field and display scale to capital readiness, repeatable revenue, and commercial expansion.
+6. Follow immediately with the $6M raise, 25% project-margin improvement, and Atomic Audio testimonial. Keep each case and speaker attribution intact.
+7. Follow with named operator credentials, then Companies/Funds paths and the existing booking close.
+
+**Bounded source scope:** `src/routes/index.tsx`, `rebuild/OwnershipDiagram.tsx`, `system/home.css`, `system/tokens.css`, and these three governing design documents. No changes to other page compositions, shared controls, profile assets, public navigation, commercial terms, booking behavior, or form handlers. Unrelated working changes remain outside this batch.
+
+**Copy and evidence record:**
+
+- Restored the problem heading, “Critical work. No clear owner.”, the three alternative descriptions, and the executive return explanation from the pre-01 homepage. “The CEO’s desk” becomes the direct label “Your desk.” The old “Fundraise · GTM reset · Operating gap” row remains removed; concrete priorities now have a full impact chapter.
+- Added the short hinge “The team is busy. The hire takes time. Advice still needs someone to act on it. The work keeps coming back to you.” It summarizes the three existing alternatives, without a new service claim.
+- Preserved the operating-partner-capacity proposition and client responsibility for strategic decisions and approvals. Added a short transition naming the senior operating partner and support already described by the delivery model.
+- Preserved all four process descriptions and the advisory/operating distinction inside the disclosure. “With Veep” remains attached to the accountable operating partner.
+- Added “The work moves. So does the business.” as the impact transition. The three priorities, benefit lines, and supporting work descriptions come from `rebuild/WorkMandate.tsx`; “Revenue repeatability” is presented as “Repeatable revenue,” matching Dave’s language.
+- Kept the homepage’s $6M case and added the existing software-studio 25% project-margin case from `routes/for-companies.tsx`, with its operating work. The exact Atomic Audio quotation and Jerry Kolber attribution come from that same source. Neither anonymous case is attributed to Atomic Audio.
+- Added “The work. The difference it made.” as the proof heading; changed “Inside the engagement” to “Inside the engagements” for the two-case spread. Link still targets `/for-companies#proof`.
+- Operator profiles, audience-path copy, and closing copy remain unchanged. Audience paths move below profiles. The impact link targets the existing `/for-companies#work` anchor.
+
+**Static semantics:** the three alternatives converge on the desk. The blue route leaves that center, passes through the framed senior operating partner, and ends at delivery. Supporting text names execution ownership and Veep’s accountability. The coral work object advances; other work remains at the desk. All labels, responsibilities, and paths are present without animation.
+
+**Motion and adaptation:** above 600px, blue work markers converge during the first 1.5 seconds; one coral mandate then advances through the owner to delivery over 2.2 seconds. This is a finite sequence using the existing offscreen/hidden/reduced-motion lifecycle. At and below 600px, alternatives feed a vertical desk → owner → completion relationship, shown in its static resolved state. The hero’s existing continuous loop is unchanged. No pause control, animation dependency, or content entrance gate is added.
+
+**Visual hierarchy:** quiet section tone for the explicit diagram; periwinkle/ink for impact in both themes; a light result/testimonial spread; then portrait evidence and audience navigation. `--v-surface-impact` / `--v-on-impact` replace the previous ownership-field tokens. No new colors, fonts, or shape vocabulary.
+
+### Verification
+
+- Production build and focused ESLint pass. No new unit tests for reversible layout/copy composition.
+- Dark-mode DOM width checks at 1440, 1024, 768, 390, and 320px: no horizontal page overflow or overflowing narrative text. Actual diagram screenshots reviewed at desktop, 768, 390, and 320px; impact/proof reviewed at desktop and 390px.
+- Light-mode diagram reviewed at desktop and 390px. DOM width checks at 1024, 768, 390, and 320px likewise report no overflow. Dark mode restored after review.
+- Native process disclosure opens with pointer input and closes with Enter; all four responsibilities and the existing ownership link remain present.
+- Activated the work and case-evidence links and verified `/for-companies#work` and `/for-companies#proof`; the case link was also exercised by keyboard. The three booking actions retain the canonical URL and new-tab behavior. No forms submitted.
+- The desktop ownership sequence reaches its final zero-translation state and changes to paused when scrolled out of view. Reduced-motion behavior was checked in the shared hook and CSS: the complete resolved relationship remains with animation disabled. OS-level preference switching was not simulated.
+- Full desktop page reviewed from hero through footer. Named portrait cards render after the proof/testimonial chapter and before audience routing. No browser console errors observed. Prettier and diff whitespace checks pass.
+
+Review captures: `/Users/dave/.codex/visualizations/2026/10/08/01a11cba-9c61-7091-878a-af7c099dd3d0/homepage-narrative-01b/`.
+
 ### Next starting point
 
-Batch 02: the curated reference import, Material → Veep application document, and paired system specimen. Treat the pilot as a candidate to evaluate, not a new immovable rule. Shared persistent motion preferences and full-homepage rhythm remain planned work; neither is claimed complete here.
+Use Dave’s response to this narrative correction to guide later homepage refinement. Then continue Batch 02’s curated reference import, Material → Veep application document, and paired specimen. Preserve the distinction between the hero’s inference and the diagram’s explicit explanation. Shared persistent motion preferences and complete site acceptance remain planned work.

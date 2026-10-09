@@ -12,9 +12,9 @@
   --v-ref-blue-light: #4e7ad4;
   --v-ref-blue-dark: #789fff;
   --v-ref-coral: #ec6b66;
-  /* The ownership chapter is a deliberate brand field in both themes. */
-  --v-surface-ownership: var(--v-ref-blue-dark);
-  --v-on-ownership: var(--v-ref-ink);
+  /* The impact chapter is a deliberate brand field in both themes. */
+  --v-surface-impact: var(--v-ref-blue-dark);
+  --v-on-impact: var(--v-ref-ink);
   --v-font-body: "IBM Plex Sans", sans-serif;
   --v-font-label: "IBM Plex Mono", monospace;
   --v-type-display: clamp(2.625rem, 1.3rem + 4.4vw, 5.5rem);

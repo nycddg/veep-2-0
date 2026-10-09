@@ -6,6 +6,7 @@ import { Container } from "@/components/site/rebuild/Container";
 import { LegacyHash } from "@/components/site/rebuild/LegacyHash";
 import { OperatorProof } from "@/components/site/motion/OperatorProof";
 import { MotionScene } from "@/components/site/motion/MotionScene";
+import { Disclosure } from "@/components/site/system/Controls";
 import { OwnershipDiagram } from "@/components/site/rebuild/OwnershipDiagram";
 import "@/components/site/system/home.css";
 import { TextLink } from "@/components/site/rebuild/TextLink";
@@ -70,30 +71,145 @@ function Index() {
         </Container>
         <ClientTicker />
       </section>
-      <section id="overview" className="v-section vh-ownership-chapter">
+      <section id="overview" className="v-section vh-problem-chapter">
         <Container>
-          <div className="vh-ownership-intro">
-            <p className="v-label">With Veep</p>
-            <h2>
-              The work gets
+          <div className="vh-problem-intro">
+            <h2 className="v-heading">
+              It can’t all land
               <br />
-              an owner.
+              back on your desk.
             </h2>
-            <p className="v-body-large">
-              Veep gives companies and funds the operating partner capacity found inside top VC and
-              PE firms.
+            <p className="v-body-large v-muted">
+              The team is busy. The hire takes time. Advice still needs someone to act on it. The
+              work keeps coming back to you.
             </p>
           </div>
           <OwnershipDiagram />
-          <div className="vh-model-caption">
-            <p className="v-caption">
-              You retain strategic decisions and approvals. Advisory provides senior guidance; your
-              team owns execution.
+          <div className="vh-ownership-answer">
+            <h3 className="v-title">The work gets an owner.</h3>
+            <p className="v-body-large v-muted">
+              Veep gives companies and funds the operating partner capacity found inside top VC and
+              PE firms. A senior operating partner takes the lead, with the support the work needs.
+              You retain strategic decisions and approvals.
             </p>
-            <TextLink to="/for-companies" hash="benefits">
-              How ownership works
+          </div>
+          <div className="vh-method-detail">
+            <Disclosure question="How the work gets delivered">
+              <ol>
+                <li>
+                  <strong>Scope.</strong> A clear scope, outcome, and responsibilities.
+                </li>
+                <li>
+                  <strong>Assemble.</strong> A lead operating partner and the support the work
+                  needs.
+                </li>
+                <li>
+                  <strong>Own.</strong> A lead operating partner runs execution. Veep stays
+                  accountable.
+                </li>
+                <li>
+                  <strong>Deliver.</strong> Complete the agreed work and hand off, or agree the next
+                  scope.
+                </li>
+              </ol>
+              <p>Advisory provides senior guidance; your team owns execution.</p>
+              <TextLink to="/for-companies" hash="benefits">
+                How ownership works
+              </TextLink>
+            </Disclosure>
+          </div>
+        </Container>
+      </section>
+      <section id="impact" className="v-section vh-impact-chapter">
+        <Container>
+          <h2>
+            The work moves.
+            <br />
+            So does the business.
+          </h2>
+          <ul className="vh-impact-list">
+            <li>
+              <h3>Capital readiness</h3>
+              <div>
+                <p className="v-lead">Financials the business can stand behind.</p>
+                <p className="v-body">
+                  Financial models, reporting, and materials for investor, lender, or buyer
+                  scrutiny.
+                </p>
+              </div>
+            </li>
+            <li>
+              <h3>Repeatable revenue</h3>
+              <div>
+                <p className="v-lead">Growth the team can run beyond the founder.</p>
+                <p className="v-body">
+                  Customer focus, positioning, pricing, pipeline management, and a sales cadence.
+                </p>
+              </div>
+            </li>
+            <li>
+              <h3>Commercial expansion</h3>
+              <div>
+                <p className="v-lead">A sound expansion decision and a plan to act on.</p>
+                <p className="v-body">
+                  The business case, operating plan, and leadership to launch a new market, product,
+                  offer, or channel.
+                </p>
+              </div>
+            </li>
+          </ul>
+          <TextLink to="/for-companies" hash="work">
+            Explore the work
+          </TextLink>
+        </Container>
+      </section>
+      <section id="proof" className="v-section v-paper vh-proof-chapter">
+        <Container>
+          <div className="vh-proof-heading">
+            <h2 className="v-heading">
+              The work.
+              <br />
+              The difference it made.
+            </h2>
+            <TextLink to="/for-companies" hash="proof">
+              Inside the engagements
             </TextLink>
           </div>
+          <div className="vh-proof-cases">
+            <article>
+              <p className="v-label">B2B SaaS · Finance operating partner</p>
+              <p className="vh-proof-number">$6M</p>
+              <h3 className="v-lead">Raised in six weeks.</h3>
+              <p className="v-body-large v-muted">
+                A three-year financial model. Diligence-ready reporting. Support through investor
+                meetings and term sheets.
+              </p>
+            </article>
+            <article>
+              <p className="v-label">Software studio · Growth operating partner</p>
+              <p className="vh-proof-number">25%</p>
+              <h3 className="v-lead">Project margins up.</h3>
+              <p className="v-body-large v-muted">
+                Standardized project scoping and staffing, built an AI GTM and delivery framework,
+                and hired a Director of AI.
+              </p>
+            </article>
+          </div>
+          <figure className="vh-client-voice">
+            <blockquote>
+              I cannot recommend this team more highly. They think, act, and engage like
+              co-founders.
+            </blockquote>
+            <figcaption>
+              <strong>Jerry Kolber</strong>
+              <span>Founder &amp; CEO, Atomic Audio</span>
+            </figcaption>
+          </figure>
+        </Container>
+      </section>
+      <section className="v-section">
+        <Container>
+          <OperatorProof />
         </Container>
       </section>
       <section id="audiences" className="v-section v-section--tonal">
@@ -127,34 +243,6 @@ function Index() {
               Explore portfolio operations <span aria-hidden="true">↗</span>
             </TextLink>
           </article>
-        </Container>
-      </section>
-      <section id="proof" className="v-section v-paper">
-        <Container className="vh-proof">
-          <div>
-            <p className="v-label">Client work · B2B SaaS</p>
-            <p className="vh-proof-number">$6M</p>
-            <p className="v-lead">Raised in six weeks.</p>
-          </div>
-          <div>
-            <h2 className="v-heading">
-              A result has
-              <br />
-              work behind it.
-            </h2>
-            <p className="v-body-large v-muted">
-              A three-year financial model. Diligence-ready reporting. Support through investor
-              meetings and term sheets.
-            </p>
-            <TextLink to="/for-companies" hash="proof">
-              Inside the engagement <span aria-hidden="true">↗</span>
-            </TextLink>
-          </div>
-        </Container>
-      </section>
-      <section className="v-section">
-        <Container>
-          <OperatorProof />
         </Container>
       </section>
       <section className="v-section vh-close">
