@@ -136,7 +136,7 @@
 .vh-return-work {
   fill: var(--v-accent);
   stroke: var(--v-accent);
-  stroke-width: 6;
+  stroke-width: 10;
   vector-effect: non-scaling-stroke;
   opacity: 0;
   --return-x: 150px;
@@ -144,36 +144,38 @@
 }
 .vh-return-work--two {
   --return-x: 450px;
-  --return-delay: 130ms;
+  --return-delay: 800ms;
 }
 .vh-return-work--three {
   --return-x: 750px;
-  --return-delay: 260ms;
+  --return-delay: 1600ms;
 }
 .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-return-work {
-  animation: vh-work-returns 1400ms var(--v-motion-functional) var(--return-delay) both;
+  animation: vh-work-returns 10s linear var(--return-delay) infinite both;
 }
+/* At 20%, the same-size desk dot takes over at the exact entry point. */
 @keyframes vh-work-returns {
   0% {
     transform: translate(var(--return-x), 0);
     opacity: 0;
   }
-  10% {
+  2% {
     transform: translate(var(--return-x), 0);
     opacity: 1;
   }
-  36% {
+  6% {
     transform: translate(var(--return-x), 28px);
     opacity: 1;
   }
-  76% {
+  16% {
     transform: translate(150px, 28px);
     opacity: 1;
   }
-  96% {
+  19.99% {
     transform: translate(150px, 64px);
     opacity: 1;
   }
+  20%,
   100% {
     transform: translate(150px, 64px);
     opacity: 0;
@@ -231,19 +233,76 @@
 }
 .vh-remaining-work {
   position: absolute;
-  top: 92px;
-  left: 38px;
-  display: flex;
-  gap: 16px;
+  inset: 0;
+  --desk-entry-y: -2px;
+  --desk-shoulder-x: -50px;
+  --desk-shoulder-y: 20px;
+  --desk-bend-x: -60px;
+  --desk-bend-y: 68px;
 }
 .vh-remaining-work i {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 5px);
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: var(--v-accent);
+  transform: translate(-26px, 86px);
 }
 .vh-remaining-work i:nth-child(2) {
-  translate: 0 -16px;
+  transform: translate(0, 86px);
+}
+.vh-remaining-work i:nth-child(3) {
+  transform: translate(26px, 86px);
+}
+.vh-arrived-work {
+  --rest-x: -26px;
+  --rest-y: 110px;
+  --return-delay: 0ms;
+}
+.vh-remaining-work .vh-arrived-work {
+  transform: translate(var(--rest-x), var(--rest-y));
+}
+.vh-arrived-work--two {
+  --rest-x: 0px;
+  --return-delay: 800ms;
+}
+.vh-arrived-work--three {
+  --rest-x: 26px;
+  --return-delay: 1600ms;
+}
+.vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-arrived-work {
+  animation: vh-work-accumulates 10s linear var(--return-delay) infinite both;
+}
+@keyframes vh-work-accumulates {
+  0%,
+  19.99% {
+    transform: translate(0, var(--desk-entry-y));
+    opacity: 0;
+  }
+  20% {
+    transform: translate(0, var(--desk-entry-y));
+    opacity: 1;
+  }
+  22% {
+    transform: translate(var(--desk-shoulder-x), var(--desk-shoulder-y));
+    opacity: 1;
+  }
+  25% {
+    transform: translate(var(--desk-bend-x), var(--desk-bend-y));
+    opacity: 1;
+  }
+  31%,
+  78% {
+    transform: translate(var(--rest-x), var(--rest-y));
+    opacity: 1;
+  }
+  84%,
+  100% {
+    transform: translate(var(--rest-x), var(--rest-y));
+    opacity: 0;
+  }
 }
 .vh-mandate-scope {
   display: grid;
@@ -266,18 +325,31 @@
   letter-spacing: var(--v-tracking-heading);
 }
 .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-owned-path > span {
-  animation: vh-work-owned 2200ms var(--v-motion-spatial) 1500ms both;
+  animation: vh-work-owned 10s var(--v-motion-spatial) infinite both;
 }
 @keyframes vh-work-owned {
-  0% {
+  0%,
+  46% {
     transform: translateX(-100%);
+    opacity: 0;
   }
-  40%,
-  60% {
+  48% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  61%,
+  67% {
     transform: translateX(-50%);
+    opacity: 1;
+  }
+  79%,
+  94% {
+    transform: translateX(0);
+    opacity: 1;
   }
   100% {
     transform: translateX(0);
+    opacity: 0;
   }
 }
 .vh-ownership-answer {
@@ -632,7 +704,32 @@
     right: -5px;
   }
   .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-owned-path > span {
-    animation: none;
+    animation: vh-work-owned-vertical 10s var(--v-motion-spatial) infinite both;
+  }
+  @keyframes vh-work-owned-vertical {
+    0%,
+    46% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    48% {
+      transform: translateY(-100%);
+      opacity: 1;
+    }
+    61%,
+    67% {
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+    79%,
+    94% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0;
+    }
   }
   .vh-executive-center,
   .vh-mandate-scope,
@@ -649,16 +746,32 @@
     font-size: 18px;
   }
   .vh-remaining-work {
-    top: 58px;
-    left: 23px;
-    gap: 9px;
+    --desk-shoulder-x: -30px;
+    --desk-shoulder-y: 12px;
+    --desk-bend-x: -39px;
+    --desk-bend-y: 48px;
   }
   .vh-remaining-work i {
+    left: calc(50% - 4px);
     width: 8px;
     height: 8px;
+    transform: translate(-16px, 55px);
   }
   .vh-remaining-work i:nth-child(2) {
-    translate: 0 -10px;
+    transform: translate(0, 55px);
+  }
+  .vh-remaining-work i:nth-child(3) {
+    transform: translate(16px, 55px);
+  }
+  .vh-arrived-work {
+    --rest-x: -16px;
+    --rest-y: 71px;
+  }
+  .vh-arrived-work--two {
+    --rest-x: 0px;
+  }
+  .vh-arrived-work--three {
+    --rest-x: 16px;
   }
   .vh-mandate-scope {
     padding: 8px 4px;

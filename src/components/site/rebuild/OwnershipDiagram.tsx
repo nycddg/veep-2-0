@@ -36,6 +36,9 @@ export function OwnershipDiagram() {
               <i />
               <i />
               <i />
+              <i className="vh-arrived-work vh-arrived-work--one" />
+              <i className="vh-arrived-work vh-arrived-work--two" />
+              <i className="vh-arrived-work vh-arrived-work--three" />
             </span>
           </div>
           <p>Decisions and coordination still depend on you.</p>
@@ -43,9 +46,9 @@ export function OwnershipDiagram() {
         <div className="vh-mandate">
           <div className="vh-mandate-scope">
             <h3>
-              A Veep
+              Veep
               <br />
-              operating partner
+              operating partners
             </h3>
           </div>
           <p>Owns strategy, execution, and team coordination.</p>
