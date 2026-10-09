@@ -704,3 +704,12 @@
     grid-template-columns: 110px minmax(0, 1fr);
   }
 }
+
+/* Surface-aware applications of the expanded brand roles. */
+.vh-recognition {
+  margin-top: var(--v-space-5);
+  max-width: 62ch;
+}
+.vh-impact-chapter {
+  --v-focus: var(--v-on-impact);
+}

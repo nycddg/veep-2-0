@@ -201,3 +201,14 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 **Change:** save the agreed blue/primary, slate/secondary, coral/tertiary families, complete paired light/dark surfaces and foregrounds, outlines, signature fields, validation colors and migration rules in VEEP-DESIGN-SYSTEM.md. This is a documentation checkpoint before implementation.
 
 **Scope:** design system and ledger only. Existing uncommitted implementation files preserved. Next: apply roles with the authorized homepage recognition and newsletter batches; actual newsletter issue pending Dave's source.
+
+
+## Batch 01I — color roles and customer recognition
+
+**Communication problem:** restore concrete recognition before the explicit desk-to-owner explanation, and apply the expanded palette across backgrounds and foreground elements coherently.
+
+**Change:** add one compact recognition paragraph naming fundraising, a slipping GTM reset, margins and a leadership gap. Preserve the strong hero, explicit ownership diagram, secondary process disclosure, impact → audiences → results sequence, exact testimonial, operator credentials and both tickers. Add full light/dark accent/container and neutral-surface roles to tokens, map existing surface/link/outline/focus aliases to them, retain signature impact/coral fields and neutral booking controls. Selected states use the secondary container. The impact section uses an ink focus ring against its blue surface. No unrelated typography changes included in this commit.
+
+**Review checkpoint:** actual problem and newsletter renders at 1280, 768 and 390px in both themes, with verified viewport widths and no document overflow. An initial viewport control did not affect an existing user tab; those captures were replaced by verified captures from an isolated review tab. Homepage text/background sampling returned no ratios below 4.5:1 (93 light, 99 dark samples; this is not a complete accessibility audit). Full-page color sequence and actual scrolled proof/testimonial/profile surfaces reviewed. All original booking destinations and attribution retained. Newsletter-specific source and styling follow as Batch 01J.
+
+**Evidence:** `/Users/dave/.codex/visualizations/2026/10/09/01a121b2-13c8-7c22-ad99-ae4b3eaf3595/canon-refinement/expanded-colors/`. Focused lint, formatting and production build pass. Shared tokens are available to other pages; this review does not certify every unmigrated page composition.

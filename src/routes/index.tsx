@@ -80,6 +80,10 @@ function Index() {
               <br />
               back on your desk.
             </h2>
+            <p className="v-body-large v-muted vh-recognition">
+              A fundraise to prepare. A go-to-market reset that keeps slipping. Margins that need
+              fixing. A leadership gap the team can’t absorb.
+            </p>
           </div>
           <OwnershipDiagram />
           <div className="vh-ownership-answer">

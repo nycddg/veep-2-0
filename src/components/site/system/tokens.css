@@ -9,7 +9,7 @@
   --v-ref-paper-band: #f6f4f1;
   --v-ref-paper-panel: #f0eeea;
   --v-ref-stone: #3b4350;
-  --v-ref-blue-light: #4e7ad4;
+  --v-ref-blue-light: #365ca8;
   --v-ref-blue-dark: #789fff;
   --v-ref-coral: #ec6b66;
   /* The impact chapter is a deliberate brand field in both themes. */
@@ -68,54 +68,100 @@
 /* System roles. Explicit nested themes also power the paired specimen. */
 :root,
 [data-ve-theme="dark"] {
+  /* Expanded static brand roles: design-system specification, 9 October 2026. */
+  --v-primary: #adc6ff;
+  --v-on-primary: #102e61;
+  --v-primary-container: #263e68;
+  --v-on-primary-container: #dce6ff;
+  --v-secondary: #bdc7df;
+  --v-on-secondary: #273246;
+  --v-secondary-container: #354157;
+  --v-on-secondary-container: #e0e6f1;
+  --v-tertiary: #ffb4ac;
+  --v-on-tertiary: #641f1d;
+  --v-tertiary-container: #71302e;
+  --v-on-tertiary-container: #ffdad6;
+  --v-surface-container-lowest: #05080e;
+  --v-surface-container-low: #111925;
+  --v-surface-container: #192331;
+  --v-surface-container-high: #222d3d;
+  --v-surface-container-highest: #2d384a;
+  --v-outline: #8b97aa;
+  --v-outline-variant: #3d4859;
+
   --v-surface: var(--v-ref-night);
-  --v-surface-section: var(--v-ref-night-raised);
-  --v-surface-panel: var(--v-ref-night-panel);
+  --v-surface-section: var(--v-surface-container-low);
+  --v-surface-panel: var(--v-surface-container);
   --v-text: #f6f5f2;
   --v-text-secondary: #b1bbc9;
   --v-text-muted: #97a4b7;
-  --v-accent: var(--v-ref-blue-dark);
-  --v-link: var(--v-ref-blue-dark);
+  --v-accent: var(--v-primary);
+  --v-link: var(--v-primary);
   --v-signal: var(--v-ref-coral);
   --v-signal-edge: var(--v-ref-coral);
-  --v-border: #394456;
-  --v-divider: #293442;
-  --v-control-border: #778699;
+  --v-border: var(--v-outline-variant);
+  --v-divider: var(--v-outline-variant);
+  --v-control-border: var(--v-outline);
   --v-action-fill: var(--v-ref-cream);
   --v-action-text: var(--v-ref-ink);
   --v-action-hover: #e6e3de;
   --v-state-hover: #ffffff0c;
   --v-state-pressed: #ffffff16;
-  --v-state-selected: #789fff18;
-  --v-focus: var(--v-ref-blue-dark);
+  --v-state-selected: var(--v-secondary-container);
+  --v-focus: var(--v-primary);
   --v-error: #ffb4ac;
+  --v-on-error: #641f1d;
   --v-success: #b1d1b7;
+  --v-on-success: #123a21;
   --v-shadow-overlay: 0 16px 48px #0004;
 }
 html.light,
 [data-ve-theme="light"],
 .v-paper {
+  /* Expanded static brand roles: design-system specification, 9 October 2026. */
+  --v-primary: #365ca8;
+  --v-on-primary: #fbfaf8;
+  --v-primary-container: #dce6ff;
+  --v-on-primary-container: #183665;
+  --v-secondary: #566176;
+  --v-on-secondary: #fbfaf8;
+  --v-secondary-container: #e0e6f1;
+  --v-on-secondary-container: #273246;
+  --v-tertiary: #a33f3c;
+  --v-on-tertiary: #fbfaf8;
+  --v-tertiary-container: #ffdad6;
+  --v-on-tertiary-container: #71302e;
+  --v-surface-container-lowest: #ffffff;
+  --v-surface-container-low: #f7f6f3;
+  --v-surface-container: #f0eeea;
+  --v-surface-container-high: #e9e7e3;
+  --v-surface-container-highest: #e2e0dc;
+  --v-outline: #737c89;
+  --v-outline-variant: #c7ccd4;
+
   --v-surface: var(--v-ref-cream);
-  --v-surface-section: var(--v-ref-paper-band);
-  --v-surface-panel: var(--v-ref-paper-panel);
+  --v-surface-section: var(--v-surface-container-low);
+  --v-surface-panel: var(--v-surface-container);
   --v-text: var(--v-ref-ink);
   --v-text-secondary: var(--v-ref-stone);
   --v-text-muted: #58606b;
-  --v-accent: var(--v-ref-blue-light);
-  --v-link: #406aba;
+  --v-accent: var(--v-primary);
+  --v-link: var(--v-primary);
   --v-signal: var(--v-ref-coral);
   --v-signal-edge: var(--v-ref-ink);
-  --v-border: #b8bdc5;
-  --v-divider: #d7d8da;
-  --v-control-border: #737c89;
+  --v-border: var(--v-outline-variant);
+  --v-divider: var(--v-outline-variant);
+  --v-control-border: var(--v-outline);
   --v-action-fill: var(--v-ref-ink);
   --v-action-text: var(--v-ref-cream);
   --v-action-hover: #263044;
   --v-state-hover: #0b111f08;
   --v-state-pressed: #0b111f12;
-  --v-state-selected: #0b111f0b;
-  --v-focus: var(--v-ref-blue-light);
+  --v-state-selected: var(--v-secondary-container);
+  --v-focus: var(--v-primary);
   --v-error: #a82e29;
+  --v-on-error: #fbfaf8;
   --v-success: #30653e;
+  --v-on-success: #fbfaf8;
   --v-shadow-overlay: 0 16px 48px #0b111f1a;
 }
