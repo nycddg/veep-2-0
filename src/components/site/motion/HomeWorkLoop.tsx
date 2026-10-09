@@ -18,6 +18,8 @@ export function HomeWorkLoop({ compact = false }: { compact?: boolean }) {
       vertical: false,
       count: 7,
       completeInBox: true,
+      // This larger rendering needs a quieter pace than the small ownership diagram.
+      motion: { speedScale: 0.55, travelMultiplier: 1.4, hops: 2, lift: 1.15 },
     }),
     [centerX, boxX],
   );

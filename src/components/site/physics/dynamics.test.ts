@@ -90,6 +90,7 @@ test("hero conserves red identity and loops without overlap", () => {
     vertical: false,
     count: 7,
     completeInBox: true,
+    motion: { speedScale: 0.55, travelMultiplier: 1.4, hops: 2, lift: 1.15 },
   });
   let completed = false,
     looped = false;

@@ -10,6 +10,7 @@ export type WorkGeometry = {
   vertical: boolean;
   count: number;
   completeInBox?: boolean;
+  motion?: { speedScale: number; travelMultiplier: number; hops: number; lift: number };
 };
 type Stage = "fill" | "settle" | "extract" | "travel" | "box" | "leave" | "deliver" | "done";
 
@@ -30,7 +31,7 @@ export class WorkSimulation {
     return this.geometry.vertical ? { x: 0, y: 1 } : { x: 1, y: 0 };
   }
   get speed() {
-    return this.geometry.radius * 5.5 * 1.15;
+    return this.geometry.radius * 5.5 * 1.15 * (this.geometry.motion?.speedScale ?? 1);
   }
   get deskGate() {
     const { desk } = this.geometry,
@@ -173,7 +174,7 @@ export class WorkSimulation {
       const target = g.vertical
         ? { x: g.box.x + g.box.width / 2, y: g.box.y + b.r + 1 }
         : { x: g.box.x + b.r + 1, y: g.box.y + g.box.height / 2 };
-      this.move(target, this.speed * 2, dt);
+      this.move(target, this.speed * (g.motion?.travelMultiplier ?? 2), dt);
       if (Math.hypot(b.x - target.x, b.y - target.y) < 0.1) {
         b.vx = this.speed * 0.78;
         b.vy = this.speed * (g.vertical ? 0.63 : -0.63);
@@ -229,10 +230,12 @@ export class WorkSimulation {
     const j = this.journey;
     j.travelled = Math.min(j.distance, j.travelled + speed * dt);
     const t = j.distance ? j.travelled / j.distance : 1;
-    const phase = (t * 3) % 1;
+    const phase = (t * (this.geometry.motion?.hops ?? 3)) % 1;
     // Three ballistic rebounds on the rail, tapering to a clean gate/endpoint landing.
-    const clearance = Math.min(1, j.travelled / (b.r * 4), (j.distance - j.travelled) / (b.r * 4));
-    const hop = clearance * (b.r + 4 * phase * (1 - phase) * b.r * 2.4 * (1 - t * 0.35));
+    const edge = Math.min(1, j.travelled / (b.r * 4), (j.distance - j.travelled) / (b.r * 4));
+    const clearance = this.geometry.motion ? edge * edge * (3 - 2 * edge) : edge;
+    const lift = this.geometry.motion?.lift ?? 2.4;
+    const hop = clearance * (b.r + 4 * phase * (1 - phase) * b.r * lift * (1 - t * 0.35));
     b.x = j.start.x + (target.x - j.start.x) * t + (this.geometry.vertical ? hop : 0);
     b.y = j.start.y + (target.y - j.start.y) * t - (this.geometry.vertical ? 0 : hop);
   }
