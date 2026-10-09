@@ -77,7 +77,7 @@ export function ClientTicker({ kind = "full" }: { kind?: "full" | "clients" | "o
   const fullWidth = kind !== "clients";
   const label =
     kind === "operators"
-      ? "Our operators have worked at"
+      ? "Companies we’ve helped build"
       : kind === "full"
         ? "Trusted by"
         : "Veep clients";

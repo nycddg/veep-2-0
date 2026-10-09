@@ -235,3 +235,20 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 **Source:** https://us19.campaign-archive.com/?u=37a4f019ed5c8b493097f1afc&id=fa9065ae89 (read in the browser).
 
 **Review checkpoint:** newsletter rendered and inspected at 1280, 768 and 390px in light and dark themes, with actual viewport widths verified and no horizontal overflow. The reading link opens the September issue containing the featured title. Production build, focused lint, formatting and diff checks pass. Evidence: `canon-refinement/expanded-colors/september-newsletter/` in the October 9 visualization directory. Scope is homepage copy/link and this ledger only; unrelated working changes preserved. No push or deployment.
+
+
+## Batch 01L — restore the delivery timeline
+
+**Communication problem:** Dave requested the hidden Scope / Assemble / Own / Deliver content as a visible steps section below business impact.
+
+**Change:** remove the disclosure from the problem chapter and place the unchanged four-step explanation directly after impact, before audience routes. Use a fine connecting line and numbered nodes, horizontal on desktop and vertical at 800px and below. Keep the heading and neutral surface quieter than the business-impact field. Preserve advisory's execution distinction, ownership link and explicit desk diagram. No new motion.
+
+**Review checkpoint:** actual timeline and impact adjacency inspected; four steps remain legible in both themes and reduced motion. Keyboard order continues from the ownership link to the company route.
+
+## Batch 01M — annotation details
+
+**Communication problem:** Dave requested clearer role labels and quotation punctuation, shorter publication metadata, revised ticker/reading labels and top-aligned closing columns.
+
+**Change:** add quotation marks around the unchanged Atomic Audio testimonial; preserve Jerry Kolber attribution. Change the intro to “Our operating partners”; shorten profile labels to Finance / Marketing / People / Growth and render them as right-aligned pills using secondary-container foreground/background roles. Change the career-history ticker label to Dave's “Companies we’ve helped build,” preserving all 40 names. Change newsletter metadata to “September 2026” and its link to “Read our latest note,” retaining the September and signup destinations. Align the closing heading with the top of the booking copy.
+
+**Scope and verification for 01L–01M:** homepage, home.css, OperatorProof, ProfileFigure, ClientTicker and this ledger only. Both batches rendered at verified 1280, 768 and 390px widths in both themes. No horizontal overflow, clipped labels or displaced credentials. Closing heading/copy top coordinates match. Reduced-motion check retains all four steps and 40 career-history names; device setting restored. Production build, focused ESLint, formatting and diff checks pass. Temporary review tabs closed. Evidence: `canon-refinement/annotation-refinements/` in the October 9 visualization directory (final files use width/theme/area names; initial timeline-only capture attempts were superseded after viewport verification). Unrelated working changes preserved. No push or deployment.

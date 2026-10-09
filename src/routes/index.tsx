@@ -6,7 +6,7 @@ import { Container } from "@/components/site/rebuild/Container";
 import { LegacyHash } from "@/components/site/rebuild/LegacyHash";
 import { OperatorProof } from "@/components/site/motion/OperatorProof";
 import { MotionScene } from "@/components/site/motion/MotionScene";
-import { ActionLink, Disclosure } from "@/components/site/system/Controls";
+import { ActionLink } from "@/components/site/system/Controls";
 import { OwnershipDiagram } from "@/components/site/rebuild/OwnershipDiagram";
 import "@/components/site/system/home.css";
 import { TextLink } from "@/components/site/rebuild/TextLink";
@@ -92,31 +92,6 @@ function Index() {
               handoff. You retain strategic decisions and approvals.
             </p>
           </div>
-          <div className="vh-method-detail">
-            <Disclosure question="How the work gets delivered">
-              <ol>
-                <li>
-                  <strong>Scope.</strong> A clear scope, outcome, and responsibilities.
-                </li>
-                <li>
-                  <strong>Assemble.</strong> A lead operating partner and the support the work
-                  needs.
-                </li>
-                <li>
-                  <strong>Own.</strong> A lead operating partner runs execution. Veep stays
-                  accountable.
-                </li>
-                <li>
-                  <strong>Deliver.</strong> Complete the agreed work and hand off, or agree the next
-                  scope.
-                </li>
-              </ol>
-              <p>Advisory provides senior guidance; your team owns execution.</p>
-              <TextLink to="/for-companies" hash="benefits">
-                How ownership works
-              </TextLink>
-            </Disclosure>
-          </div>
         </Container>
       </section>
       <section id="impact" className="v-section vh-impact-chapter">
@@ -152,6 +127,47 @@ function Index() {
           <TextLink to="/for-companies" hash="work">
             Explore the work
           </TextLink>
+        </Container>
+      </section>
+      <section className="v-section vh-method" aria-labelledby="method-title">
+        <Container>
+          <h2 id="method-title">How the work gets delivered</h2>
+          <ol className="vh-method-timeline">
+            <li>
+              <span className="vh-method-number" aria-hidden="true">
+                01
+              </span>
+              <h3>Scope</h3>
+              <p>A clear scope, outcome, and responsibilities.</p>
+            </li>
+            <li>
+              <span className="vh-method-number" aria-hidden="true">
+                02
+              </span>
+              <h3>Assemble</h3>
+              <p>A lead operating partner and the support the work needs.</p>
+            </li>
+            <li>
+              <span className="vh-method-number" aria-hidden="true">
+                03
+              </span>
+              <h3>Own</h3>
+              <p>A lead operating partner runs execution. Veep stays accountable.</p>
+            </li>
+            <li>
+              <span className="vh-method-number" aria-hidden="true">
+                04
+              </span>
+              <h3>Deliver</h3>
+              <p>Complete the agreed work and hand off, or agree the next scope.</p>
+            </li>
+          </ol>
+          <div className="vh-method-footer">
+            <p>Advisory provides senior guidance; your team owns execution.</p>
+            <TextLink to="/for-companies" hash="benefits">
+              How ownership works
+            </TextLink>
+          </div>
         </Container>
       </section>
       <section id="audiences" className="v-section v-section--tonal vh-audiences">
@@ -210,8 +226,8 @@ function Index() {
         <Container>
           <figure className="vh-client-voice">
             <blockquote>
-              I cannot recommend this team more highly. They think, act, and engage like
-              co-founders.
+              “I cannot recommend this team more highly. They think, act, and engage like
+              co-founders.”
             </blockquote>
             <figcaption>
               <strong>Jerry Kolber</strong>
@@ -245,7 +261,7 @@ function Index() {
             </ActionLink>
           </div>
           <article className="vh-field-note" aria-labelledby="field-note-title">
-            <p className="v-label">From the September 2026 issue · Dave, Veep</p>
+            <p className="v-label">September 2026</p>
             <h3 id="field-note-title">When the Middle Gets Messier</h3>
             <p className="v-body-large">
               How founders can sharpen priorities when more activity stops producing progress.
@@ -255,7 +271,7 @@ function Index() {
               className="v-text-link"
               href="https://us19.campaign-archive.com/?u=37a4f019ed5c8b493097f1afc&amp;id=fa9065ae89"
             >
-              Read a field note
+              Read our latest note
             </a>
           </article>
         </Container>

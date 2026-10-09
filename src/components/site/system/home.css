@@ -289,29 +289,98 @@
   margin-inline: auto;
   text-align: center;
 }
-.vh-method-detail {
+/* A quiet, always-visible sequence follows the business impact. */
+.vh-method {
+  padding-block: var(--v-space-8);
+}
+.vh-method h2 {
+  font-size: var(--v-type-title);
+  letter-spacing: var(--v-tracking-heading);
+}
+.vh-method-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: var(--v-space-6);
+  list-style: none;
+}
+.vh-method-timeline li {
+  position: relative;
+  padding-right: var(--v-space-5);
+}
+.vh-method-timeline li::before {
+  content: "";
+  position: absolute;
+  left: 36px;
+  right: 0;
+  top: 18px;
+  height: 1px;
+  background: var(--v-outline-variant);
+}
+.vh-method-timeline li:last-child::before {
+  display: none;
+}
+.vh-method-number {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--v-primary);
+  border-radius: 50%;
+  color: var(--v-primary);
+  font: 400 12px/1 var(--v-font-label);
+}
+.vh-method-timeline h3 {
+  margin-top: var(--v-space-5);
+  font-size: 24px;
+}
+.vh-method-timeline p {
+  margin-top: var(--v-space-3);
+  color: var(--v-text-secondary);
+}
+.vh-method-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--v-space-5);
   margin-top: var(--v-space-6);
 }
-.vh-method-detail .v-disclosure {
-  background: transparent;
-}
-.vh-method-detail .v-disclosure summary {
-  min-height: var(--v-target);
-  font-size: var(--v-type-body);
-}
-.vh-method-detail ol {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--v-space-4) var(--v-space-7);
-}
-.vh-method-detail li {
-  font-size: var(--v-type-body);
-}
-.vh-method-detail .v-disclosure-content > p {
-  margin-block: var(--v-space-5) var(--v-space-4);
+.vh-method-footer p {
   font-size: var(--v-type-caption);
+  color: var(--v-text-secondary);
 }
-/* The color peak belongs to business impact, followed immediately by concrete proof. */
+@media (max-width: 800px) {
+  .vh-method-timeline {
+    grid-template-columns: 1fr;
+  }
+  .vh-method-timeline li {
+    padding: 0 0 var(--v-space-5) 60px;
+  }
+  .vh-method-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .vh-method-timeline li::before {
+    left: 18px;
+    top: 36px;
+    bottom: 0;
+    width: 1px;
+    height: auto;
+  }
+  .vh-method-timeline h3 {
+    margin-top: 0;
+  }
+  .vh-method-timeline p {
+    max-width: 50ch;
+  }
+  .vh-method-footer {
+    align-items: start;
+    flex-direction: column;
+    gap: var(--v-space-3);
+    margin-top: 0;
+  }
+}
+/* The color peak belongs to business impact. */
 .vh-impact-chapter {
   background: var(--v-surface-impact);
   --v-text: var(--v-on-impact);
@@ -601,9 +670,6 @@
   .vh-ownership-answer > p {
     text-align: left;
   }
-  .vh-method-detail ol {
-    grid-template-columns: 1fr;
-  }
   .vh-impact-list {
     margin-top: var(--v-space-7);
   }
@@ -760,4 +826,18 @@
   .vh-newsletter-layout {
     grid-template-columns: 1fr;
   }
+}
+
+/* Compact function labels retain the profile's single integrated surface. */
+.vh-people-grid .v-profile .v-profile-role {
+  width: fit-content;
+  margin-left: auto;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--v-secondary-container);
+  color: var(--v-on-secondary-container);
+  white-space: nowrap;
+}
+.vh-close .v-section-intro {
+  align-items: start;
 }
