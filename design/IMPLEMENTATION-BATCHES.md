@@ -465,6 +465,13 @@ Implemented: remove decorative scope/expertise scenes from Pricing/Join intros; 
 
 Verification: production build and focused lint pass. Actual 1440px Pricing/About and 390px Home/menu renders inspected. Escape restores the menu trigger and page layout does not move. No content, rates, routes, or handlers changed.
 
-### Batch 02C — responsive, interaction and optical acceptance (active)
+### Batch 02C — responsive, interaction and optical acceptance (complete)
 
 Inspect the primary public page families at 1600, 1440, 1024, 768, 390 and 360px, in both themes. Verify keyboard navigation, selection, disclosures, form focus without submitting, reduced motion, and the existing collision/timing tests. Resolve actual defects and record screenshot evidence and limitations.
+
+
+**Acceptance:** 108 primary-page viewport/theme measurements (Home, Founders, Funds, Pricing, About, Join, FAQ, MeetVeep, Contact × 1600/1440/1024/768/390/360px × dark/light) show no document overflow or clipped heading/body/control text. Screenshot captures accompany each combination; representative desktop/mobile openings and homepage chapters were visually inspected. Legacy operator/service/comparison/partner paths retain their existing redirects; legal pages render with unchanged content. Reviewed the light and dark palette, homepage proof, people, newsletter and close, and the static reduced-motion diagrams/tickers.
+
+Keyboard: mandate tabs move focus and selected panel together with ArrowRight; FAQ opens/closes with keyboard; mobile menu traps focus and Escape returns it to the trigger. Contact fields show the 2px focus outline, optional details expand at 360px without overflow; no form was submitted. Optical corrections unify form-field/submit corners at 6px and restore 24px padding to both outer engagement cards. Normal motion and dark theme restored after QA.
+
+Five physics tests pass, including collision separation, obstacle clearance, loop identity and timing: ownership fill 0.89s / completion 3.31s desktop, 3.29s mobile; hero fill 1.71s / completion 2.86s. Production build, focused ESLint and diff checks pass. No new console errors observed. Evidence: `studio-polish/` in the October 9 visualization directory, including `responsive-checks.json`, before/after captures, chapter views and contact focus. This is a public visual/interaction pass, not a portal redesign or exhaustive assistive-technology certification. No push or deployment. Pre-existing unrelated changes remain unstaged.

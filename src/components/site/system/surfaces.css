@@ -115,7 +115,9 @@
   border: 0;
   gap: 8px;
 }
-.rebuild.ve-editorial .rb-tier-grid > div {
+.rebuild.ve-editorial .rb-tier-grid > div,
+.rebuild.ve-editorial .rb-tier-grid > div:is(:first-child, :last-child) {
+  padding: var(--v-space-5);
   border: 0;
   border-radius: var(--v-shape-panel);
   background: var(--v-surface-panel);

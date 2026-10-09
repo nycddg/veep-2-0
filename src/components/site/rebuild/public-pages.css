@@ -503,12 +503,12 @@
   border: 1px solid var(--rb-rule);
   color: var(--rb-text);
   background: var(--rb-raised);
-  border-radius: 2px;
-  padding: 12px 13px;
+  border-radius: var(--v-shape-control);
+  padding: 12px 16px;
   min-height: 48px;
   font-size: 16px;
   line-height: 1.4;
-  transition: border-color 180ms;
+  transition: border-color var(--v-motion-fast) var(--v-motion-functional);
 }
 .rebuild .ve-input::placeholder {
   color: var(--rb-muted);
@@ -538,7 +538,7 @@
 .rebuild .ve-form-sheet form > button {
   background: #101829;
   color: #f6f6f2;
-  border-radius: 3px;
+  border-radius: var(--v-shape-control);
   font-size: 16px;
   min-height: 48px;
 }

@@ -79,3 +79,14 @@ Review captures and route measurements are in `/Users/dave/.codex/visualizations
 - Actual keyboard Tab shows a 2px ring with 4px offset on hero audience links. Mobile menu focuses its first item; Escape restores the trigger. Reduced motion removes movement from both work diagrams and ticker; normal preference restored.
 - Production build, focused ESLint and whitespace/diff validation pass. Full-site migration, exhaustive screen-reader testing and 200% browser zoom remain outside this bounded refinement.
 - Evidence: `canon-refinement/material-refinement/` in `/Users/dave/.codex/visualizations/2026/10/09/01a121b2-13c8-7c22-ad99-ae4b3eaf3595/`.
+
+
+## 9 October 2026 — studio polish acceptance (02A–02C)
+
+Shared editorial surfaces/actions now use the current semantic palette and stable control geometry. Pricing/Join openings prioritize action and decision content, homepage mobile actions precede illustration, About portraits align, and homepage identity captions no longer use role pills. Secondary motion is shorter; physical work motion preserves the approved timing.
+
+- Measured nine primary public pages at six widths (1600, 1440, 1024, 768, 390, 360) in both themes: 108 checks, no document overflow or clipped heading/body/button text. Full-page captures were saved; desktop/phone openings and homepage chapters were visually reviewed. Captures of below-fold lazy imagery are supplemented by scrolled viewport checks.
+- Verified mandate keyboard selection, disclosure keyboard behavior, mobile menu focus/Escape return, optional contact fields and field focus without submitting. Revised outer engagement-card padding and field corners in the optical pass.
+- Reduced preference resolves both work diagrams and stops the tickers. Restored normal motion/dark theme. Five existing physical tests pass with fills below two seconds and complete states below five.
+- Production build, focused lint and diff checks pass. Existing repository-wide type errors and unrelated in-progress files are outside this pass. Portal behavior, real submission flows and exhaustive screen-reader/zoom certification were not tested or changed.
+- Evidence: `/Users/dave/.codex/visualizations/2026/10/09/01a121b2-13c8-7c22-ad99-ae4b3eaf3595/studio-polish/`. `responsive-checks.json` records the 108 measurements; `finished-pricing-desktop.png` and chapter images document composition. Secondary routes retain the redirects present before this task.
