@@ -53,7 +53,7 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
       ref={rootRef}
       className={`ve-spotlight ve-spotlight--${audience}`}
       role="region"
-      aria-label="Selected operating partner experience"
+      aria-label="Operating partner experience"
       aria-describedby={isHome ? `${id}-description` : undefined}
       tabIndex={isHome ? 0 : undefined}
       data-motion={playing ? "playing" : "paused"}
@@ -66,8 +66,8 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
     >
       {isHome && (
         <p className="ve-spotlight-sr-copy" id={`${id}-description`}>
-          Selected career experience, including roles before Veep. This portrait sequence pauses
-          while hovered or focused and stays still when reduced motion is preferred.
+          Operating partner experience. This portrait sequence pauses while hovered or focused and
+          stays still when reduced motion is preferred.
         </p>
       )}
       <div className="ve-spotlight-stage" aria-hidden={isHome ? undefined : true}>
@@ -179,9 +179,6 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
               </button>
             )}
           </div>
-          <p className="ve-spotlight-provenance">
-            Selected career experience, including roles before Veep.
-          </p>
         </div>
       )}
     </div>

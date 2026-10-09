@@ -14,7 +14,7 @@ const groups: { label: string; items: QA[] }[] = [
     items: [
       {
         q: "How fast can a Veep operator start?",
-        a: "Operating engagements are scoped in 72 hours and started in under 10 days. The scope defines the delivery timeline. These timings do not describe completion of a mandate, audit, or technical implementation.",
+        a: "Operating engagements are scoped in 72 hours and started in under 10 days. The scope defines the delivery timeline.",
       },
       {
         q: "How is Veep different from a consultant?",
@@ -30,7 +30,7 @@ const groups: { label: string; items: QA[] }[] = [
       },
       {
         q: "Can Veep run interim coverage while we search for a permanent hire?",
-        a: "Yes. It is one of the most common use cases. A Veep operator can cover the leadership gap, stabilize the function, preserve momentum, and help define what the permanent role should actually become.",
+        a: "Yes. It is one of the most common use cases. A Veep operator covers the leadership gap, stabilizes the function, preserves momentum, and helps define the permanent role.",
       },
     ],
   },
@@ -39,11 +39,11 @@ const groups: { label: string; items: QA[] }[] = [
     items: [
       {
         q: "What roles do Veep operators fill?",
-        a: "Veep operators include CFOs, COOs, CROs, CMOs, CTOs, CPOs, people leaders, chiefs of staff, GMs, and functional experts. But we start with the work, not the title. Depending on the need, the right structure may be Advisory, Sprint, Operator, or Pod.",
+        a: "Veep operators include CFOs, COOs, CROs, CMOs, CTOs, CPOs, people leaders, chiefs of staff, GMs, and functional experts. But we start with the work, not the title. The mandate determines the engagement: Advisory, Sprint, Operator, or Pod.",
       },
       {
         q: "How is the operator selected?",
-        a: "We select the operating capacity for the mandate, urgency, company stage, function, industry, and business model. The site shows selected network experience. We share relevant profiles and references once we understand the work, before an engagement begins.",
+        a: "We select the operating capacity for the mandate, urgency, company stage, function, industry, and business model. You review relevant profiles and references before the engagement begins.",
       },
       {
         q: "Do you use AI?",
@@ -51,7 +51,7 @@ const groups: { label: string; items: QA[] }[] = [
       },
       {
         q: "What industries do you serve?",
-        a: "Veep works with founder-led, owner-led, investor-backed, and portfolio companies across sectors. Common areas include SaaS, AI/data companies, B2B services, DTC and e-commerce, multi-site services, healthcare services, consumer brands, industrial services, field services, and PE-backed portfolio companies. The better question is not only industry. It is whether we have the right operator for the work.",
+        a: "Veep works with founder-led, owner-led, investor-backed, and portfolio companies across sectors. Common areas include SaaS, AI/data companies, B2B services, DTC and e-commerce, multi-site services, healthcare services, consumer brands, industrial services, field services, and PE-backed portfolio companies. We match operating experience to the mandate, business model, and company stage.",
       },
     ],
   },
@@ -85,7 +85,7 @@ const groups: { label: string; items: QA[] }[] = [
       },
       {
         q: "What is a Portfolio Capacity Audit?",
-        a: "Over 2–3 weeks, Veep maps current priorities and likely needs over the next 6–12 months. The audit identifies operating capacity gaps, upcoming needs, and recommended coverage for company mandates. Discuss the scope with Veep before the audit begins.",
+        a: "Over 2–3 weeks, Veep maps current priorities and likely needs over the next 6–12 months. The audit identifies operating capacity gaps, upcoming needs, and recommended coverage for company mandates. You leave with a company-by-company view of the capacity the portfolio needs.",
       },
       {
         q: "Do you have a referral program?",
@@ -190,8 +190,8 @@ function Page() {
           </>
         }
       >
-        Tell us what you’re considering. We’ll help clarify the work, the right level of support,
-        and whether Veep is a fit.
+        Tell us what you’re considering. We’ll answer your questions and recommend the right next
+        step.
       </PublicClose>
     </div>
   );

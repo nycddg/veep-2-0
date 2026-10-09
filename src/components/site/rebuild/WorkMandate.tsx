@@ -101,14 +101,14 @@ export function WorkMandate() {
             hidden={active !== index}
             className="ve-mandate-panel"
           >
-            <p className="ve-kicker">Illustrative scope · not a client record</p>
+            <p className="ve-kicker">Example mandate</p>
             <h3>{item.situation}</h3>
             <p className="ve-mandate-detail">{item.detail}</p>
             <p className="ve-mandate-outcome">
-              <span>Working toward</span>
+              <span>The outcome</span>
               {item.outcome}
             </p>
-            <div className="ve-paper-stack" aria-label="Illustrative work products">
+            <div className="ve-paper-stack" aria-label="Work products">
               {item.papers.map((paper, i) => (
                 <div key={paper} className={`ve-work-paper ve-work-paper-${i}`}>
                   <span className="ve-paper-fold" aria-hidden="true" />
@@ -128,9 +128,6 @@ export function WorkMandate() {
                 <span>Owns execution against the agreed scope</span>
               </p>
             </div>
-            <p className="ve-mandate-footnote">
-              Client leadership retains strategic decisions and approvals.
-            </p>
           </div>
         ))}
       </div>

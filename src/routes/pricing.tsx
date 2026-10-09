@@ -149,9 +149,7 @@ function Page() {
           Agree the scope, the outcomes, and the level of ownership. Then choose the operating
           capacity the work needs.
         </p>
-        <p className="ve-intro-note">
-          Transparent rates. No hourly billing. No lock-in by default.
-        </p>
+        <p className="ve-intro-note">Transparent rates. No hourly billing. Flexible engagements.</p>
         <MotionScene concept="scope" />
       </PublicIntro>
 
@@ -253,7 +251,7 @@ function Page() {
             </p>
             <p>
               Company engagements have their own scope, statement of work, and delivery fee at
-              preferred rates. The annual retainer does not include unlimited operator delivery.
+              preferred rates.
             </p>
             <TextLink to="/for-portfolios" hash="roster">
               See the full Roster relationship <span aria-hidden="true">↗</span>
@@ -268,7 +266,7 @@ function Page() {
             <p className="ve-kicker">Agent Teams</p>
             <h2 className="ve-title">
               Recurring work.
-              <br /> A separate scope.
+              <br /> Senior oversight.
             </h2>
           </div>
           <div>
@@ -305,8 +303,8 @@ function Page() {
         </Container>
       </Section>
       <PublicClose>
-        Bring the priority, urgency, and outcome. In a 30-minute intro call, we’ll discuss the right
-        scope and level of support.
+        Bring the priority, urgency, and outcome. In a 30-minute intro call, we’ll recommend the
+        right scope and level of support.
       </PublicClose>
     </div>
   );

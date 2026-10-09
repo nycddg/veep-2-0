@@ -55,9 +55,7 @@ export function PortfolioMap() {
           Each company: a separate scope, statement of work, and delivery fee.
         </p>
       </div>
-      <figcaption>
-        Illustrative company mandates. Not named clients or assigned operators.
-      </figcaption>
+      <figcaption>Example company mandates</figcaption>
     </figure>
   );
 }

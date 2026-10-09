@@ -1,7 +1,7 @@
 const objections = [
   {
     q: "Is this right for me?",
-    a: "You lead a business with critical work the team cannot absorb: preparing for capital, rebuilding sales, entering a market, fixing operations, or covering a leadership gap. Bring the priority; we'll assess the fit.",
+    a: "You lead a business with critical work the team cannot absorb: preparing for capital, rebuilding sales, entering a market, fixing operations, or covering a leadership gap. Bring the priority; we’ll define the scope and the team it needs.",
   },
   {
     q: "How much does it cost?",
@@ -21,7 +21,7 @@ const objections = [
   },
   {
     q: "What happens on the intro call?",
-    a: "In 30 minutes, we clarify the work, urgency, and support you need. If Veep fits, we move into scoping. We'll tell you directly if another route makes more sense.",
+    a: "In 30 minutes, we define the priority, urgency, and outcome, then recommend the scope and operating capacity to move it forward.",
   },
 ];
 

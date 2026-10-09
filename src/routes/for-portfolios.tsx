@@ -164,8 +164,8 @@ function Page() {
               <br /> the need.
             </h2>
             <p className="ve-body">
-              One company’s urgent mandate, or a view across the portfolio. We can start with
-              either.
+              Start with one company’s urgent mandate or map the operating needs across the
+              portfolio.
             </p>
           </div>
           <div className="ve-fund-entry-grid">
@@ -237,8 +237,8 @@ function Page() {
           </ol>
           <p className="ve-relationship-boundary">
             Veep manages scope, quality, and continuity through delivery. Fund and company leaders
-            retain strategic decisions and approvals. We can also support an existing operating team
-            with specialist or additional capacity.
+            retain strategic decisions and approvals. We also strengthen existing operating teams
+            with specialist and additional capacity.
           </p>
         </Container>
       </Section>
@@ -254,11 +254,11 @@ function Page() {
               <strong>20+</strong>
               <span>exits & acquisitions</span>
             </p>
-            <p>Aggregated outcomes across our operators’ careers.</p>
+            <p>Our operators bring firsthand transaction experience to your next mandate.</p>
           </div>
           <OperatorSpotlight audience="funds" />
           <p className="ve-provenance">
-            Selected from 75+ vetted senior operators for the mandate and business.
+            75+ vetted senior operators. The right experience for each mandate and business.
           </p>
         </Container>
       </Section>
@@ -317,7 +317,7 @@ function Page() {
           <div>
             <p>
               Bring one urgent mandate or the gaps you see across the portfolio. In a 30-minute
-              intro call, we’ll discuss the work and the right starting point.
+              intro call, we’ll define the priority and recommend where to start.
             </p>
             <BookLink />
           </div>

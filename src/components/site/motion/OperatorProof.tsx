@@ -11,8 +11,8 @@ export function OperatorProof() {
           behind the work.
         </h2>
         <p className="v-body-large">
-          Selected operating partner experience. These are career credentials, including work before
-          Veep, not current availability.
+          Our operators have raised capital, built teams, and led growth. Put that experience to
+          work on your next priority.
         </p>
       </div>
       <div className="vh-people-grid">

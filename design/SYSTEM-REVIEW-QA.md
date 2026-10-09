@@ -57,3 +57,15 @@ All seven work objects are equal-radius circles. The enclosing executive circle 
 - Production build, targeted ESLint, formatting check, and diff whitespace check pass after the final source changes. The preexisting repository-wide TypeScript limitations listed above remain outside this refinement.
 
 Final captures are in `/Users/dave/.codex/visualizations/2026/10/08/01a11cba-9c61-7091-878a-af7c099dd3d0/veep-centered-hero/`, named `home-{theme}-{width}.png`. `static-problem-and-resolved.png` records both fallback compositions; `measurements.json` contains the browser measurements. No forms were submitted, and no push or deployment was made.
+
+## Public copy sweep · 9 October 2026
+
+Dave requested a Vosler Copywriting sweep to remove defensive qualifications and language that downplays Veep's experience. This supersedes earlier provenance-footnote treatments. Public proof now relies on named operators, specific achievements, and testimonial attribution. Concept examples use concise labels. Closing calls to action state what happens next. The marked homepage audience line now begins “CEOs and funds hire Veep.”
+
+- Reviewed Home, Companies, Funds, Pricing, About, Join, FAQ, Contact (including the audit entry), MeetVeep, shared public components, and the internal design specimen. Legacy public routes redirect to these core pages.
+- Production build, targeted ESLint for all changed TSX files, and diff whitespace checks pass.
+- Pricing, About, Join, FAQ, Contact, and MeetVeep rendered at 1440px light and 390px dark with no document-level horizontal overflow. Home, Companies, and Funds proof areas were inspected as screenshots across desktop/mobile and dark/light views, also without page overflow. This copy pass did not repeat the earlier full five-width motion review.
+- Opened the revised FAQ timing answer and verified its rendered text. No forms submitted. No browser console errors returned.
+- Exact testimonial wording, result figures, pricing, booking destinations, form behavior, and legal text remain unchanged.
+
+Review captures and route measurements are in `/Users/dave/.codex/visualizations/2026/10/08/01a11cba-9c61-7091-878a-af7c099dd3d0/veep-copy-sweep/`. `home-proof-ready.png`, `companies-testimonial-desktop.png`, and `funds-map-light-desktop.png` document the three marked corrections.

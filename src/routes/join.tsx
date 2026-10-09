@@ -222,11 +222,11 @@ function Page() {
               <br /> put to work.
             </h2>
             <p className="ve-body">
-              We look for operators who have held the seat, owned the decisions, and delivered under
-              real constraints. Relevant experience and references matter.
+              You’ve held the seat, owned the decisions, and delivered under real constraints. Bring
+              that track record to the next mandate.
             </p>
           </div>
-          <div className="ve-join-portraits" aria-label="Selected operating partners">
+          <div className="ve-join-portraits" aria-label="Veep operating partners">
             {[spotlightOperators[1], spotlightOperators[3], spotlightOperators[0]].map((person) => (
               <figure key={person.name}>
                 <img

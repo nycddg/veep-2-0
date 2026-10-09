@@ -35,7 +35,7 @@ export function ClientTicker({ kind = "full" }: { kind?: "full" | "clients" }) {
   const content = (
     <>
       <div className="ve-ticker-label">
-        <p>{kind === "full" ? "Trusted by" : "Selected Veep clients"}</p>
+        <p>{kind === "full" ? "Trusted by" : "Veep clients"}</p>
         {kind === "clients" && (
           <button
             type="button"

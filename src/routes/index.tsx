@@ -60,8 +60,8 @@ function Index() {
                 <span>The priority that keeps slipping.</span>
               </p>
               <p className="v-body-large v-muted">
-                Founders, CEOs, owner-operators, and funds hire Veep when mission-critical work has
-                no clear owner and needs to move now.
+                CEOs and funds hire Veep when mission-critical work has no clear owner and needs to
+                move now.
               </p>
             </div>
             <MotionScene concept="desk" />
@@ -133,7 +133,7 @@ function Index() {
       <section id="proof" className="v-section v-paper">
         <Container className="vh-proof">
           <div>
-            <p className="v-label">Selected company work · B2B SaaS</p>
+            <p className="v-label">Client work · B2B SaaS</p>
             <p className="vh-proof-number">$6M</p>
             <p className="v-lead">Raised in six weeks.</p>
           </div>
@@ -167,8 +167,8 @@ function Index() {
           <div>
             <p className="v-body-large v-muted">
               It keeps slipping. It sits between functions. You’re still the one pushing it forward.
-              Bring that work to a 30-minute intro call. We’ll discuss what it needs and whether
-              Veep is the right fit.
+              Bring that work to a 30-minute intro call. We’ll define the priority and recommend the
+              operating capacity to move it forward.
             </p>
             <BookLink />
           </div>

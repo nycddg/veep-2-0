@@ -22,7 +22,7 @@ export function OperatorDeck() {
   }
   return (
     <div className="ve-deck">
-      <div ref={cardsRef} className="ve-deck-cards" aria-label="Selected operating partners">
+      <div ref={cardsRef} className="ve-deck-cards" aria-label="Veep operating partners">
         {people.map((op, i) => (
           <button
             type="button"
@@ -51,7 +51,7 @@ export function OperatorDeck() {
       </div>
       <div className="ve-deck-caption">
         <div id={detailId} aria-live="polite" aria-atomic="true">
-          <p className="ve-deck-hint">Selected network experience</p>
+          <p className="ve-deck-hint">Operating partner experience</p>
           <p className="ve-deck-person">
             {person.name} <span>{person.role}</span>
           </p>

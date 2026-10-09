@@ -83,6 +83,18 @@ Functional interactions use 160–220ms transitions. Color and opacity do not ov
 | `ProfileFigure`         | 4:5 portrait, consistent crop treatment, name, role, and one supported credential. Caption identifies the person; image alt is empty to avoid repeating that identity. No availability or marketplace badges.                                             |
 | `MotionScene`           | Existing semantic SVG composition and reduced-motion fallback. Colors inherit theme roles on migrated surfaces.                                                                                                                                           |
 
+## Public copy direction · 9 October 2026
+
+Dave's site-wide copy correction takes precedence over earlier provenance-footnote treatments. Use direct, calm, commercially grounded language. State the work, the result, and the next step with confidence.
+
+- Let named operators, roles, companies, and concrete achievements establish credibility. Do not append blanket warnings about work before Veep or current availability.
+- Testimonials stand with their speaker and company. Do not add editorial disclaimers separating them from nearby cases.
+- Label conceptual content plainly: “Example mandate,” “Example company mandates,” or “Example finance workflow.” Avoid a second sentence explaining what the example is not.
+- Calls to action explain what the reader gets: define the priority, recommend the operating capacity, agree the next step. Avoid repeated “whether Veep is the right fit” endings.
+- Keep supported figures, exact testimonial wording, prices, scope, service responsibilities, and commercial terms accurate. Put useful terms where readers make the relevant decision; do not repeat them as defensive marketing footnotes.
+- Retain the canonical “It's probably a job for Veep.” Its conversational recognition is deliberate brand voice.
+- The homepage hero audience line now begins “CEOs and funds hire Veep,” per Dave's latest marked revision. This supersedes the longer audience list recorded in the earlier hero checkpoint.
+
 ## Homepage editorial patterns
 
 The hero is one centered editorial composition: a two-line thesis on desktop, a close subhead and body paragraph, a wide horizontal work loop, then the booking action. There is no eyebrow. Mobile uses a balanced three-line headline and shorter horizontal motion. At Dave’s request, the “Founders, CEOs…” paragraph now belongs to the hero; the “Veep gives companies and funds…” paragraph sits beside “It can’t all land back on your desk.” The proposition and paragraph wording are unchanged. The ticker then supplies client evidence once. The ownership chapter explains what changes. Open audience columns lead to Companies and Funds. A paper proof spread connects the $6M outcome with the work behind it. Portraits then supply human credibility with career attribution. The close returns to the reader's unresolved priority and a 30-minute introduction.

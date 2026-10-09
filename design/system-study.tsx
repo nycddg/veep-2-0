@@ -153,7 +153,7 @@ function ThemeSpecimen({ theme }: { theme: "dark" | "light" }) {
           />
         </div>
         <p className="v-caption v-muted">
-          Selected career experience, including work before Veep. No availability implication.
+          Operating experience. A named operator, a clear role, and a concrete result.
         </p>
       </section>
       <section>

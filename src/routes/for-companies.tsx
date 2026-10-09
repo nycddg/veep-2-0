@@ -93,11 +93,11 @@ const alternatives = [
   },
   {
     option: "A permanent hire",
-    fit: "Hire for a lasting role. Veep can own the current work while the search runs, then hand over to the new leader.",
+    fit: "Hire for a lasting role. Veep owns the current work while the search runs, then hands over to the new leader.",
   },
   {
     option: "A consultancy",
-    fit: "A consultancy may be right for specialist analysis or a defined project. Veep's operating engagements include a named lead responsible for execution inside the business.",
+    fit: "Bring in a consultancy for specialist analysis or a defined project. Veep's operating engagements include a named lead responsible for execution inside the business.",
   },
   {
     option: "Independent specialists",
@@ -238,10 +238,7 @@ function Page() {
               The work.
               <br /> The difference it made.
             </h2>
-            <p>
-              Selected Veep engagements.
-              <br /> Companies anonymized.
-            </p>
+            <p>Capital raised. Project margins improved. Here’s the work behind the results.</p>
           </div>
           <article className="ve-case-primary">
             <div className="ve-case-result">
@@ -292,7 +289,6 @@ function Page() {
             <figcaption>
               <span>Jerry Kolber</span>Founder & CEO, Atomic Audio
             </figcaption>
-            <p>Attributed client experience, separate from the anonymous cases above.</p>
           </figure>
         </Container>
       </Section>
@@ -305,8 +301,8 @@ function Page() {
               <br /> They know the work.
             </h2>
             <p className="ve-body">
-              75+ vetted senior operators. Selected for the work, business model, and company stage.
-              Review relevant experience and references before the engagement begins.
+              75+ vetted senior operators across finance, growth, operations, product, and people.
+              We match their experience to the work, business model, and company stage.
             </p>
           </div>
           <OperatorSpotlight audience="companies" />
@@ -323,7 +319,7 @@ function Page() {
                   Option
                 </th>
                 <th scope="col" className="py-4 text-left text-[16px] font-medium">
-                  When it fits, and where Veep can help
+                  When it fits, and what Veep adds
                 </th>
               </tr>
             </thead>
@@ -411,8 +407,8 @@ function Page() {
               <br /> to the handoff.
             </h2>
             <p className="ve-body">
-              We start with a 30-minute intro call to understand the priority, urgency, and outcome,
-              and whether Veep is the right fit.
+              In a 30-minute intro call, we define the priority, urgency, and outcome, then
+              recommend the operating capacity the work needs.
             </p>
             <div className="ve-delivery-speed">
               <p>
@@ -425,7 +421,7 @@ function Page() {
               </p>
             </div>
             <p className="ve-provenance">
-              Timing applies to operating engagements, not completion of the mandate.
+              Operating engagements. Delivery milestones are agreed in the scope.
             </p>
             <MotionScene concept="handoff" compact />
           </div>
@@ -452,8 +448,8 @@ function Page() {
           <div>
             <p>
               You don’t need to know the title or team. Tell us what changed, what needs to move,
-              and what happens if it doesn’t. In a 30-minute intro call, we’ll clarify the work and
-              whether Veep is the right fit.
+              and what happens if it doesn’t. In a 30-minute intro call, we’ll define the priority
+              and recommend the team to move it forward.
             </p>
             <BookLink />
           </div>

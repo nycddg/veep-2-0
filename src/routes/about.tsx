@@ -102,7 +102,7 @@ function Page() {
       <Section pad="none" className="ve-network-spread">
         <Container className="ve-container">
           <div className="ve-network-spread-label">
-            <p>Selected operating partners</p>
+            <p>Meet our operating partners</p>
             <p>
               <strong>75+</strong> vetted senior operators
             </p>
@@ -126,8 +126,7 @@ function Page() {
             ))}
           </div>
           <p className="ve-small-note">
-            The team is assembled for the mandate, business, and stage. Profiles show network
-            experience, not current availability.
+            We assemble the team around the mandate, the business, and the stage.
           </p>
         </Container>
       </Section>
@@ -154,7 +153,6 @@ function Page() {
               </article>
             ))}
           </div>
-          <p className="ve-small-note">Career experience includes work before Veep.</p>
         </Container>
       </Section>
 
@@ -191,8 +189,8 @@ function Page() {
         </Container>
       </Section>
       <PublicClose contact>
-        Tell us about the work that keeps coming back to you. We’ll discuss the scope, the ownership
-        it needs, and whether Veep is the right fit.
+        Tell us about the work that keeps coming back to you. We’ll define the scope and the
+        operating capacity to move it forward.
       </PublicClose>
     </div>
   );

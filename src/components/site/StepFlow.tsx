@@ -1,8 +1,24 @@
 const steps = [
-  { n: "01", t: "Clarify", d: "A 30-minute intro call to understand the work, urgency, and outcome, and whether Veep is the right fit." },
-  { n: "02", t: "Scope", d: "Within 72 hours, define the work, responsibilities, success criteria, and recommended engagement shape." },
-  { n: "03", t: "Assemble", d: "Select a lead operating partner and the supporting capacity required, matched to the mandate and company." },
-  { n: "04", t: "Own", d: "Start in under 10 days. The operator runs the work; Veep manages scope, quality, and continuity." },
+  {
+    n: "01",
+    t: "Clarify",
+    d: "A 30-minute intro call to define the priority, urgency, and outcome, then recommend the scope and operating capacity.",
+  },
+  {
+    n: "02",
+    t: "Scope",
+    d: "Within 72 hours, define the work, responsibilities, success criteria, and recommended engagement shape.",
+  },
+  {
+    n: "03",
+    t: "Assemble",
+    d: "Select a lead operating partner and the supporting capacity required, matched to the mandate and company.",
+  },
+  {
+    n: "04",
+    t: "Own",
+    d: "Start in under 10 days. The operator runs the work; Veep manages scope, quality, and continuity.",
+  },
 ];
 
 export function StepFlow() {

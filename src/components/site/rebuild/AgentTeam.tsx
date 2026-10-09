@@ -10,9 +10,9 @@ export function AgentTeam() {
           <br /> Human judgment.
         </h2>
         <p className="ve-body">
-          Agent Teams are designed for recurring reporting, research, and follow-through in finance,
-          founder office, growth, and operations. The scope brings together agent workflows,
-          operator review, and technical oversight.
+          Agent Teams combine agent workflows, operator judgment, and technical oversight for
+          recurring reporting, research, and follow-through in finance, founder office, growth, and
+          operations.
         </p>
         <p className="ve-agent-terms">
           Blueprint / Build / Run. Systems, data access, review requirements, timing, price, and
@@ -21,7 +21,7 @@ export function AgentTeam() {
         </p>
       </div>
       <div className="ve-agent-motion-model">
-        <p className="ve-kicker">Illustrative finance workflow</p>
+        <p className="ve-kicker">Example finance workflow</p>
         <MotionScene concept="assembly" />
         <p className="ve-small-note">
           Agents prepare the agreed materials. The finance operator checks assumptions and handles
@@ -31,7 +31,6 @@ export function AgentTeam() {
           A technical lead owns architecture, permissions, integrations, monitoring, and
           reliability.
         </p>
-        <p className="ve-small-note">Illustrative model, not a completed client engagement.</p>
       </div>
     </div>
   );

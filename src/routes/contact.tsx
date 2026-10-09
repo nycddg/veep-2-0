@@ -163,7 +163,7 @@ function Page() {
         <p>
           {isAudit
             ? "Over 2–3 weeks, we map current priorities and likely needs over the next 6–12 months. Start with the companies, the upcoming moments, and the work that needs senior ownership."
-            : "Bring the priority, the urgency, and what a good outcome would look like. We’ll help clarify the work, the operating capacity it needs, and whether Veep is the right fit."}
+            : "Bring the priority, the urgency, and the outcome you need. We’ll define the work, recommend the operating capacity, and agree the next step."}
         </p>
         <p className="ve-intro-note">Response within one business day.</p>
       </PublicIntro>
@@ -205,8 +205,7 @@ function Page() {
             </ol>
             {!isAudit && (
               <p className="ve-small-note">
-                Operating engagements are scoped in 72 hours and started in under 10 days. These are
-                engagement timings, not completion promises.
+                Operating engagements are scoped in 72 hours and started in under 10 days.
               </p>
             )}
             {preselected && (

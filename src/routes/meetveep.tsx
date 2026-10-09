@@ -76,7 +76,7 @@ function MeetVeepPage() {
               <span>Started in under 10 days</span>
             </p>
             <div>
-              <p>Timing applies to operating engagements.</p>
+              <p>Operating engagements.</p>
               <p>The mandate sets the delivery timeline.</p>
             </div>
           </div>
@@ -111,7 +111,7 @@ function MeetVeepPage() {
       <Section className="ve-meet-proof">
         <Container className="ve-container ve-meet-proof-layout">
           <div>
-            <p className="ve-kicker">Selected engagement · B2B SaaS</p>
+            <p className="ve-kicker">Client work · B2B SaaS</p>
             <p className="ve-proof-number">$6M</p>
             <h2>Raised in six weeks.</h2>
           </div>
@@ -121,7 +121,6 @@ function MeetVeepPage() {
               A three-year financial model, diligence-ready CAC/LTV reporting, and CEO coaching
               through investor meetings and term sheets.
             </p>
-            <p className="ve-small-note">Selected Veep engagement. Company anonymized.</p>
             <TextLink to="/for-companies" hash="proof">
               Inside the engagement <span aria-hidden="true">↗</span>
             </TextLink>
@@ -161,8 +160,8 @@ function MeetVeepPage() {
         </Container>
       </Section>
       <PublicClose contact>
-        Bring the priority, urgency, and outcome. We’ll help clarify the work and the operating
-        capacity it needs. Operator fit is covered by a 30-day fit guarantee.
+        Bring the priority, urgency, and outcome. We’ll define the work and the operating capacity
+        to deliver it. Operator fit is covered by a 30-day fit guarantee.
       </PublicClose>
     </div>
   );
