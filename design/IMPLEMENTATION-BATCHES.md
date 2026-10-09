@@ -212,3 +212,16 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 **Review checkpoint:** actual problem and newsletter renders at 1280, 768 and 390px in both themes, with verified viewport widths and no document overflow. An initial viewport control did not affect an existing user tab; those captures were replaced by verified captures from an isolated review tab. Homepage text/background sampling returned no ratios below 4.5:1 (93 light, 99 dark samples; this is not a complete accessibility audit). Full-page color sequence and actual scrolled proof/testimonial/profile surfaces reviewed. All original booking destinations and attribution retained. Newsletter-specific source and styling follow as Batch 01J.
 
 **Evidence:** `/Users/dave/.codex/visualizations/2026/10/09/01a121b2-13c8-7c22-ad99-ae4b3eaf3595/canon-refinement/expanded-colors/`. Focused lint, formatting and production build pass. Shared tokens are available to other pages; this review does not certify every unmigrated page composition.
+
+
+## Batch 01J — newsletter as evidence of operating judgment
+
+**Communication problem:** the newsletter had space but no concrete demonstration of its editorial value.
+
+**Change:** retain Zero to Something and Dave's messy-middle tagline, add a concise capital/revenue/people editorial promise and a real field-note preview. Use the published August 2026 issue supplied by Dave: “Nobody Is Deciding About AI,” its exact short excerpt (“Someone's job has to depend on answering the hardest questions.”), and the issue's Dave sign-off. “Read a field note” links to that issue; “Subscribe to Zero to Something” keeps the previously supplied Mailchimp registration destination. No unsupported cadence, new metric, form submission or invented issue.
+
+**Source:** https://us19.campaign-archive.com/?u=37a4f019ed5c8b493097f1afc&id=308958e8a9 (read in the browser). The explanatory sentence about stalled AI experiments is a summary, not a quotation.
+
+**Composition and color:** newsletter sits above the final booking invitation. Desktop uses paired publication/issue columns; tablet and mobile stack the publication, subscribe action and actual excerpt. Primary-container foregrounds apply to every label, heading, description and link; the subscribe action uses primary/on-primary, with a paired-color hover layer. Focus inherits the high-contrast newsletter foreground, not the page's default ring color. Light is pale blue with deep text; dark is deep blue with pale text.
+
+**Verification:** six actual responsive/theme captures in the 01I evidence directory. No overflow. Keyboard activation of the field-note link reaches the supplied archive; newsletter focus ring checked in dark mode. Both ticker states become still and the hero reports data-animate=false under Reduce motion, with all newsletter content present. Device motion restored. Production build, focused lint, formatting and diff checks pass. No forms submitted. This implements the requested local revision; no push or deployment.

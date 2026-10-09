@@ -89,7 +89,7 @@ Signature fields are Veep editorial roles, not universal theme-independent UI co
 
 #### Application and migration
 
-Reference values feed semantic roles, then component roles. Introduce the expanded roles in `tokens.css`; keep existing aliases where other pages depend on them. Preserve neutral booking treatment until its actual surface context is reviewed. Do not replace every blue or coral literal blindly.
+Reference values feed semantic roles, then component roles. Batches 01I–01J introduce the expanded roles in `tokens.css` and apply them to the homepage and shared aliases; existing aliases remain where other pages depend on them. The homepage has been reviewed in both themes; other page compositions still require their own migration review. Preserve neutral booking treatment until its actual surface context is reviewed. Do not replace every blue or coral literal blindly.
 
 The newsletter should use primary-container/on-primary-container in both themes: pale blue/deep text in light, deep blue/pale text in dark. Operator evidence uses neutral/slate surfaces. Impact and testimonial retain their signature fields. This is a color application direction, not approval of unreviewed page layouts.
 

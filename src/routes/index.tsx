@@ -226,26 +226,38 @@ function Index() {
         </Container>
       </section>
       <ClientTicker kind="operators" />
-      <section
-        className="v-section v-section--tonal vh-newsletter"
-        aria-labelledby="newsletter-title"
-      >
-        <Container className="v-section-intro">
+      <section className="v-section vh-newsletter" aria-labelledby="newsletter-title">
+        <Container className="vh-newsletter-layout">
           <div>
             <p className="v-eyebrow">The Veep newsletter</p>
             <h2 id="newsletter-title" className="v-heading">
               Zero to Something
             </h2>
-          </div>
-          <div>
-            <p className="v-body-large">Field notes for founders building in the messy middle.</p>
-            <ActionLink
-              variant="secondary"
-              href="https://mailchi.mp/veep/zero-to-something-newsletter"
-            >
-              Register for the newsletter
+            <p className="v-lead vh-newsletter-description">
+              Field notes for founders building in the messy middle.
+            </p>
+            <p className="v-body-large vh-newsletter-description">
+              Capital, revenue, people, and the work between them. An operating perspective on the
+              decisions that move a business forward.
+            </p>
+            <ActionLink href="https://mailchi.mp/veep/zero-to-something-newsletter">
+              Subscribe to Zero to Something
             </ActionLink>
           </div>
+          <article className="vh-field-note" aria-labelledby="field-note-title">
+            <p className="v-label">From the August 2026 issue · Dave, Veep</p>
+            <h3 id="field-note-title">Nobody Is Deciding About AI</h3>
+            <p className="v-body-large">Why AI experiments stall when no one owns the decisions.</p>
+            <blockquote>
+              “Someone's job has to depend on answering the hardest questions.”
+            </blockquote>
+            <a
+              className="v-text-link"
+              href="https://us19.campaign-archive.com/?u=37a4f019ed5c8b493097f1afc&amp;id=308958e8a9"
+            >
+              Read a field note
+            </a>
+          </article>
         </Container>
       </section>
       <section className="v-section vh-close">

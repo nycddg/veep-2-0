@@ -710,6 +710,54 @@
   margin-top: var(--v-space-5);
   max-width: 62ch;
 }
+.vh-newsletter {
+  background: var(--v-primary-container);
+  color: var(--v-on-primary-container);
+  --v-text: var(--v-on-primary-container);
+  --v-text-secondary: var(--v-on-primary-container);
+  --v-focus: var(--v-on-primary-container);
+  --v-link: var(--v-on-primary-container);
+}
+.vh-newsletter-description {
+  margin-top: var(--v-space-5);
+  max-width: 48ch;
+}
+.vh-newsletter .v-action {
+  background: var(--v-primary);
+  color: var(--v-on-primary);
+}
+.vh-newsletter .v-action:hover {
+  background: color-mix(in srgb, var(--v-primary), var(--v-on-primary) 8%);
+}
 .vh-impact-chapter {
   --v-focus: var(--v-on-impact);
+}
+
+.vh-newsletter-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--v-layout-gap);
+  align-items: start;
+}
+.vh-field-note {
+  border-top: 1px solid currentColor;
+  padding-top: var(--v-space-5);
+}
+.vh-field-note h3 {
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: var(--v-tracking-title);
+  margin-top: var(--v-space-5);
+  margin-bottom: var(--v-space-4);
+}
+.vh-field-note blockquote {
+  font-size: clamp(1.5rem, 2vw, 1.875rem);
+  line-height: 1.35;
+  margin: var(--v-space-6) 0 var(--v-space-4);
+  max-width: 32ch;
+}
+@media (max-width: 839px) {
+  .vh-newsletter-layout {
+    grid-template-columns: 1fr;
+  }
 }
