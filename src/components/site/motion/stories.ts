@@ -20,11 +20,11 @@ export const stories: Record<
 > = {
   desk: {
     title: "Work stops returning to your desk",
-    problem: "Three pieces of recurring work collect in one overloaded center.",
+    problem: "Six blue squares and one coral square fill an expanding center.",
     resolution:
-      "One work square has left the center. Its scope and attached owner travel with it and settle below, while the remaining work stays at the center.",
+      "The coral square has been pulled out and advanced in its scope. Six blue squares remain in the center.",
     description:
-      "Three work pieces repeatedly return to one center. The center expands under the load. One piece leaves, gains a scope and attached owner, then moves down as a single owned unit and settles. Fresh work begins the next cycle.",
+      "A small circle expands as six blue squares and one coral square fill it. The same coral square is pulled out, gains a scope, then advances downward and settles. Fresh work begins the next cycle.",
     seconds: 9,
     loop: true,
   },

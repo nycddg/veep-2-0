@@ -1,16 +1,40 @@
+import type { CSSProperties } from "react";
 import "./home-motion.css";
 
-/** Returning work gathers in one center; an owned piece leaves as one coherent unit. */
+const incomingWork = [
+  { x: 184, y: 154, fromX: -108, fromY: 0 },
+  { x: 238, y: 154, fromX: 106, fromY: 0 },
+  { x: 166, y: 187, fromX: -100, fromY: 0 },
+  { x: 204, y: 125, fromX: 0, fromY: -77 },
+  { x: 252, y: 196, fromX: 92, fromY: 0 },
+  { x: 244, y: 220, fromX: 100, fromY: 0 },
+];
+
+/** Work accumulates and expands the center; the coral square is selected and advanced. */
 export function HomeWorkLoop() {
   return (
     <g className="hw-system">
-      {/* Three quiet axes are enough to explain where the work comes from and where it goes. */}
-      <path d="M76 157H172M248 195H344M210 58V492" className="hw-guide" />
+      <path d="M76 154H184M252 196H344M210 58V492" className="hw-guide" />
       <g transform="translate(210 176)">
-        <circle r={64} className="hw-center hw-animated" />
+        <circle r={48} className="hw-center hw-animated" />
       </g>
-      <rect x={163} y={148} width={18} height={18} className="hw-work hw-left hw-animated" />
-      <rect x={239} y={186} width={18} height={18} className="hw-work hw-right hw-animated" />
+      {incomingWork.map(({ x, y, fromX, fromY }, i) => (
+        <rect
+          key={i}
+          x={x - 10}
+          y={y - 10}
+          width={20}
+          height={20}
+          className="hw-work hw-filler hw-animated"
+          style={
+            {
+              "--hw-motion": `hw-fill-${i}`,
+              "--hw-from-x": `${fromX}px`,
+              "--hw-from-y": `${fromY}px`,
+            } as CSSProperties
+          }
+        />
+      ))}
       <g transform="translate(210 315)">
         <g className="hw-carrier hw-animated">
           <rect
@@ -21,14 +45,7 @@ export function HomeWorkLoop() {
             pathLength="1"
             className="hw-scope hw-animated"
           />
-          <circle cx={0} cy={-43} r={8} className="hw-owner hw-animated" />
-          <rect
-            x={-18}
-            y={-18}
-            width={36}
-            height={36}
-            className="hw-work hw-selected hw-animated"
-          />
+          <rect x={-16} y={-16} width={32} height={32} className="hw-selected hw-animated" />
         </g>
       </g>
     </g>

@@ -25,26 +25,27 @@ Use Veep blue (#789FFF dark / #4E7AD4 light), coral #F43F34 and theme-muted cons
 
 ### Home: work stops returning to your desk
 
-The 2026-10-09 screen-recording reference prompted a deliberate reduction: the homepage expresses one event at a time, rather than drawing every business role as a separate node. The separate support network, branching routes, pressure rings, reference boxes and delivery cap have been removed.
+The homepage expresses one event at a time. Following the 2026-10-09 simplification and coral-square refinement, it uses one collecting circle, six blue squares and one coral square. There is no separate owner dot or support network.
 
-- **Primary object:** one larger blue work square, among two smaller work pieces.
-- **Executive center:** a single open circle. All three pieces repeatedly return into it, and it expands under their load.
-- **Scope and ownership:** a frame closes around the selected work after it leaves the center. A coral node attaches directly to that frame.
-- **Direction:** quiet horizontal entry axes and a single vertical guide. The work, scope and owner subsequently travel down together as one unit. They do not return to the center.
-- **Problem frame:** all three pieces collect inside the expanded circle.
-- **Resolved frame:** the center has relaxed and retains the other two pieces. The owned unit has settled below it, visibly separate and still intact.
+- **Primary object:** the coral work square. It is coral when it enters, while the center fills, and throughout extraction and advancement; it never changes into a different object.
+- **Executive center:** a single open circle, initially radius 48 rather than the prior 64. It expands in steps with the incoming squares to radius 82.56, then relaxes to 76.8 after the coral square leaves.
+- **Other work:** six smaller blue squares arrive in staggered order and remain in the center.
+- **Scope:** an open blue frame closes around the extracted coral square and travels with it. No circular marker is attached to this frame.
+- **Direction:** quiet entry axes and a single vertical guide. The selected work advances downward and settles without returning to the center.
+- **Problem frame:** all seven squares sit inside the expanded center.
+- **Resolved frame:** six blue squares remain in the center; the coral square has advanced below in its own scope.
 
-The portrait composition puts the collecting circle beside the headline and the resolved owned unit near the CTA level. It uses a 420×540 drawing space capped at 430px wide on desktop and 360px wide on mobile. The same geometry and stable SVG key preserve playback through responsive changes.
+The coral square is a homepage-specific highlight for the selected work. Other scenes retain their existing coral owner nodes. The portrait composition uses a 420×540 drawing space capped at 430px wide on desktop and 360px wide on mobile. The same geometry preserves playback through responsive changes.
 
 Home alone runs a continuous **9-second loop**:
 
-1. **0–2.8s:** work returns twice; the ring expands in response to the load.
-2. **2.8–4.6s:** one piece leaves, its boundary closes, and an owner attaches.
-3. **4.8–6.4s:** the complete owned unit moves down and settles with a small overshoot.
+1. **0–3.4s:** seven squares accumulate; the circle enlarges with each arrival.
+2. **3.4–4.8s:** the coral square is pulled out and receives a defined frame.
+3. **5.0–6.4s:** the framed coral square advances and settles.
 4. **6.4–7.6s:** the resolved arrangement holds.
-5. **7.6–9.0s:** that unit clears forward, and fresh upstream work begins the next cycle.
+5. **7.6–9.0s:** the selected work clears forward; the remaining squares clear and the smaller circle is ready for fresh work.
 
-The owner remains attached to its scope throughout delivery. There are no decorative rotations, orbiting nodes, animated network branches, or frame-by-frame React updates. The remaining forms and restrained settling motion borrow the reference's simplicity; the geometry retains Veep's blue/coral palette. The static/reduced-motion state shows the complete resolution. Supporting capability is explained in page content rather than encoded as another network in this hero.
+The static/reduced-motion state shows the complete resolution. Supporting capability remains explained in page content rather than as an extra hero network.
 
 ### Companies: a mandate gains an owner
 
@@ -160,9 +161,9 @@ Screenshot and viewport records are saved in the task's `veep-abstract-motion` a
 
 ### Homepage loop follow-up — 2026-10-09
 
-The horizontal and initial vertical network explorations were superseded by the simpler loop described above after reviewing the supplied 4.38-second Motion screen recording. Only the final `minimal` captures describe the current homepage.
+The horizontal and initial vertical network explorations were superseded by the simpler loop described above after reviewing the supplied 4.38-second Motion screen recording. The `minimal` captures record that earlier simplification; `coral-work` captures supersede them with the subsequent accumulation/coral-square refinement.
 
-Current homepage screenshots and check records are in `veep-abstract-motion/home-loop-2026-10-09/minimal`.
+Current homepage screenshots and check records are in `veep-abstract-motion/home-loop-2026-10-09/coral-work`.
 
 Final simplified-loop validation:
 
@@ -172,3 +173,5 @@ Final simplified-loop validation:
 - Both static problem/resolved frames were inspected. They have no active keyframes or playback controls. This uses the same still branch as reduced motion; OS settings were not changed.
 - No page copy, booking destinations, prices, forms, ticker behavior or other page compositions changed in this homepage follow-up.
 - Production build, targeted ESLint and diff formatting checks passed. Full TypeScript checking still reports the same 11 existing errors outside the motion files; no new motion errors were reported.
+
+Coral-square follow-up: the collecting circle starts 25% smaller, six blue squares and one coral square accumulate, and the same coral square is extracted and advanced. The separate coral owner circle was removed. Home was checked again at all five widths in both themes with no overflow or clipped geometry; the full and extracted frames are recorded in `coral-work`.

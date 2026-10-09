@@ -1,4 +1,4 @@
-/* One event at a time: return, gather, own, leave. Home alone loops. */
+/* Incoming work expands the center; the same coral square is pulled out and advanced. */
 .hw-guide {
   fill: none;
   stroke: var(--vm-structure);
@@ -11,18 +11,14 @@
   stroke-width: 2.5;
   transform-box: fill-box;
   transform-origin: center;
+  transform: scale(1.6);
   --hw-motion: hw-pressure;
 }
 .hw-work {
   fill: var(--vm-accent);
 }
-.hw-left {
-  --hw-motion: hw-left-return;
-}
-.hw-right {
-  --hw-motion: hw-right-return;
-}
 .hw-selected {
+  fill: var(--vm-coral);
   --hw-motion: hw-selected-return;
 }
 .hw-carrier {
@@ -37,10 +33,6 @@
   stroke-dashoffset: 0;
   --hw-motion: hw-bound;
 }
-.hw-owner {
-  fill: var(--vm-coral);
-  --hw-motion: hw-attach;
-}
 .vm-scene--desk[data-animate="true"] .hw-animated {
   animation: var(--hw-motion) var(--vm-duration) cubic-bezier(0.32, 0.72, 0.22, 1) infinite both;
   animation-play-state: var(--vm-play);
@@ -49,7 +41,7 @@
   animation-iteration-count: infinite;
 }
 .vm-scene--desk[data-frame="problem"] .hw-center {
-  transform: scale(1.18);
+  transform: scale(1.72);
 }
 .vm-scene--desk[data-frame="problem"] .hw-carrier {
   transform: none;
@@ -57,26 +49,19 @@
 .vm-scene--desk[data-frame="problem"] .hw-selected {
   transform: translateY(-139px);
 }
-.vm-scene--desk[data-frame="problem"] .hw-scope,
-.vm-scene--desk[data-frame="problem"] .hw-owner {
+.vm-scene--desk[data-frame="problem"] .hw-scope {
   opacity: 0;
 }
 
-@keyframes hw-left-return {
+@keyframes hw-fill-0 {
   0% {
-    transform: translateX(-96px);
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
-  2% {
+  1% {
     opacity: 1;
   }
-  10% {
-    transform: none;
-  }
-  17% {
-    transform: translateX(-68px);
-  }
-  27%,
+  9%,
   86% {
     transform: none;
     opacity: 1;
@@ -86,26 +71,20 @@
     opacity: 0;
   }
   100% {
-    transform: translateX(-96px);
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
 }
-@keyframes hw-right-return {
+@keyframes hw-fill-1 {
   0%,
-  3% {
-    transform: translateX(96px);
+  4% {
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
   5% {
     opacity: 1;
   }
-  14% {
-    transform: none;
-  }
-  21% {
-    transform: translateX(68px);
-  }
-  31%,
+  14%,
   86% {
     transform: none;
     opacity: 1;
@@ -115,29 +94,117 @@
     opacity: 0;
   }
   100% {
-    transform: translateX(96px);
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
+    opacity: 0;
+  }
+}
+@keyframes hw-fill-2 {
+  0%,
+  11% {
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  22%,
+  86% {
+    transform: none;
+    opacity: 1;
+  }
+  94% {
+    transform: none;
+    opacity: 0;
+  }
+  100% {
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
+    opacity: 0;
+  }
+}
+@keyframes hw-fill-3 {
+  0%,
+  16% {
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
+    opacity: 0;
+  }
+  17% {
+    opacity: 1;
+  }
+  27%,
+  86% {
+    transform: none;
+    opacity: 1;
+  }
+  94% {
+    transform: none;
+    opacity: 0;
+  }
+  100% {
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
+    opacity: 0;
+  }
+}
+@keyframes hw-fill-4 {
+  0%,
+  21% {
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
+    opacity: 0;
+  }
+  22% {
+    opacity: 1;
+  }
+  32%,
+  86% {
+    transform: none;
+    opacity: 1;
+  }
+  94% {
+    transform: none;
+    opacity: 0;
+  }
+  100% {
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
+    opacity: 0;
+  }
+}
+@keyframes hw-fill-5 {
+  0%,
+  25% {
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
+    opacity: 0;
+  }
+  26% {
+    opacity: 1;
+  }
+  36%,
+  86% {
+    transform: none;
+    opacity: 1;
+  }
+  94% {
+    transform: none;
+    opacity: 0;
+  }
+  100% {
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
 }
 @keyframes hw-selected-return {
-  0% {
+  0%,
+  9% {
     transform: translateY(-257px);
     opacity: 0;
   }
-  2% {
+  10% {
     opacity: 1;
   }
-  11% {
+  18%,
+  38% {
     transform: translateY(-139px);
+    opacity: 1;
   }
-  18% {
-    transform: translateY(-229px);
-  }
-  27%,
-  31% {
-    transform: translateY(-139px);
-  }
-  41%,
+  48%,
   100% {
     transform: none;
     opacity: 1;
@@ -145,51 +212,53 @@
 }
 @keyframes hw-pressure {
   0%,
-  6% {
+  3% {
     transform: scale(1);
   }
-  13% {
-    transform: scale(1.09);
+  9% {
+    transform: scale(1.13);
   }
-  20% {
-    transform: scale(1.03);
+  14% {
+    transform: scale(1.25);
   }
-  31% {
-    transform: scale(1.2);
+  18% {
+    transform: scale(1.35);
   }
-  44% {
-    transform: scale(0.98);
+  22% {
+    transform: scale(1.45);
+  }
+  27% {
+    transform: scale(1.55);
+  }
+  32% {
+    transform: scale(1.64);
+  }
+  36%,
+  40% {
+    transform: scale(1.72);
   }
   51%,
+  86% {
+    transform: scale(1.6);
+  }
+  97%,
   100% {
     transform: scale(1);
   }
 }
 @keyframes hw-bound {
   0%,
-  35% {
+  43% {
     stroke-dashoffset: 1;
   }
-  46%,
+  53%,
   100% {
     stroke-dashoffset: 0;
   }
 }
-@keyframes hw-attach {
-  0%,
-  43% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  51%,
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
 @keyframes hw-carry {
   0%,
-  53% {
+  55% {
     transform: none;
     opacity: 1;
   }

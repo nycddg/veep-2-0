@@ -24,8 +24,8 @@ export function Study() {
         The relationship comes first.
       </h1>
       <p style={{ maxWidth: 850, lineHeight: 1.6 }}>
-        Filled square: work. Boundary: scope. Attached coral node: owner. Hollow square: capability.
-        Capped path: delivery. These roles stay consistent across every composition.
+        Squares carry work. Frames define scope. Coral nodes mark owners; on Home, the coral square
+        marks the work selected to advance. Hollow squares represent capability.
       </p>
       <button
         type="button"
