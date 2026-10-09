@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Pause, Play } from "lucide-react";
 import { Container } from "./Container";
+import { useSectionMotion } from "../system/useSectionMotion";
 
 // Full client list from the original polish site's ClientStrip.
 const clients = [
@@ -31,6 +32,7 @@ const selectedClients = [
 
 export function ClientTicker({ kind = "full" }: { kind?: "full" | "clients" }) {
   const [paused, setPaused] = useState(false);
+  const sequence = useSectionMotion();
   const names = kind === "full" ? clients : selectedClients;
   const content = (
     <>
@@ -65,9 +67,17 @@ export function ClientTicker({ kind = "full" }: { kind?: "full" | "clients" }) {
   );
   return (
     <div
+      ref={sequence.ref}
+      data-motion={sequence.state}
       className={`ve-ticker ve-ticker-${kind}`}
       role={kind === "full" ? "group" : undefined}
-      aria-label={kind === "full" ? "Veep clients. Pauses while hovered or focused." : undefined}
+      aria-label={
+        kind === "full"
+          ? sequence.state === "still"
+            ? "Veep clients"
+            : "Veep clients. Pauses while hovered or focused."
+          : undefined
+      }
       tabIndex={kind === "full" ? 0 : undefined}
     >
       {kind === "full" ? (

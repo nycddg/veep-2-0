@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
+import { MotionPreference } from "./MotionPreference";
 
 type FooterLink = {
   label: string;
@@ -84,6 +85,7 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
+        <MotionPreference />
         <p className="v-footer-signature">Critical work, owned.</p>
         <div className="v-footer-end">
           <p className="v-caption">

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useMotionPreference } from "@/lib/motionPreference";
 
 /** One entry sequence. Content is always visible; only its supporting geometry moves. */
 export function useSectionMotion<T extends HTMLElement = HTMLDivElement>(enabled = true) {
@@ -6,16 +7,12 @@ export function useSectionMotion<T extends HTMLElement = HTMLDivElement>(enabled
   const [started, setStarted] = useState(false);
   const [inView, setInView] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [reduced, setReduced] = useState(true);
+  const { reduced } = useMotionPreference();
 
   useEffect(() => {
     if (!enabled) return;
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const syncMotion = () => setReduced(preference.matches);
     const syncVisibility = () => setVisible(!document.hidden);
-    syncMotion();
     syncVisibility();
-    preference.addEventListener("change", syncMotion);
     document.addEventListener("visibilitychange", syncVisibility);
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -28,7 +25,6 @@ export function useSectionMotion<T extends HTMLElement = HTMLDivElement>(enabled
     if (ref.current) observer.observe(ref.current);
     return () => {
       observer.disconnect();
-      preference.removeEventListener("change", syncMotion);
       document.removeEventListener("visibilitychange", syncVisibility);
     };
   }, [enabled]);

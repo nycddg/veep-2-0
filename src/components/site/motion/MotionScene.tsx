@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState, type CSSProperties } from "react";
 import { Pause, Play, RotateCcw } from "lucide-react";
 import { Composition } from "./compositions";
 import { stories, type MotionConcept } from "./stories";
+import { useMotionPreference } from "@/lib/motionPreference";
 import "./motion.css";
 
 /** Explicit loop support; every scene retains a complete static SSR/reduced-motion state. */
@@ -21,7 +22,7 @@ export function MotionScene({
   const ref = useRef<HTMLElement>(null);
   const id = useId();
   const [mobile, setMobile] = useState(false);
-  const [reduced, setReduced] = useState(true);
+  const { reduced } = useMotionPreference();
   const [inView, setInView] = useState(false);
   const [started, setStarted] = useState(false);
   const [visible, setVisible] = useState(true);
@@ -34,17 +35,14 @@ export function MotionScene({
   const accent = ["scope", "expertise", "first-step"].includes(concept);
 
   useEffect(() => {
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const narrow = window.matchMedia("(max-width: 600px)");
     const sync = () => {
-      setReduced(motion.matches);
       setMobile(narrow.matches);
       setFinished(false);
     };
     const visibility = () => setVisible(!document.hidden);
     sync();
     visibility();
-    motion.addEventListener("change", sync);
     narrow.addEventListener("change", sync);
     document.addEventListener("visibilitychange", visibility);
     const observer = new IntersectionObserver(
@@ -57,7 +55,6 @@ export function MotionScene({
     );
     if (ref.current) observer.observe(ref.current);
     return () => {
-      motion.removeEventListener("change", sync);
       narrow.removeEventListener("change", sync);
       document.removeEventListener("visibilitychange", visibility);
       observer.disconnect();

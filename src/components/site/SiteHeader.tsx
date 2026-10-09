@@ -20,6 +20,7 @@ export function SiteHeader() {
   const menuId = useId();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const homeRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     setOpen(false);
@@ -29,6 +30,18 @@ export function SiteHeader() {
     if (!open) return;
     const menu = menuRef.current;
     const button = buttonRef.current;
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const closeForDesktop = () => {
+      if (!desktop.matches) return;
+      const restoreFocus =
+        menu?.contains(document.activeElement) || document.activeElement === button;
+      setOpen(false);
+      if (restoreFocus) homeRef.current?.focus();
+    };
+    if (desktop.matches) {
+      closeForDesktop();
+      return;
+    }
     const focusable = () =>
       menu ? Array.from(menu.querySelectorAll<HTMLElement>("a[href], button:not([disabled])")) : [];
     const showFocus = (element?: HTMLElement | null) => {
@@ -58,13 +71,17 @@ export function SiteHeader() {
     };
 
     document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    desktop.addEventListener("change", closeForDesktop);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      desktop.removeEventListener("change", closeForDesktop);
+    };
   }, [open]);
 
   return (
     <header className="v-site-chrome v-header">
       <div className="v-container v-header-inner">
-        <Link to="/" className="flex shrink-0 items-center" aria-label="Veep home">
+        <Link ref={homeRef} to="/" className="flex shrink-0 items-center" aria-label="Veep home">
           <img src={wordmarkWhite.url} alt="" className="h-5 w-auto light:hidden" />
           <img src={wordmarkNavy.url} alt="" className="hidden h-5 w-auto light:block" />
         </Link>

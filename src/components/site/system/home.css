@@ -665,27 +665,27 @@
   .vh-return-work {
     display: none;
   }
-  .vh-home .ve-ticker-inner {
-    grid-template-columns: 1fr;
-    gap: var(--v-space-3);
-  }
-  .vh-home .ve-ticker-window {
-    mask-image: none;
-    overflow: auto;
-  }
-  .vh-home .ve-ticker-track {
-    animation: none;
-    width: auto;
-  }
-  .vh-home .ve-ticker-track ul {
-    flex-wrap: wrap;
-    gap: var(--v-space-3) var(--v-space-5);
-  }
-  .vh-home .ve-ticker-track li {
-    font-size: var(--v-type-body);
-    padding: 0;
-  }
-  .vh-home .ve-ticker-track ul[aria-hidden] {
-    display: none;
-  }
+}
+/* The shared preference also supplies a complete, readable SSR/no-JS client list. */
+.vh-home .ve-ticker[data-motion="still"] .ve-ticker-window {
+  mask-image: none;
+  overflow: auto;
+}
+.vh-home .ve-ticker[data-motion="still"] .ve-ticker-track {
+  animation: none;
+  width: auto;
+}
+.vh-home .ve-ticker[data-motion="still"] .ve-ticker-track ul {
+  flex: 1 1 100%;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: var(--v-space-3) var(--v-space-5);
+}
+.vh-home .ve-ticker[data-motion="still"] .ve-ticker-track li {
+  font-size: var(--v-type-body);
+  padding: 0;
+  white-space: normal;
+}
+.vh-home .ve-ticker[data-motion="still"] .ve-ticker-track ul[aria-hidden] {
+  display: none;
 }

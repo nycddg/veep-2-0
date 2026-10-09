@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Pause, Play } from "lucide-react";
 import { selectedSpotlights, type SpotlightAudience } from "./spotlightSelections";
+import { useMotionPreference } from "@/lib/motionPreference";
 
 const DWELL_MS = 11_000;
 
@@ -15,19 +16,15 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
   const [inView, setInView] = useState(false);
   const [documentVisible, setDocumentVisible] = useState(true);
   // Start static on both server and client, then honor the reader's preference.
-  const [reducedMotion, setReducedMotion] = useState(true);
+  const { reduced: reducedMotion } = useMotionPreference();
   const rootRef = useRef<HTMLDivElement>(null);
   const id = useId();
   const count = people.length;
   const playing = !paused && !hovered && !focused && inView && documentVisible && !reducedMotion;
 
   useEffect(() => {
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const syncPreference = () => setReducedMotion(preference.matches);
     const syncVisibility = () => setDocumentVisible(!document.hidden);
-    syncPreference();
     syncVisibility();
-    preference.addEventListener("change", syncPreference);
     document.addEventListener("visibilitychange", syncVisibility);
     const observer = new IntersectionObserver(
       ([entry]) => setInView(entry.isIntersecting && entry.intersectionRatio >= 0.35),
@@ -35,7 +32,6 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
     );
     if (rootRef.current) observer.observe(rootRef.current);
     return () => {
-      preference.removeEventListener("change", syncPreference);
       document.removeEventListener("visibilitychange", syncVisibility);
       observer.disconnect();
     };

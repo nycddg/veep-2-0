@@ -1,0 +1,38 @@
+.v-motion-preference {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--v-space-3);
+  margin-top: var(--v-space-6);
+  color: var(--v-text-secondary);
+  font-size: var(--v-type-caption);
+}
+.v-motion-preference select {
+  min-height: var(--v-target);
+  max-width: 100%;
+  padding: var(--v-space-2) var(--v-space-3);
+  border: 1px solid var(--v-border);
+  border-radius: var(--v-shape-control);
+  background: var(--v-surface-panel);
+  color: var(--v-text);
+  font: inherit;
+}
+.v-motion-preference select:focus-visible {
+  outline: var(--v-focus-width) solid var(--v-focus);
+  outline-offset: var(--v-focus-offset);
+}
+.ve-ticker:not([data-motion="running"]) .ve-ticker-track {
+  animation-play-state: paused;
+}
+html[data-veep-motion="reduced"],
+html[data-veep-motion="reduced"] *,
+html[data-veep-motion="reduced"] *::before,
+html[data-veep-motion="reduced"] *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+html[data-veep-motion="reduced"] .motion-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
