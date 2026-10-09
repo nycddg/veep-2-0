@@ -141,7 +141,7 @@ function Accent({ concept }: { concept: "scope" | "expertise" | "first-step" }) 
 export function Composition({ concept, compact }: { concept: MotionConcept; compact: boolean }) {
   switch (concept) {
     case "desk":
-      return <HomeWorkLoop />;
+      return <HomeWorkLoop compact={compact} />;
     case "mandate":
       return <Mandate compact={compact} />;
     case "assembly":

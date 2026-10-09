@@ -46,7 +46,7 @@ The executable source of truth is `src/components/site/system/tokens.css`. `syst
 | Signal            | Coral `#EC6B66`     | Coral `#EC6B66`                      |
 | Primary action    | Cream with ink text | Ink with cream text                  |
 
-Blue establishes active paths, boundaries, links, and focus. Coral identifies the selected work object in the homepage story and provides sparse punctuation. It is not a body-text color. The coral square gets a fine ink edge in light mode because its fill alone has insufficient contrast against cream. Construction guides may be quiet; active objects and UI controls need stronger contrast. Status colors are confined to validation or actual state, never decorative palette expansion.
+Blue establishes active paths, boundaries, links, and focus. Coral identifies the selected work object in the homepage story and provides sparse punctuation. It is not a body-text color. The coral circle gets a fine ink edge in light mode because its fill alone has insufficient contrast against cream. Construction guides may be quiet; active objects and UI controls need stronger contrast. Status colors are confined to validation or actual state, never decorative palette expansion.
 
 The `.v-paper` section deliberately uses light semantic roles inside dark mode. Nested `data-ve-theme` attributes provide the same mapping in the specimen. Light link color is slightly darker than the brand accent to support normal text on the light surfaces. Buttons use a neutral fill, preserving the light brand sheet's distinction between colored graphics and UI chrome.
 
@@ -54,7 +54,7 @@ The `.v-paper` section deliberately uses light semantic roles inside dark mode. 
 
 Plex Sans: body 400, headings and controls 500. Plex Mono: labels, numbers, and prices. No italic marketing copy and no 600/700 weights. Display scales fluidly up to 88px, section headings up to 54px, title up to 32px, lead up to 26px. Body is 16px or 18px, captions 14px, short Mono labels 11px. Long explanations must not be reduced to label size.
 
-Use the 4/8/12/16/24/32/48/64/96/128 spacing family. The maximum container is 1360px including fluid 20–48px gutters. Header, hero CTA, ticker label, body sections, and footer share that alignment. Body measure is capped at 52 characters; the hero introduction at 42. Section spacing is 64–104px, scaled to the available width.
+Use the 4/8/12/16/24/32/48/64/96/128 spacing family. The maximum container is 1360px including fluid 20–48px gutters. Header, ticker label, body sections, and footer share that alignment. The homepage hero forms its own centered composition within the container. Headline, subhead, and body copy form one centered group, followed by the horizontal motion and a centered booking action. Body measure is normally capped at 52 characters; the hero introduction uses a wider 62-character measure on desktop and 34 on mobile. Section spacing is 64–104px, scaled to the available width.
 
 ### Shape and surface
 
@@ -64,9 +64,9 @@ The page remains open. Tonal sections organize chapters. A 15px panel contains g
 
 The sequence remains **business idea → information diagram → abstract composition → motion**. Every scene must have legible problem and resolved frames.
 
-Homepage semantics: blue squares are unresolved work, the circle is the executive center, coral identifies one selected mandate, and its square boundary defines scope. That same coral square leaves the center and advances. Other work remains; Veep is not represented as eliminating every executive responsibility. Do not add an owner circle or enlarge the coral square.
+Homepage semantics: small blue circles are unresolved work, the enclosing circle is the executive center, coral identifies one selected mandate, and its square boundary defines scope. That same coral circle leaves the center and advances to the right. Other work remains; Veep is not represented as eliminating every executive responsibility. Do not add another owner marker or enlarge the coral work object.
 
-The approved 5.4-second loop and vertical composition remain. No homepage pause button is added. Motion pauses offscreen and when the document is hidden. Reduced motion uses the complete resolved frame. The ticker retains its full 16-client list, fades into its left label, pauses on hover/focus, and becomes a wrapped static list for reduced motion.
+The approved 5.4-second loop remains, now arranged horizontally beneath the headline and subhead. Mobile geometry shortens travel while keeping the shapes substantial. No homepage pause button is added. Motion pauses offscreen and when the document is hidden. Reduced motion uses the complete resolved frame. The ticker retains its full 16-client list, fades into its left label, pauses on hover/focus, and becomes a wrapped static list for reduced motion.
 
 Functional interactions use 160–220ms transitions. Color and opacity do not overshoot. Small spatial movement uses a separate easing curve. No new animation dependency, page opacity gate, or decorative orbit is introduced.
 
@@ -85,9 +85,9 @@ Functional interactions use 160–220ms transitions. Color and opacity do not ov
 
 ## Homepage editorial patterns
 
-The hero pairs the large thesis and direct booking action with the vertical work loop. The ticker then supplies client evidence once. The ownership chapter explains what changes. Open audience columns lead to Companies and Funds. A paper proof spread connects the $6M outcome with the work behind it. Portraits then supply human credibility with career attribution. The close returns to the reader's unresolved priority and a 30-minute introduction.
+The hero is one centered editorial composition: a two-line thesis on desktop, a close subhead and body paragraph, a wide horizontal work loop, then the booking action. There is no eyebrow. Mobile uses a balanced three-line headline and shorter horizontal motion. At Dave’s request, the “Founders, CEOs…” paragraph now belongs to the hero; the “Veep gives companies and funds…” paragraph sits beside “It can’t all land back on your desk.” The proposition and paragraph wording are unchanged. The ticker then supplies client evidence once. The ownership chapter explains what changes. Open audience columns lead to Companies and Funds. A paper proof spread connects the $6M outcome with the work behind it. Portraits then supply human credibility with career attribution. The close returns to the reader's unresolved priority and a 30-minute introduction.
 
-At 768px, ownership becomes a stacked problem/solution with a two-column process inside the solution, avoiding a large empty column. At 600px and below, the process becomes one reading column. Portraits use four columns on desktop, two on smaller widths, and one below 350px. The mobile hero keeps the CTA ahead of the diagram. Navigation switches at 1024px.
+At 768px, ownership becomes a stacked problem/solution with a two-column process inside the solution, avoiding a large empty column. At 600px and below, the process becomes one reading column. Portraits use four columns on desktop, two on smaller widths, and one below 350px. The mobile hero keeps the full text group above the diagram and the CTA immediately below it, with no reserved animation-control row. Navigation switches at 1024px.
 
 The diagram, proof spread, and editorial page composition remain bespoke. Do not create a generic card abstraction for every section.
 

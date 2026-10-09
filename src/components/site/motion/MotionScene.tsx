@@ -79,10 +79,12 @@ export function MotionScene({
       style={{ "--vm-duration": `${story.seconds}s` } as CSSProperties}
     >
       <svg
-        key={`${concept === "desk" ? "portrait" : mobile}-${replay}`}
+        key={`${concept === "desk" ? "horizontal" : mobile}-${replay}`}
         viewBox={
           concept === "desk"
-            ? "0 0 420 540"
+            ? mobile
+              ? "0 0 420 240"
+              : "0 0 740 240"
             : accent
               ? "0 0 380 250"
               : mobile

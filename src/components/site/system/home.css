@@ -1,37 +1,39 @@
 .vh-hero {
   padding-top: var(--v-space-7);
 }
-.vh-opening-label {
-  margin-bottom: var(--v-space-5);
-  font-size: var(--v-type-caption);
-  color: var(--v-text-secondary);
-}
-.vh-hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  align-items: center;
-  gap: var(--v-layout-gap);
+/* One centered statement: complete proposition, moving argument, then action. */
+.vh-hero-composition {
+  max-width: 1040px;
+  margin-inline: auto;
   padding-bottom: var(--v-space-7);
+}
+.vh-hero-copy {
+  text-align: center;
 }
 .vh-hero-copy h1 > span {
   display: block;
 }
 .vh-hero-copy .v-lead {
-  margin-top: var(--v-space-6);
+  margin-top: var(--v-space-5);
+}
+.vh-hero-copy .v-lead > span {
+  display: inline-block;
 }
 .vh-hero-copy .v-body-large {
-  max-width: var(--v-measure-intro);
-  margin-block: var(--v-space-5) var(--v-space-6);
+  max-width: 62ch;
+  margin: var(--v-space-4) auto 0;
+  text-wrap: pretty;
 }
 .vh-hero .vm-scene {
   width: 100%;
-  max-width: 430px;
-  justify-self: center;
+  max-width: 880px;
+  margin: var(--v-space-3) auto 0;
 }
-.vh-hero .vm-art {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 420 / 540;
+.vh-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--v-space-3);
 }
 
 /* The track disappears at the label's edge, inside the shared page margin. */
@@ -301,16 +303,6 @@
   }
 }
 @media (max-width: 800px) {
-  .vh-hero-grid {
-    grid-template-columns: 1.15fr 1fr;
-    gap: var(--v-space-5);
-  }
-  .vh-hero-copy .v-display {
-    font-size: clamp(2.5rem, 5.7vw, 3.6rem);
-  }
-  .vh-hero .vm-scene {
-    align-self: center;
-  }
   .vh-ownership {
     grid-template-columns: 1fr;
   }
@@ -347,23 +339,28 @@
   .vh-hero {
     padding-top: var(--v-space-6);
   }
-  .vh-hero-grid {
-    grid-template-columns: 1fr;
-    gap: var(--v-space-5);
+  .vh-hero-composition {
     padding-bottom: var(--v-space-6);
   }
   .vh-hero-copy .v-display {
-    font-size: clamp(2.5rem, 10.9vw, 4rem);
+    font-size: clamp(2.25rem, 8.6vw, 3.25rem);
+    max-width: 14ch;
+    margin-inline: auto;
+    text-wrap: balance;
+  }
+  .vh-hero-copy h1 > span {
+    display: inline;
   }
   .vh-hero-copy .v-lead {
-    margin-top: var(--v-space-5);
-  }
-  .vh-hero-copy .v-body-large {
-    margin-block: var(--v-space-4) var(--v-space-5);
+    margin-top: var(--v-space-4);
+    font-size: 18px;
   }
   .vh-hero .vm-scene {
-    max-width: 270px;
-    justify-self: center;
+    max-width: 440px;
+    margin-top: var(--v-space-3);
+  }
+  .vh-hero-copy .v-body-large {
+    max-width: 34ch;
   }
   .vh-home .ve-ticker-inner {
     grid-template-columns: 65px minmax(0, 1fr);

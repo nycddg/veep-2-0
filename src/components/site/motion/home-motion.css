@@ -1,4 +1,4 @@
-/* Incoming work expands the center; the same coral square is pulled out and advanced. */
+/* Incoming work expands the center; the same coral circle is pulled out and advanced. */
 .hw-guide {
   fill: none;
   stroke: var(--vm-structure);
@@ -27,7 +27,7 @@
   --hw-motion: hw-selected-return;
 }
 .hw-carrier {
-  transform: translateY(120px);
+  transform: translateX(var(--hw-travel));
   --hw-motion: hw-carry;
 }
 .hw-scope {
@@ -53,7 +53,7 @@
   transform: none;
 }
 .vm-scene--desk[data-frame="problem"] .hw-selected {
-  transform: translateY(-139px);
+  transform: translateX(var(--hw-center-x));
 }
 .vm-scene--desk[data-frame="problem"] .hw-scope {
   opacity: 0;
@@ -61,14 +61,14 @@
 
 @keyframes hw-fill-0 {
   0% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
   1% {
     opacity: 1;
   }
   8% {
-    transform: translate(var(--hw-land-x), var(--hw-land-y)) rotate(calc(var(--hw-tilt) * -0.5));
+    transform: translate(var(--hw-land-x), var(--hw-land-y));
     opacity: 1;
   }
   12%,
@@ -81,21 +81,21 @@
     opacity: 0;
   }
   100% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
 }
 @keyframes hw-fill-1 {
   0%,
   4% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
   5% {
     opacity: 1;
   }
   14% {
-    transform: translate(var(--hw-land-x), var(--hw-land-y)) rotate(calc(var(--hw-tilt) * -0.5));
+    transform: translate(var(--hw-land-x), var(--hw-land-y));
     opacity: 1;
   }
   18%,
@@ -108,21 +108,21 @@
     opacity: 0;
   }
   100% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
 }
 @keyframes hw-fill-2 {
   0%,
   12% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
   13% {
     opacity: 1;
   }
   22% {
-    transform: translate(var(--hw-land-x), var(--hw-land-y)) rotate(calc(var(--hw-tilt) * -0.5));
+    transform: translate(var(--hw-land-x), var(--hw-land-y));
     opacity: 1;
   }
   26%,
@@ -135,21 +135,21 @@
     opacity: 0;
   }
   100% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
 }
 @keyframes hw-fill-3 {
   0%,
   17% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
   18% {
     opacity: 1;
   }
   26% {
-    transform: translate(var(--hw-land-x), var(--hw-land-y)) rotate(calc(var(--hw-tilt) * -0.5));
+    transform: translate(var(--hw-land-x), var(--hw-land-y));
     opacity: 1;
   }
   30%,
@@ -162,21 +162,21 @@
     opacity: 0;
   }
   100% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
 }
 @keyframes hw-fill-4 {
   0%,
   20% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
   21% {
     opacity: 1;
   }
   29% {
-    transform: translate(var(--hw-land-x), var(--hw-land-y)) rotate(calc(var(--hw-tilt) * -0.5));
+    transform: translate(var(--hw-land-x), var(--hw-land-y));
     opacity: 1;
   }
   33%,
@@ -189,21 +189,21 @@
     opacity: 0;
   }
   100% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
 }
 @keyframes hw-fill-5 {
   0%,
   25% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
   26% {
     opacity: 1;
   }
   34% {
-    transform: translate(var(--hw-land-x), var(--hw-land-y)) rotate(calc(var(--hw-tilt) * -0.5));
+    transform: translate(var(--hw-land-x), var(--hw-land-y));
     opacity: 1;
   }
   38%,
@@ -216,33 +216,33 @@
     opacity: 0;
   }
   100% {
-    transform: translate(var(--hw-from-x), var(--hw-from-y)) rotate(var(--hw-tilt));
+    transform: translate(var(--hw-from-x), var(--hw-from-y));
     opacity: 0;
   }
 }
-/* The selected square keeps its size and identity from arrival to delivery. */
+/* The selected circle keeps its size and identity from arrival to delivery. */
 @keyframes hw-selected-return {
   0%,
   8% {
-    transform: translateY(-257px) rotate(-6deg);
+    transform: translateX(var(--hw-start-x));
     opacity: 0;
   }
   9% {
     opacity: 1;
   }
   17% {
-    transform: translateY(-134px) rotate(3deg);
+    transform: translateX(var(--hw-arrive-x));
     opacity: 1;
   }
   21%,
   34% {
-    transform: translateY(-139px);
+    transform: translateX(var(--hw-center-x));
   }
   37% {
-    transform: translateY(-143px) rotate(-5deg);
+    transform: translateX(var(--hw-anticipate-x));
   }
   46% {
-    transform: translateY(5px) rotate(4deg);
+    transform: translateX(5px);
   }
   50%,
   100% {
@@ -320,16 +320,16 @@
     opacity: 1;
   }
   65% {
-    transform: translateY(128px);
+    transform: translateX(var(--hw-overshoot));
   }
   72%,
   78% {
-    transform: translateY(120px);
+    transform: translateX(var(--hw-travel));
     opacity: 1;
   }
   93%,
   100% {
-    transform: translateY(158px);
+    transform: translateX(var(--hw-exit));
     opacity: 0;
   }
 }
@@ -338,17 +338,14 @@
     animation: none !important;
   }
 }
-/* The upright field balances the headline without spreading into a network. */
+/* Horizontal travel shares the headline's axis; compact geometry shortens its path. */
 .vm-scene.vm-scene--desk .vm-art {
-  aspect-ratio: 420 / 540;
-}
-.rebuild .ve-home-hero .ve-motion-home-stage .vm-scene--desk {
-  max-width: 430px;
-  justify-self: center;
-  align-self: center;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 740 / 240;
 }
 @media (max-width: 600px) {
-  .rebuild .ve-home-hero .ve-motion-home-stage .vm-scene--desk {
-    max-width: 360px;
+  .vm-scene.vm-scene--desk .vm-art {
+    aspect-ratio: 420 / 240;
   }
 }

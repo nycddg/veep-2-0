@@ -2,43 +2,60 @@ import type { CSSProperties } from "react";
 import "./home-motion.css";
 
 const incomingWork = [
-  { x: 184, y: 154, fromX: -108, fromY: 0 },
-  { x: 238, y: 154, fromX: 106, fromY: 0 },
-  { x: 166, y: 187, fromX: -100, fromY: 0 },
-  { x: 204, y: 125, fromX: 0, fromY: -77 },
-  { x: 252, y: 196, fromX: 92, fromY: 0 },
-  { x: 244, y: 220, fromX: 100, fromY: 0 },
+  { x: -26, y: -24, fromX: -108, fromY: 0 },
+  { x: 28, y: -24, fromX: 0, fromY: -80 },
+  { x: -44, y: 14, fromX: -100, fromY: 0 },
+  { x: -6, y: -51, fromX: 0, fromY: -55 },
+  { x: 42, y: 20, fromX: 0, fromY: 84 },
+  { x: -2, y: 45, fromX: 0, fromY: 60 },
 ];
 
-/** Work accumulates and expands the center; the coral square is selected and advanced. */
-export function HomeWorkLoop() {
+/** Equal work circles accumulate; the coral one leaves in its own defined scope. */
+export function HomeWorkLoop({ compact = false }: { compact?: boolean }) {
+  const centerX = compact ? 130 : 230;
+  const extraction = compact ? 120 : 195;
+  const travel = compact ? 85 : 165;
   return (
-    <g className="hw-system">
-      <path d="M76 154H184M252 196H344M210 58V492" className="hw-guide" />
-      <g transform="translate(210 176)">
+    <g
+      className="hw-system"
+      style={
+        {
+          "--hw-start-x": `${-extraction - (compact ? 105 : 150)}px`,
+          "--hw-center-x": `${-extraction}px`,
+          "--hw-arrive-x": `${-extraction + 5}px`,
+          "--hw-anticipate-x": `${-extraction - 4}px`,
+          "--hw-travel": `${travel}px`,
+          "--hw-overshoot": `${travel + 8}px`,
+          "--hw-exit": `${travel + 24}px`,
+        } as CSSProperties
+      }
+    >
+      <path
+        d={`M${compact ? 18 : 50} 120H${compact ? 402 : 690}M${centerX + 28} 16V96M${centerX + 42} 140V224`}
+        className="hw-guide"
+      />
+      <g transform={`translate(${centerX} 120)`}>
         <circle r={48} className="hw-center hw-animated" />
+        {incomingWork.map(({ x, y, fromX, fromY }, i) => (
+          <circle
+            key={i}
+            cx={x}
+            cy={y}
+            r={10}
+            className="hw-work hw-filler hw-animated"
+            style={
+              {
+                "--hw-motion": `hw-fill-${i}`,
+                "--hw-from-x": `${fromX * (compact ? 0.7 : 1)}px`,
+                "--hw-from-y": `${fromY}px`,
+                "--hw-land-x": `${-Math.sign(fromX) * 5}px`,
+                "--hw-land-y": `${-Math.sign(fromY) * 5}px`,
+              } as CSSProperties
+            }
+          />
+        ))}
       </g>
-      {incomingWork.map(({ x, y, fromX, fromY }, i) => (
-        <rect
-          key={i}
-          x={x - 10}
-          y={y - 10}
-          width={20}
-          height={20}
-          className="hw-work hw-filler hw-animated"
-          style={
-            {
-              "--hw-motion": `hw-fill-${i}`,
-              "--hw-from-x": `${fromX}px`,
-              "--hw-from-y": `${fromY}px`,
-              "--hw-land-x": `${-Math.sign(fromX) * 5}px`,
-              "--hw-land-y": `${-Math.sign(fromY) * 5}px`,
-              "--hw-tilt": `${i % 2 === 0 ? 6 : -6}deg`,
-            } as CSSProperties
-          }
-        />
-      ))}
-      <g transform="translate(210 315)">
+      <g transform={`translate(${centerX + extraction} 120)`}>
         <g className="hw-carrier hw-animated">
           <rect
             x={-43}
@@ -48,7 +65,7 @@ export function HomeWorkLoop() {
             pathLength="1"
             className="hw-scope hw-animated"
           />
-          <rect x={-10} y={-10} width={20} height={20} className="hw-selected hw-animated" />
+          <circle r={10} className="hw-selected hw-animated" />
         </g>
       </g>
     </g>

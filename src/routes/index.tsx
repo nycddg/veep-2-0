@@ -47,28 +47,27 @@ function Index() {
       <LegacyHash />
       <section className="vh-hero">
         <Container>
-          <p className="vh-opening-label">An operating partner platform</p>
-          <div className="vh-hero-grid">
+          <div className="vh-hero-composition">
             <div className="vh-hero-copy">
               <h1 className="v-display">
-                <span>Because a job </span>
-                <span>always needs </span>
+                <span>Because a job always </span>
                 <span>
-                  to be done<span className="v-signal">.</span>
+                  needs to be done<span className="v-signal">.</span>
                 </span>
               </h1>
               <p className="v-lead">
-                The work you can’t get to.
-                <br />
-                The priority that keeps slipping.
+                <span>The work you can’t get to.</span>{" "}
+                <span>The priority that keeps slipping.</span>
               </p>
               <p className="v-body-large v-muted">
-                Veep gives companies and funds the operating partner capacity found inside top VC
-                and PE firms.
+                Founders, CEOs, owner-operators, and funds hire Veep when mission-critical work has
+                no clear owner and needs to move now.
               </p>
-              <BookLink />
             </div>
             <MotionScene concept="desk" />
+            <div className="vh-hero-actions">
+              <BookLink />
+            </div>
           </div>
         </Container>
         <ClientTicker />
@@ -82,8 +81,8 @@ function Index() {
               back on your desk.
             </h2>
             <p className="v-body-large">
-              Founders, CEOs, owner-operators, and funds hire Veep when mission-critical work has no
-              clear owner and needs to move now.
+              Veep gives companies and funds the operating partner capacity found inside top VC and
+              PE firms.
             </p>
           </div>
           <OwnershipDiagram />

@@ -108,12 +108,9 @@
 }
 .vs-motion {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--v-space-4);
   margin-block: var(--v-space-5);
-}
-.vs-motion .vm-art {
-  aspect-ratio: 420 / 540;
 }
 @media (max-width: 800px) {
   .vs-themes {

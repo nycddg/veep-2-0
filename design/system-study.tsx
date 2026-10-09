@@ -159,7 +159,7 @@ function ThemeSpecimen({ theme }: { theme: "dark" | "light" }) {
       <section>
         <h3 className="v-title">Relationships before motion.</h3>
         <p className="v-body v-muted">
-          Incoming work expands the executive center. The same coral square leaves in a defined
+          Incoming work expands the executive center. The same coral circle leaves in a defined
           scope and advances on its own path.
         </p>
         <div className="vs-motion">

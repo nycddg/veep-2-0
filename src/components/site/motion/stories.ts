@@ -20,11 +20,11 @@ export const stories: Record<
 > = {
   desk: {
     title: "Work stops returning to your desk",
-    problem: "Six blue squares and one coral square fill an expanding center.",
+    problem: "Six blue circles and one coral circle fill an expanding center.",
     resolution:
-      "The coral square has been pulled out and advanced in its scope. Six blue squares remain in the center.",
+      "The coral circle has been pulled out and advanced in its scope. Six blue circles remain in the center.",
     description:
-      "A small circle expands as six blue squares and one coral square fill it. The same coral square is pulled out, gains a scope, then advances downward and settles. Fresh work begins the next cycle.",
+      "A small circle expands as six blue circles and one coral circle fill it. The same coral circle is pulled out, gains a scope, then advances to the right and settles. Fresh work begins the next cycle.",
     seconds: 5.4,
     loop: true,
   },

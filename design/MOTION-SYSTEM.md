@@ -19,33 +19,33 @@ Every composition starts with a business relationship, then a static problem and
 | Large hollow center containing work | Executive bottleneck             | Receives returning work paths; load decreases when a stream leaves                                              |
 | Larger muted container              | Portfolio company                | Contains its own mandate; never shares a delivery scope with another company                                    |
 
-Use Veep blue (#789FFF dark / #4E7AD4 light) and theme-muted construction lines. The 2026-10-09 homepage system pass now uses brand-sheet coral #EC6B66 through semantic tokens, with a fine ink edge on the selected square in light mode. Unmigrated scenes retain their earlier #F43F34 until their page pass. See [the design system](VEEP-DESIGN-SYSTEM.md) for the current role mapping. Backgrounds remain transparent. Reference strokes are 1.2–1.5px; active routes 2px; scope outlines 3px; endpoint caps 4px. Filled areas supply contrast without making every line heavy. No yellow, textures, random orbits, arbitrary rotations, node labels or simulated dashboards.
+Use Veep blue (#789FFF dark / #4E7AD4 light) and theme-muted construction lines. The 2026-10-09 homepage system pass now uses brand-sheet coral #EC6B66 through semantic tokens, with a fine ink edge on the selected circle in light mode. Unmigrated scenes retain their earlier #F43F34 until their page pass. See [the design system](VEEP-DESIGN-SYSTEM.md) for the current role mapping. Backgrounds remain transparent. Reference strokes are 1.2–1.5px; active routes 2px; scope outlines 3px; endpoint caps 4px. Filled areas supply contrast without making every line heavy. No yellow, textures, random orbits, arbitrary rotations, node labels or simulated dashboards.
 
 ## Composition definitions and static-state test
 
 ### Home: work stops returning to your desk
 
-The homepage expresses one event at a time. Following the 2026-10-09 simplification and coral-square refinement, it uses one collecting circle, six blue squares and one coral square. There is no separate owner dot or support network.
+The homepage expresses one event at a time. The 2026-10-09 centered-hero refinement uses one collecting circle, six blue work circles and one coral work circle. There is no separate owner dot or support network. The circle geometry supersedes the earlier square-work studies; other scenes retain their existing shape roles.
 
-- **Primary object:** the coral work square. It is coral when it enters, while the center fills, and throughout extraction and advancement; it never changes into a different object.
-- **Executive center:** a single open circle, initially radius 48 rather than the prior 64. It expands with the incoming squares, briefly flexing along each entry axis, then settles at radius 82.56. It relaxes to 76.8 after the coral square leaves.
-- **Other work:** six blue squares, the same 20×20 size as the coral square, arrive in staggered order and remain in the center.
-- **Scope:** an open blue frame closes around the extracted coral square and travels with it. No circular marker is attached to this frame.
-- **Direction:** quiet entry axes and a single vertical guide. The selected work advances downward and settles without returning to the center.
-- **Problem frame:** all seven squares sit inside the expanded center.
-- **Resolved frame:** six blue squares remain in the center; the coral square has advanced below in its own scope.
+- **Primary object:** the coral work circle. It is coral when it enters, while the center fills, and throughout extraction and advancement; it never changes into a different object.
+- **Executive center:** a single open circle, initially radius 48. It expands with incoming work, briefly flexing as each object arrives, then settles at radius 82.56. It relaxes to 76.8 after the selected work leaves.
+- **Other work:** six blue circles, all radius 10 like the coral circle, arrive in staggered order and remain in the center.
+- **Scope:** an open blue square frame closes around the extracted coral circle and travels with it. The square distinguishes a defined mandate from the accumulating executive center. No owner marker is attached to this frame.
+- **Direction:** work enters from the left, above and below. The horizontal delivery axis continues to the right. The selected work advances without returning to the center.
+- **Problem frame:** all seven work circles sit inside the expanded center.
+- **Resolved frame:** six blue circles remain in the center; the coral circle has advanced to the right in its own scope.
 
-The coral square is a homepage-specific highlight for the selected work. Other scenes retain their existing coral owner nodes. The portrait composition uses a 420×540 drawing space capped at 430px wide on desktop and 270px wide on mobile in the homepage system pass. The same geometry preserves playback through responsive changes.
+The landscape composition uses a 740×240 drawing space, capped at 880px wide. At 600px and below it uses 420×240: the collecting center shifts left and the extraction/advancement distances shorten. Circle and frame sizes in drawing units stay fixed, preserving legibility. The same DOM nodes preserve loop progress during resizing.
 
-Home alone runs a continuous **5.4-second loop**, revised after the 2026-10-09 request for quicker, more organic and playful motion:
+Home alone runs a continuous **5.4-second loop**:
 
-1. **0–2.0s:** seven equal-size squares arrive in an irregular stagger. Small directional overshoots and brief boundary compression make each arrival register.
-2. **1.8–2.8s:** the coral square anticipates its extraction, pulls free, then settles upright as its frame closes.
-3. **2.8–3.9s:** the framed square advances with a short overshoot and settles.
+1. **0–2.0s:** seven equal-size circles arrive in an irregular stagger. Small directional overshoots and brief boundary compression make each arrival register.
+2. **1.8–2.8s:** the coral circle anticipates its extraction, pulls free, then settles as its frame closes.
+3. **2.8–3.9s:** the framed circle advances with a short overshoot and settles.
 4. **3.9–4.2s:** the resolved arrangement holds briefly.
-5. **4.2–5.4s:** the selected work clears forward, other work clears in staggered order, and the circle contracts smoothly into the next cycle.
+5. **4.2–5.4s:** the selected work clears forward, other work clears in staggered order, and the center contracts smoothly into the next cycle.
 
-The coral square never scales up. Its slight lean follows arrival and extraction; it ends upright. Home has no visible pause control or reserved control row. The supplied motion recording informs the burst-and-settle rhythm, not its colors or ring/dot composition.
+The coral circle never scales up. Circle rotations were removed because they have no visible or semantic purpose. Home has no pause control or reserved control row. The supplied motion recording informs the burst-and-settle rhythm, not its palette or geometry.
 
 The static/reduced-motion state shows the complete resolution. Supporting capability remains explained in page content rather than as an extra hero network.
 
@@ -118,7 +118,7 @@ Cubic-bezier(.65,0,.2,1) provides controlled acceleration and deceleration for t
 
 ## Responsive composition
 
-Home uses the 420×540 portrait composition at every width. Other principal scenes on desktop/tablet use a 600×520 drawing space. At 600px and below the other principal studies use a 360×450 composition with repositioned relationships and shorter travel. Funds reduces three companies to two; it retains the nested company/mandate hierarchy. The smaller accents have their own 380×250 space. Below 900px, principal hero copy and art stack; controls remain touch-accessible.
+Home uses the 740×240 horizontal composition, recomposed to 420×240 at 600px and below. Other principal scenes on desktop/tablet use a 600×520 drawing space. At 600px and below the other principal studies use a 360×450 composition with repositioned relationships and shorter travel. Funds reduces three companies to two; it retains the nested company/mandate hierarchy. The smaller accents have their own 380×250 space. Below 900px, principal hero copy and art stack; controls remain touch-accessible.
 
 SVG aspect ratios reserve space before hydration. Animations change transforms, SVG stroke dash offsets and visibility, never page layout; there are no filters or canvas render loops. Hero photos no longer compete for LCP; proof images load lazily.
 
