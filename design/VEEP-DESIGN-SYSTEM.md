@@ -30,25 +30,70 @@ Do not import dynamic wallpaper colors, Android navigation rails, stock Material
 
 ## Foundations
 
-The executable source of truth is `src/components/site/system/tokens.css`. `system.css` defines shared anatomy and state behavior. `home.css` owns the homepage's editorial compositions. Do not add page-specific values to the global legacy theme to migrate one page.
+The current executable implementation is `src/components/site/system/tokens.css`. `system.css` defines shared anatomy and state behavior. `home.css` owns the homepage's editorial compositions. Do not add page-specific values to the global legacy theme to migrate one page.
 
-### Color
+### Color — expanded specification, 9 October 2026
 
-| Role              | Dark                | Light                                |
-| ----------------- | ------------------- | ------------------------------------ |
-| Page              | Night `#080C14`     | Cream `#FBFAF8`                      |
-| Quiet section     | `#111925`           | `#F6F4F1`                            |
-| Information panel | `#192331`           | `#F0EEEA`                            |
-| Primary text      | `#F6F5F2`           | Ink `#0B111F`                        |
-| Secondary text    | `#B1BBC9`           | Stone `#3B4350`                      |
-| Blue accent       | `#789FFF`           | `#4E7AD4`                            |
-| Small text link   | `#789FFF`           | Accessible blue derivative `#406ABA` |
-| Signal            | Coral `#EC6B66`     | Coral `#EC6B66`                      |
-| Primary action    | Cream with ink text | Ink with cream text                  |
+Dave accepted this palette for the design system and subsequently authorized its application with the homepage narrative/newsletter revision. These are hand-selected Veep values using Material role relationships, not Google's baseline colors or an automatically generated scheme. No yellow or new purple family. Default dark and deliberate light remain.
 
-Blue establishes active paths, boundaries, links, and focus. Coral identifies the selected work object in the homepage story and the ownership path. Decorative coral punctuation and ticker arrows have been removed. It is not a body-text color. The coral circle gets a fine ink edge in light mode because its fill alone has insufficient contrast against cream. Construction guides may be quiet; active objects and UI controls need stronger contrast. Status colors are confined to validation or actual state, never decorative palette expansion.
+Sources: [baseline](https://m3.material.io/styles/color/static/baseline), [roles](https://m3.material.io/styles/color/roles), [system overview](https://m3.material.io/styles/color/system/overview). The supplied Material archive provided readable source text where the live pages require JavaScript.
 
-The `.v-paper` section deliberately uses light semantic roles inside dark mode. Nested `data-ve-theme` attributes provide the same mapping in the specimen. Light link color is slightly darker than the brand accent to support normal text on the light surfaces. Buttons use a neutral fill, preserving the light brand sheet's distinction between colored graphics and UI chrome.
+#### Accent and container pairs
+
+| Role | Light | Dark |
+| --- | --- | --- |
+| Primary | `#365CA8` | `#ADC6FF` |
+| On primary | `#FBFAF8` | `#102E61` |
+| Primary container | `#DCE6FF` | `#263E68` |
+| On primary container | `#183665` | `#DCE6FF` |
+| Secondary | `#566176` | `#BDC7DF` |
+| On secondary | `#FBFAF8` | `#273246` |
+| Secondary container | `#E0E6F1` | `#354157` |
+| On secondary container | `#273246` | `#E0E6F1` |
+| Tertiary | `#A33F3C` | `#FFB4AC` |
+| On tertiary | `#FBFAF8` | `#641F1D` |
+| Tertiary container | `#FFDAD6` | `#71302E` |
+| On tertiary container | `#71302E` | `#FFDAD6` |
+
+Blue/primary supports active structure, links, selection and high-emphasis actions. Slate/secondary supports quieter UI and tonal controls. Coral/tertiary supports selected work, client voice and occasional editorial emphasis. Pair every fill with its own on-color. The bright brand coral is not a general body-text color; its dark derivative may serve a properly paired text role.
+
+#### Complete neutral surface hierarchy
+
+| Role | Light | Dark | Use |
+| --- | --- | --- | --- |
+| Surface | `#FBFAF8` | `#080C14` | Page background |
+| Surface container lowest | `#FFFFFF` | `#05080E` | Lowest container level |
+| Surface container low | `#F7F6F3` | `#111925` | Quiet section grouping |
+| Surface container | `#F0EEEA` | `#192331` | Standard cards and profiles |
+| Surface container high | `#E9E7E3` | `#222D3D` | Stronger grouping or nested panels |
+| Surface container highest | `#E2E0DC` | `#2D384A` | Most distinct neutral containers |
+| On surface | `#0B111F` | `#F6F5F2` | Headings and body |
+| On surface variant | `#3B4350` | `#B1BBC9` | Supporting text |
+| Outline | `#737C89` | `#8B97AA` | Functional boundaries |
+| Outline variant | `#C7CCD4` | `#3D4859` | Dividers and construction lines |
+
+Higher containers become darker in light mode and lighter in dark mode. These are available hierarchy levels, not a six-color section sequence or automatic shadow/elevation scale. Keep the same role for a layout region across breakpoints. On-surface roles work across neutral containers; accent containers use their paired foregrounds.
+
+#### Signature fields and validation
+
+| Custom role | Fill | Foreground | Use |
+| --- | --- | --- | --- |
+| Brand impact, both themes | `#789FFF` | `#0B111F` | Strong periwinkle business-impact field |
+| Brand signal, both themes | `#EC6B66` | `#0B111F` | Selected work and coral testimonial field |
+| Error, light | `#A82E29` | `#FBFAF8` | Validation |
+| Error, dark | `#FFB4AC` | `#641F1D` | Validation |
+| Success, light | `#30653E` | `#FBFAF8` | Actual success state |
+| Success, dark | `#B1D1B7` | `#123A21` | Actual success state |
+
+Signature fields are Veep editorial roles, not universal theme-independent UI colors. Their ink pairings calculate to 7.36:1 for periwinkle and 6.16:1 for coral. The accent/container foreground pairs exceed 4.5:1. Contrast must still be checked on actual backgrounds, including hover, focus, selection and disabled treatments. Error and success also require explicit text or icons; hue alone does not communicate state. A coral work marker on cream still needs a contrasting edge when its boundary carries meaning.
+
+#### Application and migration
+
+Reference values feed semantic roles, then component roles. Introduce the expanded roles in `tokens.css`; keep existing aliases where other pages depend on them. Preserve neutral booking treatment until its actual surface context is reviewed. Do not replace every blue or coral literal blindly.
+
+The newsletter should use primary-container/on-primary-container in both themes: pale blue/deep text in light, deep blue/pale text in dark. Operator evidence uses neutral/slate surfaces. Impact and testimonial retain their signature fields. This is a color application direction, not approval of unreviewed page layouts.
+
+Audit page and section backgrounds, nested panels, portraits, typography, links, buttons, input boundaries, dividers, active diagram contours, construction lines, focus and interaction states. Use surface-specific foregrounds and validate desktop, tablet and mobile in both themes before declaring the migration complete. Existing `.v-paper` proof surfaces intentionally remain light within dark mode and must receive the complete light role mapping.
 
 ### Type and space
 

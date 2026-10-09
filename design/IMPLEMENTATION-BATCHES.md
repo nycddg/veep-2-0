@@ -192,3 +192,12 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 **Scope:** ClientTicker, homepage, home.css and this ledger. Existing dirty ClientStrip and other unrelated files remain untouched. No new company claims or animation library.
 
 **Review checkpoint:** actual rendered profiles, ticker, newsletter and close inspected at 1280, 768 and 390px in both themes. Newsletter stacks below desktop; action remains comfortably sized. Mobile reduced-motion state displays all 40 names without horizontal document overflow and reports animation:none. Keyboard Enter on registration reaches “Zero to Something Registration” at the supplied Mailchimp URL; no subscription submitted. Restored homepage, dark theme, device motion setting and normal viewport. Focused lint, formatting, production build and diff checks pass. Captures: canon-refinement/annotations/operator-newsletter in the October 9 visualization directory. This completes the requested local changes; broader design acceptance remains open.
+
+
+## Batch 01H — expanded color specification
+
+**Communication problem:** the palette lacked a documented range of accent containers and a complete light-mode neutral hierarchy.
+
+**Change:** save the agreed blue/primary, slate/secondary, coral/tertiary families, complete paired light/dark surfaces and foregrounds, outlines, signature fields, validation colors and migration rules in VEEP-DESIGN-SYSTEM.md. This is a documentation checkpoint before implementation.
+
+**Scope:** design system and ledger only. Existing uncommitted implementation files preserved. Next: apply roles with the authorized homepage recognition and newsletter batches; actual newsletter issue pending Dave's source.
