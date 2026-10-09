@@ -1,22 +1,16 @@
 import { useSectionMotion } from "../system/useSectionMotion";
 
-const alternatives = [
-  ["Your team", "At capacity. The priority keeps slipping."],
-  ["A permanent hire", "The search is running. The work still needs an owner."],
-  ["Outside advice", "The direction is clear. Execution still lands on your team."],
-];
+const alternatives = ["Team at capacity", "Hire in progress", "Advice in hand"];
 
 /** The alternatives return work to the executive; a named delivery responsibility opens a path out. */
 export function OwnershipDiagram() {
   const sequence = useSectionMotion();
   return (
     <div ref={sequence.ref} className="vh-ownership v-sequence" data-motion={sequence.state}>
-      <p className="vh-work-context">Critical work. No clear owner.</p>
       <div className="vh-alternatives">
-        {alternatives.map(([title, detail]) => (
+        {alternatives.map((title) => (
           <div key={title}>
             <h3>{title}</h3>
-            <p>{detail}</p>
           </div>
         ))}
       </div>
@@ -44,7 +38,7 @@ export function OwnershipDiagram() {
               <i />
             </span>
           </div>
-          <p>Every unresolved decision comes back to you.</p>
+          <p>Decisions and coordination still depend on you.</p>
         </div>
         <div className="vh-mandate">
           <div className="vh-mandate-scope">
@@ -58,7 +52,7 @@ export function OwnershipDiagram() {
           <p>
             Owns execution.
             <br />
-            Veep stays accountable.
+            Coordinates the team.
           </p>
         </div>
         <div className="vh-delivery">

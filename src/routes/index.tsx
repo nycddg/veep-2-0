@@ -55,12 +55,13 @@ function Index() {
                 <span>needs to be done.</span>
               </h1>
               <p className="v-lead">
-                <span>The work you can’t get to.</span>{" "}
-                <span>The priority that keeps slipping.</span>
-              </p>
-              <p className="v-body-large v-muted">
                 CEOs and funds hire Veep when mission-critical work has no clear owner and needs to
                 move now.
+              </p>
+              <p className="v-body-large v-muted">
+                Veep gives companies and funds the operating partner capacity found inside top VC
+                and PE firms. We define the work and outcomes, assemble the right team, and own
+                delivery.
               </p>
             </div>
             <MotionScene concept="desk" />
@@ -79,18 +80,12 @@ function Index() {
               <br />
               back on your desk.
             </h2>
-            <p className="v-body-large v-muted">
-              The team is busy. The hire takes time. Advice still needs someone to act on it. The
-              work keeps coming back to you.
-            </p>
           </div>
           <OwnershipDiagram />
           <div className="vh-ownership-answer">
-            <h3 className="v-title">The work gets an owner.</h3>
             <p className="v-body-large v-muted">
-              Veep gives companies and funds the operating partner capacity found inside top VC and
-              PE firms. A senior operating partner takes the lead, with the support the work needs.
-              You retain strategic decisions and approvals.
+              Veep stays accountable for scope, quality, and continuity through delivery and
+              handoff. You retain strategic decisions and approvals.
             </p>
           </div>
           <div className="vh-method-detail">

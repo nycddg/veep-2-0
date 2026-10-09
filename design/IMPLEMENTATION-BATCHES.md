@@ -128,3 +128,15 @@ Review captures: `/Users/dave/.codex/visualizations/2026/10/08/01a11cba-9c61-709
 ### Next starting point
 
 Use Dave’s response to this narrative correction to guide later homepage refinement. Then continue Batch 02’s curated reference import, Material → Veep application document, and paired specimen. Preserve the distinction between the hero’s inference and the diagram’s explicit explanation. Shared persistent motion preferences and complete site acceptance remain planned work.
+
+## Batch 01C — canon-informed opening, October 9
+
+**Status:** implementation authorized by Dave after the independent Studio Critic audit and supplied October 3 business/brand canon addenda. The resulting design is a review candidate, not an approved template for other pages. This entry supersedes the historical next-start instruction above.
+
+**Communication problem:** the opening named the buyer and problem before explaining the offer; the next chapter then repeated the problem in several forms. The addenda confirm the operating-partner-capacity proposition and accountability boundary. Their older layout prescriptions do not override Dave's current hierarchy or explicit-diagram requirement.
+
+**Change:** retain the exact H1 and current CEOs/funds audience sentence, promote that sentence to the subhead, and put the full canonical value proposition below it. Remove the former “The work you can't get to / priority that keeps slipping” subhead. Preserve copy → hero loop → CTA order. Compress the second chapter to its problem heading, explicit diagram, accountability boundary, and subordinate native process disclosure. Diagram inputs describe situations (team at capacity, hire in progress, advice in hand) rather than categories of providers. Remove the redundant problem paragraph, “Critical work. No clear owner.” label, and “The work gets an owner.” repeat heading. Restore explicit scope, quality, continuity, delivery/handoff accountability; client decisions and approvals remain explicit.
+
+**Scope:** homepage, OwnershipDiagram, home.css, and this ledger only. No pricing, claims, booking destinations, forms, routes, hero geometry/timing, or client names changed. The diagram's small “With Veep” label uses the accessible link token and increases to 12px on compact screens.
+
+**Review checkpoint:** actual opening and ownership renders inspected at desktop, tablet and mobile in the course of this batch; full six-view theme/size matrix follows after the contiguous homepage refinements. The mobile opening contains the complete proposition, graphic and CTA within 844px. The diagram retains a horizontal relationship above 600px and vertical relationship below it; all meaning is available without motion. Build/lint results and final evidence are recorded with the completed review below.
