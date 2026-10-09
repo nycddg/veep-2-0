@@ -13,6 +13,37 @@ function checkPairs(bodies: Body[]) {
       );
     }
 }
+
+function verifyCadence(sim: WorkSimulation) {
+  sim.reset();
+  let elapsed = 0,
+    maxFill = 0,
+    maxComplete = 0,
+    completed = false;
+  for (let i = 0; i < 120 * 20; i++) {
+    const previous = sim.stage;
+    sim.update(1 / 120);
+    elapsed += 1 / 120;
+    if (sim.stage === "fill" && previous === "done") {
+      elapsed = 0;
+      completed = false;
+    }
+    if (sim.stage === "fill") {
+      maxFill = Math.max(maxFill, elapsed);
+      assert(elapsed < 2, `Fill exceeded two seconds: ${elapsed}`);
+    }
+    if (!completed) {
+      assert(elapsed < 5, `Completion exceeded five seconds in ${sim.stage}`);
+      if (sim.stage === "done" && (sim.geometry.completeInBox || sim.check >= 1)) {
+        completed = true;
+        maxComplete = Math.max(maxComplete, elapsed);
+      }
+    }
+  }
+  console.info(`Timing: fill ${maxFill.toFixed(2)}s; completion ${maxComplete.toFixed(2)}s`);
+  assert(maxComplete > 0);
+}
+
 describe("work collisions", () => {
   test("head-on balls exchange velocity and stay separate", () => {
     const bodies = [
@@ -41,10 +72,9 @@ describe("work collisions", () => {
         vertical,
         radius: vertical ? 4 : 5,
         count: 6,
-        arrivalSpeed: 2,
-        arrivalPause: 0.2,
+
         downwardEntry: true,
-        motion: { speedScale: 1.15, boxMultiplier: 2.5, boxHold: 1.5 },
+        motion: { speedScale: 1.15 },
       };
       const sim = new WorkSimulation(g),
         stages = new Set<string>();
@@ -87,31 +117,35 @@ describe("work collisions", () => {
       assert(stages.has("done"), "Never completed");
       assert(stages.has("leave"), "Never left box");
       assert(longestBoxVisit < 8, `Box visit took ${longestBoxVisit.toFixed(2)} seconds`);
+      verifyCadence(sim);
     });
   }
 });
 
-test("hero conserves red identity and loops without overlap", () => {
-  const sim = new WorkSimulation({
-    desk: { center: { x: 130, y: 120 }, radius: 76 },
-    box: { x: 292, y: 77, width: 86, height: 86 },
-    deskObstacles: [],
-    boxObstacles: [],
-    end: { x: 335, y: 120 },
-    radius: 10,
-    vertical: false,
-    count: 7,
-    completeInBox: true,
-    motion: { speedScale: 1, travelMultiplier: 1.4, hops: 2, lift: 1.15, smoothLanding: true },
+for (const compact of [true, false]) {
+  test(`hero conserves red identity and loops without overlap (${compact ? "compact" : "wide"})`, () => {
+    const sim = new WorkSimulation({
+      desk: { center: { x: compact ? 130 : 230, y: 120 }, radius: 76 },
+      box: { x: compact ? 292 : 552, y: 77, width: 86, height: 86 },
+      deskObstacles: [],
+      boxObstacles: [],
+      end: { x: compact ? 335 : 595, y: 120 },
+      radius: 10,
+      vertical: false,
+      count: 7,
+      completeInBox: true,
+      motion: { speedScale: 1, hops: 2, lift: 1.15, smoothLanding: true },
+    });
+    let completed = false,
+      looped = false;
+    for (let i = 0; i < 120 * 180; i++) {
+      sim.update(1 / 120);
+      checkPairs([...sim.bodies, ...(sim.incoming ? [sim.incoming] : [])]);
+      if (sim.selected) assert.equal(sim.selected.id, 6);
+      if (sim.stage === "done") completed = true;
+      if (completed && sim.stage === "fill") looped = true;
+    }
+    assert(looped, "Hero failed to complete and restart");
+    verifyCadence(sim);
   });
-  let completed = false,
-    looped = false;
-  for (let i = 0; i < 120 * 180; i++) {
-    sim.update(1 / 120);
-    checkPairs([...sim.bodies, ...(sim.incoming ? [sim.incoming] : [])]);
-    if (sim.selected) assert.equal(sim.selected.id, 6);
-    if (sim.stage === "done") completed = true;
-    if (completed && sim.stage === "fill") looped = true;
-  }
-  assert(looped, "Hero failed to complete and restart");
-});
+}

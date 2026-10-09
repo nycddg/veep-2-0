@@ -19,7 +19,7 @@ export function HomeWorkLoop({ compact = false }: { compact?: boolean }) {
       count: 7,
       completeInBox: true,
       // Preserve the shared ball speed; soften only the hero’s hairline travel.
-      motion: { speedScale: 1, travelMultiplier: 1.4, hops: 2, lift: 1.15, smoothLanding: true },
+      motion: { speedScale: 1, hops: 2, lift: 1.15, smoothLanding: true },
     }),
     [centerX, boxX],
   );

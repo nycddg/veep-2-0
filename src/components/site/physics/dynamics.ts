@@ -144,11 +144,11 @@ export function free(point: Point, radius: number, bodies: Body[]) {
   return bodies.every((b) => Math.hypot(b.x - point.x, b.y - point.y) >= b.r + radius + clearance);
 }
 
-export function steer(body: Body, target: Point, speed: number, dt: number) {
+export function steer(body: Body, target: Point, speed: number, dt: number, response = 5) {
   const dx = target.x - body.x,
     dy = target.y - body.y,
     d = Math.hypot(dx, dy);
-  const blend = 1 - Math.exp(-5 * dt);
+  const blend = 1 - Math.exp(-response * dt);
   body.vx += ((dx / (d || 1)) * speed - body.vx) * blend;
   body.vy += ((dy / (d || 1)) * speed - body.vy) * blend;
 }
