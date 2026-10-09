@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from "react";
+import { useLayoutEffect, useEffect, useId, useRef, useState } from "react";
 import { useRouterState } from "@tanstack/react-router";
 
 const work = [
@@ -45,6 +45,25 @@ export function WorkMandate() {
   const hash = useRouterState({ select: (state) => state.location.hash });
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const groupId = useId();
+  const indicator = useRef<HTMLSpanElement>(null);
+  useLayoutEffect(() => {
+    const node = indicator.current;
+    const list = node?.parentElement;
+    const tab = tabRefs.current[active];
+    if (!node || !list || !tab) return;
+    const measure = () => {
+      const container = list.getBoundingClientRect(),
+        selected = tab.getBoundingClientRect();
+      node.style.width = `${selected.width}px`;
+      node.style.height = `${selected.height}px`;
+      node.style.transform = `translate(${selected.left - container.left}px, ${selected.top - container.top}px)`;
+      list.dataset.indicator = "true";
+    };
+    measure();
+    const resize = new ResizeObserver(measure);
+    resize.observe(list);
+    return () => resize.disconnect();
+  }, [active]);
   useEffect(() => {
     const match = work.findIndex((item) => item.id === hash.replace(/^#/, ""));
     if (match !== -1) setActive(match);
@@ -57,6 +76,7 @@ export function WorkMandate() {
           <br /> needs an owner?
         </h2>
         <div role="tablist" aria-label="Explore company priorities" className="ve-work-tabs">
+          <span ref={indicator} className="ve-tab-indicator" aria-hidden="true" />
           {work.map((item, index) => (
             <button
               key={item.id}
@@ -99,6 +119,8 @@ export function WorkMandate() {
             tabIndex={0}
             aria-labelledby={`${groupId}-${index}`}
             hidden={active !== index}
+            inert={active !== index}
+            aria-hidden={active !== index}
             className="ve-mandate-panel"
           >
             <p className="ve-kicker">Example mandate</p>

@@ -10,9 +10,9 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
       onClick={toggle}
       aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
       aria-pressed={isLight}
-      className={`v-icon-button ${className}`}
+      className={`v-icon-button v-theme-toggle ${className}`}
     >
-      {isLight ? <Moon size={16} /> : <Sun size={16} />}
+      {isLight ? <Moon key="moon" size={16} /> : <Sun key="sun" size={16} />}
     </button>
   );
 }

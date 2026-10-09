@@ -6,6 +6,8 @@ import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
 import { BookLink } from "./rebuild/BookLink";
 import { ThemeToggle } from "./ThemeToggle";
 
+import { useSiteMotion, useMenuPresence } from "./system/useSiteMotion";
+
 const nav = [
   { to: "/for-companies", label: "For Founders" },
   { to: "/for-portfolios", label: "For Funds" },
@@ -21,6 +23,8 @@ export function SiteHeader() {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const homeRef = useRef<HTMLAnchorElement>(null);
+  useSiteMotion(pathname);
+  const menuPresent = useMenuPresence(open, menuRef);
 
   useEffect(() => {
     setOpen(false);
@@ -81,7 +85,12 @@ export function SiteHeader() {
   return (
     <header className="v-site-chrome v-header">
       <div className="v-container v-header-inner">
-        <Link ref={homeRef} to="/" className="flex shrink-0 items-center" aria-label="Veep home">
+        <Link
+          ref={homeRef}
+          to="/"
+          className="v-brand-link flex shrink-0 items-center"
+          aria-label="Veep home"
+        >
           <img src={wordmarkWhite.url} alt="" className="h-5 w-auto light:hidden" />
           <img src={wordmarkNavy.url} alt="" className="hidden h-5 w-auto light:block" />
         </Link>
@@ -119,8 +128,14 @@ export function SiteHeader() {
         </button>
       </div>
 
-      {open && (
-        <div ref={menuRef} id={menuId} className="v-mobile-nav lg:hidden">
+      {menuPresent && (
+        <div
+          ref={menuRef}
+          id={menuId}
+          className="v-mobile-nav lg:hidden"
+          inert={!open}
+          aria-hidden={!open}
+        >
           <nav aria-label="Primary" className="v-container">
             {nav.map((item) => (
               <Link

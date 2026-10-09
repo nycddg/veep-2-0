@@ -3,6 +3,8 @@ import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
 import { MotionPreference } from "./MotionPreference";
 
+import { WorkSignature } from "./system/WorkSignature";
+
 type FooterLink = {
   label: string;
   to:
@@ -86,7 +88,10 @@ export function SiteFooter() {
           ))}
         </div>
         <MotionPreference />
-        <p className="v-footer-signature">Critical work, owned.</p>
+        <div className="v-footer-signature">
+          <p>Critical work, owned.</p>
+          <WorkSignature />
+        </div>
         <div className="v-footer-end">
           <p className="v-caption">
             © {new Date().getFullYear()} The Veep Group, LLC. All rights reserved.

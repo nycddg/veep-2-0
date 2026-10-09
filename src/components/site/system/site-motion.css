@@ -1,0 +1,194 @@
+@import "./expressive-motion.css";
+
+.ve-system,
+.v-site-chrome,
+.rebuild.ve-editorial {
+  --v-motion-spatial: var(--v-expressive-spatial);
+}
+
+/* Three finite rhythms: line-led openings, chapter cues, and direct feedback. */
+.vh-hero-title > span {
+  display: block;
+}
+.v-brand-link {
+  position: relative;
+}
+.v-brand-link::after {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--v-signal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms var(--v-expressive-fast);
+}
+.v-brand-link:is(:hover, :focus-visible)::after {
+  transform: scaleX(1);
+}
+.v-theme-toggle svg {
+  animation: v-theme-arrive 400ms var(--v-expressive-fast);
+}
+@keyframes v-theme-arrive {
+  from {
+    transform: rotate(-35deg) scale(0.8);
+  }
+  to {
+    transform: rotate(0) scale(1);
+  }
+}
+.v-text-link > span[aria-hidden] {
+  display: inline-block;
+  transition: translate 400ms var(--v-expressive-fast);
+}
+.v-text-link:is(:hover, :focus-visible) > span[aria-hidden] {
+  translate: 2px -2px;
+}
+
+/* The selected surface travels between existing tabs, keeping text and targets fixed. */
+.ve-work-tabs {
+  position: relative;
+  isolation: isolate;
+}
+.ve-tab-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: var(--v-shape-control);
+  background: var(--v-secondary-container);
+  transition:
+    transform 550ms var(--v-expressive-spatial),
+    width 240ms var(--v-expressive-effects),
+    height 240ms var(--v-expressive-effects);
+}
+.rebuild.ve-editorial .ve-work-tabs[data-indicator] button[aria-selected="true"] {
+  background: transparent;
+}
+.rebuild.ve-editorial .ve-mandate-pages {
+  display: grid;
+}
+.rebuild.ve-editorial .ve-mandate-panel {
+  grid-area: 1 / 1;
+}
+@supports (transition-behavior: allow-discrete) {
+  .rebuild.ve-editorial .ve-mandate-panel {
+    transition:
+      opacity 180ms var(--v-expressive-effects),
+      translate 320ms var(--v-expressive-spatial),
+      display 180ms allow-discrete;
+  }
+  .rebuild.ve-editorial .ve-mandate-panel[hidden] {
+    opacity: 0;
+    translate: 0 -3px;
+  }
+  .rebuild.ve-editorial .ve-mandate-panel:not([hidden]) {
+    opacity: 1;
+    translate: 0 0;
+  }
+  @starting-style {
+    .rebuild.ve-editorial .ve-mandate-panel:not([hidden]) {
+      opacity: 0;
+      translate: 0 6px;
+    }
+  }
+}
+/* A paper corner acknowledges exploration of a mandate, without moving the content. */
+.rebuild.ve-editorial .ve-paper-fold {
+  transform-origin: top right;
+  transition: transform 400ms var(--v-expressive-fast);
+}
+.ve-mandate-panel:focus-visible .ve-paper-fold,
+.ve-mandate-panel:hover .ve-paper-fold {
+  transform: scale(0.82);
+}
+
+.v-footer-signature {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+.v-work-signature {
+  width: 76px;
+  min-height: 44px;
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--v-text-muted);
+  border-radius: var(--v-shape-control);
+  cursor: pointer;
+}
+.v-work-signature:hover {
+  background: var(--v-state-hover);
+}
+.v-work-signature svg {
+  width: 68px;
+  height: 36px;
+  overflow: visible;
+}
+.v-work-signature .v-mini-dot {
+  fill: var(--v-signal);
+}
+.v-work-signature .v-mini-check {
+  fill: none;
+  stroke: var(--v-ref-ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.v-work-signature[data-playing] .v-mini-dot {
+  animation: v-mini-work 750ms var(--v-motion-functional) both;
+}
+.v-work-signature[data-playing] .v-mini-check {
+  animation: v-mini-check 750ms var(--v-motion-functional) both;
+}
+@keyframes v-mini-work {
+  0% {
+    transform: translateX(-48px) scale(0.3);
+  }
+  60% {
+    transform: translateX(0) scale(0.3);
+  }
+  85% {
+    transform: translateX(0) scale(1.05);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes v-mini-check {
+  0%,
+  65% {
+    stroke-dashoffset: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.v-mini-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.v-mini-check {
+  stroke-dasharray: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    .v-brand-link::after,
+    .v-theme-toggle svg,
+    .v-text-link > span,
+    .ve-tab-indicator,
+    .ve-mandate-panel,
+    .ve-paper-fold,
+    .v-mini-dot,
+    .v-mini-check
+  ) {
+    animation: none !important;
+    transition: none !important;
+  }
+}

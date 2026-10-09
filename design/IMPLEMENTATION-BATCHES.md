@@ -482,5 +482,11 @@ Five physics tests pass, including collision separation, obstacle clearance, loo
 - Preserved fixed-step collisions, measured text/logo obstacles, selected coral identity, reduced motion and visibility pausing. Box speed reduced; completion holds before clearing. Both fills stay below 2s and completion below 5s.
 - Validation: six tests, 3-minute desktop/mobile collision runs; hero fill 1.53s / completion 2.93s; ownership fill 1.14s / completion 4.14–4.18s. Build and focused lint pass. Actual rendered desktop cycles sampled and inspected in `/tmp/veep-motion-review`.
 
-### Batch 02E — Coordinated site motion (active)
+### Batch 02E — Coordinated site motion (complete, 2026-10-09)
 - User's subsequent motion brief, adapted to Veep: composed entrance, distinct one-time section rhythms, interruptible menu/disclosure/tab changes, restrained intentional discoveries, reduced-motion alternatives. Preserve layout, type, copy, routes and handlers.
+
+- Implemented finite public-page/hero entrances, distinct chapter/process/proof cues, interruptible mobile-menu presence, native disclosure expansion/collapse, responsive shared tab selection and discrete panel transitions.
+- Added intentional wordmark, arrow, theme, paper-corner and footer completion details. Existing semantic colors, typography, all copy, links and form handlers retained. No library added; native animation/observer APIs reuse the existing persistent preference.
+- Validation: rendered desktop (1280/1440), tablet (768) and mobile (390), dark/light. Reviewed sampled full ball cycles, mobile physical geometry (completion ~4.15s), keyboard tab selection, disclosure Space close, menu Escape/focus return and rapid reversal, footer replay, and reduced/static alternatives. No horizontal overflow in sampled layouts. Build, focused lint and six motion tests pass. Full TypeScript check still reports only known unrelated PageHero/auth/portal/root errors; no errors in changed files.
+- Evidence: `/Users/dave/.codex/visualizations/2026/10/09/01a121b2-13c8-7c22-ad99-ae4b3eaf3595/motion-polish/` (homepage screenshot and actual-browser hero/ownership GIF captures). An intermediate development hot-reload hook-order error was cleared by a full reload; final rendered pages are healthy.
+- Batches 02D–02E complete. No active implementation batch remains.
