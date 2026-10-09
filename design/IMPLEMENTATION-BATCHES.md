@@ -172,3 +172,12 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 - OS-level reduced-motion switching was not driven through system settings. Its live media-query listener and CSS fallback were inspected; the explicit site reduced-motion branch was exercised in the real browser. Image responsive-source optimization remains a separate performance opportunity; no measured loading-speed claim is made.
 
 **Final review state:** implementation complete for these three scoped refinements; user design acceptance remains open. Full-page 01D captures plus final opening, mobile profile, static-client and preference captures are in the evidence directory above. The preview is restored to the homepage in dark mode with device motion settings. Broader redesign batches remain separate work and do not inherit this homepage composition as an approved template.
+
+
+## Batch 01F — audience placement and client voice
+
+**Communication problem:** Dave requested an earlier Companies/Funds choice after business impact and a more prominent Atomic Audio testimonial.
+
+**Change:** move existing audience routes directly below impact; give the unchanged testimonial and Jerry Kolber attribution their own coral section between results and operators, with larger type. No added animation.
+
+**Scope and checkpoint:** homepage, home.css and this ledger. Rendered at 1280, 768 and 390px in both themes; no horizontal overflow. Coral/ink contrast is 6.16:1. Quote, case claims, destinations and other content preserved. Production build, focused lint, formatting and diff checks pass. Evidence: canon-refinement/annotations in the October 9 visualization directory. Implemented for review, not blanket design approval.

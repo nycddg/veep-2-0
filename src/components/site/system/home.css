@@ -365,19 +365,24 @@
   max-width: 38ch;
   margin-top: var(--v-space-5);
 }
+.vh-testimonial {
+  background: var(--v-signal);
+  color: var(--v-ref-ink);
+  --v-text: var(--v-ref-ink);
+  --v-text-secondary: var(--v-ref-ink);
+}
 .vh-client-voice {
-  margin-top: var(--v-space-8);
-  max-width: 1060px;
+  max-width: 1160px;
 }
 .vh-client-voice blockquote {
-  font-size: clamp(1.75rem, 3vw, 2.75rem);
-  line-height: 1.2;
+  font-size: clamp(2rem, 4.2vw, 3.75rem);
+  line-height: 1.12;
   letter-spacing: var(--v-tracking-heading);
   text-wrap: pretty;
 }
 .vh-client-voice figcaption {
-  margin-top: var(--v-space-5);
-  font-size: var(--v-type-caption);
+  margin-top: var(--v-space-6);
+  font-size: var(--v-type-body);
 }
 .vh-client-voice figcaption > * {
   display: block;
@@ -612,9 +617,6 @@
   }
   .vh-proof-number {
     font-size: clamp(5.5rem, 22vw, 8rem);
-  }
-  .vh-client-voice {
-    margin-top: var(--v-space-8);
   }
   .vh-paths {
     grid-template-columns: 1fr;
