@@ -61,7 +61,7 @@
   --v-motion-reveal: 480ms;
   --v-motion-functional: cubic-bezier(0.2, 0, 0, 1);
   --v-motion-spatial: cubic-bezier(0.22, 0.8, 0.25, 1);
-  --v-motion-home-loop: 5.4s;
+  --v-motion-home-loop: 12s;
   --v-motion-section: 4.6s;
 }
 

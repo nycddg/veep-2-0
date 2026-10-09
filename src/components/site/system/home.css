@@ -1,5 +1,12 @@
+/* Page-owned editorial roles keep supporting typography and chapter rhythm aligned. */
+.vh-home {
+  --vh-type-support: clamp(1.25rem, 2vw, 1.75rem);
+  --vh-type-chapter: clamp(2.25rem, 4.6vw, 4rem);
+  --vh-type-step: 1.5rem;
+  --vh-section-compact: clamp(48px, 5vw, 64px);
+  --vh-heading-gap: var(--v-space-7);
+}
 .vh-hero {
-  --v-motion-home-loop: 12s;
   padding-top: var(--v-space-8);
 }
 /* Headline and motion share the top row; problems and ownership form the subhead. */
@@ -25,9 +32,9 @@
 .vh-hero-problems {
   grid-area: problems;
   align-self: start;
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-  font-weight: 500;
-  line-height: 1.4;
+  font-size: var(--vh-type-support);
+  font-weight: var(--v-weight-heading, 500);
+  line-height: var(--v-leading-lead, 1.4);
   letter-spacing: var(--v-tracking-lead);
   text-wrap: pretty;
 }
@@ -52,6 +59,9 @@
   align-items: center;
   gap: var(--v-space-3);
   margin-top: var(--v-space-5);
+}
+.vh-hero-actions .v-action {
+  min-width: 148px;
 }
 .vh-home .vh-hero .ve-ticker {
   border-top: 1px solid var(--v-border);
@@ -121,10 +131,10 @@
   max-width: 820px;
 }
 .vh-problem-intro .v-heading {
-  font-size: clamp(2.25rem, 4.6vw, 4rem);
+  font-size: var(--vh-type-chapter);
 }
 .vh-ownership {
-  --work-cycle: 12s;
+  --work-cycle: var(--v-motion-home-loop);
   --dot-gap: 26px;
   --row-top: 86px;
   --row-bottom: 71px;
@@ -1014,11 +1024,11 @@
 .vh-ownership-answer span {
   color: var(--v-text-secondary);
   font-size: var(--v-type-body-large);
-  line-height: 1.5;
+  line-height: var(--v-leading-body);
 }
 /* A quiet, always-visible sequence follows the business impact. */
 .vh-method {
-  padding-block: var(--v-space-8);
+  padding-block: var(--vh-section-compact);
 }
 .vh-method h2 {
   font-size: var(--v-type-title);
@@ -1058,7 +1068,9 @@
 }
 .vh-method-timeline h3 {
   margin-top: var(--v-space-5);
-  font-size: 24px;
+  font-size: var(--vh-type-step);
+  line-height: var(--v-leading-title, 1.2);
+  letter-spacing: var(--v-tracking-title, -0.025em);
 }
 .vh-method-timeline p {
   margin-top: var(--v-space-3);
@@ -1129,7 +1141,7 @@
   color: var(--v-on-impact);
 }
 .vh-impact-chapter h2 {
-  font-size: clamp(2.5rem, 4.6vw, 4rem);
+  font-size: var(--vh-type-chapter);
   line-height: 1.02;
   letter-spacing: var(--v-tracking-display);
 }
@@ -1144,9 +1156,9 @@
   padding-top: var(--v-space-5);
 }
 .vh-impact-list h3 {
-  font-size: clamp(1.5rem, 2vw, 1.75rem);
-  letter-spacing: var(--v-tracking-heading);
-  line-height: 1.1;
+  font-size: var(--vh-type-support);
+  letter-spacing: var(--v-tracking-title, -0.025em);
+  line-height: var(--v-leading-title, 1.2);
 }
 .vh-impact-list .v-body-large {
   max-width: 34ch;
@@ -1162,7 +1174,7 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: var(--v-layout-gap);
-  margin-top: var(--v-space-6);
+  margin-top: var(--vh-heading-gap);
 }
 .vh-proof-number {
   font: 400 clamp(5.5rem, 11vw, 10rem)/1.15 var(--v-font-label);
@@ -1174,10 +1186,11 @@
   margin-top: var(--v-space-5);
 }
 .vh-testimonial {
+  --vh-on-signal: var(--v-ref-ink);
   background: var(--v-signal);
-  color: var(--v-ref-ink);
-  --v-text: var(--v-ref-ink);
-  --v-text-secondary: var(--v-ref-ink);
+  color: var(--vh-on-signal);
+  --v-text: var(--vh-on-signal);
+  --v-text-secondary: var(--vh-on-signal);
 }
 .vh-client-voice {
   max-width: 1160px;
@@ -1203,7 +1216,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--v-space-5);
-  margin-top: var(--v-space-7);
+  margin-top: var(--vh-heading-gap);
 }
 .vh-paths {
   display: grid;
@@ -1216,12 +1229,12 @@
 }
 .vh-paths h2 {
   font-size: var(--v-type-title);
-  line-height: var(--v-leading-title);
+  line-height: var(--v-leading-title, 1.2);
   letter-spacing: var(--v-tracking-heading);
   margin-bottom: var(--v-space-3);
 }
 .vh-audiences {
-  padding-block: var(--v-space-8);
+  padding-block: var(--vh-section-compact);
 }
 .vh-paths .v-text-link {
   margin-top: var(--v-space-5);
@@ -1282,6 +1295,11 @@
   }
   .vh-hero-problems {
     font-size: 20px;
+  }
+  .vh-hero-actions .v-action {
+    min-width: 0;
+    flex: 1 1 0;
+    padding-inline: var(--v-space-3);
   }
   .vh-hero-actions {
     margin-top: var(--v-space-5);
@@ -1547,12 +1565,10 @@
   margin-top: var(--v-space-5);
   max-width: 48ch;
 }
-.vh-newsletter .v-action {
-  background: var(--v-primary);
-  color: var(--v-on-primary);
-}
-.vh-newsletter .v-action:hover {
-  background: color-mix(in srgb, var(--v-primary), var(--v-on-primary) 8%);
+.vh-newsletter {
+  --v-action-fill: var(--v-primary);
+  --v-action-text: var(--v-on-primary);
+  --v-action-hover: color-mix(in srgb, var(--v-primary), var(--v-on-primary) 8%);
 }
 .vh-impact-chapter {
   --v-focus: var(--v-on-impact);
@@ -1571,7 +1587,7 @@
 .vh-field-note h3 {
   font-size: clamp(1.75rem, 2.6vw, 2.5rem);
   line-height: 1.15;
-  letter-spacing: var(--v-tracking-title);
+  letter-spacing: var(--v-tracking-title, -0.025em);
   margin-top: var(--v-space-5);
   margin-bottom: var(--v-space-4);
 }

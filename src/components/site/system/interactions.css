@@ -1,0 +1,144 @@
+/* Tone communicates state; geometry stays stable. Demo attributes belong to the specimen. */
+.v-action {
+  --v-control-fill: var(--v-action-fill);
+  --v-control-text: var(--v-action-text);
+  --v-control-hover: var(--v-action-hover);
+  --v-control-pressed: color-mix(in srgb, var(--v-control-fill), var(--v-control-text) 12%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--v-space-3);
+  min-height: var(--v-target);
+  padding: var(--v-space-3) 20px;
+  border: var(--v-line-fine) solid transparent;
+  border-radius: var(--v-shape-control);
+  background: var(--v-control-fill);
+  color: var(--v-control-text);
+  font: 500 var(--v-type-action, var(--v-type-body))/1.25 var(--v-font-body);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--v-motion-fast) var(--v-motion-functional),
+    color var(--v-motion-fast) var(--v-motion-functional),
+    border-color var(--v-motion-fast) var(--v-motion-functional);
+}
+.v-action--secondary {
+  --v-control-fill: var(--v-secondary-container);
+  --v-control-text: var(--v-on-secondary-container);
+  --v-control-hover: color-mix(in srgb, var(--v-control-fill), var(--v-control-text) 8%);
+}
+.v-action--quiet {
+  --v-control-fill: transparent;
+  --v-control-text: var(--v-text);
+  --v-control-hover: var(--v-state-hover);
+  --v-control-pressed: var(--v-state-pressed);
+  padding-inline: var(--v-space-3);
+}
+.v-action[aria-pressed="true"] {
+  --v-control-fill: var(--v-secondary-container);
+  --v-control-text: var(--v-on-secondary-container);
+  --v-control-hover: color-mix(in srgb, var(--v-control-fill), var(--v-control-text) 8%);
+  border-color: var(--v-secondary);
+}
+.v-action:is(:hover, [data-demo-state="hover"]):not(:disabled) {
+  background: var(--v-control-hover);
+}
+.v-action:is(:active, [data-demo-state="pressed"]):not(:disabled) {
+  background: var(--v-control-pressed);
+}
+.v-action:disabled {
+  background: var(--v-surface-panel);
+  border-color: var(--v-divider);
+  color: var(--v-text-muted);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.v-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--v-space-3);
+  min-height: var(--v-target);
+  color: var(--v-link);
+  font-size: var(--v-type-body);
+  line-height: 1.4;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  transition: color var(--v-motion-fast) var(--v-motion-functional);
+}
+.v-text-link:is(:hover, [data-demo-state="hover"]) {
+  color: var(--v-text);
+  text-decoration-thickness: 2px;
+}
+.v-text-link:is(:active, [data-demo-state="pressed"]) {
+  color: var(--v-text);
+  text-decoration-thickness: 3px;
+}
+.rebuild.ve-editorial .rb-link.v-text-link {
+  border-bottom: 0;
+}
+.v-icon-button {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: var(--v-target);
+  height: var(--v-target);
+  color: var(--v-text-secondary);
+  border-radius: var(--v-shape-control);
+  cursor: pointer;
+}
+.v-nav {
+  display: inline-flex;
+  min-height: var(--v-target);
+  align-items: center;
+  padding-inline: var(--v-space-3);
+  color: var(--v-text-secondary);
+  font-size: var(--v-type-nav, var(--v-type-caption));
+  text-decoration: none;
+  border-radius: var(--v-shape-control);
+}
+:is(.v-nav, .v-icon-button) {
+  transition:
+    color var(--v-motion-fast) var(--v-motion-functional),
+    background-color var(--v-motion-fast) var(--v-motion-functional);
+}
+.v-nav.is-active {
+  color: var(--v-on-secondary-container);
+  background: var(--v-secondary-container);
+}
+:is(.v-nav, .v-icon-button):is(:hover, [data-demo-state="hover"]):not(:disabled) {
+  background: var(--v-state-hover);
+  color: var(--v-text);
+}
+.v-nav.is-active:hover {
+  background: color-mix(in srgb, var(--v-secondary-container), var(--v-on-secondary-container) 8%);
+  color: var(--v-on-secondary-container);
+}
+:is(.v-nav, .v-icon-button):is(:active, [data-demo-state="pressed"]):not(:disabled) {
+  background: var(--v-state-pressed);
+  color: var(--v-text);
+}
+.v-icon-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+:is(
+  .v-action,
+  .v-text-link,
+  .v-icon-button,
+  .v-nav,
+  .v-footer a,
+  .v-disclosure summary,
+  .v-input
+):focus-visible,
+.ve-system :focus-visible,
+.v-site-chrome :focus-visible,
+[data-demo-state="focus"] {
+  outline: var(--v-focus-width, 2px) solid var(--v-focus);
+  outline-offset: var(--v-focus-offset, 4px);
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.v-action, .v-text-link, .v-nav, .v-icon-button) {
+    transition: none;
+  }
+}

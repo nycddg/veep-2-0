@@ -65,7 +65,9 @@ function Index() {
                 and operations when the work has no owner and needs to move now.
               </p>
               <div className="vh-hero-actions">
-                <ActionLink href="/for-companies">For companies</ActionLink>
+                <ActionLink href="/for-companies" variant="secondary">
+                  For companies
+                </ActionLink>
                 <ActionLink href="/for-portfolios" variant="secondary">
                   For funds
                 </ActionLink>

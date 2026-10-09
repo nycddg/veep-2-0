@@ -1,5 +1,6 @@
 @import "./tokens.css";
 @import "./surfaces.css";
+@import "./interactions.css";
 @import "./section-motion.css";
 
 .ve-system,
@@ -81,121 +82,7 @@
   color: var(--v-text-secondary);
 }
 
-/* Canonical action anatomy: primary fill, secondary tone, quiet text. */
-.v-action {
-  --v-action-radius: var(--v-shape-control);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--v-space-3);
-  min-height: var(--v-target);
-  padding: var(--v-space-3) 20px;
-  border: var(--v-line-fine) solid transparent;
-  border-radius: var(--v-action-radius);
-  background: var(--v-action-fill);
-  color: var(--v-action-text);
-  font: 500 var(--v-type-body)/1.25 var(--v-font-body);
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    background-color var(--v-motion-fast) var(--v-motion-functional),
-    border-radius var(--v-motion-state) var(--v-motion-spatial),
-    transform var(--v-motion-fast) var(--v-motion-functional);
-}
-.v-action:hover {
-  background: var(--v-action-hover);
-  border-radius: var(--v-shape-panel);
-}
-.v-action:active {
-  transform: scale(0.98);
-}
-.v-action--secondary {
-  background: var(--v-surface-panel);
-  color: var(--v-text);
-}
-.v-action--secondary:hover {
-  background: color-mix(in srgb, var(--v-surface-panel), var(--v-text) 6%);
-}
-.v-action--quiet {
-  background: transparent;
-  color: var(--v-text);
-  padding-inline: var(--v-space-3);
-}
-.v-action--quiet:hover {
-  background: var(--v-state-hover);
-}
-.v-action[aria-pressed="true"] {
-  background: var(--v-state-selected);
-  color: var(--v-text);
-  border-color: transparent;
-}
-.v-action:disabled {
-  background: var(--v-surface-panel);
-  border-color: var(--v-divider);
-  color: var(--v-text-muted);
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-.v-text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--v-space-3);
-  min-height: var(--v-target);
-  color: var(--v-link);
-  font-size: var(--v-type-body);
-  line-height: 1.4;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
-}
-.v-text-link:hover {
-  color: var(--v-text);
-  text-decoration-thickness: 2px;
-}
-/* Transitional adapter: legacy editorial links used a border as their underline. */
-.rebuild.ve-editorial .rb-link.v-text-link {
-  border-bottom: 0;
-}
-.v-text-link > span {
-  transition: transform var(--v-motion-state) var(--v-motion-spatial);
-}
-.v-text-link:hover > span {
-  transform: translate(2px, -2px);
-}
-.v-icon-button {
-  display: inline-grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: var(--v-target);
-  height: var(--v-target);
-  color: var(--v-text-secondary);
-  border-radius: var(--v-shape-control);
-  transition: background-color var(--v-motion-fast);
-  cursor: pointer;
-}
-.v-icon-button:hover {
-  background: var(--v-state-hover);
-  color: var(--v-text);
-}
-.v-icon-button:active {
-  background: var(--v-state-pressed);
-}
-:is(
-  .v-action,
-  .v-text-link,
-  .v-icon-button,
-  .v-nav,
-  .v-footer a,
-  .v-disclosure summary,
-  .v-input
-):focus-visible,
-.ve-system :focus-visible,
-.v-site-chrome :focus-visible {
-  outline: 2px solid var(--v-focus);
-  outline-offset: 4px;
-}
-
+/* Shared controls own their complete state treatment. */
 .v-header {
   position: sticky;
   top: 0;
@@ -208,27 +95,6 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--v-space-4);
-}
-.v-nav {
-  display: inline-flex;
-  min-height: var(--v-target);
-  align-items: center;
-  padding-inline: 12px;
-  color: var(--v-text-secondary);
-  font-size: var(--v-type-caption);
-  text-decoration: none;
-  border-radius: var(--v-shape-control);
-  transition:
-    color var(--v-motion-fast),
-    background-color var(--v-motion-fast);
-}
-.v-nav:hover {
-  background: var(--v-state-hover);
-  color: var(--v-text);
-}
-.v-nav.is-active {
-  color: var(--v-text);
-  background: var(--v-state-selected);
 }
 .v-mobile-nav {
   padding-block: var(--v-space-3) var(--v-space-5);
@@ -302,6 +168,8 @@
   min-height: var(--v-target);
   padding: var(--v-space-5) var(--v-space-4);
   cursor: pointer;
+  border-radius: var(--v-shape-panel);
+  transition: background-color var(--v-motion-fast) var(--v-motion-functional);
   list-style: none;
   color: var(--v-text);
   font-size: var(--v-type-body-large);
@@ -312,7 +180,9 @@
 .v-disclosure summary:hover {
   color: var(--v-link);
   background: var(--v-state-hover);
-  border-radius: var(--v-shape-panel);
+}
+.v-disclosure summary:active {
+  background: var(--v-state-pressed);
 }
 .v-disclosure-mark {
   flex-shrink: 0;
@@ -347,8 +217,9 @@
   border: 1px solid var(--v-control-border);
   border-radius: var(--v-shape-control);
   font: inherit;
+  transition: border-color var(--v-motion-fast) var(--v-motion-functional);
 }
-.v-input:hover {
+.v-input:hover:not(:disabled) {
   border-color: var(--v-text);
 }
 .v-input[aria-invalid="true"] {
