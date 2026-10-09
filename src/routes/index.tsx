@@ -109,7 +109,7 @@ function Index() {
               <h3>Capital readiness</h3>
               <p className="v-body-large">
                 Get the model, reporting, and materials ready for the raise or transaction. Put a
-                senior owner on the work between preparation and diligence.
+                senior owner on the work from prep through diligence to close.
               </p>
             </li>
             <li>

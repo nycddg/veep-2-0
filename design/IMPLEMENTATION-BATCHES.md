@@ -410,3 +410,8 @@ Replace the visible “The work gets done” heading with an accessible SVG chec
 Dave requested the coral work item bounce around the Veep logo, then expand at the endpoint and receive a drawn check. Retain the single travelling work item; route it around the wordmark with perimeter rebounds and a near-logo deflection, then land at 89%, expand with a small overshoot by 92%, settle at 94%, and draw the check through 96%. Shared twelve-second lifecycle and pause behavior remain. Desktop and mobile have separate geometric paths within their existing layouts. Align the mobile endpoint with the delivery center; render the check in ink on the coral ball. Reduced motion shows the final combined symbol.
 
 Build passes; source diff checked. Browser confirms running lifecycle and reduced-motion completed symbol, with mobile ball/check centers aligned. No new dependency or breakpoint. Local only; unrelated changes preserved.
+
+
+## Batch 01AI — gentler ownership motion and capital wording
+
+Update capital readiness to “Put a senior owner on the work from prep through diligence to close.” Slow the ownership cycle from 12 to 18 seconds, remove the rapid box-crossing zigzags, and ease the remaining rebounds and exit on desktop and mobile. Retain logo clearance, extraction, expansion and check drawing. Browser confirms the new copy and 18-second ease-in-out motion; production build and diff checks pass. No hero timing change. Local only.

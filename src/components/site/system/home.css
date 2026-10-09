@@ -134,7 +134,7 @@
   font-size: var(--vh-type-chapter);
 }
 .vh-ownership {
-  --work-cycle: var(--v-motion-home-loop);
+  --work-cycle: calc(var(--v-motion-home-loop) * 1.5);
   --bounce-x: 94px;
   --bounce-y: 56px;
   --box-edge: 108px;
@@ -1017,7 +1017,7 @@
   }
 }
 .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-owned-path > span {
-  animation: vh-work-owned var(--work-cycle) linear infinite both;
+  animation: vh-work-owned var(--work-cycle) ease-in-out infinite both;
 }
 /* The center logo occupies the middle of the box. Each rebound stays in
    the clear perimeter so the ball never travels through the wordmark. */
@@ -1035,28 +1035,16 @@
     transform: translate(calc(-50% - var(--box-edge)), 0);
     opacity: 1;
   }
-  71% {
+  72% {
     transform: translate(calc(-50% - var(--bounce-x)), calc(-1 * var(--bounce-y)));
     opacity: 1;
   }
-  72.5% {
+  76% {
     transform: translate(calc(-50% - 62px), -26px);
     opacity: 1;
   }
-  74% {
+  82% {
     transform: translate(calc(-50% + var(--bounce-x)), calc(-1 * var(--bounce-y)));
-    opacity: 1;
-  }
-  77% {
-    transform: translate(calc(-50% + var(--bounce-x)), var(--bounce-y));
-    opacity: 1;
-  }
-  80% {
-    transform: translate(calc(-50% - var(--bounce-x)), var(--bounce-y));
-    opacity: 1;
-  }
-  83% {
-    transform: translate(calc(-50% + var(--bounce-x)), var(--bounce-y));
     opacity: 1;
   }
   85% {
@@ -1456,7 +1444,7 @@
     right: -4px;
   }
   .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-owned-path > span {
-    animation: vh-work-owned-vertical var(--work-cycle) linear infinite both;
+    animation: vh-work-owned-vertical var(--work-cycle) ease-in-out infinite both;
   }
   @keyframes vh-work-owned-vertical {
     0%,
@@ -1472,19 +1460,15 @@
       transform: translate(-38px, calc(-50% - 38px));
       opacity: 1;
     }
-    72% {
+    76% {
       transform: translate(38px, calc(-50% - 38px));
       opacity: 1;
     }
-    76% {
+    84% {
       transform: translate(38px, calc(-50% + 38px));
       opacity: 1;
     }
-    80% {
-      transform: translate(-38px, calc(-50% + 38px));
-      opacity: 1;
-    }
-    84% {
+    86% {
       transform: translate(0, calc(-50% + 38px));
       opacity: 1;
     }
