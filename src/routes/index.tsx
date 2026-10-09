@@ -61,12 +61,14 @@ function Index() {
             <MotionScene concept="desk" compact className="vh-hero-visual" />
             <div className="vh-hero-argument">
               <p className="v-body-large">
-                Founders and funds hire Veep when mission-critical work has no clear owner and needs
-                to move now. We own high-stakes mandates across strategic finance, GTM, and
-                operations.
+                Founders and funds hire to own high-stakes mandates across strategic finance, GTM,
+                and operations when the work has no owner and needs to move now.
               </p>
               <div className="vh-hero-actions">
-                <BookLink />
+                <ActionLink href="/for-companies">For companies</ActionLink>
+                <ActionLink href="/for-portfolios" variant="secondary">
+                  For funds
+                </ActionLink>
               </div>
             </div>
           </div>

@@ -48,7 +48,9 @@
 }
 .vh-hero-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  gap: var(--v-space-3);
   margin-top: var(--v-space-5);
 }
 .vh-home .vh-hero .ve-ticker {

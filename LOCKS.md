@@ -22,7 +22,7 @@ Updated 9 October 2026. Dave’s later redesign directions supersede the histori
 
 - Preserve the proposition and substantially approved copy; record small layout-driven edits and removals explicitly. Do not introduce unsupported proof, new service promises, or defensive attribution footnotes.
 - Preserve prices, units, guarantees, commercial responsibilities, example labels, testimonial attribution, legal text, routes, hashes, SEO, analytics, and forms.
-- Homepage primary remains **Book intro call** using the existing `BOOKING_URL` and destination behavior. Join’s application action stays on `/join#apply`. Scope links use `/pricing#tiers`, with no self-link on Pricing.
+- Per Dave’s latest hero annotation, its actions are **For companies** (`/for-companies`) and **For funds** (`/for-portfolios`). Header and closing **Book intro call** actions retain the existing `BOOKING_URL` and destination behavior. Join’s application action stays on `/join#apply`. Scope links use `/pricing#tiers`, with no self-link on Pricing.
 - Do not change form payloads, submission handlers, recipients, or upload behavior during visual work. No real form submissions during QA.
 - Agent Teams stays within For Companies and remains understated; do not imply a delivery track record.
 - Retain named people, supported credentials, and cohesive portrait/identity/evidence surfaces. No fabricated replacement identities or marketplace badges.
