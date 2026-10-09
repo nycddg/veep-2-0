@@ -1,5 +1,5 @@
 /* Tone communicates state; geometry stays stable. Demo attributes belong to the specimen. */
-.v-action {
+:is(.v-action, :where(.rebuild.ve-editorial) .ve-button) {
   --v-control-fill: var(--v-action-fill);
   --v-control-text: var(--v-action-text);
   --v-control-hover: var(--v-action-hover);
@@ -40,13 +40,13 @@
   --v-control-hover: color-mix(in srgb, var(--v-control-fill), var(--v-control-text) 8%);
   border-color: var(--v-secondary);
 }
-.v-action:is(:hover, [data-demo-state="hover"]):not(:disabled) {
+:is(.v-action, :where(.rebuild.ve-editorial) .ve-button):is(:hover, [data-demo-state="hover"]):not(:disabled) {
   background: var(--v-control-hover);
 }
-.v-action:is(:active, [data-demo-state="pressed"]):not(:disabled) {
+:is(.v-action, :where(.rebuild.ve-editorial) .ve-button):is(:active, [data-demo-state="pressed"]):not(:disabled) {
   background: var(--v-control-pressed);
 }
-.v-action:disabled {
+:is(.v-action, :where(.rebuild.ve-editorial) .ve-button):disabled {
   background: var(--v-surface-panel);
   border-color: var(--v-divider);
   color: var(--v-text-muted);
@@ -132,6 +132,7 @@
   .v-input
 ):focus-visible,
 .ve-system :focus-visible,
+.rebuild.ve-editorial :focus-visible,
 .v-site-chrome :focus-visible,
 [data-demo-state="focus"] {
   outline: var(--v-focus-width, 2px) solid var(--v-focus);

@@ -51,14 +51,12 @@
     color var(--v-motion-state);
 }
 .rebuild.ve-editorial .ve-work-tabs button[aria-selected="true"] {
-  background: var(--v-surface-panel);
-  color: var(--v-text);
+  background: var(--v-secondary-container);
+  color: var(--v-on-secondary-container);
 }
 .rebuild.ve-editorial .ve-work-tabs button > span:last-child {
   color: var(--v-accent);
-  transition:
-    transform var(--v-motion-state) var(--v-motion-spatial),
-    opacity var(--v-motion-state);
+  transition: opacity var(--v-motion-fast) var(--v-motion-functional);
 }
 .rebuild.ve-editorial .ve-work-tabs button:focus-visible {
   outline: 2px solid var(--v-focus);
@@ -73,7 +71,7 @@
   border: 0;
 }
 .rebuild.ve-editorial .ve-mandate-panel:not([hidden]) .ve-work-paper {
-  animation: v-assemble-paper 650ms var(--v-motion-spatial) both;
+  animation: v-assemble-paper 320ms var(--v-motion-spatial) both;
 }
 .rebuild.ve-editorial .ve-work-paper-1 {
   animation-delay: 60ms;
@@ -83,7 +81,7 @@
 }
 @keyframes v-assemble-paper {
   from {
-    translate: 0 12px;
+    translate: 0 4px;
   }
   to {
     translate: 0 0;
@@ -185,7 +183,7 @@
 }
 .rebuild.ve-editorial .ve-spotlight-card.is-prime {
   visibility: visible;
-  animation: v-spotlight-enter 550ms var(--v-motion-spatial) both;
+  animation: v-spotlight-enter 320ms var(--v-motion-spatial) both;
 }
 .rebuild.ve-editorial .ve-spotlight-card-image {
   align-self: stretch;
@@ -258,20 +256,6 @@
   border: 0;
   background: var(--v-surface-panel);
 }
-.rebuild.ve-editorial .ve-button {
-  border-radius: var(--v-shape-control);
-  transition:
-    background-color var(--v-motion-state),
-    border-radius var(--v-motion-state),
-    transform var(--v-motion-fast);
-}
-.rebuild.ve-editorial .ve-button:active {
-  transform: scale(0.98);
-}
-.rebuild.ve-editorial .ve-button:focus-visible {
-  outline: 2px solid var(--v-focus);
-  outline-offset: 4px;
-}
 .rebuild.ve-editorial .ve-method-track li {
   border-color: var(--v-divider);
 }
@@ -283,10 +267,6 @@
   .rebuild.ve-editorial .ve-work-tabs button:hover > span:last-child,
   .rebuild.ve-editorial .ve-work-tabs button:focus-visible > span:last-child {
     opacity: 1;
-    transform: translate(2px, -2px);
-  }
-  .rebuild.ve-editorial .ve-button:hover {
-    border-radius: var(--v-shape-panel);
   }
   .rebuild.ve-editorial .ve-choice:hover {
     background: #0b111f0e;
@@ -303,4 +283,22 @@
     transition: none;
     transform: none;
   }
+}
+
+/* Light reading planes keep their controls and focus paired with their own surface. */
+.rebuild.ve-editorial :is(.ve-mandate-pages, .ve-capacity-brief, .ve-pricing-sheet, .ve-form-sheet) {
+  --v-focus: var(--v-ref-blue-light);
+}
+.rebuild.ve-editorial .ve-work-tabs button:active {
+  background: var(--v-state-pressed);
+}
+.rebuild.ve-editorial .ve-work-tabs button[aria-selected="true"]:hover {
+  background: color-mix(in srgb, var(--v-secondary-container), var(--v-on-secondary-container) 8%);
+  color: var(--v-on-secondary-container);
+}
+.rebuild.ve-editorial .vm-scene {
+  --vm-accent: var(--v-accent);
+  --vm-coral: var(--v-signal);
+  --vm-structure: var(--v-text-muted);
+  --vm-muted: var(--v-text-secondary);
 }

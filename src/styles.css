@@ -1107,32 +1107,19 @@ html.dark .capacity-row-wash:hover :is(h3, p, .mono-label) {
    pricing, about, FAQ, join, contact, and the portal keep their surfaces. */
 .rebuild,
 .site-chrome {
-  --rb-canvas: #060912;
-  --rb-raised: #111a25;
-  --rb-text: #f6f6f2;
-  --rb-muted: #acb5c3;
-  --rb-rule: rgba(246, 246, 242, 0.16);
-  --rb-link: #86a8ff;
-  --rb-coral: #ff7166;
-  --rb-field: #f3f2ed;
-  --rb-field-text: #111827;
-  --rb-field-muted: #46515c;
+  --rb-canvas: var(--v-surface);
+  --rb-raised: var(--v-surface-section);
+  --rb-text: var(--v-text);
+  --rb-muted: var(--v-text-secondary);
+  --rb-rule: var(--v-outline-variant);
+  --rb-link: var(--v-link);
+  --rb-coral: var(--v-signal);
+  --rb-field: var(--v-ref-paper-panel);
+  --rb-field-text: var(--v-ref-ink);
+  --rb-field-muted: var(--v-ref-stone);
   background-color: var(--rb-canvas);
   color: var(--rb-text);
   font-weight: 400;
-}
-
-html.light .rebuild,
-html.light .site-chrome {
-  --rb-canvas: #f5f4ef;
-  --rb-raised: #ffffff;
-  --rb-text: #111827;
-  --rb-muted: #46515c;
-  --rb-rule: rgba(17, 24, 39, 0.16);
-  --rb-link: #315ea8;
-  --rb-field: #e6ebef;
-  --rb-field-text: #111827;
-  --rb-field-muted: #46515c;
 }
 
 .rebuild :is([id]) {

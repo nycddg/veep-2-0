@@ -445,3 +445,22 @@ Dave found the time inside Veep too slow. Increase ownership box/exit velocity 2
 Dave requires both fills below two seconds and both animations complete below five seconds. Replace the single congested inlet with staggered upper-circle entries, 120ms arrival travel and a 25ms inter-arrival pause. Keep solid admission/collision checks and the same coral item throughout. Reduce settling to 50ms; pace extraction and exit by their actual route lengths; each rail transfer takes 380ms. Box residence takes 400ms, with a downward entry in ownership. Expansion/check completes in 340ms, followed by a brief hold before reset. Free balls retain their ambient pace; remove superseded arrival/box/travel multipliers. Existing hero hop treatment, responsive geometry, palette, copy and reduced-motion behavior remain.
 
 Five tests pass, including compact/wide hero and desktop/mobile ownership collision simulations and repeated-cycle timing assertions. Measured worst fill: ownership 0.89s, hero 1.71s. Complete state including the drawn check: ownership 3.31s desktop / 3.29s mobile; hero 2.86s in both geometries. These measure active playback; existing offscreen/hidden pausing remains. Focused lint, production build and diff checks pass. Browser confirms both running treatments; screenshot voice-update/short-work-cycles.jpg. Local only, preserve unrelated work.
+
+
+## Studio polish pass — 9 October 2026
+
+Dave's new studio brief authorizes revising earlier visual decisions where the result is stronger, with sequential batches to avoid drift. Preserve identity, content, routes, commercial terms and working behaviors. Baseline screenshots cover Home, Founders, Funds, Pricing, About, Join, FAQ, MeetVeep and Contact. Existing unrelated foundation/page changes remain unstaged.
+
+### Batch 02A — shared visual contracts (complete)
+
+Unify legacy public-page color aliases with the current semantic palette. Give legacy actions the same stable geometry and tonal interaction states as canonical actions; keep keyboard focus visible across editorial controls. Selected mandate tabs use paired container/text colors. Shorten secondary entry and selection motion so it does not compete with the work simulations. No dependency, copy, form handler or route changes.
+
+Verification: production build passes. Desktop selected tabs retain correct labels/panels and paired colors; canonical actions retain 6px corners. Mobile opening checks cover Home, Founders, Pricing, About and Join. Evidence: studio-polish/batch1-controls.png and baseline captures. Further responsive/theme acceptance follows in 02C.
+
+### Batch 02B — composed page openings and editorial detail (queued)
+
+Retain the strong homepage composition, refine hierarchy and portrait captions, remove redundant introductory diagrams on decision-focused pages, align About's contact sheet, and calibrate responsive public-page openings. Preserve meaningful diagrams and approved work-animation timing.
+
+### Batch 02C — responsive, interaction and optical acceptance (queued)
+
+Inspect the primary public page families at 1600, 1440, 1024, 768, 390 and 360px, in both themes. Verify keyboard navigation, selection, disclosures, form focus without submitting, reduced motion, and the existing collision/timing tests. Resolve actual defects and record screenshot evidence and limitations.

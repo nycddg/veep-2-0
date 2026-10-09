@@ -24,14 +24,14 @@
 }
 .v-sequence[data-sequence="portraits"]:is([data-motion="running"], [data-motion="paused"])
   :is(.ve-contact-sheet img, .ve-join-portraits img) {
-  animation: v-portrait-settle 900ms var(--v-motion-spatial) both;
-  animation-delay: calc(var(--v-step) * 90ms);
+  animation: v-portrait-settle 480ms var(--v-motion-spatial) both;
+  animation-delay: calc(var(--v-step) * 40ms);
 }
 .v-sequence[data-sequence="portraits"]:is([data-motion="running"], [data-motion="paused"])
   .v-profile
   img {
-  animation: v-profile-crop-settle 900ms var(--v-motion-spatial) both;
-  animation-delay: calc(var(--v-step) * 90ms);
+  animation: v-profile-crop-settle 480ms var(--v-motion-spatial) both;
+  animation-delay: calc(var(--v-step) * 40ms);
 }
 @keyframes v-profile-crop-settle {
   from {
@@ -51,11 +51,11 @@
 }
 .v-sequence[data-sequence="proof"]:is([data-motion="running"], [data-motion="paused"])
   :is(.ve-proof-number, .vh-proof-number, .ve-secondary-result > p, .ve-career-proof strong) {
-  animation: v-proof-settle 700ms var(--v-motion-spatial) both;
+  animation: v-proof-settle 350ms var(--v-motion-spatial) both;
 }
 @keyframes v-proof-settle {
   from {
-    transform: translateY(10px);
+    transform: translateY(4px);
   }
   to {
     transform: translateY(0);
@@ -63,8 +63,8 @@
 }
 .v-sequence[data-sequence="process"]:is([data-motion="running"], [data-motion="paused"])
   :is(.ve-delivery-steps li > span, .ve-method-track li > span) {
-  animation: v-process-mark 900ms var(--v-motion-functional) both;
-  animation-delay: calc(var(--v-step) * 450ms);
+  animation: v-process-mark 480ms var(--v-motion-functional) both;
+  animation-delay: calc(var(--v-step) * 120ms);
 }
 @keyframes v-process-mark {
   0%,
@@ -87,13 +87,13 @@
 .v-sequence[data-sequence="portfolio"]:is([data-motion="running"], [data-motion="paused"])
   .ve-portfolio-lane::before {
   transform-origin: left center;
-  animation: v-connect-path 650ms var(--v-motion-spatial) both;
-  animation-delay: calc(var(--v-step) * 300ms);
+  animation: v-connect-path 400ms var(--v-motion-spatial) both;
+  animation-delay: calc(var(--v-step) * 100ms);
 }
 .v-sequence[data-sequence="portfolio"]:is([data-motion="running"], [data-motion="paused"])
   .ve-portfolio-lane::after {
-  animation: v-connect-point 650ms var(--v-motion-spatial) both;
-  animation-delay: calc(var(--v-step) * 300ms);
+  animation: v-connect-point 400ms var(--v-motion-spatial) both;
+  animation-delay: calc(var(--v-step) * 100ms);
 }
 @keyframes v-connect-path {
   from {

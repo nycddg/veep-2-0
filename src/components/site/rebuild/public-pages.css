@@ -44,17 +44,6 @@
   gap: 20px 28px;
   margin-top: 30px;
 }
-.rebuild .ve-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 44px;
-  padding: 13px 20px;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.25;
-}
 .rebuild .ve-small-note {
   font-size: 13px;
   line-height: 1.6;
