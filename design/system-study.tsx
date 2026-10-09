@@ -7,6 +7,8 @@ import { selectedSpotlights } from "../src/components/site/rebuild/spotlightSele
 import "../src/styles.css";
 import "./system-study.css";
 
+import { ComponentStates } from "./ComponentStates";
+
 const person = selectedSpotlights("home")[0];
 const colors = [
   "surface",
@@ -87,6 +89,7 @@ function ThemeSpecimen({ theme }: { theme: "dark" | "light" }) {
           keyboard focus keeps a clear outline.
         </p>
       </section>
+      <ComponentStates />
       <section>
         <h3 className="v-title">Clarity at the point of action.</h3>
         <div className="vs-field-demo">
@@ -146,6 +149,7 @@ function ThemeSpecimen({ theme }: { theme: "dark" | "light" }) {
         <div className="vs-profile">
           <ProfileFigure
             name={person.name}
+            priorCompanies={person.priorCompanies}
             role={person.role}
             credential={person.heroCredential ?? person.evidence}
             photoUrl={person.photoUrl}
@@ -176,7 +180,7 @@ function ThemeSpecimen({ theme }: { theme: "dark" | "light" }) {
           {animate ? "Show static resolution" : "Play motion example"}
         </Button>
         <p className="v-caption v-muted">
-          5.4 seconds. Pauses offscreen and in a hidden tab. Reduced motion retains the resolved
+          12 seconds. Pauses offscreen and in a hidden tab. Reduced motion retains the resolved
           state. This study’s control is not added to the homepage.
         </p>
       </section>
@@ -187,7 +191,7 @@ function ThemeSpecimen({ theme }: { theme: "dark" | "light" }) {
 export function SystemStudy() {
   const [view, setView] = useState<"both" | "dark" | "light">("both");
   return (
-    <main className="ve-system vs-study">
+    <main id="reference-top" className="ve-system vs-study">
       <header className="vs-intro">
         <p className="v-label">Veep / Internal design reference / 09 October 2026</p>
         <h1 className="v-heading">A system for the work.</h1>

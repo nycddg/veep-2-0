@@ -1,0 +1,51 @@
+.vs-component-states {
+  container-type: inline-size;
+}
+.vs-state-family {
+  margin-block: var(--v-space-6);
+}
+.vs-state-family > h4 {
+  margin-bottom: var(--v-space-5);
+  text-transform: uppercase;
+}
+.vs-state-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
+  gap: var(--v-space-5) var(--v-space-4);
+}
+.vs-state-sample {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--v-space-4);
+  min-width: 0;
+}
+.vs-state-fields,
+.vs-pair-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--v-space-5);
+  margin-block: var(--v-space-6);
+}
+.vs-color-pair {
+  display: grid;
+  align-content: start;
+  gap: var(--v-space-3);
+  padding: var(--v-space-5);
+  border: 1px solid var(--v-divider);
+  border-radius: var(--v-shape-panel);
+}
+.vs-color-pair small {
+  font: 400 var(--v-type-label)/1.5 var(--v-font-label);
+  overflow-wrap: anywhere;
+}
+.vs-signal-pair {
+  background: var(--v-signal);
+  color: var(--v-ref-ink);
+}
+@container (max-width: 480px) {
+  .vs-state-fields,
+  .vs-pair-grid {
+    grid-template-columns: 1fr;
+  }
+}

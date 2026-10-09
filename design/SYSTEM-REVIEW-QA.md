@@ -69,3 +69,13 @@ Dave requested a Vosler Copywriting sweep to remove defensive qualifications and
 - Exact testimonial wording, result figures, pricing, booking destinations, form behavior, and legal text remain unchanged.
 
 Review captures and route measurements are in `/Users/dave/.codex/visualizations/2026/10/08/01a11cba-9c61-7091-878a-af7c099dd3d0/veep-copy-sweep/`. `home-proof-ready.png`, `companies-testimonial-desktop.png`, and `funds-map-light-desktop.png` document the three marked corrections.
+
+
+## 9 October 2026 — Material reference refinement (01AB)
+
+- Home reviewed at 1381, 1024, 768, 390 and 320px in dark/light, no horizontal overflow. Audience action targets are 46px high, with equal widths on compact layouts.
+- Shared state specimen reviewed in paired themes and at 390px; same 6px control radius across default, hover, focus and pressed. Local selection, disclosure, associated field error and success checked without submission.
+- Enabled text/background samples exceed 4.5:1. Newsletter light pressed state corrected to 4.76:1; dark pressed is 6.37:1. This is a targeted component/surface contrast check, not a blanket accessibility certification.
+- Actual keyboard Tab shows a 2px ring with 4px offset on hero audience links. Mobile menu focuses its first item; Escape restores the trigger. Reduced motion removes movement from both work diagrams and ticker; normal preference restored.
+- Production build, focused ESLint and whitespace/diff validation pass. Full-site migration, exhaustive screen-reader testing and 200% browser zoom remain outside this bounded refinement.
+- Evidence: `canon-refinement/material-refinement/` in `/Users/dave/.codex/visualizations/2026/10/09/01a121b2-13c8-7c22-ad99-ae4b3eaf3595/`.
