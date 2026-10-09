@@ -850,3 +850,8 @@
 .vh-close .v-section-intro {
   align-items: start;
 }
+.vh-people-grid .v-profile .v-profile-companies {
+  font: 400 0.75rem/1.6 var(--v-font-label);
+  color: var(--v-text-secondary);
+  text-transform: uppercase;
+}

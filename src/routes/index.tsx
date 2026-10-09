@@ -129,6 +129,28 @@ function Index() {
           </TextLink>
         </Container>
       </section>
+      <section id="audiences" className="v-section v-section--tonal vh-audiences">
+        <Container className="vh-paths">
+          <article>
+            <h2>For companies</h2>
+            <p className="v-body-large v-muted">
+              A senior owner for a critical operating priority.
+            </p>
+            <TextLink to="/for-companies">
+              Explore company engagements <span aria-hidden="true">↗</span>
+            </TextLink>
+          </article>
+          <article>
+            <h2>For funds</h2>
+            <p className="v-body-large v-muted">
+              One relationship for operating capacity across your portfolio.
+            </p>
+            <TextLink to="/for-portfolios">
+              Explore portfolio operations <span aria-hidden="true">↗</span>
+            </TextLink>
+          </article>
+        </Container>
+      </section>
       <section className="v-section vh-method" aria-labelledby="method-title">
         <Container>
           <h2 id="method-title">How the work gets delivered</h2>
@@ -168,28 +190,6 @@ function Index() {
               How ownership works
             </TextLink>
           </div>
-        </Container>
-      </section>
-      <section id="audiences" className="v-section v-section--tonal vh-audiences">
-        <Container className="vh-paths">
-          <article>
-            <h2>For companies</h2>
-            <p className="v-body-large v-muted">
-              A senior owner for a critical operating priority.
-            </p>
-            <TextLink to="/for-companies">
-              Explore company engagements <span aria-hidden="true">↗</span>
-            </TextLink>
-          </article>
-          <article>
-            <h2>For funds</h2>
-            <p className="v-body-large v-muted">
-              One relationship for operating capacity across your portfolio.
-            </p>
-            <TextLink to="/for-portfolios">
-              Explore portfolio operations <span aria-hidden="true">↗</span>
-            </TextLink>
-          </article>
         </Container>
       </section>
       <section id="proof" className="v-section v-paper vh-proof-chapter">

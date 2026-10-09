@@ -28,6 +28,7 @@ export function OperatorProof() {
             key={person.name}
             name={person.name}
             role={person.role}
+            priorCompanies={person.priorCompanies}
             credential={person.heroCredential ?? person.evidence}
             photoUrl={person.photoUrl}
             photoPosition={person.photoPosition}

@@ -1,12 +1,14 @@
 export function ProfileFigure({
   name,
   role,
+  priorCompanies,
   credential,
   photoUrl,
   photoPosition = "center 65%",
 }: {
   name: string;
   role: string;
+  priorCompanies: string[];
   credential: string;
   photoUrl: string;
   photoPosition?: string;
@@ -29,6 +31,7 @@ export function ProfileFigure({
           <h3>{name}</h3>
           <p className="v-profile-role">{role.replace("Operating Partner", "").trim()}</p>
         </div>
+        <p className="v-profile-companies">{priorCompanies.slice(0, 3).join(" · ")}</p>
         <p>{credential}</p>
       </figcaption>
     </figure>

@@ -261,3 +261,12 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 **Change:** place name and right-aligned function pill in one vertically centered identity row. Allow longer names to wrap within their column. Scale each homepage portrait frame to 95% within its existing space, preserving card dimensions, credentials and image assets. Final scale supersedes the intermediate 90% adjustment.
 
 **Review checkpoint:** actual profiles inspected at 1381, 768 and 390px in both themes; computed scale is 0.95 at every width, with no document overflow. Names and pills remain aligned; longer names wrap on mobile. Existing motion and focus behavior unchanged. Production build, focused lint, formatting and diff checks pass. Evidence: `canon-refinement/profile-95/` in the October 9 visualization directory. Scope: ProfileFigure, home.css and ledger. Unrelated work preserved; no push or deployment.
+
+
+## Batch 01O — past-company lines and audience placement
+
+**Communication problems:** Dave requested two or three past companies above each profile's achievement and asked to swap the delivery timeline with Companies/Funds routing.
+
+**Changes:** use each operator's two existing `priorCompanies` records from spotlight-operators.ts: Industrious / Opencare; Morning Brew / The New Republic; Zocdoc / Pager Health; LVMH / Macy's. Display in IBM Plex Mono above the unchanged achievement. Preserve aligned pills and 95% photo scale. Swap the two complete homepage sections so impact → audiences → timeline → results is the sequence. No copy or destinations changed in the moved sections.
+
+**Review checkpoint:** profile company lines and reordered sections inspected at 1381, 768 and 390px in both themes with verified viewport widths and no horizontal overflow. Confirmed computed IBM Plex Mono. Longer company names wrap on mobile. Production build, focused lint, formatting and diff checks pass. Evidence directories: `canon-refinement/profile-companies/` and `canon-refinement/audience-before-timeline/` in the October 9 visualization directory. No new motion or focusable controls. Scope: OperatorProof, ProfileFigure, home.css, homepage and ledger; unrelated work preserved. No push or deployment.
