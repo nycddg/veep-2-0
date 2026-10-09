@@ -25,8 +25,10 @@ export function ProfileFigure({
         />
       </div>
       <figcaption>
-        <h3>{name}</h3>
-        <p className="v-profile-role">{role.replace("Operating Partner", "").trim()}</p>
+        <div className="v-profile-identity">
+          <h3>{name}</h3>
+          <p className="v-profile-role">{role.replace("Operating Partner", "").trim()}</p>
+        </div>
         <p>{credential}</p>
       </figcaption>
     </figure>

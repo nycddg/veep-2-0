@@ -829,9 +829,18 @@
 }
 
 /* Compact function labels retain the profile's single integrated surface. */
+.vh-people-grid .v-profile-image {
+  scale: 0.95;
+}
+.vh-people-grid .v-profile-identity {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--v-space-2);
+}
 .vh-people-grid .v-profile .v-profile-role {
   width: fit-content;
-  margin-left: auto;
+  margin: 0;
   padding: 3px 10px;
   border-radius: 999px;
   background: var(--v-secondary-container);
