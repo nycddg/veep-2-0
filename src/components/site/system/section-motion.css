@@ -23,9 +23,23 @@
   animation-play-state: paused !important;
 }
 .v-sequence[data-sequence="portraits"]:is([data-motion="running"], [data-motion="paused"])
-  :is(.v-profile img, .ve-contact-sheet img, .ve-join-portraits img) {
+  :is(.ve-contact-sheet img, .ve-join-portraits img) {
   animation: v-portrait-settle 900ms var(--v-motion-spatial) both;
   animation-delay: calc(var(--v-step) * 90ms);
+}
+.v-sequence[data-sequence="portraits"]:is([data-motion="running"], [data-motion="paused"])
+  .v-profile
+  img {
+  animation: v-profile-crop-settle 900ms var(--v-motion-spatial) both;
+  animation-delay: calc(var(--v-step) * 90ms);
+}
+@keyframes v-profile-crop-settle {
+  from {
+    transform: scale(1.025);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 @keyframes v-portrait-settle {
   from {

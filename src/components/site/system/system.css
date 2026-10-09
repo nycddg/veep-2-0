@@ -370,19 +370,25 @@
   min-width: 0;
   overflow: hidden;
   border-radius: var(--v-shape-surface);
-  background: var(--v-surface-section);
+  background: var(--v-surface-panel);
   padding: 6px;
 }
 .v-profile-image {
+  position: relative;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 10px;
-  background: #dfe7f5;
+  isolation: isolate;
 }
 .v-profile img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
+  /* The frame owns the only corner mask. Bleed covers fractional-pixel seams. */
+  position: absolute;
+  inset: -1px;
+  display: block;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  max-width: none;
   object-fit: cover;
-  background: #dfe7f5;
 }
 .v-profile figcaption {
   padding: var(--v-space-4) var(--v-space-3) var(--v-space-5);
@@ -397,8 +403,10 @@
   font-size: var(--v-type-caption);
   line-height: 1.5;
 }
-.v-profile-role {
+.v-profile .v-profile-role {
+  font: 400 0.75rem/1.6 var(--v-font-label);
   color: var(--v-text-secondary);
+  text-wrap: balance;
 }
 .ve-system .vm-scene {
   --vm-accent: var(--v-accent);

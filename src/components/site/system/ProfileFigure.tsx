@@ -26,7 +26,9 @@ export function ProfileFigure({
       </div>
       <figcaption>
         <h3>{name}</h3>
-        <p className="v-profile-role">{role}</p>
+        <p className="v-profile-role">
+          {role.replace("Operating Partner", "Operating\u00a0Partner")}
+        </p>
         <p>{credential}</p>
       </figcaption>
     </figure>

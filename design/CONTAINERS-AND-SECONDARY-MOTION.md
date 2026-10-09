@@ -4,20 +4,22 @@
 
 ## Surface decisions
 
-| Role                  | Treatment                                                                      | Use                                                                    |
-| --------------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| Page                  | Existing dark Night / light Cream                                              | The default reading surface                                            |
-| Section               | Existing raised tone or an intentional inverse paper spread                    | A new narrative chapter, not a frame around every block                |
-| Panel                 | Tonal fill, 8px radius, no outline or accent edge                              | One bounded scope, ownership model, audit brief, or form               |
-| Interactive container | Tonal selected/hover state, directional internal movement                      | Work tabs and FAQ disclosures; retain keyboard focus outlines          |
-| Editorial content     | Open type and space                                                            | Intros, founder biographies, criteria, closing copy                    |
-| Profile               | Portrait and copy inside one tonal surface; 15px outer radius, 10px inset crop | Credibility; no hover behavior implying a static portrait is clickable |
-| Proof                 | Open result and explanation on a shared plane                                  | No accent rails, count-up numbers, or decorative metric boxes          |
-| Diagram               | Open geometry; lines only express relationships                                | Scope boundaries, branches, shared access, and delivery paths          |
-| Pricing               | One comparison plane, tonal column/group differentiation                       | No isolated floating cards or accent perimeter                         |
-| Utility               | Filled form sheet; functional input boundaries                                 | Preserve validation, focus, selection, and form behavior               |
+| Role                  | Treatment                                                                           | Use                                                                    |
+| --------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Page                  | Existing dark Night / light Cream                                                   | The default reading surface                                            |
+| Section               | Existing raised tone or an intentional inverse paper spread                         | A new narrative chapter, not a frame around every block                |
+| Panel                 | Tonal fill, 8px radius, no outline or accent edge                                   | One bounded scope, ownership model, audit brief, or form               |
+| Interactive container | Tonal selected/hover state, directional internal movement                           | Work tabs and FAQ disclosures; retain keyboard focus outlines          |
+| Editorial content     | Open type and space                                                                 | Intros, founder biographies, criteria, closing copy                    |
+| Profile               | Portrait and copy inside one panel-tone surface; 15px outer radius, 10px inset crop | Credibility; no hover behavior implying a static portrait is clickable |
+| Proof                 | Open result and explanation on a shared plane                                       | No accent rails, count-up numbers, or decorative metric boxes          |
+| Diagram               | Open geometry; lines only express relationships                                     | Scope boundaries, branches, shared access, and delivery paths          |
+| Pricing               | One comparison plane, tonal column/group differentiation                            | No isolated floating cards or accent perimeter                         |
+| Utility               | Filled form sheet; functional input boundaries                                      | Preserve validation, focus, selection, and form behavior               |
 
 No universal card shadow or hover lift. Blue identifies activity or a meaningful state; coral identifies the work needing ownership. Neither color frames a container merely for emphasis. Structural relationship lines, readable form boundaries, keyboard focus indicators, and necessary comparison rules remain exceptions.
+
+`ProfileFigure` uses the panel surface in both themes so the complete card separates from the page. Keep the name and supported credential in Plex Sans; set the role in 12px Plex Mono, retaining “Operating Partner” together when the line wraps. The portrait frame owns the only corner mask. A one-pixel image bleed prevents edge seams; entry motion scales within that frame without adding a second clip or exposed background.
 
 ## Motion hierarchy
 
@@ -46,3 +48,7 @@ Applied surfaces: Home, Companies (including Agent Teams), Funds, Pricing, About
 - Reduced-motion styles and the preference listener were reviewed in source. The operating-system preference was not changed. No real forms were submitted.
 
 Captures and measurements: `/Users/dave/.codex/visualizations/2026/10/08/01a11cba-9c61-7091-878a-af7c099dd3d0/veep-tonal-motion/`.
+
+### Profile refinement
+
+The shared `ProfileFigure` panel, crop, and typography were inspected in the design specimen at 1345px in both themes, on Home at 390px dark (two columns), and at 320px light (one column). The lower crop corners are clean, all four portraits load, and the mobile layouts have no document overflow. The role uses Plex Mono while names and credentials retain Plex Sans. Production build, targeted ESLint, formatting, and whitespace checks pass; no browser console errors were returned. Captures: `/Users/dave/.codex/visualizations/2026/10/08/01a11cba-9c61-7091-878a-af7c099dd3d0/veep-profile-refinement/`.

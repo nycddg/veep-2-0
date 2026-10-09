@@ -153,7 +153,7 @@ function ThemeSpecimen({ theme }: { theme: "dark" | "light" }) {
           />
         </div>
         <p className="v-caption v-muted">
-          One profile surface, 15px corners: a named operator, a clear role, and a concrete result.
+          Panel surface, 15px corners. Plex Sans for the name and evidence; Plex Mono for the role.
         </p>
       </section>
       <section>
