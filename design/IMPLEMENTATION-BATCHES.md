@@ -279,3 +279,8 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 **Change:** use Dave's exact “A Veep operating partner,” “Owns strategy, execution, and team coordination.” and “Get the job done and hand off cleanly.” Remove “With Veep” and center the partner heading inside its existing scope. Remove the second accountability sentence as explicitly requested. Move the remaining sentence farther below the diagram into a blue primary-container callout with paired foreground and a primary leading border. This user-directed wording supersedes the earlier homepage wording; other commercial and responsibility copy remains unchanged.
 
 **Review checkpoint:** diagram and callout inspected at actual 1381, 768 and 390px widths in both themes. No horizontal overflow; partner heading fits the mobile scope. Existing static/reduced-motion geometry retained, with no new motion or controls. Production build, focused lint, formatting and diff checks pass. Scope: OwnershipDiagram, homepage, home.css and ledger. Evidence: `canon-refinement/ownership-callout/` in the October 9 visualization directory. Unrelated work preserved; no push or deployment.
+
+
+## Batch 01Q — simplify timeline footer
+
+Remove the advisory sentence from the homepage timeline as Dave requested. The remaining “How ownership works” link now occupies the left edge of the footer without changing its destination. Reviewed actual 1381, 768 and 390px renders in both themes; link aligns with the section heading at every width and no overflow occurs. Build and focused lint pass. Evidence: `canon-refinement/method-footer/`. Scope: homepage and ledger only; unrelated work preserved, no push or deployment.

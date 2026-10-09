@@ -185,7 +185,6 @@ function Index() {
             </li>
           </ol>
           <div className="vh-method-footer">
-            <p>Advisory provides senior guidance; your team owns execution.</p>
             <TextLink to="/for-companies" hash="benefits">
               How ownership works
             </TextLink>
