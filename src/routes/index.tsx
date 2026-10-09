@@ -49,27 +49,25 @@ function Index() {
       <section className="vh-hero">
         <Container>
           <div className="vh-hero-composition">
-            <div className="vh-hero-copy">
-              <h1 className="v-display">
-                <span>Because a job </span>
-                <span>always needs </span>
-                <span>to be done.</span>
-              </h1>
-              <p className="v-lead">
-                CEOs and funds hire Veep when mission-critical work has no clear owner and needs to
-                move now.
+            <h1 className="v-display vh-hero-title">
+              <span>Because a job </span>
+              <span>always needs </span>
+              <span>to be done.</span>
+            </h1>
+            <p className="vh-hero-problems">
+              <span>The work you can’t get to.</span> <span>The project that keeps slipping.</span>{" "}
+              <span>The OKR with no momentum.</span>
+            </p>
+            <MotionScene concept="desk" compact className="vh-hero-visual" />
+            <div className="vh-hero-argument">
+              <p className="v-body-large">
+                Founders and funds hire Veep when mission-critical work has no clear owner and needs
+                to move now. We own high-stakes mandates across strategic finance, GTM, and
+                operations.
               </p>
               <div className="vh-hero-actions">
                 <BookLink />
               </div>
-            </div>
-            <div className="vh-hero-argument">
-              <MotionScene concept="desk" compact />
-              <p className="v-body-large v-muted">
-                Veep gives companies and funds the operating partner capacity found inside top VC
-                and PE firms. We define the work and outcomes, assemble the right team, and own
-                delivery.
-              </p>
             </div>
           </div>
           <ClientTicker />

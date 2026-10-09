@@ -2,41 +2,46 @@
   --v-motion-home-loop: 12s;
   padding-top: var(--v-space-8);
 }
-/* A shared editorial spread: proposition and action beside the moving argument. */
+/* Headline and motion share the top row; problems and ownership form the subhead. */
 .vh-hero-composition {
   display: grid;
   grid-template-columns: 1.12fr 1fr;
+  grid-template-areas:
+    "headline visual"
+    "problems argument";
   align-items: center;
-  gap: var(--v-layout-gap);
+  gap: var(--v-space-6) var(--v-layout-gap);
   padding-bottom: var(--v-space-7);
 }
-.vh-hero-copy,
-.vh-hero-argument {
-  min-width: 0;
-}
-.vh-hero-copy .v-display {
+.vh-hero-title {
+  grid-area: headline;
   font-size: clamp(3.5rem, 6.4vw, 5.75rem);
   line-height: 1.02;
 }
-.vh-hero-copy h1 > span {
+.vh-hero-title > span,
+.vh-hero-problems > span {
   display: block;
 }
-.vh-hero-copy .v-lead {
-  max-width: 39ch;
-  margin-top: var(--v-space-5);
-  font-size: clamp(1.125rem, 1.7vw, 1.5rem);
+.vh-hero-problems {
+  grid-area: problems;
+  align-self: start;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: var(--v-tracking-lead);
   text-wrap: pretty;
 }
 .vh-hero-argument {
-  display: grid;
-  gap: var(--v-space-5);
+  grid-area: argument;
+  align-self: start;
+  min-width: 0;
 }
 .vh-hero-argument .v-body-large {
-  max-width: 44ch;
-  margin-inline: auto;
+  max-width: 48ch;
   text-wrap: pretty;
 }
 .vh-hero .vm-scene {
+  grid-area: visual;
   width: 100%;
   max-width: none;
   margin: 0;
@@ -44,7 +49,7 @@
 .vh-hero-actions {
   display: flex;
   align-items: center;
-  margin-top: var(--v-space-6);
+  margin-top: var(--v-space-5);
 }
 .vh-home .vh-hero .ve-ticker {
   border-top: 1px solid var(--v-border);
@@ -1073,7 +1078,7 @@
     grid-template-columns: 1.15fr 1fr;
     gap: var(--v-space-5);
   }
-  .vh-hero-copy .v-display {
+  .vh-hero-title {
     font-size: clamp(2.75rem, 5.7vw, 3.75rem);
   }
   .vh-hero-argument .v-body-large {
@@ -1266,21 +1271,18 @@
   }
   .vh-hero-composition {
     grid-template-columns: 1fr;
+    grid-template-areas: "headline" "problems" "visual" "argument";
     gap: var(--v-space-5);
     padding-bottom: var(--v-space-6);
   }
-  .vh-hero-copy .v-display {
+  .vh-hero-title {
     font-size: clamp(2.75rem, 11.5vw, 4rem);
   }
-  .vh-hero-copy .v-lead {
-    margin-top: var(--v-space-5);
-    font-size: 18px;
+  .vh-hero-problems {
+    font-size: 20px;
   }
   .vh-hero-actions {
     margin-top: var(--v-space-5);
-  }
-  .vh-hero-argument {
-    gap: var(--v-space-3);
   }
   .vh-hero-argument .v-body-large {
     max-width: none;
