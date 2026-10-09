@@ -4,7 +4,7 @@ import { Composition } from "./compositions";
 import { stories, type MotionConcept } from "./stories";
 import "./motion.css";
 
-/** Finite CSS choreography. SSR is a complete static illustration, never an empty stage. */
+/** Explicit loop support; every scene retains a complete static SSR/reduced-motion state. */
 export function MotionScene({
   concept,
   className = "",
@@ -29,6 +29,8 @@ export function MotionScene({
   const [finished, setFinished] = useState(false);
   const [replay, setReplay] = useState(0);
   const story = stories[concept];
+  const looping = story.loop === true;
+  const complete = finished && !looping;
   const accent = ["scope", "expertise", "first-step"].includes(concept);
 
   useEffect(() => {
@@ -72,17 +74,26 @@ export function MotionScene({
       data-frame={frame}
       data-animate={animate}
       data-playing={playing}
-      data-finished={finished}
+      data-finished={complete}
+      data-loop={looping}
       style={{ "--vm-duration": `${story.seconds}s` } as CSSProperties}
     >
       <svg
-        key={`${mobile}-${replay}`}
-        viewBox={accent ? "0 0 380 250" : mobile ? "0 0 360 450" : "0 0 600 520"}
+        key={`${concept === "desk" ? "portrait" : mobile}-${replay}`}
+        viewBox={
+          concept === "desk"
+            ? "0 0 420 540"
+            : accent
+              ? "0 0 380 250"
+              : mobile
+                ? "0 0 360 450"
+                : "0 0 600 520"
+        }
         className="vm-art"
         role="img"
         aria-labelledby={`${id}-title ${id}-desc`}
         onAnimationEnd={(event) => {
-          if (event.animationName === "vm-clock") setFinished(true);
+          if (!looping && event.animationName === "vm-clock") setFinished(true);
         }}
       >
         <title id={`${id}-title`}>{story.title}</title>
@@ -97,17 +108,17 @@ export function MotionScene({
           <button
             type="button"
             className="vm-control"
-            aria-label={`${finished ? "Replay" : paused ? "Play" : "Pause"} animation: ${story.title}`}
+            aria-label={`${complete ? "Replay" : paused ? "Play" : "Pause"} animation: ${story.title}`}
             onClick={() => {
-              if (finished) {
+              if (complete) {
                 setReplay((value) => value + 1);
                 setFinished(false);
                 setPaused(false);
               } else setPaused((value) => !value);
             }}
           >
-            {finished ? <RotateCcw size={14} /> : paused ? <Play size={14} /> : <Pause size={14} />}
-            <span>{finished ? "Replay" : paused ? "Play" : "Pause"}</span>
+            {complete ? <RotateCcw size={14} /> : paused ? <Play size={14} /> : <Pause size={14} />}
+            <span>{complete ? "Replay" : paused ? "Play" : "Pause"}</span>
           </button>
         )}
       </figcaption>

@@ -6,18 +6,18 @@ Every composition starts with a business relationship, then a static problem and
 
 ## Shared semantic vocabulary
 
-| Primitive                              | Meaning                          | Placement rule                                                                                                  |
-| -------------------------------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Filled blue square                     | The work                         | Inside its defined scope, or at the starting position before it is scoped                                       |
-| Dashed boundary                        | Potential or former scope        | Shows a relevant reference position, never decoration                                                           |
-| Solid blue boundary                    | Defined mandate                  | Encloses the work it governs                                                                                    |
-| Coral node                             | Accountable owner / relationship | Touches the scope boundary or relationship rail it is responsible for; detachment is explicitly a problem state |
-| Hollow small square                    | Supporting capability            | Connects to the scope boundary when relevant; unused capability stays detached                                  |
-| Active blue path                       | Owned movement or coordination   | Connects actual source and destination; never an ornamental intersection                                        |
-| Muted path                             | Unresolved or background work    | Remains secondary to the owned path                                                                             |
-| Capped endpoint                        | Delivery direction               | Terminates the owned path                                                                                       |
-| Large hollow center with workload bars | Executive bottleneck             | Receives returning work paths; load decreases when a stream leaves                                              |
-| Larger muted container                 | Portfolio company                | Contains its own mandate; never shares a delivery scope with another company                                    |
+| Primitive                           | Meaning                          | Placement rule                                                                                                  |
+| ----------------------------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Filled blue square                  | The work                         | Inside its defined scope, or at the starting position before it is scoped                                       |
+| Dashed boundary                     | Potential or former scope        | Shows a relevant reference position, never decoration                                                           |
+| Solid blue boundary                 | Defined mandate                  | Encloses the work it governs                                                                                    |
+| Coral node                          | Accountable owner / relationship | Touches the scope boundary or relationship rail it is responsible for; detachment is explicitly a problem state |
+| Hollow small square                 | Supporting capability            | Connects to the scope boundary when relevant; unused capability stays detached                                  |
+| Active blue path                    | Owned movement or coordination   | Connects actual source and destination; never an ornamental intersection                                        |
+| Muted path                          | Unresolved or background work    | Remains secondary to the owned path                                                                             |
+| Capped endpoint                     | Delivery direction               | Terminates the owned path                                                                                       |
+| Large hollow center containing work | Executive bottleneck             | Receives returning work paths; load decreases when a stream leaves                                              |
+| Larger muted container              | Portfolio company                | Contains its own mandate; never shares a delivery scope with another company                                    |
 
 Use Veep blue (#789FFF dark / #4E7AD4 light), coral #F43F34 and theme-muted construction lines. Backgrounds remain transparent. Reference strokes are 1.2–1.5px; active routes 2px; scope outlines 3px; endpoint caps 4px. Filled areas supply contrast without making every line heavy. No yellow, textures, random orbits, arbitrary rotations, node labels or simulated dashboards.
 
@@ -25,14 +25,26 @@ Use Veep blue (#789FFF dark / #4E7AD4 light), coral #F43F34 and theme-muted cons
 
 ### Home: work stops returning to your desk
 
-- **Primary object:** the upper workstream, initially routed to the executive center.
-- **Secondary actors:** the executive bottleneck and the owner attached to a new scope.
-- **Relationship:** two background streams retain a return loop; the selected stream gains a separate owned path.
-- **Direction:** from the same source, along a branch above the center, through a scoped mandate to a capped delivery path.
-- **Problem frame:** all three streams feed the same center; the future scope is only a dashed reference.
-- **Resolved frame:** the upper stream never reconnects to the center. Its owner touches its scope; one workload bar leaves the center. The other two streams remain unresolved.
+The 2026-10-09 screen-recording reference prompted a deliberate reduction: the homepage expresses one event at a time, rather than drawing every business role as a separate node. The separate support network, branching routes, pressure rings, reference boxes and delivery cap have been removed.
 
-The CEO center is lower-left and the new mandate upper-right because spatial separation is the actual state change, not merely compositional balance. During motion, the work follows the orthogonal route rather than cutting diagonally through space.
+- **Primary object:** one larger blue work square, among two smaller work pieces.
+- **Executive center:** a single open circle. All three pieces repeatedly return into it, and it expands under their load.
+- **Scope and ownership:** a frame closes around the selected work after it leaves the center. A coral node attaches directly to that frame.
+- **Direction:** quiet horizontal entry axes and a single vertical guide. The work, scope and owner subsequently travel down together as one unit. They do not return to the center.
+- **Problem frame:** all three pieces collect inside the expanded circle.
+- **Resolved frame:** the center has relaxed and retains the other two pieces. The owned unit has settled below it, visibly separate and still intact.
+
+The portrait composition puts the collecting circle beside the headline and the resolved owned unit near the CTA level. It uses a 420×540 drawing space capped at 430px wide on desktop and 360px wide on mobile. The same geometry and stable SVG key preserve playback through responsive changes.
+
+Home alone runs a continuous **9-second loop**:
+
+1. **0–2.8s:** work returns twice; the ring expands in response to the load.
+2. **2.8–4.6s:** one piece leaves, its boundary closes, and an owner attaches.
+3. **4.8–6.4s:** the complete owned unit moves down and settles with a small overshoot.
+4. **6.4–7.6s:** the resolved arrangement holds.
+5. **7.6–9.0s:** that unit clears forward, and fresh upstream work begins the next cycle.
+
+The owner remains attached to its scope throughout delivery. There are no decorative rotations, orbiting nodes, animated network branches, or frame-by-frame React updates. The remaining forms and restrained settling motion borrow the reference's simplicity; the geometry retains Veep's blue/coral palette. The static/reduced-motion state shows the complete resolution. Supporting capability is explained in page content rather than encoded as another network in this hero.
 
 ### Companies: a mandate gains an owner
 
@@ -82,9 +94,9 @@ Pricing uses a broad potential boundary resolving into a defined mandate with su
 
 ## Motion follows the relationships
 
-The default rhythm is problem → boundary/connection → transfer or attachment → resolved hold. Core scenes run 4.6–5.2s; secondary scenes 3.4–3.6s. Paths draw only between meaningful objects. Work follows its route; supporting capabilities move toward their attachment positions; an owner moves onto the boundary it owns. No movement exists merely to add personality.
+The default rhythm is problem → boundary/connection → transfer or attachment → resolved hold. Home runs the 9-second loop defined above. Other core scenes remain finite at 4.6–5.2s; secondary scenes remain finite at 3.4–3.6s. Paths draw only between meaningful objects. Work follows its route; supporting capabilities move toward their attachment positions; an owner moves onto the boundary it owns. No movement exists merely to add personality.
 
-Cubic-bezier(.65,0,.2,1) provides controlled acceleration and deceleration. Choreography is an authored interpretation, not timing inferred from the still [Motion reference](https://motion.dev/). Each scene stops at the same resolved arrangement used for reduced motion. The existing ticker remains the continuous breadth cue.
+Cubic-bezier(.65,0,.2,1) provides controlled acceleration and deceleration. Choreography is an authored interpretation, not timing inferred from the still [Motion reference](https://motion.dev/). Finite scenes stop at the resolved arrangement used for reduced motion. Home has a resolved hold before its next cycle. The existing ticker retains its separate behavior.
 
 ## Placement and copy
 
@@ -103,18 +115,18 @@ Cubic-bezier(.65,0,.2,1) provides controlled acceleration and deceleration. Chor
 
 ## Responsive composition
 
-Desktop/tablet use a 600×520 drawing space. At 600px and below the principal studies use a 360×450 composition with repositioned relationships and shorter travel. Funds reduces three companies to two; it retains the nested company/mandate hierarchy. The smaller accents have their own 380×250 space. Below 900px, principal hero copy and art stack; controls remain touch-accessible.
+Home uses the 420×540 portrait composition at every width. Other principal scenes on desktop/tablet use a 600×520 drawing space. At 600px and below the other principal studies use a 360×450 composition with repositioned relationships and shorter travel. Funds reduces three companies to two; it retains the nested company/mandate hierarchy. The smaller accents have their own 380×250 space. Below 900px, principal hero copy and art stack; controls remain touch-accessible.
 
 SVG aspect ratios reserve space before hydration. Animations change transforms, SVG stroke dash offsets and visibility, never page layout; there are no filters or canvas render loops. Hero photos no longer compete for LCP; proof images load lazily.
 
 ## Runtime and accessibility
 
-Shared React SVG components and finite CSS keyframes; no animation library, new runtime dependency, or frame-by-frame React state updates.
+Shared React SVG components and CSS keyframes; Home explicitly loops and other scenes remain finite; no animation library, new runtime dependency, or frame-by-frame React state updates.
 
-- Start once when at least 25% of the figure is visible.
+- Start when at least 25% of the figure is visible. Home continues cycling while visible; other scenes play once.
 - Pause when offscreen or when the document is hidden.
 - Pause / Play / Replay controls are keyboard accessible with visible focus.
-- Scrolling back does not restart a finished composition.
+- Scrolling back resumes the Home loop at its paused position; it does not restart a finished finite composition.
 - Reduced motion and no-JavaScript rendering show a coherent static arrangement, rather than blank art.
 - SVG titles and descriptions describe the abstract action, without exposing a schematic legend.
 - The drawing contains no visible text; headline, body and CTA remain readable throughout.
@@ -145,3 +157,18 @@ Validated locally on 2026-10-08:
 These are local rendering and interaction checks, not a production Core Web Vitals measurement or a user comprehension study. The static-state review establishes a consistent information model; audience comprehension remains a design judgment for review.
 
 Screenshot and viewport records are saved in the task's `veep-abstract-motion` artifact folder. The final files are `states-*.png`, `home/companies/funds-{theme}-{width}-*.png`, and `responsive-checks.json`; earlier exploratory captures in that folder are superseded.
+
+### Homepage loop follow-up — 2026-10-09
+
+The horizontal and initial vertical network explorations were superseded by the simpler loop described above after reviewing the supplied 4.38-second Motion screen recording. Only the final `minimal` captures describe the current homepage.
+
+Current homepage screenshots and check records are in `veep-abstract-motion/home-loop-2026-10-09/minimal`.
+
+Final simplified-loop validation:
+
+- Home rendered at 1440, 1024, 768, 390 and 320px in both themes without horizontal overflow or clipped geometry.
+- Two complete nine-second loops were inspected. Work returned, left the center, gained its frame/owner, moved as one unit, settled and cleared forward before the next cycle.
+- Manual pause stayed held across theme and viewport changes; offscreen animation paused. Keyboard play/resume was verified through the shared control. A Companies smoke check confirmed its finite scene still finishes with Replay.
+- Both static problem/resolved frames were inspected. They have no active keyframes or playback controls. This uses the same still branch as reduced motion; OS settings were not changed.
+- No page copy, booking destinations, prices, forms, ticker behavior or other page compositions changed in this homepage follow-up.
+- Production build, targeted ESLint and diff formatting checks passed. Full TypeScript checking still reports the same 11 existing errors outside the motion files; no new motion errors were reported.

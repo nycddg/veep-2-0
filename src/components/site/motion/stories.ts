@@ -9,16 +9,24 @@ export type MotionConcept =
   | "first-step";
 export const stories: Record<
   MotionConcept,
-  { title: string; description: string; problem: string; resolution: string; seconds: number }
+  {
+    title: string;
+    description: string;
+    problem: string;
+    resolution: string;
+    seconds: number;
+    loop?: boolean;
+  }
 > = {
   desk: {
-    title: "Work leaves the center",
-    problem: "Unresolved streams all return to the same executive center.",
+    title: "Work stops returning to your desk",
+    problem: "Three pieces of recurring work collect in one overloaded center.",
     resolution:
-      "One stream branches into an owned scope and a delivery path. It no longer reconnects to the center.",
+      "One work square has left the center. Its scope and attached owner travel with it and settle below, while the remaining work stays at the center.",
     description:
-      "Multiple work paths converge on one executive center. One stream reroutes through a separate scope with an attached owner and its own delivery endpoint. Other unresolved streams remain at the center.",
-    seconds: 5.2,
+      "Three work pieces repeatedly return to one center. The center expands under the load. One piece leaves, gains a scope and attached owner, then moves down as a single owned unit and settles. Fresh work begins the next cycle.",
+    seconds: 9,
+    loop: true,
   },
   mandate: {
     title: "A mandate gains an owner",

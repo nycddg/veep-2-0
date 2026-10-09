@@ -1,57 +1,6 @@
+import { HomeWorkLoop } from "./HomeWorkLoop";
 import { Capability, Endpoint, Owner, RoutePath, Scope, Work } from "./primitives";
 import type { MotionConcept } from "./stories";
-
-function Release({ compact }: { compact: boolean }) {
-  const centerX = compact ? 111 : 221,
-    centerY = compact ? 310 : 324;
-  const sourceX = compact ? 40 : 80,
-    sourceY = compact ? 80 : 126;
-  const scopeX = compact ? 221 : 381,
-    scopeY = compact ? 93 : 108,
-    size = compact ? 80 : 108;
-  const workX = scopeX + size / 2,
-    workY = scopeY + size / 2,
-    endX = compact ? 329 : 555;
-  return (
-    <>
-      {/* Two unresolved streams still return to the executive center. */}
-      <RoutePath
-        d={`M${sourceX} ${centerY - 40}H${centerX - 70}Q${centerX} ${centerY - 40} ${centerX} ${centerY - 29}`}
-        quiet
-      />
-      <RoutePath
-        d={`M${sourceX} ${centerY + 70}H${centerX - 50}Q${centerX} ${centerY + 70} ${centerX} ${centerY + 29}`}
-        quiet
-      />
-      <RoutePath
-        d={`M${centerX + 29} ${centerY}C${centerX + 90} ${centerY} ${centerX + 80} ${centerY + 90} ${centerX + 8} ${centerY + 90}H${sourceX}V${centerY + 70}`}
-        quiet
-      />
-      <Work x={sourceX} y={centerY - 40} size={17} />
-      <Work x={sourceX} y={centerY + 70} size={17} />
-      <circle cx={centerX} cy={centerY} r={29} className="vd-executive" />
-      <path d={`M${centerX - 11} ${centerY - 7}h22m-22 7h22`} className="vd-center-load" />
-      <path d={`M${centerX - 11} ${centerY + 7}h22`} className="vd-center-load vd-retire" />
-      {/* The same upper stream either returns to the center or takes the owned branch. */}
-      <RoutePath
-        d={`M${sourceX} ${sourceY}H${centerX - 25}Q${centerX} ${sourceY} ${centerX} ${sourceY + 25}V${centerY - 29}`}
-        state="retire"
-      />
-      <RoutePath d={`M${sourceX} ${sourceY}H${scopeX - 25}V${workY}H${endX}`} state="draw" />
-      <rect x={sourceX - 13} y={sourceY - 13} width={26} height={26} className="vd-reference" />
-      <Scope x={scopeX} y={scopeY} width={size} />
-      <Owner x={workX} y={scopeY} arrive />
-      <Work
-        x={workX}
-        y={workY}
-        fromX={sourceX - workX}
-        fromY={sourceY - workY}
-        bendX={scopeX - 25 - workX}
-      />
-      <Endpoint x={endX} y={workY} />
-    </>
-  );
-}
 
 function Mandate({ compact }: { compact: boolean }) {
   const cx = compact ? 180 : 300,
@@ -192,7 +141,7 @@ function Accent({ concept }: { concept: "scope" | "expertise" | "first-step" }) 
 export function Composition({ concept, compact }: { concept: MotionConcept; compact: boolean }) {
   switch (concept) {
     case "desk":
-      return <Release compact={compact} />;
+      return <HomeWorkLoop />;
     case "mandate":
       return <Mandate compact={compact} />;
     case "assembly":
