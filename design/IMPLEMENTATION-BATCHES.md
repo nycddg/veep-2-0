@@ -475,3 +475,12 @@ Inspect the primary public page families at 1600, 1440, 1024, 768, 390 and 360px
 Keyboard: mandate tabs move focus and selected panel together with ArrowRight; FAQ opens/closes with keyboard; mobile menu traps focus and Escape returns it to the trigger. Contact fields show the 2px focus outline, optional details expand at 360px without overflow; no form was submitted. Optical corrections unify form-field/submit corners at 6px and restore 24px padding to both outer engagement cards. Normal motion and dark theme restored after QA.
 
 Five physics tests pass, including collision separation, obstacle clearance, loop identity and timing: ownership fill 0.89s / completion 3.31s desktop, 3.29s mobile; hero fill 1.71s / completion 2.86s. Production build, focused ESLint and diff checks pass. No new console errors observed. Evidence: `studio-polish/` in the October 9 visualization directory, including `responsive-checks.json`, before/after captures, chapter views and contact focus. This is a public visual/interaction pass, not a portal redesign or exhaustive assistive-technology certification. No push or deployment. Pre-existing unrelated changes remain unstaged.
+
+### Batch 02D — Expressive work motion (complete, 2026-10-09)
+- Reviewed both supplied 18:03 screen recordings as timestamped frames. Replaced repeated rail hops, abrupt inlet speed changes and hard loop clearing with a shared M3 Expressive response.
+- Canonical default spatial spring (damping .8 / stiffness 380) drives completion; critically damped effects (1 / 1600) drive arrivals/check/fade. Gate travel uses the spatial spring's first arrival, avoiding overshoot through solid boundaries. A single broad rebound replaces repeated small hops.
+- Preserved fixed-step collisions, measured text/logo obstacles, selected coral identity, reduced motion and visibility pausing. Box speed reduced; completion holds before clearing. Both fills stay below 2s and completion below 5s.
+- Validation: six tests, 3-minute desktop/mobile collision runs; hero fill 1.53s / completion 2.93s; ownership fill 1.14s / completion 4.14–4.18s. Build and focused lint pass. Actual rendered desktop cycles sampled and inspected in `/tmp/veep-motion-review`.
+
+### Batch 02E — Coordinated site motion (active)
+- User's subsequent motion brief, adapted to Veep: composed entrance, distinct one-time section rhythms, interruptible menu/disclosure/tab changes, restrained intentional discoveries, reduced-motion alternatives. Preserve layout, type, copy, routes and handlers.

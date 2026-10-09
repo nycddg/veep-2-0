@@ -1,3 +1,4 @@
+@import "../system/expressive-motion.css";
 .wp-ball {
   fill: var(--v-accent, #adbef6);
 }
@@ -48,8 +49,8 @@
   transform-box: fill-box;
   transform-origin: center;
   transition:
-    opacity 450ms ease,
-    transform 450ms ease;
+    opacity 240ms var(--v-expressive-effects),
+    transform 550ms var(--v-expressive-spatial);
 }
 .wp-hero:is([data-stage="fill"], [data-stage="settle"]) .wp-scope {
   opacity: 0;

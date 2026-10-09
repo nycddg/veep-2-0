@@ -18,8 +18,8 @@ export function HomeWorkLoop({ compact = false }: { compact?: boolean }) {
       vertical: false,
       count: 7,
       completeInBox: true,
-      // Preserve the shared ball speed; soften only the hero’s hairline travel.
-      motion: { speedScale: 1, hops: 2, lift: 1.15, smoothLanding: true },
+      // Share the expressive handoff profile; preserve physical collision speed.
+      motion: { speedScale: 1 },
     }),
     [centerX, boxX],
   );

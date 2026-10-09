@@ -134,7 +134,7 @@ for (const compact of [true, false]) {
       vertical: false,
       count: 7,
       completeInBox: true,
-      motion: { speedScale: 1, hops: 2, lift: 1.15, smoothLanding: true },
+      motion: { speedScale: 1 },
     });
     let completed = false,
       looped = false;
@@ -149,3 +149,22 @@ for (const compact of [true, false]) {
     verifyCadence(sim);
   });
 }
+
+test("Expressive spatial settles; effects remain monotonic and never overshoot", async () => {
+  const { springProgress, expressive, springJourney } = await import("./motionScheme");
+  let previousEffect = 0,
+    previousTravel = 0,
+    peak = 0;
+  for (let i = 0; i <= 120; i++) {
+    const effects = springProgress(i / 120, expressive.effects);
+    const travel = springJourney(i / 120);
+    assert(effects >= previousEffect && effects <= 1);
+    assert(travel >= previousTravel && travel <= 1);
+    peak = Math.max(peak, springProgress(i / 120));
+    previousEffect = effects;
+    previousTravel = travel;
+  }
+  assert(peak > 1 && peak < 1.02, "Default spatial has controlled overshoot");
+  assert(Math.abs(springProgress(1) - 1) < 0.001);
+  assert.equal(springJourney(1), 1);
+});

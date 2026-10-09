@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { springProgress, expressive } from "./motionScheme";
 import { WorkSimulation, type WorkGeometry } from "./workSimulation";
 
 /** Integrates at 120Hz, writes SVG positions without React renders, pauses offscreen. */
@@ -30,7 +31,10 @@ export function useWorkPhysics(
         c.setAttribute("cx", String(b.x));
         c.setAttribute("cy", String(b.y));
         c.setAttribute("r", String(b.r * (b === sim.selected ? sim.scale : 1)));
-        c.style.opacity = "1";
+        c.style.opacity = String(
+          sim.opacity *
+            (b === sim.incoming ? springProgress(sim.arrivalTime, expressive.effects) : 1),
+        );
         c.setAttribute(
           "class",
           b.id === sim.geometry.count - 1
@@ -43,7 +47,7 @@ export function useWorkPhysics(
           "transform",
           `translate(${sim.geometry.end.x - 24} ${sim.geometry.end.y - 24})`,
         );
-        check.style.opacity = String(sim.check > 0 ? 1 : 0);
+        check.style.opacity = String(sim.check > 0 ? sim.opacity : 0);
         check.style.strokeDashoffset = String(1 - sim.check);
       }
       node.setAttribute("data-stage", sim.stage);
