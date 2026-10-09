@@ -427,3 +427,7 @@ Verification: four physics tests pass, including three-minute desktop/mobile/her
 ## Batch 01AK — quieter hero motion
 
 Dave approved the bottom animation's bounce but found the hero too fast and janky. Add hero-only motion tuning: 45% lower body speed, a 1.4× travel multiplier instead of 2×, two lower rail hops instead of three, and smooth entry/landing envelopes. Ownership keeps the exact prior defaults and geometry. No layout, palette, copy or breakpoint change. The tuned hero completes and loops in the collision test; all four physics tests, focused lint, production build and diff checks pass. Running desktop hero reviewed in the browser. Screenshot: voice-update/hero-gentle.jpg. Local only; unrelated changes preserved.
+
+## Batch 01AL — restore hero's general pace
+
+Dave clarified that only the new hairline bounce needed refinement. Restore the hero body-speed scale from 0.55 to 1, retaining the previously approved 15% increase for entry, circle collisions, extraction and box motion. Keep the hero-only lower two-hop hairline treatment, smooth landing envelope and gentler travel multiplier. Bottom animation unchanged. Four collision/loop tests and focused lint pass. No layout, copy or theme changes; local only.
