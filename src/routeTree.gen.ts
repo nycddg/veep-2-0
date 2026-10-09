@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as VictoriakasumuRouteImport } from './routes/victoriakasumu'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ApiGushworkLeadsRouteImport } from './routes/api.gushwork-leads'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SeanparkRouteImport } from './routes/seanpark'
 import { Route as ProofRouteImport } from './routes/proof'
@@ -83,6 +84,11 @@ const TermsRoute = TermsRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiGushworkLeadsRoute = ApiGushworkLeadsRouteImport.update({
+  id: '/api/gushwork-leads',
+  path: '/api/gushwork-leads',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -391,6 +397,7 @@ const AuthenticatedPortalClientBillingRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/gushwork-leads': typeof ApiGushworkLeadsRoute
   '/about': typeof AboutRoute
   '/alasdairlloydjones': typeof AlasdairlloydjonesRoute
   '/andrewsilver': typeof AndrewsilverRoute
@@ -452,6 +459,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/gushwork-leads': typeof ApiGushworkLeadsRoute
   '/about': typeof AboutRoute
   '/alasdairlloydjones': typeof AlasdairlloydjonesRoute
   '/andrewsilver': typeof AndrewsilverRoute
@@ -511,6 +519,7 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/api/gushwork-leads': typeof ApiGushworkLeadsRoute
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
@@ -789,6 +798,7 @@ export interface RootRouteChildren {
   SeanparkRoute: typeof SeanparkRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiGushworkLeadsRoute: typeof ApiGushworkLeadsRoute
   TermsRoute: typeof TermsRoute
   VictoriakasumuRoute: typeof VictoriakasumuRoute
 }
@@ -814,6 +824,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/gushwork-leads': {
+      id: '/api/gushwork-leads'
+      path: '/api/gushwork-leads'
+      fullPath: '/api/gushwork-leads'
+      preLoaderRoute: typeof ApiGushworkLeadsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -1357,6 +1374,7 @@ const rootRouteChildren: RootRouteChildren = {
   SeanparkRoute: SeanparkRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiGushworkLeadsRoute: ApiGushworkLeadsRoute,
   TermsRoute: TermsRoute,
   VictoriakasumuRoute: VictoriakasumuRoute,
 }
