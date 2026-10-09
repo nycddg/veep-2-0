@@ -6,7 +6,7 @@ import { Container } from "@/components/site/rebuild/Container";
 import { LegacyHash } from "@/components/site/rebuild/LegacyHash";
 import { OperatorProof } from "@/components/site/motion/OperatorProof";
 import { MotionScene } from "@/components/site/motion/MotionScene";
-import { Disclosure } from "@/components/site/system/Controls";
+import { ActionLink, Disclosure } from "@/components/site/system/Controls";
 import { OwnershipDiagram } from "@/components/site/rebuild/OwnershipDiagram";
 import "@/components/site/system/home.css";
 import { TextLink } from "@/components/site/rebuild/TextLink";
@@ -219,6 +219,29 @@ function Index() {
       <section className="v-section">
         <Container>
           <OperatorProof />
+        </Container>
+      </section>
+      <ClientTicker kind="operators" />
+      <section
+        className="v-section v-section--tonal vh-newsletter"
+        aria-labelledby="newsletter-title"
+      >
+        <Container className="v-section-intro">
+          <div>
+            <p className="v-eyebrow">The Veep newsletter</p>
+            <h2 id="newsletter-title" className="v-heading">
+              Zero to Something
+            </h2>
+          </div>
+          <div>
+            <p className="v-body-large">Field notes for founders building in the messy middle.</p>
+            <ActionLink
+              variant="secondary"
+              href="https://mailchi.mp/veep/zero-to-something-newsletter"
+            >
+              Register for the newsletter
+            </ActionLink>
+          </div>
         </Container>
       </section>
       <section className="v-section vh-close">

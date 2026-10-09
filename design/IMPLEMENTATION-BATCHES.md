@@ -181,3 +181,14 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 **Change:** move existing audience routes directly below impact; give the unchanged testimonial and Jerry Kolber attribution their own coral section between results and operators, with larger type. No added animation.
 
 **Scope and checkpoint:** homepage, home.css and this ledger. Rendered at 1280, 768 and 390px in both themes; no horizontal overflow. Coral/ink contrast is 6.16:1. Quote, case claims, destinations and other content preserved. Production build, focused lint, formatting and diff checks pass. Evidence: canon-refinement/annotations in the October 9 visualization directory. Implemented for review, not blanket design approval.
+
+
+## Batch 01G — operator history and newsletter
+
+**Communication problem:** Dave requested restoration of operator-company history below the profiles and a newsletter registration section above the final booking invitation.
+
+**Change:** extend the existing ticker with the 40 company names already present in ClientStrip, labelled “Our operators have worked at” to distinguish career history from Veep clients. Reuse the existing fading track, hover/focus pause, offscreen lifecycle and persistent reduced-motion setting. Add a tonal “Zero to Something” section with Dave’s “Field notes for founders building in the messy middle.” copy and a secondary registration action to his supplied Mailchimp URL. Booking remains the final primary action. No form payloads or handlers changed.
+
+**Scope:** ClientTicker, homepage, home.css and this ledger. Existing dirty ClientStrip and other unrelated files remain untouched. No new company claims or animation library.
+
+**Review checkpoint:** actual rendered profiles, ticker, newsletter and close inspected at 1280, 768 and 390px in both themes. Newsletter stacks below desktop; action remains comfortably sized. Mobile reduced-motion state displays all 40 names without horizontal document overflow and reports animation:none. Keyboard Enter on registration reaches “Zero to Something Registration” at the supplied Mailchimp URL; no subscription submitted. Restored homepage, dark theme, device motion setting and normal viewport. Focused lint, formatting, production build and diff checks pass. Captures: canon-refinement/annotations/operator-newsletter in the October 9 visualization directory. This completes the requested local changes; broader design acceptance remains open.

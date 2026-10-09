@@ -30,14 +30,65 @@ const selectedClients = [
   "Fowler Laundry Solutions",
 ];
 
-export function ClientTicker({ kind = "full" }: { kind?: "full" | "clients" }) {
+const operatorCompanies = [
+  "Industrious",
+  "Morning Brew",
+  "Zocdoc",
+  "Etsy",
+  "Polestar",
+  "Maisonette",
+  "Zipcar",
+  "Ford's Gin",
+  "Moo.com",
+  "Betaworks",
+  "Heavy.com",
+  "IGN",
+  "TaskRabbit",
+  "Refinery29",
+  "New Stand",
+  "American Express",
+  "Verizon",
+  "Citi",
+  "Opencare",
+  "UGE",
+  "frog design",
+  "Deloitte",
+  "?What If! Innovation",
+  "AOL",
+  "The New Republic",
+  "NewsCred",
+  "Facebook",
+  "LVMH",
+  "Macy's",
+  "Accenture",
+  "David Yurman",
+  "MediaLink",
+  "David Zwirner",
+  "Gansevoort Hotel Group",
+  "WeightWatchers",
+  "Verve Mobile",
+  "Big Spaceship",
+  "Pursuit",
+  "Google",
+  "Nifty's",
+];
+
+export function ClientTicker({ kind = "full" }: { kind?: "full" | "clients" | "operators" }) {
+  const fullWidth = kind !== "clients";
+  const label =
+    kind === "operators"
+      ? "Our operators have worked at"
+      : kind === "full"
+        ? "Trusted by"
+        : "Veep clients";
   const [paused, setPaused] = useState(false);
   const sequence = useSectionMotion();
-  const names = kind === "full" ? clients : selectedClients;
+  const names =
+    kind === "operators" ? operatorCompanies : kind === "full" ? clients : selectedClients;
   const content = (
     <>
       <div className="ve-ticker-label">
-        <p>{kind === "full" ? "Trusted by" : "Veep clients"}</p>
+        <p>{label}</p>
         {kind === "clients" && (
           <button
             type="button"
@@ -52,7 +103,9 @@ export function ClientTicker({ kind = "full" }: { kind?: "full" | "clients" }) {
       <div className="ve-ticker-window">
         <div
           className={`ve-ticker-track ${paused ? "is-paused" : ""}`}
-          style={kind === "full" ? { animationDuration: "100s" } : undefined}
+          style={
+            fullWidth ? { animationDuration: kind === "operators" ? "180s" : "100s" } : undefined
+          }
         >
           {[0, 1].map((copy) => (
             <ul key={copy} aria-hidden={copy === 1 ? true : undefined}>
@@ -70,17 +123,17 @@ export function ClientTicker({ kind = "full" }: { kind?: "full" | "clients" }) {
       ref={sequence.ref}
       data-motion={sequence.state}
       className={`ve-ticker ve-ticker-${kind}`}
-      role={kind === "full" ? "group" : undefined}
+      role={fullWidth ? "group" : undefined}
       aria-label={
-        kind === "full"
+        fullWidth
           ? sequence.state === "still"
-            ? "Veep clients"
-            : "Veep clients. Pauses while hovered or focused."
+            ? label
+            : `${label}. Pauses while hovered or focused.`
           : undefined
       }
-      tabIndex={kind === "full" ? 0 : undefined}
+      tabIndex={fullWidth ? 0 : undefined}
     >
-      {kind === "full" ? (
+      {fullWidth ? (
         <Container className="ve-container ve-ticker-inner">{content}</Container>
       ) : (
         content

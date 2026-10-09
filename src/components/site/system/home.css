@@ -418,7 +418,8 @@
 .vh-paths .v-text-link {
   margin-top: var(--v-space-5);
 }
-.vh-close .v-action {
+.vh-close .v-action,
+.vh-newsletter .v-action {
   margin-top: var(--v-space-6);
 }
 @media (max-width: 800px) {
@@ -690,4 +691,16 @@
 }
 .vh-home .ve-ticker[data-motion="still"] .ve-ticker-track ul[aria-hidden] {
   display: none;
+}
+
+.vh-home .ve-ticker-operators .ve-ticker-inner {
+  grid-template-columns: 168px minmax(0, 1fr);
+}
+.vh-newsletter .v-eyebrow {
+  margin-bottom: var(--v-space-4);
+}
+@media (max-width: 600px) {
+  .vh-home .ve-ticker-operators .ve-ticker-inner {
+    grid-template-columns: 110px minmax(0, 1fr);
+  }
 }
