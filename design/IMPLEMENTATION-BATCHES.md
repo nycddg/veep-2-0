@@ -379,3 +379,12 @@ Evidence: `canon-refinement/material-refinement/` in the October 9 visualization
 Rename the company audience label throughout navigation, homepage actions and headings, page metadata, related audience copy and the component reference. Follow Dave’s capitalization rule: “For Founders” in header/mobile/footer navigation; “For founders” in buttons and headings. Preserve /for-companies destinations and general prose referring to companies. No responsive or token changes.
 
 Production build passes; focused lint passes for the cleanly scoped files, with pre-existing formatting errors in OperatorSpotlightChapter left untouched. Source and browser checks verify the audience labels and existing destinations. Preserve unrelated work; local commit only, no push or deployment.
+
+
+## Batch 01AD — homepage Voice & Edge copy pass
+
+Dave requested a homepage copy update using Vosler Copywriting and supplied Veep-Voice-and-Edge-Addendum-2026-10-09.md. Consulted the plugin’s supplied source discussion of headline-to-body progression and objections (extraction Pages 36–37), landing-page guidance, and the addendum as reference material. Apply the buyer situation → senior ownership → practical benefit → mechanism → proof → action progression within the existing composition.
+
+Replace the hero’s mandate-heavy support and OKR line, sharpen the recognition and diagram captions, turn service inventories into active descriptions, clarify founder relief and fund readiness, rewrite the four delivery steps, and make the close a direct invitation to bring the stuck work. Update the operator introduction without changing its evidence. Retain H1, accountability statement, audience labels/casing, all case numbers and descriptions, testimonial/attribution, people/credentials, newsletter, metadata, URLs, and commercial terms. This user-requested copy pass supersedes the earlier exact supporting-copy and closing-heading guidance. No stylesheet, breakpoint, motion, or behavior change.
+
+Validation: production build and focused lint pass; actual desktop dark/light and 390px mobile renders reviewed, including hero, method and closing copy. No horizontal page overflow at checked widths. Existing responsive typography accommodates the copy. Evidence: October 9 visualization directory /voice-update/. Restore dark theme and viewport. Local commit only; preserve unrelated changes and do not push.

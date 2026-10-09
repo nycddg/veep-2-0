@@ -18,8 +18,8 @@ export function OperatorProof() {
           behind the work.
         </h2>
         <p className="v-body-large">
-          Our operating partners have raised capital, built teams, and led growth. Put that
-          experience to work on your next priority.
+          Operators who have raised capital, built teams, and led growth. People who know what the
+          work demands because they’ve carried it before.
         </p>
       </div>
       <div className="vh-people-grid">

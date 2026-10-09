@@ -137,8 +137,8 @@ Dave's site-wide copy correction takes precedence over earlier provenance-footno
 - Label conceptual content plainly: “Example mandate,” “Example company mandates,” or “Example finance workflow.” Avoid a second sentence explaining what the example is not.
 - Calls to action explain what the reader gets: define the priority, recommend the operating capacity, agree the next step. Avoid repeated “whether Veep is the right fit” endings.
 - Keep supported figures, exact testimonial wording, prices, scope, service responsibilities, and commercial terms accurate. Put useful terms where readers make the relevant decision; do not repeat them as defensive marketing footnotes.
-- Retain the canonical “It's probably a job for Veep.” Its conversational recognition is deliberate brand voice.
-- Preserve Dave’s exact current hero positioning: “Founders and funds hire to own high-stakes mandates across strategic finance, GTM, and operations when the work has no owner and needs to move now.” The three problem statements sit beneath the headline. Both audience routes keep their approved destinations; header and closing booking links retain their existing behavior.
+- The October 9 homepage voice pass closes with “What work keeps coming back to you?” and a specific invitation to bring the stuck priority to the intro call. “It’s probably a job for Veep” remains available brand language, not the current closing heading.
+- The October 9 Vosler/Voice & Edge homepage pass supersedes the earlier hero supporting sentence. Lead with jobs lacking a clean title or obvious owner, then explain senior ownership across finance, GTM, and operations for founders and funds, accountable through handoff. The three recognition lines remain beneath the unchanged headline. Both audience routes keep their approved destinations; header and closing booking links retain their existing behavior.
 
 ## Homepage editorial patterns
 

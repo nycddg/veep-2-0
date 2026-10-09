@@ -42,7 +42,7 @@ export function OwnershipDiagram() {
               ))}
             </span>
           </div>
-          <p>Decisions and coordination still depend on you.</p>
+          <p>Every decision and follow-up still comes back to you.</p>
         </div>
         <div className="vh-mandate">
           <div className="vh-mandate-scope">
@@ -51,7 +51,7 @@ export function OwnershipDiagram() {
               <img src={wordmarkNavy.url} alt="" className="hidden light:block" />
             </h3>
           </div>
-          <p>Owns strategy, execution, and team coordination.</p>
+          <p>A senior operator owns the plan, the team, and the follow-through.</p>
         </div>
         <div className="vh-delivery">
           <div className="vh-delivery-end">
@@ -61,7 +61,7 @@ export function OwnershipDiagram() {
               gets done.
             </h3>
           </div>
-          <p>With the level of quality and authorship you'd expect.</p>
+          <p>The agreed work, completed and ready for handoff.</p>
         </div>
       </div>
     </div>

@@ -56,13 +56,14 @@ function Index() {
             </h1>
             <p className="vh-hero-problems">
               <span>The work you can’t get to.</span> <span>The project that keeps slipping.</span>{" "}
-              <span>The OKR with no momentum.</span>
+              <span>The priority that keeps coming back.</span>
             </p>
             <MotionScene concept="desk" compact className="vh-hero-visual" />
             <div className="vh-hero-argument">
               <p className="v-body-large">
-                Founders and funds hire to own high-stakes mandates across strategic finance, GTM,
-                and operations when the work has no owner and needs to move now.
+                The hardest jobs rarely arrive with a clean title or an obvious owner. Veep puts
+                senior operators on critical finance, GTM, and operations work for founders and
+                funds. We stay accountable through delivery and handoff.
               </p>
               <div className="vh-hero-actions">
                 <ActionLink href="/for-companies" variant="secondary">
@@ -86,8 +87,9 @@ function Index() {
               back on your desk.
             </h2>
             <p className="v-body-large v-muted vh-recognition">
-              A fundraise to prepare. A go-to-market reset that keeps slipping. Margins that need
-              fixing. A leadership gap the team can’t absorb.
+              A raise to prepare for. Revenue that still depends on you. A launch without an
+              operating plan. Your team is at capacity, and you’re still the person holding it
+              together.
             </p>
           </div>
           <OwnershipDiagram />
@@ -110,22 +112,22 @@ function Index() {
             <li>
               <h3>Capital readiness</h3>
               <p className="v-body-large">
-                Models, reporting, materials, and coordination for a fundraise, financing, or
-                transaction.
+                Get the model, reporting, and materials ready for the raise or transaction. Put a
+                senior owner on the work between preparation and diligence.
               </p>
             </li>
             <li>
               <h3>Repeatable revenue</h3>
               <p className="v-body-large">
-                Customer focus, positioning, pricing, pipeline, and a sales cadence the team can run
-                beyond the founder.
+                Sharpen the customer focus, pricing, and pipeline. Build a sales cadence your team
+                can run without the founder in every deal.
               </p>
             </li>
             <li>
               <h3>Commercial expansion</h3>
               <p className="v-body-large">
-                A business case, operating plan, and launch coordination for a new market, product,
-                offer, or channel.
+                Pressure-test the next market, product, or channel. Build the operating plan and put
+                someone in charge of getting it into market.
               </p>
             </li>
           </ul>
@@ -139,7 +141,8 @@ function Index() {
           <article>
             <h2>For founders</h2>
             <p className="v-body-large v-muted">
-              A senior owner for a critical operating priority.
+              Keep your attention on the decisions. A lead operating partner owns the plan and
+              coordinates the people doing the work.
             </p>
             <TextLink to="/for-companies">
               Explore company engagements <span aria-hidden="true">↗</span>
@@ -148,7 +151,8 @@ function Index() {
           <article>
             <h2>For funds</h2>
             <p className="v-body-large v-muted">
-              One relationship for operating capacity across your portfolio.
+              Portfolio companies don’t pause for a search. Put senior operators on the work that
+              needs to move, through one operating relationship.
             </p>
             <TextLink to="/for-portfolios">
               Explore portfolio operations <span aria-hidden="true">↗</span>
@@ -158,35 +162,39 @@ function Index() {
       </section>
       <section className="v-section vh-method" aria-labelledby="method-title">
         <Container>
-          <h2 id="method-title">How the work gets delivered</h2>
+          <h2 id="method-title">Bring us the job.</h2>
           <ol className="vh-method-timeline">
             <li>
               <span className="vh-method-number" aria-hidden="true">
                 01
               </span>
               <h3>Scope</h3>
-              <p>Define the job, outcomes, and ownership required.</p>
+              <p>Define the job and what has to be true on the other side.</p>
             </li>
             <li>
               <span className="vh-method-number" aria-hidden="true">
                 02
               </span>
               <h3>Assemble</h3>
-              <p>Build the right team or workflows around the work.</p>
+              <p>
+                Put a lead operating partner in charge. Build the team and workflows around the job.
+              </p>
             </li>
             <li>
               <span className="vh-method-number" aria-hidden="true">
                 03
               </span>
               <h3>Own</h3>
-              <p>Drive delivery and team coordination through to completion.</p>
+              <p>Run the work, coordinate the team, and keep decisions moving.</p>
             </li>
             <li>
               <span className="vh-method-number" aria-hidden="true">
                 04
               </span>
               <h3>Deliver</h3>
-              <p>Finish the job, hand off cleanly, and agree what comes next.</p>
+              <p>
+                Finish the agreed work. Hand off clearly, with the next owner ready to take over.
+              </p>
             </li>
           </ol>
           <div className="vh-method-footer">
@@ -283,13 +291,15 @@ function Index() {
       <section className="v-section vh-close">
         <Container className="v-section-intro">
           <h2 className="v-heading">
-            It's probably
-            <br />a job for Veep.
+            What work keeps
+            <br />
+            coming back to you?
           </h2>
           <div>
             <p className="v-body-large v-muted">
-              Bring that work to a 30-minute intro call. We’ll define the priority and recommend the
-              operating capacity to move it forward.
+              Bring the stuck priority to a 30-minute intro call. Tell us what changed, what’s in
+              the way, and what needs to happen next. We’ll help define the job and who should own
+              it.
             </p>
             <BookLink />
           </div>
