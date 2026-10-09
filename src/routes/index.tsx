@@ -174,7 +174,7 @@ function Index() {
                 03
               </span>
               <h3>Own</h3>
-              <p>Drive delivery through completion and clean handoff.</p>
+              <p>Drive delivery and team coordination through to completion.</p>
             </li>
             <li>
               <span className="vh-method-number" aria-hidden="true">

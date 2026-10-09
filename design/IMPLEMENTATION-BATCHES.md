@@ -289,3 +289,8 @@ Remove the advisory sentence from the homepage timeline as Dave requested. The r
 ## Batch 01R — direct delivery-step copy
 
 Use Dave's exact Scope, Assemble and Own descriptions. Match Deliver to their direct tone: “Finish the job, hand off cleanly, and agree what comes next.” Preserve the four-step structure and ownership destination. Actual rendered copy reviewed at 1381, 768 and 390px in both themes; no overflow. Build, focused lint, formatting and diff checks pass. Evidence: `canon-refinement/method-copy/`. Scope: homepage and ledger; unrelated work preserved, no push or deployment.
+
+
+## Batch 01S — Own wording correction
+
+Replace the Own description with Dave's “Drive delivery and team coordination through to completion.” Other step copy stays unchanged. Rendered at 1381, 768 and 390px in both themes; no overflow. Build, focused lint, formatting and diff checks pass. Evidence: `canon-refinement/own-copy/`. Homepage and ledger only; no push or deployment.
