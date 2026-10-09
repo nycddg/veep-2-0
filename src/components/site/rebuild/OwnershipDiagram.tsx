@@ -1,12 +1,12 @@
 export function OwnershipDiagram() {
   return (
-    <div className="ve-ownership">
-      <div className="ve-unowned">
+    <div className="vh-ownership">
+      <div className="vh-unowned">
         <h3>Critical work. No clear owner.</h3>
-        <p className="ve-work-examples">
+        <p className="vh-work-examples">
           Fundraise <span>·</span> GTM reset <span>·</span> Operating gap
         </p>
-        <div className="ve-dead-ends">
+        <div className="vh-dead-ends">
           <div>
             <h4>Your team</h4>
             <p>At capacity. The priority keeps slipping.</p>
@@ -20,18 +20,18 @@ export function OwnershipDiagram() {
             <p>The direction is clear. Execution still lands on your team.</p>
           </div>
         </div>
-        <div className="ve-ceo-desk">
-          <span aria-hidden="true" className="ve-signal" />
+        <div className="vh-ceo-desk">
+          <span aria-hidden="true" className="vh-signal" />
           <p>
             The CEO’s desk<strong>Every unresolved decision comes back to you.</strong>
           </p>
         </div>
       </div>
-      <div className="ve-ownership-turn" aria-hidden="true">
+      <div className="vh-ownership-turn" aria-hidden="true">
         →
       </div>
-      <div className="ve-owned">
-        <p className="ve-kicker">With Veep</p>
+      <div className="vh-owned">
+        <p className="v-label">With Veep</p>
         <h3>
           The work gets
           <br />
@@ -67,7 +67,7 @@ export function OwnershipDiagram() {
             </div>
           </li>
         </ol>
-        <p className="ve-owned-boundary">
+        <p className="vh-owned-boundary">
           You retain strategic decisions and approvals. Advisory provides senior guidance; your team
           owns execution.
         </p>

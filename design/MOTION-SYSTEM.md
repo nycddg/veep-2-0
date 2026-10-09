@@ -19,7 +19,7 @@ Every composition starts with a business relationship, then a static problem and
 | Large hollow center containing work | Executive bottleneck             | Receives returning work paths; load decreases when a stream leaves                                              |
 | Larger muted container              | Portfolio company                | Contains its own mandate; never shares a delivery scope with another company                                    |
 
-Use Veep blue (#789FFF dark / #4E7AD4 light), coral #F43F34 and theme-muted construction lines. Backgrounds remain transparent. Reference strokes are 1.2–1.5px; active routes 2px; scope outlines 3px; endpoint caps 4px. Filled areas supply contrast without making every line heavy. No yellow, textures, random orbits, arbitrary rotations, node labels or simulated dashboards.
+Use Veep blue (#789FFF dark / #4E7AD4 light) and theme-muted construction lines. The 2026-10-09 homepage system pass now uses brand-sheet coral #EC6B66 through semantic tokens, with a fine ink edge on the selected square in light mode. Unmigrated scenes retain their earlier #F43F34 until their page pass. See [the design system](VEEP-DESIGN-SYSTEM.md) for the current role mapping. Backgrounds remain transparent. Reference strokes are 1.2–1.5px; active routes 2px; scope outlines 3px; endpoint caps 4px. Filled areas supply contrast without making every line heavy. No yellow, textures, random orbits, arbitrary rotations, node labels or simulated dashboards.
 
 ## Composition definitions and static-state test
 
@@ -35,7 +35,7 @@ The homepage expresses one event at a time. Following the 2026-10-09 simplificat
 - **Problem frame:** all seven squares sit inside the expanded center.
 - **Resolved frame:** six blue squares remain in the center; the coral square has advanced below in its own scope.
 
-The coral square is a homepage-specific highlight for the selected work. Other scenes retain their existing coral owner nodes. The portrait composition uses a 420×540 drawing space capped at 430px wide on desktop and 360px wide on mobile. The same geometry preserves playback through responsive changes.
+The coral square is a homepage-specific highlight for the selected work. Other scenes retain their existing coral owner nodes. The portrait composition uses a 420×540 drawing space capped at 430px wide on desktop and 270px wide on mobile in the homepage system pass. The same geometry preserves playback through responsive changes.
 
 Home alone runs a continuous **5.4-second loop**, revised after the 2026-10-09 request for quicker, more organic and playful motion:
 

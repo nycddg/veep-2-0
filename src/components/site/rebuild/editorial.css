@@ -29,10 +29,6 @@
 .rebuild .ve-period {
   color: var(--ve-coral);
 }
-.rebuild .ve-home-hero {
-  padding: 36px 0 0;
-  overflow: clip;
-}
 .rebuild .ve-masthead-top {
   display: flex;
   justify-content: space-between;
@@ -43,31 +39,6 @@
 .rebuild .ve-masthead-top span {
   font-family: var(--font-mono);
   font-size: 12px;
-}
-.rebuild .ve-home-title {
-  font-size: clamp(48px, 6.65vw, 96px);
-  line-height: 1.03;
-  letter-spacing: -0.055em;
-  margin-top: 28px;
-}
-.rebuild .ve-home-title > span {
-  display: block;
-}
-.rebuild .ve-home-stage {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 54px;
-  margin: 50px 0 42px;
-}
-.rebuild .ve-home-intro {
-  padding-top: 10px;
-}
-.rebuild .ve-home-intro > p:not(.ve-lead):not(.ve-network-count) {
-  font-size: 17px;
-  line-height: 1.55;
-  color: var(--rb-muted);
-  margin: 18px 0 24px;
-  max-width: 36ch;
 }
 .rebuild .ve-lead {
   font-size: 23px;
@@ -308,102 +279,6 @@
   padding-top: 110px;
   padding-bottom: 90px;
 }
-.rebuild .ve-ownership {
-  display: grid;
-  grid-template-columns: 1.3fr 70px 1fr;
-  align-items: center;
-  margin-top: 60px;
-}
-.rebuild .ve-unowned > h3 {
-  text-align: center;
-  font-size: 27px;
-  letter-spacing: -0.025em;
-}
-.rebuild .ve-work-examples {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  font-size: 15px;
-  margin-top: 12px;
-  color: var(--rb-muted);
-}
-.rebuild .ve-work-examples span {
-  color: var(--ve-coral);
-}
-.rebuild .ve-dead-ends {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin: 66px 0 62px;
-}
-.rebuild .ve-dead-ends::before,
-.rebuild .ve-dead-ends::after {
-  content: "";
-  position: absolute;
-  left: 16.66%;
-  right: 16.66%;
-  height: 28px;
-  border: 1px solid var(--rb-rule);
-}
-.rebuild .ve-dead-ends::before {
-  top: -28px;
-  border-bottom: 0;
-}
-.rebuild .ve-dead-ends::after {
-  bottom: -28px;
-  border-top: 0;
-}
-.rebuild .ve-dead-ends > div {
-  position: relative;
-  padding: 15px 5px;
-  text-align: center;
-}
-.rebuild .ve-dead-ends > div:nth-child(2)::before,
-.rebuild .ve-dead-ends > div:nth-child(2)::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 1px;
-  height: 56px;
-  background: var(--rb-rule);
-}
-.rebuild .ve-dead-ends > div:nth-child(2)::before {
-  bottom: 100%;
-}
-.rebuild .ve-dead-ends > div:nth-child(2)::after {
-  top: 100%;
-}
-.rebuild .ve-dead-ends h4 {
-  font-size: 17px;
-  font-weight: 500;
-}
-.rebuild .ve-dead-ends p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--rb-muted);
-  margin-top: 8px;
-}
-.rebuild .ve-ceo-desk {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 26px 30px;
-  border: 1px solid var(--rb-rule);
-  border-bottom: 4px solid var(--rb-muted);
-}
-.rebuild .ve-ceo-desk p {
-  font-size: 14px;
-  color: var(--rb-muted);
-}
-.rebuild .ve-ceo-desk strong {
-  display: block;
-  font-size: 22px;
-  line-height: 1.3;
-  color: var(--rb-text);
-  font-weight: 500;
-  margin-top: 7px;
-}
 .rebuild .ve-signal {
   display: block;
   flex-shrink: 0;
@@ -411,67 +286,6 @@
   height: 10px;
   border-radius: 50%;
   background: var(--ve-coral);
-}
-.rebuild .ve-ownership-turn {
-  color: var(--ve-coral);
-  font-size: 52px;
-  text-align: center;
-}
-.rebuild .ve-owned {
-  background: var(--ve-blue);
-  color: var(--ve-ink);
-  padding: 32px;
-}
-.rebuild .ve-owned > h3 {
-  font-size: 42px;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
-  margin-top: 14px;
-}
-.rebuild .ve-owned ol {
-  margin-top: 30px;
-}
-.rebuild .ve-owned li {
-  display: flex;
-  gap: 18px;
-  padding: 14px 0;
-  border-top: 1px solid #10182930;
-}
-.rebuild .ve-owned li > span {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  padding-top: 4px;
-}
-.rebuild .ve-owned h4 {
-  font-size: 19px;
-  font-weight: 500;
-}
-.rebuild .ve-owned li p {
-  font-size: 15px;
-  line-height: 1.45;
-  margin-top: 5px;
-}
-.rebuild .ve-owned-boundary {
-  font-size: 13px;
-  line-height: 1.5;
-  margin-top: 20px;
-}
-.rebuild .ve-model-caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  align-items: center;
-  margin-top: 36px;
-  padding-top: 22px;
-  border-top: 1px solid var(--rb-rule);
-}
-.rebuild .ve-model-caption > p {
-  font-size: 18px;
-  line-height: 1.5;
-  max-width: 52ch;
-}
-.rebuild .ve-model-caption .rb-link {
-  flex-shrink: 0;
 }
 .rebuild.ve-editorial .rb-link {
   gap: 14px;
@@ -636,10 +450,6 @@
     padding-left: 32px;
     padding-right: 32px;
   }
-  .rebuild .ve-home-stage {
-    grid-template-columns: 1fr 1.8fr;
-    gap: 32px;
-  }
   .rebuild .ve-profile img {
     height: 195px;
   }
@@ -652,21 +462,6 @@
     padding-left: 10px;
     padding-right: 10px;
   }
-  .rebuild .ve-ownership {
-    grid-template-columns: 1.2fr 40px 1fr;
-  }
-  .rebuild .ve-owned {
-    padding: 26px;
-  }
-  .rebuild .ve-owned > h3 {
-    font-size: 36px;
-  }
-  .rebuild .ve-ownership-turn {
-    font-size: 36px;
-  }
-  .rebuild .ve-dead-ends {
-    gap: 10px;
-  }
   .rebuild .ve-path {
     padding: 40px 32px;
   }
@@ -675,27 +470,6 @@
   }
 }
 @media (max-width: 800px) {
-  .rebuild .ve-home-title {
-    font-size: 7vw;
-  }
-  .rebuild .ve-home-stage {
-    grid-template-columns: 1fr;
-    margin-top: 32px;
-  }
-  .rebuild .ve-home-intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 36px;
-  }
-  .rebuild .ve-home-intro > p:not(.ve-lead):not(.ve-network-count) {
-    margin: 0;
-    grid-column: 2;
-    grid-row: 1 / span 2;
-  }
-  .rebuild .ve-home-intro > a {
-    justify-self: start;
-    align-self: start;
-  }
   .rebuild .ve-network-count {
     margin: 0;
     grid-column: 2;
@@ -710,40 +484,6 @@
   }
   .rebuild .ve-section-opening {
     gap: 30px;
-  }
-  .rebuild .ve-ownership {
-    grid-template-columns: 1fr;
-    margin-top: 44px;
-  }
-  .rebuild .ve-ownership-turn {
-    transform: rotate(90deg);
-    height: 70px;
-    display: grid;
-    place-items: center;
-  }
-  .rebuild .ve-owned {
-    padding: 32px;
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    column-gap: 30px;
-  }
-  .rebuild .ve-owned > .ve-kicker {
-    grid-column: 1;
-  }
-  .rebuild .ve-owned > h3 {
-    grid-column: 1;
-  }
-  .rebuild .ve-owned ol {
-    grid-column: 2;
-    grid-row: 1 / span 3;
-    margin: 0;
-  }
-  .rebuild .ve-owned-boundary {
-    grid-column: 1;
-  }
-  .rebuild .ve-model-caption {
-    gap: 20px;
-    align-items: start;
   }
   .rebuild .ve-path {
     padding: 36px 26px;
@@ -766,36 +506,14 @@
     padding-left: 22px;
     padding-right: 22px;
   }
-  .rebuild .ve-home-hero {
-    padding-top: 26px;
-  }
   .rebuild .ve-masthead-top {
     font-size: 12px;
   }
   .rebuild .ve-masthead-top span {
     display: none;
   }
-  .rebuild .ve-home-title {
-    font-size: clamp(42px, 11.2vw, 62px);
-    line-height: 1.03;
-    margin-top: 25px;
-  }
-  .rebuild .ve-home-title > span:last-child {
-    max-width: 12ch;
-  }
-  .rebuild .ve-home-stage {
-    margin-top: 30px;
-    gap: 38px;
-  }
-  .rebuild .ve-home-intro {
-    display: block;
-  }
   .rebuild .ve-lead {
     font-size: 22px;
-  }
-  .rebuild .ve-home-intro > p:not(.ve-lead):not(.ve-network-count) {
-    margin: 16px 0 22px;
-    font-size: 16px;
   }
   .rebuild .ve-network-count {
     margin-top: 26px;
@@ -884,73 +602,6 @@
   }
   .rebuild .ve-model-section {
     padding: 64px 0;
-  }
-  .rebuild .ve-unowned > h3 {
-    font-size: 23px;
-  }
-  .rebuild .ve-work-examples {
-    gap: 9px;
-    font-size: 13px;
-    flex-wrap: wrap;
-  }
-  .rebuild .ve-dead-ends {
-    grid-template-columns: 1fr;
-    gap: 0;
-    margin: 26px 0 0 10px;
-    border-left: 1px solid var(--rb-rule);
-    padding-left: 23px;
-  }
-  .rebuild .ve-dead-ends::before,
-  .rebuild .ve-dead-ends::after,
-  .rebuild .ve-dead-ends > div:nth-child(2)::before,
-  .rebuild .ve-dead-ends > div:nth-child(2)::after {
-    display: none;
-  }
-  .rebuild .ve-dead-ends > div {
-    text-align: left;
-    padding: 14px 0;
-  }
-  .rebuild .ve-dead-ends > div::before {
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 1px;
-    left: -24px;
-    top: 26px;
-    background: var(--rb-rule);
-  }
-  .rebuild .ve-dead-ends > div:nth-child(2)::before {
-    display: block;
-    top: 26px;
-    bottom: auto;
-    left: -24px;
-    width: 16px;
-    height: 1px;
-  }
-  .rebuild .ve-dead-ends p {
-    margin-top: 5px;
-  }
-  .rebuild .ve-ceo-desk {
-    padding: 22px 18px;
-    gap: 16px;
-    margin-top: 20px;
-  }
-  .rebuild .ve-ceo-desk strong {
-    font-size: 22px;
-  }
-  .rebuild .ve-owned {
-    display: block;
-    padding: 26px;
-  }
-  .rebuild .ve-owned ol {
-    margin-top: 26px;
-  }
-  .rebuild .ve-model-caption {
-    flex-direction: column;
-    gap: 14px;
-  }
-  .rebuild .ve-model-caption > p {
-    font-size: 17px;
   }
   .rebuild .ve-paths {
     grid-template-columns: 1fr;
@@ -2805,20 +2456,6 @@
 }
 /* On a phone, the roster leads and becomes a compact, touch-scrollable contact sheet. */
 @media (max-width: 560px) {
-  .rebuild .ve-home-stage {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-  }
-  .rebuild .ve-home-stage .ve-deck {
-    order: -1;
-  }
-  .rebuild .ve-home-intro .ve-lead {
-    display: none;
-  }
-  .rebuild .ve-home-intro > p:not(.ve-lead):not(.ve-network-count) {
-    margin-top: 0;
-  }
   .rebuild .ve-deck-cards {
     display: flex;
     overflow-x: auto;

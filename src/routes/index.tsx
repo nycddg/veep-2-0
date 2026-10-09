@@ -7,7 +7,7 @@ import { LegacyHash } from "@/components/site/rebuild/LegacyHash";
 import { OperatorProof } from "@/components/site/motion/OperatorProof";
 import { MotionScene } from "@/components/site/motion/MotionScene";
 import { OwnershipDiagram } from "@/components/site/rebuild/OwnershipDiagram";
-import { Section } from "@/components/site/rebuild/Section";
+import "@/components/site/system/home.css";
 import { TextLink } from "@/components/site/rebuild/TextLink";
 
 const TITLE = "Veep | Critical work, owned.";
@@ -43,29 +43,26 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="rebuild ve-editorial">
+    <div className="ve-system vh-home">
       <LegacyHash />
-      <Section pad="none" className="ve-home-hero">
-        <Container className="ve-container">
-          <div className="ve-masthead-top">
-            <p>An operating partner platform</p>
-            <span>Critical work, owned.</span>
-          </div>
-          <div className="ve-home-stage ve-motion-home-stage">
-            <div className="ve-home-intro">
-              <h1 className="ve-home-title">
-                <span>Because a job</span>
-                <span>always needs</span>
+      <section className="vh-hero">
+        <Container>
+          <p className="vh-opening-label">An operating partner platform</p>
+          <div className="vh-hero-grid">
+            <div className="vh-hero-copy">
+              <h1 className="v-display">
+                <span>Because a job </span>
+                <span>always needs </span>
                 <span>
-                  to be done<span className="ve-period">.</span>
+                  to be done<span className="v-signal">.</span>
                 </span>
               </h1>
-              <p className="ve-lead">
+              <p className="v-lead">
                 The work you can’t get to.
                 <br />
                 The priority that keeps slipping.
               </p>
-              <p>
+              <p className="v-body-large v-muted">
                 Veep gives companies and funds the operating partner capacity found inside top VC
                 and PE firms.
               </p>
@@ -75,24 +72,23 @@ function Index() {
           </div>
         </Container>
         <ClientTicker />
-      </Section>
-
-      <Section id="overview" className="ve-model-section">
-        <Container className="ve-container">
-          <div className="ve-section-opening">
-            <h2 className="ve-title">
+      </section>
+      <section id="overview" className="v-section">
+        <Container>
+          <div className="v-section-intro">
+            <h2 className="v-heading">
               It can’t all land
               <br />
               back on your desk.
             </h2>
-            <p className="ve-body">
+            <p className="v-body-large">
               Founders, CEOs, owner-operators, and funds hire Veep when mission-critical work has no
               clear owner and needs to move now.
             </p>
           </div>
           <OwnershipDiagram />
-          <div className="ve-model-caption">
-            <p>
+          <div className="vh-model-caption">
+            <p className="v-body v-muted">
               The operating partner model found inside top VC and PE firms, available to your
               business.
             </p>
@@ -101,99 +97,76 @@ function Index() {
             </TextLink>
           </div>
         </Container>
-      </Section>
-
-      <Section id="audiences" pad="none" className="ve-paths-section">
-        <Container className="ve-container">
-          <div className="ve-paths">
-            <article className="ve-path ve-path-company">
-              <p className="ve-kicker">For Companies</p>
-              <h2>
-                One critical
-                <br />
-                priority.
-                <br />
-                <span>A senior owner.</span>
-              </h2>
-              <div className="ve-path-glyph ve-single-glyph" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-                <b />
-              </div>
-              <p>
-                Prepare for a raise. Build a sales engine beyond the founder. Turn an expansion plan
-                into operating work.
-              </p>
-              <TextLink to="/for-companies">
-                Explore company engagements <span aria-hidden="true">↗</span>
-              </TextLink>
-            </article>
-            <article className="ve-path ve-path-funds">
-              <p className="ve-kicker">For Funds</p>
-              <h2>
-                A portfolio
-                <br />
-                of priorities.
-                <br />
-                <span>One relationship.</span>
-              </h2>
-              <div className="ve-path-glyph ve-many-glyph" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-                <b />
-                <i />
-                <i />
-                <i />
-              </div>
-              <p>
-                Plan capacity across the portfolio. Deploy it company by company, from diligence
-                through exit readiness.
-              </p>
-              <TextLink to="/for-portfolios">
-                Explore portfolio operations <span aria-hidden="true">↗</span>
-              </TextLink>
-            </article>
+      </section>
+      <section id="audiences" className="v-section v-section--tonal">
+        <Container className="vh-paths">
+          <article>
+            <p className="v-label">For Companies</p>
+            <h2 className="v-heading">
+              One critical priority.
+              <br />A senior owner.
+            </h2>
+            <p className="v-body-large v-muted">
+              Prepare for a raise. Build a sales engine beyond the founder. Turn an expansion plan
+              into operating work.
+            </p>
+            <TextLink to="/for-companies">
+              Explore company engagements <span aria-hidden="true">↗</span>
+            </TextLink>
+          </article>
+          <article>
+            <p className="v-label">For Funds</p>
+            <h2 className="v-heading">
+              A portfolio of priorities.
+              <br />
+              One relationship.
+            </h2>
+            <p className="v-body-large v-muted">
+              Plan capacity across the portfolio. Deploy it company by company, from diligence
+              through exit readiness.
+            </p>
+            <TextLink to="/for-portfolios">
+              Explore portfolio operations <span aria-hidden="true">↗</span>
+            </TextLink>
+          </article>
+        </Container>
+      </section>
+      <section id="proof" className="v-section v-paper">
+        <Container className="vh-proof">
+          <div>
+            <p className="v-label">Selected company work · B2B SaaS</p>
+            <p className="vh-proof-number">$6M</p>
+            <p className="v-lead">Raised in six weeks.</p>
+          </div>
+          <div>
+            <h2 className="v-heading">
+              A result has
+              <br />
+              work behind it.
+            </h2>
+            <p className="v-body-large v-muted">
+              A three-year financial model. Diligence-ready reporting. Support through investor
+              meetings and term sheets.
+            </p>
+            <TextLink to="/for-companies" hash="proof">
+              Inside the engagement <span aria-hidden="true">↗</span>
+            </TextLink>
           </div>
         </Container>
-      </Section>
-
-      <Section id="proof" className="ve-home-proof">
-        <Container className="ve-container">
-          <div className="ve-proof-teaser">
-            <div>
-              <p className="ve-kicker">Selected company work · B2B SaaS</p>
-              <p className="ve-proof-number">$6M</p>
-              <p className="ve-proof-label">Raised in six weeks.</p>
-            </div>
-            <div>
-              <h2 className="ve-title">
-                A result has
-                <br />
-                work behind it.
-              </h2>
-              <p className="ve-body">
-                A three-year financial model. Diligence-ready reporting. Support through investor
-                meetings and term sheets.
-              </p>
-              <TextLink to="/for-companies" hash="proof">
-                Inside the engagement <span aria-hidden="true">↗</span>
-              </TextLink>
-            </div>
-          </div>
-          <ClientTicker kind="clients" />
+      </section>
+      <section className="v-section">
+        <Container>
           <OperatorProof />
         </Container>
-      </Section>
-      <Section className="ve-close">
-        <Container className="ve-container ve-close-layout">
-          <h2>
+      </section>
+      <section className="v-section vh-close">
+        <Container className="v-section-intro">
+          <h2 className="v-heading">
             It's probably
-            <br /> a job for Veep<span className="ve-period">.</span>
+            <br />a job for Veep<span className="v-signal">.</span>
           </h2>
           <div>
-            <p>
+            <p className="v-body-large v-muted">
               It keeps slipping. It sits between functions. You’re still the one pushing it forward.
               Bring that work to a 30-minute intro call. We’ll discuss what it needs and whether
               Veep is the right fit.
@@ -201,7 +174,7 @@ function Index() {
             <BookLink />
           </div>
         </Container>
-      </Section>
+      </section>
     </div>
   );
 }

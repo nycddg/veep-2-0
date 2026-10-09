@@ -246,10 +246,6 @@
   }
 }
 /* Page integration: one expressive opening, then quieter explanation and proof. */
-.rebuild .ve-home-hero .ve-motion-home-stage {
-  grid-template-columns: 1fr 1.04fr;
-  gap: 50px;
-}
 .rebuild .ve-motion-hero {
   display: grid;
   grid-template-columns: 1fr 1.04fr;
@@ -303,79 +299,30 @@
   max-width: 560px;
   align-self: center;
 }
-.rebuild .ve-motion-people {
-  padding-top: 80px;
-}
-.rebuild .ve-motion-proof-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 36px;
-}
-.rebuild .ve-motion-proof-grid figure {
-  min-width: 0;
-}
-.rebuild .ve-motion-proof-grid img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 10px;
-  background: #dce5f7;
-}
-.rebuild .ve-motion-proof-grid figcaption {
-  padding-top: 16px;
-}
-.rebuild .ve-motion-proof-grid h3 {
-  font-size: 21px;
-  font-weight: 500;
-  line-height: 1.25;
-  letter-spacing: -0.025em;
-}
-.rebuild .ve-motion-proof-grid figcaption p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--rb-muted);
-  margin-top: 6px;
-}
-.rebuild .ve-motion-proof-grid figcaption p:last-child {
-  margin-top: 12px;
-  color: var(--rb-text);
-}
 .rebuild .ve-join-criteria .ve-join-portraits {
   max-width: 640px;
   margin: 36px 0;
 }
 @media (max-width: 1100px) {
-  .rebuild .ve-home-hero .ve-motion-home-stage,
   .rebuild .ve-motion-hero {
     gap: 30px;
   }
   .rebuild .ve-motion-intro h1 {
     font-size: clamp(46px, 5vw, 62px);
   }
-  .rebuild .ve-motion-proof-grid {
-    gap: 16px;
-  }
 }
 @media (max-width: 900px) {
-  .rebuild .ve-home-hero .ve-motion-home-stage,
   .rebuild .ve-motion-hero {
     grid-template-columns: 1fr;
     gap: 26px;
   }
-  .rebuild .ve-motion-hero .vm-scene,
-  .rebuild .ve-motion-home-stage .vm-scene {
+  .rebuild .ve-motion-hero .vm-scene {
     width: 100%;
     max-width: 580px;
     justify-self: center;
   }
   .rebuild .ve-motion-intro > p {
     max-width: 48ch;
-  }
-  .rebuild .ve-motion-proof-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px 20px;
   }
   .rebuild .ve-agent-motion-model {
     padding-left: 0;
@@ -393,23 +340,7 @@
     font-size: 17px;
     margin: 22px 0;
   }
-  .rebuild .ve-motion-home-stage .vm-scene,
   .rebuild .ve-motion-hero .vm-scene {
     max-width: 380px;
-  }
-  .rebuild .ve-home-hero .ve-motion-home-stage {
-    margin-bottom: 38px;
-  }
-  .rebuild .ve-motion-people {
-    padding-top: 56px;
-  }
-  .rebuild .ve-motion-proof-grid {
-    gap: 26px 14px;
-  }
-  .rebuild .ve-motion-proof-grid h3 {
-    font-size: 18px;
-  }
-  .rebuild .ve-motion-proof-grid figcaption p {
-    font-size: 13px;
   }
 }
