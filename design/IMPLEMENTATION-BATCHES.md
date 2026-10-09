@@ -403,3 +403,10 @@ Center the overview headline and body at Dave’s request. Remove the forced hea
 ## Batch 01AG — animated completion check
 
 Replace the visible “The work gets done” heading with an accessible SVG checkmark. Its stroke draws during 89–94% of the existing work cycle, after the coral work item reaches delivery, then resets with the loop. Retain the text as its accessible image label and preserve the caption. Use the existing accent color and mobile breakpoint (56px desktop, 48px mobile). Reduced-motion/still state shows the complete check without animation. Static browser appearance verified; production build and diff checks pass. Local only.
+
+
+## Batch 01AH — physical work item and completion transformation
+
+Dave requested the coral work item bounce around the Veep logo, then expand at the endpoint and receive a drawn check. Retain the single travelling work item; route it around the wordmark with perimeter rebounds and a near-logo deflection, then land at 89%, expand with a small overshoot by 92%, settle at 94%, and draw the check through 96%. Shared twelve-second lifecycle and pause behavior remain. Desktop and mobile have separate geometric paths within their existing layouts. Align the mobile endpoint with the delivery center; render the check in ink on the coral ball. Reduced motion shows the final combined symbol.
+
+Build passes; source diff checked. Browser confirms running lifecycle and reduced-motion completed symbol, with mobile ball/check centers aligned. No new dependency or breakpoint. Local only; unrelated changes preserved.

@@ -135,6 +135,9 @@
 }
 .vh-ownership {
   --work-cycle: var(--v-motion-home-loop);
+  --bounce-x: 94px;
+  --bounce-y: 56px;
+  --box-edge: 108px;
   --dot-gap: 26px;
   --row-top: 86px;
   --row-bottom: 71px;
@@ -272,6 +275,7 @@
   border: 1px solid var(--v-signal-edge);
   border-radius: 50%;
   background: var(--v-signal);
+  transform: scale(5.6);
 }
 .vh-executive-center,
 .vh-mandate-scope,
@@ -973,8 +977,12 @@
 .vh-delivery-check {
   width: 56px;
   height: 56px;
-  margin-inline: auto;
-  color: var(--v-accent);
+  position: absolute;
+  left: 50%;
+  top: 78px;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: var(--v-ref-ink);
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
@@ -990,16 +998,16 @@
 }
 @keyframes vh-complete-check {
   0%,
-  88% {
+  91% {
     stroke-dashoffset: 1;
     opacity: 0;
   }
-  89% {
+  92% {
     stroke-dashoffset: 1;
     opacity: 1;
   }
-  94%,
-  97% {
+  96%,
+  98% {
     stroke-dashoffset: 0;
     opacity: 1;
   }
@@ -1009,8 +1017,10 @@
   }
 }
 .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-owned-path > span {
-  animation: vh-work-owned var(--work-cycle) var(--v-motion-spatial) infinite both;
+  animation: vh-work-owned var(--work-cycle) linear infinite both;
 }
+/* The center logo occupies the middle of the box. Each rebound stays in
+   the clear perimeter so the ball never travels through the wordmark. */
 @keyframes vh-work-owned {
   0%,
   59.99% {
@@ -1021,19 +1031,62 @@
     transform: translateX(calc(-100% + var(--pickup-x)));
     opacity: 1;
   }
-  73%,
+  68% {
+    transform: translate(calc(-50% - var(--box-edge)), 0);
+    opacity: 1;
+  }
+  71% {
+    transform: translate(calc(-50% - var(--bounce-x)), calc(-1 * var(--bounce-y)));
+    opacity: 1;
+  }
+  72.5% {
+    transform: translate(calc(-50% - 62px), -26px);
+    opacity: 1;
+  }
+  74% {
+    transform: translate(calc(-50% + var(--bounce-x)), calc(-1 * var(--bounce-y)));
+    opacity: 1;
+  }
   77% {
-    transform: translateX(-50%);
+    transform: translate(calc(-50% + var(--bounce-x)), var(--bounce-y));
+    opacity: 1;
+  }
+  80% {
+    transform: translate(calc(-50% - var(--bounce-x)), var(--bounce-y));
+    opacity: 1;
+  }
+  83% {
+    transform: translate(calc(-50% + var(--bounce-x)), var(--bounce-y));
+    opacity: 1;
+  }
+  85% {
+    transform: translate(calc(-50% + var(--box-edge)), 0);
     opacity: 1;
   }
   89%,
-  94% {
-    transform: translateX(0);
+  98% {
+    transform: translate(0, 0);
     opacity: 1;
   }
   100% {
-    transform: translateX(0);
+    transform: translate(0, 0);
     opacity: 0;
+  }
+}
+.vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-owned-path > span::after {
+  animation: vh-work-land var(--work-cycle) ease-out infinite both;
+}
+@keyframes vh-work-land {
+  0%,
+  89% {
+    transform: scale(1);
+  }
+  92% {
+    transform: scale(6.2);
+  }
+  94%,
+  100% {
+    transform: scale(5.6);
   }
 }
 .vh-ownership-answer {
@@ -1388,8 +1441,8 @@
     align-items: center;
   }
   .vh-owned-path {
-    top: 76px;
-    bottom: 24px;
+    top: 50px;
+    bottom: 50px;
     left: 49px;
     right: auto;
     width: 2px;
@@ -1397,36 +1450,51 @@
   }
   .vh-owned-path > span::after {
     top: auto;
-    width: 8px;
-    height: 8px;
-    bottom: -4px;
-    right: -3px;
+    width: 10px;
+    height: 10px;
+    bottom: -5px;
+    right: -4px;
   }
   .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-owned-path > span {
-    animation: vh-work-owned-vertical var(--work-cycle) var(--v-motion-spatial) infinite both;
+    animation: vh-work-owned-vertical var(--work-cycle) linear infinite both;
   }
   @keyframes vh-work-owned-vertical {
     0%,
     59.99% {
-      transform: translateY(-100%);
+      transform: translateY(calc(-100% + 26px));
       opacity: 0;
     }
     60% {
-      transform: translateY(-100%);
+      transform: translateY(calc(-100% + 26px));
       opacity: 1;
     }
-    73%,
-    77% {
-      transform: translateY(-50%);
+    68% {
+      transform: translate(-38px, calc(-50% - 38px));
+      opacity: 1;
+    }
+    72% {
+      transform: translate(38px, calc(-50% - 38px));
+      opacity: 1;
+    }
+    76% {
+      transform: translate(38px, calc(-50% + 38px));
+      opacity: 1;
+    }
+    80% {
+      transform: translate(-38px, calc(-50% + 38px));
+      opacity: 1;
+    }
+    84% {
+      transform: translate(0, calc(-50% + 38px));
       opacity: 1;
     }
     89%,
-    94% {
-      transform: translateY(0);
+    98% {
+      transform: translate(0, 0);
       opacity: 1;
     }
     100% {
-      transform: translateY(0);
+      transform: translate(0, 0);
       opacity: 0;
     }
   }
@@ -1463,10 +1531,13 @@
   .vh-mandate-scope {
     padding: 8px 4px;
   }
+  .vh-delivery-end {
+    background: transparent;
+  }
   .vh-delivery-check {
     width: 48px;
     height: 48px;
-    margin-top: 17px;
+    top: 50px;
   }
   .vh-ownership-flow > div > p {
     margin: 0;
