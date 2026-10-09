@@ -321,32 +321,28 @@
   color: var(--v-on-impact);
 }
 .vh-impact-chapter h2 {
-  font-size: clamp(2.5rem, 6.4vw, 6rem);
+  font-size: clamp(2.5rem, 4.6vw, 4rem);
   line-height: 1.02;
   letter-spacing: var(--v-tracking-display);
 }
 .vh-impact-list {
   display: grid;
-  gap: var(--v-space-7);
-  margin-block: var(--v-space-8) var(--v-space-7);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--v-layout-gap);
+  margin-block: var(--v-space-7) var(--v-space-6);
 }
 .vh-impact-list li {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: var(--v-layout-gap);
+  border-top: 1px solid color-mix(in srgb, var(--v-on-impact) 30%, transparent);
+  padding-top: var(--v-space-5);
 }
 .vh-impact-list h3 {
-  max-width: 13ch;
-  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  font-size: clamp(1.5rem, 2vw, 1.75rem);
   letter-spacing: var(--v-tracking-heading);
   line-height: 1.1;
 }
-.vh-impact-list .v-lead {
+.vh-impact-list .v-body-large {
   max-width: 34ch;
-}
-.vh-impact-list .v-body {
-  max-width: 55ch;
-  margin-top: var(--v-space-3);
+  margin-top: var(--v-space-4);
 }
 .vh-proof-heading {
   display: flex;
@@ -358,7 +354,7 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: var(--v-layout-gap);
-  margin-top: var(--v-space-8);
+  margin-top: var(--v-space-6);
 }
 .vh-proof-number {
   font: 400 clamp(5.5rem, 11vw, 10rem)/1.15 var(--v-font-label);
@@ -370,7 +366,7 @@
   margin-top: var(--v-space-5);
 }
 .vh-client-voice {
-  margin-top: var(--v-space-9);
+  margin-top: var(--v-space-8);
   max-width: 1060px;
 }
 .vh-client-voice blockquote {
@@ -403,9 +399,16 @@
 }
 .vh-paths article + article {
   padding-left: var(--v-layout-gap);
+  border-left: 1px solid var(--v-border);
 }
 .vh-paths h2 {
-  margin-block: var(--v-space-5);
+  font-size: var(--v-type-title);
+  line-height: var(--v-leading-title);
+  letter-spacing: var(--v-tracking-heading);
+  margin-bottom: var(--v-space-3);
+}
+.vh-audiences {
+  padding-block: var(--v-space-8);
 }
 .vh-paths .v-text-link {
   margin-top: var(--v-space-5);
@@ -426,8 +429,17 @@
   .vh-mandate-scope h3 {
     font-size: 21px;
   }
+  .vh-impact-list {
+    grid-template-columns: 1fr;
+    gap: var(--v-space-5);
+  }
   .vh-impact-list li {
-    grid-template-columns: 1fr 1.3fr;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--v-space-5);
+  }
+  .vh-impact-list .v-body-large {
+    margin-top: 0;
   }
   .vh-proof-cases {
     grid-template-columns: 1fr 1fr;
@@ -591,13 +603,7 @@
   }
   .vh-impact-list li {
     grid-template-columns: 1fr;
-    gap: var(--v-space-4);
-  }
-  .vh-impact-list h3 {
-    max-width: none;
-  }
-  .vh-impact-list .v-lead {
-    font-size: 20px;
+    gap: var(--v-space-3);
   }
   .vh-proof-cases {
     grid-template-columns: 1fr;
@@ -612,25 +618,44 @@
   }
   .vh-paths {
     grid-template-columns: 1fr;
-    gap: var(--v-space-7);
+    gap: var(--v-space-6);
   }
   .vh-paths article + article {
     padding-left: 0;
-    padding-top: var(--v-space-5);
+    padding-top: var(--v-space-6);
+    border-left: 0;
+    border-top: 1px solid var(--v-border);
   }
   .vh-paths h2 {
-    font-size: var(--v-type-heading);
+    font-size: var(--v-type-title);
   }
   .vh-people-grid {
-    gap: var(--v-space-6) var(--v-space-4);
+    grid-template-columns: 1fr;
+    gap: var(--v-space-4);
+  }
+  .vh-people-grid .v-profile {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    align-items: center;
+  }
+  .vh-people-grid .v-profile-image {
+    height: 100%;
+    min-height: 148px;
+    aspect-ratio: auto;
+  }
+  .vh-people-grid .v-profile figcaption {
+    padding: var(--v-space-3) var(--v-space-4);
   }
   .vh-people-grid .v-profile h3 {
     font-size: 18px;
   }
 }
 @media (max-width: 350px) {
-  .vh-people-grid {
-    grid-template-columns: 1fr;
+  .vh-people-grid .v-profile {
+    grid-template-columns: 88px minmax(0, 1fr);
+  }
+  .vh-people-grid .v-profile figcaption {
+    padding-inline: var(--v-space-3);
   }
   .vh-ownership-flow > div:not(.vh-owned-path) {
     gap: var(--v-space-4);

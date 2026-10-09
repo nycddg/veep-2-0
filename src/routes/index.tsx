@@ -125,32 +125,24 @@ function Index() {
           <ul className="vh-impact-list">
             <li>
               <h3>Capital readiness</h3>
-              <div>
-                <p className="v-lead">Financials the business can stand behind.</p>
-                <p className="v-body">
-                  Financial models, reporting, and materials for investor, lender, or buyer
-                  scrutiny.
-                </p>
-              </div>
+              <p className="v-body-large">
+                Models, reporting, materials, and coordination for a fundraise, financing, or
+                transaction.
+              </p>
             </li>
             <li>
               <h3>Repeatable revenue</h3>
-              <div>
-                <p className="v-lead">Growth the team can run beyond the founder.</p>
-                <p className="v-body">
-                  Customer focus, positioning, pricing, pipeline management, and a sales cadence.
-                </p>
-              </div>
+              <p className="v-body-large">
+                Customer focus, positioning, pricing, pipeline, and a sales cadence the team can run
+                beyond the founder.
+              </p>
             </li>
             <li>
               <h3>Commercial expansion</h3>
-              <div>
-                <p className="v-lead">A sound expansion decision and a plan to act on.</p>
-                <p className="v-body">
-                  The business case, operating plan, and leadership to launch a new market, product,
-                  offer, or channel.
-                </p>
-              </div>
+              <p className="v-body-large">
+                A business case, operating plan, and launch coordination for a new market, product,
+                offer, or channel.
+              </p>
             </li>
           </ul>
           <TextLink to="/for-companies" hash="work">
@@ -161,11 +153,7 @@ function Index() {
       <section id="proof" className="v-section v-paper vh-proof-chapter">
         <Container>
           <div className="vh-proof-heading">
-            <h2 className="v-heading">
-              The work.
-              <br />
-              The difference it made.
-            </h2>
+            <h2 className="v-heading">The difference it made.</h2>
             <TextLink to="/for-companies" hash="proof">
               Inside the engagements
             </TextLink>
@@ -207,32 +195,21 @@ function Index() {
           <OperatorProof />
         </Container>
       </section>
-      <section id="audiences" className="v-section v-section--tonal">
+      <section id="audiences" className="v-section v-section--tonal vh-audiences">
         <Container className="vh-paths">
           <article>
-            <p className="v-label">For Companies</p>
-            <h2 className="v-heading">
-              One critical priority.
-              <br />A senior owner.
-            </h2>
+            <h2>For companies</h2>
             <p className="v-body-large v-muted">
-              Prepare for a raise. Build a sales engine beyond the founder. Turn an expansion plan
-              into operating work.
+              A senior owner for a critical operating priority.
             </p>
             <TextLink to="/for-companies">
               Explore company engagements <span aria-hidden="true">↗</span>
             </TextLink>
           </article>
           <article>
-            <p className="v-label">For Funds</p>
-            <h2 className="v-heading">
-              A portfolio of priorities.
-              <br />
-              One relationship.
-            </h2>
+            <h2>For funds</h2>
             <p className="v-body-large v-muted">
-              Plan capacity across the portfolio. Deploy it company by company, from diligence
-              through exit readiness.
+              One relationship for operating capacity across your portfolio.
             </p>
             <TextLink to="/for-portfolios">
               Explore portfolio operations <span aria-hidden="true">↗</span>
@@ -248,7 +225,6 @@ function Index() {
           </h2>
           <div>
             <p className="v-body-large v-muted">
-              It keeps slipping. It sits between functions. You’re still the one pushing it forward.
               Bring that work to a 30-minute intro call. We’ll define the priority and recommend the
               operating capacity to move it forward.
             </p>

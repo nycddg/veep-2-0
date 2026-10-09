@@ -140,3 +140,15 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 **Scope:** homepage, OwnershipDiagram, home.css, and this ledger only. No pricing, claims, booking destinations, forms, routes, hero geometry/timing, or client names changed. The diagram's small “With Veep” label uses the accessible link token and increases to 12px on compact screens.
 
 **Review checkpoint:** actual opening and ownership renders inspected at desktop, tablet and mobile in the course of this batch; full six-view theme/size matrix follows after the contiguous homepage refinements. The mobile opening contains the complete proposition, graphic and CTA within 844px. The diagram retains a horizontal relationship above 600px and vertical relationship below it; all meaning is available without motion. Build/lint results and final evidence are recorded with the completed review below.
+
+## Batch 01D — impact, evidence and next step
+
+**Communication problem:** the large impact field delayed the evidence, narrow mobile profile captions weakened credibility, and two substantial audience pitches restarted the argument before the close.
+
+**Change:** three open impact columns on desktop, paired title/description rows on tablet, stacked rows on mobile. Combine overlapping benefit and scope descriptions while retaining capital/transaction readiness, growth beyond the founder, and expansion scope. Reduce proof-heading repetition and the gap before the case figures. Preserve both case results, supporting work, exact Atomic Audio quote and Jerry Kolber attribution. Retain all four named operator credentials with their employers. At 600px and below, integrate a portrait beside its name, role and evidence on one surface. Replace the repeated audience pitches with compact Companies/Funds routes. Preserve the exact recognition close and practical intro-call next step; remove its repeated three-sentence problem recap.
+
+**Scope:** homepage, home.css and this ledger. No commercial terms, offers, forms, destinations, source images, or other pages changed. Agent Teams remains outside the homepage pitch.
+
+**Review checkpoint and verification:** full rendered page inspected at 1440×1000, 768×1024 and 390×844 in both themes. The blue impact field remains intentional in both themes; proof retains a light surface. No horizontal document overflow at inspected widths. Mobile results start at approximately 2681px (audit baseline 3179px); page height is 6694px (baseline 7631px), despite the clearer opening proposition. Desktop page height is 5514px (baseline 6506px). These are pacing checks, not a conversion claim. Portrait crops and adjacent evidence were inspected at actual mobile size. All 16 ticker clients and all homepage booking links remain. Focused ESLint and production builds passed after 01C and 01D; unrelated working changes remain unstaged.
+
+**Evidence:** six full-page theme/size captures in `/Users/dave/.codex/visualizations/2026/10/09/01a121b2-13c8-7c22-ad99-ae4b3eaf3595/canon-refinement/`. Shared interaction fixes follow as a separate batch; this composition has not been marked approved by Dave.
