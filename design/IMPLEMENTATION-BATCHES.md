@@ -431,3 +431,7 @@ Dave approved the bottom animation's bounce but found the hero too fast and jank
 ## Batch 01AL — restore hero's general pace
 
 Dave clarified that only the new hairline bounce needed refinement. Restore the hero body-speed scale from 0.55 to 1, retaining the previously approved 15% increase for entry, circle collisions, extraction and box motion. Keep the hero-only lower two-hop hairline treatment, smooth landing envelope and gentler travel multiplier. Bottom animation unchanged. Four collision/loop tests and focused lint pass. No layout, copy or theme changes; local only.
+
+## Batch 01AM — quicker client fill and downward box entry
+
+Dave requested faster filling of the You circle, clarified that the coral ball should hop above the hairline then bounce downward inside Veep, and requested a further 15% speed increase. Ownership arrivals now travel at twice their base speed with a 0.2-second inter-arrival pause; the ownership motion rate increases 15%. Preserve positive-height rail hops and switch the initial box velocity downward. Keep hero behavior unchanged, making its existing smooth-landing option explicit. Four collision/loop tests, focused lint, build and diff checks pass. Browser confirms running delivery above the rail. No layout/copy/theme changes. Local only.

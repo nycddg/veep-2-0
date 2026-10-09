@@ -28,6 +28,10 @@ function measureOwnership(node: SVGSVGElement | SVGGElement) {
     radius: vertical ? 4 : 5,
     vertical,
     count: 6,
+    arrivalSpeed: 2,
+    arrivalPause: 0.2,
+    downwardEntry: true,
+    motion: { speedScale: 1.15 },
   };
 }
 

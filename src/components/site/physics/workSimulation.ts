@@ -10,7 +10,16 @@ export type WorkGeometry = {
   vertical: boolean;
   count: number;
   completeInBox?: boolean;
-  motion?: { speedScale: number; travelMultiplier: number; hops: number; lift: number };
+  arrivalSpeed?: number;
+  arrivalPause?: number;
+  downwardEntry?: boolean;
+  motion?: {
+    speedScale?: number;
+    travelMultiplier?: number;
+    hops?: number;
+    lift?: number;
+    smoothLanding?: boolean;
+  };
 };
 type Stage = "fill" | "settle" | "extract" | "travel" | "box" | "leave" | "deliver" | "done";
 
@@ -69,11 +78,14 @@ export class WorkSimulation {
         r: radius,
         id: this.spawned,
         vx: 0,
-        vy: this.speed,
+        vy: this.speed * (this.geometry.arrivalSpeed ?? 1),
       };
     }
     const b = this.incoming;
-    const next = { x: b.x, y: Math.min(target.y, b.y + this.speed * dt) };
+    const next = {
+      x: b.x,
+      y: Math.min(target.y, b.y + this.speed * (this.geometry.arrivalSpeed ?? 1) * dt),
+    };
     // Wait at an occupied entrance rather than spawning inside another body.
     if (!free(next, radius, this.bodies)) return false;
     b.y = next.y;
@@ -110,7 +122,7 @@ export class WorkSimulation {
   update(dt: number) {
     const g = this.geometry;
     this.clock += dt;
-    if (this.stage === "fill" && this.clock > 0.45 && this.admit(dt)) {
+    if (this.stage === "fill" && this.clock > (g.arrivalPause ?? 0.45) && this.admit(dt)) {
       this.clock = 0;
       if (this.spawned === g.count) this.transition("settle");
     }
@@ -177,7 +189,7 @@ export class WorkSimulation {
       this.move(target, this.speed * (g.motion?.travelMultiplier ?? 2), dt);
       if (Math.hypot(b.x - target.x, b.y - target.y) < 0.1) {
         b.vx = this.speed * 0.78;
-        b.vy = this.speed * (g.vertical ? 0.63 : -0.63);
+        b.vy = this.speed * (g.vertical || g.downwardEntry ? 0.63 : -0.63);
         this.transition("box");
       }
     } else if (this.stage === "box" || this.stage === "leave") {
@@ -233,7 +245,7 @@ export class WorkSimulation {
     const phase = (t * (this.geometry.motion?.hops ?? 3)) % 1;
     // Three ballistic rebounds on the rail, tapering to a clean gate/endpoint landing.
     const edge = Math.min(1, j.travelled / (b.r * 4), (j.distance - j.travelled) / (b.r * 4));
-    const clearance = this.geometry.motion ? edge * edge * (3 - 2 * edge) : edge;
+    const clearance = this.geometry.motion?.smoothLanding ? edge * edge * (3 - 2 * edge) : edge;
     const lift = this.geometry.motion?.lift ?? 2.4;
     const hop = clearance * (b.r + 4 * phase * (1 - phase) * b.r * lift * (1 - t * 0.35));
     b.x = j.start.x + (target.x - j.start.x) * t + (this.geometry.vertical ? hop : 0);

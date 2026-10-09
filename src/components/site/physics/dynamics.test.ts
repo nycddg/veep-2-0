@@ -41,6 +41,10 @@ describe("work collisions", () => {
         vertical,
         radius: vertical ? 4 : 5,
         count: 6,
+        arrivalSpeed: 2,
+        arrivalPause: 0.2,
+        downwardEntry: true,
+        motion: { speedScale: 1.15 },
       };
       const sim = new WorkSimulation(g),
         stages = new Set<string>();
@@ -90,7 +94,7 @@ test("hero conserves red identity and loops without overlap", () => {
     vertical: false,
     count: 7,
     completeInBox: true,
-    motion: { speedScale: 1, travelMultiplier: 1.4, hops: 2, lift: 1.15 },
+    motion: { speedScale: 1, travelMultiplier: 1.4, hops: 2, lift: 1.15, smoothLanding: true },
   });
   let completed = false,
     looped = false;
