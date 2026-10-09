@@ -47,6 +47,7 @@
   --v-shape-frame: 0px;
   --v-shape-control: 6px;
   --v-shape-surface: 15px;
+  --v-shape-panel: 8px;
   --v-shape-round: 999px;
   --v-line-fine: 1px;
   --v-line-active: 2px;
@@ -58,6 +59,7 @@
   --v-motion-functional: cubic-bezier(0.2, 0, 0, 1);
   --v-motion-spatial: cubic-bezier(0.22, 0.8, 0.25, 1);
   --v-motion-home-loop: 5.4s;
+  --v-motion-section: 4.6s;
 }
 
 /* System roles. Explicit nested themes also power the paired specimen. */

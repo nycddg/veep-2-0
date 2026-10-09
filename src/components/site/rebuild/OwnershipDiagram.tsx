@@ -1,6 +1,9 @@
+import { useSectionMotion } from "../system/useSectionMotion";
+
 export function OwnershipDiagram() {
+  const sequence = useSectionMotion();
   return (
-    <div className="vh-ownership">
+    <div ref={sequence.ref} className="vh-ownership v-sequence" data-motion={sequence.state}>
       <div className="vh-unowned">
         <h3>Critical work. No clear owner.</h3>
         <p className="vh-work-examples">
@@ -19,6 +22,17 @@ export function OwnershipDiagram() {
             <h4>Outside advice</h4>
             <p>The direction is clear. Execution still lands on your team.</p>
           </div>
+          <svg
+            className="vh-return-paths"
+            viewBox="0 0 300 56"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path d="M50 2V26H150V56 M150 2V56 M250 2V26H150" />
+            <circle className="vh-return-dot vh-return-dot--left" r="3" />
+            <circle className="vh-return-dot vh-return-dot--center" r="3" />
+            <circle className="vh-return-dot vh-return-dot--right" r="3" />
+          </svg>
         </div>
         <div className="vh-ceo-desk">
           <span aria-hidden="true" className="vh-signal" />
@@ -28,7 +42,10 @@ export function OwnershipDiagram() {
         </div>
       </div>
       <div className="vh-ownership-turn" aria-hidden="true">
-        →
+        <svg viewBox="0 0 48 40">
+          <path className="vh-turn-track" d="M5 20H40 M31 11L40 20L31 29" />
+          <path className="vh-turn-active" d="M5 20H40 M31 11L40 20L31 29" pathLength="1" />
+        </svg>
       </div>
       <div className="vh-owned">
         <p className="v-label">With Veep</p>

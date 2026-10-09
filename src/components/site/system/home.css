@@ -38,7 +38,7 @@
 
 /* The track disappears at the label's edge, inside the shared page margin. */
 .vh-home .ve-ticker {
-  border-block: 1px solid var(--v-divider);
+  background: var(--v-surface-section);
   padding-block: var(--v-space-5);
 }
 .vh-home .ve-ticker-inner {
@@ -138,8 +138,7 @@
   border-bottom: 0;
 }
 .vh-dead-ends::after {
-  bottom: -32px;
-  border-top: 0;
+  display: none;
 }
 .vh-dead-ends > div:nth-child(2)::before,
 .vh-dead-ends > div:nth-child(2)::after {
@@ -153,7 +152,7 @@
   top: -56px;
 }
 .vh-dead-ends > div:nth-child(2)::after {
-  bottom: -56px;
+  display: none;
 }
 .vh-dead-ends h4 {
   font-size: var(--v-type-body);
@@ -165,17 +164,19 @@
   line-height: 1.5;
 }
 .vh-ceo-desk {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--v-space-4);
-  border-block: 1px solid var(--v-border);
+  position: relative;
+  background: var(--v-surface-section);
+  border-radius: var(--v-shape-panel);
   padding: var(--v-space-5) var(--v-space-3);
 }
 .vh-signal {
+  position: absolute;
+  left: calc(50% - 6px);
+  top: -6px;
   width: 12px;
   height: 12px;
   background: var(--v-signal);
+  border-radius: 50%;
   flex-shrink: 0;
 }
 .vh-ceo-desk p {
@@ -192,12 +193,178 @@
   color: var(--v-signal);
   font-size: 40px;
   line-height: 1;
+  width: 40px;
+  justify-self: center;
+}
+.vh-ownership-turn svg {
+  width: 100%;
+  overflow: visible;
+}
+.vh-ownership-turn path {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.vh-turn-track {
+  stroke: var(--v-border);
+}
+.vh-turn-active {
+  stroke: var(--v-signal);
+  stroke-dasharray: 1;
+}
+.vh-return-paths {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  height: 56px;
+  overflow: visible;
+}
+.vh-return-paths path {
+  fill: none;
+  stroke: var(--v-border);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.vh-return-dot {
+  r: 0.1px;
+  fill: var(--v-accent);
+  stroke: var(--v-accent);
+  stroke-width: 6;
+  vector-effect: non-scaling-stroke;
+  opacity: 0;
+  --return-x: 50px;
+  --return-delay: 0ms;
+}
+.vh-return-dot--center {
+  --return-x: 150px;
+  --return-delay: 180ms;
+}
+.vh-return-dot--right {
+  --return-x: 250px;
+  --return-delay: 360ms;
+}
+.vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-return-dot {
+  animation: vh-return-work 1300ms var(--v-motion-functional) both;
+  animation-delay: var(--return-delay);
+}
+@keyframes vh-return-work {
+  0% {
+    transform: translate(var(--return-x), 2px);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(var(--return-x), 2px);
+    opacity: 1;
+  }
+  32% {
+    transform: translate(var(--return-x), 26px);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(150px, 26px);
+    opacity: 1;
+  }
+  94% {
+    transform: translate(150px, 56px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(150px, 56px);
+    opacity: 0;
+  }
+}
+@keyframes vh-return-branch {
+  0%,
+  100% {
+    background: var(--v-border);
+    transform: scaleX(1);
+  }
+  35%,
+  65% {
+    background: var(--v-accent);
+    transform: scaleX(1.35);
+  }
+}
+.vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-ceo-desk {
+  animation: vh-desk-load var(--v-motion-section) var(--v-motion-functional) both;
+}
+@keyframes vh-desk-load {
+  0%,
+  45%,
+  100% {
+    background-color: var(--v-surface-section);
+  }
+  20%,
+  34% {
+    background-color: var(--v-surface-panel);
+  }
+}
+.vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-signal {
+  position: absolute;
+  left: calc(50% - 6px);
+  top: -6px;
+  animation: vh-work-load var(--v-motion-section) var(--v-motion-spatial) both;
+}
+@keyframes vh-work-load {
+  0%,
+  12%,
+  48%,
+  100% {
+    transform: scale(1);
+  }
+  30%,
+  36% {
+    transform: scale(1.4);
+  }
+}
+.vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-turn-active {
+  animation: vh-turn-work var(--v-motion-section) var(--v-motion-spatial) both;
+}
+@keyframes vh-turn-work {
+  0%,
+  32% {
+    stroke-dashoffset: 1;
+    transform: translateX(-3px);
+  }
+  51% {
+    stroke-dashoffset: 0;
+    transform: translateX(3px);
+  }
+  62%,
+  100% {
+    stroke-dashoffset: 0;
+    transform: translateX(0);
+  }
+}
+.vh-owned li > span {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-owned li > span {
+  animation: vh-step-owns 700ms var(--v-motion-functional) both;
+  animation-delay: calc(1900ms + var(--v-step) * 500ms);
+}
+@keyframes vh-step-owns {
+  0%,
+  100% {
+    background: transparent;
+    color: var(--v-text-secondary);
+  }
+  35%,
+  65% {
+    background: var(--v-state-selected);
+    color: var(--v-accent);
+  }
 }
 .vh-owned {
   background: var(--v-surface-section);
-  border: 1px solid var(--v-border);
-  border-top: 3px solid var(--v-accent);
-  border-radius: var(--v-shape-surface);
+  border-radius: var(--v-shape-panel);
   padding: var(--v-space-6);
 }
 .vh-owned > h3 {
@@ -213,10 +380,8 @@
   display: flex;
   gap: var(--v-space-4);
   padding-block: var(--v-space-4);
-  border-top: 1px solid var(--v-divider);
 }
 .vh-owned li > span {
-  padding-top: 3px;
   font: 400 var(--v-type-label)/1.5 var(--v-font-label);
   color: var(--v-accent);
 }
@@ -232,7 +397,6 @@
 .vh-owned-boundary {
   margin-top: var(--v-space-5);
   padding-top: var(--v-space-4);
-  border-top: 1px solid var(--v-divider);
   font-size: var(--v-type-caption);
   color: var(--v-text-secondary);
 }
@@ -255,7 +419,6 @@
   gap: var(--v-layout-gap);
 }
 .vh-paths article + article {
-  border-left: 1px solid var(--v-divider);
   padding-left: var(--v-layout-gap);
 }
 .vh-paths h2 {
@@ -285,18 +448,18 @@
   margin-top: var(--v-space-7);
 }
 .vh-close {
-  border-top: 1px solid var(--v-divider);
+  background: var(--v-surface-section);
 }
 .vh-close .v-action {
   margin-top: var(--v-space-6);
 }
 @media (max-width: 1100px) {
   .vh-ownership {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--v-space-6);
+    grid-template-columns: 1fr 28px 1fr;
+    gap: var(--v-space-4);
   }
   .vh-ownership-turn {
-    display: none;
+    width: 28px;
   }
   .vh-owned {
     padding: var(--v-space-5);
@@ -305,6 +468,12 @@
 @media (max-width: 800px) {
   .vh-ownership {
     grid-template-columns: 1fr;
+  }
+  .vh-ownership-turn {
+    display: block;
+    width: 32px;
+    transform: rotate(90deg);
+    margin-block: var(--v-space-2);
   }
   .vh-unowned {
     max-width: 580px;
@@ -403,11 +572,29 @@
     top: 13px;
     background: var(--v-border);
   }
+  .vh-return-paths {
+    display: none;
+  }
+  .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-dead-ends > div::before {
+    transform-origin: left center;
+    animation: vh-return-branch 900ms var(--v-motion-functional) both;
+  }
+  .vh-dead-ends > div:nth-child(2)::before {
+    animation-delay: 180ms !important;
+  }
+  .vh-dead-ends > div:nth-child(3)::before {
+    animation-delay: 360ms !important;
+  }
   .vh-dead-ends p {
     margin-top: var(--v-space-1);
   }
   .vh-ceo-desk {
     text-align: left;
+    padding-left: var(--v-space-6);
+  }
+  .vh-signal {
+    left: -6px;
+    top: calc(50% - 6px);
   }
   .vh-owned {
     display: block;
@@ -422,7 +609,6 @@
   }
   .vh-paths article + article {
     border-left: 0;
-    border-top: 1px solid var(--v-divider);
     padding-left: 0;
     padding-top: var(--v-space-7);
   }
@@ -434,7 +620,6 @@
     gap: var(--v-space-7);
   }
   .vh-proof > div + div {
-    border-top: 1px solid var(--v-divider);
     padding-top: var(--v-space-7);
   }
   .vh-people-grid {
@@ -450,6 +635,9 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .vh-return-dot {
+    display: none;
+  }
   .vh-home .ve-ticker-inner {
     grid-template-columns: 1fr;
     gap: var(--v-space-3);

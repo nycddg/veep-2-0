@@ -1,0 +1,121 @@
+/* Quiet, finite entry sequences. Static content never depends on animation to appear. */
+.v-sequence {
+  --v-step: 0;
+}
+.v-sequence :is(li, figure):nth-child(2) {
+  --v-step: 1;
+}
+.v-sequence :is(li, figure):nth-child(3) {
+  --v-step: 2;
+}
+.v-sequence :is(li, figure):nth-child(4) {
+  --v-step: 3;
+}
+.v-sequence :is(li, figure):nth-child(5) {
+  --v-step: 4;
+}
+.v-sequence :is(li, figure):nth-child(6) {
+  --v-step: 5;
+}
+.v-sequence[data-motion="paused"] *,
+.v-sequence[data-motion="paused"] *::before,
+.v-sequence[data-motion="paused"] *::after {
+  animation-play-state: paused !important;
+}
+.v-sequence[data-sequence="portraits"]:is([data-motion="running"], [data-motion="paused"])
+  :is(.v-profile img, .ve-contact-sheet img, .ve-join-portraits img) {
+  animation: v-portrait-settle 900ms var(--v-motion-spatial) both;
+  animation-delay: calc(var(--v-step) * 90ms);
+}
+@keyframes v-portrait-settle {
+  from {
+    clip-path: inset(2% 2% 0 round 15px);
+  }
+  to {
+    clip-path: inset(0 round 15px);
+  }
+}
+.v-sequence[data-sequence="proof"]:is([data-motion="running"], [data-motion="paused"])
+  :is(.ve-proof-number, .vh-proof-number, .ve-secondary-result > p, .ve-career-proof strong) {
+  animation: v-proof-settle 700ms var(--v-motion-spatial) both;
+}
+@keyframes v-proof-settle {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.v-sequence[data-sequence="process"]:is([data-motion="running"], [data-motion="paused"])
+  :is(.ve-delivery-steps li > span, .ve-method-track li > span) {
+  animation: v-process-mark 900ms var(--v-motion-functional) both;
+  animation-delay: calc(var(--v-step) * 450ms);
+}
+@keyframes v-process-mark {
+  0%,
+  100% {
+    color: var(--v-text-secondary);
+    transform: translateY(0);
+  }
+  35%,
+  65% {
+    color: var(--v-accent);
+    transform: translateY(-3px);
+  }
+}
+.v-sequence[data-sequence="portfolio"] .ve-portfolio-lane:nth-child(2) {
+  --v-step: 1;
+}
+.v-sequence[data-sequence="portfolio"] .ve-portfolio-lane:nth-child(3) {
+  --v-step: 2;
+}
+.v-sequence[data-sequence="portfolio"]:is([data-motion="running"], [data-motion="paused"])
+  .ve-portfolio-lane::before {
+  transform-origin: left center;
+  animation: v-connect-path 650ms var(--v-motion-spatial) both;
+  animation-delay: calc(var(--v-step) * 300ms);
+}
+.v-sequence[data-sequence="portfolio"]:is([data-motion="running"], [data-motion="paused"])
+  .ve-portfolio-lane::after {
+  animation: v-connect-point 650ms var(--v-motion-spatial) both;
+  animation-delay: calc(var(--v-step) * 300ms);
+}
+@keyframes v-connect-path {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes v-connect-point {
+  from {
+    scale: 0.65;
+  }
+  65% {
+    scale: 1.15;
+  }
+  to {
+    scale: 1;
+  }
+}
+.v-disclosure[open] .v-disclosure-content {
+  animation: v-reading-plane 240ms var(--v-motion-spatial);
+}
+@keyframes v-reading-plane {
+  from {
+    translate: 0 -4px;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v-sequence *,
+  .v-sequence *::before,
+  .v-sequence *::after,
+  .v-disclosure[open] .v-disclosure-content {
+    animation: none !important;
+  }
+}

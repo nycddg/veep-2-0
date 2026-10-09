@@ -51,7 +51,7 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
   return (
     <div
       ref={rootRef}
-      className={`ve-spotlight ve-spotlight--${audience}`}
+      className={`ve-spotlight ve-spotlight--${audience}${isHome ? "" : " ve-profile-spotlights"}`}
       role="region"
       aria-label="Operating partner experience"
       aria-describedby={isHome ? `${id}-description` : undefined}
@@ -70,71 +70,82 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
           stays still when reduced motion is preferred.
         </p>
       )}
-      <div className="ve-spotlight-stage" aria-hidden={isHome ? undefined : true}>
-        {people.map((person, index) => {
-          const relative = (index - active + count) % count;
-          const position =
-            relative === 0
-              ? "prime"
-              : relative === 1
-                ? "right"
-                : relative === count - 1
-                  ? "left"
-                  : "back";
-          return (
-            <div
-              key={person.name}
-              className="ve-spotlight-portrait"
-              data-position={position}
-              data-depth={relative}
-              aria-hidden={isHome && relative !== 0 ? true : undefined}
-            >
-              <img
-                src={person.photoUrl}
-                alt=""
-                width={1152}
-                height={1440}
-                loading={audience === "home" ? "eager" : "lazy"}
-                decoding="async"
-                style={{
-                  objectPosition: person.photoPosition ?? "center 65%",
-                  ...(isHome && relative === 0 ? { transform: person.heroCrop } : {}),
-                }}
-              />
-              {!isHome && (
-                <span className="ve-spotlight-photo-label">
-                  {person.role.replace(" Operating Partner", "")}
-                </span>
-              )}
-              {isHome && relative === 0 && (
-                <article className="ve-spotlight-overlay" aria-label={person.name} aria-live="off">
-                  <h2 className="ve-spotlight-overlay-name">{person.name}</h2>
-                  <p className="ve-spotlight-overlay-role">{person.role}</p>
-                  <p className="ve-spotlight-overlay-proof">{person.heroCredential}</p>
-                </article>
-              )}
-            </div>
-          );
-        })}
-      </div>
+      {isHome && (
+        <div className="ve-spotlight-stage">
+          {people.map((person, index) => {
+            const relative = (index - active + count) % count;
+            const position =
+              relative === 0
+                ? "prime"
+                : relative === 1
+                  ? "right"
+                  : relative === count - 1
+                    ? "left"
+                    : "back";
+            return (
+              <div
+                key={person.name}
+                className="ve-spotlight-portrait"
+                data-position={position}
+                data-depth={relative}
+                aria-hidden={relative !== 0 ? true : undefined}
+              >
+                <img
+                  src={person.photoUrl}
+                  alt=""
+                  width={1152}
+                  height={1440}
+                  loading="eager"
+                  decoding="async"
+                  style={{
+                    objectPosition: person.photoPosition ?? "center 65%",
+                    ...(relative === 0 ? { transform: person.heroCrop } : {}),
+                  }}
+                />
+                {relative === 0 && (
+                  <article
+                    className="ve-spotlight-overlay"
+                    aria-label={person.name}
+                    aria-live="off"
+                  >
+                    <h2 className="ve-spotlight-overlay-name">{person.name}</h2>
+                    <p className="ve-spotlight-overlay-role">{person.role}</p>
+                    <p className="ve-spotlight-overlay-proof">{person.heroCredential}</p>
+                  </article>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
       {!isHome && (
-        <div className="ve-spotlight-editorial">
-          <div className="ve-spotlight-copy" id={`${id}-copy`} aria-live="off">
+        <>
+          <div className="ve-spotlight-cards" aria-live="off">
             {people.map((person, index) => (
               <article
                 key={person.name}
-                className={
-                  active === index
-                    ? "ve-spotlight-story is-prime"
-                    : "ve-spotlight-story ve-spotlight-offstage"
-                }
+                className={`ve-spotlight-card${active === index ? " is-prime" : ""}`}
                 id={`${id}-${index}`}
                 aria-label={`${person.name}, ${person.role}`}
+                aria-hidden={active !== index}
               >
-                <p className="ve-spotlight-context">{person.context}</p>
-                <h3>{person.name}</h3>
-                <p className="ve-spotlight-role">{person.role}</p>
-                <p className="ve-spotlight-evidence">{person.evidence}</p>
+                <div className="ve-spotlight-card-image">
+                  <img
+                    src={person.photoUrl}
+                    alt=""
+                    width={1152}
+                    height={1440}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ objectPosition: person.photoPosition ?? "center 65%" }}
+                  />
+                </div>
+                <div className="ve-spotlight-card-copy">
+                  <p className="ve-spotlight-context">{person.context}</p>
+                  <h3>{person.name}</h3>
+                  <p className="ve-spotlight-role">{person.role}</p>
+                  <p className="ve-spotlight-evidence">{person.evidence}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -179,7 +190,7 @@ export function OperatorSpotlight({ audience }: { audience: SpotlightAudience })
               </button>
             )}
           </div>
-        </div>
+        </>
       )}
     </div>
   );

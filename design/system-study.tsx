@@ -83,8 +83,8 @@ function ThemeSpecimen({ theme }: { theme: "dark" | "light" }) {
           Inside the engagement <span aria-hidden="true">↗</span>
         </a>
         <p className="v-caption v-muted">
-          Hover, press, and Tab through the controls. Selected state has a border and a check, as
-          well as a tonal fill.
+          Hover, press, and Tab through the controls. Selected state uses a check and a tonal fill;
+          keyboard focus keeps a clear outline.
         </p>
       </section>
       <section>
@@ -127,7 +127,7 @@ function ThemeSpecimen({ theme }: { theme: "dark" | "light" }) {
           </div>
           <div>
             <i className="vs-panel" />
-            <p className="v-label">Surface / 15px</p>
+            <p className="v-label">Panel / 8px</p>
           </div>
           <div>
             <i className="vs-node" />
@@ -136,8 +136,8 @@ function ThemeSpecimen({ theme }: { theme: "dark" | "light" }) {
         </div>
         <div className="vs-tonal">
           <p className="v-body">
-            Tonal change groups related information. A border defines a boundary. Shadows are
-            reserved for an actual overlay.
+            Tonal change groups related information. Lines explain relationships and support
+            controls. Editorial content stays open; profiles keep image and copy on one surface.
           </p>
         </div>
       </section>
@@ -153,7 +153,7 @@ function ThemeSpecimen({ theme }: { theme: "dark" | "light" }) {
           />
         </div>
         <p className="v-caption v-muted">
-          Operating experience. A named operator, a clear role, and a concrete result.
+          One profile surface, 15px corners: a named operator, a clear role, and a concrete result.
         </p>
       </section>
       <section>

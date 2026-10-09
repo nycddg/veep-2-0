@@ -1,9 +1,16 @@
 import { selectedSpotlights } from "../rebuild/spotlightSelections";
 import { ProfileFigure } from "../system/ProfileFigure";
+import { useSectionMotion } from "../system/useSectionMotion";
 
 export function OperatorProof() {
+  const sequence = useSectionMotion();
   return (
-    <>
+    <div
+      ref={sequence.ref}
+      className="v-sequence"
+      data-sequence="portraits"
+      data-motion={sequence.state}
+    >
       <div className="v-section-intro">
         <h2 className="v-heading">
           The people
@@ -27,6 +34,6 @@ export function OperatorProof() {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }

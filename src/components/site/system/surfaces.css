@@ -1,0 +1,306 @@
+/* Public editorial adapter. Functional fields, focus rings and diagram paths remain explicit. */
+.rebuild.ve-editorial {
+  --ve-coral: var(--v-signal);
+}
+.rebuild.ve-editorial
+  :is(.ve-mandate-pages, .ve-capacity-brief, .ve-pricing-sheet, .ve-form-sheet) {
+  border: 0;
+  border-radius: var(--v-shape-panel);
+  background: var(--v-ref-paper-panel);
+  color: var(--v-ref-ink);
+}
+.rebuild.ve-editorial :is(.ve-agent-preview, .ve-inquiry-context) {
+  border: 0;
+  border-radius: var(--v-shape-panel);
+  background: var(--v-surface-section);
+}
+.rebuild.ve-editorial :is(.ve-founders article, .ve-fit-statement) {
+  border: 0;
+}
+.rebuild.ve-editorial .ve-fit-statement {
+  padding-left: 0;
+}
+.rebuild.ve-editorial .ve-founders article {
+  padding-top: 0;
+}
+.rebuild.ve-editorial
+  :is(
+    .ve-case-artifacts,
+    .ve-testimonial,
+    .ve-mandate-owner,
+    .ve-price-agent-note,
+    .ve-career-proof,
+    .ve-portfolio-cadence,
+    .ve-meet-timing,
+    .ve-meet-next > div
+  ) {
+  border: 0;
+}
+.rebuild.ve-editorial .ve-secondary-result {
+  border: 0;
+  padding-left: 0;
+}
+.rebuild.ve-editorial .ve-work-tabs {
+  gap: 8px;
+}
+.rebuild.ve-editorial .ve-work-tabs button {
+  border: 0;
+  border-radius: var(--v-shape-control);
+  transition:
+    background-color var(--v-motion-state),
+    color var(--v-motion-state);
+}
+.rebuild.ve-editorial .ve-work-tabs button[aria-selected="true"] {
+  background: var(--v-surface-panel);
+  color: var(--v-text);
+}
+.rebuild.ve-editorial .ve-work-tabs button > span:last-child {
+  color: var(--v-accent);
+  transition:
+    transform var(--v-motion-state) var(--v-motion-spatial),
+    opacity var(--v-motion-state);
+}
+.rebuild.ve-editorial .ve-work-tabs button:focus-visible {
+  outline: 2px solid var(--v-focus);
+  outline-offset: 3px;
+}
+.rebuild.ve-editorial .ve-work-paper {
+  border: 0;
+  box-shadow: none;
+  border-radius: 2px;
+}
+.rebuild.ve-editorial .ve-paper-fold {
+  border: 0;
+}
+.rebuild.ve-editorial .ve-mandate-panel:not([hidden]) .ve-work-paper {
+  animation: v-assemble-paper 650ms var(--v-motion-spatial) both;
+}
+.rebuild.ve-editorial .ve-work-paper-1 {
+  animation-delay: 60ms;
+}
+.rebuild.ve-editorial .ve-work-paper-2 {
+  animation-delay: 120ms;
+}
+@keyframes v-assemble-paper {
+  from {
+    translate: 0 12px;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+/* One pricing comparison plane; tonal columns preserve separate commercial shapes. */
+.rebuild.ve-editorial .ve-pricing-sheet {
+  overflow: hidden;
+}
+.rebuild.ve-editorial .ve-price-tier {
+  border: 0;
+}
+.rebuild.ve-editorial .ve-price-tier:nth-child(even) {
+  background: #0b111f05;
+}
+.rebuild.ve-editorial .ve-price-group-labels span {
+  background: #0b111f09;
+}
+.rebuild.ve-editorial .ve-price-group-labels span:first-child {
+  background: #0b111f13;
+}
+.rebuild.ve-editorial .ve-tier-owner {
+  border: 0;
+}
+.rebuild.ve-editorial .ve-price-sheet-note {
+  border: 0;
+  background: #0b111f09;
+}
+.rebuild.ve-editorial .rb-tier-grid {
+  border: 0;
+  gap: 8px;
+}
+.rebuild.ve-editorial .rb-tier-grid > div {
+  border: 0;
+  border-radius: var(--v-shape-panel);
+  background: var(--v-surface-panel);
+}
+.rebuild.ve-editorial .ve-choice {
+  border: 0;
+  border-radius: var(--v-shape-control);
+  background: #0b111f06;
+  transition: background-color var(--v-motion-state);
+}
+.rebuild.ve-editorial .ve-choice:has(:checked) {
+  background: #0b111f12;
+}
+.rebuild.ve-editorial .ve-choice:focus-within {
+  outline: 2px solid #406aba;
+  outline-offset: 3px;
+}
+
+/* Portrait and credential belong to one bounded composition. */
+.rebuild.ve-editorial
+  :is(.ve-profile, .ve-profile.is-selected, .ve-spotlight-portrait, .ve-fund-portraits figure) {
+  border: 0;
+  box-shadow: none;
+}
+.rebuild.ve-editorial :is(.ve-contact-sheet, .ve-join-portraits) {
+  align-items: start;
+  gap: 16px;
+}
+.rebuild.ve-editorial :is(.ve-contact-sheet figure, .ve-join-portraits figure) {
+  overflow: hidden;
+  padding: 6px;
+  border-radius: var(--v-shape-surface);
+  background: var(--v-surface-section);
+}
+.rebuild.ve-editorial :is(.ve-contact-sheet img, .ve-join-portraits img) {
+  border-radius: 10px;
+}
+.rebuild.ve-editorial :is(.ve-contact-sheet figcaption, .ve-join-portraits figcaption) {
+  margin: 0;
+  padding: 16px 10px;
+}
+.rebuild.ve-editorial .ve-join-portraits figure {
+  background: #172840;
+}
+.rebuild.ve-editorial .ve-join-portraits figcaption span {
+  color: #c4cfe1;
+}
+.rebuild.ve-editorial .ve-profile-spotlights {
+  display: block;
+  max-width: 1000px;
+  margin: 56px auto 0;
+}
+.rebuild.ve-editorial .ve-spotlight-cards {
+  display: grid;
+}
+.rebuild.ve-editorial .ve-spotlight-card {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  align-items: center;
+  overflow: hidden;
+  border-radius: var(--v-shape-surface);
+  background: var(--v-surface-panel);
+  visibility: hidden;
+}
+.rebuild.ve-editorial .ve-spotlight-card.is-prime {
+  visibility: visible;
+  animation: v-spotlight-enter 550ms var(--v-motion-spatial) both;
+}
+.rebuild.ve-editorial .ve-spotlight-card-image {
+  align-self: stretch;
+  min-width: 0;
+  overflow: hidden;
+  margin: 6px;
+  border-radius: 10px;
+  background: #dfe7f5;
+}
+.rebuild.ve-editorial .ve-spotlight-card-image img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.rebuild.ve-editorial .ve-spotlight-card-copy {
+  padding: clamp(24px, 3.5vw, 48px);
+}
+.rebuild.ve-editorial .ve-spotlight-card-copy h3 {
+  margin-top: 28px;
+  font-size: clamp(30px, 3.2vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+.rebuild.ve-editorial .ve-profile-spotlights .ve-spotlight-controls {
+  margin: 12px 0 0;
+}
+@keyframes v-spotlight-enter {
+  from {
+    translate: 0 6px;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+@media (max-width: 600px) {
+  .rebuild.ve-editorial .ve-spotlight-card {
+    grid-template-columns: 1fr;
+    align-content: start;
+  }
+  .rebuild.ve-editorial .ve-spotlight-card-image {
+    aspect-ratio: 1 / 1;
+  }
+  .rebuild.ve-editorial .ve-spotlight-card-copy {
+    padding: 24px;
+  }
+  .rebuild.ve-editorial .ve-spotlight-card-copy h3 {
+    margin-top: 16px;
+  }
+  .rebuild.ve-editorial .ve-spotlight-card-copy .ve-spotlight-evidence {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .rebuild.ve-editorial .ve-spotlight-card-copy .ve-spotlight-role {
+    font-size: 15px;
+  }
+  .rebuild.ve-editorial .ve-join-portraits {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin-inline: auto;
+  }
+  .rebuild.ve-editorial .ve-join-portraits figcaption {
+    font-size: 18px;
+  }
+  .rebuild.ve-editorial .ve-join-portraits figcaption span {
+    font-size: 14px;
+  }
+}
+.rebuild.ve-editorial .ve-controls button {
+  border: 0;
+  background: var(--v-surface-panel);
+}
+.rebuild.ve-editorial .ve-button {
+  border-radius: var(--v-shape-control);
+  transition:
+    background-color var(--v-motion-state),
+    border-radius var(--v-motion-state),
+    transform var(--v-motion-fast);
+}
+.rebuild.ve-editorial .ve-button:active {
+  transform: scale(0.98);
+}
+.rebuild.ve-editorial .ve-button:focus-visible {
+  outline: 2px solid var(--v-focus);
+  outline-offset: 4px;
+}
+.rebuild.ve-editorial .ve-method-track li {
+  border-color: var(--v-divider);
+}
+@media (hover: hover) {
+  .rebuild.ve-editorial .ve-work-tabs button:hover {
+    background: var(--v-surface-section);
+    color: var(--v-text);
+  }
+  .rebuild.ve-editorial .ve-work-tabs button:hover > span:last-child,
+  .rebuild.ve-editorial .ve-work-tabs button:focus-visible > span:last-child {
+    opacity: 1;
+    transform: translate(2px, -2px);
+  }
+  .rebuild.ve-editorial .ve-button:hover {
+    border-radius: var(--v-shape-panel);
+  }
+  .rebuild.ve-editorial .ve-choice:hover {
+    background: #0b111f0e;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rebuild.ve-editorial .ve-spotlight-card.is-prime {
+    animation: none;
+  }
+  .rebuild.ve-editorial .ve-mandate-panel .ve-work-paper {
+    animation: none;
+  }
+  .rebuild.ve-editorial :is(.ve-work-tabs button > span, .ve-button) {
+    transition: none;
+    transform: none;
+  }
+}

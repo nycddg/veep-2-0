@@ -1,4 +1,6 @@
 @import "./tokens.css";
+@import "./surfaces.css";
+@import "./section-motion.css";
 
 .ve-system,
 .v-site-chrome {
@@ -79,7 +81,7 @@
   color: var(--v-text-secondary);
 }
 
-/* Canonical action anatomy: one fill, one outline, one text level. */
+/* Canonical action anatomy: primary fill, secondary tone, quiet text. */
 .v-action {
   --v-action-radius: var(--v-shape-control);
   display: inline-flex;
@@ -97,23 +99,22 @@
   cursor: pointer;
   transition:
     background-color var(--v-motion-fast) var(--v-motion-functional),
-    border-color var(--v-motion-fast) var(--v-motion-functional),
+    border-radius var(--v-motion-state) var(--v-motion-spatial),
     transform var(--v-motion-fast) var(--v-motion-functional);
 }
 .v-action:hover {
   background: var(--v-action-hover);
+  border-radius: var(--v-shape-panel);
 }
 .v-action:active {
-  transform: translateY(1px);
+  transform: scale(0.98);
 }
 .v-action--secondary {
-  background: transparent;
-  border-color: var(--v-control-border);
+  background: var(--v-surface-panel);
   color: var(--v-text);
 }
 .v-action--secondary:hover {
-  background: var(--v-state-hover);
-  border-color: var(--v-text);
+  background: color-mix(in srgb, var(--v-surface-panel), var(--v-text) 6%);
 }
 .v-action--quiet {
   background: transparent;
@@ -126,8 +127,7 @@
 .v-action[aria-pressed="true"] {
   background: var(--v-state-selected);
   color: var(--v-text);
-  border-color: var(--v-accent);
-  box-shadow: inset 0 -2px var(--v-accent);
+  border-color: transparent;
 }
 .v-action:disabled {
   background: var(--v-surface-panel);
@@ -228,7 +228,7 @@
 }
 .v-nav.is-active {
   color: var(--v-text);
-  box-shadow: inset 0 -2px var(--v-signal);
+  background: var(--v-state-selected);
 }
 .v-mobile-nav {
   padding-block: var(--v-space-3) var(--v-space-5);
@@ -287,7 +287,12 @@
 }
 
 .v-disclosure {
-  border-bottom: 1px solid var(--v-divider);
+  border-radius: var(--v-shape-panel);
+  margin-block: var(--v-space-2);
+  transition: background-color var(--v-motion-state) var(--v-motion-functional);
+}
+.v-disclosure[open] {
+  background: var(--v-surface-panel);
 }
 .v-disclosure summary {
   display: flex;
@@ -295,7 +300,7 @@
   justify-content: space-between;
   gap: var(--v-space-5);
   min-height: var(--v-target);
-  padding-block: var(--v-space-5);
+  padding: var(--v-space-5) var(--v-space-4);
   cursor: pointer;
   list-style: none;
   color: var(--v-text);
@@ -306,6 +311,8 @@
 }
 .v-disclosure summary:hover {
   color: var(--v-link);
+  background: var(--v-state-hover);
+  border-radius: var(--v-shape-panel);
 }
 .v-disclosure-mark {
   flex-shrink: 0;
@@ -319,7 +326,7 @@
   color: var(--v-text-secondary);
   font-size: var(--v-type-body);
   line-height: var(--v-leading-body);
-  padding: 0 var(--v-space-6) var(--v-space-5) 0;
+  padding: 0 var(--v-space-6) var(--v-space-5) var(--v-space-4);
   max-width: 65ch;
 }
 .v-field {
@@ -361,16 +368,24 @@
 }
 .v-profile {
   min-width: 0;
+  overflow: hidden;
+  border-radius: var(--v-shape-surface);
+  background: var(--v-surface-section);
+  padding: 6px;
+}
+.v-profile-image {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #dfe7f5;
 }
 .v-profile img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: var(--v-shape-surface);
   background: #dfe7f5;
 }
 .v-profile figcaption {
-  padding-top: var(--v-space-4);
+  padding: var(--v-space-4) var(--v-space-3) var(--v-space-5);
 }
 .v-profile h3 {
   font-size: 1.25rem;

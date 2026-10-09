@@ -211,7 +211,7 @@ function Page() {
         </Container>
       </Section>
 
-      <Section id="relationship" className="ve-relationship-section">
+      <Section id="relationship" motion="portfolio" className="ve-relationship-section">
         <Container className="ve-container">
           <div className="ve-section-opening">
             <h2 className="ve-title">
@@ -243,7 +243,7 @@ function Page() {
         </Container>
       </Section>
 
-      <Section id="operators" className="ve-fund-experience">
+      <Section id="operators" motion="proof" className="ve-fund-experience">
         <Container className="ve-container">
           <h2 className="ve-title">
             They know both sides

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useSectionMotion } from "../system/useSectionMotion";
 
 type Tone = "canvas" | "raised" | "field";
 type Pad = "default" | "compact" | "none";
@@ -21,15 +22,24 @@ export function Section({
   tone = "canvas",
   pad = "default",
   className = "",
+  motion,
 }: {
   id?: string;
   children: ReactNode;
   tone?: Tone;
   pad?: Pad;
   className?: string;
+  motion?: "process" | "portraits" | "portfolio" | "proof";
 }) {
+  const sequence = useSectionMotion<HTMLElement>(Boolean(motion));
   return (
-    <section id={id} className={`${tones[tone]} ${pads[pad]} ${className}`}>
+    <section
+      ref={sequence.ref}
+      id={id}
+      className={`${tones[tone]} ${pads[pad]} ${className} ${motion ? "v-sequence" : ""}`}
+      data-sequence={motion}
+      data-motion={motion ? sequence.state : undefined}
+    >
       {children}
     </section>
   );

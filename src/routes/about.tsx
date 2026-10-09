@@ -99,7 +99,7 @@ function Page() {
         </p>
       </PublicIntro>
 
-      <Section pad="none" className="ve-network-spread">
+      <Section pad="none" motion="portraits" className="ve-network-spread">
         <Container className="ve-container">
           <div className="ve-network-spread-label">
             <p>Meet our operating partners</p>

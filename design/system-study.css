@@ -85,23 +85,29 @@
   display: block;
   max-width: 72px;
   aspect-ratio: 1;
-  border: 2px solid var(--v-accent);
+  background: var(--v-surface-panel);
   margin-bottom: var(--v-space-3);
 }
+.vs-frame {
+  border: 2px solid var(--v-accent);
+  background: transparent !important;
+}
 .vs-control {
+  background: var(--v-action-fill) !important;
   border-radius: var(--v-shape-control);
 }
 .vs-panel {
-  border-radius: var(--v-shape-surface);
+  border-radius: var(--v-shape-panel);
 }
 .vs-node {
+  background: var(--v-signal) !important;
   border-radius: var(--v-shape-round);
 }
 .vs-tonal {
   margin-top: var(--v-space-5);
   padding: var(--v-space-5);
   background: var(--v-surface-panel);
-  border-radius: var(--v-shape-surface);
+  border-radius: var(--v-shape-panel);
 }
 .vs-profile {
   max-width: 280px;

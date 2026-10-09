@@ -127,3 +127,7 @@ Studio Critic review focused on actual rendered hierarchy, section rhythm, and r
 The Vosler review used the supplied source's Page 169 argument diagnostic: relevance, logical support, reader control, and realistic objections. The existing sequence already supports those needs: slipping work → ownership responsibilities → concrete evidence → next step. Preserve supported proof and the explicit client decision boundary. This is an editorial assessment, not evidence of conversion performance.
 
 See `SYSTEM-REVIEW-QA.md` for the recorded checks and remaining rollout scope.
+
+## Container and secondary motion refinement · 9 October 2026
+
+The [tonal container decisions](CONTAINERS-AND-SECONDARY-MOTION.md) supersede earlier accent-edge and open-caption profile treatments. Profiles now compose portrait, name, role, and evidence on one surface. General panels use an 8px radius; profile surfaces retain 15px corners.

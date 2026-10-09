@@ -214,7 +214,7 @@ function Page() {
         </p>
         <MotionScene concept="expertise" />
       </PublicIntro>
-      <Section className="ve-join-criteria">
+      <Section motion="portraits" className="ve-join-criteria">
         <Container className="ve-container">
           <div className="ve-section-opening">
             <h2 className="ve-title">
