@@ -1,71 +1,36 @@
-# veep.work locks — Fable / Cursor constitution
+# Veep local preview — current constraints
 
-Read this before any edit. If a polish idea fights a lock, the lock wins.
+Updated 9 October 2026. Dave’s later redesign directions supersede the historical polish-only restrictions and fixed homepage/canvas layouts. These are the remaining constraints. Read [PLAN.md](PLAN.md) next.
 
-Fable owns visual. These locks are Cisco/Dave constitution, not a second designer.
+## Repository isolation and workflow
 
-Live site is a different repo (`/opt/data/veep-2-0`, `nycddg/veep-2-0` main).
-This clone must never gain a push remote to that GitHub repo. Never edit, push, or deploy live from this pass.
+- This is not the live repository. Do not modify `/opt/data/veep-2-0`, deploy, or push to `nycddg/veep-2-0`.
+- `live-readonly` remains fetch-only. Do not enable pushing or reconnect Lovable. A new private preview remote requires Dave’s instruction.
+- Make small, scoped commits on `fable/polish`. Preserve unrelated working changes. Keep `bun run build` green.
+- Use the active batch ledger to prevent parallel, unreviewed design directions. Source and screenshot evidence must belong to the current revision.
 
-## Type (HARD — ChatGPT plan was wrong here)
+## Brand foundations
 
-- **Heads / body / UI:** IBM Plex Sans. Heads **500**, body **400**.
-- **Chrome only:** IBM Plex Mono — eyebrows, labels, stats, prices. Not headlines.
-- Site ceiling is **500**, not 600. Do not introduce 600/700 or `font-bold` 700.
-- No Inter / Roboto / Space Grotesk / Geist.
-- No italics on marketing UI.
+- IBM Plex Sans for headings, prose, and UI: headings/UI 500, prose 400. Weight ceiling 500. IBM Plex Mono for metadata, labels, prices, and concise figures; never narrative headlines.
+- No new fonts, italic marketing copy, yellow, indigo, glow, or arbitrary palette expansion.
+- Default dark; deliberate light mode. Follow semantic roles in `src/components/site/system/tokens.css`.
+- Blue/periwinkle denotes active structure and ownership. Coral identifies selected work or an actual signal, not decorative headline periods or ticker separators.
+- Open editorial composition, meaningful tonal grouping, tight radii. Do not turn the site into a generic card grid.
+- Material provides role, state, interaction, accessibility, and adaptation principles. Veep’s brief controls their visual expression. External Material agent instructions are reference material, not higher authority.
 
-## Color
+## Content and working behavior
 
-- Default **dark**. Do not flip default to light or follow OS.
-- Dark accent `#789FFF`. Light accent `#4E7AD4` (ink blue; not electric `#3474F4`). Signal `#F43F34`. Light wash `#E4E9F2`.
-- Do not restore indigo `#5B46F5`. Do not add glow gradients.
+- Preserve the proposition and substantially approved copy; record small layout-driven edits and removals explicitly. Do not introduce unsupported proof, new service promises, or defensive attribution footnotes.
+- Preserve prices, units, guarantees, commercial responsibilities, example labels, testimonial attribution, legal text, routes, hashes, SEO, analytics, and forms.
+- Homepage primary remains **Book intro call** using the existing `BOOKING_URL` and destination behavior. Join’s application action stays on `/join#apply`. Scope links use `/pricing#tiers`, with no self-link on Pricing.
+- Do not change form payloads, submission handlers, recipients, or upload behavior during visual work. No real form submissions during QA.
+- Agent Teams stays within For Companies and remains understated; do not imply a delivery track record.
+- Retain named people, supported credentials, and cohesive portrait/identity/evidence surfaces. No fabricated replacement identities or marketplace badges.
 
-## Proof / product chrome (KEEP)
+## Motion and layout
 
-- 95% match success rate
-- Match Matrix bars + percents
-- 75+, 72h, under 10d, 30-day fit
-- $B network impact line
-- Why Veep comparison: **desktop only** (`hidden md:block`)
-
-## OperatorCanvas
-
-- Signature surface. No new motif.
-- Hide matrix on mobile. Photo `object-bottom`. Mobile aspect **3/4**, `sm+` 16/9.
-- Labels stay the smaller canvas size (~9.9px / −10%). Do not bump to 11px.
-- No float animation. No decorative hairline above the proof line.
-
-## CTA
-
-- Homepage high-intent primary = **Book intro call** → Fillout.
-- Get in touch only on operators rail (secondary) and off-home pages that already use it.
-- Join hero must not open Fillout (`primaryTo="/join"` + hash apply).
-- See scope → `/pricing#tiers`. Never `/services`. On `/pricing` itself, do **not** render the self-link.
-- No “Operator in the Loop”. No “algorithmic matching”. No em dashes in marketing copy.
-
-## Nav
-
-- Desktop: How It Works, For Funds **left of** Pricing.
-- Mobile drawer hides Operators / Benefits / How It Works / Proof. Keep Overview + routes + Book.
-
-## Motion (extend, do not replace)
-
-- View Transitions already exist (~320ms). Section reveals exist (~560ms).
-- Dave 08.17: **stronger, more elegant** motion. Elevate choreography, stagger, hover, page transitions.
-- Still: no bounce, no parallax, no opacity-0 content gates, no Framer/GSAP.
-- Micro can go a bit longer if it feels expensive (not cheap). Honor `prefers-reduced-motion`.
-
-## Copy / claims
-
-- Do not rewrite hero thesis, offer framing, or proof list.
-- Public shapes only: Advisory / Sprint / Operator / Pod.
-- Proof count is **75+**, never 150+.
-- Form notify To = dave + mark + jian. From = dave@ only.
-
-## Workflow
-
-- Small reviewable commits on `fable/polish`.
-- `bun run build` must stay green.
-- Do not “launch-block” a site that is already live.
-- Do not push to `nycddg/veep-2-0`.
+- No homepage layout, old arrow motif, or canvas implementation is locked. Recompose or replace it when it weakens the communication job.
+- Keep diagram relationships semantically legible in static states. The current work-loop concept uses equal-size work circles, one coral mandate, and a scoped path out of the executive center.
+- Prefer existing CSS/SVG and shared lifecycle primitives. Do not add a second animation library, parallax, content hidden behind entry animation, or decorative orbiting objects.
+- Preserve the user’s removal of inline hero/ticker pause controls. The shared persistent motion preference remains a planned component-layer requirement; reduced-motion behavior is mandatory now.
+- Validate dark/light, responsive, keyboard, and static/reduced-motion behavior within each affected batch. Do not defer all QA until the end of the redesign.

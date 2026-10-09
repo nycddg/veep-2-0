@@ -55,10 +55,7 @@ export function ClientTicker({ kind = "full" }: { kind?: "full" | "clients" }) {
           {[0, 1].map((copy) => (
             <ul key={copy} aria-hidden={copy === 1 ? true : undefined}>
               {names.map((name) => (
-                <li key={name}>
-                  {name}
-                  <span aria-hidden="true">↗</span>
-                </li>
+                <li key={name}>{name}</li>
               ))}
             </ul>
           ))}

@@ -51,9 +51,7 @@ function Index() {
             <div className="vh-hero-copy">
               <h1 className="v-display">
                 <span>Because a job always </span>
-                <span>
-                  needs to be done<span className="v-signal">.</span>
-                </span>
+                <span>needs to be done.</span>
               </h1>
               <p className="v-lead">
                 <span>The work you can’t get to.</span>{" "}
@@ -72,13 +70,14 @@ function Index() {
         </Container>
         <ClientTicker />
       </section>
-      <section id="overview" className="v-section">
+      <section id="overview" className="v-section vh-ownership-chapter">
         <Container>
-          <div className="v-section-intro">
-            <h2 className="v-heading">
-              It can’t all land
+          <div className="vh-ownership-intro">
+            <p className="v-label">With Veep</p>
+            <h2>
+              The work gets
               <br />
-              back on your desk.
+              an owner.
             </h2>
             <p className="v-body-large">
               Veep gives companies and funds the operating partner capacity found inside top VC and
@@ -87,12 +86,12 @@ function Index() {
           </div>
           <OwnershipDiagram />
           <div className="vh-model-caption">
-            <p className="v-body v-muted">
-              The operating partner model found inside top VC and PE firms, available to your
-              business.
+            <p className="v-caption">
+              You retain strategic decisions and approvals. Advisory provides senior guidance; your
+              team owns execution.
             </p>
             <TextLink to="/for-companies" hash="benefits">
-              How ownership works <span aria-hidden="true">↗</span>
+              How ownership works
             </TextLink>
           </div>
         </Container>
@@ -162,7 +161,7 @@ function Index() {
         <Container className="v-section-intro">
           <h2 className="v-heading">
             It's probably
-            <br />a job for Veep<span className="v-signal">.</span>
+            <br />a job for Veep.
           </h2>
           <div>
             <p className="v-body-large v-muted">

@@ -2,7 +2,7 @@
 
 This is **not** the live repo. Live is `/opt/data/veep-2-0` → `nycddg/veep-2-0` → veep.work.
 
-1. Read `LOCKS.md` then `PLAN.md`.
+1. Read `LOCKS.md` then `PLAN.md`, then resume the active entry in `design/IMPLEMENTATION-BATCHES.md`. The later first-principles redesign brief supersedes historical polish-only layout restrictions.
 2. Do not push to GitHub unless Dave creates a **private** preview remote.
 3. `live-readonly` fetch-only. Push is disabled on purpose.
 4. Small commits on `fable/polish`. Build must stay green.

@@ -1,39 +1,16 @@
-# Fable 5 pass — Cisco plan
+# Veep redesign — active execution plan
 
-Fable owns visual. Cisco owns locks and the live site. No Vera designer pass.
+Updated 9 October 2026 following Dave’s first-principles redesign brief and homepage annotations.
 
-## Live site (HARD)
+This repository is the local preview only. Do not touch or deploy `/opt/data/veep-2-0`, push to `nycddg/veep-2-0`, or reconnect Lovable. Work in small commits on `fable/polish`; keep the build green.
 
-Do not touch `/opt/data/veep-2-0` or `nycddg/veep-2-0`.
-This clone has push disabled. No Vercel. No production deploy.
-Cisco cherry-picks winners after Dave QA.
+## Read and execute
 
-## Roles
+1. Read [LOCKS.md](LOCKS.md) for protected behavior and brand constraints.
+2. Read [design/VEEP-REDESIGN-PLAN.md](design/VEEP-REDESIGN-PLAN.md) for the approved direction, page purposes, dependencies, and acceptance criteria.
+3. Resume the active entry in [design/IMPLEMENTATION-BATCHES.md](design/IMPLEMENTATION-BATCHES.md). Do not start multiple unrelated page batches together.
+4. Use [design/VEEP-DESIGN-SYSTEM.md](design/VEEP-DESIGN-SYSTEM.md) and the existing `src/components/site/system/` implementation. Add to this architecture rather than building a parallel system.
 
-- **Fable:** visual/graphic plan and later polish
-- **Cisco:** isolation, locks, cherry-pick to live
-- **Vera:** not in this loop
+The earlier polish-only mandate and fixed OperatorCanvas/homepage-layout requirements are superseded. Existing components, including the homepage, are inputs to evaluate. They are not visual locks.
 
-## ChatGPT
-
-Posture kept (polish, not redesign). Type spec thrown out: Mono is chrome only, heads 500. No launch-blocker frame. One Pass 0 plan, not two mega-audits.
-
-## Sequence
-
-1. Fable Pass 0 — inspect this clone, write `FABLE-PLAN.md` + `AUDIT.md`. No product edits.
-2. Dave reviews.
-3. Pass 1 on this clone only.
-4. Dave visual QA.
-5. Cisco cherry-picks to live.
-
-## Pass 1 allowed / forbidden
-
-Allowed: spacing and type-scale inside the existing mobile ladder; hairline/card/button/FAQ/form states; quiet hover/focus; leftover Lovable soup; a11y; image/font perf; extend existing VT/reveal motion.
-
-Forbidden: new typeface or Mono headlines; new canvas motif / float / mobile matrix; CTA destination or homepage primary label; copy/strategy/proof numbers; default theme flip; second motion library.
-
-## Open
-
-Folder: `/opt/data/projects/veep-work-fable`
-Model: `claude-fable-5` with thinking=true, context=1m, effort=high.
-Do not open `/opt/data/veep-2-0`.
+Every batch records its purpose, affected files, retained content, deliberate removals, responsive transformation, and actual verification. Finish or explicitly defer its exit criteria before expanding scope. A green build alone does not establish visual readiness.
