@@ -102,6 +102,12 @@
   font-size: clamp(2.25rem, 4.6vw, 4rem);
 }
 .vh-ownership {
+  --work-cycle: 12s;
+  --dot-gap: 26px;
+  --row-top: 86px;
+  --row-bottom: 110px;
+  --pinball-unit: 1px;
+  --pinball-center-y: 100px;
   margin-top: var(--v-space-7);
 }
 .vh-alternatives {
@@ -139,19 +145,39 @@
   stroke-width: 10;
   vector-effect: non-scaling-stroke;
   opacity: 0;
+}
+.vh-work--one {
+  --desk-motion: vh-pinball-one;
   --return-x: 150px;
   --return-delay: 0ms;
 }
-.vh-return-work--two {
+.vh-work--two {
+  --desk-motion: vh-pinball-two;
   --return-x: 450px;
+  --return-delay: 400ms;
+}
+.vh-work--three {
+  --desk-motion: vh-pinball-three;
+  --return-x: 750px;
   --return-delay: 800ms;
 }
-.vh-return-work--three {
-  --return-x: 750px;
+.vh-work--four {
+  --desk-motion: vh-pinball-four;
+  --return-x: 150px;
+  --return-delay: 1200ms;
+}
+.vh-work--five {
+  --desk-motion: vh-pinball-five;
+  --return-x: 450px;
   --return-delay: 1600ms;
 }
+.vh-work--six {
+  --desk-motion: vh-pinball-six;
+  --return-x: 750px;
+  --return-delay: 2000ms;
+}
 .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-return-work {
-  animation: vh-work-returns 10s linear var(--return-delay) infinite both;
+  animation: vh-work-returns var(--work-cycle) linear var(--return-delay) infinite both;
 }
 /* At 20%, the same-size desk dot takes over at the exact entry point. */
 @keyframes vh-work-returns {
@@ -206,10 +232,10 @@
 .vh-owned-path > span::after {
   content: "";
   position: absolute;
-  width: 12px;
-  height: 12px;
-  right: -6px;
-  top: -5px;
+  width: 10px;
+  height: 10px;
+  right: -5px;
+  top: -4px;
   border: 1px solid var(--v-signal-edge);
   border-radius: 50%;
   background: var(--v-signal);
@@ -248,34 +274,76 @@
   height: 10px;
   border-radius: 50%;
   background: var(--v-accent);
-  transform: translate(-26px, 86px);
-}
-.vh-remaining-work i:nth-child(2) {
-  transform: translate(0, 86px);
-}
-.vh-remaining-work i:nth-child(3) {
-  transform: translate(26px, 86px);
-}
-.vh-arrived-work {
-  --rest-x: -26px;
-  --rest-y: 110px;
-  --return-delay: 0ms;
-}
-.vh-remaining-work .vh-arrived-work {
+  --rest-x: calc(-1 * var(--dot-gap));
+  --rest-y: var(--row-top);
   transform: translate(var(--rest-x), var(--rest-y));
 }
-.vh-arrived-work--two {
-  --rest-x: 0px;
-  --return-delay: 800ms;
+.vh-remaining-work .vh-work--one {
+  --rest-x: calc(-38 * var(--pinball-unit));
+  --rest-y: calc(var(--pinball-center-y) + -15 * var(--pinball-unit));
 }
-.vh-arrived-work--three {
-  --rest-x: 26px;
-  --return-delay: 1600ms;
+.vh-remaining-work .vh-work--two {
+  --rest-x: calc(24 * var(--pinball-unit));
+  --rest-y: calc(var(--pinball-center-y) + -22 * var(--pinball-unit));
+}
+.vh-remaining-work .vh-work--three {
+  --rest-x: calc(48 * var(--pinball-unit));
+  --rest-y: calc(var(--pinball-center-y) + 6 * var(--pinball-unit));
+}
+.vh-remaining-work .vh-work--four {
+  --rest-x: calc(-24 * var(--pinball-unit));
+  --rest-y: calc(var(--pinball-center-y) + 24 * var(--pinball-unit));
+}
+.vh-remaining-work .vh-work--five {
+  --rest-x: calc(0 * var(--pinball-unit));
+  --rest-y: calc(var(--pinball-center-y) + 10 * var(--pinball-unit));
+}
+.vh-remaining-work .vh-work--six {
+  --rest-x: calc(17 * var(--pinball-unit));
+  --rest-y: calc(var(--pinball-center-y) + 29 * var(--pinball-unit));
+}
+.vh-ownership[data-motion="ready"] .vh-arrived-work {
+  opacity: 0;
 }
 .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-arrived-work {
-  animation: vh-work-accumulates 10s linear var(--return-delay) infinite both;
+  animation:
+    var(--desk-motion) var(--work-cycle) linear var(--return-delay) infinite both,
+    vh-arrival-presence var(--work-cycle) step-end infinite both;
 }
-@keyframes vh-work-accumulates {
+/* The lower-center desk ball becomes the coral delivery ball at 60%. */
+.vh-remaining-work .vh-work--five {
+  visibility: hidden;
+}
+.vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-arrived-work.vh-work--five {
+  animation-name: var(--desk-motion), vh-selected-presence;
+}
+@keyframes vh-arrival-presence {
+  0%,
+  94%,
+  100% {
+    visibility: hidden;
+  }
+  20% {
+    visibility: visible;
+  }
+}
+@keyframes vh-selected-presence {
+  0%,
+  60%,
+  100% {
+    visibility: hidden;
+  }
+  20% {
+    visibility: visible;
+    background: var(--v-accent);
+  }
+  55% {
+    visibility: visible;
+    background: var(--v-signal);
+  }
+}
+/* Reflected, irregular paths keep the workload active inside the desk, clear of its label. */
+@keyframes vh-pinball-one {
   0%,
   19.99% {
     transform: translate(0, var(--desk-entry-y));
@@ -293,15 +361,560 @@
     transform: translate(var(--desk-bend-x), var(--desk-bend-y));
     opacity: 1;
   }
-  31%,
-  78% {
-    transform: translate(var(--rest-x), var(--rest-y));
+  30% {
+    transform: translate(
+      calc(51 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 0 * var(--pinball-unit))
+    );
     opacity: 1;
   }
-  84%,
+  37% {
+    transform: translate(
+      calc(-29 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 21 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  44% {
+    transform: translate(
+      calc(-19 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -23 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  51% {
+    transform: translate(
+      calc(50 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 6 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  58% {
+    transform: translate(
+      calc(-37 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 17 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  65% {
+    transform: translate(
+      calc(-7 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -25 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  72% {
+    transform: translate(
+      calc(46 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 11 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  79% {
+    transform: translate(
+      calc(-44 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 12 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  86% {
+    transform: translate(
+      calc(4 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -25 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  94% {
+    transform: translate(
+      calc(40 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 16 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
   100% {
-    transform: translate(var(--rest-x), var(--rest-y));
+    transform: translate(
+      calc(-49 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 7 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+}
+@keyframes vh-pinball-two {
+  0%,
+  19.99% {
+    transform: translate(0, var(--desk-entry-y));
     opacity: 0;
+  }
+  20% {
+    transform: translate(0, var(--desk-entry-y));
+    opacity: 1;
+  }
+  22% {
+    transform: translate(var(--desk-shoulder-x), var(--desk-shoulder-y));
+    opacity: 1;
+  }
+  25% {
+    transform: translate(var(--desk-bend-x), var(--desk-bend-y));
+    opacity: 1;
+  }
+  30% {
+    transform: translate(
+      calc(24 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 22 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  37% {
+    transform: translate(
+      calc(-51 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -2 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  44% {
+    transform: translate(
+      calc(33 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -19 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  51% {
+    transform: translate(
+      calc(14 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 24 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  58% {
+    transform: translate(
+      calc(-48 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -8 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  65% {
+    transform: translate(
+      calc(41 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -15 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  72% {
+    transform: translate(
+      calc(2 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 25 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  79% {
+    transform: translate(
+      calc(-43 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -13 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  86% {
+    transform: translate(
+      calc(47 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -10 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  94% {
+    transform: translate(
+      calc(-9 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 25 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+      calc(-36 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -18 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+}
+@keyframes vh-pinball-three {
+  0%,
+  19.99% {
+    transform: translate(0, var(--desk-entry-y));
+    opacity: 0;
+  }
+  20% {
+    transform: translate(0, var(--desk-entry-y));
+    opacity: 1;
+  }
+  22% {
+    transform: translate(var(--desk-shoulder-x), var(--desk-shoulder-y));
+    opacity: 1;
+  }
+  25% {
+    transform: translate(var(--desk-bend-x), var(--desk-bend-y));
+    opacity: 1;
+  }
+  30% {
+    transform: translate(
+      calc(-27 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 21 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  37% {
+    transform: translate(
+      calc(-20 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -23 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  44% {
+    transform: translate(
+      calc(50 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 5 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  51% {
+    transform: translate(
+      calc(-36 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 17 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  58% {
+    transform: translate(
+      calc(-9 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -25 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  65% {
+    transform: translate(
+      calc(46 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 10 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  72% {
+    transform: translate(
+      calc(-44 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 13 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  79% {
+    transform: translate(
+      calc(3 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -25 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  86% {
+    transform: translate(
+      calc(41 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 15 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  94% {
+    transform: translate(
+      calc(-48 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 8 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+      calc(14 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -24 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+}
+@keyframes vh-pinball-four {
+  0%,
+  19.99% {
+    transform: translate(0, var(--desk-entry-y));
+    opacity: 0;
+  }
+  20% {
+    transform: translate(0, var(--desk-entry-y));
+    opacity: 1;
+  }
+  22% {
+    transform: translate(var(--desk-shoulder-x), var(--desk-shoulder-y));
+    opacity: 1;
+  }
+  25% {
+    transform: translate(var(--desk-bend-x), var(--desk-bend-y));
+    opacity: 1;
+  }
+  30% {
+    transform: translate(
+      calc(-51 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -2 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  37% {
+    transform: translate(
+      calc(32 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -20 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  44% {
+    transform: translate(
+      calc(15 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 24 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  51% {
+    transform: translate(
+      calc(-49 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -7 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  58% {
+    transform: translate(
+      calc(40 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -16 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  65% {
+    transform: translate(
+      calc(4 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 25 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  72% {
+    transform: translate(
+      calc(-44 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -12 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  79% {
+    transform: translate(
+      calc(46 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -11 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  86% {
+    transform: translate(
+      calc(-8 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 25 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  94% {
+    transform: translate(
+      calc(-37 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -17 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+      calc(50 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -6 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+}
+@keyframes vh-pinball-five {
+  0%,
+  19.99% {
+    transform: translate(0, var(--desk-entry-y));
+    opacity: 0;
+  }
+  20% {
+    transform: translate(0, var(--desk-entry-y));
+    opacity: 1;
+  }
+  22% {
+    transform: translate(var(--desk-shoulder-x), var(--desk-shoulder-y));
+    opacity: 1;
+  }
+  25% {
+    transform: translate(var(--desk-bend-x), var(--desk-bend-y));
+    opacity: 1;
+  }
+  30% {
+    transform: translate(
+      calc(-21 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -23 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  37% {
+    transform: translate(
+      calc(50 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 4 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  51% {
+    transform: translate(
+      calc(-10 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -24 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  58% {
+    transform: translate(
+      calc(47 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 10 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  65% {
+    transform: translate(
+      calc(-43 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 14 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  72% {
+    transform: translate(
+      calc(1 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -25 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  79% {
+    transform: translate(
+      calc(41 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 15 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  86% {
+    transform: translate(
+      calc(-48 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 9 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  94% {
+    transform: translate(
+      calc(13 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -24 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+      calc(34 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 19 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  41.6667%,
+  46.6667% {
+    transform: translate(0, var(--row-bottom));
+    opacity: 1;
+  }
+}
+@keyframes vh-pinball-six {
+  0%,
+  19.99% {
+    transform: translate(0, var(--desk-entry-y));
+    opacity: 0;
+  }
+  20% {
+    transform: translate(0, var(--desk-entry-y));
+    opacity: 1;
+  }
+  22% {
+    transform: translate(var(--desk-shoulder-x), var(--desk-shoulder-y));
+    opacity: 1;
+  }
+  25% {
+    transform: translate(var(--desk-bend-x), var(--desk-bend-y));
+    opacity: 1;
+  }
+  30% {
+    transform: translate(
+      calc(30 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -20 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  37% {
+    transform: translate(
+      calc(17 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 24 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  44% {
+    transform: translate(
+      calc(-49 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -7 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  51% {
+    transform: translate(
+      calc(39 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -16 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  58% {
+    transform: translate(
+      calc(5 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 25 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  65% {
+    transform: translate(
+      calc(-45 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -12 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  72% {
+    transform: translate(
+      calc(45 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -12 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  79% {
+    transform: translate(
+      calc(-6 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 25 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  86% {
+    transform: translate(
+      calc(-38 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -16 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  94% {
+    transform: translate(
+      calc(49 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + -6 * var(--pinball-unit))
+    );
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+      calc(-17 * var(--pinball-unit)),
+      calc(var(--pinball-center-y) + 24 * var(--pinball-unit))
+    );
+    opacity: 1;
   }
 }
 .vh-mandate-scope {
@@ -325,24 +938,24 @@
   letter-spacing: var(--v-tracking-heading);
 }
 .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-owned-path > span {
-  animation: vh-work-owned 10s var(--v-motion-spatial) infinite both;
+  animation: vh-work-owned var(--work-cycle) var(--v-motion-spatial) infinite both;
 }
 @keyframes vh-work-owned {
   0%,
-  46% {
+  59.99% {
     transform: translateX(-100%);
     opacity: 0;
   }
-  48% {
+  60% {
     transform: translateX(-100%);
     opacity: 1;
   }
-  61%,
-  67% {
+  73%,
+  77% {
     transform: translateX(-50%);
     opacity: 1;
   }
-  79%,
+  89%,
   94% {
     transform: translateX(0);
     opacity: 1;
@@ -370,7 +983,6 @@
   letter-spacing: var(--v-tracking-heading);
 }
 .vh-ownership-answer span {
-  max-width: 48ch;
   color: var(--v-text-secondary);
   font-size: var(--v-type-body-large);
   line-height: 1.5;
@@ -700,28 +1312,30 @@
   }
   .vh-owned-path > span::after {
     top: auto;
-    bottom: -6px;
-    right: -5px;
+    width: 8px;
+    height: 8px;
+    bottom: -4px;
+    right: -3px;
   }
   .vh-ownership:is([data-motion="running"], [data-motion="paused"]) .vh-owned-path > span {
-    animation: vh-work-owned-vertical 10s var(--v-motion-spatial) infinite both;
+    animation: vh-work-owned-vertical var(--work-cycle) var(--v-motion-spatial) infinite both;
   }
   @keyframes vh-work-owned-vertical {
     0%,
-    46% {
+    59.99% {
       transform: translateY(-100%);
       opacity: 0;
     }
-    48% {
+    60% {
       transform: translateY(-100%);
       opacity: 1;
     }
-    61%,
-    67% {
+    73%,
+    77% {
       transform: translateY(-50%);
       opacity: 1;
     }
-    79%,
+    89%,
     94% {
       transform: translateY(0);
       opacity: 1;
@@ -751,27 +1365,17 @@
     --desk-bend-x: -39px;
     --desk-bend-y: 48px;
   }
+  .vh-ownership {
+    --dot-gap: 16px;
+    --row-top: 55px;
+    --row-bottom: 71px;
+    --pinball-unit: 0.62px;
+    --pinball-center-y: 64px;
+  }
   .vh-remaining-work i {
     left: calc(50% - 4px);
     width: 8px;
     height: 8px;
-    transform: translate(-16px, 55px);
-  }
-  .vh-remaining-work i:nth-child(2) {
-    transform: translate(0, 55px);
-  }
-  .vh-remaining-work i:nth-child(3) {
-    transform: translate(16px, 55px);
-  }
-  .vh-arrived-work {
-    --rest-x: -16px;
-    --rest-y: 71px;
-  }
-  .vh-arrived-work--two {
-    --rest-x: 0px;
-  }
-  .vh-arrived-work--three {
-    --rest-x: 16px;
   }
   .vh-mandate-scope {
     padding: 8px 4px;

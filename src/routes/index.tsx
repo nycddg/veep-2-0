@@ -88,8 +88,8 @@ function Index() {
           <OwnershipDiagram />
           <div className="vh-ownership-answer">
             <p>
-              <strong>Veep stays accountable</strong>{" "}
-              <span>for scope, quality, and continuity through delivery and handoff.</span>
+              <strong>Veep is accountable</strong>{" "}
+              <span>for scope, quality, and continuity from delivery through to handoff.</span>
             </p>
           </div>
         </Container>
@@ -194,14 +194,14 @@ function Index() {
       <section id="proof" className="v-section v-paper vh-proof-chapter">
         <Container>
           <div className="vh-proof-heading">
-            <h2 className="v-heading">The difference it made.</h2>
+            <h2 className="v-heading">The difference Veep makes</h2>
             <TextLink to="/for-companies" hash="proof">
               Inside the engagements
             </TextLink>
           </div>
           <div className="vh-proof-cases">
             <article>
-              <p className="v-label">B2B SaaS · Finance operating partner</p>
+              <p className="v-label">B2B SAAS · FINANCE SCOPE</p>
               <p className="vh-proof-number">$6M</p>
               <h3 className="v-lead">Raised in six weeks.</h3>
               <p className="v-body-large v-muted">
@@ -210,7 +210,7 @@ function Index() {
               </p>
             </article>
             <article>
-              <p className="v-label">Software studio · Growth operating partner</p>
+              <p className="v-label">SOFTWARE STUDIO · GROWTH SCOPE</p>
               <p className="vh-proof-number">25%</p>
               <h3 className="v-lead">Project margins up.</h3>
               <p className="v-body-large v-muted">

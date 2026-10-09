@@ -1,5 +1,7 @@
 import { useSectionMotion } from "../system/useSectionMotion";
 
+const workItems = ["one", "two", "three", "four", "five", "six"];
+
 const alternatives = ["Team at capacity", "Hire in progress", "Advice in hand"];
 
 /** The alternatives return work to the executive; a named delivery responsibility opens a path out. */
@@ -21,9 +23,9 @@ export function OwnershipDiagram() {
         aria-hidden="true"
       >
         <path d="M150 0V64 M450 0V28H150 M750 0V28H150" />
-        <circle className="vh-return-work vh-return-work--one" r="0.1" />
-        <circle className="vh-return-work vh-return-work--two" r="0.1" />
-        <circle className="vh-return-work vh-return-work--three" r="0.1" />
+        {workItems.map((item) => (
+          <circle key={item} className={`vh-return-work vh-work--${item}`} r="0.1" />
+        ))}
       </svg>
       <div className="vh-ownership-flow">
         <div className="vh-owned-path" aria-hidden="true">
@@ -33,12 +35,9 @@ export function OwnershipDiagram() {
           <div className="vh-executive-center">
             <h3>Your desk</h3>
             <span className="vh-remaining-work" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-              <i className="vh-arrived-work vh-arrived-work--one" />
-              <i className="vh-arrived-work vh-arrived-work--two" />
-              <i className="vh-arrived-work vh-arrived-work--three" />
+              {workItems.map((item) => (
+                <i key={item} className={`vh-arrived-work vh-work--${item}`} />
+              ))}
             </span>
           </div>
           <p>Decisions and coordination still depend on you.</p>
@@ -61,7 +60,7 @@ export function OwnershipDiagram() {
               gets done.
             </h3>
           </div>
-          <p>Get the job done and hand off cleanly.</p>
+          <p>With the level of quality and authorship you'd expect.</p>
         </div>
       </div>
     </div>
