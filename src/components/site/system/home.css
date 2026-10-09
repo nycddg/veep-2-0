@@ -105,9 +105,10 @@
   --work-cycle: 12s;
   --dot-gap: 26px;
   --row-top: 86px;
-  --row-bottom: 110px;
-  --pinball-unit: 1px;
-  --pinball-center-y: 100px;
+  --row-bottom: 71px;
+  --pinball-unit: 0.65px;
+  --pinball-center-y: 116px;
+  --pickup-x: 68px;
   margin-top: var(--v-space-7);
 }
 .vh-alternatives {
@@ -129,7 +130,7 @@
 }
 .vh-return-lines {
   width: 100%;
-  height: 64px;
+  height: 103px;
   margin-top: var(--v-space-4);
   overflow: visible;
 }
@@ -198,12 +199,12 @@
     opacity: 1;
   }
   19.99% {
-    transform: translate(150px, 64px);
+    transform: translate(150px, 103px);
     opacity: 1;
   }
   20%,
   100% {
-    transform: translate(150px, 64px);
+    transform: translate(150px, 103px);
     opacity: 0;
   }
 }
@@ -220,7 +221,7 @@
   position: absolute;
   left: 16.6667%;
   right: 16.6667%;
-  top: 116px;
+  top: 77px;
   height: 2px;
   background: var(--v-accent);
 }
@@ -252,9 +253,13 @@
   border: 2px solid var(--v-border);
   border-radius: 50%;
   background: var(--v-surface-section);
-  padding-top: 36px;
+  display: grid;
+  place-items: center;
 }
 .vh-executive-center h3 {
+  position: relative;
+  z-index: 3;
+  background: var(--v-surface-section);
   font-size: 24px;
 }
 .vh-remaining-work {
@@ -310,7 +315,7 @@
     var(--desk-motion) var(--work-cycle) linear var(--return-delay) infinite both,
     vh-arrival-presence var(--work-cycle) step-end infinite both;
 }
-/* The lower-center desk ball becomes the coral delivery ball at 60%. */
+/* The selected desk ball meets the delivery path at 60%. */
 .vh-remaining-work .vh-work--five {
   visibility: hidden;
 }
@@ -817,7 +822,7 @@
   }
   41.6667%,
   46.6667% {
-    transform: translate(0, var(--row-bottom));
+    transform: translate(var(--pickup-x), var(--row-bottom));
     opacity: 1;
   }
 }
@@ -925,14 +930,16 @@
   padding: var(--v-space-4) var(--v-space-3);
   background: var(--v-surface-section);
 }
-.vh-mandate-scope h3 {
-  margin-top: 0;
-  font-size: 24px;
-  line-height: 1.15;
-  letter-spacing: var(--v-tracking-heading);
+.vh-mandate-logo {
+  width: min(106.4px, 66.5%);
+  margin: 0;
+}
+.vh-mandate-logo img {
+  width: 100%;
+  height: auto;
 }
 .vh-delivery-end h3 {
-  padding-top: 34px;
+  transform: translateY(-5px);
   font-size: 28px;
   line-height: 1.1;
   letter-spacing: var(--v-tracking-heading);
@@ -943,11 +950,11 @@
 @keyframes vh-work-owned {
   0%,
   59.99% {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% + var(--pickup-x)));
     opacity: 0;
   }
   60% {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% + var(--pickup-x)));
     opacity: 1;
   }
   73%,
@@ -1199,9 +1206,6 @@
   .vh-mandate-scope {
     max-width: 196px;
   }
-  .vh-mandate-scope h3 {
-    font-size: 21px;
-  }
   .vh-impact-list {
     grid-template-columns: 1fr;
     gap: var(--v-space-5);
@@ -1353,9 +1357,6 @@
     text-align: center;
     background: var(--v-surface-section);
   }
-  .vh-executive-center {
-    padding-top: 20px;
-  }
   .vh-executive-center h3 {
     font-size: 18px;
   }
@@ -1369,8 +1370,9 @@
     --dot-gap: 16px;
     --row-top: 55px;
     --row-bottom: 71px;
-    --pinball-unit: 0.62px;
-    --pinball-center-y: 64px;
+    --pinball-unit: 0.4px;
+    --pinball-center-y: 76px;
+    --pickup-x: 0px;
   }
   .vh-remaining-work i {
     left: calc(50% - 4px);
@@ -1380,11 +1382,8 @@
   .vh-mandate-scope {
     padding: 8px 4px;
   }
-  .vh-mandate-scope h3 {
-    margin-top: 0;
-    font-size: 16px;
-  }
   .vh-delivery-end h3 {
+    transform: none;
     padding-top: 17px;
     font-size: 20px;
   }

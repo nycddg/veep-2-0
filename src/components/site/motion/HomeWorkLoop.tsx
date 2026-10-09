@@ -57,14 +57,7 @@ export function HomeWorkLoop({ compact = false }: { compact?: boolean }) {
       </g>
       <g transform={`translate(${centerX + extraction} 120)`}>
         <g className="hw-carrier hw-animated">
-          <rect
-            x={-43}
-            y={-43}
-            width={86}
-            height={86}
-            pathLength="1"
-            className="hw-scope hw-animated"
-          />
+          <rect x={-43} y={-43} width={86} height={86} className="hw-scope hw-animated" />
           <circle r={10} className="hw-selected hw-animated" />
         </g>
       </g>

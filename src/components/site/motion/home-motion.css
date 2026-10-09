@@ -8,7 +8,8 @@
 .hw-center {
   fill: none;
   stroke: var(--vm-accent);
-  stroke-width: 2.5;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
   transform-box: fill-box;
   transform-origin: center;
   transform: scale(1.6);
@@ -33,9 +34,9 @@
 .hw-scope {
   fill: none;
   stroke: var(--vm-accent);
-  stroke-width: 3;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 0;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: miter;
   --hw-motion: hw-bound;
 }
 .vm-scene--desk[data-animate="true"] .hw-animated {
@@ -560,11 +561,11 @@
 @keyframes hw-bound {
   0%,
   41% {
-    stroke-dashoffset: 1;
+    opacity: 0;
   }
   51%,
   100% {
-    stroke-dashoffset: 0;
+    opacity: 1;
   }
 }
 @keyframes hw-carry {

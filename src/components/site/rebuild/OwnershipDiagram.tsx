@@ -1,3 +1,5 @@
+import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
+import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
 import { useSectionMotion } from "../system/useSectionMotion";
 
 const workItems = ["one", "two", "three", "four", "five", "six"];
@@ -18,11 +20,11 @@ export function OwnershipDiagram() {
       </div>
       <svg
         className="vh-return-lines"
-        viewBox="0 0 900 64"
+        viewBox="0 0 900 103"
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        <path d="M150 0V64 M450 0V28H150 M750 0V28H150" />
+        <path d="M150 0V103 M450 0V28H150 M750 0V28H150" />
         {workItems.map((item) => (
           <circle key={item} className={`vh-return-work vh-work--${item}`} r="0.1" />
         ))}
@@ -44,10 +46,9 @@ export function OwnershipDiagram() {
         </div>
         <div className="vh-mandate">
           <div className="vh-mandate-scope">
-            <h3>
-              Veep
-              <br />
-              operating partners
+            <h3 className="vh-mandate-logo" aria-label="Veep operating partners">
+              <img src={wordmarkWhite.url} alt="" className="light:hidden" />
+              <img src={wordmarkNavy.url} alt="" className="hidden light:block" />
             </h3>
           </div>
           <p>Owns strategy, execution, and team coordination.</p>

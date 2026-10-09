@@ -201,7 +201,7 @@ function Index() {
           </div>
           <div className="vh-proof-cases">
             <article>
-              <p className="v-label">B2B SAAS · FINANCE SCOPE</p>
+              <p className="v-label">B2B SAAS · FINANCE</p>
               <p className="vh-proof-number">$6M</p>
               <h3 className="v-lead">Raised in six weeks.</h3>
               <p className="v-body-large v-muted">
@@ -210,7 +210,7 @@ function Index() {
               </p>
             </article>
             <article>
-              <p className="v-label">SOFTWARE STUDIO · GROWTH SCOPE</p>
+              <p className="v-label">SOFTWARE STUDIO · GROWTH</p>
               <p className="vh-proof-number">25%</p>
               <h3 className="v-lead">Project margins up.</h3>
               <p className="v-body-large v-muted">
