@@ -294,3 +294,12 @@ Use Dave's exact Scope, Assemble and Own descriptions. Match Deliver to their di
 ## Batch 01S — Own wording correction
 
 Replace the Own description with Dave's “Drive delivery and team coordination through to completion.” Other step copy stays unchanged. Rendered at 1381, 768 and 390px in both themes; no overflow. Build, focused lint, formatting and diff checks pass. Evidence: `canon-refinement/own-copy/`. Homepage and ledger only; no push or deployment.
+
+
+## Batch 01T — editorial accountability statement
+
+**Communication problem:** Dave rejected the filled accountability strip as inconsistent with the site's design. Its banner treatment competed with the impact field and reduced the statement to notification-like body copy.
+
+**Change:** replace the fill and leading border with an open editorial composition on the existing section surface. A fine horizontal rule separates the statement from the diagram; “Veep stays accountable” receives stronger IBM Plex hierarchy, with the rest of the unchanged sentence alongside it. Stack the two parts on mobile. Keep the gap below the diagram and preserve the business-impact color field's prominence.
+
+**Review checkpoint:** actual diagram → accountability → impact transition inspected at 1381, 768 and 390px in both themes. Text wraps without overflow and uses existing foreground/surface roles. No animation or interaction changes. Build, focused lint, formatting and diff checks pass. Evidence: `canon-refinement/accountability-editorial/` in the October 9 visualization directory. Scope: homepage, home.css and ledger; unrelated changes preserved. No push or deployment. Revised treatment remains open to Dave's design review.

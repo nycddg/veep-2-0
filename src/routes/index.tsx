@@ -87,9 +87,9 @@ function Index() {
           </div>
           <OwnershipDiagram />
           <div className="vh-ownership-answer">
-            <p className="v-body-large">
-              Veep stays accountable for scope, quality, and continuity through delivery and
-              handoff.
+            <p>
+              <strong>Veep stays accountable</strong>{" "}
+              <span>for scope, quality, and continuity through delivery and handoff.</span>
             </p>
           </div>
         </Container>
