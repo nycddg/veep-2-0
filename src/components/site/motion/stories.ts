@@ -25,7 +25,7 @@ export const stories: Record<
       "The coral square has been pulled out and advanced in its scope. Six blue squares remain in the center.",
     description:
       "A small circle expands as six blue squares and one coral square fill it. The same coral square is pulled out, gains a scope, then advances downward and settles. Fresh work begins the next cycle.",
-    seconds: 9,
+    seconds: 5.4,
     loop: true,
   },
   mandate: {

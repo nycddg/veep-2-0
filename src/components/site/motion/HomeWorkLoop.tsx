@@ -31,6 +31,9 @@ export function HomeWorkLoop() {
               "--hw-motion": `hw-fill-${i}`,
               "--hw-from-x": `${fromX}px`,
               "--hw-from-y": `${fromY}px`,
+              "--hw-land-x": `${-Math.sign(fromX) * 5}px`,
+              "--hw-land-y": `${-Math.sign(fromY) * 5}px`,
+              "--hw-tilt": `${i % 2 === 0 ? 6 : -6}deg`,
             } as CSSProperties
           }
         />
@@ -45,7 +48,7 @@ export function HomeWorkLoop() {
             pathLength="1"
             className="hw-scope hw-animated"
           />
-          <rect x={-16} y={-16} width={32} height={32} className="hw-selected hw-animated" />
+          <rect x={-10} y={-10} width={20} height={20} className="hw-selected hw-animated" />
         </g>
       </g>
     </g>

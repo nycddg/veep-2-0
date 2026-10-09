@@ -103,25 +103,33 @@ export function MotionScene({
         <Composition concept={concept} compact={mobile} />
         <g className="vm-clock" />
       </svg>
-      <figcaption>
-        {!still && (
-          <button
-            type="button"
-            className="vm-control"
-            aria-label={`${complete ? "Replay" : paused ? "Play" : "Pause"} animation: ${story.title}`}
-            onClick={() => {
-              if (complete) {
-                setReplay((value) => value + 1);
-                setFinished(false);
-                setPaused(false);
-              } else setPaused((value) => !value);
-            }}
-          >
-            {complete ? <RotateCcw size={14} /> : paused ? <Play size={14} /> : <Pause size={14} />}
-            <span>{complete ? "Replay" : paused ? "Play" : "Pause"}</span>
-          </button>
-        )}
-      </figcaption>
+      {concept !== "desk" && (
+        <figcaption>
+          {!still && (
+            <button
+              type="button"
+              className="vm-control"
+              aria-label={`${complete ? "Replay" : paused ? "Play" : "Pause"} animation: ${story.title}`}
+              onClick={() => {
+                if (complete) {
+                  setReplay((value) => value + 1);
+                  setFinished(false);
+                  setPaused(false);
+                } else setPaused((value) => !value);
+              }}
+            >
+              {complete ? (
+                <RotateCcw size={14} />
+              ) : paused ? (
+                <Play size={14} />
+              ) : (
+                <Pause size={14} />
+              )}
+              <span>{complete ? "Replay" : paused ? "Play" : "Pause"}</span>
+            </button>
+          )}
+        </figcaption>
+      )}
     </figure>
   );
 }

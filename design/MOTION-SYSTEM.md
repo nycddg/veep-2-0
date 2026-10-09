@@ -28,8 +28,8 @@ Use Veep blue (#789FFF dark / #4E7AD4 light), coral #F43F34 and theme-muted cons
 The homepage expresses one event at a time. Following the 2026-10-09 simplification and coral-square refinement, it uses one collecting circle, six blue squares and one coral square. There is no separate owner dot or support network.
 
 - **Primary object:** the coral work square. It is coral when it enters, while the center fills, and throughout extraction and advancement; it never changes into a different object.
-- **Executive center:** a single open circle, initially radius 48 rather than the prior 64. It expands in steps with the incoming squares to radius 82.56, then relaxes to 76.8 after the coral square leaves.
-- **Other work:** six smaller blue squares arrive in staggered order and remain in the center.
+- **Executive center:** a single open circle, initially radius 48 rather than the prior 64. It expands with the incoming squares, briefly flexing along each entry axis, then settles at radius 82.56. It relaxes to 76.8 after the coral square leaves.
+- **Other work:** six blue squares, the same 20×20 size as the coral square, arrive in staggered order and remain in the center.
 - **Scope:** an open blue frame closes around the extracted coral square and travels with it. No circular marker is attached to this frame.
 - **Direction:** quiet entry axes and a single vertical guide. The selected work advances downward and settles without returning to the center.
 - **Problem frame:** all seven squares sit inside the expanded center.
@@ -37,13 +37,15 @@ The homepage expresses one event at a time. Following the 2026-10-09 simplificat
 
 The coral square is a homepage-specific highlight for the selected work. Other scenes retain their existing coral owner nodes. The portrait composition uses a 420×540 drawing space capped at 430px wide on desktop and 360px wide on mobile. The same geometry preserves playback through responsive changes.
 
-Home alone runs a continuous **9-second loop**:
+Home alone runs a continuous **5.4-second loop**, revised after the 2026-10-09 request for quicker, more organic and playful motion:
 
-1. **0–3.4s:** seven squares accumulate; the circle enlarges with each arrival.
-2. **3.4–4.8s:** the coral square is pulled out and receives a defined frame.
-3. **5.0–6.4s:** the framed coral square advances and settles.
-4. **6.4–7.6s:** the resolved arrangement holds.
-5. **7.6–9.0s:** the selected work clears forward; the remaining squares clear and the smaller circle is ready for fresh work.
+1. **0–2.0s:** seven equal-size squares arrive in an irregular stagger. Small directional overshoots and brief boundary compression make each arrival register.
+2. **1.8–2.8s:** the coral square anticipates its extraction, pulls free, then settles upright as its frame closes.
+3. **2.8–3.9s:** the framed square advances with a short overshoot and settles.
+4. **3.9–4.2s:** the resolved arrangement holds briefly.
+5. **4.2–5.4s:** the selected work clears forward, other work clears in staggered order, and the circle contracts smoothly into the next cycle.
+
+The coral square never scales up. Its slight lean follows arrival and extraction; it ends upright. Home has no visible pause control or reserved control row. The supplied motion recording informs the burst-and-settle rhythm, not its colors or ring/dot composition.
 
 The static/reduced-motion state shows the complete resolution. Supporting capability remains explained in page content rather than as an extra hero network.
 
@@ -95,9 +97,9 @@ Pricing uses a broad potential boundary resolving into a defined mandate with su
 
 ## Motion follows the relationships
 
-The default rhythm is problem → boundary/connection → transfer or attachment → resolved hold. Home runs the 9-second loop defined above. Other core scenes remain finite at 4.6–5.2s; secondary scenes remain finite at 3.4–3.6s. Paths draw only between meaningful objects. Work follows its route; supporting capabilities move toward their attachment positions; an owner moves onto the boundary it owns. No movement exists merely to add personality.
+The default rhythm is problem → boundary/connection → transfer or attachment → resolved hold. Home runs the 5.4-second loop defined above. Other core scenes remain finite at 4.6–5.2s; secondary scenes remain finite at 3.4–3.6s. Paths draw only between meaningful objects. Work follows its route; supporting capabilities move toward their attachment positions; an owner moves onto the boundary it owns. No movement exists merely to add personality.
 
-Cubic-bezier(.65,0,.2,1) provides controlled acceleration and deceleration. Choreography is an authored interpretation, not timing inferred from the still [Motion reference](https://motion.dev/). Finite scenes stop at the resolved arrangement used for reduced motion. Home has a resolved hold before its next cycle. The existing ticker retains its separate behavior.
+Cubic-bezier(.65,0,.2,1) provides controlled acceleration and deceleration for the finite scenes. Home uses a quicker ease-out with authored overshoot keyframes and a softer ease for the collecting boundary. Choreography is an authored interpretation, not timing inferred from the still [Motion reference](https://motion.dev/). Finite scenes stop at the resolved arrangement used for reduced motion. Home has a short resolved hold before its next cycle. The existing ticker retains its separate behavior.
 
 ## Placement and copy
 
@@ -126,12 +128,12 @@ Shared React SVG components and CSS keyframes; Home explicitly loops and other s
 
 - Start when at least 25% of the figure is visible. Home continues cycling while visible; other scenes play once.
 - Pause when offscreen or when the document is hidden.
-- Pause / Play / Replay controls are keyboard accessible with visible focus.
+- Other scenes retain keyboard-accessible Pause / Play / Replay controls with visible focus. Home omits its control at the user’s request.
 - Scrolling back resumes the Home loop at its paused position; it does not restart a finished finite composition.
 - Reduced motion and no-JavaScript rendering show a coherent static arrangement, rather than blank art.
 - SVG titles and descriptions describe the abstract action, without exposing a schematic legend.
 - The drawing contains no visible text; headline, body and CTA remain readable throughout.
-- The control row reserves its height with or without motion.
+- The other scenes reserve control-row height with or without motion. Home has no control row.
 - The study opens with paired problem/resolved frames. “Play transitions” animates only the resolved side. Static comparison uses the same still branch as reduced motion, without changing system settings.
 
 ## Local study source
@@ -163,9 +165,9 @@ Screenshot and viewport records are saved in the task's `veep-abstract-motion` a
 
 The horizontal and initial vertical network explorations were superseded by the simpler loop described above after reviewing the supplied 4.38-second Motion screen recording. The `minimal` captures record that earlier simplification; `coral-work` captures supersede them with the subsequent accumulation/coral-square refinement.
 
-Current homepage screenshots and check records are in `veep-abstract-motion/home-loop-2026-10-09/coral-work`.
+The accumulation revision is recorded in `veep-abstract-motion/home-loop-2026-10-09/coral-work`. The faster loop with equal-size squares is recorded in the sibling `playful` folder.
 
-Final simplified-loop validation:
+Earlier simplified-loop validation (before the equal-size, faster-loop revision):
 
 - Home rendered at 1440, 1024, 768, 390 and 320px in both themes without horizontal overflow or clipped geometry.
 - Two complete nine-second loops were inspected. Work returned, left the center, gained its frame/owner, moved as one unit, settled and cleared forward before the next cycle.
@@ -175,3 +177,12 @@ Final simplified-loop validation:
 - Production build, targeted ESLint and diff formatting checks passed. Full TypeScript checking still reports the same 11 existing errors outside the motion files; no new motion errors were reported.
 
 Coral-square follow-up: the collecting circle starts 25% smaller, six blue squares and one coral square accumulate, and the same coral square is extracted and advanced. The separate coral owner circle was removed. Home was checked again at all five widths in both themes with no overflow or clipped geometry; the full and extracted frames are recorded in `coral-work`.
+
+### Faster, playful homepage loop — 2026-10-09
+
+- All seven work squares are now 20×20; the coral square stays the same size throughout.
+- Home’s Pause control and its empty caption row were removed. Other scenes retain their controls.
+- The loop is 5.4 seconds, with irregular arrivals, brief impact recoil, a quicker extraction and transfer, and staggered clearing. Recorded frames cover accumulation, extraction, delivery and the reset into fresh arrivals.
+- Home rendered at 1440, 1024, 768, 390 and 320px in both themes with no page overflow or clipped geometry in the inspected frames.
+- Offscreen pausing was verified. Companies still completes its unchanged 4.8-second finite scene and shows Replay. The existing reduced-motion/static branch remains intact; OS-level reduced-motion settings were not changed for this revision.
+- Production build, targeted ESLint and diff formatting checks passed. Captures and check records are in `veep-abstract-motion/home-loop-2026-10-09/playful`.
