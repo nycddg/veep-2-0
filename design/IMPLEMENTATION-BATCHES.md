@@ -270,3 +270,12 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 **Changes:** use each operator's two existing `priorCompanies` records from spotlight-operators.ts: Industrious / Opencare; Morning Brew / The New Republic; Zocdoc / Pager Health; LVMH / Macy's. Display in IBM Plex Mono above the unchanged achievement. Preserve aligned pills and 95% photo scale. Swap the two complete homepage sections so impact → audiences → timeline → results is the sequence. No copy or destinations changed in the moved sections.
 
 **Review checkpoint:** profile company lines and reordered sections inspected at 1381, 768 and 390px in both themes with verified viewport widths and no horizontal overflow. Confirmed computed IBM Plex Mono. Longer company names wrap on mobile. Production build, focused lint, formatting and diff checks pass. Evidence directories: `canon-refinement/profile-companies/` and `canon-refinement/audience-before-timeline/` in the October 9 visualization directory. No new motion or focusable controls. Scope: OperatorProof, ProfileFigure, home.css, homepage and ledger; unrelated work preserved. No push or deployment.
+
+
+## Batch 01P — ownership wording and accountability callout
+
+**Communication problem:** Dave requested more direct diagram language and a distinct accountability callout below it.
+
+**Change:** use Dave's exact “A Veep operating partner,” “Owns strategy, execution, and team coordination.” and “Get the job done and hand off cleanly.” Remove “With Veep” and center the partner heading inside its existing scope. Remove the second accountability sentence as explicitly requested. Move the remaining sentence farther below the diagram into a blue primary-container callout with paired foreground and a primary leading border. This user-directed wording supersedes the earlier homepage wording; other commercial and responsibility copy remains unchanged.
+
+**Review checkpoint:** diagram and callout inspected at actual 1381, 768 and 390px widths in both themes. No horizontal overflow; partner heading fits the mobile scope. Existing static/reduced-motion geometry retained, with no new motion or controls. Production build, focused lint, formatting and diff checks pass. Scope: OwnershipDiagram, homepage, home.css and ledger. Evidence: `canon-refinement/ownership-callout/` in the October 9 visualization directory. Unrelated work preserved; no push or deployment.

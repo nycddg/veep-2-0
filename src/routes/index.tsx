@@ -87,9 +87,9 @@ function Index() {
           </div>
           <OwnershipDiagram />
           <div className="vh-ownership-answer">
-            <p className="v-body-large v-muted">
+            <p className="v-body-large">
               Veep stays accountable for scope, quality, and continuity through delivery and
-              handoff. You retain strategic decisions and approvals.
+              handoff.
             </p>
           </div>
         </Container>

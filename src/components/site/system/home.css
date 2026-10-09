@@ -246,16 +246,15 @@
   translate: 0 -16px;
 }
 .vh-mandate-scope {
+  display: grid;
+  place-items: center;
   max-width: 232px;
   border: 2px solid var(--v-accent);
   padding: var(--v-space-4) var(--v-space-3);
   background: var(--v-surface-section);
 }
-.vh-mandate-scope .v-label {
-  color: var(--v-link);
-}
 .vh-mandate-scope h3 {
-  margin-top: var(--v-space-2);
+  margin-top: 0;
   font-size: 24px;
   line-height: 1.15;
   letter-spacing: var(--v-tracking-heading);
@@ -282,12 +281,15 @@
   }
 }
 .vh-ownership-answer {
-  margin-top: var(--v-space-6);
+  margin-top: var(--v-space-8);
+  padding: var(--v-space-6);
+  border-left: 3px solid var(--v-primary);
+  background: var(--v-primary-container);
+  color: var(--v-on-primary-container);
 }
 .vh-ownership-answer > p {
   max-width: 74ch;
   margin-inline: auto;
-  text-align: center;
 }
 /* A quiet, always-visible sequence follows the business impact. */
 .vh-method {
@@ -649,11 +651,8 @@
   .vh-mandate-scope {
     padding: 8px 4px;
   }
-  .vh-mandate-scope .v-label {
-    font-size: 12px;
-  }
   .vh-mandate-scope h3 {
-    margin-top: 6px;
+    margin-top: 0;
     font-size: 16px;
   }
   .vh-delivery-end h3 {
@@ -665,7 +664,8 @@
     max-width: none;
   }
   .vh-ownership-answer {
-    margin-top: var(--v-space-6);
+    margin-top: var(--v-space-7);
+    padding: var(--v-space-5);
   }
   .vh-ownership-answer > p {
     text-align: left;

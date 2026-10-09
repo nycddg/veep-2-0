@@ -42,18 +42,13 @@ export function OwnershipDiagram() {
         </div>
         <div className="vh-mandate">
           <div className="vh-mandate-scope">
-            <span className="v-label">With Veep</span>
             <h3>
-              A senior
+              A Veep
               <br />
               operating partner
             </h3>
           </div>
-          <p>
-            Owns execution.
-            <br />
-            Coordinates the team.
-          </p>
+          <p>Owns strategy, execution, and team coordination.</p>
         </div>
         <div className="vh-delivery">
           <div className="vh-delivery-end">
@@ -63,7 +58,7 @@ export function OwnershipDiagram() {
               gets done.
             </h3>
           </div>
-          <p>Complete the agreed work and hand off, or agree the next scope.</p>
+          <p>Get the job done and hand off cleanly.</p>
         </div>
       </div>
     </div>
