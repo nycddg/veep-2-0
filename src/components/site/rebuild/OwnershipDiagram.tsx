@@ -35,7 +35,7 @@ export function OwnershipDiagram() {
         </div>
         <div className="vh-executive">
           <div className="vh-executive-center">
-            <h3>Your desk</h3>
+            <h3>You</h3>
             <span className="vh-remaining-work" aria-hidden="true">
               {workItems.map((item) => (
                 <i key={item} className={`vh-arrived-work vh-work--${item}`} />

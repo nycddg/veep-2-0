@@ -81,11 +81,7 @@ function Index() {
       <section id="overview" className="v-section vh-problem-chapter">
         <Container>
           <div className="vh-problem-intro">
-            <h2 className="v-heading">
-              It can’t all land
-              <br />
-              back on your desk.
-            </h2>
+            <h2 className="v-heading">It can’t all land back on your desk.</h2>
             <p className="v-body-large v-muted vh-recognition">
               A raise to prepare for. Revenue that still depends on you. A launch without an
               operating plan. Your team is at capacity, and you’re still the person holding it

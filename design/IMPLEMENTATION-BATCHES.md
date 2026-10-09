@@ -393,3 +393,8 @@ Validation: production build and focused lint pass; actual desktop dark/light an
 ## Batch 01AE — shorten hero support
 
 Remove “We stay accountable through delivery and handoff.” from the hero at Dave’s request. Retain the accountability statement in the overview. No layout or behavior changes. Source diff checked; production build passes. Local only.
+
+
+## Batch 01AF — centered overview introduction
+
+Center the overview headline and body at Dave’s request. Remove the forced headline break and expand the centered paragraph measure to 100ch with balanced wrapping. Verified one headline line and two body lines at 1466px; natural wrapping and no page overflow at 390px. No new breakpoint or copy change to the introduction. Follow-up changes the diagram circle label from “Your desk” to “You” at all widths. Production build and diff checks pass. Screenshot: voice-update/centered-overview.jpg in the October 9 visualization directory. Local commit only.
