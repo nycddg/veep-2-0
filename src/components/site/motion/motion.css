@@ -1,0 +1,415 @@
+/* Business relationships first; motion connects two legible static states. */
+.vm-scene {
+  --vm-accent: #789fff;
+  --vm-coral: #f43f34;
+  --vm-structure: var(--rb-muted, #a6afbd);
+  --vm-muted: var(--rb-muted, #a6afbd);
+  --vm-play: paused;
+  --vm-ease: cubic-bezier(0.65, 0, 0.2, 1);
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+.light .vm-scene {
+  --vm-accent: #4e7ad4;
+}
+.vm-scene[data-playing="true"] {
+  --vm-play: running;
+}
+.vm-art {
+  display: block;
+  width: 100%;
+  aspect-ratio: 600/520;
+  overflow: hidden;
+}
+.vd-reference {
+  fill: none;
+  stroke: var(--vm-structure);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 5;
+  opacity: 0.32;
+}
+.vd-route {
+  fill: none;
+  stroke: var(--vm-accent);
+  stroke-width: 2;
+}
+.vd-quiet {
+  stroke: var(--vm-structure);
+  stroke-width: 1.5;
+  opacity: 0.5;
+}
+.vd-work {
+  fill: var(--vm-accent);
+}
+.vd-owner {
+  fill: var(--vm-coral);
+}
+.vd-capability {
+  fill: none;
+  stroke: var(--vm-accent);
+  stroke-width: 2;
+}
+.vd-muted {
+  stroke: var(--vm-structure);
+  opacity: 0.42;
+}
+.vd-scope {
+  fill: none;
+  stroke: var(--vm-accent);
+  stroke-width: 3;
+}
+.vd-company {
+  fill: none;
+  stroke: var(--vm-structure);
+  stroke-width: 1.25;
+  opacity: 0.5;
+}
+.vd-company-mark {
+  fill: none;
+  stroke: var(--vm-accent);
+  stroke-width: 5;
+}
+.vd-executive {
+  fill: none;
+  stroke: var(--vm-accent);
+  stroke-width: 3;
+}
+.vd-center-load {
+  fill: none;
+  stroke: var(--vm-accent);
+  stroke-width: 2;
+}
+.vd-endpoint {
+  fill: none;
+  stroke: var(--vm-accent);
+  stroke-width: 4;
+}
+.vd-moving {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.vd-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.vd-retire {
+  opacity: 0;
+}
+.vm-scene[data-frame="problem"] .vd-moving {
+  transform: translate(var(--vd-from-x, 0px), var(--vd-from-y, 0px));
+}
+.vm-scene[data-frame="problem"] .vd-draw {
+  stroke-dashoffset: 1;
+}
+.vm-scene[data-frame="problem"] .vd-arrive {
+  opacity: 0;
+}
+.vm-scene[data-frame="problem"] .vd-retire {
+  opacity: 1;
+}
+.vm-scene[data-animate="true"] .vd-moving {
+  animation: vd-travel var(--vm-duration) var(--vm-ease) both;
+  animation-play-state: var(--vm-play);
+}
+.vm-scene[data-animate="true"] .vd-draw {
+  animation: vd-connect var(--vm-duration) var(--vm-ease) both;
+  animation-play-state: var(--vm-play);
+}
+.vm-scene[data-animate="true"] .vd-retire {
+  animation: vd-release var(--vm-duration) linear both;
+  animation-play-state: var(--vm-play);
+}
+.vm-scene[data-animate="true"] .vd-arrive {
+  animation: vd-attach var(--vm-duration) linear both;
+  animation-play-state: var(--vm-play);
+}
+.vm-scene[data-animate="true"] .vm-clock {
+  animation: vm-clock var(--vm-duration) linear both;
+  animation-play-state: var(--vm-play);
+}
+.vm-scene[data-animate="true"] .vd-reroute {
+  animation-name: vd-reroute;
+}
+@keyframes vd-reroute {
+  0%,
+  25% {
+    transform: translate(var(--vd-from-x), var(--vd-from-y));
+  }
+  47% {
+    transform: translate(var(--vd-bend-x), var(--vd-from-y));
+  }
+  60% {
+    transform: translate(var(--vd-bend-x), 0px);
+  }
+  80%,
+  100% {
+    transform: none;
+  }
+}
+@keyframes vd-travel {
+  0%,
+  25% {
+    transform: translate(var(--vd-from-x, 0px), var(--vd-from-y, 0px));
+  }
+  78%,
+  100% {
+    transform: none;
+  }
+}
+@keyframes vd-connect {
+  0%,
+  20% {
+    stroke-dashoffset: 1;
+  }
+  68%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes vd-release {
+  0%,
+  32% {
+    opacity: 1;
+  }
+  45%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes vd-attach {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  60%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes vm-clock {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.vm-scene > figcaption {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 44px;
+}
+.vm-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: flex-end;
+  min-width: 74px;
+  min-height: 44px;
+  color: var(--vm-muted);
+  font: 400 12px var(--font-sans, sans-serif);
+  cursor: pointer;
+}
+.vm-control:hover {
+  color: var(--rb-text, #eeeee6);
+}
+.vm-control:focus-visible {
+  outline: 2px solid var(--vm-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.vm-accent {
+  max-width: 390px;
+}
+.vm-accent .vm-art {
+  aspect-ratio: 380/250;
+}
+.vm-small {
+  max-width: 440px;
+}
+@media (max-width: 600px) {
+  .vm-art {
+    aspect-ratio: 360/450;
+  }
+  .vm-accent .vm-art {
+    aspect-ratio: 380/250;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vm-scene[data-animate] * {
+    animation: none !important;
+  }
+  .vm-control {
+    display: none;
+  }
+}
+/* Page integration: one expressive opening, then quieter explanation and proof. */
+.rebuild .ve-home-hero .ve-motion-home-stage {
+  grid-template-columns: 1fr 1.04fr;
+  gap: 50px;
+}
+.rebuild .ve-motion-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.04fr;
+  align-items: center;
+  gap: 54px;
+  margin-top: 32px;
+}
+.rebuild .ve-motion-intro h1 {
+  font-size: clamp(48px, 5.1vw, 74px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
+.rebuild .ve-motion-intro h1 > span {
+  color: var(--rb-link);
+}
+.rebuild .ve-motion-intro > p {
+  margin: 26px 0;
+  max-width: 43ch;
+  color: var(--rb-muted);
+  font-size: 19px;
+  line-height: 1.55;
+}
+.rebuild .ve-motion-intro > .rb-link {
+  display: flex;
+  width: fit-content;
+  margin-top: 18px;
+  font-size: 16px;
+}
+.rebuild .ve-motion-hero .vm-scene {
+  align-self: center;
+}
+.rebuild .ve-agent-motion-model {
+  padding-left: 24px;
+  min-width: 0;
+}
+.rebuild .ve-agent-motion-model > .ve-small-note {
+  margin-top: 18px;
+}
+.rebuild .ve-agent-motion-model > .vm-scene {
+  max-width: 510px;
+}
+.rebuild .ve-delivery-layout .vm-small {
+  margin-top: 24px;
+}
+.rebuild .ve-public-intro-copy > .vm-accent {
+  margin-top: 20px;
+  max-width: 340px;
+}
+.rebuild .ve-meet-opening .ve-meet-motion {
+  max-width: 560px;
+  align-self: center;
+}
+.rebuild .ve-motion-people {
+  padding-top: 80px;
+}
+.rebuild .ve-motion-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 36px;
+}
+.rebuild .ve-motion-proof-grid figure {
+  min-width: 0;
+}
+.rebuild .ve-motion-proof-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #dce5f7;
+}
+.rebuild .ve-motion-proof-grid figcaption {
+  padding-top: 16px;
+}
+.rebuild .ve-motion-proof-grid h3 {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+.rebuild .ve-motion-proof-grid figcaption p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--rb-muted);
+  margin-top: 6px;
+}
+.rebuild .ve-motion-proof-grid figcaption p:last-child {
+  margin-top: 12px;
+  color: var(--rb-text);
+}
+.rebuild .ve-join-criteria .ve-join-portraits {
+  max-width: 640px;
+  margin: 36px 0;
+}
+@media (max-width: 1100px) {
+  .rebuild .ve-home-hero .ve-motion-home-stage,
+  .rebuild .ve-motion-hero {
+    gap: 30px;
+  }
+  .rebuild .ve-motion-intro h1 {
+    font-size: clamp(46px, 5vw, 62px);
+  }
+  .rebuild .ve-motion-proof-grid {
+    gap: 16px;
+  }
+}
+@media (max-width: 900px) {
+  .rebuild .ve-home-hero .ve-motion-home-stage,
+  .rebuild .ve-motion-hero {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .rebuild .ve-motion-hero .vm-scene,
+  .rebuild .ve-motion-home-stage .vm-scene {
+    width: 100%;
+    max-width: 580px;
+    justify-self: center;
+  }
+  .rebuild .ve-motion-intro > p {
+    max-width: 48ch;
+  }
+  .rebuild .ve-motion-proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
+  }
+  .rebuild .ve-agent-motion-model {
+    padding-left: 0;
+  }
+}
+@media (max-width: 600px) {
+  .rebuild .ve-motion-hero {
+    margin-top: 24px;
+    gap: 20px;
+  }
+  .rebuild .ve-motion-intro h1 {
+    font-size: clamp(39px, 9.7vw, 56px);
+  }
+  .rebuild .ve-motion-intro > p {
+    font-size: 17px;
+    margin: 22px 0;
+  }
+  .rebuild .ve-motion-home-stage .vm-scene,
+  .rebuild .ve-motion-hero .vm-scene {
+    max-width: 380px;
+  }
+  .rebuild .ve-home-hero .ve-motion-home-stage {
+    margin-bottom: 38px;
+  }
+  .rebuild .ve-motion-people {
+    padding-top: 56px;
+  }
+  .rebuild .ve-motion-proof-grid {
+    gap: 26px 14px;
+  }
+  .rebuild .ve-motion-proof-grid h3 {
+    font-size: 18px;
+  }
+  .rebuild .ve-motion-proof-grid figcaption p {
+    font-size: 13px;
+  }
+}
