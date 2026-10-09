@@ -160,28 +160,28 @@ function Index() {
                 01
               </span>
               <h3>Scope</h3>
-              <p>A clear scope, outcome, and responsibilities.</p>
+              <p>Define the job, outcomes, and ownership required.</p>
             </li>
             <li>
               <span className="vh-method-number" aria-hidden="true">
                 02
               </span>
               <h3>Assemble</h3>
-              <p>A lead operating partner and the support the work needs.</p>
+              <p>Build the right team or workflows around the work.</p>
             </li>
             <li>
               <span className="vh-method-number" aria-hidden="true">
                 03
               </span>
               <h3>Own</h3>
-              <p>A lead operating partner runs execution. Veep stays accountable.</p>
+              <p>Drive delivery through completion and clean handoff.</p>
             </li>
             <li>
               <span className="vh-method-number" aria-hidden="true">
                 04
               </span>
               <h3>Deliver</h3>
-              <p>Complete the agreed work and hand off, or agree the next scope.</p>
+              <p>Finish the job, hand off cleanly, and agree what comes next.</p>
             </li>
           </ol>
           <div className="vh-method-footer">

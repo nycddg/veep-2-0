@@ -284,3 +284,8 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 ## Batch 01Q — simplify timeline footer
 
 Remove the advisory sentence from the homepage timeline as Dave requested. The remaining “How ownership works” link now occupies the left edge of the footer without changing its destination. Reviewed actual 1381, 768 and 390px renders in both themes; link aligns with the section heading at every width and no overflow occurs. Build and focused lint pass. Evidence: `canon-refinement/method-footer/`. Scope: homepage and ledger only; unrelated work preserved, no push or deployment.
+
+
+## Batch 01R — direct delivery-step copy
+
+Use Dave's exact Scope, Assemble and Own descriptions. Match Deliver to their direct tone: “Finish the job, hand off cleanly, and agree what comes next.” Preserve the four-step structure and ownership destination. Actual rendered copy reviewed at 1381, 768 and 390px in both themes; no overflow. Build, focused lint, formatting and diff checks pass. Evidence: `canon-refinement/method-copy/`. Scope: homepage and ledger; unrelated work preserved, no push or deployment.
