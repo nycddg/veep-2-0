@@ -51,26 +51,29 @@ function Index() {
           <div className="vh-hero-composition">
             <div className="vh-hero-copy">
               <h1 className="v-display">
-                <span>Because a job always </span>
-                <span>needs to be done.</span>
+                <span>Because a job </span>
+                <span>always needs </span>
+                <span>to be done.</span>
               </h1>
               <p className="v-lead">
                 CEOs and funds hire Veep when mission-critical work has no clear owner and needs to
                 move now.
               </p>
+              <div className="vh-hero-actions">
+                <BookLink />
+              </div>
+            </div>
+            <div className="vh-hero-argument">
+              <MotionScene concept="desk" compact />
               <p className="v-body-large v-muted">
                 Veep gives companies and funds the operating partner capacity found inside top VC
                 and PE firms. We define the work and outcomes, assemble the right team, and own
                 delivery.
               </p>
             </div>
-            <MotionScene concept="desk" />
-            <div className="vh-hero-actions">
-              <BookLink />
-            </div>
           </div>
+          <ClientTicker />
         </Container>
-        <ClientTicker />
       </section>
       <section id="overview" className="v-section vh-problem-chapter">
         <Container>

@@ -25,7 +25,7 @@ export const stories: Record<
       "The coral circle has been pulled out and advanced in its scope. Six blue circles remain in the center.",
     description:
       "A small circle expands as six blue circles and one coral circle fill it. The same coral circle is pulled out, gains a scope, then advances to the right and settles. Fresh work begins the next cycle.",
-    seconds: 5.4,
+    seconds: 12,
     loop: true,
   },
   mandate: {

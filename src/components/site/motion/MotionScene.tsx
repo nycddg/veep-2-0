@@ -79,7 +79,7 @@ export function MotionScene({
         key={`${concept === "desk" ? "horizontal" : mobile}-${replay}`}
         viewBox={
           concept === "desk"
-            ? mobile
+            ? mobile || small
               ? "0 0 420 240"
               : "0 0 740 240"
             : accent
@@ -99,7 +99,7 @@ export function MotionScene({
         <desc id={`${id}-desc`}>
           {frame === "problem" ? story.problem : still ? story.resolution : story.description}
         </desc>
-        <Composition concept={concept} compact={mobile} />
+        <Composition concept={concept} compact={mobile || (concept === "desk" && small)} />
         <g className="vm-clock" />
       </svg>
       {concept !== "desk" && (
