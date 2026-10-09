@@ -245,15 +245,15 @@ function Index() {
             </ActionLink>
           </div>
           <article className="vh-field-note" aria-labelledby="field-note-title">
-            <p className="v-label">From the August 2026 issue · Dave, Veep</p>
-            <h3 id="field-note-title">Nobody Is Deciding About AI</h3>
-            <p className="v-body-large">Why AI experiments stall when no one owns the decisions.</p>
-            <blockquote>
-              “Someone's job has to depend on answering the hardest questions.”
-            </blockquote>
+            <p className="v-label">From the September 2026 issue · Dave, Veep</p>
+            <h3 id="field-note-title">When the Middle Gets Messier</h3>
+            <p className="v-body-large">
+              How founders can sharpen priorities when more activity stops producing progress.
+            </p>
+            <blockquote>“A company can be incredibly busy while standing still.”</blockquote>
             <a
               className="v-text-link"
-              href="https://us19.campaign-archive.com/?u=37a4f019ed5c8b493097f1afc&amp;id=308958e8a9"
+              href="https://us19.campaign-archive.com/?u=37a4f019ed5c8b493097f1afc&amp;id=fa9065ae89"
             >
               Read a field note
             </a>

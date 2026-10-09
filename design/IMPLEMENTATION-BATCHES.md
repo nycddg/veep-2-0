@@ -225,3 +225,13 @@ Use Dave’s response to this narrative correction to guide later homepage refin
 **Composition and color:** newsletter sits above the final booking invitation. Desktop uses paired publication/issue columns; tablet and mobile stack the publication, subscribe action and actual excerpt. Primary-container foregrounds apply to every label, heading, description and link; the subscribe action uses primary/on-primary, with a paired-color hover layer. Focus inherits the high-contrast newsletter foreground, not the page's default ring color. Light is pale blue with deep text; dark is deep blue with pale text.
 
 **Verification:** six actual responsive/theme captures in the 01I evidence directory. No overflow. Keyboard activation of the field-note link reaches the supplied archive; newsletter focus ring checked in dark mode. Both ticker states become still and the hero reports data-animate=false under Reduce motion, with all newsletter content present. Device motion restored. Production build, focused lint, formatting and diff checks pass. No forms submitted. This implements the requested local revision; no push or deployment.
+
+## Batch 01K — September field note
+
+**Communication problem:** Dave requested the September issue in place of August.
+
+**Change:** feature “When the Middle Gets Messier,” with its exact short excerpt about a busy company standing still, a paraphrased description about sharpening priorities, September 2026 date and existing Dave/Veep attribution. The piece connects the publication to the homepage's stalled-work problem. Update the reading destination to Dave's September archive; retain the subscription destination, publication positioning, layout and color roles.
+
+**Source:** https://us19.campaign-archive.com/?u=37a4f019ed5c8b493097f1afc&id=fa9065ae89 (read in the browser).
+
+**Review checkpoint:** newsletter rendered and inspected at 1280, 768 and 390px in light and dark themes, with actual viewport widths verified and no horizontal overflow. The reading link opens the September issue containing the featured title. Production build, focused lint, formatting and diff checks pass. Evidence: `canon-refinement/expanded-colors/september-newsletter/` in the October 9 visualization directory. Scope is homepage copy/link and this ledger only; unrelated working changes preserved. No push or deployment.
