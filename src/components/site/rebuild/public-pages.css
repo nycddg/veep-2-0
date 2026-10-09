@@ -284,50 +284,6 @@
 .rebuild .ve-question-layout > div:first-child .rb-link {
   margin-top: 28px;
 }
-.rebuild .ve-disclosure {
-  border-bottom: 1px solid var(--rb-rule);
-}
-.rebuild .ve-disclosure:first-child {
-  border-top: 1px solid var(--rb-rule);
-}
-.rebuild .ve-disclosure summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  gap: 28px;
-  list-style: none;
-  cursor: pointer;
-  padding: 25px 0;
-  font-size: 23px;
-  letter-spacing: -0.025em;
-  line-height: 1.25;
-}
-.rebuild .ve-disclosure summary::-webkit-details-marker {
-  display: none;
-}
-.rebuild .ve-disclosure summary:hover {
-  color: var(--rb-link);
-}
-.rebuild .ve-disclosure summary:focus-visible {
-  outline: 2px solid var(--rb-link);
-  outline-offset: 5px;
-}
-.rebuild .ve-disclosure-mark {
-  flex-shrink: 0;
-  font-size: 26px;
-  line-height: 1;
-  color: var(--rb-link);
-  transition: transform 220ms;
-}
-.rebuild .ve-disclosure[open] .ve-disclosure-mark {
-  transform: rotate(45deg);
-}
-.rebuild .ve-disclosure > div {
-  padding: 0 46px 30px 0;
-  font-size: 18px;
-  line-height: 1.65;
-  color: var(--rb-muted);
-}
 .rebuild .ve-network-spread {
   padding-bottom: 86px;
 }
@@ -1384,15 +1340,6 @@
   .rebuild .ve-price-roster .ve-roster-price {
     font-size: 60px;
   }
-  .rebuild .ve-disclosure summary {
-    font-size: 21px;
-    padding: 22px 0;
-    gap: 20px;
-  }
-  .rebuild .ve-disclosure > div {
-    font-size: 17px;
-    padding-right: 15px;
-  }
   .rebuild .ve-network-spread {
     padding-bottom: 54px;
   }
@@ -1605,7 +1552,6 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .rebuild .ve-disclosure-mark,
   .rebuild .ve-input {
     transition: none;
   }

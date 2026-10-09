@@ -24,7 +24,7 @@ export function TextLink({
   children: ReactNode;
   className?: string;
 }) {
-  const classNames = `rb-link inline-flex min-h-11 items-center ${className}`;
+  const classNames = `rb-link v-text-link ${className}`;
   if (!to) {
     return (
       <a href={hash ? `#${hash}` : "#"} className={classNames}>

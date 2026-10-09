@@ -32,7 +32,7 @@ export function SiteHeader() {
     const focusable = () =>
       menu ? Array.from(menu.querySelectorAll<HTMLElement>("a[href], button:not([disabled])")) : [];
     const showFocus = (element?: HTMLElement | null) => {
-      element?.focus({ focusVisible: true });
+      element?.focus();
     };
     showFocus(focusable()[0]);
 
@@ -62,8 +62,8 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="site-chrome sticky top-0 z-40 border-b border-[var(--rb-rule)]">
-      <div className="ve-header-inner mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between gap-4 px-5 md:px-6 lg:h-[72px] lg:px-8">
+    <header className="v-site-chrome v-header">
+      <div className="v-container v-header-inner">
         <Link to="/" className="flex shrink-0 items-center" aria-label="Veep home">
           <img src={wordmarkWhite.url} alt="" className="h-5 w-auto light:hidden" />
           <img src={wordmarkNavy.url} alt="" className="hidden h-5 w-auto light:block" />
@@ -76,9 +76,9 @@ export function SiteHeader() {
                 key={item.to}
                 to={item.to}
                 activeOptions={{ exact: true }}
-                className="rb-nav inline-flex min-h-11 items-center px-2.5"
+                className="v-nav"
                 activeProps={{
-                  className: "rb-nav is-active inline-flex min-h-11 items-center px-2.5",
+                  className: "v-nav is-active",
                 }}
               >
                 {item.label}
@@ -92,7 +92,7 @@ export function SiteHeader() {
         <button
           ref={buttonRef}
           type="button"
-          className="inline-flex min-h-11 min-w-11 items-center justify-center text-[var(--rb-text)] lg:hidden"
+          className="v-icon-button v-menu-toggle"
           onClick={() => setOpen((value) => !value)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -103,23 +103,23 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div ref={menuRef} id={menuId} className="border-t border-[var(--rb-rule)] lg:hidden">
-          <nav aria-label="Primary" className="mx-auto w-full max-w-[1200px] px-5 py-3 md:px-6">
+        <div ref={menuRef} id={menuId} className="v-mobile-nav lg:hidden">
+          <nav aria-label="Primary" className="v-container">
             {nav.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
                 activeOptions={{ exact: true }}
                 onClick={() => setOpen(false)}
-                className="rb-nav flex min-h-11 items-center text-[16px]"
+                className="v-nav"
                 activeProps={{
-                  className: "rb-nav is-active flex min-h-11 items-center text-[16px]",
+                  className: "v-nav is-active",
                 }}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="mt-2 flex items-center justify-between border-t border-[var(--rb-rule)] pt-2">
+            <div className="v-mobile-theme">
               <span className="text-[16px]">Theme</span>
               <ThemeToggle />
             </div>

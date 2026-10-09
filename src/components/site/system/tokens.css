@@ -1,0 +1,116 @@
+/* Veep reference values. Brand sheet + 2026-10-09 system decision record. */
+:root {
+  --v-ref-ink: #0b111f;
+  --v-ref-night: #080c14;
+  --v-ref-night-raised: #111925;
+  --v-ref-night-panel: #192331;
+  --v-ref-cream: #fbfaf8;
+  --v-ref-paper-raised: #f7f6f3;
+  --v-ref-paper-band: #f6f4f1;
+  --v-ref-paper-panel: #f0eeea;
+  --v-ref-stone: #3b4350;
+  --v-ref-blue-light: #4e7ad4;
+  --v-ref-blue-dark: #789fff;
+  --v-ref-coral: #ec6b66;
+  --v-font-body: "IBM Plex Sans", sans-serif;
+  --v-font-label: "IBM Plex Mono", monospace;
+  --v-type-display: clamp(2.625rem, 1.3rem + 4.4vw, 5.5rem);
+  --v-type-page: clamp(2.5rem, 1.5rem + 3.2vw, 4.75rem);
+  --v-type-heading: clamp(2rem, 1.25rem + 2.2vw, 3.375rem);
+  --v-type-title: clamp(1.5rem, 1.1rem + 1.2vw, 2rem);
+  --v-type-lead: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+  --v-type-body-large: 1.125rem;
+  --v-type-body: 1rem;
+  --v-type-caption: 0.875rem;
+  --v-type-label: 0.6875rem;
+  --v-leading-display: 1.04;
+  --v-leading-heading: 1.1;
+  --v-leading-body: 1.55;
+  --v-tracking-display: -0.055em;
+  --v-tracking-heading: -0.035em;
+  --v-space-1: 4px;
+  --v-space-2: 8px;
+  --v-space-3: 12px;
+  --v-space-4: 16px;
+  --v-space-5: 24px;
+  --v-space-6: 32px;
+  --v-space-7: 48px;
+  --v-space-8: 64px;
+  --v-space-9: 96px;
+  --v-space-10: 128px;
+  --v-layout-max: 1360px;
+  --v-layout-gutter: clamp(20px, 3.35vw, 48px);
+  --v-layout-gap: clamp(24px, 4vw, 64px);
+  --v-layout-section: clamp(64px, 7.2vw, 104px);
+  --v-measure-body: 52ch;
+  --v-measure-intro: 42ch;
+  --v-shape-frame: 0px;
+  --v-shape-control: 6px;
+  --v-shape-surface: 15px;
+  --v-shape-round: 999px;
+  --v-line-fine: 1px;
+  --v-line-active: 2px;
+  --v-line-scope: 3px;
+  --v-target: 44px;
+  --v-motion-fast: 160ms;
+  --v-motion-state: 220ms;
+  --v-motion-reveal: 480ms;
+  --v-motion-functional: cubic-bezier(0.2, 0, 0, 1);
+  --v-motion-spatial: cubic-bezier(0.22, 0.8, 0.25, 1);
+  --v-motion-home-loop: 5.4s;
+}
+
+/* System roles. Explicit nested themes also power the paired specimen. */
+:root,
+[data-ve-theme="dark"] {
+  --v-surface: var(--v-ref-night);
+  --v-surface-section: var(--v-ref-night-raised);
+  --v-surface-panel: var(--v-ref-night-panel);
+  --v-text: #f6f5f2;
+  --v-text-secondary: #b1bbc9;
+  --v-text-muted: #97a4b7;
+  --v-accent: var(--v-ref-blue-dark);
+  --v-link: var(--v-ref-blue-dark);
+  --v-signal: var(--v-ref-coral);
+  --v-signal-edge: var(--v-ref-coral);
+  --v-border: #394456;
+  --v-divider: #293442;
+  --v-control-border: #778699;
+  --v-action-fill: var(--v-ref-cream);
+  --v-action-text: var(--v-ref-ink);
+  --v-action-hover: #e6e3de;
+  --v-state-hover: #ffffff0c;
+  --v-state-pressed: #ffffff16;
+  --v-state-selected: #789fff18;
+  --v-focus: var(--v-ref-blue-dark);
+  --v-error: #ffb4ac;
+  --v-success: #b1d1b7;
+  --v-shadow-overlay: 0 16px 48px #0004;
+}
+html.light,
+[data-ve-theme="light"],
+.v-paper {
+  --v-surface: var(--v-ref-cream);
+  --v-surface-section: var(--v-ref-paper-band);
+  --v-surface-panel: var(--v-ref-paper-panel);
+  --v-text: var(--v-ref-ink);
+  --v-text-secondary: var(--v-ref-stone);
+  --v-text-muted: #58606b;
+  --v-accent: var(--v-ref-blue-light);
+  --v-link: #406aba;
+  --v-signal: var(--v-ref-coral);
+  --v-signal-edge: var(--v-ref-ink);
+  --v-border: #b8bdc5;
+  --v-divider: #d7d8da;
+  --v-control-border: #737c89;
+  --v-action-fill: var(--v-ref-ink);
+  --v-action-text: var(--v-ref-cream);
+  --v-action-hover: #263044;
+  --v-state-hover: #0b111f08;
+  --v-state-pressed: #0b111f12;
+  --v-state-selected: #0b111f0b;
+  --v-focus: var(--v-ref-blue-light);
+  --v-error: #a82e29;
+  --v-success: #30653e;
+  --v-shadow-overlay: 0 16px 48px #0b111f1a;
+}

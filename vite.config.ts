@@ -5,8 +5,33 @@
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { readFile } from "node:fs/promises";
 
 export default defineConfig({
+  vite: {
+    plugins: [
+      {
+        name: "veep-local-design-study",
+        configureServer(server) {
+          server.middlewares.use(async (request, response, next) => {
+            if (request.url?.split("?")[0] !== "/__design-system/") return next();
+            try {
+              const source = await readFile(
+                new URL("./design/system-study.html", import.meta.url),
+                "utf8",
+              );
+              const html = await server.transformIndexHtml("/__design-system/", source);
+              response.setHeader("Content-Type", "text/html; charset=utf-8");
+              response.setHeader("X-Robots-Tag", "noindex, nofollow");
+              response.end(html);
+            } catch (error) {
+              next(error);
+            }
+          });
+        },
+      },
+    ],
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this

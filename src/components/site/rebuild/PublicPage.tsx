@@ -66,16 +66,4 @@ export function PublicClose({
   );
 }
 
-export function Disclosure({ question, children }: { question: string; children: ReactNode }) {
-  return (
-    <details className="ve-disclosure">
-      <summary>
-        <span>{question}</span>
-        <span className="ve-disclosure-mark" aria-hidden="true">
-          +
-        </span>
-      </summary>
-      <div>{children}</div>
-    </details>
-  );
-}
+export { Disclosure } from "../system/Controls";

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ActionLink } from "../system/Controls";
 import { BOOKING_URL } from "@/lib/booking";
 
 export function BookLink({
@@ -9,13 +10,8 @@ export function BookLink({
   className?: string;
 }) {
   return (
-    <a
-      href={BOOKING_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`cta-accent inline-flex min-h-11 items-center justify-center rounded-[4px] px-5 py-2.5 text-[16px] font-medium leading-none ${className}`}
-    >
+    <ActionLink href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={className}>
       {children}
-    </a>
+    </ActionLink>
   );
 }
