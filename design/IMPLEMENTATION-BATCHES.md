@@ -490,3 +490,14 @@ Five physics tests pass, including collision separation, obstacle clearance, loo
 - Validation: rendered desktop (1280/1440), tablet (768) and mobile (390), dark/light. Reviewed sampled full ball cycles, mobile physical geometry (completion ~4.15s), keyboard tab selection, disclosure Space close, menu Escape/focus return and rapid reversal, footer replay, and reduced/static alternatives. No horizontal overflow in sampled layouts. Build, focused lint and six motion tests pass. Full TypeScript check still reports only known unrelated PageHero/auth/portal/root errors; no errors in changed files.
 - Evidence: `/Users/dave/.codex/visualizations/2026/10/09/01a121b2-13c8-7c22-ad99-ae4b3eaf3595/motion-polish/` (homepage screenshot and actual-browser hero/ownership GIF captures). An intermediate development hot-reload hook-order error was cleared by a full reload; final rendered pages are healthy.
 - Batches 02D–02E complete. No active implementation batch remains.
+
+### Batch 03A — interior foundations and surfaces (complete)
+Homepage-authoritative alignment brief (2026-10-09). Keep the homepage unchanged. Consolidate interior container/type/section roles, paper and tonal contexts, form controls and reading navigation in their owning components/styles. Preserve composition, factual claims, commercial terms, handlers and redirects. Public scope includes eight marketing interiors, Privacy, Terms and partner access; authenticated portal behavior remains protected.
+
+### Batch 03B — interior editorial alignment (active)
+Refine every public interior's page introduction and supporting copy to the homepage's concrete voice. Preserve distinct page purposes and detailed qualifications. Remove redundant decoration and legacy color emphasis; retain useful demonstrations, evidence and roster context.
+
+### Batch 03C — rendered acceptance (queued)
+Render every public interior at desktop/tablet/mobile in both themes. Inspect screenshots, keyboard selection/disclosure/menu, forms without transmitting, route/hash behavior and reduced motion. Record any environment blockers; build, focused lint and scoped commits.
+
+03A validation: shared section/container/type roles and paper contexts applied in owning styles; Contact/Join/Auth use canonical buttons and shared field anatomy. Dark Pricing/About and baseline page families inspected. Production build, focused lint and diff checks pass. Full responsive acceptance follows in 03C. Homepage source untouched.

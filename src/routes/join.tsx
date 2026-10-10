@@ -1,3 +1,5 @@
+import { FormField as Field } from "@/components/site/rebuild/FormField";
+import { Button } from "@/components/site/system/Controls";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { Check, Loader2 } from "lucide-react";
@@ -284,7 +286,7 @@ function Page() {
               business week.
             </p>
           </aside>
-          <div className="ve-form-sheet">
+          <div className="ve-form-sheet v-paper">
             <div className="ve-form-heading">
               <p className="ve-kicker">Operator application</p>
               <h3>Your experience.</h3>
@@ -416,11 +418,7 @@ function Page() {
                   </p>
                 )}
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="motion-cta cta-accent mt-2 rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
-                >
+                <Button type="submit" disabled={loading} className="ve-form-submit">
                   {loading ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
@@ -429,7 +427,7 @@ function Page() {
                   ) : (
                     "Submit application"
                   )}
-                </button>
+                </Button>
                 <p className="text-xs text-stone-soft">
                   By submitting you agree to be contacted by Veep about your application.
                 </p>
@@ -443,26 +441,6 @@ function Page() {
 }
 
 const inputCls = "ve-input";
-
-function Field({
-  label,
-  required,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <label className="block">
-      <span className="ve-field-label">
-        {label}
-        {required && " *"}
-      </span>
-      <div className="mt-2">{children}</div>
-    </label>
-  );
-}
 
 function CheckboxGroup({
   name,

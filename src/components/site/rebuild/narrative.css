@@ -9,13 +9,13 @@
   font-family: var(--font-mono);
   font-size: 11px;
   margin-bottom: 6px;
-  color: #505b6c;
+  color: var(--v-text-secondary);
 }
 .rebuild .ve-fund-entry-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.2fr;
   align-items: start;
-  gap: 100px;
+  gap: var(--v-layout-gap);
   margin-top: 48px;
 }
 .rebuild .ve-company-entry {
@@ -70,7 +70,7 @@
 }
 .rebuild .ve-capacity-brief dl > div {
   padding: 18px 0;
-  border-top: 1px solid #10182926;
+  border-top: 1px solid var(--v-divider);
   display: grid;
   grid-template-columns: 0.75fr 1fr;
   gap: 25px;
@@ -83,11 +83,11 @@
 .rebuild .ve-capacity-brief dd {
   font-size: 15px;
   line-height: 1.5;
-  color: #4c5360;
+  color: var(--v-text-secondary);
 }
 .rebuild .ve-capacity-brief .rb-link {
-  color: #345486;
-  border-color: #345486;
+  color: var(--v-link);
+  border-color: var(--v-link);
 }
 .rebuild .ve-agents-section {
   background: var(--rb-canvas);

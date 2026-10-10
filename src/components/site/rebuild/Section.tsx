@@ -11,8 +11,8 @@ const tones: Record<Tone, string> = {
 };
 
 const pads: Record<Pad, string> = {
-  default: "py-14 md:py-16 lg:py-24",
-  compact: "py-10 lg:py-16",
+  default: "v-section",
+  compact: "v-section v-section--compact",
   none: "",
 };
 

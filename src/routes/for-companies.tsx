@@ -231,7 +231,7 @@ function Page() {
         </Container>
       </Section>
 
-      <Section id="proof" motion="proof" pad="none" className="ve-case-section">
+      <Section id="proof" motion="proof" pad="none" className="ve-case-section v-paper">
         <Container className="ve-container">
           <div className="ve-case-heading">
             <h2 className="ve-title">

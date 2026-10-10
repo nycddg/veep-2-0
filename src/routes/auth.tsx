@@ -1,3 +1,5 @@
+import { FormField as Field } from "@/components/site/rebuild/FormField";
+import { Button } from "@/components/site/system/Controls";
 import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -122,13 +124,9 @@ function AuthPage() {
           {error && <p className="text-sm text-red-400">{error}</p>}
           {notice && <p className="text-sm text-accent">{notice}</p>}
 
-          <button
-            type="submit"
-            disabled={busy}
-            className="motion-cta cta-accent inline-flex min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-medium disabled:opacity-60"
-          >
+          <Button type="submit" disabled={busy} className="ve-form-submit">
             {busy ? "Working…" : mode === "signin" ? "Sign in" : "Create account"}
-          </button>
+          </Button>
         </form>
 
         <p className="mt-8 text-sm text-stone">
@@ -155,14 +153,3 @@ function AuthPage() {
 }
 
 const inputCls = "ve-input";
-
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <label className="block">
-      <span className="mb-1.5 block text-xs uppercase tracking-[0.1em] text-stone-soft">
-        {label}
-      </span>
-      {children}
-    </label>
-  );
-}

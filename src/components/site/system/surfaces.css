@@ -1,4 +1,19 @@
-/* Public editorial adapter. Functional fields, focus rings and diagram paths remain explicit. */
+/* Interior surfaces consume the same roles as the homepage. Paper contexts deliberately
+   retain the light role pairing within either theme, including their controls. */
+.rebuild.ve-editorial .v-paper {
+  --rb-text: var(--v-text);
+  --rb-muted: var(--v-text-secondary);
+  --rb-link: var(--v-link);
+  --rb-rule: var(--v-divider);
+  --rb-raised: var(--v-surface-section);
+  --cream: var(--v-text);
+  --stone: var(--v-text-secondary);
+  --stone-soft: var(--v-text-secondary);
+  --ink: var(--v-text);
+  --accent: var(--v-primary);
+  --accent-coral: var(--v-error);
+  color-scheme: light;
+}
 .rebuild.ve-editorial {
   --ve-coral: var(--v-signal);
 }
@@ -6,8 +21,8 @@
   :is(.ve-mandate-pages, .ve-capacity-brief, .ve-pricing-sheet, .ve-form-sheet) {
   border: 0;
   border-radius: var(--v-shape-panel);
-  background: var(--v-ref-paper-panel);
-  color: var(--v-ref-ink);
+  background: var(--v-surface-panel);
+  color: var(--v-text);
 }
 .rebuild.ve-editorial :is(.ve-agent-preview, .ve-inquiry-context) {
   border: 0;
@@ -96,20 +111,20 @@
   border: 0;
 }
 .rebuild.ve-editorial .ve-price-tier:nth-child(even) {
-  background: #0b111f05;
+  background: var(--v-surface-section);
 }
 .rebuild.ve-editorial .ve-price-group-labels span {
-  background: #0b111f09;
+  background: var(--v-surface-container-high);
 }
 .rebuild.ve-editorial .ve-price-group-labels span:first-child {
-  background: #0b111f13;
+  background: var(--v-secondary-container);
 }
 .rebuild.ve-editorial .ve-tier-owner {
   border: 0;
 }
 .rebuild.ve-editorial .ve-price-sheet-note {
   border: 0;
-  background: #0b111f09;
+  background: var(--v-surface-container-high);
 }
 .rebuild.ve-editorial .rb-tier-grid {
   border: 0;
@@ -125,14 +140,15 @@
 .rebuild.ve-editorial .ve-choice {
   border: 0;
   border-radius: var(--v-shape-control);
-  background: #0b111f06;
+  background: var(--v-surface-section);
   transition: background-color var(--v-motion-state);
 }
 .rebuild.ve-editorial .ve-choice:has(:checked) {
-  background: #0b111f12;
+  background: var(--v-secondary-container);
+  color: var(--v-on-secondary-container);
 }
 .rebuild.ve-editorial .ve-choice:focus-within {
-  outline: 2px solid #406aba;
+  outline: 2px solid var(--v-focus);
   outline-offset: 3px;
 }
 
@@ -148,22 +164,22 @@
 }
 .rebuild.ve-editorial :is(.ve-contact-sheet figure, .ve-join-portraits figure) {
   overflow: hidden;
-  padding: 6px;
+  padding: var(--v-space-2);
   border-radius: var(--v-shape-surface);
   background: var(--v-surface-section);
 }
 .rebuild.ve-editorial :is(.ve-contact-sheet img, .ve-join-portraits img) {
-  border-radius: 10px;
+  border-radius: var(--v-shape-portrait);
 }
 .rebuild.ve-editorial :is(.ve-contact-sheet figcaption, .ve-join-portraits figcaption) {
   margin: 0;
   padding: 16px 10px;
 }
 .rebuild.ve-editorial .ve-join-portraits figure {
-  background: #172840;
+  background: var(--v-surface-panel);
 }
 .rebuild.ve-editorial .ve-join-portraits figcaption span {
-  color: #c4cfe1;
+  color: var(--v-text-secondary);
 }
 .rebuild.ve-editorial .ve-profile-spotlights {
   display: block;
@@ -192,8 +208,8 @@
   min-width: 0;
   overflow: hidden;
   margin: 6px;
-  border-radius: 10px;
-  background: #dfe7f5;
+  border-radius: var(--v-shape-portrait);
+  background: var(--v-primary-container);
 }
 .rebuild.ve-editorial .ve-spotlight-card-image img {
   width: 100%;
@@ -271,7 +287,7 @@
     opacity: 1;
   }
   .rebuild.ve-editorial .ve-choice:hover {
-    background: #0b111f0e;
+    background: var(--v-surface-container-high);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -288,7 +304,8 @@
 }
 
 /* Light reading planes keep their controls and focus paired with their own surface. */
-.rebuild.ve-editorial :is(.ve-mandate-pages, .ve-capacity-brief, .ve-pricing-sheet, .ve-form-sheet) {
+.rebuild.ve-editorial
+  :is(.ve-mandate-pages, .ve-capacity-brief, .ve-pricing-sheet, .ve-form-sheet) {
   --v-focus: var(--v-ref-blue-light);
 }
 .rebuild.ve-editorial .ve-work-tabs button:active {

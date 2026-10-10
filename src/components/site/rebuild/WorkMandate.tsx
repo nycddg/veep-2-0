@@ -110,7 +110,7 @@ export function WorkMandate() {
           ))}
         </div>
       </div>
-      <div className="ve-mandate-pages">
+      <div className="ve-mandate-pages v-paper">
         {work.map((item, index) => (
           <div
             key={item.id}

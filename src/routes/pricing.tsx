@@ -153,7 +153,7 @@ function Page() {
 
       <Section id="tiers" pad="none" className="ve-pricing-sheet-section">
         <Container className="ve-container">
-          <div className="ve-pricing-sheet">
+          <div className="ve-pricing-sheet v-paper">
             <div className="ve-price-group-labels">
               <span>Senior judgment</span>
               <span>Operating delivery</span>

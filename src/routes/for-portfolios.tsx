@@ -185,7 +185,7 @@ function Page() {
               </p>
               <BookLink />
             </article>
-            <article className="ve-capacity-brief">
+            <article className="ve-capacity-brief v-paper">
               <div className="ve-capacity-brief-label">
                 <p className="ve-kicker">Portfolio Capacity Audit</p>
                 <span>2–3 weeks</span>

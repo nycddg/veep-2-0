@@ -5,7 +5,7 @@
   --vm-structure: var(--rb-muted, #a6afbd);
   --vm-muted: var(--rb-muted, #a6afbd);
   --vm-play: paused;
-  --vm-ease: cubic-bezier(0.65, 0, 0.2, 1);
+  --vm-ease: var(--v-expressive-spatial);
   width: 100%;
   min-width: 0;
   margin: 0;
@@ -260,7 +260,7 @@
   letter-spacing: -0.05em;
 }
 .rebuild .ve-motion-intro h1 > span {
-  color: var(--rb-link);
+  color: inherit;
 }
 .rebuild .ve-motion-intro > p {
   margin: 26px 0;

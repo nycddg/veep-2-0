@@ -3,7 +3,7 @@
   overflow: clip;
 }
 .rebuild .ve-public-intro {
-  padding: var(--v-space-8) 0 var(--v-space-8);
+  padding-block: var(--v-layout-section);
 }
 .rebuild .ve-public-opening {
   display: grid;
@@ -20,43 +20,43 @@
 }
 .rebuild .ve-public-opening h1 > span,
 .rebuild .ve-meet-opening h1 > span {
-  color: var(--rb-link);
+  color: inherit;
 }
 .rebuild .ve-public-intro-copy {
-  padding-top: 5px;
+  padding-top: var(--v-space-1);
 }
 .rebuild .ve-public-intro-copy > p {
-  font-size: 20px;
-  line-height: 1.55;
-  max-width: 43ch;
+  font-size: var(--v-type-body-large);
+  line-height: var(--v-leading-body);
+  max-width: var(--v-measure-body);
 }
 .rebuild .ve-public-intro-copy > p + p {
-  margin-top: 22px;
+  margin-top: var(--v-space-5);
 }
 .rebuild .ve-public-intro-copy .ve-intro-note {
-  font-size: 15px;
+  font-size: var(--v-type-caption);
   color: var(--rb-muted);
 }
 .rebuild .ve-public-actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px 28px;
-  margin-top: 30px;
+  gap: var(--v-space-4) var(--v-space-5);
+  margin-top: var(--v-space-6);
 }
 .rebuild .ve-small-note {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: var(--v-type-caption);
+  line-height: var(--v-leading-caption);
   color: var(--rb-muted);
-  margin-top: 24px;
+  margin-top: var(--v-space-5);
 }
 .rebuild .ve-pricing-sheet-section {
   padding-bottom: 36px;
 }
 .rebuild .ve-pricing-sheet {
-  color: #101829;
-  background: #eeefe9;
-  border-top: 5px solid #789fff;
+  color: var(--v-text);
+  background: var(--v-surface-panel);
+  border-top: 5px solid var(--v-primary);
 }
 .rebuild .ve-price-group-labels {
   display: grid;
@@ -79,17 +79,17 @@
   flex-direction: column;
   min-width: 0;
   padding: 32px 28px 24px;
-  border-right: 1px solid #10182926;
+  border-right: 1px solid var(--v-divider);
 }
 .rebuild .ve-price-tier:last-child {
   border: 0;
 }
 .rebuild .ve-price-tier > .ve-kicker {
-  color: #526882;
+  color: var(--v-text-secondary);
 }
 .rebuild .ve-price-tier h2 {
   margin-top: 18px;
-  font-size: 29px;
+  font-size: var(--v-type-title);
   letter-spacing: -0.03em;
 }
 .rebuild .ve-tier-price {
@@ -137,13 +137,13 @@
   top: 0.65em;
   width: 4px;
   height: 4px;
-  background: #4e7ad4;
+  background: var(--v-primary);
 }
 .rebuild .ve-tier-owner {
   font-size: 14px;
   line-height: 1.45;
   padding-top: 20px;
-  border-top: 1px solid #10182926;
+  border-top: 1px solid var(--v-divider);
   margin-top: auto;
 }
 .rebuild .ve-price-sheet-note {
@@ -152,7 +152,7 @@
   align-items: center;
   gap: 20px;
   padding: 20px 28px;
-  border-top: 1px solid #10182926;
+  border-top: 1px solid var(--v-divider);
   font-size: 13px;
 }
 .rebuild .ve-price-sheet-note > span {
@@ -162,7 +162,7 @@
 .rebuild .ve-assurance-layout {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 120px;
+  gap: var(--v-layout-gap);
 }
 .rebuild .ve-fit-statement {
   border-left: 2px solid var(--ve-coral);
@@ -212,14 +212,15 @@
   line-height: 1.6;
 }
 .rebuild .ve-price-roster {
-  background: #20314e;
-  color: #f6f6f2;
-  --rb-link: #b5caff;
+  background: var(--v-primary-container);
+  color: var(--v-on-primary-container);
+  --rb-link: var(--v-on-primary-container);
+  --rb-muted: var(--v-on-primary-container);
 }
 .rebuild .ve-roster-price-layout {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
-  gap: 100px;
+  gap: var(--v-layout-gap);
   align-items: center;
 }
 .rebuild .ve-price-roster .ve-title {
@@ -240,7 +241,7 @@
 .rebuild .ve-roster-price + p {
   margin-top: 8px;
   font-size: 14px;
-  color: #c4cfe1;
+  color: var(--rb-muted);
 }
 .rebuild .ve-roster-price-layout > div:last-child > h3 {
   font-size: 30px;
@@ -251,7 +252,7 @@
   font-size: 18px;
   line-height: 1.6;
   margin-top: 22px;
-  color: #c4cfe1;
+  color: var(--rb-muted);
 }
 .rebuild .ve-roster-price-layout .rb-link {
   margin-top: 24px;
@@ -268,7 +269,7 @@
 .rebuild .ve-question-layout {
   display: grid;
   grid-template-columns: 1fr 1.45fr;
-  gap: 100px;
+  gap: var(--v-layout-gap);
 }
 .rebuild .ve-question-layout > div:first-child .rb-link {
   margin-top: 28px;
@@ -317,9 +318,8 @@
   margin-bottom: 3px;
 }
 .rebuild .ve-founders-section {
-  background: #eeefe9;
-  color: #101829;
-  --rb-muted: #46515c;
+  background: var(--v-surface-section);
+  color: var(--v-text);
 }
 .rebuild .ve-founders {
   display: grid;
@@ -328,7 +328,7 @@
   gap: 52px;
 }
 .rebuild .ve-founders article {
-  border-top: 2px solid #4e7ad4;
+  border-top: 2px solid var(--v-primary);
   padding-top: 26px;
 }
 .rebuild .ve-founders h3 {
@@ -345,8 +345,8 @@
 .rebuild .ve-principles {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 80px;
-  row-gap: 56px;
+  column-gap: var(--v-layout-gap);
+  row-gap: var(--v-space-7);
   margin: 60px 0 35px;
 }
 .rebuild .ve-principles li {
@@ -399,23 +399,23 @@
   margin-top: 5px;
 }
 .rebuild .ve-join-criteria {
-  background: #20314e;
-  color: #f6f6f2;
+  background: var(--v-surface-section);
+  color: var(--v-text);
 }
 .rebuild .ve-join-criteria .ve-section-opening > p {
-  color: #c4cfe1;
+  color: var(--rb-muted);
 }
 .rebuild .ve-criteria-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px 90px;
+  gap: var(--v-space-7) var(--v-layout-gap);
   margin-top: 58px;
 }
 .rebuild .ve-criteria-grid .ve-kicker {
-  color: #b5caff;
+  color: var(--v-primary);
 }
 .rebuild .ve-criteria-grid h3 {
-  font-size: 29px;
+  font-size: var(--v-type-title);
   letter-spacing: -0.03em;
   line-height: 1.2;
   margin-top: 16px;
@@ -423,13 +423,13 @@
 .rebuild .ve-criteria-grid p {
   font-size: 18px;
   line-height: 1.6;
-  color: #c4cfe1;
+  color: var(--rb-muted);
   margin-top: 16px;
 }
 .rebuild .ve-form-layout {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
-  gap: 100px;
+  gap: var(--v-layout-gap);
   align-items: start;
 }
 .rebuild .ve-form-aside {
@@ -466,21 +466,8 @@
   line-height: 1.5;
 }
 .rebuild .ve-form-sheet {
-  background: #eeefe9;
-  color: #101829;
-  padding: 42px;
-  border-top: 5px solid #789fff;
+  padding: clamp(24px, 3.2vw, 48px);
   color-scheme: light;
-  --cream: #101829;
-  --stone: #46515c;
-  --stone-soft: #46515c;
-  --ink: #101829;
-  --accent: #315ea8;
-  --accent-coral: #bb342d;
-  --rb-text: #101829;
-  --rb-muted: #46515c;
-  --rb-rule: #10182935;
-  --rb-link: #315ea8;
 }
 .rebuild .ve-form-heading {
   margin-bottom: 34px;
@@ -492,9 +479,9 @@
   margin-top: 16px;
 }
 .rebuild .ve-form-heading > p:last-child {
-  font-size: 13px;
-  margin-top: 12px;
-  color: #46515c;
+  font-size: var(--v-type-caption);
+  margin-top: var(--v-space-3);
+  color: var(--v-text-secondary);
 }
 .rebuild .ve-input {
   display: block;
@@ -520,9 +507,9 @@
   border-color: var(--rb-link);
 }
 .rebuild .ve-form-sheet .ve-input {
-  background: #fff;
+  background: var(--v-surface-container-lowest);
 }
-.rebuild .ve-form-sheet .ve-field-label {
+.rebuild .ve-field-label {
   display: block;
   font-size: 15px;
   line-height: 1.45;
@@ -535,18 +522,24 @@
 .rebuild .ve-form-sheet form label {
   min-width: 0;
 }
-.rebuild .ve-form-sheet form > button {
-  background: #101829;
-  color: #f6f6f2;
-  border-radius: var(--v-shape-control);
-  font-size: 16px;
-  min-height: 48px;
+.rebuild .ve-field {
+  display: block;
+  min-width: 0;
 }
-.rebuild .ve-form-sheet form > button:hover {
-  background: #283d60;
+.rebuild .ve-field-control {
+  margin-top: var(--v-space-2);
+}
+.rebuild .ve-field-error {
+  color: var(--v-error);
+  font-size: var(--v-type-caption);
+  margin-top: var(--v-space-2);
+}
+.rebuild .ve-form-submit {
+  width: 100%;
+  margin-top: var(--v-space-2);
 }
 .rebuild .ve-form-sheet details {
-  border-top: 1px solid #10182930;
+  border-top: 1px solid var(--v-divider);
   padding-top: 14px;
 }
 .rebuild .ve-form-sheet summary {
@@ -556,7 +549,7 @@
   gap: 16px;
   min-height: 44px;
   font-size: 15px;
-  color: #315ea8;
+  color: var(--v-primary);
   line-height: 1.4;
 }
 .rebuild .ve-form-sheet summary::after {
@@ -567,7 +560,7 @@
   content: "−";
 }
 .rebuild .ve-form-sheet summary:focus-visible {
-  outline: 2px solid #315ea8;
+  outline: 2px solid var(--v-primary);
   outline-offset: 4px;
 }
 .rebuild .ve-input[type="file"] {
@@ -575,8 +568,8 @@
   padding: 8px;
 }
 .rebuild .ve-input::file-selector-button {
-  background: #101829;
-  color: #f6f6f2;
+  background: var(--v-text);
+  color: var(--v-action-text);
   border: 0;
   border-radius: 2px;
   padding: 8px 12px;
@@ -589,20 +582,20 @@
   min-height: 44px;
   padding: 8px 12px;
   gap: 8px;
-  border: 1px solid #10182940;
+  border: 1px solid var(--v-control-border);
   font-size: 14px;
   line-height: 1.4;
   cursor: pointer;
 }
 .rebuild .ve-choice:has(:checked) {
-  border-color: #315ea8;
-  background: #dce5f5;
+  border-color: var(--v-primary);
+  background: var(--v-secondary-container);
 }
 .rebuild .ve-form-sheet :is(input[type="checkbox"], input[type="radio"]) {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  accent-color: #315ea8;
+  accent-color: var(--v-primary);
 }
 .rebuild .ve-inquiry-context {
   margin-top: 25px;
@@ -620,13 +613,11 @@
 .rebuild .ve-meet-opening {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
-  gap: 110px;
+  gap: var(--v-layout-gap);
   align-items: start;
   margin-top: 28px;
 }
-.rebuild .ve-meet-opening h1 {
-  font-size: 88px;
-}
+
 .rebuild .ve-meet-opening .ve-meet-lead {
   margin-top: 35px;
   font-size: 28px;
@@ -643,7 +634,7 @@
 .rebuild .ve-meet-portrait {
   position: relative;
   background: #edf0f7;
-  color: #101829;
+  color: var(--v-text);
   transform: rotate(3deg);
   margin: 15px 12px 0 0;
 }
@@ -673,7 +664,7 @@
   bottom: 130px;
   left: -44px;
   padding: 18px 22px;
-  background: #789fff;
+  background: var(--v-primary);
   transform: rotate(-6deg);
   font-size: 22px;
   letter-spacing: -0.02em;
@@ -745,23 +736,23 @@
   margin-top: 14px;
 }
 .rebuild .ve-meet-proof {
-  background: #eeefe9;
-  color: #101829;
-  --rb-link: #315ea8;
-  --rb-muted: #46515c;
+  background: var(--v-surface-panel);
+  color: var(--v-text);
+  --rb-link: var(--v-primary);
+  --rb-muted: var(--v-text-secondary);
 }
 .rebuild .ve-meet-proof-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: var(--v-layout-gap);
   align-items: center;
 }
 .rebuild .ve-meet-proof h2 {
-  font-size: 29px;
+  font-size: var(--v-type-title);
   letter-spacing: -0.025em;
 }
 .rebuild .ve-meet-proof h3 {
-  font-size: 38px;
+  font-size: var(--v-type-title);
   line-height: 1.15;
   letter-spacing: -0.035em;
 }
@@ -829,7 +820,7 @@
   padding-bottom: 60px;
 }
 .rebuild .ve-faq-group h2 {
-  font-size: 38px;
+  font-size: var(--v-type-title);
   line-height: 1.15;
   letter-spacing: -0.035em;
   margin-bottom: 22px;
@@ -840,7 +831,7 @@
 .rebuild .ve-legal-document {
   display: grid;
   grid-template-columns: 1fr 2.3fr;
-  gap: 100px;
+  gap: var(--v-layout-gap);
   padding-bottom: 100px;
 }
 .rebuild .ve-legal-index nav {
@@ -851,7 +842,7 @@
 .rebuild .ve-legal-index a {
   font-size: 15px;
   line-height: 1.4;
-  min-height: 38px;
+  min-height: var(--v-target);
   display: flex;
   align-items: center;
   padding: 5px 0;
@@ -861,7 +852,7 @@
   color: var(--rb-link);
 }
 .rebuild .ve-legal-copy {
-  max-width: 74ch;
+  max-width: var(--v-measure-reading);
   color: var(--rb-text);
 }
 .rebuild .ve-legal-copy .eyebrow {
@@ -891,7 +882,7 @@
   flex-shrink: 0;
 }
 .rebuild.ve-auth {
-  padding: 70px 22px 90px;
+  padding: var(--v-layout-section) var(--v-layout-gutter);
   min-height: 75vh;
 }
 .rebuild .ve-auth-panel {
@@ -913,7 +904,7 @@
   margin-top: 36px;
 }
 .rebuild .ve-auth-panel button {
-  border-radius: 4px;
+  border-radius: var(--v-shape-control);
 }
 .rebuild.ve-status-page {
   min-height: 75vh;
@@ -946,7 +937,7 @@
   margin-top: 20px;
 }
 .rebuild .ve-status-copy :is(a, button) {
-  border-radius: 4px;
+  border-radius: var(--v-shape-control);
 }
 @media (max-width: 1100px) {
   .rebuild .ve-public-opening {
@@ -1000,9 +991,7 @@
   .rebuild .ve-meet-opening {
     gap: 70px;
   }
-  .rebuild .ve-meet-opening h1 {
-    font-size: 64px;
-  }
+
   .rebuild .ve-meet-note {
     font-size: 18px;
     left: -30px;
@@ -1047,7 +1036,7 @@
   }
   .rebuild .ve-price-tier {
     padding: 30px;
-    border-bottom: 1px solid #10182926;
+    border-bottom: 1px solid var(--v-divider);
   }
   .rebuild .ve-price-tier:nth-child(even) {
     border-right: 0;
@@ -1083,7 +1072,7 @@
     gap: 45px;
   }
   .rebuild .ve-price-roster .ve-title {
-    font-size: 38px;
+    font-size: var(--v-type-title);
   }
   .rebuild .ve-roster-price-layout > div:last-child > h3 {
     font-size: 26px;
@@ -1128,9 +1117,6 @@
     grid-template-columns: 1.05fr 1fr;
     gap: 35px;
   }
-  .rebuild.ve-join .ve-public-opening h1 {
-    font-size: 54px;
-  }
   .rebuild .ve-join-portraits {
     gap: 5px;
   }
@@ -1165,9 +1151,7 @@
     grid-template-columns: 1.2fr 1fr;
     gap: 45px;
   }
-  .rebuild .ve-meet-opening h1 {
-    font-size: 57px;
-  }
+
   .rebuild .ve-meet-opening .ve-meet-lead {
     font-size: 23px;
   }
@@ -1219,7 +1203,7 @@
     gap: 35px;
   }
   .rebuild .ve-meet-next .ve-title {
-    font-size: 38px;
+    font-size: var(--v-type-title);
   }
   .rebuild .ve-faq-layout,
   .rebuild .ve-legal-document {
@@ -1269,7 +1253,7 @@
   .rebuild .ve-price-tier:nth-child(3) {
     padding: 28px 24px;
     border-right: 0;
-    border-bottom: 1px solid #10182926;
+    border-bottom: 1px solid var(--v-divider);
   }
   .rebuild .ve-price-tier:last-child {
     border-bottom: 0;
@@ -1312,7 +1296,7 @@
     margin-top: 30px;
   }
   .rebuild .ve-price-roster .ve-title {
-    font-size: 38px;
+    font-size: var(--v-type-title);
   }
   .rebuild .ve-price-roster .ve-roster-price {
     font-size: 60px;
@@ -1370,9 +1354,6 @@
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  .rebuild.ve-join .ve-public-opening h1 {
-    font-size: clamp(40px, 11vw, 57px);
-  }
   .rebuild .ve-join-portraits {
     gap: 8px;
   }
@@ -1406,7 +1387,7 @@
   .rebuild .ve-form-heading {
     margin-bottom: 26px;
   }
-  .rebuild .ve-form-sheet .ve-field-label {
+  .rebuild .ve-field-label {
     font-size: 14px;
   }
   .rebuild .ve-choice {
@@ -1421,9 +1402,7 @@
     gap: 40px;
     margin-top: 23px;
   }
-  .rebuild .ve-meet-opening h1 {
-    font-size: clamp(43px, 12vw, 65px);
-  }
+
   .rebuild .ve-meet-opening .ve-meet-lead {
     font-size: 25px;
     margin-top: 28px;

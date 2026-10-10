@@ -108,7 +108,7 @@ function MeetVeepPage() {
           </p>
         </Container>
       </Section>
-      <Section motion="proof" className="ve-meet-proof">
+      <Section motion="proof" className="ve-meet-proof v-paper">
         <Container className="ve-container ve-meet-proof-layout">
           <div>
             <p className="ve-kicker">Client work · B2B SaaS</p>
