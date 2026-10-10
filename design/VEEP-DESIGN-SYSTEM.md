@@ -6,7 +6,7 @@ Decision record · 9 October 2026 · Material guidance refinement
 
 Use Material 3 as structural guidance and Veep as the visual identity. Dave's explicit **no yellow** instruction supersedes the yellow language in the original system brief. The supplied September brand sheet informs the warm light surfaces, IBM Plex typography, blue, coral, and 15px imagery treatment. The site retains its dark default. This intentionally translates a light microsite reference rather than applying that document wholesale.
 
-This milestone covers shared foundations, public header/footer, the booking action, text links, disclosures, and the homepage. Companies, Funds, Pricing, About, Join, FAQ, and MeetVeep retain their existing page compositions pending the next migration. Shared chrome and reused controls inherit the refined state rules; legacy page-specific controls remain part of their respective migration batches. Portal surfaces and application handlers are outside this pass.
+The homepage is the authoritative visual and editorial reference. Batches 03A–03C extend its foundations, surfaces, hierarchy, controls and voice across Founders, Funds, Pricing, About, Join, FAQ, MeetVeep and Contact, plus the Privacy, Terms and partner-access reading/form surfaces. Preserve their distinct compositions, commercial terms, legal content, routes and application handlers. Authenticated portal surfaces remain outside the rendered acceptance: the local clone has no Supabase configuration.
 
 Open the working reference at **http://127.0.0.1:8090/__design-system/**. It uses the actual components and tokens, with paired dark/light specimens for default, hover, keyboard focus, pressed, selected, disabled, and validation states. Held states use dedicated specimen attributes mapped to the production selectors; they do not simulate application behavior. Its fields demonstrate local state only and send nothing. Vite's development middleware serves this address; it is not registered as a production route or build entry.
 
@@ -89,7 +89,7 @@ Signature fields are Veep editorial roles, not universal theme-independent UI co
 
 #### Application and migration
 
-Reference values feed semantic roles, then component roles. Batches 01I–01J introduce the expanded roles in `tokens.css` and apply them to the homepage and shared aliases; existing aliases remain where other pages depend on them. The homepage has been reviewed in both themes; other page compositions still require their own migration review. Preserve neutral booking treatment until its actual surface context is reviewed. Do not replace every blue or coral literal blindly.
+Reference values feed semantic roles, then component roles. Batches 01I–01J introduce the expanded roles in `tokens.css` and apply them to the homepage and shared aliases; existing aliases remain where other pages depend on them. The homepage and eleven public interiors have been reviewed in both themes; interior acceptance is recorded in batches 03A–03C. Preserve neutral booking treatment until its actual surface context is reviewed. Do not replace every blue or coral literal blindly.
 
 The newsletter should use primary-container/on-primary-container in both themes: pale blue/deep text in light, deep blue/pale text in dark. Operator evidence uses neutral/slate surfaces. Impact and testimonial retain their signature fields. This is a color application direction, not approval of unreviewed page layouts.
 
@@ -158,18 +158,23 @@ The diagram, proof spread, and editorial page composition remain bespoke. Do not
 
 Source observations are separate from this milestone's visual QA. The recurring structural problem was several CSS systems styling the same role: utility classes, `.rebuild`, `.ve-*`, motion integration, and page-specific overrides. Buttons, type sizes, portrait corners, and color roles could drift independently. The homepage now uses `.ve-system` and `.vh-*` rather than another layer over `.rebuild`. 98 obsolete homepage/portrait selector groups were removed from legacy styles.
 
-| Page                            | Preserve                                                                                         | Next system application                                                                                               |
-| ------------------------------- | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| Home (`index.tsx`)              | Thesis, client list, work loop, explicit ownership change, supported results, career attribution | Narrative correction ready for review; foundation/component rollout and final acceptance remain in the batch plan     |
-| Companies (`for-companies.tsx`) | Scoped mandate, proof narrative, commercial terms, Agent Teams within Companies                  | Migrate type and surfaces; retain explanatory diagrams; downplay Agent Teams and do not imply a delivery track record |
-| Funds (`for-portfolios.tsx`)    | Lifecycle, independent company mandates, audit, roster terms, portfolio relationship             | Apply surface and hierarchy roles without turning separate company scopes into a generic network                      |
-| Pricing (`pricing.tsx`)         | Prices, tiers, differences, qualifications, booking destinations                                 | Lower visual intensity, canonical rows/actions/disclosures; keep comparisons scannable                                |
-| About (`about.tsx`)             | Founder stories, network imagery, career qualifications                                          | Editorial image sequence and shared portrait shape; remove redundant labels where they do no work                     |
-| Join (`join.tsx`)               | Operator-focused narrative, criteria, application handler and destination                        | Apply field/state rules only after tracing existing form behavior; avoid talent-marketplace styling                   |
-| FAQ (`faq.tsx`)                 | Questions, answers, grouping and destinations                                                    | Canonical disclosure now shared; page typography and spacing migrate next                                             |
-| MeetVeep (`meetveep.tsx`)       | Low-friction conversion, method, case qualification, contact route                               | Quiet conversion layout using shared actions; preserve noindex behavior                                               |
+| Page | Preserved character | System application |
+| --- | --- | --- |
+| Home | Established narrative, composition, physics and evidence | Authoritative reference; source unchanged in 03A–03C |
+| Founders | Mandate tabs, delivery roles, detailed proof, engagement terms | Shared heading/container roles, paper evidence, coral client quote, concrete owner language |
+| Funds | Portfolio map, separate company mandates, audit, roster terms | Semantic diagram colors, tonal relationship section, clear portfolio/company boundary |
+| Pricing | Exact rates, inclusions, qualifications and booking routes | Shared comparison surfaces, restrained hierarchy, paired roster colors |
+| About | Founder stories, network imagery, career qualifications | Shared introduction and portrait roles, quieter founder section, direct responsibility language |
+| Join | Operator criteria and existing application behavior | Shared fields/actions, tonal people chapter, practical operator voice |
+| FAQ | Grouping, detailed answers, schema and destinations | Shared disclosure and responsive reading index |
+| MeetVeep | Concise conversion flow, method, evidence and noindex | Shared page-heading and diagram roles, direct introduction |
+| Contact | Audit/inquiry branches, search prefill, validation and submission | Shared fields/actions and paper form, clear next steps |
+| Privacy / Terms | Exact legal document text, dates and hash destinations | Shared reading index, bounded reading measure and canonical gutters |
+| Partner access | Configured authentication flow and invitation context | Shared fields/actions; explanatory unavailable state when local configuration is absent |
 
-Retain older styles needed by unmigrated pages until those pages are inspected and migrated. Do not globally reset portal, legal, forms, or unrelated public surfaces. The existing route paths, `BOOKING_URL`, form notifications, prices, and legal content remain protected.
+`FormField` owns label/control/error anatomy for Contact, Join and partner access; the canonical Button owns submit states. `PageIndex` owns FAQ/legal navigation: sticky desktop links become a native disclosure at the existing 800px boundary. Interior `.v-paper` contexts map the complete light foreground palette, including legacy aliases. Section spacing and container gutters reference homepage tokens. These choices apply across viewport sizes, not only the annotated desktop view.
+
+Existing legacy redirects remain unchanged. Do not globally reset protected portal surfaces. Routes, `BOOKING_URL`, form notifications, prices and legal content remain protected.
 
 ## Earlier review record (before the current composition pilot)
 

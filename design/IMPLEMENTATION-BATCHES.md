@@ -497,9 +497,16 @@ Homepage-authoritative alignment brief (2026-10-09). Keep the homepage unchanged
 ### Batch 03B — interior editorial alignment (complete)
 Refine every public interior's page introduction and supporting copy to the homepage's concrete voice. Preserve distinct page purposes and detailed qualifications. Remove redundant decoration and legacy color emphasis; retain useful demonstrations, evidence and roster context.
 
-### Batch 03C — rendered acceptance (active)
+### Batch 03C — rendered acceptance (complete)
 Render every public interior at desktop/tablet/mobile in both themes. Inspect screenshots, keyboard selection/disclosure/menu, forms without transmitting, route/hash behavior and reduced motion. Record any environment blockers; build, focused lint and scoped commits.
 
 03A validation: shared section/container/type roles and paper contexts applied in owning styles; Contact/Join/Auth use canonical buttons and shared field anatomy. Dark Pricing/About and baseline page families inspected. Production build, focused lint and diff checks pass. Full responsive acceptance follows in 03C. Homepage source untouched.
 
 03B: refined eight marketing interiors in the homepage voice; neutral page statements, consistent proof labels, clear job/owner language, unchanged evidence and terms. FAQ/Privacy/Terms share PageIndex with a mobile disclosure. Shared diagram-led heading role; Founder client quote uses the homepage coral/ink pairing. Partner access keeps a usable unavailable state when this clone lacks Supabase configuration; no credentials or backend changes. Build and focused lint pass.
+
+
+03C acceptance: all eleven public interiors rendered at 1440×1000, 768×1024 and 390×844 in dark and light themes (66 combinations), with no document overflow or clipped heading/body/control text. Actual desktop, tablet and mobile screenshots reviewed across page families; paper forms, pricing comparison, portraits and reading layouts inspected. Contact's tablet form was separately inspected after its entrance completed. FAQ/mobile index Space interaction and hash navigation, Founders tab ArrowRight selection, menu Escape/focus return, Contact local required-field errors/first-invalid focus, and Join optional fields pass. No inquiries, applications or credentials transmitted. Reduced motion renders static diagrams with no active CSS animation; normal preference and dark mode restored.
+
+Production build, focused ESLint, diff checks and six collision/motion tests pass. Legal text is unchanged; homepage source and existing redirects are unchanged. Partner access now renders a clear unavailable state instead of crashing without local Supabase configuration. Configured sign-in and authenticated portal acceptance remain unverified in this environment; no backend settings changed.
+
+Evidence: `/Users/dave/.codex/visualizations/2026/10/09/01a121b2-13c8-7c22-ad99-ae4b3eaf3595/interior-alignment/`, including `responsive-checks.json`, all 66 screenshots, mobile/tablet/desktop contact sheets, form validation/focus, reduced-motion Funds, and `about-final.png`. Three scoped local commits on `fable/polish`; no push or deployment. Unrelated working changes remain unstaged. Batches 03A–03C complete.
