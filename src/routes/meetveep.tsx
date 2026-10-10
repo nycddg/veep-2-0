@@ -51,9 +51,8 @@ function MeetVeepPage() {
                 <br /> The priority that keeps coming back.
               </p>
               <p>
-                Veep gives companies and funds the operating partner capacity found inside top VC
-                and PE firms. We define the work and outcomes, assemble the right team, and own
-                delivery.
+                Veep puts senior operators on critical finance, GTM, and operations work for
+                founders and funds. We define the job, assemble the team, and own delivery.
               </p>
               <div className="ve-public-actions">
                 <Link to="/contact" className="ve-button cta-accent">
@@ -116,7 +115,7 @@ function MeetVeepPage() {
             <h2>Raised in six weeks.</h2>
           </div>
           <div>
-            <h3>The result has work behind it.</h3>
+            <h3>The work behind the raise.</h3>
             <p>
               A three-year financial model, diligence-ready CAC/LTV reporting, and CEO coaching
               through investor meetings and term sheets.
@@ -136,15 +135,14 @@ function MeetVeepPage() {
               <br /> to the work.
             </h2>
             <p>
-              Advisory, Sprint, Operator, and Pod describe how the engagement is resourced. The
-              mandate comes first.
+              Choose Advisory, Sprint, Operator, or Pod around the job and the ownership it needs.
             </p>
             <TextLink to="/pricing" hash="tiers">
               See pricing <span aria-hidden="true">↗</span>
             </TextLink>
           </div>
           <div>
-            <p className="ve-kicker">For Funds</p>
+            <p className="ve-kicker">For funds</p>
             <h2 className="ve-title">
               Plan across
               <br /> the portfolio.
@@ -160,8 +158,8 @@ function MeetVeepPage() {
         </Container>
       </Section>
       <PublicClose contact>
-        Bring the priority, urgency, and outcome. We’ll define the work and the operating capacity
-        to deliver it. Operator fit is covered by a 30-day fit guarantee.
+        Tell us what needs an owner. We’ll define the scope and the team to take it on. Operator fit
+        is covered by a 30-day fit guarantee.
       </PublicClose>
     </div>
   );

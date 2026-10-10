@@ -94,8 +94,8 @@ function Page() {
           no one clearly owns what happens next.
         </p>
         <p>
-          Companies and funds need operating capacity that can take responsibility for a defined
-          mandate. We scope the work, assemble the right team, and own delivery.
+          We put senior operators on the job. Together, we define what needs to happen, assemble the
+          team, and take responsibility for delivery.
         </p>
       </PublicIntro>
 
@@ -160,12 +160,12 @@ function Page() {
         <Container className="ve-container">
           <div className="ve-section-opening">
             <h2 className="ve-title">
-              Ownership is
-              <br /> a way of working.
+              How we take
+              <br /> responsibility.
             </h2>
             <p className="ve-body">
-              The operating partner model found inside top VC and PE firms, available to companies
-              and funds when the work needs to move.
+              The same operating partner model used inside top VC and PE firms, available to
+              founders and funds with critical work to get done.
             </p>
           </div>
           <ol className="ve-principles">
@@ -189,8 +189,8 @@ function Page() {
         </Container>
       </Section>
       <PublicClose contact>
-        Tell us about the work that keeps coming back to you. We’ll define the scope and the
-        operating capacity to move it forward.
+        Tell us what needs to happen and what’s holding it up. We’ll help define the job and the
+        senior ownership it needs.
       </PublicClose>
     </div>
   );

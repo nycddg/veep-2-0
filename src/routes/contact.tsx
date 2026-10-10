@@ -152,7 +152,7 @@ function Page() {
           ) : (
             <>
               Tell us what
-              <br /> <span>needs to move.</span>
+              <br /> <span>needs an owner.</span>
             </>
           )
         }
@@ -165,7 +165,7 @@ function Page() {
         <p>
           {isAudit
             ? "Over 2–3 weeks, we map current priorities and likely needs over the next 6–12 months. Start with the companies, the upcoming moments, and the work that needs senior ownership."
-            : "Bring the priority, the urgency, and the outcome you need. We’ll define the work, recommend the operating capacity, and agree the next step."}
+            : "Tell us what needs to happen, when it matters, and what’s getting in the way. We’ll help define the work, the senior support it needs, and the next step."}
         </p>
         <p className="ve-intro-note">Response within one business day.</p>
       </PublicIntro>

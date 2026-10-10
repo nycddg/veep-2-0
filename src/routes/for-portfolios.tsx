@@ -28,7 +28,7 @@ const stages = [
   },
   {
     title: "After close",
-    body: "Reporting, integration, commercial priorities, and people decisions arrive together. Put senior ownership around the workstreams the team cannot absorb.",
+    body: "Reporting, integration, commercial priorities, and people decisions arrive together. Put a senior owner on the work the team cannot absorb.",
   },
   {
     title: "During ownership",
@@ -100,7 +100,7 @@ function Page() {
     <div className="rebuild ve-editorial ve-funds">
       <Section pad="none" className="ve-funds-hero">
         <Container className="ve-container">
-          <p className="ve-kicker">For Funds &amp; Portfolio Owners</p>
+          <p className="ve-kicker">For funds &amp; portfolio owners</p>
           <div className="ve-motion-hero ve-motion-funds">
             <div className="ve-motion-intro">
               <h1>
@@ -113,8 +113,9 @@ function Page() {
                 </span>
               </h1>
               <p>
-                Veep gives private equity firms, family offices, holding companies, and independent
-                sponsors senior operating capacity without building a full internal platform team.
+                Keep company priorities moving without building a full internal platform team. Veep
+                puts senior operators on the work for private equity firms, family offices, holding
+                companies, and independent sponsors.
               </p>
               <BookLink />
               <TextLink hash="audit">
@@ -176,12 +177,12 @@ function Page() {
                 <br /> on the work now.
               </h3>
               <p>
-                Bring the upcoming transaction, exposed leadership seat, or initiative that keeps
-                falling back on the investment team.
+                Bring the upcoming transaction, leadership gap, or initiative that keeps falling
+                back on the investment team.
               </p>
               <p>
-                We define the company mandate, agree the scope and price, and assemble the operating
-                capacity it needs. An urgent company mandate can start on its own.
+                We agree the scope and price, name a lead operator, and assemble the support the job
+                needs. An urgent company mandate can start on its own.
               </p>
               <BookLink />
             </article>
@@ -215,8 +216,8 @@ function Page() {
         <Container className="ve-container">
           <div className="ve-section-opening">
             <h2 className="ve-title">
-              Across the portfolio.
-              <br /> Inside the company.
+              Plan across the portfolio.
+              <br /> Deliver inside the company.
             </h2>
             <p className="ve-body">
               One operating relationship connects portfolio planning to company delivery. Each
@@ -265,7 +266,7 @@ function Page() {
 
       <Section id="roster" tone="field" className="ve-roster-section">
         <Container className="ve-container">
-          <h2 className="rb-h2">Keep the operating relationship in place.</h2>
+          <h2 className="v-heading">Keep the operating relationship in place.</h2>
           <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-6">
             <div className="lg:col-span-4">
               <h3 className="text-[26px] font-medium leading-[1.2]">Portfolio Roster</h3>
@@ -316,8 +317,8 @@ function Page() {
           </h2>
           <div>
             <p>
-              Bring one urgent mandate or the gaps you see across the portfolio. In a 30-minute
-              intro call, we’ll define the priority and recommend where to start.
+              Bring one urgent job or the gaps you see across the portfolio. In a 30-minute intro
+              call, we’ll define the priority and recommend where to start.
             </p>
             <BookLink />
           </div>

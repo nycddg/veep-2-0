@@ -951,18 +951,11 @@
   margin-top: 14px;
 }
 .rebuild .ve-testimonial {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  column-gap: 30px;
-  margin-top: 80px;
-  padding-top: 64px;
-  border-top: 1px solid #10182930;
-}
-.rebuild .ve-quote-mark {
-  font-size: 160px;
-  line-height: 1;
-  color: #426aa9;
-  grid-row: 1 / span 3;
+  display: block;
+  margin-top: var(--v-space-8);
+  padding: var(--v-layout-gap);
+  background: var(--v-signal);
+  color: var(--v-ref-ink);
 }
 .rebuild .ve-testimonial blockquote {
   font-size: clamp(28px, 3.3vw, 46px);
@@ -1392,16 +1385,6 @@
   }
   .rebuild .ve-case-secondary .ve-secondary-result p {
     font-size: 100px;
-  }
-  .rebuild .ve-testimonial {
-    grid-template-columns: 1fr;
-    margin-top: 42px;
-    padding-top: 34px;
-  }
-  .rebuild .ve-quote-mark {
-    grid-row: auto;
-    font-size: 100px;
-    height: 62px;
   }
   .rebuild .ve-testimonial blockquote {
     font-size: 30px;

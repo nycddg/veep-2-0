@@ -1,3 +1,4 @@
+import { PageIndex } from "@/components/site/rebuild/PageIndex";
 import { createFileRoute } from "@tanstack/react-router";
 import { Container } from "@/components/site/rebuild/Container";
 import { Section } from "@/components/site/rebuild/Section";
@@ -43,7 +44,7 @@ const groups: { label: string; items: QA[] }[] = [
       },
       {
         q: "How is the operator selected?",
-        a: "We select the operating capacity for the mandate, urgency, company stage, function, industry, and business model. You review relevant profiles and references before the engagement begins.",
+        a: "We match operators to the work, urgency, company stage, function, industry, and business model. You review relevant profiles and references before the engagement begins.",
       },
       {
         q: "Do you use AI?",
@@ -138,8 +139,8 @@ function Page() {
         label="Questions & answers"
         title={
           <>
-            Clarity before
-            <br /> <span>we get to work.</span>
+            Straight answers.
+            <br /> <span>Before we start.</span>
           </>
         }
         actions={
@@ -152,21 +153,20 @@ function Page() {
         }
       >
         <p>
-          Scope, timing, ownership, and cost. Here’s how Veep engagements work and what to expect
-          from the operating relationship.
+          Who owns the work, how soon it can start, and what it costs. Here’s what to expect from a
+          Veep engagement.
         </p>
       </PublicIntro>
       <Section className="ve-faq-section" pad="none">
         <Container className="ve-container ve-faq-layout">
-          <nav className="ve-faq-index" aria-label="Question categories">
-            <p className="ve-kicker">On this page</p>
-            {groups.map((group, i) => (
-              <a key={group.label} href={`#questions-${i + 1}`}>
-                <span>0{i + 1}</span>
-                {group.label}
-              </a>
-            ))}
-          </nav>
+          <PageIndex
+            label="Question categories"
+            items={groups.map((group, i) => ({
+              href: `#questions-${i + 1}`,
+              label: group.label,
+              number: `0${i + 1}`,
+            }))}
+          />
           <div>
             {groups.map((group, i) => (
               <section className="ve-faq-group" id={`questions-${i + 1}`} key={group.label}>

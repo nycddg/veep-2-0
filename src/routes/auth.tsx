@@ -25,19 +25,32 @@ function AuthPage() {
   const [fullName, setFullName] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [unavailable, setUnavailable] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
 
   useEffect(() => {
     let active = true;
-    supabase.auth.getSession().then(({ data }) => {
-      if (active && data.session) navigate({ to: "/portal/operator", replace: true });
-    });
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
-      if (session) navigate({ to: "/portal/operator", replace: true });
-    });
+    let unsubscribe: (() => void) | undefined;
+    try {
+      supabase.auth
+        .getSession()
+        .then(({ data }) => {
+          if (active && data.session) navigate({ to: "/portal/operator", replace: true });
+        })
+        .catch(() => {
+          if (active) setUnavailable(true);
+        });
+      const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+        if (session) navigate({ to: "/portal/operator", replace: true });
+      });
+      unsubscribe = () => sub.subscription.unsubscribe();
+    } catch {
+      // A preview without the auth service should retain a usable access page.
+      setUnavailable(true);
+    }
     return () => {
       active = false;
-      sub.subscription.unsubscribe();
+      unsubscribe?.();
     };
   }, [navigate]);
 
@@ -79,13 +92,18 @@ function AuthPage() {
       <section className="ve-auth-panel">
         <div className="eyebrow">Partner access</div>
         <h1 className="mt-4 text-3xl text-cream tracking-tight">
-          {mode === "signin" ? "Sign in to the partner dashboard" : "Create your partner account"}
+          {mode === "signin" ? "Your partner workspace." : "Create your partner account"}
         </h1>
         <p className="mt-3 text-sm text-stone">
-          Access your Veep partner workspace. Access is by invitation only. Sign in with email and
-          password.
+          Partner access is by invitation. Sign in with the email address on your invitation.
         </p>
 
+        {unavailable && (
+          <p role="status" className="ve-access-notice">
+            Partner sign-in is unavailable here.{" "}
+            <a href="mailto:hey@veep.work">Contact Veep for access.</a>
+          </p>
+        )}
         <form onSubmit={onSubmit} className="mt-8 space-y-4">
           {mode === "signup" && (
             <Field label="Full name">
@@ -121,10 +139,18 @@ function AuthPage() {
             />
           </Field>
 
-          {error && <p className="text-sm text-red-400">{error}</p>}
-          {notice && <p className="text-sm text-accent">{notice}</p>}
+          {error && (
+            <p role="alert" className="ve-field-error">
+              {error}
+            </p>
+          )}
+          {notice && (
+            <p role="status" className="ve-access-notice">
+              {notice}
+            </p>
+          )}
 
-          <Button type="submit" disabled={busy} className="ve-form-submit">
+          <Button type="submit" disabled={busy || unavailable} className="ve-form-submit">
             {busy ? "Working…" : mode === "signin" ? "Sign in" : "Create account"}
           </Button>
         </form>

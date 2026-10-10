@@ -792,30 +792,6 @@
   gap: 80px;
   align-items: start;
 }
-.rebuild .ve-faq-index,
-.rebuild .ve-legal-index {
-  position: sticky;
-  top: 115px;
-}
-.rebuild .ve-faq-index > a {
-  display: flex;
-  align-items: baseline;
-  gap: 18px;
-  font-size: 18px;
-  padding: 14px 0;
-}
-.rebuild .ve-faq-index .ve-kicker {
-  margin-bottom: 22px;
-  color: var(--rb-muted);
-}
-.rebuild .ve-faq-index > a > span {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--rb-link);
-}
-.rebuild .ve-faq-index > a:hover {
-  color: var(--rb-link);
-}
 .rebuild .ve-faq-group {
   padding-bottom: 60px;
 }
@@ -833,23 +809,6 @@
   grid-template-columns: 1fr 2.3fr;
   gap: var(--v-layout-gap);
   padding-bottom: 100px;
-}
-.rebuild .ve-legal-index nav {
-  display: grid;
-  gap: 4px;
-  margin-top: 22px;
-}
-.rebuild .ve-legal-index a {
-  font-size: 15px;
-  line-height: 1.4;
-  min-height: var(--v-target);
-  display: flex;
-  align-items: center;
-  padding: 5px 0;
-  color: var(--rb-muted);
-}
-.rebuild .ve-legal-index a:hover {
-  color: var(--rb-link);
 }
 .rebuild .ve-legal-copy {
   max-width: var(--v-measure-reading);
@@ -1210,25 +1169,6 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .rebuild .ve-faq-index,
-  .rebuild .ve-legal-index {
-    position: static;
-  }
-  .rebuild .ve-faq-index {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--rb-rule);
-  }
-  .rebuild .ve-faq-index .ve-kicker {
-    grid-column: 1/-1;
-    margin-bottom: 8px;
-  }
-  .rebuild .ve-legal-index nav {
-    grid-template-columns: 1fr 1fr;
-    gap: 6px 30px;
-  }
 }
 @media (max-width: 560px) {
   .rebuild .ve-public-intro {
@@ -1464,22 +1404,11 @@
   .rebuild .ve-faq-layout {
     gap: 30px;
   }
-  .rebuild .ve-faq-index {
-    grid-template-columns: 1fr;
-  }
-  .rebuild .ve-faq-index > a {
-    padding: 11px 0;
-    font-size: 17px;
-  }
   .rebuild .ve-faq-group {
     padding-bottom: 44px;
   }
   .rebuild .ve-faq-group h2 {
     font-size: 31px;
-  }
-  .rebuild .ve-legal-index nav {
-    grid-template-columns: 1fr;
-    gap: 2px;
   }
   .rebuild .ve-legal-copy h2 {
     font-size: 25px;
@@ -1526,4 +1455,62 @@
   .rebuild .ve-form-layout .ve-form-aside {
     order: 1;
   }
+}
+
+/* Shared contents navigation; the existing 800px reading-column break also
+   governs disclosure containment, so documents and FAQ recompose together. */
+.rebuild .ve-reading-index {
+  position: sticky;
+  top: 104px;
+}
+.rebuild .ve-reading-index .ve-kicker {
+  color: var(--v-text-secondary);
+  margin-bottom: var(--v-space-4);
+}
+.rebuild .ve-reading-index a {
+  display: flex;
+  align-items: baseline;
+  gap: var(--v-space-4);
+  min-height: var(--v-target);
+  padding-block: var(--v-space-3);
+  color: var(--v-text-secondary);
+  font-size: var(--v-type-body);
+  line-height: 1.4;
+}
+.rebuild .ve-reading-index a > span {
+  font: 400 var(--v-type-label)/1.5 var(--v-font-label);
+  color: var(--v-primary);
+}
+.rebuild .ve-reading-index a:hover {
+  color: var(--v-link);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.rebuild .ve-reading-index-mobile {
+  display: none;
+}
+@media (max-width: 800px) {
+  .rebuild .ve-reading-index {
+    position: static;
+  }
+  .rebuild .ve-reading-index-desktop {
+    display: none;
+  }
+  .rebuild .ve-reading-index-mobile {
+    display: block;
+  }
+  .rebuild .ve-reading-index .v-disclosure-content {
+    padding-inline: 0;
+  }
+}
+
+.rebuild .ve-access-notice {
+  padding: var(--v-space-4);
+  background: var(--v-secondary-container);
+  color: var(--v-on-secondary-container);
+  border-radius: var(--v-shape-control);
+}
+.rebuild .ve-access-notice a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

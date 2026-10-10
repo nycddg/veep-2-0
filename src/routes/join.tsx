@@ -210,8 +210,8 @@ function Page() {
         }
       >
         <p>
-          Bring your experience to critical work for companies and funds. Veep defines the mandate
-          and assembles the team. You bring the judgment and hands-on leadership to move it forward.
+          Put your experience to work for founders and funds. Veep defines the job and assembles the
+          team. You bring the judgment, lead the work, and see it through.
         </p>
       </PublicIntro>
       <Section motion="portraits" className="ve-join-criteria">
@@ -223,7 +223,7 @@ function Page() {
             </h2>
             <p className="ve-body">
               You’ve held the seat, owned the decisions, and delivered under real constraints. Bring
-              that track record to the next mandate.
+              that experience to the next job.
             </p>
           </div>
           <div className="ve-join-portraits" aria-label="Veep operating partners">
@@ -265,8 +265,7 @@ function Page() {
               <br /> your work.
             </h2>
             <p>
-              Start with your background and the responsibilities you’ve owned. We’ll take it from
-              there.
+              Tell us what you’ve led, the decisions you’ve owned, and the work you want to do next.
             </p>
             <ol className="ve-next-steps">
               {[

@@ -1,3 +1,4 @@
+import { PageIndex } from "@/components/site/rebuild/PageIndex";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PublicIntro } from "@/components/site/rebuild/PublicPage";
 import { ogImageMeta } from "@/lib/seo";
@@ -246,18 +247,14 @@ function PrivacyPage() {
         </p>
       </PublicIntro>
 
-      <section className="ve-legal-document ve-container mx-auto">
-        <aside className="ve-legal-index">
-          <p className="ve-kicker">On this page</p>
-          <nav aria-label="Document sections">
-            {sections.map((section) => (
-              <a key={section.n} href={`#legal-${section.n}`}>
-                {section.title}
-              </a>
-            ))}
-            <a href="#legal-12">Contact us</a>
-          </nav>
-        </aside>
+      <section className="ve-legal-document v-container ve-container">
+        <PageIndex
+          label="Document sections"
+          items={[...sections, { n: "12", title: "Contact us" }].map((section) => ({
+            href: `#legal-${section.n}`,
+            label: section.title,
+          }))}
+        />
         <div className="ve-legal-copy">
           <div className="eyebrow">Effective date</div>
           <p className="mt-3 text-stone text-base">April 1, 2025</p>

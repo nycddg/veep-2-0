@@ -66,7 +66,7 @@ const notIncluded = [
   { t: "Long-term lock-in", d: "Start focused and continue, pause, or scale as the work changes." },
   {
     t: "Hourly billing surprises",
-    d: "Scoped around the work. You know the number before you sign.",
+    d: "The scope sets the price. You know the number before you sign.",
   },
 ];
 
@@ -129,8 +129,8 @@ function Page() {
         label="Pricing"
         title={
           <>
-            Define the work.
-            <br /> <span>Price the mandate.</span>
+            Know the scope.
+            <br /> <span>Know the cost.</span>
           </>
         }
         actions={
@@ -145,10 +145,12 @@ function Page() {
         }
       >
         <p>
-          Agree the scope, the outcomes, and the level of ownership. Then choose the operating
-          capacity the work needs.
+          Agree what needs to get done, who owns it, and the support it takes. Choose an engagement
+          that fits the work, with the price clear before you start.
         </p>
-        <p className="ve-intro-note">Transparent rates. No hourly billing. Flexible engagements.</p>
+        <p className="ve-intro-note">
+          No hourly billing. Adjust the engagement as the work changes.
+        </p>
       </PublicIntro>
 
       <Section id="tiers" pad="none" className="ve-pricing-sheet-section">
@@ -229,11 +231,10 @@ function Page() {
       <Section className="ve-price-roster">
         <Container className="ve-container ve-roster-price-layout">
           <div>
-            <p className="ve-kicker">For Funds & Portfolio Owners</p>
+            <p className="ve-kicker">For funds & portfolio owners</p>
             <h2 className="ve-title">
-              One operating
-              <br /> relationship.
-              <br /> Across the portfolio.
+              Plan for the work
+              <br /> across your portfolio.
             </h2>
             <p className="ve-roster-price">
               $75k <span>/ year</span>

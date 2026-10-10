@@ -52,7 +52,7 @@ const responsibilities = [
   {
     role: "Lead operating partner",
     detail:
-      "Runs the workplan, coordinates the people involved, and takes responsibility for execution and delivery against the agreed scope.",
+      "Runs the plan, coordinates the team, and owns execution and delivery against the agreed scope.",
   },
   {
     role: "Veep",
@@ -199,8 +199,8 @@ function Page() {
 
       <Section id="benefits" className="ve-accountability">
         <Container className="ve-container">
-          <h2 className="rb-h2 max-w-[26ch]">
-            An operating partner leads. Veep stays accountable.
+          <h2 className="v-heading max-w-[26ch]">
+            A senior operator owns the work. Veep is accountable.
           </h2>
           <div className="rb-responsibility-map mt-12">
             <div className="rb-execution-lane">
@@ -235,14 +235,14 @@ function Page() {
         <Container className="ve-container">
           <div className="ve-case-heading">
             <h2 className="ve-title">
-              The work.
-              <br /> The difference it made.
+              What changes
+              <br /> when someone owns it.
             </h2>
             <p>Capital raised. Project margins improved. Here’s the work behind the results.</p>
           </div>
           <article className="ve-case-primary">
             <div className="ve-case-result">
-              <p className="ve-kicker">B2B SaaS · Finance operating partner</p>
+              <p className="ve-kicker">B2B SAAS · FINANCE</p>
               <p className="ve-proof-number">$6M</p>
               <p className="ve-proof-label">Raised in six weeks.</p>
             </div>
@@ -262,7 +262,7 @@ function Page() {
           </article>
           <article className="ve-case-secondary">
             <div>
-              <p className="ve-kicker">Software studio · Growth operating partner</p>
+              <p className="ve-kicker">SOFTWARE STUDIO · GROWTH</p>
               <h3>
                 Better project economics.
                 <br /> A path into AI delivery.
@@ -279,9 +279,6 @@ function Page() {
             </div>
           </article>
           <figure className="ve-testimonial">
-            <span className="ve-quote-mark" aria-hidden="true">
-              “
-            </span>
             <blockquote>
               I cannot recommend this team more highly. They think, act, and engage like
               co-founders.
@@ -353,9 +350,9 @@ function Page() {
 
       <Section id="offer" tone="raised">
         <Container className="ve-container">
-          <h2 className="rb-h2">Size the support to the work.</h2>
+          <h2 className="v-heading">Size the support to the work.</h2>
           <p className="rb-body rb-measure mt-6">
-            Define the work first. Choose the engagement shape together.
+            Start with the job. Agree the scope, the owner, and the support it needs.
           </p>
           <div className="mt-12 hidden border-b border-[var(--rb-rule)] pb-3 xl:grid xl:grid-cols-4">
             <p className="text-[16px] leading-[1.4] text-[var(--rb-muted)]">Senior guidance</p>
@@ -442,14 +439,13 @@ function Page() {
       <Section className="ve-close">
         <Container className="ve-container ve-close-layout">
           <h2>
-            Bring the
-            <br /> stuck priority<span className="ve-period">.</span>
+            What keeps
+            <br /> coming back to you<span className="ve-period">?</span>
           </h2>
           <div>
             <p>
-              You don’t need to know the title or team. Tell us what changed, what needs to move,
-              and what happens if it doesn’t. In a 30-minute intro call, we’ll define the priority
-              and recommend the team to move it forward.
+              Bring the job to a 30-minute intro call. Tell us what changed and what needs to
+              happen. We’ll help define the scope and the team to take it on.
             </p>
             <BookLink />
           </div>

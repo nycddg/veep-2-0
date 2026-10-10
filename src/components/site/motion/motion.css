@@ -254,10 +254,10 @@
   margin-top: var(--v-space-6);
 }
 .rebuild .ve-motion-intro h1 {
-  font-size: clamp(48px, 5.1vw, 74px);
-  font-weight: 500;
-  line-height: 1.04;
-  letter-spacing: -0.05em;
+  font-size: var(--v-type-page);
+  font-weight: var(--v-weight-heading);
+  line-height: var(--v-leading-page);
+  letter-spacing: var(--v-tracking-display);
 }
 .rebuild .ve-motion-intro h1 > span {
   color: inherit;
@@ -314,9 +314,6 @@
   .rebuild .ve-motion-hero {
     gap: 30px;
   }
-  .rebuild .ve-motion-intro h1 {
-    font-size: clamp(46px, 5vw, 62px);
-  }
 }
 @media (max-width: 900px) {
   .rebuild .ve-motion-hero {
@@ -339,9 +336,6 @@
   .rebuild .ve-motion-hero {
     margin-top: 24px;
     gap: 20px;
-  }
-  .rebuild .ve-motion-intro h1 {
-    font-size: clamp(39px, 9.7vw, 56px);
   }
   .rebuild .ve-motion-intro > p {
     font-size: 17px;

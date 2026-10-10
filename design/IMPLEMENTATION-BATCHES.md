@@ -494,10 +494,12 @@ Five physics tests pass, including collision separation, obstacle clearance, loo
 ### Batch 03A — interior foundations and surfaces (complete)
 Homepage-authoritative alignment brief (2026-10-09). Keep the homepage unchanged. Consolidate interior container/type/section roles, paper and tonal contexts, form controls and reading navigation in their owning components/styles. Preserve composition, factual claims, commercial terms, handlers and redirects. Public scope includes eight marketing interiors, Privacy, Terms and partner access; authenticated portal behavior remains protected.
 
-### Batch 03B — interior editorial alignment (active)
+### Batch 03B — interior editorial alignment (complete)
 Refine every public interior's page introduction and supporting copy to the homepage's concrete voice. Preserve distinct page purposes and detailed qualifications. Remove redundant decoration and legacy color emphasis; retain useful demonstrations, evidence and roster context.
 
-### Batch 03C — rendered acceptance (queued)
+### Batch 03C — rendered acceptance (active)
 Render every public interior at desktop/tablet/mobile in both themes. Inspect screenshots, keyboard selection/disclosure/menu, forms without transmitting, route/hash behavior and reduced motion. Record any environment blockers; build, focused lint and scoped commits.
 
 03A validation: shared section/container/type roles and paper contexts applied in owning styles; Contact/Join/Auth use canonical buttons and shared field anatomy. Dark Pricing/About and baseline page families inspected. Production build, focused lint and diff checks pass. Full responsive acceptance follows in 03C. Homepage source untouched.
+
+03B: refined eight marketing interiors in the homepage voice; neutral page statements, consistent proof labels, clear job/owner language, unchanged evidence and terms. FAQ/Privacy/Terms share PageIndex with a mobile disclosure. Shared diagram-led heading role; Founder client quote uses the homepage coral/ink pairing. Partner access keeps a usable unavailable state when this clone lacks Supabase configuration; no credentials or backend changes. Build and focused lint pass.
