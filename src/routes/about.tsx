@@ -6,17 +6,17 @@ import { ogImageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Veep — Our Founders and Operating Principles" },
+      { title: "About Veep | Built to Carry the Work" },
       {
         name: "description",
         content:
-          "Meet the founders behind Veep and the operating principles that shape every engagement — a small roster of senior operators who embed, build, and deliver.",
+          "Veep is an operating partner platform built by operators. We put experienced judgment and hands-on delivery behind critical work.",
       },
-      { property: "og:title", content: "About Veep — Who we are and why we built it" },
+      { property: "og:title", content: "About Veep | Built to Carry the Work" },
       {
         property: "og:description",
         content:
-          "Born from the inside. Built for what's next. Meet the founders and principles behind Veep's senior operator model.",
+          "Veep is an operating partner platform built by operators. We put experienced judgment and hands-on delivery behind critical work.",
       },
       { property: "og:url", content: "https://www.veep.work/about" },
       ...ogImageMeta(),
@@ -28,20 +28,20 @@ export const Route = createFileRoute("/about")({
 
 const principles: readonly { title: string; body: string }[] = [
   {
-    title: "Onboarded in under 10 days",
-    body: "From intro call to embedded operator, measured in days — not the months a retained search takes.",
+    title: "Start with the job",
+    body: "Define the outcome and what it takes to deliver before deciding which role or team belongs on it.",
   },
   {
-    title: "Shortlist in 72 hours. Deployed in under 10 days.",
-    body: "Focused shortlist while permanent hire stays open — work moves in days, not search cycles.",
+    title: "Handpicked to be hands-on",
+    body: "Bring experience that fits the company and the job. Credentials are the starting point.",
   },
   {
-    title: "Flexible terms",
-    body: "Scoped to the initiative, not to a five-year plan.",
+    title: "Keep decisions clear",
+    body: "You direct and approve. We carry the agreed delivery.",
   },
   {
-    title: "30-day fit guarantee",
-    body: "30 days to prove it. If the operator is not right, we swap them or you walk.",
+    title: "Finish with a handoff",
+    body: "Leave outputs, documentation, and context. Agree the next scope or hand off cleanly.",
   },
 ];
 
@@ -49,17 +49,17 @@ const founders: readonly { name: string; role: string; bio: string }[] = [
   {
     name: "Dave Garcia",
     role: "Co-Founder",
-    bio: "Launched products, led pivots, landed exits. Now helping founders move faster with Veep.",
+    bio: "Launched products, led pivots, and landed exits. Now helping founders get consequential work done.",
   },
   {
     name: "Jian Yang",
     role: "Co-Founder",
-    bio: "Raised big, scaled fast, exited right. Now helping founders do the same, smarter.",
+    bio: "Raised capital, scaled businesses, and led exits. Now bringing that financial judgment to Veep.",
   },
   {
     name: "Mark Newhouse",
     role: "Co-Founder",
-    bio: "Built brands, transformed orgs, sold startups. Now building alongside founders at Veep.",
+    bio: "Built brands, transformed organizations, and sold startups. Now getting into the work with founders.",
   },
 ];
 
@@ -68,8 +68,8 @@ function Page() {
     <>
       <PageHero
         eyebrow="About Veep"
-        title="Born from the inside. Built for what's next."
-        sub="After decades inside high-growth startups and large institutions, we kept seeing the same pattern: critical work slowed down, ownership got blurry, and the default answer was to add more headcount. Veep was built for a different path."
+        title="Built for the work that keeps coming back."
+        sub="We've built companies and led from inside them. We know the work that falls between functions, outgrows the team, or waits for a hire. Veep exists to give that work the judgment, people, and follow-through it needs."
         secondaryLabel="See how it works"
         secondaryTo="/how-it-works"
       />
@@ -80,11 +80,11 @@ function Page() {
           {[
             {
               eyebrow: "The problem",
-              body: "Operators felt stuck inside bloated orgs. Companies struggled to find senior capacity that could lead fast and deliver with focus. The market rewarded process over ownership. Ownerless work kept landing on founders.",
+              body: "The org chart doesn't cover every job. A founder can set the priority, a team can agree the plan, and execution can still have no owner. That is where consequential work starts to drift.",
             },
             {
               eyebrow: "Meet Veep",
-              body: "Companies get high-impact operators who own outcomes. Operators get the freedom and focus to lead. Matched in 72 hours. Deployed in under 10 days. Veep delivers on-demand operating capacity.",
+              body: "Veep extends the operating partner model of top funds beyond portfolios. We define the job, bring together the right people and workflows, and take responsibility through delivery and handoff.",
             },
           ].map((row) => (
             <div
@@ -113,11 +113,10 @@ function Page() {
                 What we believe
               </div>
               <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
-                Built the hard way. Rebuilt the smart way.
+                Experience that gets into the work.
               </h2>
               <p className="text-stone text-base leading-relaxed max-w-md">
-                Decades of lessons, one roster. The future belongs to leaner
-                teams, faster decisions, and hands-on operators trusted to lead.
+                Senior judgment earns its place in the work. Understand the business, take responsibility, and see the job through.
               </p>
             </div>
             <ul className="lg:col-span-8">
@@ -155,8 +154,7 @@ function Page() {
               Founders first. Operators always.
             </h2>
             <p className="text-stone text-base leading-relaxed">
-              A founding team shaped by firsthand experience building, scaling,
-              and leading from inside.
+              We've built, scaled, and led from inside. Veep puts that operating perspective behind every engagement.
             </p>
           </div>
           <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-10 md:gap-8">
@@ -178,8 +176,8 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline={<>Tell us what cannot wait.</>}
-        sub="Tell us about the work. If it's a fit, we'll scope the engagement and match you with a Veep within 72 hours."
+        headline={<>What keeps landing on your desk?</>}
+        sub="Bring us the priority, the constraint, and what needs to be true on the other side. We'll help define the job."
         primary="contact"
       />
     </>

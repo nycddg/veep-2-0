@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import { BOOKING_URL } from "@/lib/booking";
 
 export function FooterCTA({
-  headline = <>Your next big move starts here.</>,
-  sub = "Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
+  headline = <>It's probably a job for Veep.</>,
+  sub = "Bring us the job that keeps coming back. We'll define what it takes to finish it.",
   /** Default: Fillout booking. Pass "contact" for Get in touch → /contact. */
   primary = "book",
 }: {
@@ -36,7 +36,7 @@ export function FooterCTA({
               rel="noopener noreferrer"
               className={primaryClass}
             >
-              Speak with our founders
+              Book intro call
             </a>
           )}
           <Link

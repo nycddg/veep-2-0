@@ -60,8 +60,7 @@ export function SiteFooter() {
               <img src={wordmarkNavy.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto hidden light:block" />
             </Link>
             <p className="mt-5 text-base text-cream/85 max-w-[20.4rem] leading-relaxed">
-              Vetted senior operators who step in to own critical work, now.
-              Matched in 72 hours. Ready to go in under 10 days.
+              Critical work needs an owner. Veep brings the people, judgment, and follow-through to get it done.
             </p>
               <a
                 href="mailto:hey@veep.work"
@@ -101,7 +100,7 @@ export function SiteFooter() {
         </div>
         <div className="mt-10 md:mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-3 text-xs leading-relaxed text-cream/70">
           <div className="text-balance">© {new Date().getFullYear()}&nbsp;The Veep Group,&nbsp;LLC. All rights reserved.</div>
-          <div className="text-balance">Senior operators for work that can't&nbsp;wait.</div>
+          <div className="text-balance">Operating partners for work that can't&nbsp;wait.</div>
         </div>
       </div>
     </footer>

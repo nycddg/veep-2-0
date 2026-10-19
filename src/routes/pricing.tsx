@@ -10,7 +10,7 @@ const tiers = [
     t: "Advisory",
     p: "From $3k",
     per: "per month",
-    best: "Senior judgment for high-stakes decisions.",
+    best: "Senior judgment. Your team executes.",
     items: [
       "Board and investor prep",
       "Fundraise strategy",
@@ -23,11 +23,11 @@ const tiers = [
     t: "Sprint",
     p: "From $25k",
     per: "per scope",
-    best: "One urgent priority with a clear owner and endpoint.",
+    best: "One critical job. A clear outcome and an endpoint.",
     items: [
       "Fixed scope, fixed price",
       "4–12 week engagement",
-      "GTM reset, fundraise, margin, diligence",
+      "GTM, fundraising prep, margins, diligence",
       "Clear success criteria",
     ],
   },
@@ -35,7 +35,7 @@ const tiers = [
     t: "Operator",
     p: "From $15k",
     per: "per month",
-    best: "Ongoing senior ownership for your most critical initiatives.",
+    best: "Embedded leadership for work that needs sustained attention.",
     items: [
       "Finance, GTM, operations, product, or people",
       "Build or reset a function",
@@ -48,31 +48,31 @@ const tiers = [
     t: "Pod",
     p: "From $30k",
     per: "per month",
-    best: "A lead operator plus specialist support for cross-functional work.",
+    best: "One accountable lead, with specialists around the job.",
     items: [
-      "Multi-function execution",
+      "Work spanning functions",
       "Operating reset or transformation",
       "GTM + RevOps, finance + ops, AI initiatives",
-      "Coordinated senior execution",
+      "One coordinated delivery team",
     ],
   },
 ];
 
 const notIncluded = [
-  { t: "Placement fees", d: "Calls with a Veep founder and operator matching are free." },
-  { t: "Setup or onboarding fees", d: "Contracting, access, and onboarding are managed at no extra cost." },
-  { t: "Long-term lock-in", d: "Start focused and continue, pause, or scale as the work changes." },
-  { t: "Hourly billing surprises", d: "Scoped around the work. You know the number before you sign." },
+  { t: "Placement fees", d: "Scoping calls and operator matching are free." },
+  { t: "Setup or onboarding fees", d: "Contracting, access, and onboarding are included in the engagement." },
+  { t: "Agreed commitment", d: "Agree the term upfront. Extend or change the scope together." },
+  { t: "Hourly billing surprises", d: "Agree the scope and fee before signing. No hourly surprises." },
 ];
 
 const faqs = [
   {
     q: "Are there setup or matching fees?",
-    a: "No. Calls with a Veep founder and operator matching are free. You only pay once an engagement is signed.",
+    a: "No. Calls with a Veep founder and operator matching are free. You pay for the signed engagement.",
   },
   {
     q: "Can I convert between models mid-term?",
-    a: "Yes. Many engagements change shape as the work becomes clearer. Advisory can become a Sprint. A Sprint can become an Operator engagement. Operator work can expand into a Pod.",
+    a: "Yes, by agreement. A Sprint can lead to an Operator engagement, or a Pod can support a broader job. We agree the revised scope and fee before changing the work.",
   },
   {
     q: "How does the 30-day fit guarantee work?",
@@ -94,9 +94,9 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "Pricing | Veep" },
-      { name: "description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
-      { property: "og:title", content: "Pricing — Priced to the work, not the hour | Veep" },
-      { property: "og:description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
+      { name: "description", content: "Advisory, Sprints, Operators, Pods, and separately scoped Agent Teams. Clear scope, agreed fees, and terms that fit the work." },
+      { property: "og:title", content: "Pricing | Veep" },
+      { property: "og:description", content: "Advisory, Sprints, Operators, Pods, and separately scoped Agent Teams. Clear scope, agreed fees, and terms that fit the work." },
       { property: "og:url", content: "https://www.veep.work/pricing" },
       ...ogImageMeta(),
     ],
@@ -111,8 +111,8 @@ function Page() {
     <>
       <PageHero
         eyebrow="Pricing"
-        title="Priced to the work. Not the hour."
-        sub="Every engagement is scoped to the work, urgency, and level of ownership required. Transparent rates. No hourly billing. No lock-in by default."
+        title="Senior hands, on terms that fit the work."
+        sub="Bring the job. We define the scope, the outcome, and the right way to deliver. You know the fee before the work starts."
         primaryLabel="Get in touch"
         primaryTo="/contact"
       />
@@ -154,7 +154,7 @@ function Page() {
             ))}
           </div>
           <p className="mt-10 text-sm text-stone">
-            All engagements carry a 30-day fit guarantee · Response within 1 business day
+            Agent Teams: separately scoped and priced by scope and volume. Operator-fit terms below.
           </p>
         </div>
       </Reveal>
@@ -168,7 +168,7 @@ function Page() {
               What we don't charge for
             </div>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              The price you see is the price you pay.
+              Know the job. Know the fee.
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
@@ -190,17 +190,10 @@ function Page() {
               FOR FUNDS
             </div>
             <h3 className="mt-6 font-serif font-medium text-xl md:text-2xl text-cream">
-              The right operating partners, ready when the portfolio needs them.
+              Build the bench your portfolio calls for.
             </h3>
             <p className="mt-5 text-stone leading-relaxed max-w-2xl">
-              Built for PE firms, family offices, holdcos, and multi-company
-              founders that need senior operating support across recurring
-              leadership gaps, transaction moments, and value-creation work.
-              Portfolio Rosters include priority operator matching, quarterly
-              capacity planning, preferred commercial terms, as well as
-              emergency CFO, COO, and operator coverage for {"$75k"} annually.
-              Operator engagements are scoped separately by SOW at preferred
-              rates.
+              For funds, family offices, holdcos, and multi-company founders with recurring operating needs. The Portfolio Roster is $75k/year for portfolio planning, quarterly reviews, priority matching, and preferred engagement terms. Company work is scoped and billed separately. Confirmed fit and availability determine each deployment; the roster does not reserve an operator's time.
             </p>
             <div className="mt-6">
               <Link
@@ -222,7 +215,7 @@ function Page() {
               Pricing FAQ
             </div>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Straight answers to the questions we get most.
+              Clear terms. Straight answers.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
@@ -247,8 +240,8 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline={<>Tell us what cannot wait.</>}
-        sub="Book a 30-minute call with a Veep founder. We'll clarify the work, recommend the right model, and tell you directly if Veep isn't the answer."
+        headline={<>Bring us the job.</>}
+        sub="Tell us what needs to happen and what is getting in the way. We'll recommend the right scope and tell you directly if Veep isn't the answer."
       />
     </>
   );

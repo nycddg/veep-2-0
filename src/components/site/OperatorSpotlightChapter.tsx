@@ -20,8 +20,8 @@ const networkImpact = [
 ];
 
 export function OperatorSpotlightChapter({
-  headline = "Operators who've held the seat and delivered.",
-  sub = "Every Veep operator has held the role they're deployed into, at a comparable-stage company, with outcomes we can reference. No juniors, no generalists, no career consultants.",
+  headline = "Held the seat. Delivered under pressure.",
+  sub = "Veep's operating partners are handpicked for senior judgment and hands-on delivery. They've built teams, raised capital, and led growth. We look for experience that translates to your job.",
   operators = spotlightOperators,
 }: {
   headline?: string;
@@ -82,7 +82,7 @@ export function OperatorSpotlightChapter({
         </div>
 
         <p className="mt-12 mono-label text-right hidden md:block">
-          Aggregated outcomes across our operator roster
+          Career outcomes across our operator network
         </p>
 
         <div className="mt-10 md:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">

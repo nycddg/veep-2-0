@@ -88,7 +88,7 @@ export function SiteHeader() {
             rel="noopener noreferrer"
             className="motion-cta cta-accent relative shrink-0 whitespace-nowrap rounded-[6px] px-4 py-1.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background before:absolute before:inset-x-0 before:-inset-y-1.5 before:content-['']"
           >
-            Get started
+            Book intro call
           </a>
         </div>
 
@@ -143,7 +143,7 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="motion-cta cta-accent block rounded-[6px] px-4 py-3 text-sm text-center font-medium min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                Get started
+                Book intro call
               </a>
             </div>
           </div>

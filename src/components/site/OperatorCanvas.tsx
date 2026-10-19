@@ -26,7 +26,7 @@ function MatchMatrixCard({
       className={`match-matrix-card rounded-[6px] bg-[color:oklch(0.225_0.024_258)]/95 backdrop-blur-xl p-4 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.55)] light:shadow-[0_16px_40px_-18px_rgba(26,31,58,0.28)] text-left ${className}`}
     >
       <p className="eyebrow mb-4 !text-[10px] text-center !text-[color:oklch(0.98_0_0)]">
-        Assigned Operating Partner
+        Operating Partner Fit
       </p>
       <div className="space-y-2.5">
         {MATRIX.map((row, i) => (
@@ -115,7 +115,7 @@ export function OperatorCanvas() {
       {/* Proof — mt-6 from the photo on mobile; sm+ adds the card hang
           (-bottom-5) so the gap is card-to-line, not photo-to-line. */}
       <p className="mt-6 sm:mt-11 text-center mono-label text-cream/80">
-        95% match success rate · 75+ vetted senior operators
+        75+ vetted operators · Handpicked to be hands-on
       </p>
     </div>
   );

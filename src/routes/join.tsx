@@ -8,17 +8,17 @@ import { ogImageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/join")({
   head: () => ({
     meta: [
-      { title: "Join Veep | Operator Network" },
+      { title: "Join Veep | Hands-On Operating Partners" },
       {
         name: "description",
         content:
-          "Apply to Veep's invite-only network of senior operators. Own critical work for high-growth companies. Matched in 72 hours. Deployed in under 10 days.",
+          "Built teams, raised capital, or led growth under real constraints? Apply to Veep's handpicked operating partner network.",
       },
-      { property: "og:title", content: "Join Veep — Operator roster" },
+      { property: "og:title", content: "Join Veep | Hands-On Operating Partners" },
       {
         property: "og:description",
         content:
-          "Senior operators who embed, build, and deliver. Apply to the roster.",
+          "Built teams, raised capital, or led growth under real constraints? Apply to Veep's handpicked operating partner network.",
       },
       { property: "og:url", content: "https://www.veep.work/join" },
       ...ogImageMeta(),
@@ -30,20 +30,20 @@ export const Route = createFileRoute("/join")({
 
 const criteria: readonly { title: string; body: string }[] = [
   {
-    title: "Senior operating experience",
-    body: "Prior seat as a founder, CEO, GM, or C-suite / SVP leader. You've owned outcomes end-to-end, not advised from the sidelines.",
+    title: "You've held the seat",
+    body: "You've led as a founder, CEO, GM, or senior executive. You know what it means to answer for the outcome.",
   },
   {
-    title: "Built for high impact",
-    body: "You're motivated by hands-on work, not management theater. You want to work with high-growth companies, own meaningful initiatives, win, and move on to the next challenge.\u00a0Prior consulting or interim experience is a plus, but not required.",
+    title: "You get into the work",
+    body: "You can define the problem, make the call, and help build the answer. You're comfortable leading a team and doing the work it takes to deliver. Prior consulting or interim experience is useful, but it is not required.",
   },
   {
-    title: "Track record in fast-paced environments",
-    body: "Bootstrapped, VC-backed, PE-backed, public — you've delivered under pressure with real constraints and short runway.",
+    title: "You've delivered under pressure",
+    body: "Bootstrapped, investor-backed, or public: you've delivered with real constraints, competing priorities, and a clock that kept running.",
   },
   {
-    title: "References and standards to match",
-    body: "Strong references, a bias to action, and a commitment to the craft. The roster stays small on purpose.",
+    title: "Your work stands up",
+    body: "Strong references. Clear judgment. Follow-through people remember. Work that earns the next introduction.",
   },
 ];
 
@@ -187,8 +187,8 @@ function Page() {
     <>
       <PageHero
         eyebrow="Join Veep"
-        title="An invite-only network on call for the work that cannot wait."
-        sub="Veep represents a small roster of senior operators who embed, build, and deliver. If you're ready to own the work that can't wait for high-growth companies, we want to meet you."
+        title="Your experience has more work to do."
+        sub="Join a handpicked network of operating partners trusted with consequential work. Bring your judgment, get into the business, and carry the job through. If that sounds like your kind of work, apply."
         primaryLabel="Apply below"
         primaryTo="/join"
         primaryHash="apply"
@@ -205,11 +205,10 @@ function Page() {
                 Who we're looking for
               </div>
               <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
-                A curated roster of business builders.
+                Senior judgment. Hands-on delivery.
               </h2>
               <p className="text-stone text-base leading-relaxed max-w-md">
-                We stay small on purpose. Every operator on the roster has run
-                the seat before and can start inside two weeks.
+                Relevant experience. Sound judgment. A record of delivery. We confirm fit and availability for each job.
               </p>
             </div>
             <ul className="lg:col-span-8">
@@ -246,10 +245,10 @@ function Page() {
               </div>
               <ul className="space-y-4">
                 {[
-                  "We review every application personally",
-                  "Intro conversation with a Veep founder",
-                  "References and roster onboarding",
-                  "Matched to engagements as they come in",
+                  "We review your experience",
+                  "Meet a Veep founder",
+                  "References and network onboarding",
+                  "Considered for relevant engagements",
                 ].map((i, idx) => (
                   <li key={i} className="flex items-baseline gap-4">
                     <span className="font-mono text-sm text-accent w-6 shrink-0 tabular-nums">
@@ -262,8 +261,7 @@ function Page() {
                 ))}
               </ul>
               <p className="text-xs text-stone-soft leading-relaxed max-w-xs">
-                Roster spots are limited. We respond to every serious
-                application within one business week.
+                We respond to serious applications within one business week. Admission does not guarantee an engagement.
               </p>
             </div>
 

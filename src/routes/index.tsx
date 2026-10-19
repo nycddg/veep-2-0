@@ -22,39 +22,39 @@ import { ogImageMeta } from "@/lib/seo";
 // ─────────────────────────────────────────────────────────────────────────────
 
 const alternatives = [
-  { t: "Permanent hire", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you, and the work waits for the search to finish." },
-  { t: "Consulting firms", d: "Smart recommendations. Then they hand you a deck and the work still lands on you or your team." },
-  { t: "Freelancers and advisors", d: "Profiles to browse. Variable seniority. More decisions and oversight for the founder, not fewer." },
+  { t: "Permanent hire", d: "The role needs defining, the search takes time, and the work needs attention before the seat is filled." },
+  { t: "Consulting firms", d: "A sound recommendation still needs someone with the time, authority, and experience to carry it into the business." },
+  { t: "Freelancers and advisors", d: "You find the people, define their roles, and keep the work connected. Coordination becomes another job." },
 ];
 
 const benefits = [
-  { t: "Own the work", d: "Operators step in to take responsibility for critical work, not advise from the sidelines." },
-  { t: "Deploy in under 10 days", d: "Matched to the work. Shortlist in 72 hours. Onboarded and in the work inside 10 days." },
-  { t: "Senior-only roster", d: "75+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
-  { t: "No permanent commitment", d: "Senior ownership without the commit. Engagements can pause, extend, or scale with the work." },
-  { t: "Clean handoff", d: "When the work lands or a permanent hire arrives, you get documentation, context, and continuity." },
-  { t: "30-day fit guarantee", d: "If the operator isn't the right fit, we swap them or you walk. Exit the agreement with no penalties." },
+  { t: "Give the job an owner", d: "Put experienced judgment and hands-on delivery behind the priority your team cannot carry through." },
+  { t: "Start while it matters", d: "Scoped in 72 hours. Started in under 10 days. Agent Teams timing agreed separately." },
+  { t: "Reach deeper experience", d: "Bring in experience you need for the job but could not justify hiring full-time." },
+  { t: "Fit the work", d: "Start with the job. Agree the scope and commitment it needs, then adjust together as priorities change." },
+  { t: "Keep what you build", d: "Take the outputs, process, and context forward. Your team gets a foundation it can run." },
+  { t: "Protect the fit", d: "Operator not right within 30 days? We swap them or you walk, with no remaining-term fee." },
 ];
 
 const engagements = [
   {
     name: "Advisory",
     price: "From $3k / mo",
-    bestWhen: "Senior judgment and direction for high-stakes decisions: board and investor prep, fundraise strategy, executive decisions, and strategic tradeoffs. Not full ownership of execution.",
+    bestWhen: "Senior judgment for decisions that matter: board and investor prep, fundraising strategy, and commercial tradeoffs. Your team retains responsibility for execution. Includes guidance, not embedded delivery.",
     to: "/pricing" as const,
     hash: "tiers",
   },
   {
     name: "Sprint",
     price: "From $25k / scope",
-    bestWhen: "Time-boxed. Clear scope. Clear outcome. Fast start: GTM reset, fundraise, margin work, diligence, or transaction prep across 4–12 weeks.",
+    bestWhen: "One defined job, carried through delivery in 4–12 weeks. Prepare a raise, reset GTM, strengthen margins, or get ready for diligence.",
     to: "/pricing" as const,
     hash: "tiers",
   },
   {
     name: "Operator",
     price: "From $15k / mo",
-    bestWhen: "Embedded senior ownership of critical work across finance, GTM, operations, product, or people. Build or reset a function, resolve leadership gaps (typically 3–12 months).",
+    bestWhen: "An experienced operator gets into the business to lead a function, cover a leadership gap, or deliver a critical initiative. Typically 3–12 months.",
     to: "/pricing" as const,
     hash: "tiers",
     featured: true,
@@ -62,7 +62,7 @@ const engagements = [
   {
     name: "Pod",
     price: "From $30k / mo",
-    bestWhen: "Multiple operators coordinated against a larger work program: GTM + RevOps, finance + ops, AI initiatives, or an operating reset across the company.",
+    bestWhen: "A lead operator and specialists working toward one outcome. Built for jobs spanning functions, from GTM and RevOps to finance, operations, and AI initiatives.",
     to: "/pricing" as const,
     hash: "tiers",
   },
@@ -71,38 +71,38 @@ const engagements = [
 const differentiators = [
   {
     dim: "Time to start",
-    veep: "Shortlist in 72 hours, deployed in under 10 days",
-    old: "Months to hire, weeks to scope, or endless profile browsing",
+    veep: "Scoped in 72 hours; started in under 10 days",
+    old: "The job is ready. The hire is months away.",
   },
   {
     dim: "Ownership",
-    veep: "Senior operator owns the work",
-    old: "Recommendations, candidates, tools, or hourly help",
+    veep: "Veep carries the agreed delivery",
+    old: "A priority without available execution ownership",
   },
   {
     dim: "OUTCOMES",
-    veep: "High quality work immediately",
-    old: "After the search, after the deck, or with variable quality",
+    veep: "Defined outcomes. Hands-on delivery.",
+    old: "A plan still waiting for execution",
   },
   {
     dim: "Cost",
-    veep: "Priced to scope and level of support",
-    old: "Search fees plus salary, or large consulting engagements",
+    veep: "Scope the job. Agree the fee.",
+    old: "Committing before the need is clear",
   },
   {
     dim: "Seniority",
-    veep: "Vetted senior operators only",
-    old: "Variable; junior consultants for leverage or unvetted freelancers",
+    veep: "Handpicked operating partners",
+    old: "Relevant experience is hard to reach",
   },
   {
     dim: "Exit",
-    veep: "Clean handoff with documentation",
-    old: "Deck delivered, search continues, or dependency grows",
+    veep: "Outputs, context, and a clean handoff",
+    old: "The work stays dependent on outside help",
   },
   {
     dim: "Risk",
-    veep: "30-day fit guarantee. Swap or walk.",
-    old: "You own the miss",
+    veep: "30-day operator-fit guarantee",
+    old: "Operator fit is uncertain",
   },
 ];
 
@@ -110,8 +110,8 @@ const cases = [
   {
     tag: "B2B SAAS",
     role: "Finance Operating Partner",
-    trigger: "CEO was preparing for a first institutional round without a financial model, investor materials, or fundraising experience.",
-    outcome: "Built a 3-year model, diligence-ready CAC/LTV dashboards, and coached the CEO through term sheets and investor meetings.",
+    trigger: "The first institutional raise was coming. The financial foundation needed to stand up to it.",
+    outcome: "Built the model and unit economics, prepared diligence materials, and supported investor discussions and financing decisions.",
     metric: "$6M raised in 6 weeks",
     figure: "$6M",
     kicker: "Raised in 6 weeks",
@@ -119,15 +119,15 @@ const cases = [
   {
     tag: "SOFTWARE STUDIO",
     role: "Growth Operating Partner",
-    trigger: "An $8M product development studio was stuck firefighting, with inconsistent project profitability and no scalable path into AI.",
-    outcome: "Installed standardized project scoping and staffing, built an AI GTM and delivery framework, and hired a Director of AI.",
-    metric: "Project margins up 25%",
+    trigger: "Daily operations were crowding out the studio's next growth move: an AI practice.",
+    outcome: "Tightened project scoping and staffing, built the AI offer and delivery framework, and hired a Director of AI.",
+    metric: "AI practice launched",
   },
   {
     tag: "PODCAST PUBLISHER",
     role: "Business Operating Partner",
-    trigger: "A profitable, bootstrapped publisher with millions in revenue had never raised outside capital and had no financial model or growth plan.",
-    outcome: "Built the company's first financial model, defined use of proceeds, and sourced investors representing over a third of the round.",
+    trigger: "A profitable, bootstrapped publisher was preparing its first outside raise. The model and growth plan still needed building.",
+    outcome: "Built the first financial model, clarified use of proceeds, and sourced investors who contributed 35% of the capital ultimately raised.",
     metric: "Sourced 35% of capital",
   },
 ];
@@ -135,16 +135,16 @@ const cases = [
 // Mini FAQ — non-dupes of ObjectionList ("Before you book")
 const faqs = [
   {
-    q: "What is a Veep operator?",
-    a: "A Veep operator is a vetted senior operator who steps into your business to own critical work before a permanent executive hire makes sense. Depending on the need, that operator may be a CFO, COO, CRO, CMO, CTO, product leader, people leader, chief of staff, or functional expert.",
+    q: "What if the job crosses functions?",
+    a: "Veep defines the outcome and brings the right expertise together around it. A Pod pairs an accountable lead with specialists, so finance, commercial, and operating work stay connected. You have one partner responsible for coordinating the agreed delivery.",
   },
   {
-    q: "How is Veep different from a consulting firm?",
-    a: "A consultant recommends. A Veep operator owns. Our operators step into the work, set the rhythm, build the materials, make decisions with the team, and move the priority forward.",
+    q: "Can agents handle recurring work?",
+    a: "Yes. Agent Teams are separately scoped around a recurring job. An operating partner directs, reviews, and refines the work until it meets the agreed standard. Technical oversight supports the system.",
   },
   {
-    q: "How is Veep different from executive search?",
-    a: "Search is for permanent hiring. Veep is for critical work that needs senior ownership before the permanent hire makes sense. The work moves now, while the permanent hiring decision stays open.",
+    q: "Who stays in control?",
+    a: "You retain strategic decisions and approvals. Veep manages the agreed delivery, coordination, and quality. Scope changes are agreed together. In Advisory, your team also retains execution responsibility.",
   },
   {
     q: "Where does Veep operate?",
@@ -189,17 +189,17 @@ const serviceSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Veep: Senior Operators for Work That Can't Wait" },
+      { title: "Veep | Operating Partners for Work That Can't Wait" },
       {
         name: "description",
         content:
-          "Veep helps founder-led companies bring in vetted senior operators to own critical work. Matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
+          "Veep extends the operating partner model beyond portfolios. Projects, embedded operators, pods, and agent teams for critical work that needs an owner.",
       },
-      { property: "og:title", content: "Veep: Senior Operators for Work That Can't Wait" },
+      { property: "og:title", content: "Veep | Operating Partners for Work That Can't Wait" },
       {
         property: "og:description",
         content:
-          "Veep helps founder-led companies bring in vetted senior operators to own critical work. Matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
+          "Veep extends the operating partner model beyond portfolios. Projects, embedded operators, pods, and agent teams for critical work that needs an owner.",
       },
       { property: "og:url", content: "https://www.veep.work/" },
       { property: "og:type", content: "website" },
@@ -338,13 +338,11 @@ function Index() {
           </h1>
 
           <p className="motion-fade-up motion-delay-1 text-base sm:text-lg text-stone max-w-2xl leading-relaxed mb-10">
-            Vetted senior operators to own urgent priorities and high-stakes
-            decisions before you are ready, willing, or able to make
-            permanent hires.
+            Founders and funds hire Veep to take on high-stakes work, put the right people behind it, and see it through.
           </p>
 
           <div className="motion-fade-up motion-delay-2 flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
-            {["Invite-only network", "72-hour match", "30-day fit guarantee"].map((t) => (
+            {["Handpicked operators", "72-hour scope", "30-day operator-fit guarantee"].map((t) => (
               <div key={t} className="flex items-center gap-2">
                 <Check size={18} className="text-accent" strokeWidth={2.5} />
                 {t}
@@ -384,10 +382,10 @@ function Index() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>MEET VEEP</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
-            An invite-only network of operating partners ready to own the work that can't wait. Founders, CEOs, and investment firms hire Veep when important work has no owner across finance, GTM, operations, product, people, fundraising, and strategy.
+            Veep extends the operating partner model of top funds beyond portfolios. We help you win more customers, make your numbers stand up, build early traction on critical initiatives, and finish the job that keeps landing on your desk.
           </p>
           <p className="mt-6 text-sm text-stone">
-            Built for companies with real revenue and growing complexity that need a critical outcome now.
+            Projects, embedded operators, pods, and agent teams. The right mix for the job to be done.
           </p>
         </div>
       </Reveal>
@@ -405,7 +403,7 @@ function Index() {
           <ProblemDiagram />
 
           <div className="mt-20 md:mt-24 motion-hairline pt-12">
-            <div className="mono-label mb-8">Instead of</div>
+            <div className="mono-label mb-8">Where work waits</div>
             <div className="motion-stagger grid md:grid-cols-3 gap-y-10">
               {alternatives.map((a) => (
                 <div
@@ -429,28 +427,25 @@ function Index() {
             <div>
               <SectionEyebrow>What we do</SectionEyebrow>
               <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-                Built for the job to be done.
+                The job sets the shape.
               </h2>
               <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
-                Tell us what's in the way, not moving, or landing back on you to solve.
-                We shape the work and define the outcomes, recommend the right level of
-                support (Advisory, Sprint, Operator, or Pod), and match operators to the job.
+                Bring us the priority, the constraint, and what needs to change. We define the outcome, choose the delivery approach, and put the right expertise and workflows behind it. Veep stays accountable for execution through completion or a clear handoff.
               </p>
               <p className="mt-4 text-stone text-base md:text-lg leading-relaxed">
-                When the work lands or the permanent hire arrives, we hand off with
-                results and documentation, not ongoing dependency.
+                The raise ready for scrutiny. The sales cadence your team can run. The launch with a plan and an owner.
               </p>
               <p className="mt-6 eyebrow hidden md:block !text-cream">
-                Vetted senior operators who step in to own critical work, now.
+                The right mix of expertise, throughput, and hustle for the job.
               </p>
             </div>
             <div className="motion-stagger divide-y divide-white/10 lg:border-l lg:border-white/10 lg:pl-14">
               <div className="eyebrow pb-6">The Veep model</div>
               {[
-                ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
-                ["Senior only", "Every operator is a vetted senior leader: former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
-                ["Priced to scope", "Advisory, Sprint, Operator, or Pod structured around the work and outcomes."],
-                ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
+                ["Define what done looks like", "We start with the business result, the work required, and who can carry it. Advisory offers judgment; delivery engagements take responsibility for execution."],
+                ["Hands-on operators", "Our operating partners have built teams, raised capital, and led growth under real constraints. They bring judgment earned in the work."],
+                ["Agent Teams", "Agents do the lifting. Operators direct, refine, and approve. Scoped separately."],
+                ["Operator-fit guarantee", "Operator not right in 30 days? Swap or walk. No fee for the remaining term."],
               ].map(([t, d]) => (
                 <div key={t} className="py-6 last:pb-0">
                   <div className="font-serif font-medium text-xl text-cream tracking-tight">{t}</div>
@@ -476,7 +471,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>What you get</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Senior ownership on your terms.
+              Critical work. In capable hands.
             </h2>
           </div>
           <div className="motion-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
@@ -505,7 +500,7 @@ function Index() {
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
               <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-                Four engagement shapes. One promise.
+                Senior hands. Terms that fit.
               </h2>
             </div>
             <Link
@@ -521,7 +516,7 @@ function Index() {
             ))}
           </div>
           <p className="mt-10 text-sm text-stone max-w-3xl">
-            Lead with the work. Choose the shape after the work is clear.
+            Agent Teams for recurring work are scoped separately by scope and volume.
           </p>
         </div>
       </Reveal>
@@ -532,7 +527,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>How It Works</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              From first call to operator in the seat in under 10 days.
+              From the job on your desk to a result you can use.
             </h2>
           </div>
           <StepFlow />
@@ -545,7 +540,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14 hidden md:block">
             <SectionEyebrow>Proof</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap hidden md:block">
-              Outcomes we've delivered in 90 days or less.
+              The work moved. So did the business.
             </h2>
           </div>
 
@@ -560,9 +555,9 @@ function Index() {
           <div className="motion-stagger hidden md:grid mt-12 md:mt-20 grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 motion-hairline-y">
             {[
               { k: "75+", v: "vetted operators" },
-              { k: "72h", v: "to shortlist" },
+              { k: "72h", v: "to scope" },
               { k: "<10d", v: "to deploy" },
-              { k: "30d", v: "fit guarantee" },
+              { k: "30d", v: "operator fit" },
             ].map((s) => (
               <div key={s.k}>
                 <div className="stat-figure text-4xl md:text-5xl text-cream">{s.k}</div>
@@ -580,7 +575,7 @@ function Index() {
           </div>
 
           <div className="mt-16">
-            <InlineCTA centered label="Meet Veep" />
+            <InlineCTA centered label="Book intro call" />
           </div>
         </div>
       </Reveal>
@@ -591,14 +586,14 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>Why Veep</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              How Veep compares to the alternatives.
+              Change how the work gets done.
             </h2>
           </div>
 
           <div className="grid grid-cols-[auto_minmax(min-content,1fr)_minmax(min-content,1fr)] border-y border-white/10 divide-y divide-white/10">
             <div className="hidden md:grid md:grid-cols-subgrid md:col-span-3">
               <div className="p-5 mono-label">Dimension</div>
-              <div className="p-5 mono-label">The old way</div>
+              <div className="p-5 mono-label">The constraint</div>
               <div className="p-5 eyebrow">Veep</div>
             </div>
             {differentiators.map((r) => (
@@ -626,7 +621,7 @@ function Index() {
                 Portfolio companies don't pause for a search.
               </h2>
               <p className="text-base text-stone leading-relaxed">
-                Transactions create volatility before close, after close, and during integration. Leadership seats open. The plan is clear, but the company often lacks the senior capacity to own the work. Veep gives transaction-active firms a retained roster of vetted operators, ready to support diligence, transition, integration, value creation, and interim leadership needs across the portfolio.
+                A deal closes. A leader leaves. A value-creation plan needs someone to carry it. Veep helps funds prepare the right operating bench across their portfolio, then scopes each company's work individually. From diligence and integration to growth and interim leadership, one operating relationship gives each job a clear route to delivery.
               </p>
             </div>
             <div className="lg:col-span-2 flex flex-col items-start lg:items-end gap-4">
@@ -654,7 +649,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>Before you book</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              The questions founders ask on the first call.
+              A few answers before we get to work.
             </h2>
           </div>
           <ObjectionList />
@@ -670,7 +665,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>FAQ</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Straight answers.
+              How the work gets done.
             </h2>
           </div>
           <div className="divide-y divide-white/10 border-y border-white/10">

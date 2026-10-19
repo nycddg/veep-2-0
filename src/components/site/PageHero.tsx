@@ -17,7 +17,7 @@ export function PageHero({
   sub,
   children,
   chip,
-  primaryLabel = "Book a 30-minute call",
+  primaryLabel = "Book intro call",
   primaryHref,
   primaryTo,
   primaryHash,

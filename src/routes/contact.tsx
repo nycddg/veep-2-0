@@ -16,10 +16,10 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact | Veep" },
-      { name: "description", content: "Get in touch with Veep. Response within one business day. Matched in 72 hours. Deployed in under 10 days." },
-      { property: "og:title", content: "Contact | Veep" },
-      { property: "og:description", content: "Tell us the moment. We'll match a senior operator who can start in under 10 days." },
+      { title: "Contact Veep | Bring Us the Job" },
+      { name: "description", content: "Tell us what needs to get done. Start a conversation with Veep about the scope, outcome, and right way to deliver." },
+      { property: "og:title", content: "Contact Veep | Bring Us the Job" },
+      { property: "og:description", content: "Tell us what needs to get done. Start a conversation with Veep about the scope, outcome, and right way to deliver." },
       { property: "og:url", content: "https://www.veep.work/contact" },
       ...ogImageMeta(),
     ],
@@ -128,11 +128,11 @@ function Page() {
     <>
       <PageHero
         eyebrow={isAudit ? "Capacity audit" : "Discovery call"}
-        title={isAudit ? "Map the portfolio's executive risk." : "What critical work doesn't have an owner?"}
+        title={isAudit ? "Map the portfolio's executive risk." : "What needs to get done?"}
         sub={
           isAudit
             ? "A structured audit of leadership risk across your portfolio, with a recommended roster structure per company. Delivered in 2–3 weeks."
-            : "30-minute call. Response within one business day. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
+            : "Bring us the job, the constraint, and the deadline. Start with a 30-minute call. Reply within one business day."
         }
         primaryLabel={isAudit ? "Request an audit" : "Request a call"}
         primaryTo="/contact"
@@ -159,9 +159,9 @@ function Page() {
                     ]
                   : [
                       "Reply within 1 business day",
-                      "30-minute diagnostic call",
-                      "Operator shortlist within 72 hours",
-                      "30-day fit guarantee",
+                      "30-minute scoping call",
+                      "Operating scope within 72 hours",
+                      "Start in under 10 days",
                     ]
                 ).map((i, idx) => (
                   <li key={i} className="flex items-baseline gap-4">
@@ -247,7 +247,7 @@ function Page() {
                     </Field>
                   </div>
                   <Field
-                    label={isAudit ? "Portfolio size or context" : "What's the biggest initiative without an owner?"}
+                    label={isAudit ? "Portfolio size or context" : "What work needs an owner?"}
                     required
                     error={errors.context}
                     errorId="err-context"
