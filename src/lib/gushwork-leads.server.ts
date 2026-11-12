@@ -1,5 +1,10 @@
 import { createHash, timingSafeEqual } from "node:crypto";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import {
+  compareStoredEnvelope,
+  recordWorkflowInbox,
+  type InboxOutcome,
+} from "./workflow-inbox.server";
 
 export const GUSHWORK_LEAD_BUCKET = "gushwork-leads";
 export const GUSHWORK_LEAD_MAX_BYTES = 256 * 1024;
@@ -82,10 +87,81 @@ function leadIdFromPayload(payload: unknown, sha256: string): string {
 export type GushworkLeadIngestResult = {
   ok: true;
   duplicate: boolean;
+  conflict: boolean;
+  inbox: InboxOutcome | "unrecorded";
   id: string;
   sha256: string;
   received_at: string;
 };
+
+const GUSHWORK_INBOX_PROVIDER = "gushwork";
+
+async function recordInboxBestEffort(
+  client: Pick<SupabaseClient, "rpc">,
+  input: {
+    sourceId: string;
+    sha256: string;
+    path: string;
+  },
+): Promise<InboxOutcome | "unrecorded"> {
+  try {
+    const recorded = await recordWorkflowInbox(client, {
+      provider: GUSHWORK_INBOX_PROVIDER,
+      sourceId: input.sourceId,
+      sha256: input.sha256,
+      bucket: GUSHWORK_LEAD_BUCKET,
+      path: input.path,
+    });
+    return recorded.outcome;
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "unknown";
+    console.error("workflow inbox unrecorded", message);
+    return "unrecorded";
+  }
+}
+
+async function storedEnvelopeText(
+  data: { text: () => Promise<string> } | null | undefined,
+): Promise<string> {
+  if (!data) {
+    return "";
+  }
+  try {
+    return await data.text();
+  } catch {
+    return "";
+  }
+}
+
+async function resultForExistingObject(
+  client: ServiceClient,
+  args: {
+    path: string;
+    id: string;
+    sha256: string;
+    received_at: string;
+    storedText: string;
+  },
+): Promise<GushworkLeadIngestResult> {
+  const comparison = args.storedText
+    ? compareStoredEnvelope(args.storedText, args.sha256)
+    : "unreadable";
+  const inbox = await recordInboxBestEffort(client, {
+    sourceId: args.id,
+    sha256: args.sha256,
+    path: args.path,
+  });
+  const conflict = comparison !== "same" || inbox === "conflict";
+  return {
+    ok: true,
+    duplicate: !conflict,
+    conflict,
+    inbox,
+    id: args.id,
+    sha256: args.sha256,
+    received_at: args.received_at,
+  };
+}
 
 export async function ingestGushworkLeadRaw(
   raw: string,
@@ -120,7 +196,14 @@ export async function ingestGushworkLeadRaw(
 
   const existing = await client.storage.from(GUSHWORK_LEAD_BUCKET).download(path);
   if (existing.data && !existing.error) {
-    return { ok: true, duplicate: true, id, sha256, received_at };
+    const storedText = await storedEnvelopeText(existing.data);
+    return resultForExistingObject(client, {
+      path,
+      id,
+      sha256,
+      received_at,
+      storedText,
+    });
   }
 
   const uploaded = await client.storage.from(GUSHWORK_LEAD_BUCKET).upload(path, body, {
@@ -129,12 +212,29 @@ export async function ingestGushworkLeadRaw(
   });
   if (uploaded.error) {
     if (/already exists|duplicate|resource already/i.test(uploaded.error.message)) {
-      return { ok: true, duplicate: true, id, sha256, received_at };
+      const raced = await client.storage.from(GUSHWORK_LEAD_BUCKET).download(path);
+      const storedText = await storedEnvelopeText(raced.data);
+      return resultForExistingObject(client, {
+        path,
+        id,
+        sha256,
+        received_at,
+        storedText,
+      });
     }
     throw uploaded.error;
   }
 
-  return { ok: true, duplicate: false, id, sha256, received_at };
+  const inbox = await recordInboxBestEffort(client, { sourceId: id, sha256, path });
+  return {
+    ok: true,
+    duplicate: false,
+    conflict: false,
+    inbox,
+    id,
+    sha256,
+    received_at,
+  };
 }
 
 export function gushworkLeadStatusPage(): string {

@@ -53,6 +53,15 @@ async function handlePost(request: Request): Promise<Response> {
 
   try {
     const result = await ingestGushworkLeadRaw(buf.toString("utf8"), contentType);
+    if (result.conflict) {
+      return json(409, {
+        ok: false,
+        error: "id_conflict",
+        id: result.id,
+        sha256: result.sha256,
+        inbox: result.inbox,
+      });
+    }
     return json(result.duplicate ? 200 : 201, result);
   } catch (err) {
     const message = err instanceof Error ? err.message : "ingest_failed";
