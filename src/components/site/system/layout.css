@@ -1,0 +1,44 @@
+/* Alignment and narrative spacing. Components choose their composition. */
+.v-container {
+  width: 100%;
+  max-width: var(--v-layout-max);
+  margin-inline: auto;
+  padding-inline: var(--v-layout-gutter);
+}
+.v-section {
+  padding-block: var(--v-layout-section);
+}
+.v-section-intro {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--v-layout-gap);
+  align-items: end;
+}
+.v-section-intro > p {
+  color: var(--v-text-secondary);
+}
+
+
+.v-section--compact { padding-block: var(--v-layout-section-compact); }
+.v-section--feature { padding-block: var(--v-layout-section-feature); }
+.v-grid {
+  --v-grid-columns: var(--v-layout-columns);
+  display: grid;
+  grid-template-columns: repeat(var(--v-grid-columns), minmax(0, 1fr));
+  gap: var(--v-layout-column-gap);
+}
+.v-grid > * { min-width: 0; }
+.v-span-half { grid-column: span calc(var(--v-grid-columns) / 2); }
+.v-span-full { grid-column: 1 / -1; }
+@media (max-width: 800px) {
+  .v-section-intro { grid-template-columns: 1fr; gap: var(--v-space-5); }
+}
+@media (max-width: 599px) {
+  .v-span-half { grid-column: 1 / -1; }
+}
+/* Nested specimens and reusable compositions adapt to their own available width. */
+@container (max-width: 839px) { .v-grid { --v-grid-columns: 8; } }
+@container (max-width: 599px) {
+  .v-grid { --v-grid-columns: 4; }
+  .v-span-half { grid-column: 1 / -1; }
+}

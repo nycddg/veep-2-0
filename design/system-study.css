@@ -21,10 +21,12 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .vs-themes.vs-single {
-  grid-template-columns: minmax(0, 800px);
+  grid-template-columns: minmax(0, var(--v-layout-max));
   justify-content: center;
 }
 .vs-theme {
+  min-width: 0;
+  container-type: inline-size;
   padding: var(--v-space-7) var(--v-layout-gutter);
 }
 .vs-theme > header > h2 {
@@ -57,11 +59,44 @@
   margin-top: var(--v-space-2);
   overflow-wrap: anywhere;
 }
-.vs-type-display {
-  font-size: clamp(2.5rem, 3.5vw, 4rem);
-  line-height: 1.08;
-  letter-spacing: var(--v-tracking-display);
-  font-weight: 500;
+.vs-theme .v-display,
+.vs-theme .v-page-title {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+.vs-reading {
+  margin-block: var(--v-space-6);
+}
+.vs-reading > p + p {
+  margin-top: var(--v-space-4);
+}
+.vs-figures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--v-space-5);
+}
+.vs-figures .v-metric {
+  font-size: clamp(2.5rem, 7cqi, 5rem);
+  margin-block: var(--v-space-4);
+}
+.vs-price > span {
+  display: block;
+}
+.vs-price > span:first-child {
+  margin-top: var(--v-space-4);
+  font: 400 var(--v-type-caption)/1.5 var(--v-font-label);
+}
+.vs-impact {
+  margin-top: var(--v-space-5);
+  padding: var(--v-space-5);
+  background: var(--v-surface-impact);
+  color: var(--v-on-impact);
+}
+.vs-impact > p + p {
+  margin-top: var(--v-space-4);
+}
+.vs-grid-demo > .vs-tonal {
+  margin-top: 0;
 }
 .vs-field-demo {
   display: grid;
@@ -109,14 +144,36 @@
   background: var(--v-surface-panel);
   border-radius: var(--v-shape-panel);
 }
-.vs-profile {
-  max-width: 280px;
+.vs-profiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 280px));
+  gap: var(--v-space-4);
+  align-items: start;
+}
+.vs-profiles h3 {
+  overflow-wrap: break-word;
 }
 .vs-motion {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--v-space-4);
   margin-block: var(--v-space-5);
+}
+.vs-static-relationships {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--v-space-5);
+  margin-block: var(--v-space-6);
+}
+@container (max-width: 599px) {
+  .vs-static-relationships {
+    grid-template-columns: 1fr;
+  }
+}
+@container (max-width: 339px) {
+  .vs-profiles {
+    grid-template-columns: minmax(0, 280px);
+  }
 }
 @media (max-width: 800px) {
   .vs-themes {

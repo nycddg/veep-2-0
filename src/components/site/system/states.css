@@ -1,0 +1,29 @@
+/* Focus remains independent of hover, active and selected styling. */
+:is(
+  .v-action,
+  .v-text-link,
+  .v-icon-button,
+  .v-nav,
+  .v-footer a,
+  .v-disclosure summary,
+  .v-input
+):focus-visible,
+.ve-system :focus-visible,
+.v-site-chrome :focus-visible {
+  outline: var(--v-focus-width) solid var(--v-focus);
+  outline-offset: var(--v-focus-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ve-system *,
+  .v-site-chrome *,
+  .v-action,
+  .v-text-link > span {
+    transition-duration: 0.01ms !important;
+  }
+  .v-action:active,
+  .v-text-link:hover > span {
+    transform: none !important;
+  }
+}
+

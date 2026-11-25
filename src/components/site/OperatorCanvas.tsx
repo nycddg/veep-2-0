@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import headshotAsset from "@/assets/operator-headshot.png.asset.json";
 import { useInView } from "./useInView";
+import { TrustedByTicker } from "./LogoWall";
 
 /**
  * OperatorCanvas — homepage signature (D2 / Phase 3).
- * Locks: decorative lines kept · no match % · no float · matrix sm+ only · labels −10%.
+ * Locks: decorative lines kept · bars + percents · no float · matrix sm+ only · labels −10%.
  * C1 bar fill once · C2 selected-for-the-work card · C3 16/9 · C4 no mobile matrix.
  */
 const MATRIX = [
-  { label: "Functional depth", right: "Role" },
-  { label: "Business model", right: "Model" },
-  { label: "Industry experience", right: "Sector" },
-  { label: "Company stage", right: "Stage" },
+  { label: "Functional Depth", pct: 97 },
+  { label: "Business Model Fluency", pct: 95 },
+  { label: "Industry Expertise", pct: 98 },
+  { label: "Life Stage Experience", pct: 100 },
 ] as const;
 
 function MatchMatrixCard({
@@ -26,20 +27,24 @@ function MatchMatrixCard({
       className={`match-matrix-card rounded-[6px] bg-[color:oklch(0.225_0.024_258)]/95 backdrop-blur-xl p-4 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.55)] light:shadow-[0_16px_40px_-18px_rgba(26,31,58,0.28)] text-left ${className}`}
     >
       <p className="eyebrow mb-4 !text-[10px] text-center !text-[color:oklch(0.98_0_0)]">
-        Selected for the work
+        Assigned Operating Partner
       </p>
       <div className="space-y-2.5">
         {MATRIX.map((row, i) => (
           <div key={row.label}>
             <div className="flex justify-between items-baseline gap-2 text-[10px] text-stone mb-1">
               <span className="min-w-0 text-left leading-snug">{row.label}</span>
-              <span className="shrink-0">{row.right}</span>
+              <span className="shrink-0 tabular-nums">{row.pct}%</span>
             </div>
             <div className="h-[3px] w-full rounded-full bg-white/10 light:bg-ink/10 overflow-hidden">
               <div
-                className="h-full rounded-full bg-accent-coral"
+                className={
+                  row.pct === 100
+                    ? "h-full rounded-full bg-accent-coral shadow-[0_0_10px_color-mix(in_oklab,var(--accent-coral)_45%,transparent)]"
+                    : "h-full rounded-full bg-accent-coral"
+                }
                 style={{
-                  width: animate ? "100%" : "0%",
+                  width: animate ? `${row.pct}%` : "0%",
                   transition: `width 700ms cubic-bezier(0.16, 1, 0.3, 1) ${i * 90}ms`,
                 }}
               />
@@ -109,11 +114,14 @@ export function OperatorCanvas() {
         </div>
       </div>
 
-      {/* Proof — mt-6 from the photo on mobile; sm+ adds the card hang
-          (-bottom-5) so the gap is card-to-line, not photo-to-line. */}
-      <p className="mt-6 sm:mt-11 text-center mono-label text-cream/80">
-        75+ vetted senior operators · Selected for the job
-      </p>
+      {/* Trusted-by chip ticker — mt-6 from the photo on mobile; sm+ adds
+          the card hang (-bottom-5) so the gap is card-to-ticker. */}
+      <div className="mt-[34px] sm:mt-[54px]">
+        <div className="eyebrow text-center">Trusted by</div>
+        <div className="mt-[38px] relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
+          <TrustedByTicker />
+        </div>
+      </div>
     </div>
   );
 }

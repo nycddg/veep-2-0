@@ -25,12 +25,27 @@
   --v-type-body-large: 1.125rem;
   --v-type-body: 1rem;
   --v-type-caption: 0.875rem;
-  --v-type-label: 0.6875rem;
+  --v-type-label: 0.75rem;
+  --v-type-profile: clamp(1.25rem, 1.1rem + 0.4vw, 1.5rem);
+  --v-type-nav: 0.875rem;
+  --v-type-action: 1rem;
+  --v-type-metric: clamp(2.5rem, 2rem + 4vw, 7rem);
+  --v-weight-body: 400;
+  --v-weight-heading: 500;
+  --v-weight-ui: 500;
   --v-leading-display: 1.04;
+  --v-leading-page: 1.08;
   --v-leading-heading: 1.1;
+  --v-leading-title: 1.2;
+  --v-leading-lead: 1.4;
   --v-leading-body: 1.55;
+  --v-leading-caption: 1.5;
+  --v-leading-label: 1.5;
   --v-tracking-display: -0.055em;
   --v-tracking-heading: -0.035em;
+  --v-tracking-title: -0.025em;
+  --v-tracking-lead: -0.02em;
+  --v-tracking-label: 0.05em;
   --v-space-1: 4px;
   --v-space-2: 8px;
   --v-space-3: 12px;
@@ -45,17 +60,25 @@
   --v-layout-gutter: clamp(20px, 3.35vw, 48px);
   --v-layout-gap: clamp(24px, 4vw, 64px);
   --v-layout-section: clamp(64px, 7.2vw, 104px);
+  --v-layout-section-compact: clamp(32px, 4vw, 64px);
+  --v-layout-section-feature: clamp(80px, 9vw, 128px);
+  --v-layout-columns: 12;
+  --v-layout-column-gap: clamp(16px, 2vw, 32px);
   --v-measure-body: 52ch;
   --v-measure-intro: 42ch;
+  --v-measure-reading: 65ch;
   --v-shape-frame: 0px;
   --v-shape-control: 6px;
   --v-shape-surface: 15px;
+  --v-shape-portrait: 10px;
   --v-shape-panel: 8px;
   --v-shape-round: 999px;
   --v-line-fine: 1px;
   --v-line-active: 2px;
   --v-line-scope: 3px;
   --v-target: 44px;
+  --v-focus-width: 2px;
+  --v-focus-offset: 4px;
   --v-motion-fast: 160ms;
   --v-motion-state: 220ms;
   --v-motion-reveal: 480ms;
@@ -63,6 +86,17 @@
   --v-motion-spatial: cubic-bezier(0.22, 0.8, 0.25, 1);
   --v-motion-home-loop: 12s;
   --v-motion-section: 4.6s;
+}
+
+@media (max-width: 839px) {
+  :root {
+    --v-layout-columns: 8;
+  }
+}
+@media (max-width: 599px) {
+  :root {
+    --v-layout-columns: 4;
+  }
 }
 
 /* System roles. Explicit nested themes also power the paired specimen. */

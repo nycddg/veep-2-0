@@ -9,7 +9,7 @@
  * boxes at 15px radius — system grammar, no new motif.
  */
 
-const work = ["Fundraise", "GTM reset", "Operating issue", "Margin problem"];
+const work = ["Fundraise", "GTM reset", "Operating gap", "Margin leakage", "Key vacancy"];
 
 const routes = [
   {

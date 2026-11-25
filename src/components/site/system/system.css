@@ -1,4 +1,7 @@
 @import "./tokens.css";
+@import "./typography.css";
+@import "./layout.css";
+@import "./states.css";
 @import "./surfaces.css";
 @import "./interactions.css";
 @import "./section-motion.css";
@@ -14,15 +17,6 @@
 .ve-system :is(h1, h2, h3, h4, strong) {
   font-weight: 500;
 }
-.v-container {
-  width: 100%;
-  max-width: var(--v-layout-max);
-  margin-inline: auto;
-  padding-inline: var(--v-layout-gutter);
-}
-.v-section {
-  padding-block: var(--v-layout-section);
-}
 .v-section--tonal {
   background: var(--v-surface-section);
 }
@@ -30,58 +24,12 @@
   color: var(--v-text);
   background: var(--v-surface);
 }
-.v-display {
-  font-size: var(--v-type-display);
-  line-height: var(--v-leading-display);
-  letter-spacing: var(--v-tracking-display);
-}
-.v-heading {
-  font-size: var(--v-type-heading);
-  line-height: var(--v-leading-heading);
-  letter-spacing: var(--v-tracking-heading);
-}
-.v-title {
-  font-size: var(--v-type-title);
-  line-height: 1.2;
-  letter-spacing: -0.025em;
-}
-.v-lead {
-  font-size: var(--v-type-lead);
-  line-height: 1.35;
-  letter-spacing: -0.02em;
-}
-.v-body {
-  font-size: var(--v-type-body);
-  max-width: var(--v-measure-body);
-}
-.v-body-large {
-  font-size: var(--v-type-body-large);
-  max-width: var(--v-measure-body);
-}
-.v-caption {
-  font-size: var(--v-type-caption);
-  line-height: 1.5;
-}
-.v-label {
-  font: 400 var(--v-type-label)/1.5 var(--v-font-label);
-  letter-spacing: 0.05em;
-}
 .v-muted {
   color: var(--v-text-secondary);
 }
 .v-signal {
   color: var(--v-signal);
 }
-.v-section-intro {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: var(--v-layout-gap);
-  align-items: end;
-}
-.v-section-intro > p {
-  color: var(--v-text-secondary);
-}
-
 /* Shared controls own their complete state treatment. */
 .v-header {
   position: sticky;
@@ -248,7 +196,7 @@
   position: relative;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: var(--v-shape-portrait);
   isolation: isolate;
 }
 .v-profile img {
@@ -289,10 +237,6 @@
   --vm-duration: var(--v-motion-home-loop) !important;
 }
 @media (max-width: 800px) {
-  .v-section-intro {
-    grid-template-columns: 1fr;
-    gap: var(--v-space-5);
-  }
   .v-header-inner {
     min-height: 64px;
   }
@@ -300,19 +244,6 @@
     flex-direction: column;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .ve-system *,
-  .v-site-chrome *,
-  .v-action,
-  .v-text-link > span {
-    transition-duration: 0.01ms !important;
-  }
-  .v-action:active,
-  .v-text-link:hover > span {
-    transform: none;
-  }
-}
-
 @media (min-width: 1024px) {
   .v-menu-toggle {
     display: none;

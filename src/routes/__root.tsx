@@ -32,11 +32,11 @@ const orgSchema = {
   name: "Veep",
   legalName: "The Veep Group, LLC",
   description:
-    "Veep places vetted senior operators inside founder-led companies to own critical work. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
+    "Operating partner capacity for companies and funds. Veep defines the work and outcomes, assembles the right team, and owns delivery.",
   url: "https://www.veep.work",
   logo: "https://www.veep.work/assets/og-card.jpg",
   email: "hey@veep.work",
-  slogan: "Senior operators for work that can't wait.",
+  slogan: "Critical work, owned.",
   sameAs: [] as string[],
 };
 
@@ -77,7 +77,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="motion-cta cta-accent inline-flex items-center justify-center rounded-full whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11"
           >
             Try again

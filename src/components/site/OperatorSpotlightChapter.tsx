@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { OperatorSpotlightRail } from "./OperatorSpotlightRail";
+import { ClientStrip } from "./ClientStrip";
 import { spotlightOperators } from "@/lib/spotlight-operators";
 
 /**
@@ -23,10 +24,14 @@ export function OperatorSpotlightChapter({
   headline = "Operators who've held the seat.",
   sub = "Senior leaders who have built teams, run functions, and delivered through change. We select for the work, your business model, and your company stage, with experience and references you can assess.",
   operators = spotlightOperators,
+  ctaTo = "/for-companies",
+  ctaLabel = "For founders",
 }: {
   headline?: string;
   sub?: string;
   operators?: typeof spotlightOperators;
+  ctaTo?: "/for-companies" | "/contact" | "/for-portfolios";
+  ctaLabel?: string;
 }) {
   return (
     <>
@@ -41,17 +46,10 @@ export function OperatorSpotlightChapter({
       </div>
       <OperatorSpotlightRail operators={operators} />
 
-      <p className="mt-8 text-left text-sm text-stone">
-        A few of the 75+ vetted senior operators behind Veep.
-      </p>
-
       {/* Network impact */}
-      <div className="mt-20 md:mt-24">
-        <div className="border-t border-white/10 pt-8 mb-12">
-          <div className="eyebrow">Operator career impact</div>
-        </div>
-
-        <div className="relative">
+      <div className="mt-[30px] md:mt-[46px]">
+        <div className="eyebrow">Operator Impact at companies you admire</div>
+        <div className="mt-[50px] relative">
           <div className="motion-stagger relative grid grid-cols-2 lg:grid-cols-4 gap-y-10">
             {networkImpact.map((m, i) => (
               <div
@@ -81,9 +79,7 @@ export function OperatorSpotlightChapter({
           </div>
         </div>
 
-        <p className="mt-12 mono-label text-right hidden md:block">
-          Aggregated outcomes across our operators' careers.
-        </p>
+        <ClientStrip />
 
         <div className="mt-10 md:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-white/10 pt-8">
           <p className="text-sm text-stone">
@@ -91,10 +87,10 @@ export function OperatorSpotlightChapter({
           </p>
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
             <Link
-              to="/contact"
+              to={ctaTo}
               className="group motion-link inline-flex items-center gap-2 text-sm font-medium text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70"
             >
-              Discuss the work <ArrowRight size={14} className="motion-arrow" />
+              {ctaLabel} <ArrowRight size={14} className="motion-arrow" />
             </Link>
           </div>
         </div>

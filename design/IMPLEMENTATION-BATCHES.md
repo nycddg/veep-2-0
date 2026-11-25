@@ -510,3 +510,47 @@ Render every public interior at desktop/tablet/mobile in both themes. Inspect sc
 Production build, focused ESLint, diff checks and six collision/motion tests pass. Legal text is unchanged; homepage source and existing redirects are unchanged. Partner access now renders a clear unavailable state instead of crashing without local Supabase configuration. Configured sign-in and authenticated portal acceptance remain unverified in this environment; no backend settings changed.
 
 Evidence: `/Users/dave/.codex/visualizations/2026/10/09/01a121b2-13c8-7c22-ad99-ae4b3eaf3595/interior-alignment/`, including `responsive-checks.json`, all 66 screenshots, mobile/tablet/desktop contact sheets, form validation/focus, reduced-motion Funds, and `about-final.png`. Three scoped local commits on `fable/polish`; no push or deployment. Unrelated working changes remain unstaged. Batches 03A–03C complete.
+
+### November homepage wireframe
+
+- The buyer outcomes lead. The wireframe now goes from transaction readiness, revenue growth, and expansion to operating capacity, client proof, then commercial commitment. The process sentence leaves the hero. The offer cards give way to aligned engagement diagrams, and the capacity diagram replaces the former responsibility table.
+- [Wireframe](november-site-outline/Veep-Homepage-Wireframe.html), [desktop view](november-site-outline/Veep-Homepage-Desktop.png), [mobile view](november-site-outline/Veep-Homepage-Mobile.png), and [page brief](november-site-outline/Veep-Net-New-Site-Outline.md). The capacity diagram reads horizontally on desktop and vertically on mobile. It retains complete labels and connections at rest. Client outcomes, offer terms, booking, and the two audience paths remain available in the wireframe.
+- Reviewed the 1280px and 390px static compositions. The script checks covered outcome selection, desktop and mobile animation direction, replay, and reduced-motion and unavailable-animation behavior. Checked the commercial values, links, and detail targets. The production build passed. Browser validation of the wireframe remains pending.
+
+### November homepage proof, writing, and agent view
+
+- Opened more space between chapters. Added a five-client strip using the established client list, official Dieux and VeroSkills marks where available, and text for remaining clients. Put client voice in its own spread with existing Atomic Audio and VeroSkills quotes and attribution.
+- Replaced the draft editorial shelf with two published Zero to Something issues, the archive link, and a separate subscription action to the existing Mailchimp destination. Refreshed the public agent index and Markdown overview and linked the overview from the site and prototype footers.
+- Reviewed 1280px and 390px static compositions with client names readable in the offline view. Checked page sections, preview links, book and subscribe destinations, pricing parity, and build output for the agent files. Production build passed. Browser validation of the wireframe and its remote wordmark remains pending.
+
+### November content revision
+
+Sharpened the new draft’s promise around taking on the next priority while the team keeps running the business. The software studio now leads the proof chapter, with four expanded company cases available from the existing index. The company preview gives buyers named operator experience and an illustrative Agent Teams workflow. The fund preview explains one-company mandates, Portfolio Roster, and the capacity audit. The pricing preview adds the approved start and fit terms alongside the existing fees. Client quotes and published field notes retain their original attribution and destinations.
+
+Scope covers the [homepage draft](november-site-outline/Veep-Homepage-Wireframe.html), the [site outline](november-site-outline/Veep-Net-New-Site-Outline.md), and `public/llms.txt` and `public/llms-full.txt`. The outline includes a draft field note on when a sales channel has earned a permanent team. It also records the permissions and measurement details to confirm before publishing the expanded cases.
+
+The production build passed and packages both agent files. Static checks verified all eleven preview targets, case and pricing content, and booking and audit destinations. The existing CSS and scripts passed byte-for-byte comparison. Browser rendering remains pending because the workspace denied Chromium’s process registration.
+
+### November interior wireframes
+
+The [homepage wireframe](november-site-outline/Veep-Homepage-Wireframe.html) now links to 13 standalone interiors. Work uses a buyer-job index and deliverable examples. Companies leads from situations and client proof into responsibilities and engagement choices. Funds pairs a branching mandate diagram with a capacity audit excerpt and separate company evidence. Four case pages carry forward the November case drafts. Pricing, About, Writing, the operator application, and Contact complete the review journey.
+
+The homepage’s modal previews moved into full pages. Its outcome and engagement motion code matches the previous draft. The interiors use shared responsive styles. The fund diagram stacks vertically and pricing preserves visible field labels at narrow widths. The two form previews demonstrate required fields and completion locally. Privacy and Terms use the established site destinations.
+
+The production build passed. Static verification covered 14 pages and 319 local link, anchor, and asset references, as well as pricing and case figures, booking destinations, and form data handling. Browser rendering remains unverified in this workspace.
+
+### November homepage work samples
+
+Combined the audience and capacity chapters in the [homepage wireframe](november-site-outline/Veep-Homepage-Wireframe.html). The outcome selector now shows three illustrative work samples. The forecast table identifies a revised assumption, the channel readout shows where to spend sales time, and the pilot plan shows when to commit a team. Each places the operating partner’s judgment beside the work and gives the client a decision they can make.
+
+The studio case now leads with 66% less CEO time spent on operations, followed by the delivery changes, 25% higher project gross margins, and three pilot clients for the new practice. The case page, case index, Companies page, and agent summary carry the same emphasis. The seed round, monthly close, and attributed quotes sit beside or below the featured story. Sprint, Operator, and Pod follow proof with their existing terms.
+
+The examples stack above their annotations on smaller screens and render in full when scripts are unavailable. Reduced-motion settings suppress the decision highlight. The build passed. Static checks covered all offline destinations, proof order, and pricing. Script checks covered the default selection, restored selections, and switching among all three examples. Browser rendering remains unverified in this workspace.
+
+### November Home and Work compositions
+
+Recomposed Home as a sequence of a parallel-work hero, client strip, illustrated outcomes, sticky work display, asymmetric proof, a full-width type break, engagement comparison, copyable mandate brief, illustrated editorial feature, and grouped footer. The existing samples now open beneath their labels on smaller screens. The supporting proofs and attributed quotes sit inside the evidence spread. The amount and unit for each engagement still appear after proof.
+
+Rebuilt Work as an anchored catalog. The four categories lead with different exhibits, including a forecast table, a channel readout paired with a pilot callout, a measured close timeline, and a vertical leadership handover with an operator spotlight. Capability rows and links connect the exhibits to cases, ownership, and terms.
+
+Scope covers the standalone Home and Work previews, their styles, the site outline, and the refreshed offline preview with all 16 views. The production build, internal links, commercial terms, work selector logic, and clipboard success and fallback checks passed. The workspace denied Chromium process registration, so rendered viewport and motion checks remain open.

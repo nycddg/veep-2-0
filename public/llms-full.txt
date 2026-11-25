@@ -1,44 +1,62 @@
-# Veep — full summary for AI systems
+# Veep for agents
 
-Veep (The Veep Group, LLC) places vetted senior operators inside founder-led and investor-backed companies to own critical work that cannot wait for a permanent hire.
+> Be ready for the deal. Grow revenue. Expand the business. Veep brings in senior operators so founders, funds, and business teams can make the next move while their teams keep running the business.
 
-## Positioning
+## Who Veep serves
 
-- Public: invite-only network of operating partners
-- Internal: operating partner platform
-- Not: self-serve marketplace, resume broker, consulting firm, body shop, fractional marketplace branding
+- Founders preparing for a transaction while their team keeps serving customers.
+- Fund partners putting operating capacity behind a portfolio company's next move or planning coverage across companies.
+- Business teams opening a new revenue channel, launching an offer, or moving into a market while continuing to deliver against the plan.
 
-## Proof (public, approved)
+## Outcomes
 
-- 75+ vetted senior operators
-- Matched in 72 hours
-- Deployed in under 10 days
-- 30-day fit guarantee
-- 95% match success rate (company-verified public claim)
+- Transaction readiness: build a defensible financial model, document assumptions, and prepare for diligence questions.
+- Revenue growth: work the first accounts in a new or stalled channel and establish where to invest next.
+- Expansion: test a new offer, channel, or market and learn what it takes to deliver before committing a permanent team.
 
-## Engagement models
+## Operating capacity
 
-1. Advisory — senior judgment for high-stakes decisions (from $3k/mo)
-2. Sprint — time-boxed scoped outcome (from $25k/scope)
-3. Operator — embedded ownership of a function or priority (from $15k/mo)
-4. Pod — coordinated multi-operator program (from $30k/mo)
-5. Portfolio Roster — retained capacity for PE/family offices/holdcos ($75k/year + SOW usage)
+A lead operating partner runs the agreed work and coordinates contributors. Veep governs scope, quality, escalation, and continuity. The client retains business decisions and approvals. Specialist partners and agents can support the agreed work where useful. Veep’s network includes 75+ operators. Individual availability and scope are confirmed for each engagement.
 
-## Ideal buyers
+## Ways to engage
 
-- Founders/CEOs with urgent work and no owner
-- PE / family office / holdco operating partners needing portco coverage
-- Companies bridging interim gaps while searching for permanent hires
+| Engagement | Starting price or fee | Scope |
+|---|---|---|
+| Advisory | From $3,000/month | Senior input on a decision. The client team executes. |
+| Sprint | From $25,000 per scope | A lead carries a defined assignment through handoff, typically in 4–12 weeks. |
+| Operator | From $15,000/month | An embedded operating partner owns an agreed function or job. |
+| Pod | From $30,000/month | One lead brings specialists together for cross-functional delivery. |
+| Agent Teams | Individually scoped | Defined recurring work with operator review and technical oversight. The client retains approval rights. |
+| Portfolio Roster | $75,000/year retainer | Planning and priority access. Company engagements are separately scoped and billed at preferred rates. |
 
-## Primary URLs
+For operating engagements, Veep’s start terms are “Scoped in 72 hours. Started in under 10 days.” The agreed scope sets delivery timing. The founder conversation and operator matching are free. There are no placement or setup fees. You only pay once an engagement is signed.
 
-- https://www.veep.work/
-- https://www.veep.work/pricing
-- https://www.veep.work/for-portfolios
-- https://www.veep.work/faq
-- https://www.veep.work/contact
-- https://www.veep.work/join
+Operator fit: “If the operator isn't right within the first 30 days, we swap them or you walk, with no fee owed for the remaining term.” [See pricing and terms](https://www.veep.work/pricing#tiers).
 
-## Contact
+## For funds
 
-hey@veep.work
+- **One company priority.** A company can commission a single mandate for a transaction, leadership gap, or integration. The company and Veep agree the scope and fees. Company leadership retains decisions and approvals.
+- **Portfolio Roster.** The $75,000/year retainer covers planning and priority matching, with quarterly reviews and an annual refresh. Each company engagement is scoped and billed separately at preferred rates. Veep confirms operator fit and availability for each scope.
+- **Portfolio Capacity Audit.** A 2–3 week audit looks ahead 6–12 months and maps the priority, timing, capacity gap, and recommended next step for each company. [Discuss a capacity audit](https://www.veep.work/contact?intent=audit).
+
+## Selected work
+
+- **Software studio expansion.** The CEO spent 66% less time on operations. Veep’s fractional COO strengthened project scoping and delivery. Project gross margins rose 25%, and the studio launched an AI practice that secured three pilot clients and a $2M+ prospective pipeline.
+- **B2B SaaS seed round.** The company closed its first institutional round in six weeks, raising $6M against a $4M target. Veep’s fractional CFO built the three-year model, strengthened unit-economic reporting, and supported the founder through diligence.
+- **Veterinary group monthly close.** The group reduced its monthly close from about 25 days to eight. Veep’s fractional CFO prioritized accounting and reporting ahead of an ERP project and supported acquisition integration while the CEO led fundraising.
+- **Industrial services audit.** A major debt facility raised reporting requirements. Veep’s fractional CFO led a family-owned industrial services company’s first formal audit and NetSuite implementation and strengthened budgeting, liquidity planning, and lender reporting.
+
+[See selected company work](https://www.veep.work/for-companies#proof).
+
+## Official links
+
+- [Homepage](https://www.veep.work/)
+- [Companies](https://www.veep.work/for-companies)
+- [Funds](https://www.veep.work/for-portfolios)
+- [Pricing](https://www.veep.work/pricing#tiers)
+- [FAQ](https://www.veep.work/faq)
+- [Contact](https://www.veep.work/contact)
+- [Book an intro call](https://schedule.fillout.com/t/3AddME1CYfus)
+- [Zero to Something issue archive](https://us19.campaign-archive.com/home/?u=37a4f019ed5c8b493097f1afc&id=5f7f3b4299)
+- [Subscribe to Zero to Something](https://mailchi.mp/veep/zero-to-something-newsletter)
+- Email: [hey@veep.work](mailto:hey@veep.work)

@@ -97,6 +97,9 @@ export function SiteFooter() {
             © {new Date().getFullYear()} The Veep Group, LLC. All rights reserved.
           </p>
           <p className="v-caption">An operating partner platform.</p>
+          <a href="/llms-full.txt" type="text/plain" className="v-text-link">
+            For agents
+          </a>
         </div>
       </div>
     </footer>

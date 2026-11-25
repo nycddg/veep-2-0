@@ -1,0 +1,191 @@
+{
+  "archive_path": "/Users/dave/Downloads/material3-guide.zip",
+  "archive_sha256": "f5a5a047bb2b216e7ca8ce7c59d9442ff2a82db9e51e7aa7aadfa69d5462eb20",
+  "guide_access_date": "2026-10-09",
+  "site_content_build": "2026-09-23_06-10-05",
+  "token_database_version": "38.2.9",
+  "imported_on": "2026-10-09",
+  "policy": "Unmodified curated source documents. Reference only; Veep brief governs. Raw captures and unrelated component material remain in the source archive.",
+  "files": [
+    {
+      "path": "00-README.md",
+      "bytes": 8835,
+      "sha256": "ab4067c8834e4afcfcc0f0050047177428fbd5caaac0c5af84aa34b34b2d86a1"
+    },
+    {
+      "path": "01-material-design-overview.md",
+      "bytes": 76215,
+      "sha256": "d01562165938ee7a466c6262af422cdcc5e6bdb9c50f48b216568b5a281cd015"
+    },
+    {
+      "path": "02-foundations.md",
+      "bytes": 166288,
+      "sha256": "08d9eb08337da4ab039c54c2b691216e8bf6a76ca0353cd13b8bda928ed041d1"
+    },
+    {
+      "path": "03-color.md",
+      "bytes": 87099,
+      "sha256": "30848cc02f543141940a26d7a21d0d60d6e4d65c5a6e7311722f8c11488613b7"
+    },
+    {
+      "path": "04-typography.md",
+      "bytes": 37076,
+      "sha256": "4f8b0219b995484f7cc88daa95d1e99f349f2d7ac81dda19ab58c6c7024b04a5"
+    },
+    {
+      "path": "05-shape.md",
+      "bytes": 14443,
+      "sha256": "1f0dc8a3dfba57813b88924a10dd2086d1bfd53f7958ea9487c548bb2f2c00ba"
+    },
+    {
+      "path": "06-motion.md",
+      "bytes": 47468,
+      "sha256": "10df3ce2fd63230427874ef6241ba409761363ad273bc9de60185e636b347daf"
+    },
+    {
+      "path": "07-layout-adaptive.md",
+      "bytes": 86922,
+      "sha256": "3959d19be03f18e8d67ac8d17e01452d2abee480a105ca3b05b8990894fa03a1"
+    },
+    {
+      "path": "08-accessibility.md",
+      "bytes": 48149,
+      "sha256": "acb7035308220f5e32c61278edb7dfefbe842ad94401c83db57b20c59c692bb3"
+    },
+    {
+      "path": "10-patterns-interaction.md",
+      "bytes": 37569,
+      "sha256": "907e24025865349cbf58ad9353645420d46c1a0f64a8847858f8aa89e784bfc3"
+    },
+    {
+      "path": "11-design-tokens.md",
+      "bytes": 30132,
+      "sha256": "915b7d7af52e5d11310d2a7cd0c0cef0a8c4bfbd9f442e665b59a3abacbcfca9"
+    },
+    {
+      "path": "13-repositories-implementation.md",
+      "bytes": 84609,
+      "sha256": "65eb1ef0335fbba9b3d8a80032e68117b1bf6c295a188dbcabd2367554579e0a"
+    },
+    {
+      "path": "15-source-map.md",
+      "bytes": 90711,
+      "sha256": "d73cd2020f0f26a888bb02d67d013b46cdcbf545604ba85df0ab55fa5df7bc75"
+    },
+    {
+      "path": "16-coverage-audit.md",
+      "bytes": 9142,
+      "sha256": "1c7f06eb14b5586652836eaf6e3bb657b8c95d17d89bcc0160b3cb4474dbf461"
+    },
+    {
+      "path": "MATERIAL_3_AGENT_INSTRUCTIONS.md",
+      "bytes": 53176,
+      "sha256": "bfca9a67e7913966b02975efae1e115008c7fccaf51de0b1275e660263269b0c"
+    },
+    {
+      "path": "09-components/00-index.md",
+      "bytes": 6991,
+      "sha256": "1c5316d4dde693c7b7801605c8d88af87c525786f80d9ae7d6ffcdd83238d41e"
+    },
+    {
+      "path": "09-components/all-buttons.md",
+      "bytes": 4991,
+      "sha256": "3751ba48ed126049fdf9ef92442a9512227929773997fd763f7f97af345fbf83"
+    },
+    {
+      "path": "09-components/buttons.md",
+      "bytes": 32792,
+      "sha256": "b0788ee15b81776f445fe369576a69f25ff0049fbb87529b5419e764a5688c2c"
+    },
+    {
+      "path": "09-components/icon-buttons.md",
+      "bytes": 26334,
+      "sha256": "d9b7b73f792efef9a04b22666bb304fe10b2e09e34ad45e707358c7bc0ad8c27"
+    },
+    {
+      "path": "09-components/text-fields.md",
+      "bytes": 26825,
+      "sha256": "e7ffcda6341ec692dfc695f54dc7a2720a85191ad5fc30c42ec8f29270f46110"
+    },
+    {
+      "path": "09-components/checkbox.md",
+      "bytes": 12172,
+      "sha256": "b835290cf3669fbcc6cfefaa27d5bd8e77eb3cde11e8b5327e5787a586aa766e"
+    },
+    {
+      "path": "09-components/radio-button.md",
+      "bytes": 13202,
+      "sha256": "de504aa4e15f8c811ac0a3c1a7cc28fb603e7b14414c1a86e1c9497a7e9483ea"
+    },
+    {
+      "path": "09-components/switch.md",
+      "bytes": 16252,
+      "sha256": "709df447e123d5805f6d692c9443959427ae84e4b62c4e747f27def488384216"
+    },
+    {
+      "path": "09-components/tabs.md",
+      "bytes": 20999,
+      "sha256": "d640ab3455837ef691eaeaccd2b7911e35b215eaaf1bb46e7ae0cc3acebbb281"
+    },
+    {
+      "path": "09-components/navigation-drawer.md",
+      "bytes": 24622,
+      "sha256": "d220a352cc5fa534e85b893711c707a21c4ecc178378293bab23f8233a810b5d"
+    },
+    {
+      "path": "09-components/navigation-bar.md",
+      "bytes": 28145,
+      "sha256": "b7bb05701052cfbf72d59127313d857b19523673270aa9f8c1f39eccee9cd6aa"
+    },
+    {
+      "path": "09-components/navigation-rail.md",
+      "bytes": 30745,
+      "sha256": "960b8067a25b0bb20a5680e2fbc048667a4ff3389688fd31f67f7e329c75ea6d"
+    },
+    {
+      "path": "09-components/carousel.md",
+      "bytes": 26148,
+      "sha256": "db17c167771f3e6a3d6027294ab3f11f647e97edad7ee10b665dcade9238e506"
+    },
+    {
+      "path": "tokens/system-color.md",
+      "bytes": 8819,
+      "sha256": "b94cd076a4c1e7e4b766e6fe55e6593154c3eb186d86d345f7d7fa451f7666c5"
+    },
+    {
+      "path": "tokens/ref-palette.md",
+      "bytes": 4586,
+      "sha256": "d5420fa25c605fd7807a892da7624da19e4f9cca96ca347650061f27e5f0f0f1"
+    },
+    {
+      "path": "tokens/system-typography.md",
+      "bytes": 180568,
+      "sha256": "38fd410c05d9178dc0aa463394d4ca98f3106d3151f98987f7c605874f671398"
+    },
+    {
+      "path": "tokens/system-shape.md",
+      "bytes": 3725,
+      "sha256": "f56a6c9b406ff898a02bc767f6f92938aef7b049c95dd805dc5430cfcdfdef70"
+    },
+    {
+      "path": "tokens/system-motion.md",
+      "bytes": 9277,
+      "sha256": "fe7c73915bda703e3b0ad12b20f69bc285abb0def59c64e5512ef02c3817c131"
+    },
+    {
+      "path": "tokens/system-elevation.md",
+      "bytes": 1811,
+      "sha256": "88764a1298deb6ff9692c7aab0f43656286e41652b9c05fdc9b9a14e68ce0a3f"
+    },
+    {
+      "path": "tokens/system-state.md",
+      "bytes": 2274,
+      "sha256": "b1b3658cd78f341c4829a1b114d244d40e558d84e2cbf6d1d8163ef89254a883"
+    },
+    {
+      "path": "tokens/system-spacing.md",
+      "bytes": 2554,
+      "sha256": "3b142eb033cd9dfe1c25c8e79d1f732c5e01e6e8fd6d54bb9942fc4b137d2205"
+    }
+  ]
+}

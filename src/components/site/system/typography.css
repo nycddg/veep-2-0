@@ -1,0 +1,67 @@
+/* Veep communication roles. These are custom values, not the Material typescale. */
+.v-display,
+.v-page-title,
+.v-heading,
+.v-title,
+.v-profile-name {
+  font-family: var(--v-font-body);
+  font-weight: var(--v-weight-heading);
+}
+.v-display {
+  font-size: var(--v-type-display);
+  line-height: var(--v-leading-display);
+  letter-spacing: var(--v-tracking-display);
+}
+.v-page-title {
+  font-size: var(--v-type-page);
+  line-height: var(--v-leading-page);
+  letter-spacing: var(--v-tracking-heading);
+}
+.v-heading {
+  font-size: var(--v-type-heading);
+  line-height: var(--v-leading-heading);
+  letter-spacing: var(--v-tracking-heading);
+}
+.v-title {
+  font-size: var(--v-type-title);
+  line-height: var(--v-leading-title);
+  letter-spacing: var(--v-tracking-title);
+}
+.v-profile-name {
+  font-size: var(--v-type-profile);
+  line-height: 1.25;
+  letter-spacing: var(--v-tracking-title);
+}
+.v-lead {
+  font-size: var(--v-type-lead);
+  font-weight: var(--v-weight-body);
+  line-height: var(--v-leading-lead);
+  letter-spacing: var(--v-tracking-lead);
+}
+.v-body,
+.v-body-large,
+.v-caption {
+  font-family: var(--v-font-body);
+  font-weight: var(--v-weight-body);
+}
+.v-body,
+.v-body-large {
+  line-height: var(--v-leading-body);
+  max-width: var(--v-measure-body);
+}
+.v-body { font-size: var(--v-type-body); }
+.v-body-large { font-size: var(--v-type-body-large); }
+.v-caption {
+  font-size: var(--v-type-caption);
+  line-height: var(--v-leading-caption);
+}
+.v-label {
+  font: var(--v-weight-body) var(--v-type-label)/var(--v-leading-label) var(--v-font-label);
+  letter-spacing: var(--v-tracking-label);
+}
+.v-metric {
+  font: var(--v-weight-body) var(--v-type-metric)/1.05 var(--v-font-label);
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+.v-reading { max-width: var(--v-measure-reading); }

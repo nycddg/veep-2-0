@@ -1,41 +1,70 @@
-const clients = [
-  "Atomic Audio",
-  "VeroSkills",
-  "Spring Break",
-  "Dieux",
-  "SipMargs",
-  "Procure Impact",
-  "Substantial",
-  "Fowler Laundry Solutions",
-  "Northstar Vets",
-  "Energy Growth Holdings",
-  "Bandyworks",
-  "Artists & Fleas",
-  "Frequency",
-  "Synthetic Studio",
-  "GUMDAY",
-  "Soundview Medical Supply",
+const operatorsBuilt = [
+  "Industrious",
+  "Morning Brew",
+  "Zocdoc",
+  "Etsy",
+  "Polestar",
+  "Maisonette",
+  "Zipcar",
+  "Ford's Gin",
+  "Moo.com",
+  "Betaworks",
+  "Heavy.com",
+  "IGN",
+  "TaskRabbit",
+  "Refinery29",
+  "New Stand",
+  "American Express",
+  "Verizon",
+  "Citi",
+  "Opencare",
+  "UGE",
+  "frog design",
+  "Deloitte",
+  "?What If! Innovation",
+  "AOL",
+  "The New Republic",
+  "NewsCred",
+  "Facebook",
+  "LVMH",
+  "Macy's",
+  "Accenture",
+  "David Yurman",
+  "MediaLink",
+  "David Zwirner",
+  "Gansevoort Hotel Group",
+  "WeightWatchers",
+  "Verve Mobile",
+  "Big Spaceship",
+  "Pursuit",
+  "Google",
+  "Nifty's",
 ];
 
+const tickerChips = [...operatorsBuilt, "and more"];
+
 /**
- * ClientStrip — static, text-only client proof. Deliberately quieter than the
- * operator LogoWall marquee (which signals pedigree, not purchases): no
- * motion, no logos, smaller type, unambiguous "clients" framing.
+ * ClientStrip — operator work-history ticker. Desktop-only, full width
+ * under Operator career impact. Uses the existing .marquee utility.
  */
 export function ClientStrip() {
   return (
-    <div className="hidden md:block mt-16 md:mt-24 text-center">
-      <div className="eyebrow">Trusted by</div>
-      <div className="mt-8 mx-auto max-w-4xl flex flex-wrap justify-center gap-2">
-        {clients.map((c) => (
+    <div className="hidden md:block mt-10 md:mt-12 relative overflow-hidden">
+      <div
+        className="flex marquee whitespace-nowrap gap-2 items-center"
+        style={{ animationDuration: "55s" }}
+      >
+        {[...tickerChips, ...tickerChips].map((c, i) => (
           <span
-            key={c}
-            className="rounded-[6px] border border-white/10 bg-background px-3.5 py-1.5 text-sm text-cream whitespace-nowrap"
+            key={`${c}-${i}`}
+            className="rounded-[6px] border border-white/10 bg-background px-3.5 py-1.5 text-sm text-cream whitespace-nowrap shrink-0"
           >
             {c}
           </span>
         ))}
       </div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-surface-raised to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-surface-raised to-transparent" />
     </div>
   );
 }

@@ -7,9 +7,10 @@ This repository is the local preview only. Do not touch or deploy `/opt/data/vee
 ## Read and execute
 
 1. Read [LOCKS.md](LOCKS.md) for protected behavior and brand constraints.
-2. Read [design/VEEP-REDESIGN-PLAN.md](design/VEEP-REDESIGN-PLAN.md) for the approved direction, page purposes, dependencies, and acceptance criteria.
-3. Resume the active entry in [design/IMPLEMENTATION-BATCHES.md](design/IMPLEMENTATION-BATCHES.md). Do not start multiple unrelated page batches together.
-4. Use [design/VEEP-DESIGN-SYSTEM.md](design/VEEP-DESIGN-SYSTEM.md) and the existing `src/components/site/system/` implementation. Add to this architecture rather than building a parallel system.
+2. For the November 24 redesign references, open the [Veep Brand Standards index](design/references/veepwebsitenew/index.html) for the brand guidelines, design spec, visual library, motion studies, and offers and pricing. The bundle also includes the [brand system plan](design/references/veepwebsitenew/brand-system-plan.html), [visual range review](design/references/veepwebsitenew/visual-range-review.html), and [standards audit](design/references/veepwebsitenew/standards-audit.md).
+3. Read [design/VEEP-REDESIGN-PLAN.md](design/VEEP-REDESIGN-PLAN.md) for the implementation roadmap, page purposes, dependencies, and acceptance criteria.
+4. Resume the active entry in [design/IMPLEMENTATION-BATCHES.md](design/IMPLEMENTATION-BATCHES.md). Do not start multiple unrelated page batches together.
+5. Use [design/VEEP-DESIGN-SYSTEM.md](design/VEEP-DESIGN-SYSTEM.md) and the existing `src/components/site/system/` implementation for the current codebase. Add to this architecture rather than building a parallel system.
 
 The earlier polish-only mandate and fixed OperatorCanvas/homepage-layout requirements are superseded. Existing components, including the homepage, are inputs to evaluate. They are not visual locks.
 

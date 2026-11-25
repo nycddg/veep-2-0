@@ -20,6 +20,8 @@ Updated 9 October 2026. Dave’s later redesign directions supersede the histori
 
 ## Content and working behavior
 
+- Lead with what the buyer can get done. Show the value to founders, funds, or business teams in concrete terms. Use transaction readiness, revenue growth, and expansion to show what changes for the buyer.
+- Keep outcomes, operating capacity, and engagement terms in that order. Explain people, agents, and partners as capacity available to the accountable operating partner. Use Sprint, Operator, and Pod to explain how to engage that capacity. Delivery mechanics and scoping language belong in supporting copy.
 - Preserve the proposition and substantially approved copy; record small layout-driven edits and removals explicitly. Do not introduce unsupported proof, new service promises, or defensive attribution footnotes.
 - Preserve prices, units, guarantees, commercial responsibilities, example labels, testimonial attribution, legal text, routes, hashes, SEO, analytics, and forms.
 - Per Dave’s latest hero annotation, its actions are **For founders** (`/for-companies`) and **For funds** (`/for-portfolios`). Header and closing **Book intro call** actions retain the existing `BOOKING_URL` and destination behavior. Join’s application action stays on `/join#apply`. Scope links use `/pricing#tiers`, with no self-link on Pricing.
@@ -29,6 +31,7 @@ Updated 9 October 2026. Dave’s later redesign directions supersede the histori
 
 ## Motion and layout
 
+- Use diagrams to make an ownership, dependency, handoff, or scale relationship visible. Use motion to trace a change within that relationship. The resting frame and adjacent copy must convey the same essential information.
 - No homepage layout, old arrow motif, or canvas implementation is locked. Recompose or replace it when it weakens the communication job.
 - Keep diagram relationships semantically legible in static states. The current work-loop concept uses equal-size work circles, one coral mandate, and a scoped path out of the executive center.
 - Prefer existing CSS/SVG and shared lifecycle primitives. Do not add a second animation library, parallax, content hidden behind entry animation, or decorative orbiting objects.

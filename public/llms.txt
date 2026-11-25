@@ -1,35 +1,25 @@
 # Veep
 
-> Veep places vetted senior operators inside founder-led companies to own the work that can't wait. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.
+> Veep brings founders, funds, and business teams senior operating capacity to prepare for transactions, grow revenue, and test expansion while their teams keep running the business.
 
-Veep is an invite-only network of operating partners — not a marketplace, staffing firm, or consulting body shop. Operators embed to own critical work across finance, GTM, operations, product, people, fundraising, and strategy.
+A lead operating partner owns the agreed work. Specialist partners and agents can support the scope where useful. The client keeps its business decisions and approvals.
 
-## Offers (public)
+## For agents
 
-- Advisory — from $3k/month
-- Sprint — from $25k/scope
-- Operator — from $15k/month
-- Pod — from $30k/month
-- Portfolio Roster — $75k/year (PE / family offices / holdcos / multi-company founders; usage billed by SOW)
+- [Full Veep overview](https://www.veep.work/llms-full.txt): Markdown with buyer outcomes, engagement models, starting prices, case results, and contact links.
 
-## Pages
+## Public pages
 
-- [Home](https://www.veep.work/): Model overview, how it works, proof, FAQ
-- [About](https://www.veep.work/about): Founders and operating principles
-- [Pricing](https://www.veep.work/pricing): Engagement pricing and fit guarantee
-- [FAQ](https://www.veep.work/faq): Cost, timing, vetting, roster
-- [For Portfolios](https://www.veep.work/for-portfolios): Portfolio Roster for funds and multi-company operators
-- [Contact](https://www.veep.work/contact): Get in touch / discovery / capacity audit
-- [Join](https://www.veep.work/join): Apply to the operator roster
-- [Meet Veep](https://www.veep.work/meetveep): Leave-behind overview (noindex)
-
-## Contact
-
-- hey@veep.work
-- https://www.veep.work/contact
+- [Home](https://www.veep.work/): Operating partner model and selected work.
+- [For founders and business teams](https://www.veep.work/for-companies): Company engagements and cases.
+- [For funds](https://www.veep.work/for-portfolios): Single-company engagements, Portfolio Roster, and the Portfolio Capacity Audit.
+- [Pricing](https://www.veep.work/pricing#tiers): Engagement terms and starting prices.
+- [FAQ](https://www.veep.work/faq): Fit, timing, and common questions.
+- [Contact](https://www.veep.work/contact): Inquiries and introductions.
 
 ## Optional
 
-- [Privacy](https://www.veep.work/privacy)
-- [Terms](https://www.veep.work/terms)
-- Full narrative: https://www.veep.work/llms-full.txt
+- [Zero to Something](https://mailchi.mp/veep/zero-to-something-newsletter): Veep’s newsletter.
+- [About](https://www.veep.work/about): Founders and operating principles.
+- [Join](https://www.veep.work/join#apply): Apply to the operator network.
+- [Privacy](https://www.veep.work/privacy) and [Terms](https://www.veep.work/terms).
