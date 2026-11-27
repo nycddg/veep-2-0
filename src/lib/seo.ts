@@ -4,7 +4,7 @@
 export const SITE_URL = "https://www.veep.work";
 export const OG_IMAGE_PATH = "/assets/og-card.jpg";
 export const OG_IMAGE_URL = `${SITE_URL}${OG_IMAGE_PATH}`;
-export const OG_IMAGE_ALT = "Veep — senior operators for work that can't wait";
+export const OG_IMAGE_ALT = "Veep | Operating partners for the job to be done";
 
 export function ogImageMeta() {
   return [

@@ -17,9 +17,9 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact | Veep" },
-      { name: "description", content: "Get in touch with Veep. Response within one business day. Matched in 72 hours. Deployed in under 10 days." },
+      { name: "description", content: "Bring Veep the job that matters most. Reply within one business day. Operating engagements scoped in 72 hours and started in under 10 days." },
       { property: "og:title", content: "Contact | Veep" },
-      { property: "og:description", content: "Tell us the moment. We'll match a senior operator who can start in under 10 days." },
+      { property: "og:description", content: "Bring Veep the job that matters most. Reply within one business day. Operating engagements scoped in 72 hours and started in under 10 days." },
       { property: "og:url", content: "https://www.veep.work/contact" },
       ...ogImageMeta(),
     ],
@@ -34,7 +34,8 @@ const outcomeLabels: Record<string, string> = {
   "fix-the-forecast": "Fix the forecast",
   "integrate-the-acquisition": "Integrate the acquisition",
   "unblock-gtm": "Unblock GTM",
-  "ship-the-platform": "Ship the platform",
+  "ship-the-platform": "Expand margins",
+  "expand-margins": "Expand margins",
   "cover-the-seat": "Cover the seat",
   "prep-for-exit": "Prep for exit",
 };
@@ -57,7 +58,7 @@ function Page() {
   const contactSchema = z.object({
     name: z.string().trim().min(1, "Please enter your name.").max(100),
     email: z.string().trim().email("Please enter a valid email.").max(255),
-    context: z.string().trim().min(1, "Please describe the initiative.").max(2000),
+    context: z.string().trim().min(1, "Please describe what needs to move.").max(2000),
     company: z.string().trim().max(200).optional(),
     role: z.string().trim().max(200).optional(),
     timing: z.string().trim().max(50).optional(),
@@ -117,7 +118,7 @@ function Page() {
       setSubmitted(true);
     } catch (err) {
       console.error("Contact form submission failed:", err);
-      setSubmitError("Something went wrong sending your message. Please email hey@veep.work or try again.");
+      setSubmitError("Something went wrong sending your message. Email hey@veep.work or try again.");
     } finally {
       submittingRef.current = false;
       setLoading(false);
@@ -127,18 +128,19 @@ function Page() {
   return (
     <>
       <PageHero
-        eyebrow={isAudit ? "Capacity audit" : "Discovery call"}
-        title={isAudit ? "Map the portfolio's executive risk." : "What critical work doesn't have an owner?"}
+        eyebrow={isAudit ? "Capacity audit" : "Bring us the job"}
+        title={isAudit ? "Find portfolio gaps before they become urgent." : "What move needs to happen next?"}
         sub={
           isAudit
-            ? "A structured audit of leadership risk across your portfolio, with a recommended roster structure per company. Delivered in 2–3 weeks."
-            : "30-minute call. Response within one business day. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee."
+            ? "A 2 to 3 week audit mapping leadership, functional, and workflow capacity across your portfolio, with recommended coverage by company."
+            : "30-minute founder call. Reply within one business day. Operating engagements scoped in 72 hours and started in under 10 days."
         }
-        primaryLabel={isAudit ? "Request an audit" : "Request a call"}
+        primaryLabel={isAudit ? "Request the audit" : "Send inquiry"}
         primaryTo="/contact"
         primaryHash="contact-form"
         secondaryLabel="See how it works"
-        secondaryTo="/how-it-works"
+        secondaryTo="/"
+        secondaryHash="how"
       />
 
       <section id="contact-form" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
@@ -152,16 +154,15 @@ function Page() {
               <ul className="space-y-4">
                 {(isAudit
                   ? [
-                      "Portfolio-wide risk map",
-                      "CFO / COO / GTM coverage assessment",
-                      "Recommended roster structure per company",
-                      "Emergency coverage path",
+                      "Portfolio-wide operating capacity map",
+                      "Finance, GTM, ops, product, and people assessment",
+                      "Recommended mandate shape per company",
+                      "Emergency interim coverage path",
                     ]
                   : [
                       "Reply within 1 business day",
-                      "30-minute diagnostic call",
-                      "Operator shortlist within 72 hours",
-                      "30-day fit guarantee",
+                      "30-minute scoping call with a Veep founder",
+                      "Written scope and lead partner recommendation within 72 hours",
                     ]
                 ).map((i, idx) => (
                   <li key={i} className="flex items-baseline gap-4">
@@ -196,10 +197,10 @@ function Page() {
                     tabIndex={-1}
                     className="mt-6 font-serif font-medium text-xl text-cream tracking-tight focus:outline-none"
                   >
-                    Thanks — we'll be in touch.
+                    Received. We'll be in touch.
                   </h3>
                   <p className="mt-3 text-cream/80 text-sm">
-                    A Veep partner will reach out within one business day.
+                    A Veep partner will follow up within one business day.
                   </p>
                 </div>
               ) : (
@@ -247,7 +248,7 @@ function Page() {
                     </Field>
                   </div>
                   <Field
-                    label={isAudit ? "Portfolio size or context" : "What's the biggest initiative without an owner?"}
+                    label={isAudit ? "Portfolio size or context" : "What outcome needs to move next?"}
                     required
                     error={errors.context}
                     errorId="err-context"
@@ -264,7 +265,8 @@ function Page() {
                     />
                   </Field>
                   <details className="text-sm text-cream/80">
-                    <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none">
+                    <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none inline-flex items-center gap-2 min-h-11">
+                      <span aria-hidden className="text-cream/50">+</span>
                       Add company, role, or timing (optional)
                     </summary>
                     <div className="mt-4 grid gap-4">
@@ -274,8 +276,8 @@ function Page() {
                       </div>
                       <Field label="Timing">
                         <select name="timing" className={inputCls} defaultValue="now">
-                          <option value="now">Immediate — start in weeks</option>
-                          <option value="30-60">Inside 30–60 days</option>
+                          <option value="now">Immediate, start in weeks</option>
+                          <option value="30-60">Inside 30 to 60 days</option>
                           <option value="90">Inside 90 days</option>
                           <option value="explore">Exploring</option>
                         </select>
@@ -303,7 +305,7 @@ function Page() {
                     )}
                   </button>
                   <p className="text-xs text-stone-soft">
-                    By submitting you agree to be contacted by Veep about your inquiry.
+                    By submitting, you agree to be contacted by Veep about your inquiry.
                   </p>
                 </form>
               )}
@@ -316,7 +318,7 @@ function Page() {
 }
 
 const inputCls =
-  "motion-field w-full rounded-[6px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
+  "motion-field w-full rounded-[6px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 aria-invalid:border-accent-coral aria-invalid:ring-1 aria-invalid:ring-accent-coral/40 min-h-11";
 
 function Field({
   label,

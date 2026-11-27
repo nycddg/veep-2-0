@@ -32,11 +32,11 @@ const orgSchema = {
   name: "Veep",
   legalName: "The Veep Group, LLC",
   description:
-    "Veep places vetted senior operators inside founder-led companies to own critical work. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.",
+    "Independent businesses and lean funds hire Veep for senior operators, playbooks, and technology built to grow revenue, expand margins, and withstand scrutiny. Scoped in 72 hours. Started in under 10 days. 30-day guarantee.",
   url: "https://www.veep.work",
   logo: "https://www.veep.work/assets/og-card.jpg",
   email: "hey@veep.work",
-  slogan: "Senior operators for work that can't wait.",
+  slogan: "Operating partners for the job to be done.",
   sameAs: [] as string[],
 };
 
@@ -103,19 +103,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Veep" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", media: "(prefers-color-scheme: dark)", content: "#0b1220" },
-      { name: "theme-color", media: "(prefers-color-scheme: light)", content: "#E4E9F2" },
+      { name: "theme-color", content: "#0b1220" },
       { name: "format-detection", content: "telephone=no" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        // Weights 300/600 were requested but unrenderable under the 500 ceiling — trimmed.
-        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap",
-      },
     ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(orgSchema) },
@@ -196,8 +188,16 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <div className="min-h-screen bg-background text-foreground flex flex-col">
+          {!isPortal && (
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] cta-accent rounded-[6px] px-4 py-2 text-sm font-medium"
+            >
+              Skip to content
+            </a>
+          )}
           {!isPortal && <SiteHeader />}
-          <main className="flex-1 vt-page-main">
+          <main id="main-content" tabIndex={-1} className="flex-1 vt-page-main">
             <Outlet />
           </main>
           {!isPortal && <SiteFooter />}

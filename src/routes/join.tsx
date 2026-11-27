@@ -8,17 +8,17 @@ import { ogImageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/join")({
   head: () => ({
     meta: [
-      { title: "Join Veep | Operator Network" },
+      { title: "Join Veep | Senior Operating Partner Network" },
       {
         name: "description",
         content:
-          "Apply to Veep's invite-only network of senior operators. Own critical work for high-growth companies. Matched in 72 hours. Deployed in under 10 days.",
+          "Apply to join Veep's curated network of senior operating partners. Step into high-stakes mandates backed by proven playbooks, peer operators, and governed AI workflows.",
       },
-      { property: "og:title", content: "Join Veep — Operator roster" },
+      { property: "og:title", content: "Join Veep | Senior Operating Partner Network" },
       {
         property: "og:description",
         content:
-          "Senior operators who embed, build, and deliver. Apply to the roster.",
+          "Apply to join Veep's curated network of senior operating partners. Step into high-stakes mandates backed by proven playbooks, peer operators, and governed AI workflows.",
       },
       { property: "og:url", content: "https://www.veep.work/join" },
       ...ogImageMeta(),
@@ -30,20 +30,20 @@ export const Route = createFileRoute("/join")({
 
 const criteria: readonly { title: string; body: string }[] = [
   {
-    title: "Senior operating experience",
-    body: "Prior seat as a founder, CEO, GM, or C-suite / SVP leader. You've owned outcomes end-to-end, not advised from the sidelines.",
+    title: "Proven executive ownership",
+    body: "Prior seat as a founder, CEO, GM, CFO, COO, CRO, CMO, CTO, CPO, or People leader. You have owned real revenue, margin, or capital outcomes end-to-end.",
   },
   {
-    title: "Built for high impact",
-    body: "You're motivated by hands-on work, not management theater. You want to work with high-growth companies, own meaningful initiatives, win, and move on to the next challenge.\u00a0Prior consulting or interim experience is a plus, but not required.",
+    title: "Built for live execution",
+    body: "You prefer building models, closing deals, and fixing operations over management theater. Prior advisory or interim work is helpful, not required.",
   },
   {
-    title: "Track record in fast-paced environments",
-    body: "Bootstrapped, VC-backed, PE-backed, public — you've delivered under pressure with real constraints and short runway.",
+    title: "Commercial sharpness across stages",
+    body: "Bootstrapped, VC-backed, PE-backed, or family-owned, you know how to read a P&L, make tradeoffs, and build systems that survive after handoff.",
   },
   {
-    title: "References and standards to match",
-    body: "Strong references, a bias to action, and a commitment to the craft. The roster stays small on purpose.",
+    title: "High standards, platform backing",
+    body: "Strong references and a bias for clarity. You bring judgment and leadership; Veep brings scoping, commercial governance, peer specialists, and AI workflow support.",
   },
 ];
 
@@ -60,7 +60,7 @@ const companyTypes = [
 const growthStages = [
   "Seed",
   "Series A",
-  "Series B–C",
+  "Series B-C",
   "Series D+",
   "IPO or equivalent",
   "Buyout",
@@ -96,66 +96,97 @@ function getAllValues(formData: FormData, name: string): string[] {
   return formData.getAll(name).map((v) => String(v));
 }
 
+function normalizeLinkedIn(value: string): string | null {
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  const withScheme = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+  try {
+    const url = new URL(withScheme);
+    if (!/(^|\.)linkedin\.com$/i.test(url.hostname)) return null;
+    if (!url.pathname || url.pathname === "/") return null;
+    return url.toString();
+  } catch {
+    return null;
+  }
+}
+
 function Page() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const submittingRef = useRef(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (submittingRef.current) return;
-    submittingRef.current = true;
-    setLoading(true);
     setError(null);
 
-    try {
-      const form = e.currentTarget;
-      const formData = new FormData(form);
-      const resumeFile = formData.get("resume") as File;
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const fieldErrors: Record<string, string> = {};
+    const firstName = String(formData.get("first_name") ?? "").trim();
+    const lastName = String(formData.get("last_name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const linkedIn = normalizeLinkedIn(String(formData.get("linkedin") ?? ""));
+    const role = String(formData.get("role") ?? "").trim();
+    const resumeFile = formData.get("resume") as File | null;
 
-      if (!resumeFile || resumeFile.size === 0) {
-        throw new Error("Please upload a resume.");
-      }
-      if (resumeFile.size > 10 * 1024 * 1024) {
-        throw new Error("Resume must be smaller than 10 MB.");
-      }
+    if (!firstName) fieldErrors.first_name = "Please enter your first name.";
+    if (!lastName) fieldErrors.last_name = "Please enter your last name.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) fieldErrors.email = "Please enter a valid email.";
+    if (!linkedIn) fieldErrors.linkedin = "Please enter a LinkedIn profile URL.";
+    if (!role) fieldErrors.role = "Please select a role.";
+    if (!resumeFile || resumeFile.size === 0) fieldErrors.resume = "Please upload a resume.";
+    else if (resumeFile.size > 10 * 1024 * 1024) fieldErrors.resume = "Resume must be smaller than 10 MB.";
+
+    if (Object.keys(fieldErrors).length > 0) {
+      setErrors(fieldErrors);
+      const firstKey = Object.keys(fieldErrors)[0];
+      const el = form.elements.namedItem(firstKey) as HTMLElement | null;
+      el?.focus();
+      return;
+    }
+    setErrors({});
+
+    submittingRef.current = true;
+    setLoading(true);
+
+    try {
+      const file = resumeFile as File;
       const resumeType =
-        resumeFile.type ||
-        (resumeFile.name.toLowerCase().endsWith(".pdf")
+        file.type ||
+        (file.name.toLowerCase().endsWith(".pdf")
           ? "application/pdf"
-          : resumeFile.name.toLowerCase().endsWith(".docx")
+          : file.name.toLowerCase().endsWith(".docx")
             ? "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            : resumeFile.name.toLowerCase().endsWith(".doc")
+            : file.name.toLowerCase().endsWith(".doc")
               ? "application/msword"
-              : resumeFile.type);
+              : file.type);
       const allowedTypes = [
         "application/pdf",
         "application/msword",
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       ];
       if (!allowedTypes.includes(resumeType)) {
-        throw new Error("Resume must be a PDF, DOC, or DOCX file.");
-      }
-      const linkedIn = String(formData.get("linkedin") ?? "");
-      if (!/linkedin\.com\//i.test(linkedIn)) {
-        throw new Error("Please enter a valid LinkedIn profile URL.");
+        setErrors({ resume: "Resume must be a PDF, DOC, or DOCX file." });
+        return;
       }
       const resume = {
-        name: resumeFile.name,
+        name: file.name,
         type: resumeType,
-        data: await fileToBase64(resumeFile),
+        data: await fileToBase64(file),
       };
 
       const fractional = String(formData.get("fractional") ?? "");
       await submitApplication({
         data: {
-          firstName: String(formData.get("first_name") ?? ""),
-          lastName: String(formData.get("last_name") ?? ""),
-          email: String(formData.get("email") ?? ""),
-          linkedIn: String(formData.get("linkedin") ?? ""),
+          firstName,
+          lastName,
+          email,
+          linkedIn: linkedIn as string,
           website: String(formData.get("website") ?? ""),
-          role: String(formData.get("role") ?? ""),
+          role,
           ...(fractional === "Yes" || fractional === "No"
             ? { fractionalExperience: fractional as "Yes" | "No" }
             : {}),
@@ -187,13 +218,14 @@ function Page() {
     <>
       <PageHero
         eyebrow="Join Veep"
-        title="An invite-only network on call for the work that cannot wait."
-        sub="Veep represents a small roster of senior operators who embed, build, and deliver. If you're ready to own the work that can't wait for high-growth companies, we want to meet you."
+        title="Real operating authority. Without the org-chart drag."
+        sub="Veep brings together senior operators who want to build stronger, more valuable businesses from the inside. Step into defined mandates backed by Veep playbooks, peer specialists, and governed AI workflows."
         primaryLabel="Apply below"
         primaryTo="/join"
         primaryHash="apply"
         secondaryLabel="See how it works"
-        secondaryTo="/how-it-works"
+        secondaryTo="/"
+        secondaryHash="how"
       />
 
       {/* Who we're looking for */}
@@ -205,11 +237,10 @@ function Page() {
                 Who we're looking for
               </div>
               <h2 className="font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-[1.15] tracking-tight text-balance allow-wrap">
-                A curated roster of business builders.
+                Operators who have held the seat.
               </h2>
               <p className="text-stone text-base leading-relaxed max-w-md">
-                We stay small on purpose. Every operator on the roster has run
-                the seat before and can start inside two weeks.
+                We keep the network curated on purpose. Tell us about a job you have carried from the hard call through live delivery.
               </p>
             </div>
             <ul className="lg:col-span-8">
@@ -246,10 +277,10 @@ function Page() {
               </div>
               <ul className="space-y-4">
                 {[
-                  "We review every application personally",
-                  "Intro conversation with a Veep founder",
-                  "References and roster onboarding",
-                  "Matched to engagements as they come in",
+                  "A Veep founder reviews every application personally",
+                  "Working conversation on the mandates you fit best",
+                  "Reference checks and network onboarding",
+                  "Scoped into live mandates matched to your stage and expertise",
                 ].map((i, idx) => (
                   <li key={i} className="flex items-baseline gap-4">
                     <span className="font-mono text-sm text-accent w-6 shrink-0 tabular-nums">
@@ -262,7 +293,7 @@ function Page() {
                 ))}
               </ul>
               <p className="text-xs text-stone-soft leading-relaxed max-w-xs">
-                Roster spots are limited. We respond to every serious
+                Network seats are selective. We reply to every serious
                 application within one business week.
               </p>
             </div>
@@ -275,33 +306,73 @@ function Page() {
                     Application received.
                   </h3>
                   <p className="mt-3 text-stone text-sm">
-                    A Veep founder will review it and be in touch.
+                    A Veep founder will review your background and follow up directly.
                   </p>
                 </div>
               ) : (
                 <form
                   onSubmit={handleSubmit}
+                  noValidate
                   className="glass-card rounded-[6px] p-5 sm:p-8 grid gap-5"
                 >
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <Field label="First name" required>
-                      <input required name="first_name" className={inputCls} />
+                    <Field label="First name" required error={errors.first_name} errorId="err-first-name">
+                      <input
+                        required
+                        name="first_name"
+                        autoComplete="given-name"
+                        aria-invalid={errors.first_name ? true : undefined}
+                        aria-describedby={errors.first_name ? "err-first-name" : undefined}
+                        className={inputCls}
+                      />
                     </Field>
-                    <Field label="Last name" required>
-                      <input required name="last_name" className={inputCls} />
+                    <Field label="Last name" required error={errors.last_name} errorId="err-last-name">
+                      <input
+                        required
+                        name="last_name"
+                        autoComplete="family-name"
+                        aria-invalid={errors.last_name ? true : undefined}
+                        aria-describedby={errors.last_name ? "err-last-name" : undefined}
+                        className={inputCls}
+                      />
                     </Field>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <Field label="Work email" required>
-                      <input required type="email" name="email" className={inputCls} />
+                    <Field label="Work email" required error={errors.email} errorId="err-email">
+                      <input
+                        required
+                        type="email"
+                        name="email"
+                        autoComplete="email"
+                        aria-invalid={errors.email ? true : undefined}
+                        aria-describedby={errors.email ? "err-email" : undefined}
+                        className={inputCls}
+                      />
                     </Field>
-                    <Field label="LinkedIn URL" required>
-                      <input required type="url" name="linkedin" placeholder="https://" className={inputCls} />
+                    <Field label="LinkedIn URL" required error={errors.linkedin} errorId="err-linkedin">
+                      <input
+                        required
+                        type="text"
+                        name="linkedin"
+                        inputMode="url"
+                        autoComplete="url"
+                        placeholder="linkedin.com/in/your-name"
+                        aria-invalid={errors.linkedin ? true : undefined}
+                        aria-describedby={errors.linkedin ? "err-linkedin" : undefined}
+                        className={inputCls}
+                      />
                     </Field>
                   </div>
-                  <Field label="Highest executive role held" required>
-                    <select required name="role" className={inputCls} defaultValue="">
-                      <option value="" disabled>Select a role…</option>
+                  <Field label="Highest executive role held" required error={errors.role} errorId="err-role">
+                    <select
+                      required
+                      name="role"
+                      className={inputCls}
+                      defaultValue=""
+                      aria-invalid={errors.role ? true : undefined}
+                      aria-describedby={errors.role ? "err-role" : undefined}
+                    >
+                      <option value="" disabled>Select a role</option>
                       <option>CEO / Founder</option>
                       <option>President / COO</option>
                       <option>CFO</option>
@@ -311,18 +382,21 @@ function Page() {
                       <option>Other</option>
                     </select>
                   </Field>
-                  <Field label="Resume" required>
+                  <Field label="Resume" required error={errors.resume} errorId="err-resume">
                     <input
                       required
                       type="file"
                       name="resume"
-                      accept=".pdf,.doc,.docx"
+                      accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                      aria-invalid={errors.resume ? true : undefined}
+                      aria-describedby={errors.resume ? "err-resume" : undefined}
                       className={`${inputCls} file:mr-4 file:rounded-[6px] file:border-0 file:bg-cream file:px-4 file:py-1.5 file:text-ink file:text-xs file:font-medium file:cursor-pointer`}
                     />
                   </Field>
 
                   <details className="text-sm text-stone">
-                    <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none inline-flex items-center min-h-11">
+                    <summary className="cursor-pointer hover:text-cream transition list-none marker:hidden select-none inline-flex items-center gap-2 min-h-11">
+                      <span aria-hidden className="text-cream/50">+</span>
                       Add background details (optional)
                     </summary>
                     <div className="mt-4 grid gap-4">
@@ -375,7 +449,7 @@ function Page() {
                     )}
                   </button>
                   <p className="text-xs text-stone-soft">
-                    By submitting you agree to be contacted by Veep about your
+                    By submitting, you agree to be contacted by Veep about your
                     application.
                   </p>
                 </form>
@@ -389,15 +463,19 @@ function Page() {
 }
 
 const inputCls =
-  "motion-field w-full rounded-[6px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 min-h-11";
+  "motion-field w-full rounded-[6px] border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 aria-invalid:border-accent-coral aria-invalid:ring-1 aria-invalid:ring-accent-coral/40 min-h-11";
 
 function Field({
   label,
   required,
+  error,
+  errorId,
   children,
 }: {
   label: string;
   required?: boolean;
+  error?: string;
+  errorId?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -407,6 +485,11 @@ function Field({
         {required && " *"}
       </span>
       <div className="mt-2">{children}</div>
+      {error ? (
+        <p id={errorId} className="mt-1.5 text-xs text-accent-coral">
+          {error}
+        </p>
+      ) : null}
     </label>
   );
 }

@@ -6,7 +6,7 @@ type FooterLink =
   | { kind: "hash"; hash: string; label: string }
   | {
       kind: "route";
-      to: "/pricing" | "/faq" | "/contact" | "/privacy" | "/terms" | "/join" | "/about" | "/for-portfolios";
+      to: "/pricing" | "/faq" | "/contact" | "/privacy" | "/terms" | "/join" | "/about" | "/for-portfolios" | "/agent-teams" | "/feeds";
       label: string;
     }
   | { kind: "href"; href: string; label: string };
@@ -18,10 +18,8 @@ const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
       { kind: "hash", hash: "how", label: "How It Works" },
       { kind: "hash", hash: "offer", label: "Engagements" },
       { kind: "hash", hash: "proof", label: "Proof" },
-      { kind: "hash", hash: "faq", label: "Mini FAQ" },
-      // Absolute www — /feeds is Gushwork overlay, not a veep-2-0 route.
-      // Do not point at Gushwork staging/test copy.
-      { kind: "href", href: "https://www.veep.work/feeds", label: "Feeds" },
+      { kind: "hash", hash: "faq", label: "Straight Answers" },
+      { kind: "route", to: "/feeds", label: "Feeds" },
     ],
   },
   {
@@ -30,6 +28,7 @@ const cols: readonly { title: string; links: readonly FooterLink[] }[] = [
       { kind: "route", to: "/about", label: "About" },
       { kind: "route", to: "/for-portfolios", label: "For Funds" },
       { kind: "route", to: "/pricing", label: "Pricing" },
+      { kind: "route", to: "/agent-teams", label: "Agent Teams" },
       { kind: "route", to: "/faq", label: "Full FAQ" },
       { kind: "route", to: "/contact", label: "Contact" },
     ],
@@ -60,8 +59,7 @@ export function SiteFooter() {
               <img src={wordmarkNavy.url} alt="Veep wordmark" loading="lazy" decoding="async" className="h-6 w-auto hidden light:block" />
             </Link>
             <p className="mt-5 text-base text-cream/85 max-w-[20.4rem] leading-relaxed">
-              Vetted senior operators who step in to own critical work, now.
-              Matched in 72 hours. Ready to go in under 10 days.
+              Run today's business. Build what's next. Stand up to tomorrow's scrutiny.
             </p>
               <a
                 href="mailto:hey@veep.work"
@@ -81,7 +79,7 @@ export function SiteFooter() {
                 {c.links.map((l) => (
                   <li key={l.label}>
                      {l.kind === "hash" ? (
-                      <Link to="/" hash={l.hash} className="group motion-link inline-flex items-center min-h-11 text-sm text-cream/90 hover:text-cream">
+                      <Link to="/" hash={l.hash} activeOptions={{ includeHash: true }} className="group motion-link inline-flex items-center min-h-11 text-sm text-cream/90 hover:text-cream">
                         <span className="motion-underline">{l.label}</span>
                       </Link>
                     ) : l.kind === "href" ? (
@@ -101,7 +99,7 @@ export function SiteFooter() {
         </div>
         <div className="mt-10 md:mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-3 text-xs leading-relaxed text-cream/70">
           <div className="text-balance">© {new Date().getFullYear()}&nbsp;The Veep Group,&nbsp;LLC. All rights reserved.</div>
-          <div className="text-balance">Senior operators for work that can't&nbsp;wait.</div>
+          <div className="text-balance">Operate like a market leader without an institutional backer.</div>
         </div>
       </div>
     </footer>

@@ -30,6 +30,8 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .idea
+.cursor
+.lovable
 .DS_Store
 *.suo
 *.ntvs*

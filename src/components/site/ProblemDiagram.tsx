@@ -9,20 +9,20 @@
  * boxes at 15px radius — system grammar, no new motif.
  */
 
-const work = ["Fundraise", "GTM reset", "Operating issue", "Margin problem"];
+const work = ["Transaction readiness", "Revenue growth", "Margin expansion", "Entering new markets"];
 
 const routes = [
   {
     label: "The team",
-    d: "Busy. The priority is still stuck.",
+    d: "Fully occupied running today's business. The next move stalls.",
   },
   {
     label: "A permanent hire",
-    d: "A search takes months. The business needs to move now.",
+    d: "Search takes months. The market and the deal will not wait.",
   },
   {
     label: "Consultants",
-    d: "Another deck and more decisions for you. No one steps in.",
+    d: "A sharp deck and more decisions. Nobody stays to carry it through.",
   },
 ];
 
@@ -54,7 +54,7 @@ export function ProblemDiagram() {
       {/* The work — no clear owner */}
       <div className="problem-diagram-box motion-row-wash rounded-[6px] bg-surface-card p-6 sm:p-7 text-center">
         <div className="problem-diagram-copy">
-          <div className="mono-label">Critical work · No clear owner</div>
+          <div className="mono-label">Critical value creation · No clear owner</div>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             {work.map((w) => (
               <span
@@ -113,12 +113,12 @@ export function ProblemDiagram() {
           <div className="flex justify-center">
             <div className="mono-label inline-flex items-center gap-2.5">
               <DeskDot />
-              The CEO&rsquo;s desk
+              Your desk
               <DeskDot delay />
             </div>
           </div>
           <p className="mt-3 font-serif font-medium text-lg md:text-xl text-cream tracking-tight leading-snug">
-            Everything keeps landing on you.
+            The highest-value work keeps landing back on you.
           </p>
         </div>
       </div>

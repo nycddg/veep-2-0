@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { feedPostPath, listFeedEntries } from "@/lib/feeds";
 
 const BASE_URL = "https://www.veep.work";
 
@@ -7,6 +8,7 @@ interface SitemapEntry {
   path: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: string;
+  lastmod?: string;
 }
 
 export const Route = createFileRoute("/sitemap.xml")({
@@ -18,10 +20,18 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/about", changefreq: "monthly", priority: "0.8" },
           { path: "/pricing", changefreq: "monthly", priority: "0.8" },
           { path: "/for-portfolios", changefreq: "monthly", priority: "0.8" },
+          { path: "/agent-teams", changefreq: "monthly", priority: "0.7" },
           { path: "/join", changefreq: "monthly", priority: "0.7" },
           { path: "/faq", changefreq: "monthly", priority: "0.7" },
           { path: "/contact", changefreq: "monthly", priority: "0.8" },
           { path: "/meetveep", changefreq: "monthly", priority: "0.6" },
+          { path: "/feeds", changefreq: "weekly", priority: "0.6" },
+          ...listFeedEntries().map((post) => ({
+            path: feedPostPath(post),
+            changefreq: "monthly" as const,
+            priority: post.category === "blog" ? "0.5" : "0.4",
+            lastmod: post.date,
+          })),
           { path: "/privacy", changefreq: "yearly", priority: "0.3" },
           { path: "/terms", changefreq: "yearly", priority: "0.3" },
         ];
@@ -30,6 +40,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           [
             `  <url>`,
             `    <loc>${BASE_URL}${e.path}</loc>`,
+            e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { Accordion } from "@/components/site/Accordion";
@@ -10,36 +10,36 @@ const groups: { label: string; items: QA[] }[] = [
   {
     label: "Engagement",
     items: [
-      { q: "How fast can a Veep operator start?", a: "Most engagements begin in under 10 days from the call with a Veep founder. Urgent leadership-gap or interim coverage can move faster when the work cannot wait." },
-      { q: "How is Veep different from a consultant?", a: "A consultant recommends. A Veep operator owns. Our operators step into the work, set the rhythm, build the materials, make decisions with the team, and move the priority forward." },
-      { q: "How is Veep different from executive search?", a: "Search is for permanent hiring. Veep is for critical work that needs senior ownership now, while the permanent hiring decision stays open." },
-      { q: "Remote or on-site?", a: "Both. Most Advisory, Sprint, and Operator engagements are remote with on-site presence for key moments: board meetings, offsites, integrations, planning sessions, and major operating milestones. Interim or high-intensity engagements may include regular on-site time." },
-      { q: "Can Veep run interim coverage while we search for a permanent hire?", a: "Yes. It is one of the most common use cases. A Veep operator can cover the leadership gap, stabilize the function, preserve momentum, and help define what the permanent role should actually become." },
+      { q: "How fast can a Veep engagement start?", a: "Operating engagements are scoped in 72 hours and started in under 10 days from your call with a Veep founder. Urgent interim transitions can move faster when the situation demands it." },
+      { q: "How is Veep different from a consulting firm?", a: "Consultants deliver recommendations and leave implementation to your team. Veep operating partners step into live operations, build the models and commercial systems, handle exceptions alongside your leaders, and stay accountable through handoff." },
+      { q: "How is Veep different from executive search?", a: "Search appoints permanent headcount over months. Veep deploys senior operators, playbooks, and workflows now so revenue, margins, and diligence readiness move immediately while any permanent hiring decision stays informed by live evidence." },
+      { q: "Remote or on-site?", a: "Both. Most mandates run remotely with on-site presence for pivotal moments such as board meetings, diligence sessions, offsites, and post-close integration weeks. Interim or intensive mandates can include regular on-site time." },
+      { q: "Can Veep cover an executive seat while we search for a permanent leader?", a: "Yes. Interim Leadership lets an experienced executive step into a vacant office with delegated authority, stabilize performance, and hand over a cleaner function and tested role definition when the permanent leader starts." },
     ],
   },
   {
-    label: "Operators",
+    label: "Operators & Platform",
     items: [
-      { q: "What roles do Veep operators fill?", a: "Veep operators include CFOs, COOs, CROs, CMOs, CTOs, CPOs, people leaders, chiefs of staff, GMs, and functional experts. But we start with the work, not the title. Depending on the need, the right structure may be Advisory, Sprint, Operator, or Pod." },
-      { q: "Can I browse the roster?", a: "No. Veep is a managed model, not a self-service marketplace. We recommend the operator based on the work, urgency, company stage, function, industry, business model, and fit. Full profiles and references are shared once we understand the priority. Marketplaces give you options. Veep gives you the operator." },
-      { q: "Do you use AI?", a: "Yes, where it improves capacity, consistency, and speed. AI can support recurring workflows, research, reporting, content, data cleanup, analysis, and internal process work. But the operator provides judgment, oversight, quality control, and business context. AI supports the work. The operator owns the outcome." },
-      { q: "What industries do you serve?", a: "Veep works with founder-led, owner-led, investor-backed, and portfolio companies across sectors. Common areas include SaaS, AI/data companies, B2B services, DTC and e-commerce, multi-site services, healthcare services, consumer brands, industrial services, field services, and PE-backed portfolio companies. The better question is not only industry. It is whether we have the right operator for the work." },
+      { q: "What functions and roles do Veep operating partners cover?", a: "Veep operating partners span strategic finance, GTM, operations, product, technology, people, and generalist C-suite leadership. We always start with the business outcome first, then match the partner and capacity shape to the job." },
+      { q: "Can I browse the operator network?", a: "No. Veep is a governed operating partner platform, not a self-service marketplace. We scope the outcome first and recommend the exact lead partner based on stage, business model, function, and industry. Full profiles and references follow once the mandate is clear." },
+      { q: "How does Veep use AI and Agent Teams?", a: "We deploy Operator-Governed Agent Teams where automation gives lean businesses institutional rigor across recurring finance reporting, pipeline discipline, founder prep, and operating reviews. Agents run the recurring execution, a senior operating partner sets the standard and resolves exceptions, a technical lead owns reliability, and you keep business approvals." },
+      { q: "What industries do you serve?", a: "We work with independent businesses and portfolio companies across SaaS, AI and data, B2B services, consumer and e-commerce, multi-site healthcare and field services, media, and industrials. Industry fluency matters, and stage plus business-model fit matter just as much." },
     ],
   },
   {
     label: "Pricing",
     items: [
-      { q: "How much does Veep cost?", a: "Typical ranges: Advisory from $3k/month · Sprint from $25k · Operator from $15k/month · Pod from $30k/month. Every engagement is scoped to the work, urgency, and level of ownership required." },
-      { q: "Are there setup or matching fees?", a: "No. Calls with a Veep founder and operator matching are free. Contracting, onboarding, and access setup are included in the engagement. You only pay once an engagement is signed." },
-      { q: "What if the operator is not the right fit?", a: "Every engagement carries a 30-day fit guarantee. If the operator isn't right, we swap them or you walk — no fee owed for the remaining term." },
-      { q: "Can we start with a smaller engagement?", a: "Yes. Many companies start with Advisory or a Sprint before moving into an ongoing Operator engagement. That's often the right path when the role is still undefined or the work is urgent but focused." },
+      { q: "How much does Veep cost?", a: "Public starting rates: Advisory from $3k/month · Sprint from $25k per scope · Embedded Operator from $15k/month · Pod from $30k/month. Interim Leadership, Managed Operating Partnerships, and Agent Teams are scoped individually to the mandate. No hourly billing." },
+      { q: "Are there setup or sourcing fees?", a: "No. Scoping calls with a Veep founder, partner selection, contracting, and onboarding are included. You only pay once an agreed scope is signed." },
+      { q: "What if it isn't the right fit?", a: "Every operating engagement carries a 30-day guarantee. If the engagement isn't right within the first 30 days, we make it right or you walk, with no fee owed for the remaining term." },
+      { q: "Can companies engage Veep for one job or as an ongoing partner?", a: "Both. Companies engage Veep in two ways: an individual mandate for a specific decision, deliverable, function, or transition, or a Managed Operating Partnership from day one when leadership wants a partner at the table as priorities evolve." },
     ],
   },
   {
-    label: "Portfolios & partnerships",
+    label: "Portfolios & Partnerships",
     items: [
-      { q: "How does the Portfolio Roster work?", a: "PE firms, family offices, holding companies, independent sponsors, search funds, and multi-company founders can retain Veep as an operating-capacity partner. The Roster typically includes priority matching, quarterly capacity planning, emergency CFO/COO/GTM/operator coverage, capacity audits, and preferred commercial terms. Annual Roster pricing is $75k/year, with operator deployments billed separately by SOW." },
-      { q: "Do you have a referral program?", a: "Yes. We share economics with accountants, lenders, search firms, M&A advisors, attorneys, investors, and other partners who send us the right work. The best referrals are companies with critical work that needs senior ownership now." },
+      { q: "How does the Portfolio Roster work for funds?", a: "Lean PE firms, family offices, holding companies, and independent sponsors retain Veep ($75k/year) for portfolio-wide capacity planning, quarterly reviews, priority operator access, emergency coverage paths, and preferred rates. Individual company mandates are agreed with each CEO and billed separately by SOW." },
+      { q: "Do you have a referral program?", a: "Yes. We partner with accountants, lenders, M&A advisors, attorneys, search firms, and investors who introduce founders or funds facing a high-stakes raise, commercial reset, margin push, or transition." },
     ],
   },
 ];
@@ -50,7 +50,13 @@ const faqSchema = {
   mainEntity: groups.flatMap((g) => g.items).map((f) => ({
     "@type": "Question",
     name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
+    acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          f.q === "How does Veep use AI and Agent Teams?"
+            ? `${f.a} https://www.veep.work/agent-teams`
+            : f.a,
+      },
   })),
 };
 
@@ -58,9 +64,9 @@ export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
       { title: "FAQ | Veep" },
-      { name: "description", content: "How Veep engagements work: pricing, timing, operator vetting, fit guarantee, and how the Portfolio Roster works." },
-      { property: "og:title", content: "FAQ — Straight answers on cost, timing & fit | Veep" },
-      { property: "og:description", content: "Pricing, timing, operator vetting, the 30-day fit guarantee, and how Veep's Portfolio Roster works for portfolios." },
+      { name: "description", content: "Straight answers on Veep's operating partner model, pricing, timing, AI workflows, operator vetting, 30-day guarantee, and Portfolio Roster." },
+      { property: "og:title", content: "FAQ | Veep" },
+      { property: "og:description", content: "Straight answers on Veep's operating partner model, pricing, timing, AI workflows, operator vetting, 30-day guarantee, and Portfolio Roster." },
       { property: "og:url", content: "https://www.veep.work/faq" },
       ...ogImageMeta(),
     ],
@@ -75,8 +81,9 @@ function Page() {
     <>
       <PageHero
         eyebrow="FAQ"
-        title="Straight answers on cost, timing, and fit."
-        sub="If the answer is not here, book a 30-minute call with a Veep founder. We will help clarify the work, the right level of support, and whether Veep is the right fit."
+        title="Straight answers on model, pricing, and fit."
+        sub="If your question isn't here, book a 30-minute call with a Veep founder. We'll clarify the outcome, recommend the right structure, and tell you plainly if Veep isn't the fit."
+        secondarySearch={{ intent: "audit" }}
       />
 
       {/* Groups alternate raised/ink so the long list reads as chapters, not
@@ -94,14 +101,32 @@ function Page() {
             </h2>
             <div className="divide-y divide-white/10 border-y border-white/10">
               {g.items.map((qa) => (
-                <Accordion key={qa.q} q={qa.q} a={qa.a} />
+                <Accordion
+                  key={qa.q}
+                  q={qa.q}
+                  a={
+                    qa.q === "How does Veep use AI and Agent Teams?" ? (
+                      <>
+                        {qa.a}{" "}
+                        <Link
+                          to="/agent-teams"
+                          className="motion-link text-cream underline underline-offset-4 decoration-white/40 hover:decoration-white"
+                        >
+                          See how Agent Teams work.
+                        </Link>
+                      </>
+                    ) : (
+                      qa.a
+                    )
+                  }
+                />
               ))}
             </div>
           </div>
         </section>
       ))}
 
-      <FooterCTA primary="contact" />
+      <FooterCTA />
     </>
   );
 }

@@ -1,8 +1,8 @@
 # Veep
 
-> Veep places vetted senior operators inside founder-led companies to own the work that can't wait. Matched in 72 hours. Deployed in under 10 days. 30-day fit guarantee.
+> Independent businesses and lean funds hire Veep for senior operators, playbooks, and technology built to grow revenue, expand margins, and withstand scrutiny. Scoped in 72 hours. Started in under 10 days. 30-day guarantee.
 
-Veep is an invite-only network of operating partners — not a marketplace, staffing firm, or consulting body shop. Operators embed to own critical work across finance, GTM, operations, product, people, fundraising, and strategy.
+Veep is an operating partner platform, not a marketplace, staffing firm, or consulting body shop. Senior operators, repeatable playbooks, and operator-governed AI workflows (Agent Teams) deploy against a defined business outcome across finance, GTM, operations, product, people, technology, and strategy.
 
 ## Offers (public)
 
@@ -10,18 +10,21 @@ Veep is an invite-only network of operating partners — not a marketplace, staf
 - Sprint — from $25k/scope
 - Operator — from $15k/month
 - Pod — from $30k/month
-- Portfolio Roster — $75k/year (PE / family offices / holdcos / multi-company founders; usage billed by SOW)
+- Interim Leadership, Managed Operating Partnerships, and Operator-Governed Agent Teams (scoped to the mandate)
+- Portfolio Roster — $75k/year (lean PE / family offices / holding companies / independent sponsors; company mandates billed by SOW)
 
 ## Pages
 
 - [Home](https://www.veep.work/): Model overview, how it works, proof, FAQ
 - [About](https://www.veep.work/about): Founders and operating principles
-- [Pricing](https://www.veep.work/pricing): Engagement pricing and fit guarantee
-- [FAQ](https://www.veep.work/faq): Cost, timing, vetting, roster
-- [For Portfolios](https://www.veep.work/for-portfolios): Portfolio Roster for funds and multi-company operators
-- [Contact](https://www.veep.work/contact): Get in touch / discovery / capacity audit
-- [Join](https://www.veep.work/join): Apply to the operator roster
+- [Pricing](https://www.veep.work/pricing): Engagement pricing and 30-day guarantee
+- [FAQ](https://www.veep.work/faq): Model, pricing, timing, AI workflows, roster
+- [For Funds](https://www.veep.work/for-portfolios): Portfolio operating platform for funds
+- [Agent Teams](https://www.veep.work/agent-teams): Operator-governed workflows inside a mandate. Scoped individually. No published rate.
+- [Contact](https://www.veep.work/contact): Bring us the job / discovery / capacity audit
+- [Join](https://www.veep.work/join): Apply to the operator network
 - [Meet Veep](https://www.veep.work/meetveep): Leave-behind overview (noindex)
+- [Feeds](https://www.veep.work/feeds): 37 blogs and 165 service pages
 
 ## Contact
 

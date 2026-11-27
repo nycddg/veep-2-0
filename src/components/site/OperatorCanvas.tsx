@@ -4,12 +4,12 @@ import { useInView } from "./useInView";
 
 /**
  * OperatorCanvas — homepage signature (D2 / Phase 3).
- * Locks: matrix bars+% kept · 95%+75+ kept · no float · matrix sm+ only · labels −10%.
+ * Locks: matrix bars+% kept · 75+ and 72h scoped · no float · matrix sm+ only · labels −10%.
  * C1 bar fill once · C2 assigned-partner card · C3 16/9 · C4 no mobile matrix.
  */
 const MATRIX = [
   { label: "Functional Depth", value: 97 },
-  { label: "Business Model Familiarity", value: 95 },
+  { label: "Business Model Fluency", value: 95 },
   { label: "Industry Expertise", value: 98 },
   { label: "Life Stage Experience", value: 100 },
 ] as const;
@@ -88,7 +88,7 @@ export function OperatorCanvas() {
         <div className="relative z-10 aspect-[3/4] sm:aspect-[16/9] overflow-hidden rounded-[6px] bg-[color:var(--surface-raised)] shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] light:shadow-[0_20px_48px_-24px_rgba(26,31,58,0.22)]">
           <img
             src={headshotAsset.url}
-            alt="Vetted operator headshot"
+            alt="Veep senior operating partner headshot"
             width={1344}
             height={1017}
             loading="eager"
@@ -115,7 +115,7 @@ export function OperatorCanvas() {
       {/* Proof — mt-6 from the photo on mobile; sm+ adds the card hang
           (-bottom-5) so the gap is card-to-line, not photo-to-line. */}
       <p className="mt-6 sm:mt-11 text-center mono-label text-cream/80">
-        95% match success rate · 75+ vetted senior operators
+        Scoped in 72 hours · Started in under 10 days · Backed by a 30-day guarantee
       </p>
     </div>
   );

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { BOOKING_URL } from "@/lib/booking";
 import heroHeadshot from "@/assets/operator-headshot.png.asset.json";
 import { LogoWall } from "@/components/site/LogoWall";
@@ -9,9 +9,10 @@ import { OperatorCanvas } from "@/components/site/OperatorCanvas";
 import { ClientStrip } from "@/components/site/ClientStrip";
 import { EngagementTile } from "@/components/site/EngagementTile";
 import { StepFlow } from "@/components/site/StepFlow";
-import { Check } from "lucide-react";
-import { ObjectionList } from "@/components/site/ObjectionList";
 import { ProblemDiagram } from "@/components/site/ProblemDiagram";
+import { MandateCatalog } from "@/components/site/MandateCatalog";
+import { PlatformStrata } from "@/components/site/PlatformStrata";
+import { homeProofCases } from "@/lib/proof-cases";
 import { FooterCTA } from "@/components/site/FooterCTA";
 import { Accordion } from "@/components/site/Accordion";
 import { Reveal } from "@/components/site/Reveal";
@@ -22,39 +23,39 @@ import { ogImageMeta } from "@/lib/seo";
 // ─────────────────────────────────────────────────────────────────────────────
 
 const alternatives = [
-  { t: "Permanent hire", d: "Months to hire. Permanent commitment. Wrong-hire risk lands on you, and the work waits for the search to finish." },
-  { t: "Consulting firms", d: "Smart recommendations. Then they hand you a deck and the work still lands on you or your team." },
-  { t: "Freelancers and advisors", d: "Profiles to browse. Variable seniority. More decisions and oversight for the founder, not fewer." },
+  { t: "Permanent hire", d: "Months to recruit, heavy fees, and permanent commitment before the role is proven. The business waits while the search runs." },
+  { t: "Consulting firms", d: "Recommendations without operating accountability. Once the slides are delivered, implementation lands back on your team." },
+  { t: "Freelancers and advisors", d: "Profiles to vet and variable seniority. More coordination and quality risk for leadership, not less." },
 ];
 
 const benefits = [
-  { t: "Own the work", d: "Operators step in to take responsibility for critical work, not advise from the sidelines." },
-  { t: "Deploy in under 10 days", d: "Matched to the work. Shortlist in 72 hours. Onboarded and in the work inside 10 days." },
-  { t: "Senior-only roster", d: "75+ vetted senior operators across finance, GTM, operations, product, people, technology, and strategy." },
-  { t: "No permanent commitment", d: "Senior ownership without the commit. Engagements can pause, extend, or scale with the work." },
-  { t: "Clean handoff", d: "When the work lands or a permanent hire arrives, you get documentation, context, and continuity." },
-  { t: "30-day fit guarantee", d: "If the operator isn't the right fit, we swap them or you walk. Exit the agreement with no penalties." },
+  { t: "Revenue that repeats", d: "Clear pricing, forecast discipline, and a weekly commercial cadence so growth stops depending on the founder closing every deal." },
+  { t: "Margins that hold up", d: "Pinpoint where delivery or operations bleed margin and give managers the numbers and authority to fix it." },
+  { t: "Numbers built for scrutiny", d: "Models, unit economics, and data rooms reconciled contract by contract so leadership walks into boardrooms and diligence composed." },
+  { t: "Responsive as software", d: "Assemble senior leadership, execution specialists, and governed AI workflows around live priorities without adding permanent overhead." },
+  { t: "Capabilities that compound", d: "Ownership includes the finish. Every engagement hands over playbooks, models, and systems your team keeps running." },
+  { t: "Backed by Veep governance", d: "Scoped in 72 hours, started in under 10 days, with a 30-day guarantee and Veep oversight on quality and continuity." },
 ];
 
 const engagements = [
   {
     name: "Advisory",
     price: "From $3k / mo",
-    bestWhen: "Senior judgment and direction for high-stakes decisions: board and investor prep, fundraise strategy, executive decisions, and strategic tradeoffs. Not full ownership of execution.",
+    bestWhen: "Senior operating judgment for high-stakes calls: board and investor prep, capital strategy, and strategic tradeoffs. Your team runs execution.",
     to: "/pricing" as const,
     hash: "tiers",
   },
   {
     name: "Sprint",
     price: "From $25k / scope",
-    bestWhen: "Time-boxed. Clear scope. Clear outcome. Fast start: GTM reset, fundraise, margin work, diligence, or transaction prep across 4–12 weeks.",
+    bestWhen: "One defined business outcome carried from scope to handoff, typically in 4 to 12 weeks: diligence prep, GTM reset, margin work, or market launch.",
     to: "/pricing" as const,
     hash: "tiers",
   },
   {
     name: "Operator",
     price: "From $15k / mo",
-    bestWhen: "Embedded senior ownership of critical work across finance, GTM, operations, product, or people. Build or reset a function, resolve leadership gaps (typically 3–12 months).",
+    bestWhen: "Embedded senior leadership running a core function or priority across finance, GTM, operations, product, or people until handoff or scale.",
     to: "/pricing" as const,
     hash: "tiers",
     featured: true,
@@ -62,7 +63,7 @@ const engagements = [
   {
     name: "Pod",
     price: "From $30k / mo",
-    bestWhen: "Multiple operators coordinated against a larger work program: GTM + RevOps, finance + ops, AI initiatives, or an operating reset across the company.",
+    bestWhen: "One accountable lead orchestrating specialists across functions for launches, post-close integrations, operating resets, or AI-enabled transformation.",
     to: "/pricing" as const,
     hash: "tiers",
   },
@@ -70,85 +71,64 @@ const engagements = [
 
 const differentiators = [
   {
-    dim: "Time to start",
-    veep: "Shortlist in 72 hours, deployed in under 10 days",
-    old: "Months to hire, weeks to scope, or endless profile browsing",
+    dim: "Time to move",
+    veep: "Scoped in 72 hours, started in under 10 days",
+    old: "Months of executive search, slow scoping, or profile browsing",
   },
   {
-    dim: "Ownership",
-    veep: "Senior operator owns the work",
-    old: "Recommendations, candidates, tools, or hourly help",
+    dim: "Accountability",
+    veep: "Senior operating partner owns delivery, backed by Veep",
+    old: "Slide decks, recruiter shortlists, or unmanaged contractors",
   },
   {
-    dim: "OUTCOMES",
-    veep: "High quality work immediately",
-    old: "After the search, after the deck, or with variable quality",
+    dim: "Leverage",
+    veep: "Senior operators, proven playbooks, and governed AI workflows",
+    old: "One person's hours or generic frameworks",
   },
   {
-    dim: "Cost",
-    veep: "Priced to scope and level of support",
-    old: "Search fees plus salary, or large consulting engagements",
+    dim: "Cost model",
+    veep: "Priced to the work and outcome, never the hour",
+    old: "Heavy search fees plus fixed headcount, or open-ended consulting",
   },
   {
     dim: "Seniority",
-    veep: "Vetted senior operators only",
-    old: "Variable; junior consultants for leverage or unvetted freelancers",
+    veep: "Operators who have held the seat. No juniors or career consultants.",
+    old: "Junior consulting leverage or unvetted marketplace talent",
   },
   {
-    dim: "Exit",
-    veep: "Clean handoff with documentation",
-    old: "Deck delivered, search continues, or dependency grows",
+    dim: "What lasts",
+    veep: "Working systems, playbooks, and clean transfer to your team",
+    old: "Recommendations on a shelf or ongoing vendor dependency",
   },
   {
-    dim: "Risk",
-    veep: "30-day fit guarantee. Swap or walk.",
-    old: "You own the miss",
+    dim: "Downside risk",
+    veep: "30-day guarantee. Make it right or walk.",
+    old: "You absorb the wrong hire or stalled implementation",
   },
 ];
 
-const cases = [
-  {
-    tag: "B2B SAAS",
-    role: "Finance Operating Partner",
-    trigger: "CEO was preparing for a first institutional round without a financial model, investor materials, or fundraising experience.",
-    outcome: "Built a 3-year model, diligence-ready CAC/LTV dashboards, and coached the CEO through term sheets and investor meetings.",
-    metric: "$6M raised in 6 weeks",
-    figure: "$6M",
-    kicker: "Raised in 6 weeks",
-  },
-  {
-    tag: "SOFTWARE STUDIO",
-    role: "Growth Operating Partner",
-    trigger: "An $8M product development studio was stuck firefighting, with inconsistent project profitability and no scalable path into AI.",
-    outcome: "Installed standardized project scoping and staffing, built an AI GTM and delivery framework, and hired a Director of AI.",
-    metric: "Project margins up 25%",
-  },
-  {
-    tag: "PODCAST PUBLISHER",
-    role: "Business Operating Partner",
-    trigger: "A profitable, bootstrapped publisher with millions in revenue had never raised outside capital and had no financial model or growth plan.",
-    outcome: "Built the company's first financial model, defined use of proceeds, and sourced investors representing over a third of the round.",
-    metric: "Sourced 35% of capital",
-  },
-];
+const cases = homeProofCases;
 
-// Mini FAQ — non-dupes of ObjectionList ("Before you book")
 const faqs = [
   {
-    q: "What is a Veep operator?",
-    a: "A Veep operator is a vetted senior operator who steps into your business to own critical work before a permanent executive hire makes sense. Depending on the need, that operator may be a CFO, COO, CRO, CMO, CTO, product leader, people leader, chief of staff, or functional expert.",
+    q: "Is this right for my business?",
+    a: "You are a founder, CEO, owner-operator, or lean fund leader with a critical priority that needs senior ownership and institutional firepower: getting diligence-ready, building repeatable revenue, expanding margins, opening a new market, or filling a leadership gap.",
   },
   {
-    q: "How is Veep different from a consulting firm?",
-    a: "A consultant recommends. A Veep operator owns. Our operators step into the work, set the rhythm, build the materials, make decisions with the team, and move the priority forward.",
+    q: "How do companies engage Veep?",
+    a: "Either through an individual mandate (Advisory from $3k/month, Sprints from $25k, Embedded Operators from $15k/month, Pods from $30k/month, plus Interim Leadership and Agent Teams) or a Managed Operating Partnership when leadership wants a partner at the table across stages.",
   },
   {
-    q: "How is Veep different from executive search?",
-    a: "Search is for permanent hiring. Veep is for critical work that needs senior ownership before the permanent hire makes sense. The work moves now, while the permanent hiring decision stays open.",
+    q: "How fast can work begin?",
+    a: "Operating engagements are scoped in 72 hours and started in under 10 days. Urgent interim coverage can move faster when a transition cannot wait.",
   },
   {
-    q: "Where does Veep operate?",
-    a: "Veep operators work remotely across North America and Europe, with on-site availability for key moments such as board meetings, offsites, integration weeks, and major operating milestones.",
+    q: "Who actually carries the work?",
+    a: "Every lead operating partner has held the seat at a comparable stage across finance, GTM, operations, product, technology, or people, backed by Veep playbooks, execution specialists, and governance.",
+  },
+  {
+    q: "What if it isn't the right fit?",
+    a: "Every operating engagement carries a 30-day guarantee. If the engagement isn't right within the first 30 days, we make it right or you walk, with no fee owed for the remaining term.",
   },
 ];
 
@@ -173,7 +153,7 @@ const serviceSchema = {
   provider: { "@type": "Organization", name: "Veep" },
   areaServed: ["North America", "Europe"],
   description:
-    "Veep places vetted senior operators (CFOs, COOs, CROs, CMOs, CTOs, product, people, and functional leaders) inside founder-led companies to own critical work in under 10 days.",
+    "Independent businesses and lean funds hire Veep to deploy senior operators, playbooks, and technology built to grow revenue, expand margins, and withstand scrutiny. Scoped in 72 hours. Started in under 10 days.",
   offers: [
     { "@type": "Offer", name: "Advisory", priceSpecification: { "@type": "PriceSpecification", price: "3000", priceCurrency: "USD" } },
     { "@type": "Offer", name: "Sprint", priceSpecification: { "@type": "PriceSpecification", price: "25000", priceCurrency: "USD" } },
@@ -189,17 +169,17 @@ const serviceSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Veep: Senior Operators for Work That Can't Wait" },
+      { title: "Veep | Operating Partners for the Job to Be Done" },
       {
         name: "description",
         content:
-          "Veep helps founder-led companies bring in vetted senior operators to own critical work. Matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
+          "Independent businesses and lean funds hire Veep for senior operators, playbooks, and technology built to grow revenue, expand margins, and withstand scrutiny.",
       },
-      { property: "og:title", content: "Veep: Senior Operators for Work That Can't Wait" },
+      { property: "og:title", content: "Veep | Operating Partners for the Job to Be Done" },
       {
         property: "og:description",
         content:
-          "Veep helps founder-led companies bring in vetted senior operators to own critical work. Matched in 72 hours, deployed in under 10 days. 30-day fit guarantee.",
+          "Independent businesses and lean funds hire Veep for senior operators, playbooks, and technology built to grow revenue, expand margins, and withstand scrutiny.",
       },
       { property: "og:url", content: "https://www.veep.work/" },
       { property: "og:type", content: "website" },
@@ -260,7 +240,7 @@ function InlineCTA({
     <div className="flex flex-col items-start gap-4.5">
       {pill}
       <span className="text-xs text-stone-soft tracking-wide">
-        30-minute call · Reply within 1 business day · 30-day fit guarantee
+        30-minute scoping call · Reply within 1 business day · 30-day guarantee
       </span>
     </div>
   );
@@ -301,13 +281,13 @@ function CaseCard({
           {c.metric}
         </div>
       )}
-      <div className="mt-4 mono-label">Assigned veep: {c.role}</div>
+      <div className="mt-4 mono-label">Assigned lead: {c.role}</div>
       <p className="mt-4 text-sm text-stone leading-relaxed">
         <span className="text-cream">Trigger. </span>
         {c.trigger}
       </p>
       <p className="mt-3 text-sm text-stone leading-relaxed">
-        <span className="text-cream">Outcome. </span>
+        <span className="text-cream">Work & result. </span>
         {c.outcome}
       </p>
     </>
@@ -315,7 +295,8 @@ function CaseCard({
 
   return (
     <div
-      className={`motion-row-wash flex h-full flex-col rounded-[6px] bg-surface-card ${pad}`}
+      id={c.id}
+      className={`motion-row-wash flex h-full flex-col scroll-mt-24 rounded-[6px] bg-surface-card ${pad}`}
     >
       <span className="eyebrow">{c.tag}</span>
       {featured ? (
@@ -332,19 +313,19 @@ function Index() {
     <>
       {/* Hero */}
       <section id="overview" className="relative overflow-hidden scroll-mt-20">
-        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 md:pt-24 pb-20 md:pb-28 flex flex-col items-center text-center">
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 md:pt-24 pb-16 sm:pb-20 md:pb-28 flex flex-col items-center text-center">
           <h1 className="motion-fade-up font-medium text-[2.25rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:leading-[0.98] text-cream text-balance allow-wrap break-words mb-6">
             Because a job always needs to be done.
           </h1>
 
           <p className="motion-fade-up motion-delay-1 text-base sm:text-lg text-stone max-w-2xl leading-relaxed mb-10">
-            Vetted senior operators to own urgent priorities and high-stakes
-            decisions before you are ready, willing, or able to make
-            permanent hires.
+            An operating partner platform for independent businesses and lean funds.
+            <br />
+            Grow revenue, expand margins, and withstand scrutiny.
           </p>
 
           <div className="motion-fade-up motion-delay-2 flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
-            {["Invite-only network", "72-hour match", "30-day fit guarantee"].map((t) => (
+            {["Operating partners", "Growth playbooks", "AI workflows"].map((t) => (
               <div key={t} className="flex items-center gap-2">
                 <Check size={18} className="text-accent" strokeWidth={2.5} />
                 {t}
@@ -356,18 +337,19 @@ function Index() {
             <OperatorCanvas />
           </div>
 
-          <div className="motion-fade-up motion-delay-4 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-5 mt-12 sm:mt-20 w-full">
+          <div className="motion-fade-up motion-delay-4 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-5 mt-10 sm:mt-16 md:mt-20 w-full">
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="group motion-cta cta-accent rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 min-h-11"
             >
-              Book intro call
+              Bring us the job
             </a>
             <Link
               to="/"
               hash="how"
+              activeOptions={{ includeHash: true }}
               className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/60 pb-1"
             >
               See how it works
@@ -384,10 +366,7 @@ function Index() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
           <SectionEyebrow>MEET VEEP</SectionEyebrow>
           <p className="mt-6 font-serif text-xl sm:text-2xl md:text-3xl text-cream tracking-tight leading-snug">
-            An invite-only network of operating partners ready to own the work that can't wait. Founders, CEOs, and investment firms hire Veep when important work has no owner across finance, GTM, operations, product, people, fundraising, and strategy.
-          </p>
-          <p className="mt-6 text-sm text-stone">
-            Built for companies with real revenue and growing complexity that need a critical outcome now.
+            Top firms invest more than capital. They deploy senior operators, playbooks, and technology to make companies stronger and more valuable. Veep gives you that same firepower to build the business you've been working toward, and the one investors, lenders, and buyers will underwrite.
           </p>
         </div>
       </Reveal>
@@ -396,16 +375,16 @@ function Index() {
       <Reveal as="section" id="problem" className="order-1 md:order-2 bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14 text-left">
-            <SectionEyebrow>The moment you're in</SectionEyebrow>
+            <SectionEyebrow>The reality</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Your business is too important for ownerless work.
+              The org chart doesn't cover every job.
             </h2>
           </div>
 
           <ProblemDiagram />
 
           <div className="mt-20 md:mt-24 motion-hairline pt-12">
-            <div className="mono-label mb-8">Instead of</div>
+            <div className="mono-label mb-8">vs. traditional options</div>
             <div className="motion-stagger grid md:grid-cols-3 gap-y-10">
               {alternatives.map((a) => (
                 <div
@@ -422,43 +401,20 @@ function Index() {
       </Reveal>
       </div>
 
-      {/* Solution */}
-      <Reveal as="section" id="solution" className="border-t border-white/10 md:border-t-0 py-14 sm:py-16 md:py-28 scroll-mt-20">
+      {/* Mandates — folds the old #solution rail. Outcome lives here; operators,
+          leverage, and price each have their own chapter. */}
+      <Reveal as="section" id="mandates" className="py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <div>
-              <SectionEyebrow>What we do</SectionEyebrow>
-              <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-                Built for the job to be done.
-              </h2>
-              <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
-                Tell us what's in the way, not moving, or landing back on you to solve.
-                We shape the work and define the outcomes, recommend the right level of
-                support (Advisory, Sprint, Operator, or Pod), and match operators to the job.
-              </p>
-              <p className="mt-4 text-stone text-base md:text-lg leading-relaxed">
-                When the work lands or the permanent hire arrives, we hand off with
-                results and documentation, not ongoing dependency.
-              </p>
-              <p className="mt-6 eyebrow hidden md:block !text-cream">
-                Vetted senior operators who step in to own critical work, now.
-              </p>
-            </div>
-            <div className="motion-stagger divide-y divide-white/10 lg:border-l lg:border-white/10 lg:pl-14">
-              <div className="eyebrow pb-6">The Veep model</div>
-              {[
-                ["Start with the work, not the title", "We diagnose the priority, urgency, and outcome before deciding whether the answer is advisory, a sprint, an operator, a pod, or recurring operating capacity."],
-                ["Senior only", "Every operator is a vetted senior leader: former founders, CFOs, COOs, CROs, CMOs, CTOs, as well as product and people leaders."],
-                ["Priced to scope", "Advisory, Sprint, Operator, or Pod structured around the work and outcomes."],
-                ["Guaranteed fit", "30 days to prove it. If the operator is not right, we swap them or you walk."],
-              ].map(([t, d]) => (
-                <div key={t} className="py-6 last:pb-0">
-                  <div className="font-serif font-medium text-xl text-cream tracking-tight">{t}</div>
-                  <p className="mt-2 text-base text-stone leading-relaxed">{d}</p>
-                </div>
-              ))}
-            </div>
+          <div className="max-w-3xl mb-10 md:mb-12">
+            <SectionEyebrow>What we take on</SectionEyebrow>
+            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
+              Start with what needs to be true on the other side.
+            </h2>
+            <p className="mt-6 text-stone text-base md:text-lg leading-relaxed">
+              A raise, a sales motion, or a new line of business. We step in and carry the work to the finish.
+            </p>
           </div>
+          <MandateCatalog />
         </div>
       </Reveal>
 
@@ -470,13 +426,37 @@ function Index() {
         </div>
       </Reveal>
 
+      {/* Institutional leverage — compact, framed, not a second full chapter */}
+      <Reveal as="section" id="leverage" className="py-10 sm:py-12 md:py-16 scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-[6px] border border-white/10 px-5 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12">
+            <div className="max-w-3xl mb-8">
+              <SectionEyebrow>Playbooks & Agent Teams</SectionEyebrow>
+              <h2 className="mt-4 font-serif font-medium text-2xl sm:text-3xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
+                One governed mandate. Three layers.
+              </h2>
+              <p className="mt-4 text-base text-stone leading-relaxed">
+                One lead partner orchestrates specialists, proven playbooks, and governed AI workflows so a lean team runs with big-firm rigor. You keep strategic approvals.
+              </p>
+            </div>
+            <PlatformStrata compact />
+            <Link
+              to="/agent-teams"
+              className="group motion-link mt-8 inline-flex items-center gap-2 text-sm text-cream/90 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/30 hover:decoration-white/70 min-h-11"
+            >
+              See how Agent Teams work <ArrowRight size={14} className="motion-arrow" />
+            </Link>
+          </div>
+        </div>
+      </Reveal>
+
       {/* Benefits */}
       <Reveal as="section" id="benefits" className="hidden md:block py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
-            <SectionEyebrow>What you get</SectionEyebrow>
+            <SectionEyebrow>Veep impact</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Senior ownership on your terms.
+              Build a stronger, more valuable business.
             </h2>
           </div>
           <div className="motion-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
@@ -493,7 +473,7 @@ function Index() {
             ))}
           </div>
           <div className="mt-16">
-            <InlineCTA label="Get in touch" mode="contact" />
+            <InlineCTA label="Bring us the job" mode="contact" />
           </div>
         </div>
       </Reveal>
@@ -505,7 +485,7 @@ function Index() {
             <div className="max-w-2xl">
               <SectionEyebrow>Engagements</SectionEyebrow>
               <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-                Four engagement shapes. One promise.
+                Outcome first. Engagement shape second.
               </h2>
             </div>
             <Link
@@ -521,7 +501,7 @@ function Index() {
             ))}
           </div>
           <p className="mt-10 text-sm text-stone max-w-3xl">
-            Lead with the work. Choose the shape after the work is clear.
+            Interim leadership, managed operating partnerships, and Agent Teams are also scoped to the mandate.
           </p>
         </div>
       </Reveal>
@@ -532,7 +512,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14">
             <SectionEyebrow>How It Works</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              From first call to operator in the seat in under 10 days.
+              From first call to live execution in under 10 days.
             </h2>
           </div>
           <StepFlow />
@@ -545,7 +525,7 @@ function Index() {
           <div className="max-w-5xl mb-12 md:mb-14 hidden md:block">
             <SectionEyebrow>Proof</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap hidden md:block">
-              Outcomes we've delivered in 90 days or less.
+              Real business outcomes, delivered fast.
             </h2>
           </div>
 
@@ -560,9 +540,9 @@ function Index() {
           <div className="motion-stagger hidden md:grid mt-12 md:mt-20 grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-10 motion-hairline-y">
             {[
               { k: "75+", v: "vetted operators" },
-              { k: "72h", v: "to shortlist" },
-              { k: "<10d", v: "to deploy" },
-              { k: "30d", v: "fit guarantee" },
+              { k: "72h", v: "scoped" },
+              { k: "<10d", v: "started" },
+              { k: "30d", v: "guarantee" },
             ].map((s) => (
               <div key={s.k}>
                 <div className="stat-figure text-4xl md:text-5xl text-cream">{s.k}</div>
@@ -580,7 +560,7 @@ function Index() {
           </div>
 
           <div className="mt-16">
-            <InlineCTA centered label="Meet Veep" />
+            <InlineCTA centered label="Book intro call" />
           </div>
         </div>
       </Reveal>
@@ -623,10 +603,10 @@ function Index() {
             <div className="lg:col-span-3 space-y-5">
               <SectionEyebrow>FOR FUNDS</SectionEyebrow>
               <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-                Portfolio companies don't pause for a search.
+                Sponsored is not owned.
               </h2>
               <p className="text-base text-stone leading-relaxed">
-                Transactions create volatility before close, after close, and during integration. Leadership seats open. The plan is clear, but the company often lacks the senior capacity to own the work. Veep gives transaction-active firms a retained roster of vetted operators, ready to support diligence, transition, integration, value creation, and interim leadership needs across the portfolio.
+                Your investment thesis sets the direction, but portfolio companies do not pause for an executive search. Veep gives lean funds, family offices, and holding companies one operating relationship to deploy senior operators, playbooks, and technology across diligence, first-100-days execution, integration, and value creation. The fund keeps investment decisions, each CEO agrees their company's mandate, and Veep owns delivery.
               </p>
             </div>
             <div className="lg:col-span-2 flex flex-col items-start lg:items-end gap-4">
@@ -634,7 +614,7 @@ function Index() {
                 to="/for-portfolios"
                 className="motion-cta cta-accent-dark rounded-[6px] whitespace-nowrap px-7 py-3.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-11 inline-flex items-center justify-center"
               >
-                See how portfolio rosters work
+                See how Veep works for funds
               </Link>
               <Link
                 to="/contact"
@@ -648,29 +628,13 @@ function Index() {
         </div>
       </Reveal>
 
-      {/* Before you book (objections) */}
-      <Reveal as="section" className="py-14 sm:py-16 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mb-12 md:mb-14">
-            <SectionEyebrow>Before you book</SectionEyebrow>
-            <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              The questions founders ask on the first call.
-            </h2>
-          </div>
-          <ObjectionList />
-          <div className="mt-14 hidden md:block">
-            <InlineCTA />
-          </div>
-        </div>
-      </Reveal>
-
-      {/* Mini FAQ (non-dupes + link) */}
-      <Reveal as="section" id="faq" className="hidden md:block bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
+      {/* Straight answers — merged Before you book + mini FAQ */}
+      <Reveal as="section" id="faq" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
-            <SectionEyebrow>FAQ</SectionEyebrow>
+            <SectionEyebrow>Straight answers</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Straight answers.
+              The questions leaders ask on the first call.
             </h2>
           </div>
           <div className="divide-y divide-white/10 border-y border-white/10">

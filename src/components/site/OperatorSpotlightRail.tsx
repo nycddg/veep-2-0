@@ -26,15 +26,15 @@ function OperatorCard({ op }: { op: Operator }) {
       } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
       aria-label={`${op.name}, ${op.role}`}
     >
-      {/* Portrait */}
-      <div className="absolute inset-0 transition-all duration-500 group-hover:scale-105 group-focus-within:scale-105">
+      {/* Portrait — scale via motion-image-tilt (1.02 / 320ms), not a 1.05 lift */}
+      <div className="absolute inset-0 motion-image-tilt">
         {op.photoUrl ? (
           <img
             src={op.photoUrl}
             alt={op.name}
             loading="lazy"
             decoding="async"
-            className="w-full h-full object-cover brightness-90 transition-all duration-500 group-hover:brightness-100 group-focus-within:brightness-100"
+            className="w-full h-full object-cover brightness-90 transition-[filter] duration-[320ms] group-hover:brightness-100 group-focus-within:brightness-100"
             style={{
               objectPosition: op.photoPosition ?? "top",
               transform: op.photoScale ? `scale(${op.photoScale})` : undefined,

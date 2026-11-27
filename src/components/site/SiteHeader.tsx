@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
@@ -17,7 +17,7 @@ type NavItem =
 const nav: readonly NavItem[] = [
   { kind: "hash", hash: "overview", label: "Overview" },
   { kind: "hash", hash: "operators", label: "Operators" },
-  { kind: "hash", hash: "benefits", label: "Benefits" },
+  { kind: "hash", hash: "benefits", label: "Advantage" },
   { kind: "hash", hash: "how", label: "How It Works" },
   { kind: "hash", hash: "proof", label: "Proof" },
   { kind: "route", to: "/for-portfolios", label: "For Funds" },
@@ -37,12 +37,28 @@ const mobileNav = nav.filter(
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setOpen(false);
+      menuBtnRef.current?.focus();
+    };
+    window.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
   return (
     <header
       className={`motion-header sticky top-0 z-40 backdrop-blur border-b ${
@@ -62,6 +78,7 @@ export function SiteHeader() {
               to="/"
               hash={(n as { hash: string }).hash}
               className="group motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
+              activeOptions={{ includeHash: true }}
             >
               <span className="motion-underline">{n.label}</span>
             </Link>
@@ -88,17 +105,19 @@ export function SiteHeader() {
             rel="noopener noreferrer"
             className="motion-cta cta-accent relative shrink-0 whitespace-nowrap rounded-[6px] px-4 py-1.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background before:absolute before:inset-x-0 before:-inset-y-1.5 before:content-['']"
           >
-            Get started
+            Book intro call
           </a>
         </div>
 
         <div className="lg:hidden flex items-center gap-1">
           <ThemeToggle />
           <button
+          ref={menuBtnRef}
           className="lg:hidden p-3 -mr-2 min-h-11 min-w-11 text-cream"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
           aria-expanded={open}
+          aria-controls={open ? "mobile-nav" : undefined}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -110,7 +129,7 @@ export function SiteHeader() {
       <div aria-hidden className="motion-progress absolute inset-x-0 bottom-0 h-px" />
 
       {open && (
-        <div className="lg:hidden border-t border-white/8 bg-background">
+        <div id="mobile-nav" className="lg:hidden border-t border-white/8 bg-background">
           <div className="px-4 py-4 space-y-0.5">
             {mobileNav.map((n) =>
               n.kind === "hash" ? (
@@ -143,7 +162,7 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="motion-cta cta-accent block rounded-[6px] px-4 py-3 text-sm text-center font-medium min-h-11 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                Get started
+                Book intro call
               </a>
             </div>
           </div>

@@ -17,13 +17,15 @@ export function PageHero({
   sub,
   children,
   chip,
-  primaryLabel = "Book a 30-minute call",
+  primaryLabel = "Book intro call",
   primaryHref,
   primaryTo,
   primaryHash,
   primarySearch,
   secondaryLabel = "Request a capacity audit",
   secondaryTo = "/contact",
+  secondaryHash,
+  secondarySearch,
 }: {
   eyebrow: string;
   title: ReactNode;
@@ -40,6 +42,8 @@ export function PageHero({
   primarySearch?: Record<string, string>;
   secondaryLabel?: string;
   secondaryTo?: string;
+  secondaryHash?: string;
+  secondarySearch?: Record<string, string>;
   /** Legacy props — accepted but unused (retired mono chrome). */
   index?: string | number;
   category?: string;
@@ -51,7 +55,7 @@ export function PageHero({
 
   return (
     <section className="relative overflow-hidden border-b border-white/10">
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 md:pt-24 pb-12 sm:pb-16 md:pb-24">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 md:pt-24 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-3xl space-y-7">
           {chip ? (
             <TrustChip label={chip} />
@@ -86,7 +90,11 @@ export function PageHero({
               </a>
             )}
             <Link
-              to={secondaryTo}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              to={secondaryTo as any}
+              hash={secondaryHash}
+              search={secondarySearch}
+              activeOptions={{ includeHash: Boolean(secondaryHash) }}
               className="motion-link text-sm text-cream/85 hover:text-cream underline underline-offset-8 hover:underline-offset-4 decoration-white/25 hover:decoration-white/70 pb-1 text-center sm:text-left min-h-11 inline-flex items-center justify-center sm:justify-start"
             >
               {secondaryLabel}

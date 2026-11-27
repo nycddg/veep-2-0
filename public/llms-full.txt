@@ -1,34 +1,38 @@
 # Veep — full summary for AI systems
 
-Veep (The Veep Group, LLC) places vetted senior operators inside founder-led and investor-backed companies to own critical work that cannot wait for a permanent hire.
+Veep (The Veep Group, LLC) is an operating partner platform. Independent businesses and lean funds hire Veep for senior operators, playbooks, and technology built to grow revenue, expand margins, and withstand scrutiny.
 
 ## Positioning
 
-- Public: invite-only network of operating partners
-- Internal: operating partner platform
+- Public: operating partners for the job to be done
+- Core line: The org chart doesn't cover every job.
 - Not: self-serve marketplace, resume broker, consulting firm, body shop, fractional marketplace branding
+- Cadence: Scoped in 72 hours. Started in under 10 days.
+- Roster standard: No juniors. No career consultants.
 
 ## Proof (public, approved)
 
 - 75+ vetted senior operators
-- Matched in 72 hours
-- Deployed in under 10 days
-- 30-day fit guarantee
-- 95% match success rate (company-verified public claim)
+- Scoped in 72 hours
+- Started in under 10 days
+- 30-day guarantee
+- Avg. 18 yrs experience
+- Career track record (aggregated across operators' careers): $2B+ cost savings, $1B+ capital raised, $3B+ new revenue, 20+ exits & acquisitions
 
 ## Engagement models
 
-1. Advisory — senior judgment for high-stakes decisions (from $3k/mo)
-2. Sprint — time-boxed scoped outcome (from $25k/scope)
-3. Operator — embedded ownership of a function or priority (from $15k/mo)
-4. Pod — coordinated multi-operator program (from $30k/mo)
-5. Portfolio Roster — retained capacity for PE/family offices/holdcos ($75k/year + SOW usage)
+1. Advisory — senior operating judgment for high-stakes calls (from $3k/mo)
+2. Sprint — one defined business outcome, typically 4 to 12 weeks (from $25k/scope)
+3. Operator — embedded senior leadership of a function or priority (from $15k/mo)
+4. Pod — one accountable lead orchestrating specialists (from $30k/mo)
+5. Interim Leadership, Managed Operating Partnerships, and Operator-Governed Agent Teams — scoped individually
+6. Portfolio Roster — one operating relationship for lean funds, family offices, holding companies ($75k/year + company SOWs)
 
 ## Ideal buyers
 
-- Founders/CEOs with urgent work and no owner
-- PE / family office / holdco operating partners needing portco coverage
-- Companies bridging interim gaps while searching for permanent hires
+- Founders, CEOs, and owner-operators who need senior ownership for revenue, margins, diligence, or a leadership gap
+- Lean PE / family office / holding company leaders putting operating firepower behind a thesis
+- Companies covering an executive seat while a permanent search runs
 
 ## Primary URLs
 
@@ -36,9 +40,218 @@ Veep (The Veep Group, LLC) places vetted senior operators inside founder-led and
 - https://www.veep.work/pricing
 - https://www.veep.work/for-portfolios
 - https://www.veep.work/faq
+- https://www.veep.work/agent-teams
 - https://www.veep.work/contact
 - https://www.veep.work/join
+- https://www.veep.work/feeds
 
 ## Contact
 
 hey@veep.work
+
+## Feeds
+
+202 pieces. Each URL is the canonical article.
+
+- [AI Marketing Consultant: How It Works](https://www.veep.work/feeds/service/ai-marketing-consultant)
+- [AI Strategy Consulting for Enterprises](https://www.veep.work/feeds/service/ai-strategy-consulting-services)
+- [Acquisition Integration Strategy](https://www.veep.work/feeds/blog/integrate-acquisition)
+- [Best B2B Fractional CMO for Growth](https://www.veep.work/feeds/service/b2b-fractional-cmo)
+- [Best Fractional CMO Services for Growth](https://www.veep.work/feeds/service/fractional-cmo-service)
+- [Best HR Outsourcing Services for Small Businesses](https://www.veep.work/feeds/service/outsource-hr-services)
+- [Best Outsourced CFO Services in 2026](https://www.veep.work/feeds/service/outsourced-cfo)
+- [Best Revenue Operations Consulting Firms in 2026](https://www.veep.work/feeds/service/revenue-operations-consulting)
+- [Best Virtual CFO Services](https://www.veep.work/feeds/service/best-virtual-cfo-services)
+- [Business Acquisition Consultants for Buying a Business](https://www.veep.work/feeds/service/business-acquisition-consultant)
+- [Business Advisory Services in Seattle](https://www.veep.work/feeds/service/business-advisory-services)
+- [Business Consulting Firms in Michigan](https://www.veep.work/feeds/service/business-consulting-michigan)
+- [Business Exit Planning Advisors](https://www.veep.work/feeds/service/exit-planning-advisors)
+- [Business Exit Strategy Consultant](https://www.veep.work/feeds/service/exit-strategy-consultant)
+- [Business Growth Advisors for US Companies](https://www.veep.work/feeds/service/growth-advisor)
+- [Business Growth Consultant: Development Consulting](https://www.veep.work/feeds/blog/business-growth-consultant)
+- [Business Growth Consulting](https://www.veep.work/feeds/service/business-growth-consulting-services)
+- [Business Management Consultant Services](https://www.veep.work/feeds/blog/business-management-consultant)
+- [Business Optimization Consultants](https://www.veep.work/feeds/service/business-optimization-consultant)
+- [Business Performance Improvement Consulting](https://www.veep.work/feeds/service/business-performance-improvement-consultant)
+- [Business Process Improvement Consultant Services](https://www.veep.work/feeds/service/business-process-improvement-consultant)
+- [Business Process Optimization Consultants](https://www.veep.work/feeds/service/process-optimization-consultant)
+- [Business Strategic Planning Consulting Guide](https://www.veep.work/feeds/service/business-consulting-strategic-planning)
+- [Business Transition Advisors Advisory](https://www.veep.work/feeds/service/business-transition-advisors)
+- [Business Transition Planning and Succession](https://www.veep.work/feeds/blog/business-transition-planning)
+- [Business Valuation Advisory Services](https://www.veep.work/feeds/service/professional-business-valuation)
+- [CEO Advisory Services for Critical Work](https://www.veep.work/feeds/service/ceo-advisory)
+- [CFO Advisory Services for Growing Companies](https://www.veep.work/feeds/service/cfo-advisory)
+- [CFO Assist for Critical Growth Work](https://www.veep.work/feeds/service/cfo-assist)
+- [CFO Services for Small Business and Startups](https://www.veep.work/feeds/service/small-business-cfo-services)
+- [CIO Consulting and Advisory](https://www.veep.work/feeds/service/consulting-cio)
+- [COO for Hire: Chief Operating Officer](https://www.veep.work/feeds/service/coo-hire)
+- [CTO Services and Strategy](https://www.veep.work/feeds/service/cto-services)
+- [CXO Advisor Services](https://www.veep.work/feeds/blog/cxo-advisor)
+- [Capital Raising: Definition and Strategies](https://www.veep.work/feeds/blog/raising-capital)
+- [Cash Flow Management Consulting Services 2026](https://www.veep.work/feeds/service/cash-flow-consulting)
+- [Change Management Consulting](https://www.veep.work/feeds/service/organizational-change-consultants)
+- [Chief Marketing Officer Consultant vs Fractional CMO](https://www.veep.work/feeds/service/chief-marketing-officer-consultant)
+- [Consultants On Demand: Senior Operating Capacity](https://www.veep.work/feeds/service/consultants-demand)
+- [Continuity Family Business Consulting for Succession](https://www.veep.work/feeds/service/continuity-family-business-consulting)
+- [Corporate Finance Advisory Services](https://www.veep.work/feeds/service/corporate-finance-advisory)
+- [Dental Fractional CMO Services for Growth](https://www.veep.work/feeds/service/dental-fractional-cmo-services)
+- [Digital Transformation Leaders](https://www.veep.work/feeds/service/digital-transformation-leader)
+- [Due Diligence Consulting 2026](https://www.veep.work/feeds/service/due-diligence-consulting)
+- [Embedded Strategy and Operations Consultant](https://www.veep.work/feeds/service/strategic-operations-consultant)
+- [Executive Business Consulting: Consultants](https://www.veep.work/feeds/service/executive-business-consulting)
+- [Executive Financial Consulting Services](https://www.veep.work/feeds/service/executive-financial-consulting)
+- [Executive Management Consultants and Firms](https://www.veep.work/feeds/service/executive-management-consultants)
+- [Exit Advisors: Merger and Acquisitions](https://www.veep.work/feeds/service/exit-advisors)
+- [Expense Reduction Consulting Services](https://www.veep.work/feeds/service/expense-reduction-consulting)
+- [Experts for Startups](https://www.veep.work/feeds/service/startup-experts)
+- [Family Business Consultants for Confident Growth](https://www.veep.work/feeds/service/family-business-consultant)
+- [Family Business Consulting and Group](https://www.veep.work/feeds/service/family-business-consulting-group)
+- [Financial Consultant Services for Startups](https://www.veep.work/feeds/blog/financial-consultant-startups)
+- [Financial Due Diligence & Transaction Advisory](https://www.veep.work/feeds/service/financial-due-diligence-services)
+- [Financial and Strategic Management for Business Growth](https://www.veep.work/feeds/blog/financial-strategic-management)
+- [Fintech Consultant Services for Critical Growth](https://www.veep.work/feeds/service/fintech-consultant)
+- [Fractional CEO Services for Business](https://www.veep.work/feeds/service/fractional-ceo-services)
+- [Fractional CFO Services for Hire](https://www.veep.work/feeds/blog/hire-fractional-cfo)
+- [Fractional CFO Services for Startups](https://www.veep.work/feeds/blog/fractional-cfos-startups)
+- [Fractional CFO Services in Austin](https://www.veep.work/feeds/service/fractional-cfo-austin)
+- [Fractional CFO Services in Boston](https://www.veep.work/feeds/service/fractional-cfo-boston)
+- [Fractional CFO Services in Boulder](https://www.veep.work/feeds/service/fractional-cfo-boulder)
+- [Fractional CFO Services in Denver](https://www.veep.work/feeds/service/cfo-services-denver)
+- [Fractional CFO Services in Houston](https://www.veep.work/feeds/service/fractional-cfo-houston)
+- [Fractional CFO Services in Indianapolis](https://www.veep.work/feeds/service/fractional-cfo-indy)
+- [Fractional CFO Services in Kansas City](https://www.veep.work/feeds/service/fractional-cfo-kansas-city)
+- [Fractional CFO Services in Los Angeles](https://www.veep.work/feeds/service/cfo-services-los-angeles)
+- [Fractional CFO Services in Nashville](https://www.veep.work/feeds/service/fractional-cfo-nashville)
+- [Fractional CFO Services in New York](https://www.veep.work/feeds/service/fractional-cfo-ny)
+- [Fractional CFO Services in Omaha](https://www.veep.work/feeds/service/cfo-services-omaha)
+- [Fractional CFO Services in San Diego](https://www.veep.work/feeds/service/fractional-cfo-san-diego)
+- [Fractional CFO Services in Tampa](https://www.veep.work/feeds/service/fractional-cfo-tampa)
+- [Fractional CFO and Controller Services](https://www.veep.work/feeds/blog/fractional-controller)
+- [Fractional CFO in Atlanta](https://www.veep.work/feeds/service/fractional-cfo-atlanta)
+- [Fractional CFO in Dallas](https://www.veep.work/feeds/service/fractional-cfo-dallas)
+- [Fractional CFO in San Francisco](https://www.veep.work/feeds/service/fractional-cfo-san-francisco)
+- [Fractional CIO Services for Strategic Growth](https://www.veep.work/feeds/service/fractional-cio-services)
+- [Fractional CIO and vCIO](https://www.veep.work/feeds/blog/fractional-cio)
+- [Fractional CMO Consultant](https://www.veep.work/feeds/blog/fractional-cmo-consultant)
+- [Fractional CMO for Startups](https://www.veep.work/feeds/blog/fractional-cmo-startups)
+- [Fractional CMO in Dallas](https://www.veep.work/feeds/service/fractional-cmo-dallas)
+- [Fractional COO Services](https://www.veep.work/feeds/blog/fractional-coo)
+- [Fractional CTO for Hire in 2026](https://www.veep.work/feeds/service/cto-hire)
+- [Fractional Chief AI Officer (CAIO) Leadership](https://www.veep.work/feeds/service/fractional-chief-ai-officer)
+- [Fractional Chief Compliance Officer](https://www.veep.work/feeds/service/fractional-chief-compliance-officer)
+- [Fractional Chief Data Officer (CDO)](https://www.veep.work/feeds/service/fractional-cdo)
+- [Fractional Chief People Officer](https://www.veep.work/feeds/blog/fractional-chief-people-officer)
+- [Fractional Chief Product Officer](https://www.veep.work/feeds/blog/fractional-cpo)
+- [Fractional Chief Revenue Officer (CRO)](https://www.veep.work/feeds/blog/fractional-chief-revenue-officer)
+- [Fractional Chief of Staff for Critical Work](https://www.veep.work/feeds/service/fractional-chief-staff)
+- [Fractional Consulting](https://www.veep.work/feeds/blog/fractional-consulting)
+- [Fractional CxO Hire for Faster Growth](https://www.veep.work/feeds/service/fractional-cxo)
+- [Fractional Executive Leadership Services](https://www.veep.work/feeds/service/fractional-leadership-services)
+- [Fractional Executives and C-Suites](https://www.veep.work/feeds/blog/fractional-executives)
+- [Fractional HR Services: How It Works](https://www.veep.work/feeds/service/fractional-hr)
+- [Fractional Hire for Critical Work](https://www.veep.work/feeds/service/fractional-hire)
+- [Fractional IT Leadership Services](https://www.veep.work/feeds/service/fractional-it-services)
+- [Fractional Interim Chief Technology Officer](https://www.veep.work/feeds/service/interim-chief-technology-officer)
+- [Fractional Law Firm CMO Marketing](https://www.veep.work/feeds/service/fractional-law-firm-cmo)
+- [Fractional Marketing Directors for High-Impact Growth](https://www.veep.work/feeds/service/fractional-marketing-director)
+- [Fractional Project Manager Jobs](https://www.veep.work/feeds/blog/fractional-project-manager)
+- [Fractional Recruiting for Critical Growth Roles](https://www.veep.work/feeds/service/fractional-recruiting)
+- [Fractional Sales Leader Management](https://www.veep.work/feeds/service/fractional-sales-leader)
+- [Fractional Strategist for Executives](https://www.veep.work/feeds/service/fractional-strategist)
+- [Fractional Talent for Critical Work](https://www.veep.work/feeds/service/fractional-talent)
+- [Funding and Grant Consulting for Growth](https://www.veep.work/feeds/service/funding-consulting)
+- [GTM Strategy Consultants](https://www.veep.work/feeds/service/gtm-consultant)
+- [Global Business Consulting Firm](https://www.veep.work/feeds/service/business-consultant-agency)
+- [Go-to-Market Strategy Consultant](https://www.veep.work/feeds/service/go-to-market-strategy-consultant)
+- [Growth Advisor for High-Impact Growth](https://www.veep.work/feeds/service/growth-advisors)
+- [Growth Marketing Consultants for Business Growth](https://www.veep.work/feeds/service/growth-marketing-consultant)
+- [Guide to Fundraising for Startups](https://www.veep.work/feeds/blog/fundraising-startups)
+- [HR Compliance Consulting Services](https://www.veep.work/feeds/service/hr-compliance-consultant)
+- [HR Consulting Services for Startups](https://www.veep.work/feeds/service/hr-consultant-startups)
+- [HR Outsourcing Services for Small Business](https://www.veep.work/feeds/service/hr-consultant-small-business)
+- [Head of GTM Strategy](https://www.veep.work/feeds/blog/head-gtm)
+- [Hire Finance Experts On Demand](https://www.veep.work/feeds/service/hire-finance-experts)
+- [Hire Fractional Talent for Critical Work](https://www.veep.work/feeds/service/hire-fractional)
+- [Hire Interim CEO Operators With Confidence](https://www.veep.work/feeds/service/interim-ceo)
+- [Hire Top Fractional Executives](https://www.veep.work/feeds/service/best-fractional-executive-firms)
+- [Hire a Fractional CFO in 2026](https://www.veep.work/feeds/blog/hire-cfo)
+- [Hire a Fractional CMO: Chief Marketing Officer](https://www.veep.work/feeds/service/hire-fractional-cmo)
+- [Hire a Fractional Chief Growth Officer](https://www.veep.work/feeds/blog/fractional-chief-growth-officer)
+- [Hire an Interim CFO for Critical Growth](https://www.veep.work/feeds/service/hire-interim-cfo)
+- [Hire an Interim COO With Confidence](https://www.veep.work/feeds/service/interim-coo)
+- [How to Pitch to Investors](https://www.veep.work/feeds/blog/pitch-investors)
+- [Human Capital Management Consultants and Services](https://www.veep.work/feeds/service/human-capital-management-consultants)
+- [IPO Advisory Services for Growth Companies](https://www.veep.work/feeds/service/ipo-consultant)
+- [IPO Readiness Advisory Services](https://www.veep.work/feeds/service/ipo-readiness)
+- [Interim CFO Consulting Services](https://www.veep.work/feeds/service/interim-cfo-consulting)
+- [Interim CFO Services for Growth](https://www.veep.work/feeds/service/interim-cfo-services)
+- [Interim CIO Services for Critical Work](https://www.veep.work/feeds/service/interim-cio)
+- [Interim CMO and Fractional Chief Marketing Officer](https://www.veep.work/feeds/service/interim-cmo)
+- [Interim Executive Management Services That Deliver](https://www.veep.work/feeds/service/interim-management-executives)
+- [Interim Executive Search](https://www.veep.work/feeds/blog/temporary-executive)
+- [Interim Executive Solutions: Leadership Transition](https://www.veep.work/feeds/service/interim-executive-solutions)
+- [Interim HR Consulting for Critical Work](https://www.veep.work/feeds/service/interim-hr-consulting)
+- [Interim Human Resources Directors](https://www.veep.work/feeds/service/interim-hr-directors)
+- [Interim Leader and Leadership](https://www.veep.work/feeds/blog/interim-leader)
+- [Interim Management Services That Keep Work Moving](https://www.veep.work/feeds/service/interim-management)
+- [Interim Management and Consulting Services](https://www.veep.work/feeds/service/interim-management-consulting)
+- [Leadership Consultant Services](https://www.veep.work/feeds/blog/leadership-consultant)
+- [M&A Post-Merger Integration Consulting](https://www.veep.work/feeds/service/ma-integration-consulting)
+- [Management Advisory Services (MAS)](https://www.veep.work/feeds/service/management-advisory-services)
+- [Marketing Consultant for Small Businesses](https://www.veep.work/feeds/service/marketing-consultant-small-business)
+- [Marketing Operations Consultant Consulting](https://www.veep.work/feeds/service/marketing-operations-consultant)
+- [Nonprofit Strategic Planning Consultant Services](https://www.veep.work/feeds/service/nonprofit-strategic-planning-consultant)
+- [Operating Model Design Consulting](https://www.veep.work/feeds/service/operating-model-consulting)
+- [Operational Reviews For Clearer Execution](https://www.veep.work/feeds/service/operation-review)
+- [Organizational Design Consulting Consultants](https://www.veep.work/feeds/service/organizational-design-consultants)
+- [Organizational and Management Consulting](https://www.veep.work/feeds/service/organizational-management-consulting)
+- [Outsourced Accounting Services for Growing Companies](https://www.veep.work/feeds/service/accounting-outsourcing-solutions)
+- [Outsourced CFO Services for Growing Companies](https://www.veep.work/feeds/service/outsourced-cfo-services)
+- [Outsourced CMO Services for Business Marketing](https://www.veep.work/feeds/service/outsourced-cmo)
+- [Outsourced COO Services for Critical Work](https://www.veep.work/feeds/service/outsourced-coo)
+- [Outsourced Chief Compliance Officer Services](https://www.veep.work/feeds/service/outsourced-chief-compliance-officer)
+- [Outsourced Controller Services That Own The Work](https://www.veep.work/feeds/service/controller-services)
+- [Outsourced Financial Controller Services](https://www.veep.work/feeds/service/outsourced-controller-services)
+- [Part-Time CEO Chief Executive Officer](https://www.veep.work/feeds/service/part-time-ceo)
+- [Part-Time COO and Chief Operating Officer](https://www.veep.work/feeds/service/part-time-coo)
+- [Part-Time Sales Leader for Growth](https://www.veep.work/feeds/service/part-time-sales-leader)
+- [Part-Time and Fractional CFO Services](https://www.veep.work/feeds/service/part-time-cfo-services)
+- [People Operations Consulting That Drives Ownership](https://www.veep.work/feeds/service/people-operations-consultant)
+- [Pricing Strategy Consultants](https://www.veep.work/feeds/service/pricing-consultant)
+- [Process Mapping and Improvement Consultants](https://www.veep.work/feeds/service/process-mapping-consultant)
+- [Revenue Growth Management Consulting](https://www.veep.work/feeds/service/revenue-growth-consulting)
+- [SaaS Fractional CFO for Growth](https://www.veep.work/feeds/service/saas-fractional-cfo)
+- [Sales Consulting Services for Consultants](https://www.veep.work/feeds/blog/sales-consultant-services)
+- [Senior CFO Consulting Services On Demand](https://www.veep.work/feeds/service/cfo-consultants)
+- [Small Business Advisors and Consulting Services](https://www.veep.work/feeds/service/business-advisor-small-businesses)
+- [Small Business Consultants for US Businesses](https://www.veep.work/feeds/service/small-business-consultant-services)
+- [Small Business Consulting Services](https://www.veep.work/feeds/service/new-business-consulting)
+- [Small Business Financial Consultant for Growing Companies](https://www.veep.work/feeds/service/business-finance-consultant)
+- [Small Business Operations Consultant Types](https://www.veep.work/feeds/blog/small-business-operations-consultant)
+- [Spend Analysis Services](https://www.veep.work/feeds/blog/spend-analysis-consulting)
+- [Startup Business Consultant to Hire](https://www.veep.work/feeds/service/startup-business-consultant)
+- [Startup CFO Success for Growing Companies](https://www.veep.work/feeds/service/startup-cfo)
+- [Startup Digital Marketing Consulting](https://www.veep.work/feeds/service/startup-marketing-consulting)
+- [Startup Financial Consulting Services for Entrepreneurs](https://www.veep.work/feeds/service/startup-financial-consulting)
+- [Startup Funding Consultants for Smarter Growth](https://www.veep.work/feeds/service/funding-consultant)
+- [Startup Funding: How to Raise Capital for a Business](https://www.veep.work/feeds/blog/raise-capital-startup-business)
+- [Startup Fundraising Consultants for Critical Growth](https://www.veep.work/feeds/service/startup-fundraising-consultant)
+- [Strategic Advisors for Business Strategy](https://www.veep.work/feeds/service/business-strategy-advisors)
+- [Strategic CFO for High-Impact Decisions](https://www.veep.work/feeds/service/strategic-cfo)
+- [Strategic Consulting: Services](https://www.veep.work/feeds/service/strategic-consulting-services)
+- [Strategic Exit Advisors for Critical Decisions](https://www.veep.work/feeds/service/strategic-exit)
+- [Strategic Management and Strategy Consulting](https://www.veep.work/feeds/service/management-strategic-consulting)
+- [Strategic Virtual CFO Services](https://www.veep.work/feeds/service/virtual-cfo-services)
+- [Top Business Marketing Consultants for Hire](https://www.veep.work/feeds/service/business-marketing-consultants)
+- [Top Nonprofit Fundraising Consulting Services](https://www.veep.work/feeds/service/fundraising-consulting-services)
+- [Top Small Business Management Consulting Firms 2026](https://www.veep.work/feeds/service/small-business-management-consulting-firms)
+- [Top Strategy Consulting Firms for Growth](https://www.veep.work/feeds/service/strategy-consulting-firms)
+- [Top Venture Capital Consultants](https://www.veep.work/feeds/service/vc-consultant)
+- [Turnaround and Restructuring Consulting](https://www.veep.work/feeds/service/turnaround-consultants)
+- [Venture Management Consulting and Consultants](https://www.veep.work/feeds/service/venture-management-consulting)
+- [Virtual CIO Services for Growing Companies](https://www.veep.work/feeds/service/virtual-cio-services)
+- [Virtual COO: Operational Leadership That Delivers](https://www.veep.work/feeds/service/virtual-coo)
+- [What Is A Fractional Role](https://www.veep.work/feeds/blog/fractional-role)
+- [What Is Fractional Business Development](https://www.veep.work/feeds/blog/fractional-business-development)
+- [What Is a Fractional CMO? Meaning, Roles and Benefits](https://www.veep.work/feeds/blog/fractional-cmo)
+- [Why Founder-Led Companies Outperform](https://www.veep.work/feeds/blog/founder-led-companies)

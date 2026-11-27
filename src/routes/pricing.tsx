@@ -10,37 +10,36 @@ const tiers = [
     t: "Advisory",
     p: "From $3k",
     per: "per month",
-    best: "Senior judgment for high-stakes decisions.",
+    best: "Senior operating judgment when your team owns execution, or a clean step-down once a heavier mandate wraps.",
     items: [
       "Board and investor prep",
-      "Fundraise strategy",
-      "Executive decisions",
-      "Strategic tradeoffs",
-      "Includes six one-hour sessions",
+      "Capital and M&A calls",
+      "Commercial tradeoffs",
+      "Includes six one-hour working sessions",
     ],
   },
   {
     t: "Sprint",
     p: "From $25k",
     per: "per scope",
-    best: "One urgent priority with a clear owner and endpoint.",
+    best: "One defined business outcome carried from scope to clean handoff, with a fixed fee and clear finish line.",
     items: [
-      "Fixed scope, fixed price",
-      "4–12 week engagement",
-      "GTM reset, fundraise, margin, diligence",
-      "Clear success criteria",
+      "Fixed scope, transparent fee",
+      "Typically 4 to 12 weeks",
+      "Diligence prep, GTM reset, margin work, or launch",
+      "Converts cleanly into ongoing capacity",
     ],
   },
   {
     t: "Operator",
     p: "From $15k",
     per: "per month",
-    best: "Ongoing senior ownership for your most critical initiatives.",
+    best: "Embedded senior leadership running a core function or priority across finance, GTM, ops, product, tech, or people.",
     items: [
-      "Finance, GTM, operations, product, or people",
       "Build or reset a function",
-      "Resolve leadership gaps",
-      "Typically 3–12 months",
+      "Cover leadership transitions",
+      "Swap specialties or adjust scope as priorities shift",
+      "Typically 3 to 12 months",
     ],
     featured: true,
   },
@@ -48,35 +47,70 @@ const tiers = [
     t: "Pod",
     p: "From $30k",
     per: "per month",
-    best: "A lead operator plus specialist support for cross-functional work.",
+    best: "One accountable operating partner orchestrating specialists and governed AI workflows across functions.",
     items: [
-      "Multi-function execution",
-      "Operating reset or transformation",
-      "GTM + RevOps, finance + ops, AI initiatives",
-      "Coordinated senior execution",
+      "Multi-function launches or integrations",
+      "Margin and operating resets",
+      "Finance plus ops, GTM plus RevOps, AI workflows",
+      "Coordinated senior delivery",
     ],
   },
 ];
 
-const notIncluded = [
-  { t: "Placement fees", d: "Calls with a Veep founder and operator matching are free." },
-  { t: "Setup or onboarding fees", d: "Contracting, access, and onboarding are managed at no extra cost." },
-  { t: "Long-term lock-in", d: "Start focused and continue, pause, or scale as the work changes." },
-  { t: "Hourly billing surprises", d: "Scoped around the work. You know the number before you sign." },
+const flexItems = [
+  {
+    t: "Dynamic by design",
+    d: "Start with a CFO for a raise, swap in a GTM lead once the round closes, or step down to Advisory after handoff. Your operating bench reshapes as fast as your priorities do.",
+  },
+  {
+    t: "Add workflows and specialists anytime",
+    d: "Layer in functional specialists or Operator-Governed Agent Teams for recurring reporting, pipeline hygiene, and operating reviews without adding permanent headcount.",
+  },
+  {
+    t: "Scoped up front, zero hidden fees",
+    d: "Every mandate is priced to an agreed scope and finish line before you sign. No placement fees, no setup fees, and no open-ended hourly billing.",
+  },
+  {
+    t: "30-day guarantee",
+    d: "Test the partnership in live delivery. If the engagement isn't right within the first 30 days, we make it right or you walk, with no fee owed for the remaining term.",
+  },
+];
+
+const buyShapes = [
+  {
+    when: "Need judgment on a live call. Your team runs execution.",
+    shape: "Advisory",
+  },
+  {
+    when: "One defined finish line, typically 4 to 12 weeks.",
+    shape: "Sprint",
+  },
+  {
+    when: "Own the function until it is hire-ready or stable.",
+    shape: "Embedded Operator",
+  },
+  {
+    when: "The seat cannot sit empty through a transition.",
+    shape: "Interim Leadership",
+  },
+  {
+    when: "Priorities will keep moving and you want one partner across them.",
+    shape: "Managed Operating Partnership",
+  },
 ];
 
 const faqs = [
   {
-    q: "Are there setup or matching fees?",
-    a: "No. Calls with a Veep founder and operator matching are free. You only pay once an engagement is signed.",
+    q: "Can we change operators, add workflows, or adjust shape mid-engagement?",
+    a: "Yes. That is the point of the model. A Sprint can convert into an Embedded Operator, an Operator can expand into a Pod with Agent Teams for recurring reporting, or you can step down to Advisory once your team owns the system. You can also swap specialties as the business shifts from one priority to the next.",
   },
   {
-    q: "Can I convert between models mid-term?",
-    a: "Yes. Many engagements change shape as the work becomes clearer. Advisory can become a Sprint. A Sprint can become an Operator engagement. Operator work can expand into a Pod.",
+    q: "Are there placement, setup, or hourly surprise fees?",
+    a: "No. Scoping calls with a Veep founder, partner selection, contracting, and onboarding are included. Every mandate is scoped and priced transparently before you sign, with zero hourly billing.",
   },
   {
-    q: "How does the 30-day fit guarantee work?",
-    a: "If the operator is not right within the first 30 days, we swap them or you walk with no fee owed for the remaining term.",
+    q: "How does the 30-day guarantee work?",
+    a: "If the engagement isn't right within the first 30 days, we make it right or you walk, with no fee owed for the remaining term.",
   },
 ];
 
@@ -94,9 +128,9 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "Pricing | Veep" },
-      { name: "description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
-      { property: "og:title", content: "Pricing — Priced to the work, not the hour | Veep" },
-      { property: "og:description", content: "Advisory from $3k/mo · Sprint from $25k · Operator from $15k/mo · Pod from $30k/mo. Every engagement carries a 30-day fit guarantee." },
+      { name: "description", content: "Transparent, scoped, dynamic operating capacity built to move at the speed of software. Advisory from $3k/mo, Sprints from $25k, Operators from $15k/mo, Pods from $30k/mo. 30-day guarantee." },
+      { property: "og:title", content: "Pricing | Veep" },
+      { property: "og:description", content: "Transparent, scoped, dynamic operating capacity built to move at the speed of software. Advisory from $3k/mo, Sprints from $25k, Operators from $15k/mo, Pods from $30k/mo. 30-day guarantee." },
       { property: "og:url", content: "https://www.veep.work/pricing" },
       ...ogImageMeta(),
     ],
@@ -111,11 +145,58 @@ function Page() {
     <>
       <PageHero
         eyebrow="Pricing"
-        title="Priced to the work. Not the hour."
-        sub="Every engagement is scoped to the work, urgency, and level of ownership required. Transparent rates. No hourly billing. No lock-in by default."
+        title="Operating capacity as responsive as software."
+        sub="Keeps pace with today's market with zero surprises. Swap operators as priorities shift, layer in specialists or governed AI workflows, and add or downshift capacity as needed. Transparent, scoped, and built to flex with your business."
         primaryLabel="Get in touch"
         primaryTo="/contact"
+        secondarySearch={{ intent: "audit" }}
       />
+
+      <Reveal as="section" id="how-companies-buy" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 md:mb-10">
+            <div className="eyebrow">How we work with you</div>
+          </div>
+
+          <div className="grid md:grid-cols-2 md:divide-x md:divide-white/10 border-y border-white/10">
+            <div className="py-8 md:pr-12">
+              <h2 className="font-serif font-medium text-xl md:text-2xl text-cream tracking-tight">
+                Individual Mandate
+              </h2>
+              <p className="mt-4 text-base text-stone leading-relaxed">
+                One decision, one deliverable, one function, or one transition. Your team gets a defined owner for that job.
+              </p>
+            </div>
+            <div className="py-8 md:pl-12 border-t border-white/10 md:border-t-0">
+              <h2 className="font-serif font-medium text-xl md:text-2xl text-cream tracking-tight">
+                Managed Operating Partnership
+              </h2>
+              <p className="mt-4 text-base text-stone leading-relaxed">
+                Gain institutional leverage with a long-term partner at the table to shape and manage operating capacity.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-14 md:mt-16">
+            <div className="mono-label mb-6">One request, five shapes</div>
+            <div className="hidden md:grid md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)] gap-8 pb-3">
+              <div className="mono-label">When this is true</div>
+              <div className="mono-label">This shape</div>
+            </div>
+            <div className="divide-y divide-white/10 border-y border-white/10">
+              {buyShapes.map((row) => (
+                <div
+                  key={row.shape}
+                  className="grid md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)] gap-2 md:gap-8 py-5"
+                >
+                  <p className="text-base text-stone leading-relaxed">{row.when}</p>
+                  <p className="font-serif font-medium text-lg text-cream tracking-tight">{row.shape}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Reveal>
 
       {/* Four tiers — match homepage Engagements spacing (border-t + pad, not divide-y/gap clash) */}
       <Reveal as="section" id="tiers" className="bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
@@ -153,26 +234,22 @@ function Page() {
               </div>
             ))}
           </div>
-          <p className="mt-10 text-sm text-stone">
-            All engagements carry a 30-day fit guarantee · Response within 1 business day
-          </p>
         </div>
       </Reveal>
 
-      {/* What's not included — drops off the tiers band to raised so the page
-          breathes ink → band → raised → invert → raised instead of slab-slab */}
+      {/* Built to flex — same 4-item grid as the retired commercial-clarity block */}
       <section className="bg-surface-raised py-14 sm:py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12 md:mb-14">
             <div className="eyebrow">
-              What we don't charge for
+              Built to flex
             </div>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              The price you see is the price you pay.
+              Transparent, scoped, and never locked in place.
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 md:gap-x-14 gap-y-10 md:gap-y-14">
-            {notIncluded.map((n) => (
+            {flexItems.map((n) => (
               <div key={n.t}>
                 <div className="font-serif font-medium text-xl text-cream tracking-tight">{n.t}</div>
                 <p className="mt-2 text-base text-stone leading-relaxed">{n.d}</p>
@@ -190,17 +267,10 @@ function Page() {
               FOR FUNDS
             </div>
             <h3 className="mt-6 font-serif font-medium text-xl md:text-2xl text-cream">
-              The right operating partners, ready when the portfolio needs them.
+              One operating relationship. Dynamic coverage across the portfolio.
             </h3>
             <p className="mt-5 text-stone leading-relaxed max-w-2xl">
-              Built for PE firms, family offices, holdcos, and multi-company
-              founders that need senior operating support across recurring
-              leadership gaps, transaction moments, and value-creation work.
-              Portfolio Rosters include priority operator matching, quarterly
-              capacity planning, preferred commercial terms, as well as
-              emergency CFO, COO, and operator coverage for {"$75k"} annually.
-              Operator engagements are scoped separately by SOW at preferred
-              rates.
+              Built for lean PE firms, family offices, holding companies, and independent sponsors putting institutional firepower behind every stage of the hold. The Portfolio Roster ({"$75k"} annually) covers portfolio capacity planning, quarterly reviews, priority operator access, emergency coverage paths, and preferred rates.
             </p>
             <div className="mt-6">
               <Link
@@ -222,7 +292,7 @@ function Page() {
               Pricing FAQ
             </div>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
-              Straight answers to the questions we get most.
+              Straight answers on scope, flexibility, and terms.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-12">
@@ -247,8 +317,8 @@ function Page() {
       </section>
 
       <FooterCTA
-        headline={<>Tell us what cannot wait.</>}
-        sub="Book a 30-minute call with a Veep founder. We'll clarify the work, recommend the right model, and tell you directly if Veep isn't the answer."
+        headline={<>Build an operation that keeps pace with your market.</>}
+        sub="Book a 30-minute call with a Veep founder. We'll scope the outcome, map the right starting shape, and tell you plainly if Veep isn't the answer."
       />
     </>
   );
