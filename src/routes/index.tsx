@@ -318,13 +318,13 @@ function Index() {
             Because a job always needs to be done.
           </h1>
 
-          <p className="motion-fade-up motion-delay-1 text-base sm:text-lg text-stone max-w-2xl leading-relaxed mb-10">
-            An operating partner platform for independent businesses and lean funds.
-            <br />
+          <p className="motion-fade-up motion-delay-1 text-base sm:text-lg text-stone max-w-2xl leading-relaxed mb-14 sm:mb-10">
+            An operating partner platform for independent businesses and lean funds.{" "}
+            <br className="hidden sm:inline" />
             Grow revenue, expand margins, and withstand scrutiny.
           </p>
 
-          <div className="motion-fade-up motion-delay-2 flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
+          <div className="motion-fade-up motion-delay-2 hidden sm:flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
             {["Operating partners", "Growth playbooks", "AI workflows"].map((t) => (
               <div key={t} className="flex items-center gap-2">
                 <Check size={18} className="text-accent" strokeWidth={2.5} />
@@ -371,6 +371,22 @@ function Index() {
         </div>
       </Reveal>
 
+      {/* vs. traditional options — mobile only (below sm), directly under Meet Veep.
+          sm and up keep the original block inside The reality. */}
+      <section id="alternatives-mobile" className="sm:hidden order-3 bg-surface-raised py-14">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="mono-label mb-8">vs. traditional options</div>
+          <div className="grid gap-y-10">
+            {alternatives.map((a) => (
+              <div key={a.t} className="border-t border-white/10 pt-8 first:border-t-0 first:pt-0">
+                <div className="font-serif font-medium text-xl text-cream/90 tracking-tight">{a.t}</div>
+                <p className="mt-2 text-base text-stone leading-relaxed">{a.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Problem — before Meet Veep on mobile */}
       <Reveal as="section" id="problem" className="order-1 md:order-2 bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -383,7 +399,7 @@ function Index() {
 
           <ProblemDiagram />
 
-          <div className="mt-20 md:mt-24 motion-hairline pt-12">
+          <div className="hidden sm:block mt-20 md:mt-24 motion-hairline pt-12">
             <div className="mono-label mb-8">vs. traditional options</div>
             <div className="motion-stagger grid md:grid-cols-3 gap-y-10">
               {alternatives.map((a) => (

@@ -114,7 +114,7 @@ export function OperatorCanvas() {
 
       {/* Proof — mt-6 from the photo on mobile; sm+ adds the card hang
           (-bottom-5) so the gap is card-to-line, not photo-to-line. */}
-      <p className="mt-6 sm:mt-11 text-center mono-label text-cream/80">
+      <p className="hidden sm:block mt-6 sm:mt-11 text-center mono-label text-cream/80">
         Scoped in 72 hours · Started in under 10 days · Backed by a 30-day guarantee
       </p>
     </div>
