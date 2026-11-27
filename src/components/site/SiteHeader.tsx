@@ -20,9 +20,9 @@ const nav: readonly NavItem[] = [
   // "vs. traditional options" block is visible: the phone-only section below sm,
   // the block inside The reality from sm to md, and #benefits from md up.
   { kind: "hash", hash: "benefits", label: "Why Veep", mobileHash: "alternatives-mobile", tabletHash: "alternatives" },
-  { kind: "route", to: "/pricing", label: "Pricing" },
-  { kind: "route", to: "/for-portfolios", label: "For Funds" },
   { kind: "route", to: "/agent-teams", label: "Agent Teams" },
+  { kind: "route", to: "/for-portfolios", label: "For Funds" },
+  { kind: "route", to: "/pricing", label: "Pricing" },
   { kind: "route", to: "/about", label: "About" },
   { kind: "route", to: "/join", label: "Join" },
   { kind: "route", to: "/faq", label: "FAQ" },
