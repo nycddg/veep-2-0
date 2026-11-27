@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import wordmarkWhite from "@/assets/veep-wordmark-white.png.asset.json";
 import wordmarkNavy from "@/assets/veep-wordmark-navy.png.asset.json";
@@ -7,7 +7,7 @@ import { BOOKING_URL } from "@/lib/booking";
 import { ThemeToggle } from "./ThemeToggle";
 
 type NavItem =
-  | { kind: "hash"; hash: string; label: string }
+  | { kind: "hash"; hash: string; label: string; mobileHash?: string; tabletHash?: string }
   | {
       kind: "route";
       to: "/agent-teams" | "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios";
@@ -16,19 +16,20 @@ type NavItem =
 
 const nav: readonly NavItem[] = [
   { kind: "hash", hash: "overview", label: "Overview" },
-  { kind: "hash", hash: "operators", label: "Operators" },
-  { kind: "hash", hash: "benefits", label: "Advantage" },
-  { kind: "hash", hash: "proof", label: "Proof" },
-  { kind: "route", to: "/agent-teams", label: "Agent Teams" },
-  { kind: "route", to: "/for-portfolios", label: "For Funds" },
+  // #benefits is hidden below md, so the drawer points Advantage at whichever
+  // "vs. traditional options" block is visible: the phone-only section below sm,
+  // the block inside The reality from sm to md, and #benefits from md up.
+  { kind: "hash", hash: "benefits", label: "Advantage", mobileHash: "alternatives-mobile", tabletHash: "alternatives" },
   { kind: "route", to: "/pricing", label: "Pricing" },
+  { kind: "route", to: "/for-portfolios", label: "For Funds" },
+  { kind: "route", to: "/agent-teams", label: "Agent Teams" },
   { kind: "route", to: "/about", label: "About" },
   { kind: "route", to: "/join", label: "Join" },
   { kind: "route", to: "/faq", label: "FAQ" },
 ];
 
 /** Hash anchors hidden in the mobile drawer (still on desktop nav). */
-const MOBILE_HIDDEN_HASHES = new Set(["operators", "benefits", "how", "proof"]);
+const MOBILE_HIDDEN_HASHES = new Set<string>([]);
 
 const mobileNav = nav.filter(
   (n) => !(n.kind === "hash" && MOBILE_HIDDEN_HASHES.has(n.hash)),
@@ -133,15 +134,47 @@ export function SiteHeader() {
           <div className="px-4 py-4 space-y-0.5">
             {mobileNav.map((n) =>
               n.kind === "hash" ? (
-                <Link
-                  key={n.hash}
-                  to="/"
-                  hash={n.hash}
-                  onClick={() => setOpen(false)}
-                  className="block px-3 py-3 text-[0.85rem] text-cream rounded-md hover:bg-white/5"
-                >
-                  {n.label}
-                </Link>
+                n.mobileHash ? (
+                  <Fragment key={n.hash}>
+                    {/* Below sm: phone-only section. sm to md: block inside The reality. md up: #benefits. */}
+                    <Link
+                      to="/"
+                      hash={n.mobileHash}
+                      onClick={() => setOpen(false)}
+                      className="block sm:hidden px-3 py-3 text-[0.85rem] text-cream rounded-md hover:bg-white/5"
+                    >
+                      {n.label}
+                    </Link>
+                    {n.tabletHash && (
+                      <Link
+                        to="/"
+                        hash={n.tabletHash}
+                        onClick={() => setOpen(false)}
+                        className="hidden sm:block md:hidden px-3 py-3 text-[0.85rem] text-cream rounded-md hover:bg-white/5"
+                      >
+                        {n.label}
+                      </Link>
+                    )}
+                    <Link
+                      to="/"
+                      hash={n.hash}
+                      onClick={() => setOpen(false)}
+                      className={`hidden ${n.tabletHash ? "md:block" : "sm:block"} px-3 py-3 text-[0.85rem] text-cream rounded-md hover:bg-white/5`}
+                    >
+                      {n.label}
+                    </Link>
+                  </Fragment>
+                ) : (
+                  <Link
+                    key={n.hash}
+                    to="/"
+                    hash={n.hash}
+                    onClick={() => setOpen(false)}
+                    className="block px-3 py-3 text-[0.85rem] text-cream rounded-md hover:bg-white/5"
+                  >
+                    {n.label}
+                  </Link>
+                )
               ) : (
                 <Link
                   key={n.to}
