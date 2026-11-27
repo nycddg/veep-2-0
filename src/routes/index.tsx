@@ -399,7 +399,7 @@ function Index() {
 
           <ProblemDiagram />
 
-          <div className="hidden sm:block mt-20 md:mt-24 motion-hairline pt-12">
+          <div id="alternatives" className="hidden sm:block mt-20 md:mt-24 motion-hairline pt-12 scroll-mt-20">
             <div className="mono-label mb-8">vs. traditional options</div>
             <div className="motion-stagger grid md:grid-cols-3 gap-y-10">
               {alternatives.map((a) => (

@@ -7,7 +7,7 @@ import { BOOKING_URL } from "@/lib/booking";
 import { ThemeToggle } from "./ThemeToggle";
 
 type NavItem =
-  | { kind: "hash"; hash: string; label: string; mobileHash?: string }
+  | { kind: "hash"; hash: string; label: string; mobileHash?: string; tabletHash?: string }
   | {
       kind: "route";
       to: "/agent-teams" | "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios";
@@ -16,9 +16,10 @@ type NavItem =
 
 const nav: readonly NavItem[] = [
   { kind: "hash", hash: "overview", label: "Overview" },
-  // #benefits is hidden below md, so the mobile drawer points Advantage at the
-  // mobile-only "vs. traditional options" section instead.
-  { kind: "hash", hash: "benefits", label: "Advantage", mobileHash: "alternatives-mobile" },
+  // #benefits is hidden below md, so the drawer points Advantage at whichever
+  // "vs. traditional options" block is visible: the phone-only section below sm,
+  // the block inside The reality from sm to md, and #benefits from md up.
+  { kind: "hash", hash: "benefits", label: "Advantage", mobileHash: "alternatives-mobile", tabletHash: "alternatives" },
   { kind: "route", to: "/pricing", label: "Pricing" },
   { kind: "route", to: "/for-portfolios", label: "For Funds" },
   { kind: "route", to: "/agent-teams", label: "Agent Teams" },
@@ -135,7 +136,7 @@ export function SiteHeader() {
               n.kind === "hash" ? (
                 n.mobileHash ? (
                   <Fragment key={n.hash}>
-                    {/* Phones (below sm): the mobile-only section. sm and up: the original anchor. */}
+                    {/* Below sm: phone-only section. sm to md: block inside The reality. md up: #benefits. */}
                     <Link
                       to="/"
                       hash={n.mobileHash}
@@ -144,11 +145,21 @@ export function SiteHeader() {
                     >
                       {n.label}
                     </Link>
+                    {n.tabletHash && (
+                      <Link
+                        to="/"
+                        hash={n.tabletHash}
+                        onClick={() => setOpen(false)}
+                        className="hidden sm:block md:hidden px-3 py-3 text-[0.85rem] text-cream rounded-md hover:bg-white/5"
+                      >
+                        {n.label}
+                      </Link>
+                    )}
                     <Link
                       to="/"
                       hash={n.hash}
                       onClick={() => setOpen(false)}
-                      className="hidden sm:block px-3 py-3 text-[0.85rem] text-cream rounded-md hover:bg-white/5"
+                      className={`hidden ${n.tabletHash ? "md:block" : "sm:block"} px-3 py-3 text-[0.85rem] text-cream rounded-md hover:bg-white/5`}
                     >
                       {n.label}
                     </Link>
