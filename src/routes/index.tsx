@@ -87,7 +87,7 @@ const differentiators = [
   },
   {
     dim: "Cost model",
-    veep: "Scoped up front, built to flex as priorities shift. Never billed by the hour.",
+    veep: "Scoped up front, built to flex as priorities shift.",
     old: "Heavy search fees plus fixed headcount, or open-ended consulting",
   },
   {
