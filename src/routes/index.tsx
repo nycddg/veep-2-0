@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { BOOKING_URL } from "@/lib/booking";
 import heroHeadshot from "@/assets/operator-headshot.png.asset.json";
 import { LogoWall } from "@/components/site/LogoWall";
@@ -318,20 +318,11 @@ function Index() {
             Because a job always needs to be done.
           </h1>
 
-          <p className="motion-fade-up motion-delay-1 text-base sm:text-lg text-stone max-w-2xl leading-relaxed mb-10">
-            An operating partner platform for independent businesses and lean funds.
-            <br />
+          <p className="motion-fade-up motion-delay-1 text-base sm:text-lg text-stone max-w-2xl leading-relaxed mb-14 md:mb-16">
+            An operating partner platform for independent businesses and lean funds.{" "}
+            <br className="hidden sm:inline" />
             Grow revenue, expand margins, and withstand scrutiny.
           </p>
-
-          <div className="motion-fade-up motion-delay-2 flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 mb-14 md:mb-16 text-sm text-cream/90">
-            {["Operating partners", "Growth playbooks", "AI workflows"].map((t) => (
-              <div key={t} className="flex items-center gap-2">
-                <Check size={18} className="text-accent" strokeWidth={2.5} />
-                {t}
-              </div>
-            ))}
-          </div>
 
           <div className="motion-fade-up motion-delay-3 w-full">
             <OperatorCanvas />
@@ -371,8 +362,26 @@ function Index() {
         </div>
       </Reveal>
 
+      {/* vs. traditional options — directly under Meet Veep at every breakpoint */}
+      <Reveal as="section" id="alternatives" className="order-3 md:order-2 bg-surface-raised py-14 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mono-label mb-8">vs. traditional options</div>
+          <div className="motion-stagger grid md:grid-cols-3 gap-y-10">
+            {alternatives.map((a) => (
+              <div
+                key={a.t}
+                className="border-t border-white/10 pt-8 first:border-t-0 first:pt-0 md:border-t-0 md:pt-0 md:border-l md:border-white/10 md:pl-10 md:first:border-l-0 md:first:pl-0 md:pr-10 md:last:pr-0"
+              >
+                <div className="font-serif font-medium text-xl text-cream/90 tracking-tight">{a.t}</div>
+                <p className="mt-2 text-base text-stone leading-relaxed">{a.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+
       {/* Problem — before Meet Veep on mobile */}
-      <Reveal as="section" id="problem" className="order-1 md:order-2 bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
+      <Reveal as="section" id="problem" className="order-1 md:order-3 bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14 text-left">
             <SectionEyebrow>The reality</SectionEyebrow>
@@ -383,20 +392,6 @@ function Index() {
 
           <ProblemDiagram />
 
-          <div className="mt-20 md:mt-24 motion-hairline pt-12">
-            <div className="mono-label mb-8">vs. traditional options</div>
-            <div className="motion-stagger grid md:grid-cols-3 gap-y-10">
-              {alternatives.map((a) => (
-                <div
-                  key={a.t}
-                  className="border-t border-white/10 pt-8 first:border-t-0 first:pt-0 md:border-t-0 md:pt-0 md:border-l md:border-white/10 md:pl-10 md:first:border-l-0 md:first:pl-0 md:pr-10 md:last:pr-0"
-                >
-                  <div className="font-serif font-medium text-xl text-cream/90 tracking-tight">{a.t}</div>
-                  <p className="mt-2 text-base text-stone leading-relaxed">{a.d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </Reveal>
       </div>
