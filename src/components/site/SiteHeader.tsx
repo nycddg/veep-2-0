@@ -16,13 +16,13 @@ type NavItem =
 
 const nav: readonly NavItem[] = [
   { kind: "hash", hash: "overview", label: "Overview" },
-  // #benefits is hidden below md, so the drawer points Advantage at whichever
+  // #benefits is hidden below md, so the drawer points Why Veep at whichever
   // "vs. traditional options" block is visible: the phone-only section below sm,
   // the block inside The reality from sm to md, and #benefits from md up.
-  { kind: "hash", hash: "benefits", label: "Advantage", mobileHash: "alternatives-mobile", tabletHash: "alternatives" },
-  { kind: "route", to: "/pricing", label: "Pricing" },
-  { kind: "route", to: "/for-portfolios", label: "For Funds" },
+  { kind: "hash", hash: "benefits", label: "Why Veep", mobileHash: "alternatives-mobile", tabletHash: "alternatives" },
   { kind: "route", to: "/agent-teams", label: "Agent Teams" },
+  { kind: "route", to: "/for-portfolios", label: "For Funds" },
+  { kind: "route", to: "/pricing", label: "Pricing" },
   { kind: "route", to: "/about", label: "About" },
   { kind: "route", to: "/join", label: "Join" },
   { kind: "route", to: "/faq", label: "FAQ" },
@@ -73,29 +73,30 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-0.5" aria-label="Primary">
-          {nav.filter((n) => n.kind === "hash").map((n) => (
-            <Link
-              key={(n as { hash: string }).hash}
-              to="/"
-              hash={(n as { hash: string }).hash}
-              className="group motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
-              activeOptions={{ includeHash: true }}
-            >
-              <span className="motion-underline">{n.label}</span>
-            </Link>
-          ))}
-          <span aria-hidden className="mx-3 h-4 w-px bg-white/15" />
-          {nav.filter((n) => n.kind === "route").map((n) => (
-            <Link
-              key={(n as { to: "/agent-teams" | "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
-              to={(n as { to: "/agent-teams" | "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
-              viewTransition
-              className="group motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
-              activeProps={{ className: "motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream border-b border-accent-coral" }}
-            >
-              <span className="motion-underline">{n.label}</span>
-            </Link>
-          ))}
+          {/* One even row, in nav order, no divider between anchors and pages (Dave, 11/27). */}
+          {nav.map((n) =>
+            n.kind === "hash" ? (
+              <Link
+                key={n.hash}
+                to="/"
+                hash={n.hash}
+                className="group motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
+                activeOptions={{ includeHash: true }}
+              >
+                <span className="motion-underline">{n.label}</span>
+              </Link>
+            ) : (
+              <Link
+                key={n.to}
+                to={n.to}
+                viewTransition
+                className="group motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
+                activeProps={{ className: "motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream border-b border-accent-coral" }}
+              >
+                <span className="motion-underline">{n.label}</span>
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="hidden lg:flex items-center gap-2 shrink-0">

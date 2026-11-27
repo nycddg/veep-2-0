@@ -23,10 +23,13 @@ export function OperatorSpotlightChapter({
   headline = "Every operator has held the seat.",
   sub = "The same caliber of CFOs, CROs, COOs, and GMs top investment firms deploy into their portfolios. Matched to your stage and backed by Veep playbooks and AI workflows. No juniors. No career consultants.",
   operators = spotlightOperators,
+  hideDetailsOnMobile = false,
 }: {
   headline?: string;
   sub?: string;
   operators?: typeof spotlightOperators;
+  /** Hide every network-impact detail line below sm (phones). */
+  hideDetailsOnMobile?: boolean;
 }) {
   return (
     <>
@@ -73,7 +76,9 @@ export function OperatorSpotlightChapter({
                 <div className="stat-figure text-4xl md:text-5xl text-cream leading-none">
                   {m.figure}
                 </div>
-                <p className="text-xs text-stone leading-relaxed">
+                <p
+                  className={`${hideDetailsOnMobile ? "hidden sm:block " : ""}text-xs text-stone leading-relaxed`}
+                >
                   {m.detail}
                 </p>
               </div>

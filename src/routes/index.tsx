@@ -87,7 +87,7 @@ const differentiators = [
   },
   {
     dim: "Cost model",
-    veep: "Scoped up front, built to flex as priorities shift. Never billed by the hour.",
+    veep: "Scoped up front, built to flex as priorities shift.",
     old: "Heavy search fees plus fixed headcount, or open-ended consulting",
   },
   {
@@ -438,7 +438,8 @@ function Index() {
           For Funds too; see OperatorSpotlightChapter) */}
       <Reveal as="section" id="operators" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
-          <OperatorSpotlightChapter />
+          {/* Phones only: drop every stat's detail line (Dave, 11/27). */}
+          <OperatorSpotlightChapter hideDetailsOnMobile />
         </div>
       </Reveal>
 
@@ -470,7 +471,7 @@ function Index() {
       <Reveal as="section" id="benefits" className="hidden md:block py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
-            <SectionEyebrow>Veep impact</SectionEyebrow>
+            <SectionEyebrow>Why Veep</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               Build a stronger, more valuable business.
             </h2>
@@ -585,7 +586,7 @@ function Index() {
       <Reveal as="section" id="vs" className="hidden md:block bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
-            <SectionEyebrow>Why Veep</SectionEyebrow>
+            <SectionEyebrow>How we stack up</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               How Veep compares to the alternatives.
             </h2>
