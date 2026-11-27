@@ -62,7 +62,8 @@ export function LogoWall() {
     <section className="border-t border-white/10 md:border-b bg-background overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-14">
         <div className="eyebrow text-center">
-          Operators who built
+          <span className="sm:hidden">Operators who built</span>
+          <span className="hidden sm:inline">Operators who built and scaled the companies you admire</span>
         </div>
         <div className="mt-14 relative overflow-hidden">
           <div className="flex marquee whitespace-nowrap gap-20 md:gap-24 items-center">
