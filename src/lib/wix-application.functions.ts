@@ -9,7 +9,7 @@ import {
   sourceToWix,
 } from "./wix-config";
 
-const MAX_RESUME_SIZE = 10 * 1024 * 1024; // 10 MB
+const MAX_RESUME_SIZE = 3 * 1024 * 1024; // 3 MB (Vercel caps request bodies at 4.5 MB; base64 adds ~33%)
 
 const applicationSchema = z.object({
   firstName: z.string().trim().min(1).max(100),
@@ -41,7 +41,7 @@ export const submitApplication = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const resumeBytes = Buffer.from(data.resume.data, "base64");
     if (resumeBytes.length > MAX_RESUME_SIZE) {
-      httpError(400, "Resume file must be smaller than 10 MB");
+      httpError(400, "Resume must be 3 MB or smaller");
     }
 
     const allowedTypes = [

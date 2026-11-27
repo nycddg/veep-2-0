@@ -95,9 +95,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
+  head: ({ matches }) => ({
     meta: [
       { charSet: "utf-8" },
+      // Private app routes (ssr: false) render no head of their own on the server.
+      ...(matches.some((m) => m.routeId.startsWith("/_authenticated"))
+        ? [{ title: "Veep Portal" }, { name: "robots", content: "noindex, nofollow" }]
+        : []),
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Veep" },
       { property: "og:site_name", content: "Veep" },

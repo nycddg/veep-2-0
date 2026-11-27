@@ -110,6 +110,12 @@ function normalizeLinkedIn(value: string): string | null {
   }
 }
 
+function normalizeWebsite(value: string): string {
+  const trimmed = value.trim();
+  if (!trimmed) return "";
+  return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+}
+
 function Page() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -138,7 +144,7 @@ function Page() {
     if (!linkedIn) fieldErrors.linkedin = "Please enter a LinkedIn profile URL.";
     if (!role) fieldErrors.role = "Please select a role.";
     if (!resumeFile || resumeFile.size === 0) fieldErrors.resume = "Please upload a resume.";
-    else if (resumeFile.size > 10 * 1024 * 1024) fieldErrors.resume = "Resume must be smaller than 10 MB.";
+    else if (resumeFile.size > 3 * 1024 * 1024) fieldErrors.resume = "Resume must be 3 MB or smaller. Please upload a smaller PDF, DOC, or DOCX.";
 
     if (Object.keys(fieldErrors).length > 0) {
       setErrors(fieldErrors);
@@ -185,7 +191,7 @@ function Page() {
           lastName,
           email,
           linkedIn: linkedIn as string,
-          website: String(formData.get("website") ?? ""),
+          website: normalizeWebsite(String(formData.get("website") ?? "")),
           role,
           ...(fractional === "Yes" || fractional === "No"
             ? { fractionalExperience: fractional as "Yes" | "No" }
@@ -401,7 +407,7 @@ function Page() {
                     </summary>
                     <div className="mt-4 grid gap-4">
                       <Field label="Personal site">
-                        <input type="url" name="website" placeholder="https://" className={inputCls} />
+                        <input type="text" inputMode="url" name="website" placeholder="yourcompany.com" className={inputCls} />
                       </Field>
                       <Field label="Experience embedding as an operator or advisor">
                         <div className="flex gap-4 pt-1">

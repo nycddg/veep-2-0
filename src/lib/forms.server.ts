@@ -35,7 +35,7 @@ export type SaveFormResult = {
   storage: "table" | "object";
 };
 
-const MAX_RESUME_BYTES = 10 * 1024 * 1024;
+const MAX_RESUME_BYTES = 3 * 1024 * 1024;
 const BUCKET = "form-uploads";
 const GMAIL_TOKEN_URI = "https://oauth2.googleapis.com/token";
 const GMAIL_SEND_URL = "https://gmail.googleapis.com/gmail/v1/users/me/messages/send";
@@ -64,7 +64,7 @@ function getServiceClient(): SupabaseClient {
 function base64ToBytes(data: string): Uint8Array {
   const buf = Buffer.from(data, "base64");
   if (buf.length > MAX_RESUME_BYTES) {
-    throw new Error("Resume file must be smaller than 10 MB");
+    throw new Error("Resume must be 3 MB or smaller");
   }
   if (buf.length === 0) throw new Error("Resume file is empty");
   return new Uint8Array(buf);
