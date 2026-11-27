@@ -97,7 +97,7 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="mt-10 md:mt-12 pt-5 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-3 text-xs leading-relaxed text-cream/70">
+        <div className="mt-10 md:mt-12 pt-5 border-t border-white/10 flex flex-col-reverse md:flex-row md:items-center justify-between gap-2 md:gap-3 text-xs leading-relaxed text-cream/70">
           <div className="text-balance">© {new Date().getFullYear()}&nbsp;The Veep Group,&nbsp;LLC. All rights reserved.</div>
           <div className="text-balance">Operate like a market leader without an institutional backer.</div>
         </div>
