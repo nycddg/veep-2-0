@@ -438,7 +438,8 @@ function Index() {
           For Funds too; see OperatorSpotlightChapter) */}
       <Reveal as="section" id="operators" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
-          <OperatorSpotlightChapter />
+          {/* Phones only: drop the "$2B+ cost savings" detail line (Dave, 11/27). */}
+          <OperatorSpotlightChapter mobileHiddenDetails={["Cost savings delivered"]} />
         </div>
       </Reveal>
 
