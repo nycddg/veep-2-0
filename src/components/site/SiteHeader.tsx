@@ -16,10 +16,10 @@ type NavItem =
 
 const nav: readonly NavItem[] = [
   { kind: "hash", hash: "overview", label: "Overview" },
-  // #benefits is hidden below md, so the drawer points Advantage at whichever
+  // #benefits is hidden below md, so the drawer points Why Veep at whichever
   // "vs. traditional options" block is visible: the phone-only section below sm,
   // the block inside The reality from sm to md, and #benefits from md up.
-  { kind: "hash", hash: "benefits", label: "Advantage", mobileHash: "alternatives-mobile", tabletHash: "alternatives" },
+  { kind: "hash", hash: "benefits", label: "Why Veep", mobileHash: "alternatives-mobile", tabletHash: "alternatives" },
   { kind: "route", to: "/pricing", label: "Pricing" },
   { kind: "route", to: "/for-portfolios", label: "For Funds" },
   { kind: "route", to: "/agent-teams", label: "Agent Teams" },
