@@ -438,8 +438,8 @@ function Index() {
           For Funds too; see OperatorSpotlightChapter) */}
       <Reveal as="section" id="operators" className="bg-surface-raised py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-[84rem] px-4 sm:px-6 lg:px-8">
-          {/* Phones only: drop the "$2B+ cost savings" detail line (Dave, 11/27). */}
-          <OperatorSpotlightChapter mobileHiddenDetails={["Cost savings delivered"]} />
+          {/* Phones only: drop every stat's detail line (Dave, 11/27). */}
+          <OperatorSpotlightChapter hideDetailsOnMobile />
         </div>
       </Reveal>
 
@@ -586,7 +586,7 @@ function Index() {
       <Reveal as="section" id="vs" className="hidden md:block bg-surface-band py-14 sm:py-16 md:py-28 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mb-12 md:mb-14">
-            <SectionEyebrow>Why Veep</SectionEyebrow>
+            <SectionEyebrow>How we stack up</SectionEyebrow>
             <h2 className="mt-6 font-serif font-medium text-2xl sm:text-3xl md:text-4xl text-cream tracking-tight leading-[1.15] text-balance allow-wrap">
               How Veep compares to the alternatives.
             </h2>

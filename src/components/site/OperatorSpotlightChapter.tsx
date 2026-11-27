@@ -23,13 +23,13 @@ export function OperatorSpotlightChapter({
   headline = "Every operator has held the seat.",
   sub = "The same caliber of CFOs, CROs, COOs, and GMs top investment firms deploy into their portfolios. Matched to your stage and backed by Veep playbooks and AI workflows. No juniors. No career consultants.",
   operators = spotlightOperators,
-  mobileHiddenDetails = [],
+  hideDetailsOnMobile = false,
 }: {
   headline?: string;
   sub?: string;
   operators?: typeof spotlightOperators;
-  /** Network-impact labels whose detail line is hidden below sm (phones). */
-  mobileHiddenDetails?: readonly string[];
+  /** Hide every network-impact detail line below sm (phones). */
+  hideDetailsOnMobile?: boolean;
 }) {
   return (
     <>
@@ -77,7 +77,7 @@ export function OperatorSpotlightChapter({
                   {m.figure}
                 </div>
                 <p
-                  className={`${mobileHiddenDetails.includes(m.label) ? "hidden sm:block " : ""}text-xs text-stone leading-relaxed`}
+                  className={`${hideDetailsOnMobile ? "hidden sm:block " : ""}text-xs text-stone leading-relaxed`}
                 >
                   {m.detail}
                 </p>
