@@ -49,17 +49,17 @@ const founders: readonly { name: string; role: string; bio: string }[] = [
   {
     name: "Dave Garcia",
     role: "Co-Founder",
-    bio: "Launched products, led pivots, landed exits. Now helping founders move faster with Veep.",
+    bio: "Launched products, led pivots, landed exits. Built Veep to put top-firm operating firepower behind independent businesses and lean funds.",
   },
   {
     name: "Jian Yang",
     role: "Co-Founder",
-    bio: "Raised big, scaled fast, exited right. Now helping founders do the same, smarter.",
+    bio: "Raised big, scaled fast, exited right. Leads strategic finance mandates, building numbers that stand up to diligence.",
   },
   {
     name: "Mark Newhouse",
     role: "Co-Founder",
-    bio: "Built brands, transformed orgs, sold startups. Now building alongside founders at Veep.",
+    bio: "Built brands, transformed orgs, sold startups. Partners with leadership teams to sharpen commercial positioning and execution.",
   },
 ];
 
@@ -179,7 +179,6 @@ function Page() {
       <FooterCTA
         headline={<>Bring us the job.</>}
         sub="Tell us what needs to move next. We'll clarify the outcome, recommend the right structure, and scope the mandate within 72 hours."
-        primary="contact"
       />
     </>
   );

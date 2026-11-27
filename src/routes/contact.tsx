@@ -34,7 +34,7 @@ const outcomeLabels: Record<string, string> = {
   "fix-the-forecast": "Fix the forecast",
   "integrate-the-acquisition": "Integrate the acquisition",
   "unblock-gtm": "Unblock GTM",
-  "ship-the-platform": "Expand margins",
+  "ship-the-platform": "Ship the platform",
   "expand-margins": "Expand margins",
   "cover-the-seat": "Cover the seat",
   "prep-for-exit": "Prep for exit",
@@ -149,13 +149,13 @@ function Page() {
             {/* Left: promise */}
             <div className="lg:col-span-2 space-y-8">
               <div className="eyebrow">
-                What happens next
+                {isAudit ? "What the audit delivers" : "What happens next"}
               </div>
               <ul className="space-y-4">
                 {(isAudit
                   ? [
                       "Portfolio-wide operating capacity map",
-                      "Finance, GTM, ops, product, and people assessment",
+                      "Finance, GTM, ops, product, tech, and people assessment",
                       "Recommended mandate shape per company",
                       "Emergency interim coverage path",
                     ]

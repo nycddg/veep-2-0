@@ -10,7 +10,7 @@ type NavItem =
   | { kind: "hash"; hash: string; label: string }
   | {
       kind: "route";
-      to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios";
+      to: "/agent-teams" | "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios";
       label: string;
     };
 
@@ -18,8 +18,8 @@ const nav: readonly NavItem[] = [
   { kind: "hash", hash: "overview", label: "Overview" },
   { kind: "hash", hash: "operators", label: "Operators" },
   { kind: "hash", hash: "benefits", label: "Advantage" },
-  { kind: "hash", hash: "how", label: "How It Works" },
   { kind: "hash", hash: "proof", label: "Proof" },
+  { kind: "route", to: "/agent-teams", label: "Agent Teams" },
   { kind: "route", to: "/for-portfolios", label: "For Funds" },
   { kind: "route", to: "/pricing", label: "Pricing" },
   { kind: "route", to: "/about", label: "About" },
@@ -86,8 +86,8 @@ export function SiteHeader() {
           <span aria-hidden className="mx-3 h-4 w-px bg-white/15" />
           {nav.filter((n) => n.kind === "route").map((n) => (
             <Link
-              key={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
-              to={(n as { to: "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
+              key={(n as { to: "/agent-teams" | "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
+              to={(n as { to: "/agent-teams" | "/pricing" | "/faq" | "/join" | "/about" | "/for-portfolios" }).to}
               viewTransition
               className="group motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream/85 hover:text-cream"
               activeProps={{ className: "motion-link inline-flex items-center min-h-11 px-3 py-2 text-[0.8rem] text-cream border-b border-accent-coral" }}

@@ -17,7 +17,7 @@ const ownership = [
   "Agents run recurring prep",
   "Operating partner sets the standard and resolves exceptions",
   "Technical lead owns reliability",
-  "Client keeps approvals",
+  "You keep business approvals",
 ] as const;
 
 export function PlatformStrata({ compact = false }: { compact?: boolean }) {

@@ -14,7 +14,7 @@ const days = [
   {
     day: "Wed",
     agent: "Refreshes actuals and drafts the next variance notes.",
-    partner: "Corrects notes that overreach the standard.",
+    partner: "Cuts commentary that outruns the numbers.",
     client: "Approves only if a number must be restated.",
   },
   {
@@ -26,7 +26,7 @@ const days = [
   {
     day: "Fri",
     agent: "Locks the pack for Monday's review.",
-    partner: "Signs the standard the pack was built to.",
+    partner: "Signs off on the numbers and assumptions before distribution.",
     client: "Approves what leadership will see.",
   },
 ] as const;

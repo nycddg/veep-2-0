@@ -28,7 +28,7 @@ const mandates = [
     deliverables: [
       "Offer and market thesis",
       "Launch plan with owners",
-      "Margin rules so the new work does not subsidize the old",
+      "Margin rules so the new line stands on its own",
     ],
     proofId: "proof-studio",
   },

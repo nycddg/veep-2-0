@@ -18,7 +18,7 @@ const routes = [
   },
   {
     label: "A permanent hire",
-    d: "Search takes months. The market and the deal will not wait.",
+    d: "Search takes months. The market and the deal won't wait.",
   },
   {
     label: "Consultants",

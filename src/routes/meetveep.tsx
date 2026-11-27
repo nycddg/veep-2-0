@@ -6,7 +6,7 @@ import { ogImageMeta } from "@/lib/seo";
 
 const BULLETS = [
   "Scoped in 72 hours. Started in under 10 days.",
-  "Priced to the work: individual mandates or managed operating partnerships",
+  "Transparent, scoped, and flexible: individual mandates or managed operating partnerships",
   "75+ vetted senior operators",
   "Avg. 18 yrs in seat",
 ];
@@ -124,7 +124,7 @@ function MeetVeepPage() {
               Outcome first. Shape second.
             </h2>
             <p className="mt-4 text-cream/80 leading-relaxed">
-              Advisory, Sprint, Operator, Pod, Interim Leadership, Managed Operating Partnerships, and Agent Teams, priced to the work and not the hour.
+              Advisory, Sprint, Operator, Pod, Interim Leadership, Managed Operating Partnerships, and Agent Teams. Transparent, scoped, and built to flex as priorities shift.
             </p>
           </div>
           <div className="flex flex-col items-start sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-5">
@@ -148,7 +148,6 @@ function MeetVeepPage() {
       <FooterCTA
         headline={<>Bring us the job that matters most.</>}
         sub="Tell us what needs to move. We'll clarify the outcome, recommend the right structure, and tell you plainly if Veep isn't the answer."
-        primary="contact"
       />
     </>
   );

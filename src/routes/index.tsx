@@ -87,7 +87,7 @@ const differentiators = [
   },
   {
     dim: "Cost model",
-    veep: "Priced to the work and outcome, never the hour",
+    veep: "Scoped up front, built to flex as priorities shift. Never billed by the hour.",
     old: "Heavy search fees plus fixed headcount, or open-ended consulting",
   },
   {
@@ -102,7 +102,7 @@ const differentiators = [
   },
   {
     dim: "Downside risk",
-    veep: "30-day guarantee. Make it right or walk.",
+    veep: "30-day guarantee. Fix it, swap, or walk.",
     old: "You absorb the wrong hire or stalled implementation",
   },
 ];
@@ -127,8 +127,8 @@ const faqs = [
     a: "Every lead operating partner has held the seat at a comparable stage across finance, GTM, operations, product, technology, or people, backed by Veep playbooks, execution specialists, and governance.",
   },
   {
-    q: "What if it isn't the right fit?",
-    a: "Every operating engagement carries a 30-day guarantee. If the engagement isn't right within the first 30 days, we make it right or you walk, with no fee owed for the remaining term.",
+    q: "How does the 30-day guarantee work?",
+    a: "Every engagement carries a 30-day guarantee. If it isn't working in the first 30 days, we fix it, swap the operator, or you walk, with no fee owed for the remaining term.",
   },
 ];
 
