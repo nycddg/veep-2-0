@@ -13,6 +13,12 @@ Veep is an operating partner platform, not a marketplace, staffing firm, or cons
 - Interim Leadership, Managed Operating Partnerships, and Operator-Governed Agent Teams (scoped to the mandate)
 - Portfolio Roster — $75k/year (lean PE / family offices / holding companies / independent sponsors; company mandates billed by SOW)
 
+## Commercials
+
+- Transparent, scoped, and built to flex as priorities shift. Never billed by the hour.
+- Swap operators, add specialists or governed AI workflows, or scale capacity up or down as needed.
+- 30-day guarantee: if it isn't working in the first 30 days, we fix it, swap the operator, or you walk, with no fee owed for the remaining term.
+
 ## Pages
 
 - [Home](https://www.veep.work/): Model overview, how it works, proof, FAQ
@@ -20,7 +26,7 @@ Veep is an operating partner platform, not a marketplace, staffing firm, or cons
 - [Pricing](https://www.veep.work/pricing): Engagement pricing and 30-day guarantee
 - [FAQ](https://www.veep.work/faq): Model, pricing, timing, AI workflows, roster
 - [For Funds](https://www.veep.work/for-portfolios): Portfolio operating platform for funds
-- [Agent Teams](https://www.veep.work/agent-teams): Operator-governed workflows inside a mandate. Scoped individually. No published rate.
+- [Agent Teams](https://www.veep.work/agent-teams): Operator-governed AI workflows inside a mandate. The operating partner owns the standard; you keep business approvals. Scoped to the mandate and priced transparently up front.
 - [Contact](https://www.veep.work/contact): Bring us the job / discovery / capacity audit
 - [Join](https://www.veep.work/join): Apply to the operator network
 - [Meet Veep](https://www.veep.work/meetveep): Leave-behind overview (noindex)

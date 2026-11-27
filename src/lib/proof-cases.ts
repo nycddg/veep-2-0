@@ -66,7 +66,7 @@ export const veterinaryDelivery = {
   result: "Monthly close from roughly 25 days to 8.",
   trigger:
     "After close, monthly reporting was still landing about 25 days out, so integration calls were being made on stale numbers.",
-  work: "Veep rebuilt the close calendar, the owner list, and the variance pack. Monthly close came down to 8 days.",
+  work: "Veep clarified finance responsibilities, rebuilt the close process, and supported integration. Monthly close came down to 8 days.",
 } as const satisfies DeliveryProof;
 
 export const saasDelivery = {

@@ -31,8 +31,8 @@ const groups: { label: string; items: QA[] }[] = [
     items: [
       { q: "How much does Veep cost?", a: "Public starting rates: Advisory from $3k/month · Sprint from $25k per scope · Embedded Operator from $15k/month · Pod from $30k/month. Interim Leadership, Managed Operating Partnerships, and Agent Teams are scoped individually to the mandate. No hourly billing." },
       { q: "Are there setup or sourcing fees?", a: "No. Scoping calls with a Veep founder, partner selection, contracting, and onboarding are included. You only pay once an agreed scope is signed." },
-      { q: "What if it isn't the right fit?", a: "Every operating engagement carries a 30-day guarantee. If the engagement isn't right within the first 30 days, we make it right or you walk, with no fee owed for the remaining term." },
-      { q: "Can companies engage Veep for one job or as an ongoing partner?", a: "Both. Companies engage Veep in two ways: an individual mandate for a specific decision, deliverable, function, or transition, or a Managed Operating Partnership from day one when leadership wants a partner at the table as priorities evolve." },
+      { q: "How does the 30-day guarantee work?", a: "Every engagement carries a 30-day guarantee. If it isn't working in the first 30 days, we fix it, swap the operator, or you walk, with no fee owed for the remaining term." },
+      { q: "Can companies engage Veep for one job or as an ongoing partner?", a: "Both. Companies engage Veep in two ways: an individual mandate for a specific decision, deliverable, function, or transition, or a Managed Operating Partnership from day one when leadership wants a partner at the table as priorities evolve. You can also swap operators, add workflows, or step down to Advisory as priorities shift." },
     ],
   },
   {
@@ -82,7 +82,7 @@ function Page() {
       <PageHero
         eyebrow="FAQ"
         title="Straight answers on model, pricing, and fit."
-        sub="If your question isn't here, book a 30-minute call with a Veep founder. We'll clarify the outcome, recommend the right structure, and tell you plainly if Veep isn't the fit."
+        sub="If your question isn't here, book a 30-minute call with a Veep founder. We'll clarify the outcome, recommend the right structure, and tell you plainly if Veep isn't the right answer."
         secondarySearch={{ intent: "audit" }}
       />
 

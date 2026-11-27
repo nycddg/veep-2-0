@@ -72,7 +72,7 @@ const flexItems = [
   },
   {
     t: "30-day guarantee",
-    d: "Test the partnership in live delivery. If the engagement isn't right within the first 30 days, we make it right or you walk, with no fee owed for the remaining term.",
+    d: "Test the partnership in live delivery. If it isn't working in the first 30 days, we fix it, swap the operator, or you walk, with no fee owed for the remaining term.",
   },
 ];
 
@@ -110,7 +110,7 @@ const faqs = [
   },
   {
     q: "How does the 30-day guarantee work?",
-    a: "If the engagement isn't right within the first 30 days, we make it right or you walk, with no fee owed for the remaining term.",
+    a: "Every engagement carries a 30-day guarantee. If it isn't working in the first 30 days, we fix it, swap the operator, or you walk, with no fee owed for the remaining term.",
   },
 ];
 
@@ -146,7 +146,7 @@ function Page() {
       <PageHero
         eyebrow="Pricing"
         title="Operating capacity as responsive as software."
-        sub="Keeps pace with today's market with zero surprises. Swap operators as priorities shift, layer in specialists or governed AI workflows, and add or downshift capacity as needed. Transparent, scoped, and built to flex with your business."
+        sub="Your org chart keeps pace with today's market, with zero surprises. Swap operators as priorities shift, layer in specialists or governed AI workflows, and scale capacity up or down as needed. Transparent, scoped, and built to flex."
         primaryLabel="Get in touch"
         primaryTo="/contact"
         secondarySearch={{ intent: "audit" }}
@@ -172,13 +172,13 @@ function Page() {
                 Managed Operating Partnership
               </h2>
               <p className="mt-4 text-base text-stone leading-relaxed">
-                Gain institutional leverage with a long-term partner at the table to shape and manage operating capacity.
+                One ongoing operating partner at the leadership table to help set priorities and flex operating capacity as the business evolves.
               </p>
             </div>
           </div>
 
           <div className="mt-14 md:mt-16">
-            <div className="mono-label mb-6">One request, five shapes</div>
+            <div className="mono-label mb-6">Five ways the work takes shape</div>
             <div className="hidden md:grid md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)] gap-8 pb-3">
               <div className="mono-label">When this is true</div>
               <div className="mono-label">This shape</div>
@@ -234,6 +234,9 @@ function Page() {
               </div>
             ))}
           </div>
+          <p className="mt-10 max-w-3xl text-sm text-stone leading-relaxed">
+            Interim Leadership, Managed Operating Partnerships, and Agent Teams are scoped individually to the mandate. Every engagement carries a 30-day guarantee.
+          </p>
         </div>
       </Reveal>
 
@@ -270,7 +273,7 @@ function Page() {
               One operating relationship. Dynamic coverage across the portfolio.
             </h3>
             <p className="mt-5 text-stone leading-relaxed max-w-2xl">
-              Built for lean PE firms, family offices, holding companies, and independent sponsors putting institutional firepower behind every stage of the hold. The Portfolio Roster ({"$75k"} annually) covers portfolio capacity planning, quarterly reviews, priority operator access, emergency coverage paths, and preferred rates.
+              Built for lean PE firms, family offices, holding companies, and independent sponsors putting institutional firepower behind every stage of the hold. The Portfolio Roster ({"$75k"} annually) covers portfolio capacity planning, quarterly reviews, priority operator access, emergency coverage paths, and preferred rates. Individual company mandates are agreed with each CEO and billed separately by SOW.
             </p>
             <div className="mt-6">
               <Link

@@ -52,7 +52,7 @@ function Page() {
               Three layers. Clear ownership.
             </h2>
             <p className="mt-6 text-base md:text-lg text-stone leading-relaxed">
-              The operating partner does not hand the business to software. Agents run the work that repeats. Specialists carry defined tasks. The partner owns the standard and every exception that matters.
+              The operating partner doesn't hand the business to software. Agents run the work that repeats. Specialists carry defined tasks. The partner owns the standard and every exception that matters.
             </p>
           </div>
           <PlatformStrata />
@@ -82,7 +82,7 @@ function Page() {
               Cash and variance, ready for Monday's review.
             </h2>
             <p className="mt-6 text-base text-stone leading-relaxed">
-              One cycle. Finance leadership sees a pack that was built through the week, not assembled the night before.
+              One illustrative cycle. Finance leadership gets a pack built through the week, not scrambled together the night before.
             </p>
           </div>
           <WeeklyCycle />
@@ -91,7 +91,7 @@ function Page() {
 
       <FooterCTA
         headline={<>Bring us the recurring work.</>}
-        sub="Agent Teams are scoped to the mandate. No published rate, and no extra headcount required to hold the cadence."
+        sub="Agent Teams are scoped to the mandate and priced transparently up front, with no extra headcount required to hold the cadence."
       />
     </>
   );

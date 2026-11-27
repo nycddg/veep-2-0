@@ -22,14 +22,14 @@ const problems = [
     d: "A CFO exits ahead of a raise or a COO leaves mid-integration. Search may be running, but the function still needs experienced authority today.",
   },
   {
-    t: "The same five phone numbers cannot cover every thesis.",
+    t: "The same five phone numbers can't cover every thesis.",
     d: "Relying on an informal personal network limits fit by stage, function, and sector. Building an internal platform team adds heavy fixed overhead.",
   },
 ];
 
 const auditDeliverables = [
   "Portfolio-wide leadership and operating capacity map",
-  "Comprehensive assessments across finance, GTM, ops, product, tech, and people",
+  "Coverage assessments across finance, GTM, ops, product, tech, and people",
   "Upcoming triggers including diligence, integrations, raises, and exit prep",
   "Recommended engagement shape by company",
   "Emergency interim coverage path",
@@ -239,7 +239,7 @@ function Page() {
                   {c.trigger}
                 </p>
                 <p className="mt-3 text-sm text-stone leading-relaxed">
-                  <span className="text-cream">Work. </span>
+                  <span className="text-cream">Work & result. </span>
                   {c.work}
                 </p>
               </article>

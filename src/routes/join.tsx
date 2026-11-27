@@ -43,7 +43,7 @@ const criteria: readonly { title: string; body: string }[] = [
   },
   {
     title: "High standards, platform backing",
-    body: "Strong references and a bias for clarity. You bring judgment and leadership; Veep brings scoping, commercial governance, peer specialists, and AI workflow support.",
+    body: "Strong references and a bias for clarity. You bring judgment and leadership; Veep brings commercial scoping, platform governance, peer specialists, and governed AI workflows.",
   },
 ];
 
@@ -286,7 +286,7 @@ function Page() {
                   "A Veep founder reviews every application personally",
                   "Working conversation on the mandates you fit best",
                   "Reference checks and network onboarding",
-                  "Scoped into live mandates matched to your stage and expertise",
+                  "Deployed into live mandates that fit your stage, business model, and track record",
                 ].map((i, idx) => (
                   <li key={i} className="flex items-baseline gap-4">
                     <span className="font-mono text-sm text-accent w-6 shrink-0 tabular-nums">
@@ -407,7 +407,7 @@ function Page() {
                     </summary>
                     <div className="mt-4 grid gap-4">
                       <Field label="Personal site">
-                        <input type="text" inputMode="url" name="website" placeholder="yourcompany.com" className={inputCls} />
+                        <input type="text" inputMode="url" name="website" placeholder="yourname.com" className={inputCls} />
                       </Field>
                       <Field label="Experience embedding as an operator or advisor">
                         <div className="flex gap-4 pt-1">
@@ -425,8 +425,8 @@ function Page() {
                       <Field label="Industry experience">
                         <input name="industries" className={inputCls} placeholder="e.g. SaaS, fintech, healthcare" />
                       </Field>
-                      <Field label="Anything else we should know?">
-                        <textarea name="notes" rows={4} className={inputCls} />
+                      <Field label="Tell us about a job you carried end-to-end">
+                        <textarea name="notes" rows={4} className={inputCls} placeholder="e.g. A raise, GTM reset, or turnaround you led from hard call to delivery" />
                       </Field>
                       <Field label="How did you hear about Veep?">
                         <input name="source" className={inputCls} />

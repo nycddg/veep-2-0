@@ -28,6 +28,18 @@ Veep (The Veep Group, LLC) is an operating partner platform. Independent busines
 5. Interim Leadership, Managed Operating Partnerships, and Operator-Governed Agent Teams — scoped individually
 6. Portfolio Roster — one operating relationship for lean funds, family offices, holding companies ($75k/year + company SOWs)
 
+Individual company mandates are agreed with each CEO and billed separately by SOW.
+
+## Commercials
+
+- Transparent, scoped, and built to flex as priorities shift. Never billed by the hour.
+- Swap operators as priorities shift, layer in specialists or governed AI workflows, and scale capacity up or down as needed.
+- 30-day guarantee: every engagement carries a 30-day guarantee. If it isn't working in the first 30 days, we fix it, swap the operator, or you walk, with no fee owed for the remaining term.
+
+## Agent Teams
+
+Operator-governed AI workflows that run inside a mandate (https://www.veep.work/agent-teams). The operating partner doesn't hand the business to software: agents run the work that repeats, specialists carry defined tasks, and the partner owns the standard and every exception. You keep business approvals. Agent Teams are scoped to the mandate and priced transparently up front, with no extra headcount required to hold the cadence.
+
 ## Ideal buyers
 
 - Founders, CEOs, and owner-operators who need senior ownership for revenue, margins, diligence, or a leadership gap
@@ -37,6 +49,7 @@ Veep (The Veep Group, LLC) is an operating partner platform. Independent busines
 ## Primary URLs
 
 - https://www.veep.work/
+- https://www.veep.work/about
 - https://www.veep.work/pricing
 - https://www.veep.work/for-portfolios
 - https://www.veep.work/faq
