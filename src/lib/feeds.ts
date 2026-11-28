@@ -1,4 +1,5 @@
 import catalogJson from "@/content/feeds/catalog.json";
+import relevanceOrderJson from "@/content/feeds/relevance-order.json";
 import { SITE_URL } from "@/lib/seo";
 
 /**
@@ -56,6 +57,22 @@ function byDateThenTitle(a: FeedEntry, b: FeedEntry): number {
 
 export function listFeedEntries(): readonly FeedEntry[] {
   return [...catalog].sort(byDateThenTitle);
+}
+
+/**
+ * Editorial order for the /feeds index: strongest fit with the homepage
+ * positioning first (Dave, 11/27). Dates are untouched; slugs missing from the
+ * list fall to the end in date order. Sitemap and related links keep using
+ * listFeedEntries (chronological).
+ */
+const relevanceRank = new Map((relevanceOrderJson as string[]).map((slug, i) => [slug, i]));
+
+export function listFeedEntriesByRelevance(): readonly FeedEntry[] {
+  return [...catalog].sort((a, b) => {
+    const ra = relevanceRank.get(a.slug) ?? Number.MAX_SAFE_INTEGER;
+    const rb = relevanceRank.get(b.slug) ?? Number.MAX_SAFE_INTEGER;
+    return ra !== rb ? ra - rb : byDateThenTitle(a, b);
+  });
 }
 
 export function listFeedPosts(): readonly FeedEntry[] {
