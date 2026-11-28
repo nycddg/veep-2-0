@@ -2,10 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { FooterCTA } from "@/components/site/FooterCTA";
-import { feedPostUrl, listFeedEntries, type FeedEntry } from "@/lib/feeds";
+import { feedPostUrl, listFeedEntriesByRelevance, type FeedEntry } from "@/lib/feeds";
 import { ogImageMeta, SITE_URL } from "@/lib/seo";
 
-const posts = listFeedEntries();
+const posts = listFeedEntriesByRelevance();
 
 const feedIndexSchema = {
   "@context": "https://schema.org",
